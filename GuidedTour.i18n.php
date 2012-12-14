@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * Internationalisation file for Guided Tour extension.
  *
  * @file
@@ -11,11 +11,11 @@
 $messages = array();
 
 $messages['en'] = array(
-	'guidedtour-desc' => 'This extension allows pages to provide a popup guided tour to assist new users',
+	'guidedtour-desc' => 'Allows pages to provide a popup guided tour to assist new users',
 	'guidedtour-custom.css' => ''
 );
 
 $messages['qqq'] = array(
-	'guidedtour-desc' => '{{desc|name=GuidedTour|url=http://www.mediawiki.org/wiki/Extension:GuidedTour}}',
+	'guidedtour-desc' => '{{desc|name=GuidedTour|url=https://www.mediawiki.org/wiki/Extension:GuidedTour}}',
 	'guidedtour-custom.css' => 'Custom CSS for the GuidedTour extension.  Empty by default.'
 );
