@@ -1,4 +1,4 @@
-/**
+/*
  * Guided Tour to test guided tour features.
  */
 ( function ( window, document, jQuery, mw, guiders ) {
@@ -6,9 +6,14 @@
 
 var gt = mw.guidedTour = mw.guidedTour || {};
 
+/*
+ * This must be set to the same name as the MediaWiki subpage, without the .js.  This name
+ * must be lowercase, without any hyphen character (-). For instance, this example tour is
+ * MediaWiki:Guidedtour/test.js, so the below is set to test.
+ */
 guiders.currentTour = 'test';
 
-/**
+/*
  * Show overlay
  */
 guiders.initGuider({
@@ -26,7 +31,7 @@ guiders.initGuider({
 	]
 });
 
-/**
+/*
  * Callout of left menu
  */
 guiders.initGuider({
@@ -47,7 +52,7 @@ guiders.initGuider({
 	]
 });
 
-/**
+/*
  * Test out mediawiki parsing
  */
 guiders.initGuider({
@@ -68,7 +73,7 @@ guiders.initGuider({
 	]
 });
 
-/**
+/*
  * Test out mediawiki description pages
  */
 guiders.initGuider({
@@ -88,7 +93,7 @@ guiders.initGuider({
 	]
 });
 
-/**
+/*
  * Test out tour launching
  */
 guiders.initGuider({

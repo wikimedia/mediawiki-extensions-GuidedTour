@@ -5,7 +5,9 @@
  * (if the page is called with a tour)
  *
  * @file
- * @author Luke Welling
+ * @author Terry Chay tchay@wikimedia.org
+ * @author Matthew Flaschen mflaschen@wikimedia.org
+ * @author Luke Welling lwelling@wikimedia.org
  *
  */
 
@@ -20,8 +22,8 @@ class GuidedTourHooks {
 	public static function onBeforePageDisplay( $out, $skin ) {
 		// test for tour enabled in url first
 		$request = $out->getRequest();
-		if( $request->getVal('tour') ) {
-			$out->addModules( array( 'GuidedTour' ) );
+		if( $request->getVal('tour') !== NULL ) {
+			$out->addModules( array( 'ext.guidedTour' ) );
 		}
 		return true;
 	}

@@ -1,24 +1,31 @@
 extensions/GuidedTour
 http://www.mediawiki.org/w/index.php?title=Extension:GuidedTour
 
-MediaWiki extension that allows the creation of Guided Tours using a variant of Optimize.ly's Guiders.
+MediaWiki extension that allows the creation of Guided Tours using a variant of
+Optimize.ly's Guiders.
 
 To use:
 * Put the extension files in your extension directory
 * Add the following line to your LocalSettings.php
 require_once( "$IP/extensions/GuidedTour/GuidedTour.php" );
-* Copy the test tour in the file /extensions/GuidedTour/modules/tours/test.js to a page in the MediaWiki namespace on your server named MediaWiki:GuidedTour/test.js.  The full url would look something like http://MyServer/w/MediaWiki:GuidedTour/test.js
-* Test that it worked by calling a page with tour=test appended to the URL. For example
-http://MyServer/w/index.php?tour=test
+* Copy the test tour in the file /extensions/GuidedTour/modules/tours/test.js to
+a page in the MediaWiki namespace on your server named
+MediaWiki:Guidedtour/test.js.  The full url would look something like
+http://MyServer/w/MediaWiki:Guidedtour/test.js
+* Test that it worked by calling a page with tour=test appended to the URL. For
+example http://MyServer/w/index.php?tour=test
 
-* Write a real tour on a page in the MediaWiki namespage.  Perhaps called MediaWiki:GuidedTour/mytour.js
+* Write a real tour on a page in the MediaWiki namespace.  Perhaps called
+MediaWiki:Guidedtour/mytour.js
 * Call your intended page with tour=mytour appended to the URL. For example
 http://MyServer/w/index.php?tour=mytour
-* The name of the tour stored on the wiki is the parameter you call it with.  In the examples above, that's 'test' and 'mytour'
+* The name of the tour stored on the wiki is the parameter you call it with.
+In the examples above, that's 'test' and 'mytour'
 
-* To style the output provide a file of overrides on the wiki page MediaWiki:GuidedTour/custom.css
+* To style the output provide a file of overrides on the wiki page
+MediaWiki:Guidedtour/custom.css
 
 License
 
-This is free software. You may use, modify and distribute it under the terms of the
-Apache License 2.0. http://www.apache.org/licenses/LICENSE-2.0.html
+This is free software. You may use, modify and distribute it under the terms of
+the Apache License 2.0. http://www.apache.org/licenses/LICENSE-2.0.html

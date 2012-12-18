@@ -1,10 +1,14 @@
 <?php
 /**
  * This extension allows pages to add a popup guided tour to help new users
- * it is basd on Guiders.js from Optimizely
+ * It uses the Guiders JavaScript library from Optimizely.
+ * There are some local changes to Guiders at
+ * https://gerrit.wikimedia.org/r/#/admin/projects/mediawiki/extensions/GuidedTour/guiders
  *
  * @file
- * @author Luke Welling
+ * @author Terry Chay tchay@wikimedia.org
+ * @author Matthew Flaschen mflaschen@wikimedia.org
+ * @author Luke Welling lwelling@wikimedia.org
  *
  */
 
@@ -31,13 +35,20 @@ $wgHooks['BeforePageDisplay'][] = 'GuidedTourHooks::onBeforePageDisplay';
 $wgExtensionCredits[ 'other' ][] = array(
 	'path' => __FILE__,
 	'name' => 'GuidedTour',
-	'author' =>'Luke Welling, Terry Chay',
+	'author' => array('Terry Chay', 'Matthew Flaschen', 'Luke Welling',),
 	'url' => 'https://www.mediawiki.org/wiki/Extension:GuidedTour',
-	'description' => 'guided-tour-desc',
+	'descriptionmsg' => 'guidedtour-desc',
 	'version'  => 1.0,
 );
 
 $guidersPath = 'modules/externals/mediawiki.libs.guiders';
+
+// Modules
+$wgResourceModules[ 'schema.GuidedTour' ] = array(
+	'class' => 'ResourceLoaderSchemaModule',
+	'schema' => 'GuidedTour',
+	'revision' => 4858512,
+);
 
 $wgResourceModules['mediawiki.libs.guiders'] = array(
 	'styles' => 'mediawiki.libs.guiders.submodule/guiders-1.2.8.css',
@@ -49,9 +60,18 @@ $wgResourceModules['mediawiki.libs.guiders'] = array(
 	'remoteExtPath' => "GuidedTour/$guidersPath",
 );
 
-$wgResourceModules['GuidedTour'] = array(
-	'scripts' => array( 'ext.guidedtour.guidedTour.js', ),
+$wgResourceModules['ext.guidedTour'] = array(
+	'scripts' => 'ext.guidedTour.js',
 	'localBasePath' => $dir . 'modules',
 	'remoteExtPath' => 'GuidedTour/modules',
-	'dependencies' => 'mediawiki.libs.guiders',
+	'dependencies' => array(
+		'mediawiki.libs.guiders',
+		'mediawiki.util',
+		'schema.GuidedTour',
+	),
+);
+
+// Messages
+$wgExtensionMessagesFiles += array(
+	'GuidedTour' => $dir . 'GuidedTour.i18n.php',
 );

@@ -4,14 +4,18 @@
  *
  * @file
  * @author Terry Chay tchay@wikimedia.org
+ * @author Matthew Flaschen mflaschen@wikimedia.org
+ * @author Luke Welling lwelling@wikimedia.org
  * @ingroup Extensions
  */
 $messages = array();
 
 $messages['en'] = array(
-	'guided-tour-desc' => 'This extension allows pages to provide a pop up guided tour to assist new users',
+	'guidedtour-desc' => 'This extension allows pages to provide a popup guided tour to assist new users',
+	'guidedtour-custom.css' => ''
 );
 
 $messages['qqq'] = array(
-	'guided-tour-desc' => '{{desc|name=GuidedTour|url=http://www.mediawiki.org/wiki/Extension:GuidedTour}}',
+	'guidedtour-desc' => '{{desc|name=GuidedTour|url=http://www.mediawiki.org/wiki/Extension:GuidedTour}}',
+	'guidedtour-custom.css' => 'Custom CSS for the GuidedTour extension.  Empty by default.'
 );
