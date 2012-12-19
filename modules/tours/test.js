@@ -109,4 +109,4 @@ guiders.initGuider({
 });
 
 
-} (window, document, jQuery, mw, guiders) );
+} (window, document, jQuery, mediaWiki, mediaWiki.libs.guiders) );

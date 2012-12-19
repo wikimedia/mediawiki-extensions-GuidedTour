@@ -22,7 +22,7 @@ EOT;
 }
 
 // Find the full directory path of this extension
-$dir =  __DIR__ . DIRECTORY_SEPARATOR;
+$dir = __DIR__ . DIRECTORY_SEPARATOR;
 $wgAutoloadClasses['GuidedTourHooks'] = $dir . 'GuidedTourHooks.php';
 
 $wgHooks['BeforePageDisplay'][] = 'GuidedTourHooks::onBeforePageDisplay';
@@ -37,10 +37,21 @@ $wgExtensionCredits[ 'other' ][] = array(
 	'version'  => 1.0,
 );
 
+$guidersPath = 'modules/externals/mediawiki.libs.guiders';
+
+$wgResourceModules['mediawiki.libs.guiders'] = array(
+	'styles' => 'mediawiki.libs.guiders.submodule/guiders-1.2.8.css',
+	'scripts' => array(
+		'mediawiki.libs.guiders.submodule/guiders-1.2.8.js',
+		'mediawiki.libs.guiders.exposeGuiders.js',
+	),
+	'localBasePath' => $dir . $guidersPath,
+	'remoteExtPath' => "GuidedTour/$guidersPath",
+);
+
 $wgResourceModules['GuidedTour'] = array(
-	'styles' => array( 'ext.guidedtour.guiders.css', ),
-	'scripts' => array( 'externals/ext.guidedtour.guiders.js', 'ext.guidedtour.guidedTour.js', ),
+	'scripts' => array( 'ext.guidedtour.guidedTour.js', ),
 	'localBasePath' => $dir . 'modules',
 	'remoteExtPath' => 'GuidedTour/modules',
-//	'dependencies'  => array( 'ext.Experiments.lib', )
+	'dependencies' => 'mediawiki.libs.guiders',
 );

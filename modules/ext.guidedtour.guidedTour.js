@@ -10,10 +10,8 @@
   * @author     Luke Welling <lwelling@wikimedia.org>
   * @version    $Id$
 */
-//The external library guiders.js relies on a global
-window.guiders = guiders;
 
-( function ( window, document, jQuery, mw ) {
+( function ( window, document, jQuery, mw, guiders ) {
 	'use strict';
 	var gt = mw.guidedTour = mw.guidedTour || {};
 
@@ -316,4 +314,4 @@ window.guiders = guiders;
 		guiders.resume('gt-' + tourName + '-' + step);
 	};
 
-} ( window, document, jQuery, mw, guiders ) );
+} ( window, document, jQuery, mediaWiki, mediaWiki.libs.guiders ) );
