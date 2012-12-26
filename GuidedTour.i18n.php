@@ -43,6 +43,13 @@ $messages['ja'] = array(
 	'guidedtour-desc' => '新しい利用者を支援するポップアップのガイドツアーをページで提供できるようにする',
 );
 
+/** Korean (한국어)
+ * @author 아라
+ */
+$messages['ko'] = array(
+	'guidedtour-desc' => '새 사용자를 돕기 위해 팝업 가이드 투어를 제공하는 문서 허용',
+);
+
 /** Macedonian (македонски)
  * @author Bjankuloski06
  */
