@@ -36,6 +36,13 @@ $messages['fr'] = array(
 	'guidedtour-desc' => 'Autoriser les pages à fournir une visite guidée surgissante pour aider les nouveaux utilisateurs',
 );
 
+/** Galician (galego)
+ * @author Toliño
+ */
+$messages['gl'] = array(
+	'guidedtour-desc' => 'Permite que as páxinas proporcionen unha visita guiada para axudar aos usuarios novos',
+);
+
 /** Japanese (日本語)
  * @author Shirayuki
  */
