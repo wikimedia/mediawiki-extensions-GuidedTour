@@ -71,6 +71,16 @@ $wgResourceModules['ext.guidedTour'] = array(
 	),
 );
 
+// Tour modules
+
+// Test tour as demonstration
+$wgResourceModules['ext.guidedTour.tour.test'] = array(
+	'scripts' => 'test.js',
+	'localBasePath' => $dir . 'modules/tours',
+	'remoteExtPath' => 'GuidedTour/modules/tours',
+	'dependencies' => 'ext.guidedTour'
+);
+
 // Messages
 $wgExtensionMessagesFiles += array(
 	'GuidedTour' => $dir . 'GuidedTour.i18n.php',

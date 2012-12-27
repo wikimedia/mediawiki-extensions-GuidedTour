@@ -20,10 +20,28 @@ class GuidedTourHooks {
 	 * @return bool true in all cases
 	 */
 	public static function onBeforePageDisplay( $out, $skin ) {
+		global $wgResourceModules;
 		// test for tour enabled in url first
 		$request = $out->getRequest();
-		if( $request->getVal('tour') !== NULL ) {
-			$out->addModules( array( 'ext.guidedTour' ) );
+		$tourName = $request->getVal('tour');
+		/*
+		  These are excluded because:
+		  '-': For our MediaWiki namespace namespacing.
+		  '.': It is used for module naming
+		*/
+
+		if( $tourName !== NULL && strpbrk( $tourName, '-.' ) === FALSE ) {
+			$tourModuleName = "ext.guidedTour.tour.$tourName";
+			if ( isset ( $wgResourceModules[$tourModuleName] ) ) {
+				// Add the tour itself for built-in tours.
+				$out->addModules($tourModuleName);
+			} else {
+				/*
+				   Otherwise, add the main module, which attempts to import an
+				   on-wiki tour.
+				*/
+				$out->addModules('ext.guidedTour');
+			}
 		}
 		return true;
 	}
