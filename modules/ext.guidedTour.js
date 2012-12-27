@@ -11,13 +11,13 @@
   * @author     Luke Welling <lwelling@wikimedia.org>
 */
 
-( function ( window, document, jQuery, mw, guiders ) {
+( function ( window, document, $, mw, guiders ) {
 	'use strict';
 
 	var gt = mw.guidedTour = mw.guidedTour || {};
 
 	if (!gt.tourUrl) {
-		gt.tourUrl = mw.config.get('wgScript') + '?title=MediaWiki:Guidedtour/';
+		gt.tourUrl = mw.config.get('wgScript') + '?title=MediaWiki:Guidedtour-';
 	}
 
 	function parseTourId( tourId ) {
@@ -89,7 +89,18 @@
 	}
 
 	/**
-	 * mw.guidedTour.launchTour(): Load a tour javascript and launch a tour
+	 * Launch a tour.  Tours start themselves, but this allows one tour to launch
+	 * another.
+	 *
+	 * It will first try loading a tour module, then fall back on an on-wiki tour.
+	 * This means the caller don't need to know how it's implemented (which could
+	 * change).
+	 *
+	 * This is used for the tour specified in the URL too.  This case does not require
+	 * an extra request for a built-in tour since it is already loaded.
+	 *
+	 * @param {string} tourName name of tour
+	 * @param {string} tourId id of tour (optional)
 	 */
 	gt.launchTour = function ( tourName, tourId ) {
 		if ( !tourId ) {
@@ -98,22 +109,44 @@
 				step: '1'
 			} );
 		}
-		// append to request raw JS code without page markup
-		var rawJS = '&action=raw&ctype=text/javascript';
-		$.getScript( gt.tourUrl + tourName + '.js' + rawJS )
-		.done( function ( script, textStatus ) {
-			// missing raw requests give 0 length document and 200 status not 404
-			if ( script.length < 1 ) {
-				mw.log( 'Tour ' + tourName + ' is empty. Does the page exist?' );
-			}
-			else {
-				// if we successfully loaded the tour
-				guiders.resume(tourId);
-			}
-		})
-		.fail( function ( jqxhr, settings, exception ) {
-			mw.log( 'Failed to load tour ' + tourName );
-		});
+
+		// Called if we successfully loaded the tour
+		function resume () {
+			guiders.resume(tourId);
+		}
+
+		var tourModuleName = 'ext.guidedTour.tour.' + tourName;
+		try {
+			mw.loader.using( tourModuleName, resume, function (err, dependencies) {
+				mw.log( 'Failed to load tour ', tourModuleName,
+					'as module. err: ', err, ', dependencies: ',
+					dependencies);
+			});
+		}
+		catch (err) {
+			mw.log( 'Could not load ', tourModuleName,
+				' through using, probably because it is not built-in.'  );
+			mw.log( 'Error: ', err);
+
+			// append to request raw JS code without page markup
+			var rawJS = '&action=raw&ctype=text/javascript';
+			var onWikiTourUrl = gt.tourUrl + 'tour-' + tourName + '.js' + rawJS;
+			mw.log( 'Attempting to load on-wiki tour from ', onWikiTourUrl );
+
+			$.getScript( onWikiTourUrl )
+			.done( function ( script, textStatus ) {
+				// missing raw requests give 0 length document and 200 status not 404
+				if ( script.length < 1 ) {
+					mw.log( 'Tour ' + tourName + ' is empty. Does the page exist?' );
+				}
+				else {
+					resume();
+				}
+			})
+			.fail( function ( jqxhr, settings, exception ) {
+				mw.log( 'Failed to load tour ' + tourName );
+			});
+		}
 	};
 
 	// load custom CSS from wiki page MediaWiki:Guidedtour-custom.css

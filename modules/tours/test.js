@@ -7,9 +7,13 @@
 var gt = mw.guidedTour = mw.guidedTour || {};
 
 /*
- * This must be set to the same name as the MediaWiki subpage, without the .js.  This name
- * must be lowercase, without any hyphen character (-). For instance, this example tour is
- * MediaWiki:Guidedtour/test.js, so the below is set to test.
+ * This is the name of the tour.  It must be lowercase, without any hyphen (-) or
+ * period (.) characters.
+ *
+ * If this is an on-wiki tour, it should match the MediaWiki page.  For instance,
+ * if this were on-wiki, it would be MediaWiki:Guidedtour-tour-test.js
+ *
+ * The IDs below should use the same name in the middle (e.g. gt-test-2).
  */
 guiders.currentTour = 'test';
 
