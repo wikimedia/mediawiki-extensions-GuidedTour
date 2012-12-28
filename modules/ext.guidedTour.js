@@ -1,10 +1,7 @@
  /**
-  * Extension for Guided Tour for MediaWiki
+  * Part of GuidedTour, the MediaWiki extension for guided tours.
   *
-  * Based on a WordPress.com customized version of Optimize.ly's Guiders.js file.
-  *
-  * To use create a tour in /modules/tour then load a page with tour=TourName appended to the url
-  * To see if it works index.php?tour=test is a start
+  * Uses Optimize.ly's Guiders library (with WordPress.com customizations).
   *
   * @author     Terry Chay <tchay@wikimedia.org>
   * @author     Matt Flaschen <mflaschen@wikimedia.org>
@@ -16,8 +13,8 @@
 
 	var gt = mw.guidedTour = mw.guidedTour || {};
 
-	if (!gt.tourUrl) {
-		gt.tourUrl = mw.config.get('wgScript') + '?title=MediaWiki:Guidedtour-';
+	if ( !gt.rootUrl ) {
+		gt.rootUrl = mw.config.get('wgScript') + '?title=MediaWiki:Guidedtour-';
 	}
 
 	function parseTourId( tourId ) {
@@ -130,7 +127,7 @@
 
 			// append to request raw JS code without page markup
 			var rawJS = '&action=raw&ctype=text/javascript';
-			var onWikiTourUrl = gt.tourUrl + 'tour-' + tourName + '.js' + rawJS;
+			var onWikiTourUrl = gt.rootUrl + 'tour-' + tourName + '.js' + rawJS;
 			mw.log( 'Attempting to load on-wiki tour from ', onWikiTourUrl );
 
 			$.getScript( onWikiTourUrl )
@@ -148,10 +145,6 @@
 			});
 		}
 	};
-
-	// load custom CSS from wiki page MediaWiki:Guidedtour-custom.css
-        var cssUrl = gt.tourUrl + 'custom.css&action=raw&ctype=text/css';
-	mw.loader.load(cssUrl, 'text/css');
 
 	// launch the tour.
 	gt.launchTour(tourName, tourId);

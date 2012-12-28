@@ -72,7 +72,7 @@ $wgResourceModules['ext.guidedTour.styles'] = array(
 );
 
 // Depends on ext.guidedTour.styles
-$wgResourceModules['ext.guidedTour.sitestyles'] = array(
+$wgResourceModules['ext.guidedTour.siteStyles'] = array(
 	'class' => 'ResourceLoaderGuidedTourSiteStylesModule',
 );
 
@@ -84,7 +84,7 @@ $wgResourceModules['ext.guidedTour'] = array(
 		'mediawiki.libs.guiders',
 		'mediawiki.util',
 		'schema.GuidedTour',
-		'ext.guidedTour.sitestyles',
+		'ext.guidedTour.siteStyles',
 	),
 );
 
