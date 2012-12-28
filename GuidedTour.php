@@ -27,7 +27,11 @@ EOT;
 
 // Find the full directory path of this extension
 $dir = __DIR__ . DIRECTORY_SEPARATOR;
-$wgAutoloadClasses['GuidedTourHooks'] = $dir . 'GuidedTourHooks.php';
+$wgAutoloadClasses += array(
+	'GuidedTourHooks' => $dir . 'GuidedTourHooks.php',
+	'ResourceLoaderGuidedTourSiteStylesModule' =>
+	$dir . 'includes/ResourceLoaderGuidedTourSiteStylesModule.php'
+);
 
 $wgHooks['BeforePageDisplay'][] = 'GuidedTourHooks::onBeforePageDisplay';
 
@@ -60,6 +64,18 @@ $wgResourceModules['mediawiki.libs.guiders'] = array(
 	'remoteExtPath' => "GuidedTour/$guidersPath",
 );
 
+// TODO (mattflaschen, 2012-12-27): Add our extension-provided CSS (separate review)
+$wgResourceModules['ext.guidedTour.styles'] = array(
+	'localBasePath' => $dir . 'modules',
+	'remoteExtPath' => 'GuidedTour/modules',
+	'dependencies' => 'mediawiki.libs.guiders',
+);
+
+// Depends on ext.guidedTour.styles
+$wgResourceModules['ext.guidedTour.sitestyles'] = array(
+	'class' => 'ResourceLoaderGuidedTourSiteStylesModule',
+);
+
 $wgResourceModules['ext.guidedTour'] = array(
 	'scripts' => 'ext.guidedTour.js',
 	'localBasePath' => $dir . 'modules',
@@ -68,6 +84,7 @@ $wgResourceModules['ext.guidedTour'] = array(
 		'mediawiki.libs.guiders',
 		'mediawiki.util',
 		'schema.GuidedTour',
+		'ext.guidedTour.sitestyles',
 	),
 );
 

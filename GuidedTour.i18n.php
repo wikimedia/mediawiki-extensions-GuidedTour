@@ -12,7 +12,7 @@ $messages = array();
 
 $messages['en'] = array(
 	'guidedtour-desc' => 'Allows pages to provide a popup guided tour to assist new users',
-	'guidedtour-custom.css' => ''
+	'guidedtour-custom.css' => '/* Custom CSS for the GuidedTour extension. */',
 );
 
 /** Message documentation (Message documentation)
