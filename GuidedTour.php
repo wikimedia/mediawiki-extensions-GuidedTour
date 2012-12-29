@@ -36,7 +36,7 @@ $wgAutoloadClasses += array(
 $wgHooks['BeforePageDisplay'][] = 'GuidedTourHooks::onBeforePageDisplay';
 
 // Extension credits that will show up on Special:Version
-$wgExtensionCredits[ 'other' ][] = array(
+$wgExtensionCredits['other'][] = array(
 	'path' => __FILE__,
 	'name' => 'GuidedTour',
 	'author' => array('Terry Chay', 'Matthew Flaschen', 'Luke Welling',),
@@ -48,7 +48,7 @@ $wgExtensionCredits[ 'other' ][] = array(
 $guidersPath = 'modules/externals/mediawiki.libs.guiders';
 
 // Modules
-$wgResourceModules[ 'schema.GuidedTour' ] = array(
+$wgResourceModules['schema.GuidedTour'] = array(
 	'class' => 'ResourceLoaderSchemaModule',
 	'schema' => 'GuidedTour',
 	'revision' => 4858512,
@@ -64,8 +64,8 @@ $wgResourceModules['mediawiki.libs.guiders'] = array(
 	'remoteExtPath' => "GuidedTour/$guidersPath",
 );
 
-// TODO (mattflaschen, 2012-12-27): Add our extension-provided CSS (separate review)
 $wgResourceModules['ext.guidedTour.styles'] = array(
+	'styles' => 'ext.guidedTour.css',
 	'localBasePath' => $dir . 'modules',
 	'remoteExtPath' => 'GuidedTour/modules',
 	'dependencies' => 'mediawiki.libs.guiders',
