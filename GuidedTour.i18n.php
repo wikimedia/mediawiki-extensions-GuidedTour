@@ -55,6 +55,7 @@ $messages['it'] = array(
  */
 $messages['ja'] = array(
 	'guidedtour-desc' => '新しい利用者を支援するポップアップのガイドツアーをページで提供できるようにする',
+	'guidedtour-custom.css' => '/* ガイドツアー拡張機能用のカスタムCSS */',
 );
 
 /** Korean (한국어)
