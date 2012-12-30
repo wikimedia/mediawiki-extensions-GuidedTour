@@ -1,7 +1,7 @@
 /*
  * Guided Tour to test guided tour features.
  */
-( function ( window, document, jQuery, mw, guiders ) {
+( function ( window, document, $, mw, guiders ) {
 
 
 var gt = mw.guidedTour = mw.guidedTour || {};
@@ -15,33 +15,33 @@ var gt = mw.guidedTour = mw.guidedTour || {};
  *
  * The IDs below should use the same name in the middle (e.g. gt-test-2).
  */
-guiders.currentTour = 'test';
+gt.currentTour = 'test';
 
 /*
  * Show overlay
  */
-guiders.initGuider({
+gt.initGuider({
 	id: "gt-test-1",
-	title: 'Testing',
-	description: 'This is a test of the description. You can include <b>HTML</b> like bold. Lorem ipsum dolor sit!',
+	titlemsg: 'guidedtour-tour-test-testing',
+	descriptionmsg: 'guidedtour-tour-test-test-description',
 
 	// attachment
 	overlay: true,
 
 	next: "gt-test-2",
-	buttons: [
-		//{ name: 'Hide Tour', onclick: gt.hideTour, classString: "plain" },
-		{ name: 'Start Tour', onclick: guiders.next }
-	]
+	buttons: [ {
+		namemsg: 'guidedtour-start-tour',
+		onclick: guiders.next
+	} ]
 });
 
 /*
  * Callout of left menu
  */
-guiders.initGuider({
+gt.initGuider({
 	id: "gt-test-2",
-	title: 'Test callouts',
-	description: 'This is the community portal page.',
+	titlemsg: 'guidedtour-tour-test-callouts',
+	descriptionmsg: 'guidedtour-tour-test-portal-description',
 
 	// attachment
 	//overlay: true,
@@ -50,71 +50,79 @@ guiders.initGuider({
 
 
 	next: "gt-test-3",
-	buttons: [
-		//{ name: 'Hide Tour', onclick: gt.hideTour, classString: "plain" },
-		{ name: '→', onclick: guiders.next }
-	]
+	buttons: [ {
+		namemsg: 'guidedtour-next',
+		onclick: guiders.next
+	} ]
 });
 
 /*
  * Test out mediawiki parsing
  */
-guiders.initGuider({
+gt.initGuider({
 	id: "gt-test-3",
-	title: 'Test mediawiki parse',
-	description: 'Your guider can contain wikitext using onShow. Use it to create an in-wiki link to the [[Guided tours]]. Or an external link [https://github.com/tychay/mwgadget.GuidedTour to github], for instance',
+	titlemsg: 'guidedtour-tour-test-mediawiki-parse',
+	// XXX (mattflaschen, 2012-01-02): See GuidedTourHooks.php
+	description: mw.config.get('wgGuidedTourTestWikitextDescription'),
 
 	// attachment
-	//overlay: true,
 	attachTo: '#searchInput',
 	position: 'bottomRight', //try descriptive position (5'oclock)
-	onShow: gt.parseDescription,
 
 	next: "gt-test-4",
-	buttons: [
-		//{ name: 'Hide Tour', onclick: gt.hideTour, classString: "plain" },
-		{ name: '→', onclick: guiders.next }
-	]
+	buttons: [ {
+		namemsg: 'guidedtour-next',
+		onclick: guiders.next
+	} ]
 });
 
 /*
  * Test out mediawiki description pages
  */
-guiders.initGuider({
+// XXX (mattflaschen, 2012-01-02): See GuidedTourHooks.php
+var pageName = mw.config.get( 'wgGuidedTourHelpUrl' );
+gt.initGuider({
 	id: "gt-test-4",
-	title: 'Test mediawiki description pages',
-	description: 'Extension:Guided_tour',
+	titlemsg: 'guidedtour-tour-test-description-page',
+	description: pageName,
 
 	// attachment
 	overlay: true,
 	onShow: gt.getPageAsDescription,
 
 	next: "gt-test-5",
-	buttons: [
-		//{ name: 'Hide Tour', onclick: gt.hideTour, classString: "plain" },
-		{ name: 'Go to description page', onclick: function() { window.location = wgScript + 'Extension:GuidedTour'; return false; } },
-		{ name: '→', onclick: guiders.next }
-	]
+	buttons: [ {
+		namemsg: 'guidedtour-tour-test-go-description-page',
+		onclick: function() {
+			window.location = mw.util.wikiGetlink(pageName);
+			return false;
+		}
+	}, {
+		namemsg: 'guidedtour-next',
+		onclick: guiders.next
+	} ]
 });
 
 /*
  * Test out tour launching
  */
-guiders.initGuider({
+gt.initGuider({
 	id: "gt-test-5",
-	title: 'Test launch tour',
-	description: 'Guiders can launch other guided tours. Pretty cool, huh?',
+	titlemsg: 'guidedtour-tour-test-launch-tour',
+	descriptionmsg: 'guidedtour-tour-test-launch-tour-description',
 
 	// attachment
 	overlay: true,
-	//position: 'bottomRight', //try descriptive position (5'oclock)
 
-	//next: "gt-test-2",
-	buttons: [
-		//{ name: 'Hide Tour', onclick: gt.hideTour, classString: "plain" },
-		{ name: 'Launch a Tour on using Tours', onclick: function() { gt.launchTour('guidedtour'); } },
-		{ name: 'End Tour', onclick: gt.endTour }
-	]
+	buttons: [ {
+		namemsg: 'guidedtour-tour-test-launch-using-tours',
+		onclick: function() {
+			gt.launchTour('guidedtour');
+		}
+	}, {
+		namemsg: 'guidedtour-end-tour',
+		onclick: gt.endTour
+	} ]
 });
 
 

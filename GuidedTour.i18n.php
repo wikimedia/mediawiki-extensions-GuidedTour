@@ -12,14 +12,56 @@ $messages = array();
 
 $messages['en'] = array(
 	'guidedtour-desc' => 'Allows pages to provide a popup guided tour to assist new users',
+	'guidedtour-help-url' => 'Help:Guided tours',
 	'guidedtour-custom.css' => '/* Custom CSS for the GuidedTour extension. */',
+
+	'guidedtour-start-tour' => 'Start tour',
+	'guidedtour-end-tour' => 'End tour',
+	'guidedtour-next' => '→',
+
+	// test
+	'guidedtour-tour-test-testing' => 'Testing',
+	'guidedtour-tour-test-test-description' => 'This is a test of the description. You can include <b>HTML</b> like bold. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-callouts' => 'Test callouts',
+	'guidedtour-tour-test-portal-description' => 'This is the community portal page.',
+	'guidedtour-tour-test-mediawiki-parse' => 'Test mediawiki parse',
+	'guidedtour-tour-test-wikitext-description' => 'A guider in your on-wiki tour can contain wikitext using onShow and parseDescription. Use it to create a wikilink to the [[{{MediaWiki:Guidedtour-help-url}}|Guided tours documentation]]. Or an external link [https://github.com/tychay/mwgadget.GuidedTour to github], for instance.',
+	'guidedtour-tour-test-description-page' => 'Test mediawiki description pages',
+	'guidedtour-tour-test-go-description-page' => 'Go to description page',
+	'guidedtour-tour-test-launch-tour' => 'Test launch tour',
+	'guidedtour-tour-test-launch-tour-description' => 'Guiders can launch other guided tours. Pretty cool, huh?',
+	'guidedtour-tour-test-launch-using-tours' => 'Launch a tour on using tours',
 );
 
 /** Message documentation (Message documentation)
  */
 $messages['qqq'] = array(
 	'guidedtour-desc' => '{{desc|name=GuidedTour|url=https://www.mediawiki.org/wiki/Extension:GuidedTour}}',
+	'guidedtour-help-url' => 'Main page for GuidedTour documentation',
 	'guidedtour-custom.css' => 'Custom CSS for the GuidedTour extension.  Empty by default.',
+
+	// Messages useful for more than one tour
+	'guidedtour-start-tour' => 'Text for button that starts tour',
+	'guidedtour-end-tour' => 'Text for button that ends tour',
+	'guidedtour-next' => 'Text for moving to next step of guided tour',
+
+	/*
+	   Messages for specific tours.  These should be namespaced as
+	   guidedtour-tour-specifictourname-message-name
+	*/
+
+	// test
+	'guidedtour-tour-test-testing' => 'Title of first step in test tour',
+	'guidedtour-tour-test-test-description' => 'Description of the first step of test tour, in HTML.  Be sure to bold some text (it does not have to be the same word).  Do not translate the Latin.',
+	'guidedtour-tour-test-callouts' => 'Title of second step in test tour, introducing callouts',
+	'guidedtour-tour-test-portal-description' => 'Description of second step in test tour.  It will be pointing to the page link given at {{msg-mw|portal-url}}, in the toolbox',
+	'guidedtour-tour-test-mediawiki-parse' => 'Description of third step in test tour',
+	'guidedtour-tour-test-wikitext-description' => 'Title of third step in test tour.  Do not translate onShow or parseDescription, because they are JavaScript method names.  Don\'t be concerned if [[{{MediaWiki:Guidedtour-help-url}}]] does not yet exist.',
+	'guidedtour-tour-test-description-page' => 'Title of fourth step in test tour',
+	'guidedtour-tour-test-go-description-page' => 'Text of the button pointing to [[{{MediaWiki:Guidedtour-help-url}}]]',
+	'guidedtour-tour-test-launch-tour' => 'Title of fifth step in test tour',
+	'guidedtour-tour-test-launch-tour-description' => 'Description of fifth step in test tour',
+	'guidedtour-tour-test-launch-using-tours' => 'Button text for launching a tour on making tours',
 );
 
 /** German (Deutsch)

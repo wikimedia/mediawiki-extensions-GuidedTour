@@ -12,6 +12,31 @@
  */
 
 class GuidedTourHooks {
+	/*
+	   XXX (mattflaschen, 2012-01-02):
+
+	   wgGuidedTourHelpUrl and wgGuidedTourTestWikitextDescription are hacks pending
+	   forcontent messages:
+	   https://bugzilla.wikimedia.org/show_bug.cgi?id=25349
+	*/
+	/**
+	 * MakeGlobalVariablesScript hook.
+	 * Add config vars to mw.config.
+	 *
+	 * @param $vars array
+	 * @param $out OutputPage output page
+	 * @return bool
+	 */
+	public static function onMakeGlobalVariablesScript( &$vars, $out ) {
+		$vars['wgGuidedTourHelpUrl'] =
+			wfMessage( 'guidedtour-help-url' )->inContentLanguage()->plain();
+
+		$vars['wgGuidedTourTestWikitextDescription'] =
+			wfMessage( 'guidedtour-tour-test-wikitext-description' )->parse();
+
+		return true;
+	}
+
 	/**
 	 * Handler for BeforePageDisplay hook.
 	 * @see http://www.mediawiki.org/wiki/Manual:Hooks/BeforePageDisplay
@@ -33,7 +58,7 @@ class GuidedTourHooks {
 		if( $tourName !== NULL && strpbrk( $tourName, '-.' ) === FALSE ) {
 			$tourModuleName = "ext.guidedTour.tour.$tourName";
 			if ( isset ( $wgResourceModules[$tourModuleName] ) ) {
-				// Add the tour itself for built-in tours.
+				// Add the tour itself for extension-defined tours.
 				$out->addModules($tourModuleName);
 			} else {
 				/*

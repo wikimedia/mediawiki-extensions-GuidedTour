@@ -30,10 +30,11 @@ $dir = __DIR__ . DIRECTORY_SEPARATOR;
 $wgAutoloadClasses += array(
 	'GuidedTourHooks' => $dir . 'GuidedTourHooks.php',
 	'ResourceLoaderGuidedTourSiteStylesModule' =>
-	$dir . 'includes/ResourceLoaderGuidedTourSiteStylesModule.php'
+	$dir . 'includes/ResourceLoaderGuidedTourSiteStylesModule.php',
 );
 
 $wgHooks['BeforePageDisplay'][] = 'GuidedTourHooks::onBeforePageDisplay';
+$wgHooks['MakeGlobalVariablesScript'][] = 'GuidedTourHooks::onMakeGlobalVariablesScript';
 
 // Extension credits that will show up on Special:Version
 $wgExtensionCredits['other'][] = array(
@@ -81,11 +82,17 @@ $wgResourceModules['ext.guidedTour'] = array(
 	'localBasePath' => $dir . 'modules',
 	'remoteExtPath' => 'GuidedTour/modules',
 	'dependencies' => array(
-		'jquery.cookie',
+	        'jquery.cookie',
+		'mediawiki.jqueryMsg',
 		'mediawiki.libs.guiders',
 		'mediawiki.util',
 		'schema.GuidedTour',
 		'ext.guidedTour.siteStyles',
+	),
+	'messages' => array(
+		'guidedtour-start-tour',
+		'guidedtour-end-tour',
+		'guidedtour-next',
 	),
 );
 
@@ -96,7 +103,21 @@ $wgResourceModules['ext.guidedTour.tour.test'] = array(
 	'scripts' => 'test.js',
 	'localBasePath' => $dir . 'modules/tours',
 	'remoteExtPath' => 'GuidedTour/modules/tours',
-	'dependencies' => 'ext.guidedTour'
+	'dependencies' => 'ext.guidedTour',
+	'messages' => array(
+		'guidedtour-help-url',
+		'guidedtour-tour-test-testing',
+		'guidedtour-tour-test-test-description',
+		'guidedtour-tour-test-callouts',
+		'guidedtour-tour-test-portal-description',
+		'guidedtour-tour-test-mediawiki-parse',
+		'guidedtour-tour-test-wikitext-description',
+		'guidedtour-tour-test-description-page',
+		'guidedtour-tour-test-go-description-page',
+		'guidedtour-tour-test-launch-tour',
+		'guidedtour-tour-test-launch-tour-description',
+		'guidedtour-tour-test-launch-using-tours',
+	),
 );
 
 // Messages

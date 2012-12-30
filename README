@@ -4,7 +4,7 @@ http://www.mediawiki.org/w/index.php?title=Extension:GuidedTour
 MediaWiki extension that allows the creation of Guided Tours using a variant of
 Optimize.ly's Guiders.
 
-It supports both built-in tours (with localization) and tours defined by editing
+It supports both extension-defined tours (with localization) and tours defined by editing
 the MediaWiki namespace.
 
 To use:
@@ -14,8 +14,8 @@ require_once( "$IP/extensions/GuidedTour/GuidedTour.php" );
 * Test that it worked by calling a page with tour=test appended to the URL. For
 example http://MyServer/w/index.php?tour=test
 
-'test' is a built-in tour.
-* Write a local tour on a page in the MediaWiki namespace.  Perhaps called
+'test' is a tour defined by the GuidedTour extenion.
+* Write an on-wiki tour on a page in the MediaWiki namespace.  Perhaps called
 MediaWiki:Guidedtour-tour-mytour.js
 
 Use this naming convention regardless of name. 'mytour' is the name of this

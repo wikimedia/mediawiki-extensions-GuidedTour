@@ -11,7 +11,8 @@
 ( function ( window, document, $, mw, guiders ) {
 	'use strict';
 
-	var gt = mw.guidedTour = mw.guidedTour || {};
+	var gt = mw.guidedTour = mw.guidedTour || {},
+		messageParser = new mw.jqueryMsg.parser();
 
 	if ( !gt.rootUrl ) {
 		gt.rootUrl = mw.config.get('wgScript') + '?title=MediaWiki:Guidedtour-';
@@ -94,7 +95,7 @@
 	 * change).
 	 *
 	 * This is used for the tour specified in the URL too.  This case does not require
-	 * an extra request for a built-in tour since it is already loaded.
+	 * an extra request for an extension-defined tour since it is already loaded.
 	 *
 	 * @param {string} tourName name of tour
 	 * @param {string} tourId id of tour (optional)
@@ -154,9 +155,9 @@
 	guiders._defaultSettings.xButton = true;
 
 	function completeTour( type ) {
-		if ( guiders.currentTour ) {
+		if ( gt.currentTour ) {
 			var guider = guiders._guiderById(guiders._lastCreatedGuiderID);
-			gt.pingServer( guider, guiders.currentTour, type );
+			gt.pingServer( guider, gt.currentTour, type );
 		}
 		return guiders.endTour(); //remove cookies and hide guider
 	}
@@ -185,8 +186,8 @@
 		// hide event.
 		// TODO (mattflaschen, 2012-12-17) Is gt-hide reachable?
 		if ( guider.id === 'gt-hide' ) {
-			if ( guiders.currentTour ) {
-				gt.pingServer(guider, guiders.currentTour, 'hide');
+			if ( gt.currentTour ) {
+				gt.pingServer(guider, gt.currentTour, 'hide');
 			}
 			return;
 		}
@@ -232,6 +233,14 @@
 		return callApi(guider, 'page');
 	};
 
+	/*
+	 * TODO (mattflaschen, 2012-12-29): Find a way to remove or improve this.
+	 * Synchronous requests are generally considered bad, and even an async request
+	 * for each guider wouldn't be ideal.
+	 *
+	 * If we can get everything we need from jqueryMsg, we can deprecate this for
+	 * extension-defined tours.
+	 */
 	/**
 	 * + callApi(): Called by parseDescription and getPageAsDescription to call the
 	 * API and parse wiki text
@@ -277,7 +286,6 @@
 			// guider html is already "live" so edit it
 			guider.elem.find(".guider_description").html(guider.description);
 
-			// we override default onShow
 			gt.recordStats(guider);
 		}
 	}
@@ -347,5 +355,61 @@
 			name: tourName,
 			step: step
 		} ) );
+	};
+
+	/**
+	 * Converts a message key to a parsed HTML message
+	 *
+	 * @param {string} key message key
+	 * @return {string} HTML of parsed message
+	 */
+	function getMessage( key ) {
+		return messageParser.parse( key ).html();
+	}
+
+	/**
+	 * Initializes a guider by calling guiders.initGuider
+	 *
+	 * Currently, the only functionality this adds is using the proper jqueryMsg
+	 * calls when you add msg to the end of the field name.
+	 *
+	 * This applies to titlemsg, descriptionmsg, and namemsg (for each button object
+	 * in the buttons field (which is an array))
+	 *
+	 * For example:
+	 *
+	 * descriptionmsg: 'guidedtour-tour-currenttourname-message-name' )
+	 *
+	 * results in:
+	 *
+	 * description:
+	 * messageParser.parse( 'guidedtour-tour-currenttourname-message-name' )
+	 *
+	 * where messageParser is an instance of mw.jqueryMsg.parser.
+	 *
+	 * @param {object} options options object matching the guiders one, except for
+	 * modifications noted above.
+	 *
+	 */
+	gt.initGuider = function( options ) {
+		options = $.extend( true, {}, options );
+		if ( options.titlemsg ) {
+			options.title = getMessage( options.titlemsg );
+			delete options.titlemsg;
+		}
+
+		if ( options.descriptionmsg ) {
+			options.description = getMessage( options.descriptionmsg );
+			delete options.descriptionmsg;
+		}
+
+		$.each(options.buttons, function () {
+			if ( this.namemsg ) {
+				this.name = getMessage( this.namemsg );
+				delete this.namemsg;
+			}
+		});
+
+		guiders.initGuider( options );
 	};
 } ( window, document, jQuery, mediaWiki, mediaWiki.libs.guiders ) );
