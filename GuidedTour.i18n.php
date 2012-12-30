@@ -80,10 +80,11 @@ $messages['nl'] = array(
 );
 
 /** Piedmontese (Piemontèis)
+ * @author Borichèt
  * @author Dragonòt
  */
 $messages['pms'] = array(
-	'guidedtour-desc' => 'A përmëtt pagine për dé un gir guidà da popup për assiste utent neuv',
+	'guidedtour-desc' => "A përmët le pàgine për fornì na vìsita guidà da fnestre an riliev për giuté j'utent neuv",
 );
 
 /** Ukrainian (українська)
