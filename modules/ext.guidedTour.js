@@ -113,17 +113,15 @@
 		}
 
 		var tourModuleName = 'ext.guidedTour.tour.' + tourName;
-		try {
+		if ( mw.loader.getState( tourModuleName ) !== null ) {
 			mw.loader.using( tourModuleName, resume, function (err, dependencies) {
 				mw.log( 'Failed to load tour ', tourModuleName,
 					'as module. err: ', err, ', dependencies: ',
 					dependencies);
 			});
-		}
-		catch (err) {
-			mw.log( 'Could not load ', tourModuleName,
-				' through using, probably because it is not built-in.'  );
-			mw.log( 'Error: ', err);
+		} else {
+			mw.log( tourModuleName,
+				' is not registered, probably because it is not extension-defined.' );
 
 			// append to request raw JS code without page markup
 			var rawJS = '&action=raw&ctype=text/javascript';
