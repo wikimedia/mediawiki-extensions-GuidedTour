@@ -1,8 +1,6 @@
 {
 	"globals": {
-		"$": true,
-		"browser": true,
-		"guiders": true
+		"browser": true
 	},
 
 	"maxerr": 50,
