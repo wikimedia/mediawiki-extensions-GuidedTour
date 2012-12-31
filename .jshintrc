@@ -8,6 +8,7 @@
 	"maxerr": 50,
 	"newcap": false,
 	"plusplus": false,
+	"regexdash": true,
 	"supernew": true,
 	"white": false
 }

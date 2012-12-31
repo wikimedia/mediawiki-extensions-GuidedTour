@@ -55,7 +55,7 @@
 	 */
 	function cleanTourName( tourName ) {
 		return mw.util.rawurlencode( tourName.replace( /^(?:\.\.\/)+/, '' ) );
-	};
+	}
 
 	// tour is either in get string or cookie (prefer get string)
 	var tourName = mw.util.getParamValue( 'tour' );
@@ -280,7 +280,7 @@
 			// we override default onShow
 			gt.recordStats(guider);
 		}
-	};
+	}
 
 	/*
 	 * shouldSkip bindings
