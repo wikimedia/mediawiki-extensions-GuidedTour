@@ -70,6 +70,7 @@ $messages['ko'] = array(
  */
 $messages['mk'] = array(
 	'guidedtour-desc' => 'Овозможува страниците да даваат отскочни прозорци со водени надгледни упатства за новите корисници',
+	'guidedtour-custom.css' => '/* Прилагоден CSS за додатокот GuidedTour. */',
 );
 
 /** Dutch (Nederlands)
