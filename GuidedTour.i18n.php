@@ -39,24 +39,15 @@ $messages['qqq'] = array(
 	'guidedtour-desc' => '{{desc|name=GuidedTour|url=https://www.mediawiki.org/wiki/Extension:GuidedTour}}',
 	'guidedtour-help-url' => 'Main page for GuidedTour documentation',
 	'guidedtour-custom.css' => 'Custom CSS for the GuidedTour extension.  Empty by default.',
-
-	// Messages useful for more than one tour
 	'guidedtour-start-tour' => 'Text for button that starts tour',
 	'guidedtour-end-tour' => 'Text for button that ends tour',
 	'guidedtour-next' => 'Text for moving to next step of guided tour',
-
-	/*
-	   Messages for specific tours.  These should be namespaced as
-	   guidedtour-tour-specifictourname-message-name
-	*/
-
-	// test
 	'guidedtour-tour-test-testing' => 'Title of first step in test tour',
 	'guidedtour-tour-test-test-description' => 'Description of the first step of test tour, in HTML.  Be sure to bold some text (it does not have to be the same word).  Do not translate the Latin.',
 	'guidedtour-tour-test-callouts' => 'Title of second step in test tour, introducing callouts',
 	'guidedtour-tour-test-portal-description' => 'Description of second step in test tour.  It will be pointing to the page link given at {{msg-mw|portal-url}}, in the toolbox',
 	'guidedtour-tour-test-mediawiki-parse' => 'Description of third step in test tour',
-	'guidedtour-tour-test-wikitext-description' => 'Title of third step in test tour.  Do not translate onShow or parseDescription, because they are JavaScript method names.  Don\'t be concerned if [[{{MediaWiki:Guidedtour-help-url}}]] does not yet exist.',
+	'guidedtour-tour-test-wikitext-description' => "Title of third step in test tour.  Do not translate onShow or parseDescription, because they are JavaScript method names.  Don't be concerned if [[{{MediaWiki:Guidedtour-help-url}}]] does not yet exist.",
 	'guidedtour-tour-test-description-page' => 'Title of fourth step in test tour',
 	'guidedtour-tour-test-go-description-page' => 'Text of the button pointing to [[{{MediaWiki:Guidedtour-help-url}}]]',
 	'guidedtour-tour-test-launch-tour' => 'Title of fifth step in test tour',
@@ -69,6 +60,15 @@ $messages['qqq'] = array(
  */
 $messages['de'] = array(
 	'guidedtour-desc' => 'Stellt für Seiten eine popupgestützte Tour bereit, um neuen Benutzern zu helfen',
+	'guidedtour-help-url' => 'Help:Geführte Touren',
+	'guidedtour-start-tour' => 'Tour starten',
+	'guidedtour-end-tour' => 'Tour beenden',
+	'guidedtour-next' => '→',
+	'guidedtour-tour-test-testing' => 'Testen',
+	'guidedtour-tour-test-portal-description' => 'Dies ist die Gemeinschaftsportalseite.',
+	'guidedtour-tour-test-description-page' => 'MediaWiki-Beschreibungsseiten testen',
+	'guidedtour-tour-test-go-description-page' => 'Gehe zur Beschreibungsseite',
+	'guidedtour-tour-test-launch-tour-description' => 'Leiter können andere geführte Touren starten. Ziemlich cool, nicht wahr?',
 );
 
 /** French (français)
