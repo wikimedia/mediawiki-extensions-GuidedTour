@@ -12,7 +12,8 @@
 	'use strict';
 
 	var gt = mw.guidedTour = mw.guidedTour || {},
-		messageParser = new mw.jqueryMsg.parser();
+		messageParser = new mw.jqueryMsg.parser(),
+		cookieName = mw.config.get('wgCookiePrefix') + '-mw-tour';
 
 	if ( !gt.rootUrl ) {
 		gt.rootUrl = mw.config.get('wgScript') + '?title=MediaWiki:Guidedtour-';
@@ -22,6 +23,7 @@
 		if ( typeof tourId !== 'string' ) {
 			return null;
 		}
+		// Keep in sync with regex in GuidedTourHooks.php
 		var TOUR_ID_REGEX = /^gt-([^-]+)-(\d+)$/;
 
 		var tourMatch =	tourId.match( TOUR_ID_REGEX ), tourStep;
@@ -39,7 +41,7 @@
 
 		return {
 			name: tourName,
-			step: tourMatch
+			step: tourStep
 		};
 	}
 
@@ -65,7 +67,7 @@
 	if ( tourName ) {
 		tourName = cleanTourName( tourName );
 	}
-	if ( tourName.length !== 0 ) {
+	if ( tourName !== null && tourName.length !== 0 ) {
 		var step = mw.util.getParamValue( 'step' );
 		if ( step === null || step === '' ) {
 			step = '1';
@@ -75,7 +77,7 @@
 			step: step
 		} );
 	} else {
-		tourId = $.cookie('mw-tour');
+		tourId = $.cookie(cookieName);
 		tourInfo = parseTourId(tourId);
 		if ( tourInfo !== null ) {
 			tourName = tourInfo.name;
@@ -149,7 +151,7 @@
 	gt.launchTour(tourName, tourId);
 
 	// cookie the users when they are in the tour
-	guiders.cookie = 'mw-tour';
+	guiders.cookie = cookieName;
 	guiders.cookieParams = { path: '/' };
 	// add x button to top right
 	guiders._defaultSettings.xButton = true;
@@ -331,6 +333,15 @@
 		return true;
 	};
 
+	/**
+	 * Checks whether they just saved an edit.  Currently this uses Extension:PostEdit
+	 *
+	 * @return true if they just saved an edit, false otherwise
+	 */
+	gt.isPostEdit = function () {
+		return mw.config.get( 'wgPostEdit' );
+	};
+
 	gt.getStep = function () {
 		return mw.util.getParamValue( 'step' );
 	};
@@ -403,7 +414,7 @@
 			delete options.descriptionmsg;
 		}
 
-		$.each(options.buttons, function () {
+		$.each(options.buttons || [], function () {
 			if ( this.namemsg ) {
 				this.name = getMessage( this.namemsg );
 				delete this.namemsg;
