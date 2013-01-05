@@ -15,9 +15,13 @@ $messages['en'] = array(
 	'guidedtour-help-url' => 'Help:Guided tours',
 	'guidedtour-custom.css' => '/* Custom CSS for the GuidedTour extension. */',
 
+	// Messages useful for more than one tour
 	'guidedtour-start-tour' => 'Start tour',
 	'guidedtour-end-tour' => 'End tour',
 	'guidedtour-next' => '→',
+
+	// Messages for specific tours.  These should be namespaced as
+	// guidedtour-tour-specifictourname-message-name
 
 	// test
 	'guidedtour-tour-test-testing' => 'Testing',
