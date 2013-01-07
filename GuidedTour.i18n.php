@@ -145,6 +145,19 @@ $messages['ko'] = array(
 	'guidedtour-desc' => '새 사용자를 돕기 위해 팝업 가이드 투어를 제공하는 문서 허용',
 );
 
+/** Luxembourgish (Lëtzebuergesch)
+ * @author Robby
+ */
+$messages['lb'] = array(
+	'guidedtour-help-url' => 'Help:Guidéiert Touren',
+	'guidedtour-start-tour' => 'Tour ufänken',
+	'guidedtour-tour-test-testing' => 'Testen',
+	'guidedtour-tour-test-portal-description' => "Dëst ass d'Portalsäit vun der Community",
+	'guidedtour-tour-test-mediawiki-parse' => 'MediaWiki-Parser testen',
+	'guidedtour-tour-test-go-description-page' => "Op d'Beschreiwungssäit goen",
+	'guidedtour-tour-test-launch-tour' => 'Ufank vum Tour testen',
+);
+
 /** Macedonian (македонски)
  * @author Bjankuloski06
  */
