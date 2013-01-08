@@ -13,7 +13,7 @@
 
 class GuidedTourHooks {
 	// Keep in sync with regex in ext.guidedTour.js
-	const TOUR_ID_REGEX = '/^gt-([^-]+)-(\d+)$/';
+	const TOUR_ID_REGEX = '/^gt-([^.-]+)-(\d+)$/';
 
 	// Tour cookie name.  It will be prefixed, but this is handled correctly.
 	const COOKIE_NAME = '-mw-tour';

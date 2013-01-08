@@ -24,7 +24,7 @@
 			return null;
 		}
 		// Keep in sync with regex in GuidedTourHooks.php
-		var TOUR_ID_REGEX = /^gt-([^-]+)-(\d+)$/;
+		var TOUR_ID_REGEX = /^gt-([^.-]+)-(\d+)$/;
 
 		var tourMatch =	tourId.match( TOUR_ID_REGEX ), tourStep;
 		if ( ! tourMatch ) {
