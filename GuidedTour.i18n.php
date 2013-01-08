@@ -110,6 +110,21 @@ $messages['fr'] = array(
  */
 $messages['gl'] = array(
 	'guidedtour-desc' => 'Permite que as páxinas proporcionen unha visita guiada para axudar aos usuarios novos',
+	'guidedtour-help-url' => 'Help:Visitas guiadas',
+	'guidedtour-custom.css' => '/* CSS personalizado para a extensión de visitas guiadas. */',
+	'guidedtour-start-tour' => 'Comezar a visita',
+	'guidedtour-end-tour' => 'Finalizar a visita',
+	'guidedtour-tour-test-testing' => 'Probas',
+	'guidedtour-tour-test-test-description' => 'Esta é unha proba da descrición. Pode incluír <b>HTML</b> en negra. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-callouts' => 'Probar as ligazóns de saída',
+	'guidedtour-tour-test-portal-description' => 'Esta é a páxina do portal da comunidade.',
+	'guidedtour-tour-test-mediawiki-parse' => 'Probar a análise do MediaWiki',
+	'guidedtour-tour-test-wikitext-description' => 'Unha guía no seu wiki pode conter texto wiki usando onShow e parseDescription. Utilíceo para crear unha ligazón cara á [[{{MediaWiki:Guidedtour-help-url}}|documentación sobre as visitas guiadas]]. Ou unha ligazón externa [https://github.com/tychay/mwgadget.GuidedTour cara a github], por exemplo.',
+	'guidedtour-tour-test-description-page' => 'Probar as páxinas de descrición de MediaWiki',
+	'guidedtour-tour-test-go-description-page' => 'Ir á páxina de descrición',
+	'guidedtour-tour-test-launch-tour' => 'Probar a visita de lanzamento',
+	'guidedtour-tour-test-launch-tour-description' => 'As guías poden lanzar outras visitas guiadas. Caralludo, ou?',
+	'guidedtour-tour-test-launch-using-tours' => 'Lanzar unha guía sobre como usar as visitas',
 );
 
 /** Italian (italiano)
@@ -193,9 +208,20 @@ $messages['nl'] = array(
  */
 $messages['pms'] = array(
 	'guidedtour-desc' => "A përmët le pàgine për fornì na vìsita guidà da fnestre an riliev për giuté j'utent neuv",
+	'guidedtour-help-url' => 'Help:Vir guidà',
 	'guidedtour-start-tour' => 'Ancamin-a vir',
 	'guidedtour-end-tour' => 'Finiss vir',
 	'guidedtour-tour-test-testing' => 'Prové',
+	'guidedtour-tour-test-test-description' => "Cost a l'é na preuva dla descrission. It peule anclude <b>HTML</b> an grassèt. Lorem ipsum dolor sit!",
+	'guidedtour-tour-test-callouts' => 'Fumèt ëd test',
+	'guidedtour-tour-test-portal-description' => "Costa a l'é la pagina dël portal dla comunità.",
+	'guidedtour-tour-test-mediawiki-parse' => 'Preuva parsificassion dël test',
+	'guidedtour-tour-test-wikitext-description' => 'Un guidator an tò vir dla wiki a peul conten-e wikitest dovrand onShow e parse Description. Dòvrlo për creé un wikilink a la [[{{MediaWiki:Guidedtour-help-url}}|Documentassion dij vir guidà]]. O un colegament estern [https://github.com/tychay/mwgadget.GuidedTour a github], për esempi.',
+	'guidedtour-tour-test-description-page' => 'Preuva pagine ëd descrission ëd mediawiki',
+	'guidedtour-tour-test-go-description-page' => 'Và a la pagina ëd descrission',
+	'guidedtour-tour-test-launch-tour' => 'Preuva ël vir inissial',
+	'guidedtour-tour-test-launch-tour-description' => 'Ij guidator a peulo ancaminé àutr vir guidà. Bastansa bel, nò?',
+	'guidedtour-tour-test-launch-using-tours' => 'Ancamin-a un vir dzor dovré ij vir',
 );
 
 /** Ukrainian (українська)
