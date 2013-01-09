@@ -35,6 +35,7 @@ $wgAutoloadClasses += array(
 
 $wgHooks['BeforePageDisplay'][] = 'GuidedTourHooks::onBeforePageDisplay';
 $wgHooks['MakeGlobalVariablesScript'][] = 'GuidedTourHooks::onMakeGlobalVariablesScript';
+$wgHooks['ResourceLoaderTestModules'][] = 'GuidedTourHooks::onResourceLoaderTestModules';
 
 // Extension credits that will show up on Special:Version
 $wgExtensionCredits['other'][] = array(
@@ -77,12 +78,14 @@ $wgResourceModules['ext.guidedTour.siteStyles'] = array(
 	'class' => 'ResourceLoaderGuidedTourSiteStylesModule',
 );
 
-$wgResourceModules['ext.guidedTour'] = array(
-	'scripts' => 'ext.guidedTour.js',
+// The next two are separate to ease testability
+// This provides all the real functionality.
+$wgResourceModules['ext.guidedTour.lib'] = array(
+	'scripts' => 'ext.guidedTour.lib.js',
 	'localBasePath' => $dir . 'modules',
 	'remoteExtPath' => 'GuidedTour/modules',
 	'dependencies' => array(
-	        'jquery.cookie',
+		'jquery.cookie',
 		'mediawiki.jqueryMsg',
 		'mediawiki.libs.guiders',
 		'mediawiki.util',
@@ -95,6 +98,16 @@ $wgResourceModules['ext.guidedTour'] = array(
 		'guidedtour-next',
 	),
 );
+
+// This calls code in guidedTour.lib to attempt to launch a tour, based on the environment
+// (currently query string and a cookie)
+$wgResourceModules['ext.guidedTour'] = array(
+	'scripts' => 'ext.guidedTour.js',
+	'localBasePath' => $dir . 'modules',
+	'remoteExtPath' => 'GuidedTour/modules',
+	'dependencies' => 'ext.guidedTour.lib',
+);
+
 
 // Tour modules
 

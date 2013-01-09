@@ -70,4 +70,20 @@ class GuidedTourHooks {
 		}
 		return true;
 	}
+
+	/**
+	 * @param array &$testModules
+	 * @param ResourceLoader $resourceLoader
+	 * @return bool
+	 */
+	public static function onResourceLoaderTestModules( &$testModules, &$resourceLoader ) {
+		$testModules[ 'qunit' ][ 'ext.guidedTour.lib.tests' ] = array(
+			'scripts' => array( 'tests/ext.guidedTour.lib.tests.js' ),
+			'dependencies' => array( 'ext.guidedTour.lib' ),
+			'localBasePath' => __DIR__,
+			'remoteExtPath' => 'GuidedTour',
+		);
+		return true;
+	}
+
 }
