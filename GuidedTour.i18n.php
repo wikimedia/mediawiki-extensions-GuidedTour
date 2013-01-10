@@ -72,19 +72,16 @@ $messages['qqq'] = array(
 	'guidedtour-tour-test-launch-tour' => 'Title of fifth step in test tour',
 	'guidedtour-tour-test-launch-tour-description' => 'Description of fifth step in test tour',
 	'guidedtour-tour-test-launch-using-tours' => 'Button text for launching a tour on making tours',
-
-	// gettingstarted
 	'guidedtour-tour-gettingstarted-start-title' => 'Title of first step of Getting Started tour',
 	'guidedtour-tour-gettingstarted-start-description' => 'Description of first step of Getting Started tour',
-	'guidedtour-tour-gettingstarted-click-edit-title' => 'Title of step showing user where to click \'edit\'',
+	'guidedtour-tour-gettingstarted-click-edit-title' => "Title of step showing user where to click 'edit'",
 	'guidedtour-tour-gettingstarted-click-edit-description' => 'Description of step showing user where to click edit',
-	'guidedtour-tour-gettingstarted-click-preview-title' => 'Title of step showing user where to click \'preview\'',
+	'guidedtour-tour-gettingstarted-click-preview-title' => "Title of step showing user where to click 'preview'",
 	'guidedtour-tour-gettingstarted-click-preview-description' => 'Click preview to preview your changes',
-	'guidedtour-tour-gettingstarted-click-save-title' => 'Title of step showing user where to click \'save\'',
+	'guidedtour-tour-gettingstarted-click-save-title' => "Title of step showing user where to click 'save'",
 	'guidedtour-tour-gettingstarted-click-save-description' => 'Click save to save your work',
 	'guidedtour-tour-gettingstarted-end-title' => 'Title of last step of Getting Started tour!',
 	'guidedtour-tour-gettingstarted-end-description' => 'You can find other interesting things to work on',
-
 );
 
 /** German (Deutsch)
