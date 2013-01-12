@@ -8,7 +8,6 @@ It supports both extension-defined tours (with localization) and tours defined b
 the MediaWiki namespace.
 
 To use:
-* Install the PostEdit and EventLogging extensions, which are dependencies.
 * Put the extension files in your extension directory
 * Add the following line to your LocalSettings.php
 require_once( "$IP/extensions/GuidedTour/GuidedTour.php" );

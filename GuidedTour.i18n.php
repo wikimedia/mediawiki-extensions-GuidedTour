@@ -35,19 +35,6 @@ $messages['en'] = array(
 	'guidedtour-tour-test-launch-tour' => 'Test launch tour',
 	'guidedtour-tour-test-launch-tour-description' => 'Guiders can launch other guided tours. Pretty cool, huh?',
 	'guidedtour-tour-test-launch-using-tours' => 'Launch a tour on using tours',
-
-	// gettingstarted
-	// TODO (mattflaschen, 2012-01-04): Just barebones messages for now, since they will be changed later.
-	'guidedtour-tour-gettingstarted-start-title' => 'Welcome to {{SITENAME}}!',
-	'guidedtour-tour-gettingstarted-start-description' => 'This tour will allow you to get started editing',
-	'guidedtour-tour-gettingstarted-click-edit-title' => 'Start editing',
-	'guidedtour-tour-gettingstarted-click-edit-description' => "Click '{{int:vector-view-edit}}' to start changing the article",
-	'guidedtour-tour-gettingstarted-click-preview-title' => 'Start previewing',
-	'guidedtour-tour-gettingstarted-click-preview-description' => "Click '{{int:showpreview}}' to preview your changes",
-	'guidedtour-tour-gettingstarted-click-save-title' => 'Save your work',
-	'guidedtour-tour-gettingstarted-click-save-description' => "Click '{{int:savearticle}}' to save your work",
-	'guidedtour-tour-gettingstarted-end-title' => 'Thanks for editing!',
-	'guidedtour-tour-gettingstarted-end-description' => 'You can find other interesting things to work on',
 );
 
 /** Message documentation (Message documentation)
@@ -74,19 +61,6 @@ Text for moving to next step of guided tour',
 	'guidedtour-tour-test-launch-tour' => 'Title of fifth step in test tour',
 	'guidedtour-tour-test-launch-tour-description' => 'Description of fifth step in test tour',
 	'guidedtour-tour-test-launch-using-tours' => 'Button text for launching a tour on making tours',
-	'guidedtour-tour-gettingstarted-start-title' => 'Title of first step of Getting Started tour.
-
-See also:
-* {{msg-mw|Notification-new-user}}',
-	'guidedtour-tour-gettingstarted-start-description' => 'Description of first step of Getting Started tour',
-	'guidedtour-tour-gettingstarted-click-edit-title' => 'Title of step showing user where to click {{msg-mw|vector-view-edit}}',
-	'guidedtour-tour-gettingstarted-click-edit-description' => 'Description of step showing user where to click edit',
-	'guidedtour-tour-gettingstarted-click-preview-title' => 'Title of step showing user where to click {{msg-mw|showpreview}}',
-	'guidedtour-tour-gettingstarted-click-preview-description' => 'Click preview to preview your changes',
-	'guidedtour-tour-gettingstarted-click-save-title' => 'Title of step showing user where to click {{msg-mw|savearticle}}',
-	'guidedtour-tour-gettingstarted-click-save-description' => 'Click save to save your work',
-	'guidedtour-tour-gettingstarted-end-title' => 'Title of last step of Getting Started tour!',
-	'guidedtour-tour-gettingstarted-end-description' => 'You can find other interesting things to work on',
 );
 
 /** German (Deutsch)
