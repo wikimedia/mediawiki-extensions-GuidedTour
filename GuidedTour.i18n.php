@@ -194,6 +194,7 @@ $messages['ko'] = array(
 $messages['lb'] = array(
 	'guidedtour-help-url' => 'Help:Guidéiert Touren',
 	'guidedtour-start-tour' => 'Tour ufänken',
+	'guidedtour-end-tour' => 'Mam Tour ophalen',
 	'guidedtour-tour-test-testing' => 'Testen',
 	'guidedtour-tour-test-portal-description' => "Dëst ass d'Portalsäit vun der Community",
 	'guidedtour-tour-test-mediawiki-parse' => 'MediaWiki-Parser testen',
