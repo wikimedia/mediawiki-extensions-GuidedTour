@@ -82,12 +82,11 @@ $wgResourceModules['ext.guidedTour'] = array(
 	'localBasePath' => $dir . 'modules',
 	'remoteExtPath' => 'GuidedTour/modules',
 	'dependencies' => array(
-		'jquery.cookie',
+	        'jquery.cookie',
 		'mediawiki.jqueryMsg',
 		'mediawiki.libs.guiders',
 		'mediawiki.util',
 		'schema.GuidedTour',
-		'ext.postEdit',
 		'ext.guidedTour.siteStyles',
 	),
 	'messages' => array(
@@ -118,29 +117,6 @@ $wgResourceModules['ext.guidedTour.tour.test'] = array(
 		'guidedtour-tour-test-launch-tour',
 		'guidedtour-tour-test-launch-tour-description',
 		'guidedtour-tour-test-launch-using-tours',
-	),
-);
-
-// Tour designed to help new users edit, to be used with Special:GettingStarted
-$wgResourceModules['ext.guidedTour.tour.gettingstarted'] = array(
-	'scripts' => 'gettingstarted.js',
-	'localBasePath' => $dir . 'modules/tours',
-	'remoteExtPath' => 'GuidedTour/modules/tours',
-	'dependencies' => 'ext.guidedTour',
-	'messages' => array(
-		'savearticle',
-		'showpreview',
-		'vector-view-edit',
-		'guidedtour-tour-gettingstarted-start-title',
-		'guidedtour-tour-gettingstarted-start-description',
-		'guidedtour-tour-gettingstarted-click-edit-title',
-		'guidedtour-tour-gettingstarted-click-edit-description',
-		'guidedtour-tour-gettingstarted-click-preview-title',
-		'guidedtour-tour-gettingstarted-click-preview-description',
-		'guidedtour-tour-gettingstarted-click-save-title',
-		'guidedtour-tour-gettingstarted-click-save-description',
-		'guidedtour-tour-gettingstarted-end-title',
-		'guidedtour-tour-gettingstarted-end-description',
 	),
 );
 
