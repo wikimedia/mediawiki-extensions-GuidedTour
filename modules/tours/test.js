@@ -3,8 +3,7 @@
  */
 ( function ( window, document, $, mw, guiders ) {
 
-
-var gt = mw.guidedTour = mw.guidedTour || {};
+var gt = mw.guidedTour;
 
 /*
  * This is the name of the tour.  It must be lowercase, without any hyphen (-) or

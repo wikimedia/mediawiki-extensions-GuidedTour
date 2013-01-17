@@ -12,22 +12,18 @@
 	'use strict';
 
 	var gt = mw.guidedTour = mw.guidedTour || {},
-		messageParser = new mw.jqueryMsg.parser();
-
-	// cookie the users when they are in the tour
-	guiders.cookie = 'mw-tour';
-	guiders.cookieParams = { path: '/' };
-	// add x button to top right
-	guiders._defaultSettings.xButton = true;
+		messageParser = new mw.jqueryMsg.parser(),
+		cookieName = mw.config.get( 'wgCookiePrefix' ) + '-mw-tour';
 
 	if ( !gt.rootUrl ) {
-		gt.rootUrl = mw.config.get('wgScript') + '?title=MediaWiki:Guidedtour-';
+		gt.rootUrl = mw.config.get( 'wgScript' ) + '?title=MediaWiki:Guidedtour-';
 	}
 
 	gt.parseTourId = function ( tourId ) {
 		if ( typeof tourId !== 'string' ) {
 			return null;
 		}
+		// Keep in sync with regex in GuidedTourHooks.php
 		var TOUR_ID_REGEX = /^gt-([^.-]+)-(\d+)$/;
 
 		var tourMatch = tourId.match( TOUR_ID_REGEX ), tourName, tourStep;
@@ -129,6 +125,12 @@
 		}
 	};
 
+	// cookie the users when they are in the tour
+	guiders.cookie = cookieName;
+	guiders.cookieParams = { path: '/' };
+	// add x button to top right
+	guiders._defaultSettings.xButton = true;
+
 	/**
 	 * Attempts to automatically launch a tour based on the environment
 	 *
@@ -155,14 +157,14 @@
 				step: step
 			} );
 		} else {
-			tourId = $.cookie( 'mw-tour' );
-			tourInfo = gt.parseTourId(tourId);
+			tourId = $.cookie( cookieName );
+			tourInfo = gt.parseTourId( tourId );
 			if ( tourInfo !== null ) {
 				tourName = tourInfo.name;
 			}
 		}
 		if ( tourId && tourName ) {
-			gt.launchTour(tourName, tourId);
+			gt.launchTour( tourName, tourId );
 		}
 	};
 
@@ -241,7 +243,6 @@
 	 * Parses a wiki page and uses the HTML as the description.
 	 *
 	 * To use this, put the page name as the description, and use this as the value of onShow.
-	 * to pull content from
 	 *
 	 * @param guider Guider object to set description on
 	 */
@@ -358,6 +359,15 @@
 	};
 	// End shouldSkip bindings
 
+	/**
+	 * Checks whether they just saved an edit.  Currently this uses Extension:PostEdit
+	 *
+	 * @return true if they just saved an edit, false otherwise
+	 */
+	gt.isPostEdit = function () {
+		return mw.config.get( 'wgPostEdit' );
+	};
+
 	gt.getStep = function () {
 		return mw.util.getParamValue( 'step' );
 	};
@@ -431,7 +441,7 @@
 			delete options.descriptionmsg;
 		}
 
-		$.each(options.buttons, function () {
+		$.each(options.buttons || [], function () {
 			if ( this.namemsg ) {
 				this.name = getMessage( this.namemsg );
 				delete this.namemsg;
