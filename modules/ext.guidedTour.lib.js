@@ -45,13 +45,13 @@
 		};
 	};
 
-	function stringifyTourId( tourInfo ) {
+	gt.stringifyTourId = function ( tourInfo ) {
 		if ( typeof tourInfo !== 'object' || tourInfo === null ) {
 			return null;
 		}
 
 		return 'gt-' + tourInfo.name + '-' + tourInfo.step;
-	}
+	};
 
 	// XXX (mattflaschen, 2013-01-16):
 	// I'm not sure the clean part is necessary, and the url-encoding should be done
@@ -82,7 +82,7 @@
 	 */
 	gt.launchTour = function ( tourName, tourId ) {
 		if ( !tourId ) {
-			tourId = stringifyTourId( {
+			tourId = gt.stringifyTourId( {
 				name: tourName,
 				step: '1'
 			} );
@@ -152,7 +152,7 @@
 			if ( step === null || step === '' ) {
 				step = '1';
 			}
-			tourId = stringifyTourId( {
+			tourId = gt.stringifyTourId( {
 				name: tourName,
 				step: step
 			} );
@@ -375,7 +375,7 @@
 	gt.resumeTour = function ( tourName ) {
 		var step = gt.getStep();
 		// Bind failure step (in case there are problems).
-		guiders.failStep = stringifyTourId( {
+		guiders.failStep = gt.stringifyTourId( {
 			name: tourName,
 			step: 'fail'
 		} );
@@ -389,7 +389,7 @@
 			step = 1;
 		}
 		// start from step specified
-		guiders.resume( stringifyTourId( {
+		guiders.resume( gt.stringifyTourId( {
 			name: tourName,
 			step: step
 		} ) );
