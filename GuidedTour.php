@@ -94,9 +94,8 @@ $wgResourceModules['ext.guidedTour.lib'] = array(
 		'ext.guidedTour.siteStyles',
 	),
 	'messages' => array(
-		'guidedtour-start-tour',
 		'guidedtour-end-tour',
-		'guidedtour-next',
+		'guidedtour-okay-button',
 	),
 );
 

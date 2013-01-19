@@ -108,3 +108,13 @@
 	background-position: 0 -24px;
 	left: -40px;
 }
+
+.guidedtour-end-tour-checkbox-label {
+	font-size: 0.95em;
+	vertical-align: middle;
+}
+
+.guidedtour-end-tour-checkbox-label input {
+	margin-right: 0.5em;
+	vertical-align: top;
+}

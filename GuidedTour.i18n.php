@@ -16,9 +16,8 @@ $messages['en'] = array(
 	'guidedtour-custom.css' => '/* Custom CSS for the GuidedTour extension. */',
 
 	// Messages useful for more than one tour
-	'guidedtour-start-tour' => 'Start tour',
 	'guidedtour-end-tour' => 'End tour',
-	'guidedtour-next' => '→',
+	'guidedtour-okay-button' => 'Okay',
 
 	// Messages for specific tours.  These should be namespaced as
 	// guidedtour-tour-specifictourname-message-name
@@ -51,6 +50,7 @@ $messages['en'] = array(
 );
 
 /** Message documentation (Message documentation)
+ * @author Mattflaschen
  * @author Shirayuki
  */
 $messages['qqq'] = array(
@@ -58,10 +58,8 @@ $messages['qqq'] = array(
 	'guidedtour-help-url' => 'Main page for GuidedTour documentation',
 	'guidedtour-custom.css' => '{{Optional}}
 Custom CSS for the GuidedTour extension.  Empty by default.',
-	'guidedtour-start-tour' => 'Text for button that starts tour',
-	'guidedtour-end-tour' => 'Text for button that ends tour',
-	'guidedtour-next' => '{{Optional}}
-Text for moving to next step of guided tour',
+	'guidedtour-end-tour' => 'Label text of checkbox for choosing whether to end tour',
+	'guidedtour-okay-button' => 'Main action button text.  Will dismiss single tour step, go to next step, or end tour depending on context and {{msg-mw|guidedtour-end-tour}} checkbox.',
 	'guidedtour-tour-test-testing' => 'Title of first step in test tour',
 	'guidedtour-tour-test-test-description' => 'Description of the first step of test tour, in HTML.  Be sure to bold some text (it does not have to be the same word).
 {{doc-important|Do not translate the Latin "Lorem ipsum dolor sit!".}}',

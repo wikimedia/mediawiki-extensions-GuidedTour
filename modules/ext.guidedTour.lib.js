@@ -128,8 +128,12 @@
 	// cookie the users when they are in the tour
 	guiders.cookie = cookieName;
 	guiders.cookieParams = { path: '/' };
+
 	// add x button to top right
 	guiders._defaultSettings.xButton = true;
+
+	guiders._defaultSettings.closeOnEscape = true;
+	guiders._defaultSettings.closeOnClickOutside = true;
 
 	/**
 	 * Attempts to automatically launch a tour based on the environment
@@ -168,21 +172,46 @@
 		}
 	};
 
-	function completeTour( type ) {
+	/**
+	 * Logs a dismissal event, either 'hide' for temporary dismissal or 'end' if the
+	 * user ended the tour.
+	 *
+	 * @param {string} type type of dismissal, 'hide' or 'end'
+	 */
+	function logDismissal( type ) {
 		if ( gt.currentTour ) {
 			var guider = guiders._guiderById(guiders._lastCreatedGuiderID);
 			gt.pingServer( guider, gt.currentTour, type );
 		}
-		guiders.endTour(); //remove cookies and hide guider
 	}
 
 	/**
-	 * Logs hide event before hiding
+	 * Provides onClose handler called by Guiders on a user-initiated close action.
+	 *
+	 * Determines whether to hide or end tour (the latter removes cookie).
+	 *
+	 * Logs event accordingly.
 	 *
 	 * Distinct from guider.onHide() becase that is called even if the tour ends.
+	 *
+	 * @param {Object} guider guider object
+	 * @param {boolean} isAlternativeClose false for text Close button (which should not occur for us), true for anything else
+	 *
+	 * @return {boolean} true to end tour, false to dismiss
 	 */
-	guiders.onClose = function () {
-		completeTour( 'hide' );
+	function handleOnClose(guider, isAlternativeClose) {
+		var $guiderElem = guider.elem, $checkbox, shouldEndTour, dismissalType;
+		$checkbox = $guiderElem.find( '.guidedtour-end-tour-checkbox-label input' );
+		if ( $checkbox.is( ':checked' ) ) {
+			shouldEndTour = true;
+			dismissalType = 'end';
+		} else {
+			shouldEndTour = false;
+			dismissalType = 'hide';
+		}
+
+		logDismissal( dismissalType );
+		return shouldEndTour;
 	};
 
 	// STATS!
@@ -220,10 +249,19 @@
 	guiders._defaultSettings.onShow = gt.recordStats;
 
 	/**
-	 * Ends the tour, passing a step of 'end'
+	 * Ends the tour, then logs, passing a step of 'end'
 	 */
 	gt.endTour = function () {
-		completeTour( 'end' );
+		logDismissal( 'end' );
+		guiders.endTour();
+	};
+
+	/**
+	 * Hides the guider(s), then logs, passing a step of 'hide'
+	 */
+	gt.hideAll = function () {
+		logDismissal( 'hide' );
+		guiders.hideAll();
 	};
 
 	// onShow bindings
@@ -406,10 +444,136 @@
 	}
 
 	/**
+	 * Gets a labelled checkbox for ending the tour
+	 *
+	 * @return {string} HTML of end tour checkbox and label
+	 */
+	function getEndTourCheckbox() {
+		var labelContents, checkboxHtml;
+		checkboxHtml = mw.html.element( 'input', {
+			type: 'checkbox'
+		} );
+		labelContents =	checkboxHtml + mw.msg( 'guidedtour-end-tour' );
+		return mw.html.element( 'label', {
+			'class': 'guidedtour-end-tour-checkbox-label'
+		}, new mw.html.Raw( labelContents ) );
+	}
+
+	/**
+	* Handles the okay button when it depends on the end tour checkbox.
+	*
+	* Ends tour (logging it) if box is checked.  Otherwise, it calls okayFunction.
+	*
+	* @param {HTMLElement} btn okay button
+	* @param {Function} okayFunction function to execute if they did not check the
+	* end tour box.  Passes a single parameter, the raw DOM element of the button.
+	*/
+	function doConditionalOkayAction( btn, okayFunction ) {
+		var $guiderElem, $checkbox;
+		$guiderElem = $( btn ).closest( '.guider' );
+		// If there is no checkbox, it will take the unchecked path.
+		$checkbox = $guiderElem.find( '.guidedtour-end-tour-checkbox-label input' );
+		if ( $checkbox.is( ':checked' ) ) {
+			gt.endTour();
+		} else {
+			okayFunction( btn );
+		}
+	}
+
+	/**
+	 * Gets an okay button as passed to guiders
+	 *
+	 * @param {Function} okayFunction function to call if they did not end the tour.
+	 * Passes a single parameter, the raw DOM element of the button.
+	 */
+	function getOkayButton(	okayFunction ) {
+		return {
+			name: getMessage ( 'guidedtour-okay-button' ),
+			onclick: function () {
+				okayFunction( this );
+			},
+			html: {
+				'class': 'guider_button guidedtour-okay-button'
+			}
+		};
+	}
+
+	/**
+	 * Gets an okay button as passed to guiders.  Automatically adds conditional logic
+	 * based on end tour checkbox.
+	 *
+	 * @param {Function} conditionalFunction function to call if they did not check the box.
+	 * Passes a single parameter, the raw DOM element of the button.
+	 */
+	function getConditionalOkayButton( conditionalFunction ) {
+		return getOkayButton ( function ( btn ) {
+			doConditionalOkayAction( btn, conditionalFunction );
+		} );
+	}
+
+	/**
+	 * Converts a tour's button specification to a button that we
+	 * pass to Guiders.
+	 *
+	 * This has special handling for okay, which is always present last.  See initGuider.
+	 *
+	 * Handles actions and i18n.
+	 *
+	 * @param {Array} buttonSpecs button specifications as used in tour, or falsy, which
+	 * is equivalent to an empty array.
+	 * @return {Array} array of buttons as Guiders expects
+	 */
+	function getButtons( buttonSpecs ) {
+		var okayButton, guiderButtons, spec, currentButton;
+		buttonSpecs = buttonSpecs || [];
+		guiderButtons = [];
+		for ( var i = 0; i < buttonSpecs.length; i++ ) {
+			spec = buttonSpecs[i];
+			if ( spec.action !== undefined ) {
+				switch ( spec.action ) {
+					case 'next':
+						okayButton = getConditionalOkayButton( function() {
+							guiders.next();
+						} );
+						break;
+					case 'end':
+						okayButton = getOkayButton( function () {
+							gt.endTour();
+						} );
+						break;
+					default:
+						throw new Error( spec.action + 'is not a supported button action.' );
+
+				}
+
+			} else {
+				currentButton = $.extend( true, {}, spec );
+				if ( currentButton.namemsg ) {
+					currentButton.name = getMessage( spec.namemsg );
+					delete currentButton.namemsg;
+				}
+				guiderButtons.push( currentButton );
+			}
+		}
+
+		// Ensure there is always an okay button.  In some cases, there will not be
+		// a next, since the user is prompted to do something else
+		// (e.g. click 'Edit')
+		if ( okayButton === undefined ) {
+			okayButton = getConditionalOkayButton( function () {
+				gt.hideAll();
+			} );
+		}
+		guiderButtons.push( okayButton );
+
+		return guiderButtons;
+	}
+
+	/**
 	 * Initializes a guider by calling guiders.initGuider
 	 *
-	 * Currently, the only functionality this adds is using the proper message
-	 * calls when you add msg to the end of the field name.
+	 * This uses the proper message calls when you add msg to the end of the
+	 * field name.
 	 *
 	 * This applies to titlemsg, descriptionmsg, and namemsg (for each button object
 	 * in the buttons field (which is an array))
@@ -425,12 +589,41 @@
 	 *
 	 * where messageParser is an instance of mw.jqueryMsg.parser.
 	 *
+	 * It also automatically includes a checkbox and Okay button.  If you don't want to
+	 * show the checkbox, pass:
+	 *
+	 * showEndTour: false
+	 *
+	 * You can pass a defined action as part of the buttons array.  The only
+	 * one currently supported is:
+	 *
+	 * { action: 'next' }
+	 *
+	 * which goes to the next step.
+	 *
+	 * If the user clicks Okay:
+	 *
+	 * * If the checkbox is checked, the tour will end.
+	 * * Otherwise, if you passed in a action (see above), it will occur.
+	 * * Otherwise, it will close the current step.
+	 *
 	 * @param {object} options options object matching the guiders one, except for
 	 * modifications noted above.
 	 *
 	 */
 	gt.initGuider = function( options ) {
-		options = $.extend( true, {}, options );
+		var oldOnClose;
+		options = $.extend( true, {
+			onClose: $.noop,
+			showEndTour: true
+		}, options );
+
+		oldOnClose = options.onClose;
+		options.onClose = function() {
+			oldOnClose.apply ( this, arguments );
+			return handleOnClose.apply( this, arguments );
+		};
+
 		if ( options.titlemsg ) {
 			options.title = getMessage( options.titlemsg );
 			delete options.titlemsg;
@@ -441,13 +634,11 @@
 			delete options.descriptionmsg;
 		}
 
-		$.each(options.buttons || [], function () {
-			if ( this.namemsg ) {
-				this.name = getMessage( this.namemsg );
-				delete this.namemsg;
-			}
-		});
+		options.buttons = getButtons( options.buttons );
 
+		if ( options.showEndTour ) {
+			options.buttonCustomHTML = getEndTourCheckbox();
+		}
 		guiders.initGuider( options );
 	};
 } ( window, document, jQuery, mediaWiki, mediaWiki.libs.guiders ) );

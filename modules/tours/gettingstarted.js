@@ -47,8 +47,7 @@ gt.initGuider( {
 	overlay: true,
 	next: 'gt-gettingstarted-2',
 	buttons: [ {
-		namemsg: 'guidedtour-start-tour',
-		onclick: guiders.next
+		action: 'next'
 	} ]
 } );
 
@@ -73,7 +72,6 @@ gt.initGuider( {
 	position: 'top',
 	next: 'gt-gettingstarted-4',
 	shouldSkip: function() {
-		// If they're already previewing, doing show changes, or done, skip.
 		return !gt.hasQuery( { action: 'edit' } );
 	}
 } );
@@ -101,8 +99,7 @@ gt.initGuider( {
 		return !gt.isPostEdit();
 	},
 	buttons: [ {
-		namemsg: 'guidedtour-end-tour',
-		onclick: gt.endTour
+		action: 'end'
 	} ]
 } );
 

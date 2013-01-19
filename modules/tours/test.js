@@ -29,8 +29,7 @@ gt.initGuider({
 
 	next: "gt-test-2",
 	buttons: [ {
-		namemsg: 'guidedtour-start-tour',
-		onclick: guiders.next
+		action: 'next'
 	} ]
 });
 
@@ -50,8 +49,7 @@ gt.initGuider({
 
 	next: "gt-test-3",
 	buttons: [ {
-		namemsg: 'guidedtour-next',
-		onclick: guiders.next
+		action: 'next'
 	} ]
 });
 
@@ -70,8 +68,7 @@ gt.initGuider({
 
 	next: "gt-test-4",
 	buttons: [ {
-		namemsg: 'guidedtour-next',
-		onclick: guiders.next
+		action: 'next'
 	} ]
 });
 
@@ -97,8 +94,7 @@ gt.initGuider({
 			return false;
 		}
 	}, {
-		namemsg: 'guidedtour-next',
-		onclick: guiders.next
+		action: 'next'
 	} ]
 });
 
@@ -119,8 +115,7 @@ gt.initGuider({
 			gt.launchTour('guidedtour');
 		}
 	}, {
-		namemsg: 'guidedtour-end-tour',
-		onclick: gt.endTour
+		action: 'end'
 	} ]
 });
 
