@@ -259,3 +259,18 @@ $messages['pms'] = array(
 $messages['uk'] = array(
 	'guidedtour-desc' => 'Дозволяє сторінкам виводити вспливаюче навчання для допомоги новачкам',
 );
+
+/** Simplified Chinese (中文（简体）‎)
+ * @author Yfdyh000
+ */
+$messages['zh-hans'] = array(
+	'guidedtour-desc' => '允许页面提供一个弹出式菜单来帮助新用户',
+	'guidedtour-help-url' => '帮助:导游', # Fuzzy
+	'guidedtour-start-tour' => '开始教程',
+	'guidedtour-end-tour' => '结束教程',
+	'guidedtour-tour-test-testing' => '测验',
+	'guidedtour-tour-test-portal-description' => '这是社区门户页面。',
+	'guidedtour-tour-test-mediawiki-parse' => '测试 MediaWiki 解析器',
+	'guidedtour-tour-test-description-page' => '测试 MediaWiki 描述页面',
+	'guidedtour-tour-test-go-description-page' => '转到描述页面',
+);
