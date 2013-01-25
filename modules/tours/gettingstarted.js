@@ -12,9 +12,19 @@ gt.currentTour = 'gettingstarted';
  * This can use functionality from E3Experiments to determine what task they chose, but
  * it will work either way.
  *
+ * It skips everything outside the main namespace (namespace 0).
+ *
+ * If it's in the namespace, it checks if they have a task.  If they do, it must match.
+ *
+ * Otherwise, any article counts.
+ *
  * @return true to skip, false otherwise
  */
 function shouldSkipPageName() {
+	if ( mw.config.get( 'wgCanonicalNamespace' ) !== '' ) {
+		return true;
+	}
+
 	var tasks = $.parseJSON( $.cookie( 'openTask' ) );
 	var articles = [], article;
 
@@ -25,7 +35,7 @@ function shouldSkipPageName() {
 		}
 	}
 
-	// If they don't have any, any page counts.
+	// If they don't have any, any article counts.
 	if ( articles.length === 0 ) {
 		return false;
 	}
