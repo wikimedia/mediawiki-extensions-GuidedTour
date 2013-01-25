@@ -253,6 +253,20 @@ $messages['pms'] = array(
 	'guidedtour-tour-test-launch-using-tours' => 'Ancamin-a un vir dzor dovré ij vir',
 );
 
+/** Russian (русский)
+ * @author DCamer
+ */
+$messages['ru'] = array(
+	'guidedtour-start-tour' => 'Начать тур',
+	'guidedtour-end-tour' => 'Закончить тур',
+	'guidedtour-tour-test-testing' => 'Тестирование',
+	'guidedtour-tour-test-test-description' => 'Это тест описание. Вы можете видеть что <b>HTML</b> полужирный. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-callouts' => 'Тест выноски',
+	'guidedtour-tour-test-mediawiki-parse' => 'Тест mediawiki parse',
+	'guidedtour-tour-test-go-description-page' => 'Перейти на страницу описания',
+	'guidedtour-tour-test-launch-tour' => 'Тестовый запуск тура',
+);
+
 /** Ukrainian (українська)
  * @author Base
  */
