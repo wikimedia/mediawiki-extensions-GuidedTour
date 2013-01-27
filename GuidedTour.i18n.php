@@ -74,19 +74,19 @@ Text for moving to next step of guided tour',
 	'guidedtour-tour-test-launch-tour' => 'Title of fifth step in test tour',
 	'guidedtour-tour-test-launch-tour-description' => 'Description of fifth step in test tour',
 	'guidedtour-tour-test-launch-using-tours' => 'Button text for launching a tour on making tours',
+	'guidedtour-tour-gettingstarted-start-title' => 'Title of first step of Getting Started tour.
 
-	// gettingstarted
-	'guidedtour-tour-gettingstarted-start-title' => 'Title of first step of Getting Started tour',
+See also:
+* {{msg-mw|Notification-new-user}}',
 	'guidedtour-tour-gettingstarted-start-description' => 'Description of first step of Getting Started tour',
-	'guidedtour-tour-gettingstarted-click-edit-title' => 'Title of step showing user where to click \'edit\'',
+	'guidedtour-tour-gettingstarted-click-edit-title' => 'Title of step showing user where to click {{msg-mw|vector-view-edit}}',
 	'guidedtour-tour-gettingstarted-click-edit-description' => 'Description of step showing user where to click edit',
-	'guidedtour-tour-gettingstarted-click-preview-title' => 'Title of step showing user where to click \'preview\'',
+	'guidedtour-tour-gettingstarted-click-preview-title' => 'Title of step showing user where to click {{msg-mw|showpreview}}',
 	'guidedtour-tour-gettingstarted-click-preview-description' => 'Click preview to preview your changes',
-	'guidedtour-tour-gettingstarted-click-save-title' => 'Title of step showing user where to click \'save\'',
+	'guidedtour-tour-gettingstarted-click-save-title' => 'Title of step showing user where to click {{msg-mw|savearticle}}',
 	'guidedtour-tour-gettingstarted-click-save-description' => 'Click save to save your work',
 	'guidedtour-tour-gettingstarted-end-title' => 'Title of last step of Getting Started tour!',
 	'guidedtour-tour-gettingstarted-end-description' => 'You can find other interesting things to work on',
-
 );
 
 /** German (Deutsch)
@@ -229,6 +229,14 @@ $messages['mk'] = array(
  */
 $messages['nl'] = array(
 	'guidedtour-desc' => 'Maakt het mogelijk om een rondleiding weer te geven voor nieuwe gebruikers',
+	'guidedtour-help-url' => 'Help:Rondleidingen',
+	'guidedtour-start-tour' => 'Rondleiding beginnen',
+	'guidedtour-end-tour' => 'Rondleiding beëindigen',
+	'guidedtour-tour-test-testing' => 'Testen',
+	'guidedtour-tour-test-test-description' => 'Dit is een test van de beschrijving. U kunt <b>HTML</b> gebruiken.',
+	'guidedtour-tour-test-callouts' => 'Test toelichtingen',
+	'guidedtour-tour-test-portal-description' => 'Dit is het gemeenschapsportaal.',
+	'guidedtour-tour-test-mediawiki-parse' => 'Test mediawiki parse',
 );
 
 /** Piedmontese (Piemontèis)
