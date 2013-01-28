@@ -126,4 +126,32 @@
 			'Step is returned as null when not present'
 		);
 	} );
+
+	QUnit.test( 'setTourCookie', 3, function ( assert ) {
+		var cookieName = mw.libs.guiders.cookie,
+			name = 'foo',
+			numberStep = 5,
+			stringStep = '3';
+
+		function assertValidCookie( expectedName, expectedStep, message ) {
+			var id = $.cookie( cookieName ),
+				tourInfo = gt.parseTourId( id );
+
+			assert.deepEqual(tourInfo, {
+				name: expectedName,
+				step: expectedStep
+			}, message);
+		}
+
+		gt.setTourCookie( name );
+		assertValidCookie ( name, '1', 'Step defaults to 1' );
+
+		gt.setTourCookie( name, numberStep );
+		assertValidCookie ( name, String( numberStep ), 'setTourCookie accepts numeric step' );
+
+		gt.setTourCookie( name, stringStep );
+		assertValidCookie ( name, stringStep, 'setTourCookie accepts string step' );
+
+		mw.libs.guiders.endTour();
+	} );
 } ( mediaWiki, jQuery ) );

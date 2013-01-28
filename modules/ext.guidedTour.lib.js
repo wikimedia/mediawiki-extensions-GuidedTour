@@ -12,13 +12,20 @@
 	'use strict';
 
 	var gt = mw.guidedTour = mw.guidedTour || {},
-		messageParser = new mw.jqueryMsg.parser(),
-		cookieName = mw.config.get( 'wgCookiePrefix' ) + '-mw-tour';
+		messageParser = new mw.jqueryMsg.parser();
 
 	if ( !gt.rootUrl ) {
 		gt.rootUrl = mw.config.get( 'wgScript' ) + '?title=MediaWiki:Guidedtour-';
 	}
 
+	/**
+	 * Parses tour ID into an object with name and step keys.
+	 *
+	 * @param {string} tourId ID of tour
+	 *
+	 * @return {Object} object with name (string) and step (string),
+	 * or null if invalid input
+	 */
 	gt.parseTourId = function ( tourId ) {
 		if ( typeof tourId !== 'string' ) {
 			return null;
@@ -45,7 +52,14 @@
 		};
 	};
 
-	gt.stringifyTourId = function ( tourInfo ) {
+	/**
+	 * Serializes tour information into a string
+	 *
+	 * @param {Object} tourInfo object with name (string) and step (number or string)
+	 *
+	 * @return {string} ID of tour, or null if invalid input
+	 */
+	gt.makeTourId = function ( tourInfo ) {
 		if ( typeof tourInfo !== 'object' || tourInfo === null ) {
 			return null;
 		}
@@ -82,7 +96,7 @@
 	 */
 	gt.launchTour = function ( tourName, tourId ) {
 		if ( !tourId ) {
-			tourId = gt.stringifyTourId( {
+			tourId = gt.makeTourId( {
 				name: tourName,
 				step: '1'
 			} );
@@ -126,7 +140,7 @@
 	};
 
 	// cookie the users when they are in the tour
-	guiders.cookie = cookieName;
+	guiders.cookie = mw.config.get( 'wgCookiePrefix' ) + '-mw-tour';
 	guiders.cookieParams = { path: '/' };
 	// add x button to top right
 	guiders._defaultSettings.xButton = true;
@@ -152,12 +166,12 @@
 			if ( step === null || step === '' ) {
 				step = '1';
 			}
-			tourId = gt.stringifyTourId( {
+			tourId = gt.makeTourId( {
 				name: tourName,
 				step: step
 			} );
 		} else {
-			tourId = $.cookie( cookieName );
+			tourId = $.cookie( guiders.cookie );
 			tourInfo = gt.parseTourId( tourId );
 			if ( tourInfo !== null ) {
 				tourName = tourInfo.name;
@@ -166,6 +180,24 @@
 		if ( tourId && tourName ) {
 			gt.launchTour( tourName, tourId );
 		}
+	};
+
+	/**
+	 * Sets the tour cookie, given a tour name and optional step.
+	 *
+	 * You can use this when you want the tour to be displayed on a future page.
+	 *
+	 * @param {string} name tour name
+	 * @param {number|string} (optional) step tour step (defaults to 1)
+	 */
+	gt.setTourCookie = function (name, step) {
+		var id;
+		step = step || 1;
+		id = gt.makeTourId( {
+			name: name,
+			step: step
+		} );
+		$.cookie( guiders.cookie, id, guiders.cookieParams );
 	};
 
 	function completeTour( type ) {
@@ -375,7 +407,7 @@
 	gt.resumeTour = function ( tourName ) {
 		var step = gt.getStep();
 		// Bind failure step (in case there are problems).
-		guiders.failStep = gt.stringifyTourId( {
+		guiders.failStep = gt.makeTourId( {
 			name: tourName,
 			step: 'fail'
 		} );
@@ -389,7 +421,7 @@
 			step = 1;
 		}
 		// start from step specified
-		guiders.resume( gt.stringifyTourId( {
+		guiders.resume( gt.makeTourId( {
 			name: tourName,
 			step: step
 		} ) );
