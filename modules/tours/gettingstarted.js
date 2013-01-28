@@ -81,6 +81,7 @@ gt.initGuider( {
 	attachTo: '#wpPreview',
 	position: 'top',
 	next: 'gt-gettingstarted-4',
+	closeOnClickOutside: false,
 	shouldSkip: function() {
 		return !gt.hasQuery( { action: 'edit' } );
 	}
@@ -93,6 +94,7 @@ gt.initGuider( {
 	attachTo: '#wpSave',
 	position: 'top',
 	next: 'gt-gettingstarted-5',
+	closeOnClickOutside: false,
 	shouldSkip: function() {
 		// If they're not previewing or doing show changes, skip
 		return !gt.hasQuery( { action: 'submit' } );
