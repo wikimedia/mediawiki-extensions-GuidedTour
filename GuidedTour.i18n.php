@@ -228,13 +228,18 @@ $messages['mk'] = array(
 $messages['nl'] = array(
 	'guidedtour-desc' => 'Maakt het mogelijk om een rondleiding weer te geven voor nieuwe gebruikers',
 	'guidedtour-help-url' => 'Help:Rondleidingen',
-	'guidedtour-start-tour' => 'Rondleiding beginnen',
 	'guidedtour-end-tour' => 'Rondleiding beëindigen',
 	'guidedtour-tour-test-testing' => 'Testen',
 	'guidedtour-tour-test-test-description' => 'Dit is een test van de beschrijving. U kunt <b>HTML</b> gebruiken.',
 	'guidedtour-tour-test-callouts' => 'Test toelichtingen',
 	'guidedtour-tour-test-portal-description' => 'Dit is het gemeenschapsportaal.',
 	'guidedtour-tour-test-mediawiki-parse' => 'Test mediawiki parse',
+	'guidedtour-tour-test-wikitext-description' => 'Een raadgever in uw wikirondleiding die wikitekst kan bevatten met gebruik van onShow en parseDescription. Gebruik het om een wikikoppeling te maken naar de [[{{MediaWiki:Guidedtour-help-url}}|documentatie voor rondleidingen]]. U kunt er ook een externe koppeling mee maken, zoals bijvoorbeeld [https://github.com/tychay/mwgadget.GuidedTour naar GitHub].',
+	'guidedtour-tour-test-description-page' => "Test MediaWiki beschrijvingspagina's",
+	'guidedtour-tour-test-go-description-page' => 'Ga naar beschrijvingspagina',
+	'guidedtour-tour-test-launch-tour' => 'Test start rondleiding',
+	'guidedtour-tour-test-launch-tour-description' => 'Via raadgevers kunnen andere rondleidingen gestart worden. Leuk, toch?',
+	'guidedtour-tour-test-launch-using-tours' => 'Start een rondleiding bij het gebruik van rondleidingen',
 );
 
 /** Piedmontese (Piemontèis)
@@ -263,7 +268,6 @@ $messages['pms'] = array(
  * @author DCamer
  */
 $messages['ru'] = array(
-	'guidedtour-start-tour' => 'Начать тур',
 	'guidedtour-end-tour' => 'Закончить тур',
 	'guidedtour-tour-test-testing' => 'Тестирование',
 	'guidedtour-tour-test-test-description' => 'Это тест описание. Вы можете видеть что <b>HTML</b> полужирный. Lorem ipsum dolor sit!',
@@ -286,7 +290,6 @@ $messages['uk'] = array(
 $messages['zh-hans'] = array(
 	'guidedtour-desc' => '允许页面提供一个弹出式菜单来帮助新用户',
 	'guidedtour-help-url' => '帮助:导游', # Fuzzy
-	'guidedtour-start-tour' => '开始教程',
 	'guidedtour-end-tour' => '结束教程',
 	'guidedtour-tour-test-testing' => '测验',
 	'guidedtour-tour-test-portal-description' => '这是社区门户页面。',
