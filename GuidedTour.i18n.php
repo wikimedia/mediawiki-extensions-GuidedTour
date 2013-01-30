@@ -95,7 +95,7 @@ $messages['de'] = array(
 	'guidedtour-end-tour' => 'Tour beenden',
 	'guidedtour-okay-button' => 'Okay',
 	'guidedtour-tour-test-testing' => 'Testen',
-	'guidedtour-tour-test-test-description' => 'Dies ist ein Test der Beschreibung. Du kannst <b>HTML</b> wie Fettschrift verwenden. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-test-description' => 'Dies ist ein Test der Beschreibung. Lorem ipsum dolor sit!',
 	'guidedtour-tour-test-callouts' => 'Legenden testen',
 	'guidedtour-tour-test-portal-description' => 'Dies ist die Gemeinschaftsportalseite.',
 	'guidedtour-tour-test-mediawiki-parse' => 'MediaWiki-Parser testen',
@@ -105,6 +105,26 @@ $messages['de'] = array(
 	'guidedtour-tour-test-launch-tour' => 'Tourstart testen',
 	'guidedtour-tour-test-launch-tour-description' => 'Leiter können andere geführte Touren starten. Ziemlich cool, nicht wahr?',
 	'guidedtour-tour-test-launch-using-tours' => 'Eine Tour durch Verwendung von Touren starten',
+	'guidedtour-tour-gettingstarted-start-title' => 'Bereit zum Helfen?',
+	'guidedtour-tour-gettingstarted-start-description' => 'Diese Seite muss grundredigiert werden. Verbessere die Grammatik, Rechtschreibung, den Stil und Ton, um sie klar und leicht lesbar zu machen. Diese Tour zeigt dir die nötigen Schritte.',
+	'guidedtour-tour-gettingstarted-click-edit-title' => 'Klicke auf „{{int:vector-view-edit}}“',
+	'guidedtour-tour-gettingstarted-click-edit-description' => 'Dies ermöglicht dir Änderungen an beliebigen Teilen der Seite, falls du bereit bist.',
+	'guidedtour-tour-gettingstarted-click-preview-title' => 'Vorschau (optional)',
+	'guidedtour-tour-gettingstarted-click-preview-description' => 'Klicke auf „{{int:showpreview}}“, um zu sehen, wie die Seite mit deinen Änderungen aussieht. Vergiss nicht zu speichern.',
+	'guidedtour-tour-gettingstarted-click-save-title' => 'Du bist fast fertig!',
+	'guidedtour-tour-gettingstarted-click-save-description' => 'Klicke auf „{{int:savearticle}}“ und deine Änderungen werden sichtbar.',
+	'guidedtour-tour-gettingstarted-end-title' => 'Willst du mehr?',
+	'guidedtour-tour-gettingstarted-end-description' => 'Die Spezialseite „[[Special:GettingStarted|Anfangen]]“ wird stündlich mit neuen Seiten aktualisiert.',
+);
+
+/** Estonian (eesti)
+ * @author RM87
+ */
+$messages['et'] = array(
+	'guidedtour-tour-gettingstarted-click-edit-title' => "Vajuta '{{int:vector-view-edit}}'",
+	'guidedtour-tour-gettingstarted-click-preview-title' => 'Eelvaade (valikuline)',
+	'guidedtour-tour-gettingstarted-click-save-title' => 'Sa oled peaaegu lõpetanud!',
+	'guidedtour-tour-gettingstarted-click-save-description' => "Vajuta '{{int:savearticle}}' ja sinu muudatused on nähtavad.",
 );
 
 /** French (français)
@@ -117,7 +137,7 @@ $messages['fr'] = array(
 	'guidedtour-end-tour' => 'Terminer la visite',
 	'guidedtour-okay-button' => 'D’accord',
 	'guidedtour-tour-test-testing' => 'Tester',
-	'guidedtour-tour-test-test-description' => 'Ceci est un test de la description. Vous pouvez inclure du <b>HTML</b> comme le gras. Lorem ipsum dolor sit !',
+	'guidedtour-tour-test-test-description' => 'Ceci est un test de la description. Vous pouvez inclure du <b>HTML</b> comme le gras. Lorem ipsum dolor sit !', # Fuzzy
 	'guidedtour-tour-test-callouts' => 'Tester les liens de sortie',
 	'guidedtour-tour-test-portal-description' => 'Ceci est la page de portail pour la communauté.',
 	'guidedtour-tour-test-mediawiki-parse' => 'Tester le rendu mediawiki',
@@ -136,10 +156,10 @@ $messages['gl'] = array(
 	'guidedtour-desc' => 'Permite que as páxinas proporcionen unha visita guiada para axudar aos usuarios novos',
 	'guidedtour-help-url' => 'Help:Visitas guiadas',
 	'guidedtour-custom.css' => '/* CSS personalizado para a extensión de visitas guiadas. */',
-	'guidedtour-start-tour' => 'Comezar a visita',
 	'guidedtour-end-tour' => 'Finalizar a visita',
+	'guidedtour-okay-button' => 'De acordo',
 	'guidedtour-tour-test-testing' => 'Probas',
-	'guidedtour-tour-test-test-description' => 'Esta é unha proba da descrición. Pode incluír <b>HTML</b> en negra. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-test-description' => 'Esta é unha proba da descrición. Pode incluír <b>HTML</b> en negra. Lorem ipsum dolor sit!', # Fuzzy
 	'guidedtour-tour-test-callouts' => 'Probar as ligazóns de saída',
 	'guidedtour-tour-test-portal-description' => 'Esta é a páxina do portal da comunidade.',
 	'guidedtour-tour-test-mediawiki-parse' => 'Probar a análise do MediaWiki',
@@ -168,12 +188,20 @@ $messages['ja'] = array(
 	'guidedtour-end-tour' => 'ツアーを終了',
 	'guidedtour-okay-button' => 'OK',
 	'guidedtour-tour-test-testing' => 'テスト',
-	'guidedtour-tour-test-test-description' => 'これは説明のテストです。<b>太字</b>のような HTML を含めることができます。Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-test-description' => 'これは説明のテストです。<b>太字</b>のような HTML を含めることができます。Lorem ipsum dolor sit!', # Fuzzy
 	'guidedtour-tour-test-callouts' => '呼び出しのテスト',
 	'guidedtour-tour-test-portal-description' => 'これはコミュニティのポータルページです。',
 	'guidedtour-tour-test-mediawiki-parse' => 'MediaWiki の構文解析のテスト',
 	'guidedtour-tour-test-description-page' => 'MediaWiki 説明ページのテスト',
 	'guidedtour-tour-test-go-description-page' => '説明ページに移動',
+	'guidedtour-tour-gettingstarted-start-title' => '{{SITENAME}}へようこそ!', # Fuzzy
+	'guidedtour-tour-gettingstarted-click-edit-title' => '編集の開始', # Fuzzy
+	'guidedtour-tour-gettingstarted-click-edit-description' => '記事の編集を開始するには「{{int:vector-view-edit}}」をクリックしてください', # Fuzzy
+	'guidedtour-tour-gettingstarted-click-preview-title' => 'プレビューの開始', # Fuzzy
+	'guidedtour-tour-gettingstarted-click-preview-description' => '変更内容のプレビューを表示するには「{{int:showpreview}}」をクリックしてください', # Fuzzy
+	'guidedtour-tour-gettingstarted-click-save-title' => '編集内容の保存', # Fuzzy
+	'guidedtour-tour-gettingstarted-click-save-description' => '変更内容を保存するには「{{int:savearticle}}」をクリックしてください', # Fuzzy
+	'guidedtour-tour-gettingstarted-end-title' => '編集していただいてありがとうございます!', # Fuzzy
 );
 
 /** Korean (한국어)
@@ -207,7 +235,7 @@ $messages['mk'] = array(
 	'guidedtour-end-tour' => 'Заврши ја турата',
 	'guidedtour-okay-button' => 'Во ред',
 	'guidedtour-tour-test-testing' => 'Испробување',
-	'guidedtour-tour-test-test-description' => 'Ова е проба за описот. Можете да ставите <b>HTML</b> како засебелени букви. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-test-description' => 'Ова е проба за описот. Можете да ставите <b>HTML</b> како засебелени букви. Lorem ipsum dolor sit!', # Fuzzy
 	'guidedtour-tour-test-callouts' => 'Испробување на повици',
 	'guidedtour-tour-test-portal-description' => 'Ова е страница на порталот на заедницата.',
 	'guidedtour-tour-test-mediawiki-parse' => 'Испробување на парсирањето на МедијаВики',
@@ -228,7 +256,7 @@ $messages['nl'] = array(
 	'guidedtour-end-tour' => 'Rondleiding beëindigen',
 	'guidedtour-okay-button' => 'Oké',
 	'guidedtour-tour-test-testing' => 'Testen',
-	'guidedtour-tour-test-test-description' => 'Dit is een test van de beschrijving. U kunt <b>HTML</b> gebruiken.',
+	'guidedtour-tour-test-test-description' => 'Dit is een test van de beschrijving. U kunt <b>HTML</b> gebruiken.', # Fuzzy
 	'guidedtour-tour-test-callouts' => 'Test toelichtingen',
 	'guidedtour-tour-test-portal-description' => 'Dit is het gemeenschapsportaal.',
 	'guidedtour-tour-test-mediawiki-parse' => 'Test mediawiki parse',
@@ -268,7 +296,7 @@ $messages['pms'] = array(
 $messages['ru'] = array(
 	'guidedtour-end-tour' => 'Закончить тур',
 	'guidedtour-tour-test-testing' => 'Тестирование',
-	'guidedtour-tour-test-test-description' => 'Это тест описание. Вы можете видеть что <b>HTML</b> полужирный. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-test-description' => 'Это тест описание. Вы можете видеть что <b>HTML</b> полужирный. Lorem ipsum dolor sit!', # Fuzzy
 	'guidedtour-tour-test-callouts' => 'Тест выноски',
 	'guidedtour-tour-test-mediawiki-parse' => 'Тест mediawiki parse',
 	'guidedtour-tour-test-go-description-page' => 'Перейти на страницу описания',
