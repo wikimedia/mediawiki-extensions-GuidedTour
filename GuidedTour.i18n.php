@@ -58,7 +58,7 @@ $messages['qqq'] = array(
 	'guidedtour-custom.css' => '{{Optional}}
 Custom CSS for the GuidedTour extension.  Empty by default.',
 	'guidedtour-end-tour' => 'Label text of checkbox for choosing whether to end tour',
-	'guidedtour-okay-button' => 'Main action button text.  Will dismiss single tour step, go to next step, or end tour depending on context and {{msg-mw|guidedtour-end-tour}} checkbox.'
+	'guidedtour-okay-button' => 'Main action button text.  Will dismiss single tour step, go to next step, or end tour depending on context and {{msg-mw|guidedtour-end-tour}} checkbox.',
 	'guidedtour-tour-test-testing' => 'Title of first step in test tour',
 	'guidedtour-tour-test-test-description' => 'Sample description to show how it is used.
 {{doc-important|Do not translate the Latin "Lorem ipsum dolor sit!".}}',
