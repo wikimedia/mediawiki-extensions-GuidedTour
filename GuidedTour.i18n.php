@@ -24,7 +24,7 @@ $messages['en'] = array(
 
 	// test
 	'guidedtour-tour-test-testing' => 'Testing',
-	'guidedtour-tour-test-test-description' => 'This is a test of the description. You can include <b>HTML</b> like bold. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-test-description' => 'This is a test of the description. Lorem ipsum dolor sit!',
 	'guidedtour-tour-test-callouts' => 'Test callouts',
 	'guidedtour-tour-test-portal-description' => 'This is the community portal page.',
 	'guidedtour-tour-test-mediawiki-parse' => 'Test MediaWiki parse',
@@ -36,17 +36,16 @@ $messages['en'] = array(
 	'guidedtour-tour-test-launch-using-tours' => 'Launch a tour on using tours',
 
 	// gettingstarted
-	// TODO (mattflaschen, 2012-01-04): Just barebones messages for now, since they will be changed later.
-	'guidedtour-tour-gettingstarted-start-title' => 'Welcome to {{SITENAME}}!',
-	'guidedtour-tour-gettingstarted-start-description' => 'This tour will allow you to get started editing',
-	'guidedtour-tour-gettingstarted-click-edit-title' => 'Start editing',
-	'guidedtour-tour-gettingstarted-click-edit-description' => "Click '{{int:vector-view-edit}}' to start changing the page",
-	'guidedtour-tour-gettingstarted-click-preview-title' => 'Start previewing',
-	'guidedtour-tour-gettingstarted-click-preview-description' => "Click '{{int:showpreview}}' to preview your changes",
-	'guidedtour-tour-gettingstarted-click-save-title' => 'Save your work',
-	'guidedtour-tour-gettingstarted-click-save-description' => "Click '{{int:savearticle}}' to save your work",
-	'guidedtour-tour-gettingstarted-end-title' => 'Thanks for editing!',
-	'guidedtour-tour-gettingstarted-end-description' => 'You can find other interesting things to work on',
+	'guidedtour-tour-gettingstarted-start-title' => 'Ready to help?',
+	'guidedtour-tour-gettingstarted-start-description' => 'This page needs basic copyediting – improving the grammar, style, tone, or spelling – to make it clear and easy to read. This tour will show you the steps to take.',
+	'guidedtour-tour-gettingstarted-click-edit-title' => 'Click \'{{int:vector-view-edit}}\'',
+	'guidedtour-tour-gettingstarted-click-edit-description' => 'This will let you make changes to any part of the page, when you\'re ready.',
+	'guidedtour-tour-gettingstarted-click-preview-title' => 'Preview (optional)',
+	'guidedtour-tour-gettingstarted-click-preview-description' => 'Clicking \'{{int:showpreview}}\' allows you to check what the page will look like with your changes. Just don\'t forget to save.',
+	'guidedtour-tour-gettingstarted-click-save-title' => 'You\'re almost finished!',
+	'guidedtour-tour-gettingstarted-click-save-description' => 'Click \'{{int:savearticle}}\' and your changes will be visible.',
+	'guidedtour-tour-gettingstarted-end-title' => 'Looking for more to do?',
+	'guidedtour-tour-gettingstarted-end-description' => '[[Special:GettingStarted|Getting Started]] is updated every hour with new pages.',
 );
 
 /** Message documentation (Message documentation)
@@ -59,10 +58,9 @@ $messages['qqq'] = array(
 	'guidedtour-custom.css' => '{{Optional}}
 Custom CSS for the GuidedTour extension.  Empty by default.',
 	'guidedtour-end-tour' => 'Label text of checkbox for choosing whether to end tour',
-	'guidedtour-okay-button' => 'Main action button text.  Will dismiss single tour step, go to next step, or end tour depending on context and {{msg-mw|guidedtour-end-tour}} checkbox.
-{{Identical|OK}}',
+	'guidedtour-okay-button' => 'Main action button text.  Will dismiss single tour step, go to next step, or end tour depending on context and {{msg-mw|guidedtour-end-tour}} checkbox.'
 	'guidedtour-tour-test-testing' => 'Title of first step in test tour',
-	'guidedtour-tour-test-test-description' => 'Description of the first step of test tour, in HTML.  Be sure to bold some text (it does not have to be the same word).
+	'guidedtour-tour-test-test-description' => 'Sample description to show how it is used.
 {{doc-important|Do not translate the Latin "Lorem ipsum dolor sit!".}}',
 	'guidedtour-tour-test-callouts' => 'Title of second step in test tour, introducing callouts',
 	'guidedtour-tour-test-portal-description' => 'Description of second step in test tour.  It will be pointing to the page link given at {{msg-mw|portal-url}}, in the toolbox',
