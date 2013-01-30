@@ -673,4 +673,22 @@
 		}
 		guiders.initGuider( options );
 	};
+
+	/**
+	 * Guiders has a window resize and document ready listener.
+	 *
+	 * However, we're adding some MW-specific code.	 Currently, this listens to a
+	 * custom WikiEditor event, which fires after their async loop finishes.
+	 *
+	 * It's okay if WikiEditor is not installed.  It just won't fire.
+	 */
+	function setupRepositionListeners() {
+		$( document ).ready( function () {
+			$( '#wpTextbox1' ).on( 'wikiEditor-toolbar-doneInitialSections', function () {
+                                guiders.reposition();
+			} );
+		} );
+	}
+
+	setupRepositionListeners();
 } ( window, document, jQuery, mediaWiki, mediaWiki.libs.guiders ) );
