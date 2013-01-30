@@ -58,7 +58,13 @@ gt.initGuider( {
 	next: 'gt-gettingstarted-2',
 	buttons: [ {
 		action: 'next'
-	} ]
+	} ],
+        // TODO: Factor out into lib.  Also, it should probably use wgAction, rather than query.
+        shouldSkip: function() {
+		// If they're already editing, skip
+		return gt.hasQuery( { action: 'edit' } );
+	}
+
 } );
 
 gt.initGuider( {
@@ -69,7 +75,6 @@ gt.initGuider( {
 	position: 'bottom',
 	next: 'gt-gettingstarted-3',
 	shouldSkip: function() {
-		// If they're already editing, skip
 		return gt.hasQuery( { action: 'edit' } );
 	}
 } );
