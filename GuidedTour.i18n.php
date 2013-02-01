@@ -86,6 +86,37 @@ See also:
 	'guidedtour-tour-gettingstarted-end-description' => 'You can find other interesting things to work on',
 );
 
+/** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
+ * @author Wizardist
+ */
+$messages['be-tarask'] = array(
+	'guidedtour-help-url' => 'Help:Экскурсіі па сайце',
+	'guidedtour-custom.css' => '/* Дадатковы CSS для пашырэньня GuidedTour. */',
+	'guidedtour-end-tour' => 'Скончыць экскурсію',
+	'guidedtour-okay-button' => 'Далей',
+	'guidedtour-tour-test-testing' => 'Тэставаньне',
+	'guidedtour-tour-test-test-description' => 'Гэта тэст апісаньня. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-callouts' => 'Тэст вынятак',
+	'guidedtour-tour-test-portal-description' => 'Гэта старонка парталу супольнасьці.',
+	'guidedtour-tour-test-mediawiki-parse' => 'Тэст сынтакса MediaWiki',
+	'guidedtour-tour-test-wikitext-description' => 'Выняткі ў экскурсіях па сайце могуць зьмяшчаць вікітэкст, дзякуючы onShow і parseDescription. Іх можна выкарыстаць, каб стварыць спасылку на [[{{MediaWiki:Guidedtour-help-url}}|дакумэнтацыю па экскурсіях]], або вонкавую спасылку на [https://github.com/tychay/mwgadget.GuidedTour GitHub].',
+	'guidedtour-tour-test-description-page' => 'Тэст старонак апісаньня MediaWiki',
+	'guidedtour-tour-test-go-description-page' => 'Перайсьці на старонку апісаньня',
+	'guidedtour-tour-test-launch-tour' => 'Тэставы запуск экскурсіі',
+	'guidedtour-tour-test-launch-tour-description' => 'У часе адной экскурсіі можна пачаць і іншыя. Крута, га?',
+	'guidedtour-tour-test-launch-using-tours' => 'Пачаць экскурсію пра выкарыстаньне экскурсіяў',
+	'guidedtour-tour-gettingstarted-start-title' => 'Гатовыя дапамагчы?',
+	'guidedtour-tour-gettingstarted-start-description' => 'Гэтая старонка вымагае простай вычыткі: праверкі граматыкі, стылю, артаграфіі — усяго, каб палегчыць успрыманьне інфармацыі. Гэтая экскурсія пакажа вам, што трэба для гэтага зрабіць.',
+	'guidedtour-tour-gettingstarted-click-edit-title' => 'Націсьніце «{{int:vector-view-edit}}»',
+	'guidedtour-tour-gettingstarted-click-edit-description' => 'Тут вы зможаце ўнесьці зьмены ў любую частку старонкі, калі будзеце гатовыя.',
+	'guidedtour-tour-gettingstarted-click-preview-title' => 'Папярэдні прагляд (па жаданьні)',
+	'guidedtour-tour-gettingstarted-click-preview-description' => 'Націсьніце «{{int:showpreview}}», каб пабачыць, як будзе выглядаць старонка з унесенымі вамі зьменамі. Па праглядзе не забудзьце захаваць!',
+	'guidedtour-tour-gettingstarted-click-save-title' => 'Ужо амаль усё!',
+	'guidedtour-tour-gettingstarted-click-save-description' => 'Націсьніце «{{int:savearticle}}» і вашыя зьмены будуць бачныя ўсім.',
+	'guidedtour-tour-gettingstarted-end-title' => 'Што б зрабіць?..',
+	'guidedtour-tour-gettingstarted-end-description' => 'Старонка «[[Special:GettingStarted|З чаго пачаць]]» кожную гадзіну напаўняецца новымі старонкамі.',
+);
+
 /** German (Deutsch)
  * @author Metalhead64
  */
@@ -318,6 +349,13 @@ $messages['pms'] = array(
 	'guidedtour-tour-test-launch-tour' => 'Preuva ël vir inissial',
 	'guidedtour-tour-test-launch-tour-description' => 'Ij guidator a peulo ancaminé àutr vir guidà. Bastansa bel, nò?',
 	'guidedtour-tour-test-launch-using-tours' => 'Ancamin-a un vir dzor dovré ij vir',
+);
+
+/** tarandíne (tarandíne)
+ * @author Joetaras
+ */
+$messages['roa-tara'] = array(
+	'guidedtour-okay-button' => 'Apposte',
 );
 
 /** Russian (русский)
