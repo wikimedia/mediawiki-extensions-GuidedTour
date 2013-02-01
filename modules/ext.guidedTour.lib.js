@@ -244,7 +244,7 @@
 
 		logDismissal( dismissalType );
 		return shouldEndTour;
-	};
+	}
 
 	// STATS!
 	/**
@@ -557,6 +557,15 @@
 	 */
 	function getButtons( buttonSpecs ) {
 		var okayButton, guiderButtons, spec, currentButton;
+
+		function next() {
+			guiders.next();
+		}
+
+		function endTour() {
+			gt.endTour();
+		}
+
 		buttonSpecs = buttonSpecs || [];
 		guiderButtons = [];
 		for ( var i = 0; i < buttonSpecs.length; i++ ) {
@@ -564,14 +573,10 @@
 			if ( spec.action !== undefined ) {
 				switch ( spec.action ) {
 					case 'next':
-						okayButton = getConditionalOkayButton( function() {
-							guiders.next();
-						} );
+						okayButton = getConditionalOkayButton( next );
 						break;
 					case 'end':
-						okayButton = getOkayButton( function () {
-							gt.endTour();
-						} );
+						okayButton = getOkayButton( endTour );
 						break;
 					default:
 						throw new Error( spec.action + 'is not a supported button action.' );
@@ -677,7 +682,7 @@
 	/**
 	 * Guiders has a window resize and document ready listener.
 	 *
-	 * However, we're adding some MW-specific code.	 Currently, this listens to a
+	 * However, we're adding some MW-specific code. Currently, this listens to a
 	 * custom WikiEditor event, which fires after their async loop finishes.
 	 *
 	 * It's okay if WikiEditor is not installed.  It just won't fire.
@@ -685,7 +690,7 @@
 	function setupRepositionListeners() {
 		$( document ).ready( function () {
 			$( '#wpTextbox1' ).on( 'wikiEditor-toolbar-doneInitialSections', function () {
-                                guiders.reposition();
+				guiders.reposition();
 			} );
 		} );
 	}

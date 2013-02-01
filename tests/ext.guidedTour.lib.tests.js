@@ -2,7 +2,6 @@
 	'use strict';
 
 	var gt, originalPageName, originalGetParam;
-;
 
 	QUnit.module( 'ext.guidedTour.lib', QUnit.newMwEnvironment( {
 		setup: function () {
