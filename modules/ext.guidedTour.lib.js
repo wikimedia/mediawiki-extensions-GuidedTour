@@ -143,8 +143,8 @@
 	guiders.cookie = mw.config.get( 'wgCookiePrefix' ) + '-mw-tour';
 	guiders.cookieParams = { path: '/' };
 
-	// add x button to top right
-	guiders._defaultSettings.xButton = true;
+	// Don't show X button
+	guiders._defaultSettings.xButton = false;
 
 	guiders._defaultSettings.closeOnEscape = true;
 	guiders._defaultSettings.closeOnClickOutside = true;
