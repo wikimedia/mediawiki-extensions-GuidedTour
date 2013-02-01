@@ -118,6 +118,7 @@ $wgResourceModules['ext.guidedTour.tour.test'] = array(
 	'remoteExtPath' => 'GuidedTour/modules/tours',
 	'dependencies' => 'ext.guidedTour',
 	'messages' => array(
+		'portal',
 		'guidedtour-help-url',
 		'guidedtour-tour-test-testing',
 		'guidedtour-tour-test-test-description',
