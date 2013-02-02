@@ -86,10 +86,42 @@ See also:
 	'guidedtour-tour-gettingstarted-end-description' => 'You can find other interesting things to work on',
 );
 
+/** Belarusian (беларуская)
+ * @author Wizardist
+ */
+$messages['be'] = array(
+	'guidedtour-desc' => 'Дазваляе паказваць на старонках усплыўныя падказкі для дапамогі новым удзельнікам',
+	'guidedtour-help-url' => 'Help:Экскурсіі па сайце',
+	'guidedtour-end-tour' => 'Скончыць экскурсію',
+	'guidedtour-okay-button' => 'Далей',
+	'guidedtour-tour-test-testing' => 'Тэставанне',
+	'guidedtour-tour-test-test-description' => 'Гэта тэст апісання. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-callouts' => 'Тэст вынятак',
+	'guidedtour-tour-test-portal-description' => 'Гэта старонка парталу супольнасці.',
+	'guidedtour-tour-test-mediawiki-parse' => 'Тэст сінтаксісу MediaWiki',
+	'guidedtour-tour-test-wikitext-description' => 'Выняткі ў экскурсіях па сайце могуць змяшчаць вікітэкст, дзякуючы onShow і parseDescription. Іх можна выкарыстаць, каб стварыць спасылку на [[{{MediaWiki:Guidedtour-help-url}}|дакументацыю па экскурсіях]], або знешнюю спасылку на [https://github.com/tychay/mwgadget.GuidedTour GitHub].',
+	'guidedtour-tour-test-description-page' => 'Тэст старонак апісання MediaWiki',
+	'guidedtour-tour-test-go-description-page' => 'Перайсці на старонку апісання',
+	'guidedtour-tour-test-launch-tour' => 'Тэставы запуск экскурсіі',
+	'guidedtour-tour-test-launch-tour-description' => 'У часе адной экскурсіі можна пачаць і іншыя. Крута, га?',
+	'guidedtour-tour-test-launch-using-tours' => 'Пачаць экскурсію пра выкарыстанне экскурсіяў',
+	'guidedtour-tour-gettingstarted-start-title' => 'Гатовыя дапамагчы?',
+	'guidedtour-tour-gettingstarted-start-description' => 'Гэтая старонка вымагае простай вычыткі: праверкі граматыкі, стылю, арфаграфіі — усяго, каб палегчыць успрыманне інфармацыі. Гэтая экскурсія пакажа вам, што трэба для гэтага зрабіць.',
+	'guidedtour-tour-gettingstarted-click-edit-title' => 'Націсніце «{{int:vector-view-edit}}»',
+	'guidedtour-tour-gettingstarted-click-edit-description' => 'Тут вы зможаце ўнесці змены ў любую частку старонкі, калі будзеце гатовыя.',
+	'guidedtour-tour-gettingstarted-click-preview-title' => 'Папярэдні прагляд (па жаданні)',
+	'guidedtour-tour-gettingstarted-click-preview-description' => 'Націсніце «{{int:showpreview}}», каб пабачыць, як будзе выглядаць старонка з унесенымі вамі зменамі. Па праглядзе не забудзьце захаваць!',
+	'guidedtour-tour-gettingstarted-click-save-title' => 'Ужо амаль усё!',
+	'guidedtour-tour-gettingstarted-click-save-description' => 'Націсніце «{{int:savearticle}}» і вашыя змены будуць бачныя ўсім.',
+	'guidedtour-tour-gettingstarted-end-title' => 'Што б зрабіць?..',
+	'guidedtour-tour-gettingstarted-end-description' => 'Старонка «[[Special:GettingStarted|З чаго пачаць]]» кожную гадзіну напаўняецца новымі старонкамі.',
+);
+
 /** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
  * @author Wizardist
  */
 $messages['be-tarask'] = array(
+	'guidedtour-desc' => 'Дазваляе паказваць на старонках усплыўныя падказкі для дапамогі новым удзельнікам',
 	'guidedtour-help-url' => 'Help:Экскурсіі па сайце',
 	'guidedtour-custom.css' => '/* Дадатковы CSS для пашырэньня GuidedTour. */',
 	'guidedtour-end-tour' => 'Скончыць экскурсію',
@@ -253,6 +285,14 @@ $messages['ja'] = array(
 	'guidedtour-tour-gettingstarted-click-save-title' => 'もう少しで終わります!',
 	'guidedtour-tour-gettingstarted-click-save-description' => '変更内容を保存するには「{{int:savearticle}}」をクリックしてください', # Fuzzy
 	'guidedtour-tour-gettingstarted-end-title' => '他にできることをお探しですか?',
+);
+
+/** Georgian (ქართული)
+ * @author David1010
+ */
+$messages['ka'] = array(
+	'guidedtour-end-tour' => 'ტურის დასრულება',
+	'guidedtour-tour-test-testing' => 'ტესტირება',
 );
 
 /** Korean (한국어)
