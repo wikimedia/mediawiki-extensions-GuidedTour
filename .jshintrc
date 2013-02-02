@@ -1,8 +1,7 @@
 {
 	"globals": {
-		"browser": true
+		"QUnit": true
 	},
-
 	"maxerr": 50,
 	"newcap": false,
 	"plusplus": false,
