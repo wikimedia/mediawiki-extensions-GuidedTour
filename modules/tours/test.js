@@ -94,27 +94,6 @@ gt.initGuider({
 			return false;
 		}
 	}, {
-		action: 'next'
-	} ]
-});
-
-/*
- * Test out tour launching
- */
-gt.initGuider({
-	id: "gt-test-5",
-	titlemsg: 'guidedtour-tour-test-launch-tour',
-	descriptionmsg: 'guidedtour-tour-test-launch-tour-description',
-
-	// attachment
-	overlay: true,
-
-	buttons: [ {
-		namemsg: 'guidedtour-tour-test-launch-using-tours',
-		onclick: function() {
-			gt.launchTour('guidedtour');
-		}
-	}, {
 		action: 'end'
 	} ]
 });
