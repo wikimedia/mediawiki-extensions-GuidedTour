@@ -190,8 +190,16 @@ $messages['et'] = array(
 	'guidedtour-tour-gettingstarted-click-save-description' => "Vajuta '{{int:savearticle}}' ja sinu muudatused on nähtavad.",
 );
 
+/** Basque (euskara)
+ * @author An13sa
+ */
+$messages['eu'] = array(
+	'guidedtour-okay-button' => 'Ados',
+);
+
 /** French (français)
  * @author Gomoko
+ * @author Ltrlg
  * @author Seb35
  */
 $messages['fr'] = array(
@@ -203,22 +211,22 @@ $messages['fr'] = array(
 	'guidedtour-tour-test-test-description' => 'Ceci est un test de la description. Lorem ipsum dolor sit !',
 	'guidedtour-tour-test-callouts' => 'Tester les liens de sortie',
 	'guidedtour-tour-test-portal-description' => 'Ceci est la page de portail pour la communauté.',
-	'guidedtour-tour-test-mediawiki-parse' => 'Tester le rendu mediawiki',
+	'guidedtour-tour-test-mediawiki-parse' => 'Tester le rendu MediaWiki',
 	'guidedtour-tour-test-wikitext-description' => 'Un guide dans votre visite du wiki peut contenir du wikitexte utilisant onShow et parseDescription. Utilisez-le pour créer un lien wiki vers la [[{{MediaWiki:Guidedtour-help-url}}|documentation des visites guidées]]. Ou un lien externe [https://github.com/tychay/mwgadget.GuidedTour vers github] par exemple.',
-	'guidedtour-tour-test-description-page' => 'Tester les pages de description mediawiki',
+	'guidedtour-tour-test-description-page' => 'Tester les pages de description MediaWiki',
 	'guidedtour-tour-test-go-description-page' => 'Aller à la page de description',
 	'guidedtour-tour-test-launch-tour' => 'Tester la visite de lancement',
 	'guidedtour-tour-test-launch-tour-description' => 'Les guides peuvent lancer d’autres visites guidées. Plutôt cool, non ?',
 	'guidedtour-tour-test-launch-using-tours' => 'Lancer une visite en utilisant des visites',
 	'guidedtour-tour-gettingstarted-start-title' => 'Prêt à aider?',
 	'guidedtour-tour-gettingstarted-start-description' => "Cette page a besoin d’une modification de la copie de base — améliorer la grammaire, le style, le ton ou l'orthographe — pour la rendre claire et facile à lire. Ce périple vous montrera les étapes à entreprendre.",
-	'guidedtour-tour-gettingstarted-click-edit-title' => "Cliquer sur '{{int:vector-view-edit}}'",
+	'guidedtour-tour-gettingstarted-click-edit-title' => 'Cliquez sur « {{int:vector-view-edit}} »',
 	'guidedtour-tour-gettingstarted-click-edit-description' => 'Cela vous permettra de faire des modifications à n’importe quelle partie de la page, quand vous serez prêt.',
 	'guidedtour-tour-gettingstarted-click-preview-title' => 'Aperçu (facultatif)',
-	'guidedtour-tour-gettingstarted-click-preview-description' => "Cliquer sur '{{int:showpreview}}' vous permet de vérifier à quoi ressemblera la page avec vos modifications. N’oubliez simplement pas d’enregistrer.",
-	'guidedtour-tour-gettingstarted-click-save-title' => 'Vous avez presque fini!',
-	'guidedtour-tour-gettingstarted-click-save-description' => "Cliquez sur '{{int:savearticle}}' et vos modifications seront visibles.",
-	'guidedtour-tour-gettingstarted-end-title' => 'Vous cherchez autre chose à faire?',
+	'guidedtour-tour-gettingstarted-click-preview-description' => 'Cliquer sur « {{int:showpreview}} » vous permet de vérifier à quoi ressemblera la page avec vos modifications. N’oubliez simplement pas d’enregistrer.',
+	'guidedtour-tour-gettingstarted-click-save-title' => 'Vous avez presque fini !',
+	'guidedtour-tour-gettingstarted-click-save-description' => 'Cliquez sur «”{{int:savearticle}} » et vos modifications seront visibles.',
+	'guidedtour-tour-gettingstarted-end-title' => 'Vous cherchez autre chose à faire ?',
 	'guidedtour-tour-gettingstarted-end-description' => '[[Special:GettingStarted|Pour démarrer]] est mis à jour chaque heure avec de nouvelles pages.',
 );
 
@@ -299,7 +307,29 @@ $messages['ka'] = array(
  * @author 아라
  */
 $messages['ko'] = array(
-	'guidedtour-desc' => '새 사용자를 돕기 위해 팝업 가이드 투어를 제공하는 문서 허용',
+	'guidedtour-desc' => '새 사용자를 돕기 위해 팝업 가이드 투어를 문서에 제공할 수 있습니다',
+	'guidedtour-help-url' => 'Help:가이드 투어',
+	'guidedtour-end-tour' => '투어 끝내기',
+	'guidedtour-okay-button' => '확인',
+	'guidedtour-tour-test-testing' => '테스트',
+	'guidedtour-tour-test-test-description' => '설명의 테스트입니다. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-callouts' => '호출 텍스트',
+	'guidedtour-tour-test-portal-description' => '공동체 들머리 문서입니다.',
+	'guidedtour-tour-test-mediawiki-parse' => '미디어위키 구문 분석 테스트',
+	'guidedtour-tour-test-description-page' => '미디어위키 설명 문서 테스트',
+	'guidedtour-tour-test-go-description-page' => '설명 문서로 가기',
+	'guidedtour-tour-test-launch-tour' => '시작 투어 테스트',
+	'guidedtour-tour-test-launch-tour-description' => '안내자는 다른 가이드 투어를 시작할 수 있습니다. 멋지죠?',
+	'guidedtour-tour-test-launch-using-tours' => '투어를 사용하여 투어 시작',
+	'guidedtour-tour-gettingstarted-start-title' => '도움을 받을 준비가 되었습니까?',
+	'guidedtour-tour-gettingstarted-click-edit-title' => "'{{int:vector-view-edit}}' 클릭",
+	'guidedtour-tour-gettingstarted-click-edit-description' => '준비가 되면 문서의 어떠한 부분을 바꿀 것입니다.',
+	'guidedtour-tour-gettingstarted-click-preview-title' => '미리 보기 (선택 사항)',
+	'guidedtour-tour-gettingstarted-click-preview-description' => "'{{int:showpreview}}'를 클릭하면 문서가 어떻게 바뀌었는지 확인할 수 있습니다. 저장하는 것을 잊지 마세요.",
+	'guidedtour-tour-gettingstarted-click-save-title' => '거의 끝났습니다!',
+	'guidedtour-tour-gettingstarted-click-save-description' => "'{{int:savearticle}}'을 클릭하여 바뀜을 볼 수 있습니다.",
+	'guidedtour-tour-gettingstarted-end-title' => '다른 할 것을 찾고 있습니까?',
+	'guidedtour-tour-gettingstarted-end-description' => '[[Special:GettingStarted|시작하기]]는 새 문서로 매 시간마다 업데이트합니다.',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
@@ -418,16 +448,53 @@ $messages['uk'] = array(
 	'guidedtour-desc' => 'Дозволяє сторінкам виводити вспливаюче навчання для допомоги новачкам',
 );
 
+/** Vietnamese (Tiếng Việt)
+ * @author Minh Nguyen
+ */
+$messages['vi'] = array(
+	'guidedtour-desc' => 'Hiển thị chương trình hướng dẫn sử dụng cho những người dùng mới',
+	'guidedtour-help-url' => 'Help:Chương trình hướng dẫn sử dụng',
+	'guidedtour-end-tour' => 'Kết thúc trình hướng dẫn',
+	'guidedtour-okay-button' => 'OK',
+	'guidedtour-tour-test-testing' => 'Đo thử',
+	'guidedtour-tour-test-portal-description' => 'Đây là trang cộng đồng.',
+	'guidedtour-tour-test-mediawiki-parse' => 'Kiểm tra bộ phân tích MediaWiki',
+	'guidedtour-tour-test-description-page' => 'Kiểm tra trang miêu tả MediaWiki',
+	'guidedtour-tour-test-go-description-page' => 'Mở trang miêu tả.',
+	'guidedtour-tour-gettingstarted-start-title' => 'Có sẵn sàng giúp đỡ?',
+	'guidedtour-tour-gettingstarted-start-description' => 'Trang này cần được cải tiến về văn phong, ngữ pháp, và chính tả để cho dễ đọc hiểu hơn. Chương trình này sẽ chỉ cho bạn cách sửa đổi trang.',
+	'guidedtour-tour-gettingstarted-click-edit-title' => 'Nhấn chuột vào “{{int:vector-view-edit}}”',
+	'guidedtour-tour-gettingstarted-click-edit-description' => 'Nút này cho phép bạn thay đổi bất kỳ phần nào của trang này.',
+	'guidedtour-tour-gettingstarted-click-preview-title' => 'Xem thử (tùy chọn)',
+	'guidedtour-tour-gettingstarted-click-preview-description' => 'Bấm “{{int:showpreview}}” để kiểm tra các thay đổi của bạn có phải hiển thị đúng hay không. Hãy nhớ lưu trang.',
+	'guidedtour-tour-gettingstarted-click-save-title' => 'Gần xong!',
+	'guidedtour-tour-gettingstarted-click-save-description' => 'Bấm “{{int:savearticle}}” là các thay đổi của bạn sẽ được áp dụng vào trang.',
+	'guidedtour-tour-gettingstarted-end-title' => 'Muốn biết cái gì cần làm?',
+	'guidedtour-tour-gettingstarted-end-description' => 'Trang [[Special:GettingStarted|Bắt đầu]] được cập nhật từng giờ với trang mới.',
+);
+
 /** Simplified Chinese (中文（简体）‎)
  * @author Yfdyh000
+ * @author 乌拉跨氪
  */
 $messages['zh-hans'] = array(
 	'guidedtour-desc' => '允许页面提供一个弹出式菜单来帮助新用户',
 	'guidedtour-help-url' => '帮助:导游', # Fuzzy
 	'guidedtour-end-tour' => '结束教程',
+	'guidedtour-okay-button' => '好的',
 	'guidedtour-tour-test-testing' => '测验',
+	'guidedtour-tour-test-test-description' => '这是一条描述演示。Lorem ipsum dolor sit!',
 	'guidedtour-tour-test-portal-description' => '这是社区门户页面。',
 	'guidedtour-tour-test-mediawiki-parse' => '测试 MediaWiki 解析器',
 	'guidedtour-tour-test-description-page' => '测试 MediaWiki 描述页面',
 	'guidedtour-tour-test-go-description-page' => '转到描述页面',
+	'guidedtour-tour-gettingstarted-start-title' => '准备好开始了吗？',
+	'guidedtour-tour-gettingstarted-start-description' => '该页面需要基本的修编——修改其语法结构、语言风格、语言基调或错字——使其更易于阅读。本教程将告诉您该如何做。',
+	'guidedtour-tour-gettingstarted-click-edit-title' => '点击“{{int:vector-view-edit}}”',
+	'guidedtour-tour-gettingstarted-click-edit-description' => '当您准备好后，点击此处便可对该页的每一部分作出更改。',
+	'guidedtour-tour-gettingstarted-click-preview-title' => '预览（可选）',
+	'guidedtour-tour-gettingstarted-click-preview-description' => '点击“{{int:showpreview}}”，您将看到您在该页面作出哪些更改。请不要忘记保存。',
+	'guidedtour-tour-gettingstarted-click-save-title' => '您马上就要完成了！',
+	'guidedtour-tour-gettingstarted-click-save-description' => '点击“{{int:savearticle}}”，您将保存您所作出的更改。',
+	'guidedtour-tour-gettingstarted-end-title' => '想要寻找更多的事情做？',
 );
