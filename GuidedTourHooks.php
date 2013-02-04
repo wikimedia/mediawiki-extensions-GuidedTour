@@ -20,7 +20,7 @@ class GuidedTourHooks {
 	/*
 	   XXX (mattflaschen, 2012-01-02):
 
-	   wgGuidedTourHelpUrl and wgGuidedTourTestWikitextDescription are hacks pending
+	   wgGuidedTourHelpGuiderUrl and wgGuidedTourTestWikitextDescription are hacks pending
 	   forcontent messages:
 	   https://bugzilla.wikimedia.org/show_bug.cgi?id=25349
 	*/
@@ -33,8 +33,8 @@ class GuidedTourHooks {
 	 * @return bool
 	 */
 	public static function onMakeGlobalVariablesScript( &$vars, $out ) {
-		$vars['wgGuidedTourHelpUrl'] =
-			wfMessage( 'guidedtour-help-url' )->inContentLanguage()->plain();
+		$vars['wgGuidedTourHelpGuiderUrl'] =
+			wfMessage( 'guidedtour-help-guider-url' )->inContentLanguage()->plain();
 
 		$vars['wgGuidedTourTestWikitextDescription'] =
 			wfMessage( 'guidedtour-tour-test-wikitext-description' )->parse();
