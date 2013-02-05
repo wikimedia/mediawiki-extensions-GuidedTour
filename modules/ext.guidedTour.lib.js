@@ -14,6 +14,19 @@
 	var gt = mw.guidedTour = mw.guidedTour || {},
 		messageParser = new mw.jqueryMsg.parser();
 
+	/**
+	 * Error subclass for errors that occur during tour definition
+	 *
+	 * @constructor
+	 * @extends Error
+	 **/
+	gt.TourDefinitionError = function ( message ) {
+		this.message = message;
+	};
+
+	gt.TourDefinitionError.prototype = new Error();
+	gt.TourDefinitionError.prototype.constructor = gt.TourDefinitionError;
+
 	if ( !gt.rootUrl ) {
 		gt.rootUrl = mw.config.get( 'wgScript' ) + '?title=MediaWiki:Guidedtour-';
 	}
@@ -552,11 +565,11 @@
 	 * Handles actions and i18n.
 	 *
 	 * @param {Array} buttonSpecs button specifications as used in tour, or falsy, which
-	 * is equivalent to an empty array.
+	 * is equivalent to an empty array.  Will be mutated.
 	 * @return {Array} array of buttons as Guiders expects
 	 */
 	function getButtons( buttonSpecs ) {
-		var okayButton, guiderButtons, spec, currentButton;
+		var okayButton, guiderButtons, currentButton;
 
 		function next() {
 			guiders.next();
@@ -569,9 +582,9 @@
 		buttonSpecs = buttonSpecs || [];
 		guiderButtons = [];
 		for ( var i = 0; i < buttonSpecs.length; i++ ) {
-			spec = buttonSpecs[i];
-			if ( spec.action !== undefined ) {
-				switch ( spec.action ) {
+			currentButton = buttonSpecs[i];
+			if ( currentButton.action !== undefined ) {
+				switch ( currentButton.action ) {
 					case 'next':
 						okayButton = getConditionalOkayButton( next );
 						break;
@@ -579,14 +592,13 @@
 						okayButton = getOkayButton( endTour );
 						break;
 					default:
-						throw new Error( spec.action + 'is not a supported button action.' );
+						throw new gt.TourDefinitionError( currentButton.action + 'is not a supported button action.' );
 
 				}
 
 			} else {
-				currentButton = $.extend( true, {}, spec );
 				if ( currentButton.namemsg ) {
-					currentButton.name = getMessage( spec.namemsg );
+					currentButton.name = getMessage( currentButton.namemsg );
 					delete currentButton.namemsg;
 				}
 				guiderButtons.push( currentButton );
@@ -605,6 +617,100 @@
 
 		return guiderButtons;
 	}
+
+	/**
+	 * Clones guider options and augments with two fields, onClose and showEndTour
+	 *
+	 * @param {Object} options guider options object
+	 *
+	 * @return {Object} augmented guider
+	 */
+	function augmentGuider( options ) {
+		return $.extend( true, {
+			onClose: $.noop,
+			showEndTour: true
+		}, options );
+	}
+
+	/**
+	 * Internal version of gt.initGuider.  Called after all augmentation is complete.
+	 *
+	 * @param {Object} options augmented guider options object
+	 */
+	function initGuider( options ) {
+		var oldOnClose = options.onClose;
+		options.onClose = function() {
+			oldOnClose.apply ( this, arguments );
+			return handleOnClose.apply( this, arguments );
+		};
+
+		if ( options.titlemsg ) {
+			options.title = getMessage( options.titlemsg );
+			delete options.titlemsg;
+		}
+
+		if ( options.descriptionmsg ) {
+			options.description = getMessage( options.descriptionmsg );
+			delete options.descriptionmsg;
+		}
+
+		options.buttons = getButtons( options.buttons );
+
+		if ( options.showEndTour ) {
+			options.buttonCustomHTML = getEndTourCheckbox();
+		}
+		guiders.initGuider( options );
+	};
+
+	/**
+	 * Defines a tour based on an object specifying it
+	 *
+	 * @param {Object} tourSpec specification of tour, with the following keys:
+	 *
+	 * name: 'Name of tour'
+	 * steps: Array of steps, each matching the initGuider parameter (itself a
+	 * modified version of what guiders expects), except that id is implicitly
+	 * gt-name-index and next is gt-name-(index + 1) or omitted for the last item.
+	 */
+	gt.defineTour = function( tourSpec ) {
+		var steps, stepInd = 0, stepCount, step, id;
+
+		if ( !$.isPlainObject( tourSpec ) ) {
+			throw new gt.TourDefinitionError( 'You must pass a single argument, \'tourSpec\', which must be an object.' );
+		}
+
+		if ( $.type( tourSpec.name ) !== 'string' ) {
+			throw new gt.TourDefinitionError( '\'tourSpec.name\' must be a string, the tour name.' );
+		}
+
+		steps = tourSpec.steps;
+		if ( !$.isArray( steps ) ) {
+			throw new gt.TourDefinitionError( '\'tourSpec.steps\' must be an array, the list of steps.' );
+		}
+
+		stepCount = steps.length;
+		for ( stepInd = 1; stepInd <= stepCount; stepInd++ ) {
+			step = augmentGuider( steps[stepInd - 1] );
+
+			id = gt.makeTourId( {
+				name: tourSpec.name,
+				step: stepInd
+			} );
+			step.id = id;
+
+			if ( stepInd !== stepCount ) {
+				step.next = gt.makeTourId( {
+					name: tourSpec.name,
+					step: stepInd + 1
+				} );
+			}
+
+			initGuider( step );
+		}
+
+		// Do this after all the guiders initialize successfully
+		gt.currentTour = tourSpec.name;
+	};
 
 	/**
 	 * Initializes a guider by calling guiders.initGuider
@@ -649,34 +755,7 @@
 	 *
 	 */
 	gt.initGuider = function( options ) {
-		var oldOnClose;
-		options = $.extend( true, {
-			onClose: $.noop,
-			showEndTour: true
-		}, options );
-
-		oldOnClose = options.onClose;
-		options.onClose = function() {
-			oldOnClose.apply ( this, arguments );
-			return handleOnClose.apply( this, arguments );
-		};
-
-		if ( options.titlemsg ) {
-			options.title = getMessage( options.titlemsg );
-			delete options.titlemsg;
-		}
-
-		if ( options.descriptionmsg ) {
-			options.description = getMessage( options.descriptionmsg );
-			delete options.descriptionmsg;
-		}
-
-		options.buttons = getButtons( options.buttons );
-
-		if ( options.showEndTour ) {
-			options.buttonCustomHTML = getEndTourCheckbox();
-		}
-		guiders.initGuider( options );
+		initGuider( augmentGuider( options ) );
 	};
 
 	/**
