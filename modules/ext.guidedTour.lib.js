@@ -592,8 +592,7 @@
 						okayButton = getOkayButton( endTour );
 						break;
 					default:
-						throw new gt.TourDefinitionError( currentButton.action + 'is not a supported button action.' );
-
+						throw new gt.TourDefinitionError( '\'' + currentButton.action + '\'' + ' is not a supported button action.' );
 				}
 
 			} else {
@@ -636,6 +635,8 @@
 	 * Internal version of gt.initGuider.  Called after all augmentation is complete.
 	 *
 	 * @param {Object} options augmented guider options object
+	 *
+	 * @return {boolean} true, on success; throws otherwise
 	 */
 	function initGuider( options ) {
 		var oldOnClose = options.onClose;
@@ -660,10 +661,14 @@
 			options.buttonCustomHTML = getEndTourCheckbox();
 		}
 		guiders.initGuider( options );
-	};
+
+		return true;
+	}
 
 	/**
-	 * Defines a tour based on an object specifying it
+	 * Defines a tour based on an object specifying it.
+	 *
+	 * If input is invalid, it will throw mw.guidedTour.TourDefinitionError.
 	 *
 	 * @param {Object} tourSpec specification of tour, with the following keys:
 	 *
@@ -671,12 +676,14 @@
 	 * steps: Array of steps, each matching the initGuider parameter (itself a
 	 * modified version of what guiders expects), except that id is implicitly
 	 * gt-name-index and next is gt-name-(index + 1) or omitted for the last item.
+	 *
+	 * @return {boolean} true, on success; throws otherwise
 	 */
 	gt.defineTour = function( tourSpec ) {
 		var steps, stepInd = 0, stepCount, step, id;
 
 		if ( !$.isPlainObject( tourSpec ) ) {
-			throw new gt.TourDefinitionError( 'You must pass a single argument, \'tourSpec\', which must be an object.' );
+			throw new gt.TourDefinitionError( 'There must be a single argument, \'tourSpec\', which must be an object.' );
 		}
 
 		if ( $.type( tourSpec.name ) !== 'string' ) {
@@ -710,6 +717,8 @@
 
 		// Do this after all the guiders initialize successfully
 		gt.currentTour = tourSpec.name;
+
+		return true;
 	};
 
 	/**
@@ -750,12 +759,24 @@
 	 * * Otherwise, if you passed in a action (see above), it will occur.
 	 * * Otherwise, it will close the current step.
 	 *
-	 * @param {object} options options object matching the guiders one, except for
+	 * If input is invalid, it will throw mw.guidedTour.TourDefinitionError.
+	 *
+	 * @param {Object} options options object matching the guiders one, except for
 	 * modifications noted above.
 	 *
+	 * @return {boolean} true, on success; throws otherwise
 	 */
 	gt.initGuider = function( options ) {
-		initGuider( augmentGuider( options ) );
+		// Validate id and next, since that could cause confusion if someone copies from a gt.defineTour call to a gt.initGuider one.
+		if ( $.type( options.id ) !== 'string' ) {
+			throw new gt.TourDefinitionError( '\'options.id\' must be a string, in the form gt-tourname-stepnumber.' );
+		}
+
+		if ( $.type( options.next ) !== 'string' ) {
+			throw new gt.TourDefinitionError( '\'options.next\' must be a string, in the form gt-tourname-stepnumber.' );
+		}
+
+		return initGuider( augmentGuider( options ) );
 	};
 
 	/**
