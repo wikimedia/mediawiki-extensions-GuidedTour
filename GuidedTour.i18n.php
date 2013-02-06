@@ -86,6 +86,21 @@ See also:
 	'guidedtour-tour-gettingstarted-end-description' => 'You can find other interesting things to work on',
 );
 
+/** Arabic (العربية)
+ * @author Ciphers
+ */
+$messages['ar'] = array(
+	'guidedtour-desc' => 'السماح للصفحات بعرض رسائل جولات تعريفية لمساعدة المستخدمين الجدد',
+	'guidedtour-help-url' => 'مساعدة:جولات تعريفية', # Fuzzy
+	'guidedtour-end-tour' => 'نهاية الجولة',
+	'guidedtour-okay-button' => 'حسنا',
+	'guidedtour-tour-test-testing' => 'تجربة',
+	'guidedtour-tour-test-test-description' => 'هذه تجربة للوصف. أهلا بكم!',
+	'guidedtour-tour-test-callouts' => 'شرح التجربة',
+	'guidedtour-tour-test-portal-description' => 'هذه هي صفحة بوابة المجتمع.',
+	'guidedtour-tour-test-mediawiki-parse' => 'تحليل تجربة الميدياويكي',
+);
+
 /** Belarusian (беларуская)
  * @author Wizardist
  */
@@ -264,9 +279,31 @@ $messages['gl'] = array(
 
 /** Italian (italiano)
  * @author Beta16
+ * @author Ciphers
  */
 $messages['it'] = array(
 	'guidedtour-desc' => 'Consente di gestire pagine per fornire un tour guidato tramite popup per assistere i nuovi utenti',
+	'guidedtour-end-tour' => 'نهاية الجولة',
+	'guidedtour-okay-button' => 'حسنا',
+	'guidedtour-tour-test-testing' => 'تجربة',
+	'guidedtour-tour-test-test-description' => 'هذه تجربة للشرح. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-callouts' => 'شرح التجربة',
+	'guidedtour-tour-test-portal-description' => 'هذه هي صفحة بوابة المجتمع',
+	'guidedtour-tour-test-description-page' => 'صفحات شرح تجربة ميدياويكي',
+	'guidedtour-tour-test-go-description-page' => 'اذهب إلى صفحة الشرح',
+	'guidedtour-tour-test-launch-tour' => 'جولة تجربة الإطلاق',
+	'guidedtour-tour-test-launch-tour-description' => 'من الممكن للأدلاء إطلاق المزيد من الجولات التعريفية. أليس ذلك رائعا؟',
+	'guidedtour-tour-test-launch-using-tours' => 'إطلاق جولة حول استخدام الجولات',
+	'guidedtour-tour-gettingstarted-start-title' => 'هل أنت مستعد للمساعدة؟',
+	'guidedtour-tour-gettingstarted-start-description' => 'تحتاج هذه الصفحة للتنسيق البسيط - التدقيق اللغوي، والتنسيق، أو التدقيق الإملائي ولذلك لكي تصبح أبسط وأسهل للقراءة. ستساعدك هذه الجولة على معرفة كيفية القيام بذلك.',
+	'guidedtour-tour-gettingstarted-click-edit-title' => "اضغط على '{{int:vector-view-edit}}'",
+	'guidedtour-tour-gettingstarted-click-edit-description' => 'سيساعدك هذا على القيام بتغييرات على أي جزء من الصفحة عندما تكون جاهزا لذلك.',
+	'guidedtour-tour-gettingstarted-click-preview-title' => 'عرض (اختياري)',
+	'guidedtour-tour-gettingstarted-click-preview-description' => "إن الضغط على '{{int:showpreview}}' يساعدك على فحص ما ستظهر عليه الصفحة بعد قيامك بالتغييرات. لكن لا تنس حفظ تلك التغييرات.",
+	'guidedtour-tour-gettingstarted-click-save-title' => 'لقد انتهيت تقريبا!',
+	'guidedtour-tour-gettingstarted-click-save-description' => "اضغط على '{{int:savearticle}}' وسيتم حفظ تغييراتك.",
+	'guidedtour-tour-gettingstarted-end-title' => 'هل تريد القيام بالمزيد من الأعمال؟',
+	'guidedtour-tour-gettingstarted-end-description' => 'صفحة [[Special:GettingStarted|بداية التحرير]] يتم تحديثها كل ساعة بصفحات جديدة.',
 );
 
 /** Japanese (日本語)
@@ -376,6 +413,13 @@ $messages['mk'] = array(
 	'guidedtour-tour-gettingstarted-click-save-description' => 'Стиснете на „{{int:savearticle}}“ и измените ќе бидат видливи.',
 	'guidedtour-tour-gettingstarted-end-title' => 'Сакате повеќе да направите?',
 	'guidedtour-tour-gettingstarted-end-description' => '[[Special:GettingStarted|Први чекори]] се подновува со нови страници на секој час.',
+);
+
+/** Malayalam (മലയാളം)
+ * @author Santhosh.thottingal
+ */
+$messages['ml'] = array(
+	'guidedtour-okay-button' => 'ശരി1',
 );
 
 /** Dutch (Nederlands)
