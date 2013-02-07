@@ -56,7 +56,7 @@ gt.defineTour( {
 			action: 'next'
 		} ],
 
-		// TODO: Factor out into lib.  Also, it should probably use wgAction, rather than query.
+		// TODO (mattflaschen 2013-02-05): Factor out into lib.  Also, it should probably use wgAction, rather than query.
 		shouldSkip: function() {
 			// If they're already editing, skip
 			return gt.hasQuery( { action: 'edit' } );
@@ -66,7 +66,6 @@ gt.defineTour( {
 		descriptionmsg: 'guidedtour-tour-gettingstarted-click-edit-description',
 		attachTo: '#ca-edit',
 		position: 'bottom',
-		next: 'gt-gettingstarted-3',
 		shouldSkip: function() {
 			return gt.hasQuery( { action: 'edit' } );
 		}

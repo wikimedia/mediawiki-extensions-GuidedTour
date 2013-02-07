@@ -7,5 +7,6 @@
 	"plusplus": false,
 	"regexdash": true,
 	"supernew": true,
-	"white": false
+	"white": false,
+	"latedef": true
 }

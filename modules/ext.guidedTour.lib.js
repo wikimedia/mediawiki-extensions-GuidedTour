@@ -386,7 +386,7 @@
 			}
 		}
 		else {
-			guider.description = data.parse.text['*'],
+			guider.description = data.parse.text['*'];
 			guider.isParsed = true;
 			// guider html is already "live" so edit it
 			guider.elem.find( '.guider_description' ).html( guider.description );
@@ -560,7 +560,8 @@
 	 * Converts a tour's button specification to a button that we
 	 * pass to Guiders.
 	 *
-	 * This has special handling for okay, which is always present last.  See initGuider.
+	 * This has special handling for okay, which is always present last.  See
+	 * gt.initGuider.
 	 *
 	 * Handles actions and i18n.
 	 *
@@ -632,13 +633,13 @@
 	}
 
 	/**
-	 * Internal version of gt.initGuider.  Called after all augmentation is complete.
+	 * Internal version of gt.initGuider.  Other methods call this after all augmentation is complete.
 	 *
 	 * @param {Object} options augmented guider options object
 	 *
 	 * @return {boolean} true, on success; throws otherwise
 	 */
-	function initGuider( options ) {
+	function initializeGuiderInternal( options ) {
 		var oldOnClose = options.onClose;
 		options.onClose = function() {
 			oldOnClose.apply ( this, arguments );
@@ -666,14 +667,15 @@
 	}
 
 	/**
-	 * Defines a tour based on an object specifying it.
+	 * Creates a tour based on an object specifying it, but does not show
+	 * it immediately
 	 *
 	 * If input is invalid, it will throw mw.guidedTour.TourDefinitionError.
 	 *
 	 * @param {Object} tourSpec specification of tour, with the following keys:
 	 *
 	 * name: 'Name of tour'
-	 * steps: Array of steps, each matching the initGuider parameter (itself a
+	 * steps: Array of steps, each matching the gt.initGuider parameter (itself a
 	 * modified version of what guiders expects), except that id is implicitly
 	 * gt-name-index and next is gt-name-(index + 1) or omitted for the last item.
 	 *
@@ -712,23 +714,21 @@
 				} );
 			}
 
-			initGuider( step );
+			initializeGuiderInternal( step );
 		}
 
-		// Do this after all the guiders initialize successfully
+		// Set the current tour name after all the guiders initialize successfully
 		gt.currentTour = tourSpec.name;
 
 		return true;
 	};
 
 	/**
-	 * Initializes a guider by calling guiders.initGuider
+	 * Initializes a guider
 	 *
-	 * This uses the proper message calls when you add msg to the end of the
-	 * field name.
-	 *
-	 * This applies to titlemsg, descriptionmsg, and namemsg (for each button object
-	 * in the buttons field (which is an array))
+	 * This takes the same keys as guider.initGuider(), with a few additions.
+	 * titlemsg, descriptionmsg, and namemsg (for each button object in the buttons
+	 * field array for the buttons) all use the message parsing calls.
 	 *
 	 * For example:
 	 *
@@ -747,11 +747,10 @@
 	 * showEndTour: false
 	 *
 	 * You can pass a defined action as part of the buttons array.  The only
-	 * one currently supported is:
+	 * actions currently supported are:
 	 *
-	 * { action: 'next' }
-	 *
-	 * which goes to the next step.
+	 * next - Goes to the next step.
+	 * end - Ends the tour.
 	 *
 	 * If the user clicks Okay:
 	 *
@@ -776,16 +775,15 @@
 			throw new gt.TourDefinitionError( '\'options.next\' must be a string, in the form gt-tourname-stepnumber.' );
 		}
 
-		return initGuider( augmentGuider( options ) );
+		return initializeGuiderInternal( augmentGuider( options ) );
 	};
 
 	/**
 	 * Guiders has a window resize and document ready listener.
 	 *
-	 * However, we're adding some MW-specific code. Currently, this listens to a
-	 * custom WikiEditor event, which fires after their async loop finishes.
-	 *
-	 * It's okay if WikiEditor is not installed.  It just won't fire.
+	 * However, we're adding some MW-specific code. Currently, this listens for a
+	 * custom event from the WikiEditor extension, which fires after the extension's
+	 * async loop finishes. If WikiEditor is not running this event just won't fire.
 	 */
 	function setupRepositionListeners() {
 		$( document ).ready( function () {
