@@ -13,6 +13,7 @@ $messages = array();
 $messages['en'] = array(
 	'guidedtour-desc' => 'Allows pages to provide a popup guided tour to assist new users',
 	'guidedtour-help-url' => 'Help:Guided tours',
+	'guidedtour-help-guider-url' => 'Help:Guided tours/guider',
 	'guidedtour-custom.css' => '/* Custom CSS for the GuidedTour extension. */',
 
 	// Messages useful for more than one tour
@@ -55,6 +56,7 @@ $messages['en'] = array(
 $messages['qqq'] = array(
 	'guidedtour-desc' => '{{desc|name=GuidedTour|url=https://www.mediawiki.org/wiki/Extension:GuidedTour}}',
 	'guidedtour-help-url' => 'Main page for GuidedTour documentation',
+	'guidedtour-help-guider-url' => 'Brief GuidedTour documentation page that a tour step can transclude.  Used in the test tour.',
 	'guidedtour-custom.css' => '{{Optional}}
 Custom CSS for the GuidedTour extension.  Empty by default.',
 	'guidedtour-end-tour' => 'Label text of checkbox for choosing whether to end tour',

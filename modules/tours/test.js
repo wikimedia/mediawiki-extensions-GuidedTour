@@ -4,7 +4,7 @@
 ( function ( window, document, $, mw, gt ) {
 
 // XXX (mattflaschen, 2012-01-02): See GuidedTourHooks.php
-var pageName = mw.config.get( 'wgGuidedTourHelpUrl' );
+var pageName = mw.config.get( 'wgGuidedTourHelpGuiderUrl' );
 
 gt.defineTour( {
 	/*
