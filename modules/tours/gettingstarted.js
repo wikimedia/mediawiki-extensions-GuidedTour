@@ -99,7 +99,8 @@ gt.defineTour( {
 		buttons: [ {
 			action: 'end'
 		} ]
-	} ]
+	} ],
+	shouldLog: true
 } );
 
 } (window, document, jQuery, mediaWiki, mediaWiki.guidedTour ) );

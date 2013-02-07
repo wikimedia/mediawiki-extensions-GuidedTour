@@ -31,6 +31,21 @@
 		gt.rootUrl = mw.config.get( 'wgScript' ) + '?title=MediaWiki:Guidedtour-';
 	}
 
+	function pingServer( guider, step ) {
+		var tourName;
+
+		if ( gt.currentTour.shouldLog ) {
+			tourName = gt.currentTour.name;
+
+			mw.eventLog.logEvent( 'GuidedTour', {
+				eventId: 'guidedtour-' + tourName + '-' + step,
+				tour: tourName,
+				step: step,
+				lastGuiderId: guider.id
+			} );
+		}
+	}
+
 	/**
 	 * Parses tour ID into an object with name and step keys.
 	 *
@@ -226,7 +241,7 @@
 	function logDismissal( type ) {
 		if ( gt.currentTour ) {
 			var guider = guiders._guiderById(guiders._lastCreatedGuiderID);
-			gt.pingServer( guider, gt.currentTour, type );
+			pingServer( guider, type );
 		}
 	}
 
@@ -268,29 +283,12 @@
 	gt.recordStats = function ( guider ) {
 		var tourInfo;
 
-		// hide event.
-		// TODO (mattflaschen, 2012-12-17) Is gt-hide reachable?
-		if ( guider.id === 'gt-hide' ) {
-			if ( gt.currentTour ) {
-				gt.pingServer(guider, gt.currentTour, 'hide');
-			}
-			return;
-		}
-
 		tourInfo = gt.parseTourId( guider.id );
 		if ( tourInfo !== null ) {
-			gt.pingServer(guider, tourInfo.name, tourInfo.step);
+			pingServer(guider, tourInfo.step);
 		}
 	};
 
-	gt.pingServer = function ( guider, tour, step ) {
-		mw.eventLog.logEvent( 'GuidedTour', {
-			eventId: 'guidedtour-' + tour + '-' + step,
-			tour: tour,
-			step: step,
-			lastGuiderId: guider.id
-		} );
-	};
 	guiders._defaultSettings.onShow = gt.recordStats;
 
 	/**
@@ -672,12 +670,16 @@
 	 *
 	 * If input is invalid, it will throw mw.guidedTour.TourDefinitionError.
 	 *
-	 * @param {Object} tourSpec specification of tour, with the following keys:
+	 * @param {Object} tourSpec specification of tour, with the following required keys:
 	 *
-	 * name: 'Name of tour'
+	 * name: Name of tour
 	 * steps: Array of steps, each matching the gt.initGuider parameter (itself a
 	 * modified version of what guiders expects), except that id is implicitly
 	 * gt-name-index and next is gt-name-(index + 1) or omitted for the last item.
+	 *
+	 * Optional keys are:
+	 *
+	 * shouldLog: Whether to log events to EventLogging.  Defaults to false.
 	 *
 	 * @return {boolean} true, on success; throws otherwise
 	 */
@@ -718,7 +720,10 @@
 		}
 
 		// Set the current tour name after all the guiders initialize successfully
-		gt.currentTour = tourSpec.name;
+		gt.currentTour = {
+			name: tourSpec.name,
+			shouldLog: tourSpec.shouldLog || false
+		};
 
 		return true;
 	};
