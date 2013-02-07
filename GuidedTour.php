@@ -53,7 +53,7 @@ $guidersPath = 'modules/externals/mediawiki.libs.guiders';
 $wgResourceModules['schema.GuidedTour'] = array(
 	'class' => 'ResourceLoaderSchemaModule',
 	'schema' => 'GuidedTour',
-	'revision' => 4972209,
+	'revision' => 5222838,
 );
 
 $wgResourceModules['mediawiki.libs.guiders'] = array(

@@ -12,7 +12,8 @@
 	'use strict';
 
 	var gt = mw.guidedTour = mw.guidedTour || {},
-		messageParser = new mw.jqueryMsg.parser();
+		messageParser = new mw.jqueryMsg.parser(),
+		userId = mw.config.get( 'wgUserId' );
 
 	/**
 	 * Error subclass for errors that occur during tour definition
@@ -31,18 +32,41 @@
 		gt.rootUrl = mw.config.get( 'wgScript' ) + '?title=MediaWiki:Guidedtour-';
 	}
 
-	function pingServer( guider, step ) {
-		var tourName;
+	// Setup default values for logging, unless they're logged out.  This doesn't mean
+	// we'll necessarily actually log.
+	function setupLogging() {
+		if ( userId !== null ) {
+			// Don't log anons
+			mw.eventLog.setDefaults( 'GuidedTour', {
+				userId: userId
+			} );
+		}
+	}
 
-		if ( gt.currentTour.shouldLog ) {
-			tourName = gt.currentTour.name;
+	// If logging is enabled, log.
+	function pingServer( action, guiderId ) {
+		var tourInfo, tourName, tourStep;
+
+		if ( gt.currentTour.shouldLog && userId !== null ) {
+			tourInfo = gt.parseTourId( guiderId );
+			tourName = tourInfo.name;
+			tourStep = Number( tourInfo.step );
 
 			mw.eventLog.logEvent( 'GuidedTour', {
-				eventId: 'guidedtour-' + tourName + '-' + step,
-				tour: tourName,
-				step: step,
-				lastGuiderId: guider.id
+				tourName: tourName,
+				action: action,
+				step: tourStep
 			} );
+
+			if ( action === 'impression' ) {
+				if ( gt.currentTour.stepCount === tourStep ) {
+					mw.eventLog.logEvent( 'GuidedTour', {
+						tourName: tourName,
+						action: 'complete',
+						step: tourStep
+					} );
+				}
+			}
 		}
 	}
 
@@ -240,8 +264,7 @@
 	 */
 	function logDismissal( type ) {
 		if ( gt.currentTour ) {
-			var guider = guiders._guiderById(guiders._lastCreatedGuiderID);
-			pingServer( guider, type );
+			pingServer( 'hide', guiders._lastCreatedGuiderID );
 		}
 	}
 
@@ -285,7 +308,7 @@
 
 		tourInfo = gt.parseTourId( guider.id );
 		if ( tourInfo !== null ) {
-			pingServer(guider, tourInfo.step);
+			pingServer( 'impression', guider.id );
 		}
 	};
 
@@ -722,7 +745,8 @@
 		// Set the current tour name after all the guiders initialize successfully
 		gt.currentTour = {
 			name: tourSpec.name,
-			shouldLog: tourSpec.shouldLog || false
+			shouldLog: tourSpec.shouldLog || false,
+			stepCount: stepCount
 		};
 
 		return true;
@@ -784,6 +808,16 @@
 	};
 
 	/**
+	 * Listen for events that could potentially be logged (depending on shouldLog)
+	 */
+	function setupGuiderListeners() {
+		$( document.body ).on( 'click',	'.guider a[href]', function () {
+			var action = $( this ).is( '.guider_button' ) ? 'button-click' : 'link-click';
+			pingServer( action, $( this ).parents( '.guider ').attr( 'id' ) );
+		} );
+	}
+
+	/**
 	 * Guiders has a window resize and document ready listener.
 	 *
 	 * However, we're adding some MW-specific code. Currently, this listens for a
@@ -791,12 +825,15 @@
 	 * async loop finishes. If WikiEditor is not running this event just won't fire.
 	 */
 	function setupRepositionListeners() {
-		$( document ).ready( function () {
-			$( '#wpTextbox1' ).on( 'wikiEditor-toolbar-doneInitialSections', function () {
-				guiders.reposition();
-			} );
+		$( '#wpTextbox1' ).on( 'wikiEditor-toolbar-doneInitialSections', function () {
+			guiders.reposition();
 		} );
 	}
 
-	setupRepositionListeners();
+	setupLogging();
+
+	$( document ).ready( function () {
+		setupRepositionListeners();
+		setupGuiderListeners();
+	} );
 } ( window, document, jQuery, mediaWiki, mediaWiki.libs.guiders ) );
