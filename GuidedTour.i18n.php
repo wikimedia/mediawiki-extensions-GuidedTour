@@ -187,6 +187,7 @@ $messages['be-tarask'] = array(
 $messages['de'] = array(
 	'guidedtour-desc' => 'Stellt für Seiten eine popupgestützte Tour bereit, um neuen Benutzern zu helfen',
 	'guidedtour-help-url' => 'Help:Geführte Touren',
+	'guidedtour-help-guider-url' => 'Help:Geführte Touren/Leiter',
 	'guidedtour-end-tour' => 'Tour beenden',
 	'guidedtour-okay-button' => 'Okay',
 	'guidedtour-tour-test-testing' => 'Testen',
@@ -233,29 +234,31 @@ $messages['eu'] = array(
  * @author Gomoko
  * @author Ltrlg
  * @author Seb35
+ * @author Trizek
  */
 $messages['fr'] = array(
-	'guidedtour-desc' => 'Autoriser les pages à fournir une visite guidée surgissante pour aider les nouveaux utilisateurs',
+	'guidedtour-desc' => 'Autoriser les pages à afficher une visite guidée par pop-up pour aider les nouveaux utilisateurs',
 	'guidedtour-help-url' => 'Help:Visites guidées',
+	'guidedtour-help-guider-url' => 'Help:Visites guidées/guide',
 	'guidedtour-end-tour' => 'Terminer la visite',
 	'guidedtour-okay-button' => 'D’accord',
 	'guidedtour-tour-test-testing' => 'Tester',
 	'guidedtour-tour-test-test-description' => 'Ceci est un test de la description. Lorem ipsum dolor sit !',
 	'guidedtour-tour-test-callouts' => 'Tester les liens de sortie',
-	'guidedtour-tour-test-portal-description' => 'Ceci est la page de portail pour la communauté.',
+	'guidedtour-tour-test-portal-description' => "Ceci est la page d'accueil de la communauté.",
 	'guidedtour-tour-test-mediawiki-parse' => 'Tester le rendu MediaWiki',
-	'guidedtour-tour-test-wikitext-description' => 'Un guide dans votre visite du wiki peut contenir du wikitexte utilisant onShow et parseDescription. Utilisez-le pour créer un lien wiki vers la [[{{MediaWiki:Guidedtour-help-url}}|documentation des visites guidées]]. Ou un lien externe [https://github.com/tychay/mwgadget.GuidedTour vers github] par exemple.',
+	'guidedtour-tour-test-wikitext-description' => 'Un élément du guide de visite peut contenir du wikitexte utilisant onShow et parseDescription. Utilisez-le pour créer un lien wiki vers la [[{{MediaWiki:Guidedtour-help-url}}|documentation des visites guidées]]. Ou un lien externe [https://github.com/tychay/mwgadget.GuidedTour vers GitHub] par exemple.',
 	'guidedtour-tour-test-description-page' => 'Tester les pages de description MediaWiki',
 	'guidedtour-tour-test-go-description-page' => 'Aller à la page de description',
 	'guidedtour-tour-test-launch-tour' => 'Tester la visite de lancement',
-	'guidedtour-tour-test-launch-tour-description' => 'Les guides peuvent lancer d’autres visites guidées. Plutôt cool, non ?',
-	'guidedtour-tour-test-launch-using-tours' => 'Lancer une visite en utilisant des visites',
+	'guidedtour-tour-test-launch-tour-description' => 'Les guides peuvent créer d’autres visites guidées. Plutôt cool, non ?',
+	'guidedtour-tour-test-launch-using-tours' => "Lancer une visite sur l'utilisation des visites",
 	'guidedtour-tour-gettingstarted-start-title' => 'Prêt à aider?',
-	'guidedtour-tour-gettingstarted-start-description' => "Cette page a besoin d’une modification de la copie de base — améliorer la grammaire, le style, le ton ou l'orthographe — pour la rendre claire et facile à lire. Ce périple vous montrera les étapes à entreprendre.",
+	'guidedtour-tour-gettingstarted-start-description' => "Cette page a besoin d’une modification sur la forme — améliorer la grammaire, le style, le ton ou l'orthographe — pour la rendre claire et facile à lire. Cette visite guidée vous montrera les étapes à entreprendre.",
 	'guidedtour-tour-gettingstarted-click-edit-title' => 'Cliquez sur « {{int:vector-view-edit}} »',
 	'guidedtour-tour-gettingstarted-click-edit-description' => 'Cela vous permettra de faire des modifications à n’importe quelle partie de la page, quand vous serez prêt.',
 	'guidedtour-tour-gettingstarted-click-preview-title' => 'Aperçu (facultatif)',
-	'guidedtour-tour-gettingstarted-click-preview-description' => 'Cliquer sur « {{int:showpreview}} » vous permet de vérifier à quoi ressemblera la page avec vos modifications. N’oubliez simplement pas d’enregistrer.',
+	'guidedtour-tour-gettingstarted-click-preview-description' => "Cliquer sur « {{int:showpreview}} » vous permet de vérifier à quoi ressemblera la page avec vos modifications. Ensuite, n'oubliez pas de publier pour enregistrer.",
 	'guidedtour-tour-gettingstarted-click-save-title' => 'Vous avez presque fini !',
 	'guidedtour-tour-gettingstarted-click-save-description' => 'Cliquez sur «”{{int:savearticle}} » et vos modifications seront visibles.',
 	'guidedtour-tour-gettingstarted-end-title' => 'Vous cherchez autre chose à faire ?',
@@ -294,6 +297,20 @@ $messages['gl'] = array(
 	'guidedtour-tour-gettingstarted-end-description' => 'A páxina dos [[Special:GettingStarted|primeiros pasos]] actualízase cada hora con novas páxinas.',
 );
 
+/** Hebrew (עברית)
+ * @author Amire80
+ */
+$messages['he'] = array(
+	'guidedtour-desc' => 'אפשרות לספק בדפים חלונות קופצים שעוזרים למשתמשים חדשים',
+	'guidedtour-end-tour' => 'לסיים את הסיור',
+	'guidedtour-okay-button' => 'סבבה',
+	'guidedtour-tour-test-testing' => 'בדיקות',
+	'guidedtour-tour-test-test-description' => 'זוהי בדיקה של תיאור. צנח לו זלזל!',
+	'guidedtour-tour-test-callouts' => 'בדיקת חלונות יוצאים',
+	'guidedtour-tour-test-portal-description' => 'זהו דף שער הקהילה.',
+	'guidedtour-tour-test-mediawiki-parse' => 'בדיקת פענוח מדיה ויקי',
+);
+
 /** Italian (italiano)
  * @author Beta16
  */
@@ -307,6 +324,7 @@ $messages['it'] = array(
 $messages['ja'] = array(
 	'guidedtour-desc' => '新しい利用者を支援するポップアップのガイド付きツアーをページで提供できるようにする',
 	'guidedtour-help-url' => 'Help:ガイド付きツアー',
+	'guidedtour-help-guider-url' => 'Help:ガイド付きツアー/guider',
 	'guidedtour-custom.css' => '/* ガイドツアー拡張機能用のカスタムCSS */',
 	'guidedtour-end-tour' => 'ツアーを終了',
 	'guidedtour-okay-button' => 'OK',
@@ -384,6 +402,7 @@ $messages['lb'] = array(
 $messages['mk'] = array(
 	'guidedtour-desc' => 'Овозможува страниците да даваат отскочни прозорци со водени надгледни упатства за новите корисници',
 	'guidedtour-help-url' => 'Help:Водени тури',
+	'guidedtour-help-guider-url' => 'Help:Водени тури/водич',
 	'guidedtour-custom.css' => '/* Прилагоден CSS за додатокот GuidedTour. */',
 	'guidedtour-end-tour' => 'Заврши ја турата',
 	'guidedtour-okay-button' => 'Во ред',
@@ -415,6 +434,14 @@ $messages['mk'] = array(
  */
 $messages['ml'] = array(
 	'guidedtour-okay-button' => 'ശരി1',
+);
+
+/** Malay (Bahasa Melayu)
+ * @author Anakmalaysia
+ */
+$messages['ms'] = array(
+	'guidedtour-tour-gettingstarted-start-title' => 'Sedia untuk menolong?',
+	'guidedtour-tour-gettingstarted-click-preview-title' => 'Pralihat (tidak wajib)',
 );
 
 /** Dutch (Nederlands)
