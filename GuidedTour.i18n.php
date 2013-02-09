@@ -271,6 +271,7 @@ $messages['fr'] = array(
 $messages['gl'] = array(
 	'guidedtour-desc' => 'Permite que as páxinas proporcionen unha visita guiada para axudar aos usuarios novos',
 	'guidedtour-help-url' => 'Help:Visitas guiadas',
+	'guidedtour-help-guider-url' => 'Help:Visitas guiadas/guía',
 	'guidedtour-custom.css' => '/* CSS personalizado para a extensión de visitas guiadas. */',
 	'guidedtour-end-tour' => 'Finalizar a visita',
 	'guidedtour-okay-button' => 'De acordo',
