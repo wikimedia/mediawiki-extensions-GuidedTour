@@ -94,6 +94,11 @@ a.guider_button {
 	height: 23px;
 }
 
+/**
+   Since Guiders uses dynamic absolute positioning, the elements below need to be flipped at a higher level.
+*/
+
+/* @noflip */
 .guider_arrow_right {
 	background-position: 0 -58px;
 	right: -40px;
@@ -108,6 +113,8 @@ a.guider_button {
 	background-position: 0 -92px;
 	top: -23px;
 }
+
+/* @noflip */
 .guider_arrow_left {
 	background-position: 0 -24px;
 	left: -40px;
