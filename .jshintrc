@@ -8,5 +8,6 @@
 	"regexdash": true,
 	"supernew": true,
 	"white": false,
-	"latedef": true
+	"latedef": true,
+	"unused": true
 }

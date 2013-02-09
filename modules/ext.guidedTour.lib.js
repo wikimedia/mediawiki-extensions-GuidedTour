@@ -12,6 +12,7 @@
 	'use strict';
 
 	var gt = mw.guidedTour = mw.guidedTour || {},
+		MW_NS_TOUR_PREFIX = 'MediaWiki:Guidedtour-tour-',
 		messageParser = new mw.jqueryMsg.parser(),
 		userId = mw.config.get( 'wgUserId' );
 
@@ -27,10 +28,6 @@
 
 	gt.TourDefinitionError.prototype = new Error();
 	gt.TourDefinitionError.prototype.constructor = gt.TourDefinitionError;
-
-	if ( !gt.rootUrl ) {
-		gt.rootUrl = mw.config.get( 'wgScript' ) + '?title=MediaWiki:Guidedtour-';
-	}
 
 	// Setup default values for logging, unless they're logged out.  This doesn't mean
 	// we'll necessarily actually log.
@@ -147,6 +144,8 @@
 	 * @param {string} tourId id of tour (optional)
 	 */
 	gt.launchTour = function ( tourName, tourId ) {
+		var tourModuleName, onWikiTourUrl;
+
 		if ( !tourId ) {
 			tourId = gt.makeTourId( {
 				name: tourName,
@@ -155,11 +154,11 @@
 		}
 
 		// Called if we successfully loaded the tour
-		function resume () {
+		function resume() {
 			guiders.resume(tourId);
 		}
 
-		var tourModuleName = 'ext.guidedTour.tour.' + tourName;
+		tourModuleName = 'ext.guidedTour.tour.' + tourName;
 		if ( mw.loader.getState( tourModuleName ) !== null ) {
 			mw.loader.using( tourModuleName, resume, function ( err, dependencies ) {
 				mw.log( 'Failed to load tour ', tourModuleName,
@@ -170,13 +169,15 @@
 			mw.log( tourModuleName,
 				' is not registered, probably because it is not extension-defined.' );
 
-			// append to request raw JS code without page markup
-			var rawJS = '&action=raw&ctype=text/javascript';
-			var onWikiTourUrl = gt.rootUrl + 'tour-' + tourName + '.js' + rawJS;
+			onWikiTourUrl = mw.config.get( 'wgScript' ) + '?' + $.param( {
+				title: MW_NS_TOUR_PREFIX + tourName + '.js',
+				action: 'raw',
+				ctype: 'text/javascript'
+			} );
 			mw.log( 'Attempting to load on-wiki tour from ', onWikiTourUrl );
 
 			$.getScript( onWikiTourUrl )
-			.done( function ( script, textStatus ) {
+			.done( function ( script ) {
 				// missing raw requests give 0 length document and 200 status not 404
 				if ( script.length === 0 ) {
 					mw.log( 'Tour ' + tourName + ' is empty. Does the page exist?' );
@@ -185,7 +186,7 @@
 					resume();
 				}
 			})
-			.fail( function ( jqxhr, settings, exception ) {
+			.fail( function () {
 				mw.log( 'Failed to load tour ' + tourName );
 			});
 		}
@@ -257,12 +258,9 @@
 	};
 
 	/**
-	 * Logs a dismissal event, either 'hide' for temporary dismissal or 'end' if the
-	 * user ended the tour.
-	 *
-	 * @param {string} type type of dismissal, 'hide' or 'end'
+	 * Logs a dismissal event.
 	 */
-	function logDismissal( type ) {
+	function logDismissal() {
 		if ( gt.currentTour ) {
 			pingServer( 'hide', guiders._lastCreatedGuiderID );
 		}
@@ -278,22 +276,19 @@
 	 * Distinct from guider.onHide() becase that is called even if the tour ends.
 	 *
 	 * @param {Object} guider guider object
-	 * @param {boolean} isAlternativeClose false for text Close button (which should not occur for us), true for anything else
 	 *
 	 * @return {boolean} true to end tour, false to dismiss
 	 */
-	function handleOnClose(guider, isAlternativeClose) {
-		var $guiderElem = guider.elem, $checkbox, shouldEndTour, dismissalType;
+	function handleOnClose( guider ) {
+		var $guiderElem = guider.elem, $checkbox, shouldEndTour;
 		$checkbox = $guiderElem.find( '.guidedtour-end-tour-checkbox-label input' );
 		if ( $checkbox.is( ':checked' ) ) {
 			shouldEndTour = true;
-			dismissalType = 'end';
 		} else {
 			shouldEndTour = false;
-			dismissalType = 'hide';
 		}
 
-		logDismissal( dismissalType );
+		logDismissal();
 		return shouldEndTour;
 	}
 
@@ -318,7 +313,7 @@
 	 * Ends the tour, then logs, passing a step of 'end'
 	 */
 	gt.endTour = function () {
-		logDismissal( 'end' );
+		logDismissal();
 		guiders.endTour();
 	};
 
@@ -326,7 +321,7 @@
 	 * Hides the guider(s), then logs, passing a step of 'hide'
 	 */
 	gt.hideAll = function () {
-		logDismissal( 'hide' );
+		logDismissal();
 		guiders.hideAll();
 	};
 
@@ -811,7 +806,7 @@
 	 * Listen for events that could potentially be logged (depending on shouldLog)
 	 */
 	function setupGuiderListeners() {
-		$( document.body ).on( 'click',	'.guider a[href]', function () {
+		$( document.body ).on( 'click', '.guider a[href]', function () {
 			var action = $( this ).is( '.guider_button' ) ? 'button-click' : 'link-click';
 			pingServer( action, $( this ).parents( '.guider ').attr( 'id' ) );
 		} );

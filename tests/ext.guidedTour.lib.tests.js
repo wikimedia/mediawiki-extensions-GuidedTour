@@ -131,7 +131,7 @@
 	} );
 
 	QUnit.test( 'getStep', 2, function ( assert ) {
-		var step, originalGetParam = mw.util.getParamValue;
+		var step;
 		mw.util.getParamValue = function () {
 			return step;
 		};
