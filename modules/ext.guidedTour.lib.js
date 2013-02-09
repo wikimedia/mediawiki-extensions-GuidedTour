@@ -14,7 +14,8 @@
 	var gt = mw.guidedTour = mw.guidedTour || {},
 		MW_NS_TOUR_PREFIX = 'MediaWiki:Guidedtour-tour-',
 		messageParser = new mw.jqueryMsg.parser(),
-		userId = mw.config.get( 'wgUserId' );
+		userId = mw.config.get( 'wgUserId' ),
+		currentTourState;
 
 	/**
 	 * Error subclass for errors that occur during tour definition
@@ -44,7 +45,7 @@
 	function pingServer( action, guiderId ) {
 		var tourInfo, tourName, tourStep;
 
-		if ( gt.currentTour.shouldLog && userId !== null ) {
+		if ( currentTourState.shouldLog && userId !== null ) {
 			tourInfo = gt.parseTourId( guiderId );
 			tourName = tourInfo.name;
 			tourStep = Number( tourInfo.step );
@@ -56,7 +57,7 @@
 			} );
 
 			if ( action === 'impression' ) {
-				if ( gt.currentTour.stepCount === tourStep ) {
+				if ( currentTourState.stepCount === tourStep ) {
 					mw.eventLog.logEvent( 'GuidedTour', {
 						tourName: tourName,
 						action: 'complete',
@@ -261,7 +262,7 @@
 	 * Logs a dismissal event.
 	 */
 	function logDismissal() {
-		if ( gt.currentTour ) {
+		if ( currentTourState ) {
 			pingServer( 'hide', guiders._lastCreatedGuiderID );
 		}
 	}
@@ -415,7 +416,7 @@
 	 * shouldSkip bindings
 	 *
 	 * These are utility functions useful in constructing a function that can be passed
-	 * as the shouldSkip parameter to gt.initGuider.
+	 * as the shouldSkip parameter to a step.
 	 */
 
 	/**
@@ -577,7 +578,7 @@
 	 * pass to Guiders.
 	 *
 	 * This has special handling for okay, which is always present last.  See
-	 * gt.initGuider.
+	 * gt.defineTour.
 	 *
 	 * Handles actions and i18n.
 	 *
@@ -649,7 +650,7 @@
 	}
 
 	/**
-	 * Internal version of gt.initGuider.  Other methods call this after all augmentation is complete.
+	 * Internal function used for initializing a guider.  Other methods call this after all augmentation is complete.
 	 *
 	 * @param {Object} options augmented guider options object
 	 *
@@ -691,9 +692,48 @@
 	 * @param {Object} tourSpec specification of tour, with the following required keys:
 	 *
 	 * name: Name of tour
-	 * steps: Array of steps, each matching the gt.initGuider parameter (itself a
-	 * modified version of what guiders expects), except that id is implicitly
-	 * gt-name-index and next is gt-name-(index + 1) or omitted for the last item.
+	 * steps: Array of steps, each of which takes the same keys as guiders.initGuider
+	 * with the following additions and modifications:
+	 *
+	 * titlemsg - Like title, but treats the value as a message key
+	 * descriptionmsg - Like description, but treats the value as a message key
+	 *
+	 * For the 'buttons' array in each step, each button can have:
+	 *
+	 * namemsg - Like name (text of button), but treats the values a message key
+	 *
+	 * Each step also automatically includes a checkbox and Okay button.  If you don't want to
+	 * show the checkbox, pass:
+	 *
+	 * showEndTour: false
+	 *
+	 * as a step key.
+	 *
+	 * You can pass a defined action as part of the buttons array.  The only
+	 * actions currently supported are:
+	 *
+	 * next - Goes to the next step.
+	 * end - Ends the tour.
+	 *
+	 * In this case, the element of the buttons array looks like:
+	 *
+	 * {
+	 *	action: 'next'
+	 * }
+	 *
+	 * If the user clicks Okay:
+	 *
+	 * * If the checkbox is checked, the tour will end.
+	 * * Otherwise, if you passed in a action (see above), it will occur.
+	 * * Otherwise, it will close the current step.
+	 *
+	 * If input is invalid, it will throw mw.guidedTour.TourDefinitionError.
+	 *
+	 * @param {Object} options options object matching the guiders one, except for
+	 * modifications noted above.
+	 *
+	 * @return {boolean} true, on success; throws otherwise
+	 *
 	 *
 	 * Optional keys are:
 	 *
@@ -738,7 +778,7 @@
 		}
 
 		// Set the current tour name after all the guiders initialize successfully
-		gt.currentTour = {
+		currentTourState = {
 			name: tourSpec.name,
 			shouldLog: tourSpec.shouldLog || false,
 			stepCount: stepCount
@@ -750,47 +790,27 @@
 	/**
 	 * Initializes a guider
 	 *
-	 * This takes the same keys as guider.initGuider(), with a few additions.
-	 * titlemsg, descriptionmsg, and namemsg (for each button object in the buttons
-	 * field array for the buttons) all use the message parsing calls.
+	 * This is deprecated.  It will be removed, so you should use gt.defineTour instead.
 	 *
-	 * For example:
+	 * The parameter is the same as a step of gt.defineTour, except that gt.initGuider also requires an id and next
+	 * as part of the object.
 	 *
-	 * descriptionmsg: 'guidedtour-tour-currenttourname-message-name' )
+	 * If using this API, you must also put:
 	 *
-	 * results in:
+	 * gt.currentTour = 'test';
 	 *
-	 * description:
-	 * messageParser.parse( 'guidedtour-tour-currenttourname-message-name' )
+	 * at the top of your file.
 	 *
-	 * where messageParser is an instance of mw.jqueryMsg.parser.
+	 * @deprecated
 	 *
-	 * It also automatically includes a checkbox and Okay button.  If you don't want to
-	 * show the checkbox, pass:
-	 *
-	 * showEndTour: false
-	 *
-	 * You can pass a defined action as part of the buttons array.  The only
-	 * actions currently supported are:
-	 *
-	 * next - Goes to the next step.
-	 * end - Ends the tour.
-	 *
-	 * If the user clicks Okay:
-	 *
-	 * * If the checkbox is checked, the tour will end.
-	 * * Otherwise, if you passed in a action (see above), it will occur.
-	 * * Otherwise, it will close the current step.
-	 *
-	 * If input is invalid, it will throw mw.guidedTour.TourDefinitionError.
-	 *
-	 * @param {Object} options options object matching the guiders one, except for
-	 * modifications noted above.
+	 * @param {Object} options options object matching the gt.defineTour step, except as noted above
 	 *
 	 * @return {boolean} true, on success; throws otherwise
 	 */
 	gt.initGuider = function( options ) {
-		// Validate id and next, since that could cause confusion if someone copies from a gt.defineTour call to a gt.initGuider one.
+		var tourInfo;
+
+		// Validate id, next, and gt.currentTour, since these could cause confusion if someone copies from a gt.defineTour call to a gt.initGuider one.
 		if ( $.type( options.id ) !== 'string' ) {
 			throw new gt.TourDefinitionError( '\'options.id\' must be a string, in the form gt-tourname-stepnumber.' );
 		}
@@ -798,6 +818,19 @@
 		if ( $.type( options.next ) !== 'string' ) {
 			throw new gt.TourDefinitionError( '\'options.next\' must be a string, in the form gt-tourname-stepnumber.' );
 		}
+
+		if ( $.type( gt.currentTour ) !== 'string' ) {
+			throw new gt.TourDefinitionError( '\'gt.currentTour\' must be a string, the tour name.' );
+		}
+
+		// Do this every time.  We don't have any way of knowing how many times
+		// they'll call gt.initGuider.
+		tourInfo = gt.parseTourId( options.id );
+		currentTourState = {
+			name: gt.currentTour,
+			shouldLog: false,
+			stepCount: Number( tourInfo.step )
+		};
 
 		return initializeGuiderInternal( augmentGuider( options ) );
 	};
