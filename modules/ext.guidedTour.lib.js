@@ -810,13 +810,9 @@
 	gt.initGuider = function( options ) {
 		var tourInfo;
 
-		// Validate id, next, and gt.currentTour, since these could cause confusion if someone copies from a gt.defineTour call to a gt.initGuider one.
+		// Validate id and gt.currentTour, since these could cause confusion if someone copies from a gt.defineTour call to a gt.initGuider one.
 		if ( $.type( options.id ) !== 'string' ) {
 			throw new gt.TourDefinitionError( '\'options.id\' must be a string, in the form gt-tourname-stepnumber.' );
-		}
-
-		if ( $.type( options.next ) !== 'string' ) {
-			throw new gt.TourDefinitionError( '\'options.next\' must be a string, in the form gt-tourname-stepnumber.' );
 		}
 
 		if ( $.type( gt.currentTour ) !== 'string' ) {
