@@ -277,10 +277,13 @@
 			PREV_BAD_ACTION = /'prev' is not a supported button action\./,
 			guiderWithMissingId = $.extend( true, {}, VALID_SPEC ),
 			guiderWithMissingNext = $.extend( true, {}, VALID_SPEC ),
-			guiderWithBadAction = $.extend( true, {}, VALID_SPEC );
+			guiderWithBadAction = $.extend( true, {}, VALID_SPEC ),
+			oldCurrentTour = gt.currentTour;
 
 		delete guiderWithMissingId.id;
 		delete guiderWithMissingNext.next;
+
+		gt.currentTour = 'test';
 
 		guiderWithBadAction.buttons[0].action = 'prev';
 
@@ -318,5 +321,7 @@
 			gt.initGuider( VALID_SPEC ),
 			'Valid call succeeds'
 		);
+
+		gt.currentTour = oldCurrentTour;
 	} );
 } ( mediaWiki, jQuery ) );
