@@ -215,6 +215,18 @@ $messages['de'] = array(
 	'guidedtour-tour-gettingstarted-end-description' => 'Die Spezialseite „[[Special:GettingStarted|Anfangen]]“ wird stündlich mit neuen Seiten aktualisiert.',
 );
 
+/** Spanish (español)
+ * @author Fitoschido
+ */
+$messages['es'] = array(
+	'guidedtour-tour-test-description-page' => 'Probar las páginas de descripción de MediaWiki',
+	'guidedtour-tour-test-go-description-page' => 'Ir a la página de descripción',
+	'guidedtour-tour-gettingstarted-click-edit-title' => 'Pulsa «{{int:vector-view-edit}}»',
+	'guidedtour-tour-gettingstarted-click-preview-title' => 'Previsualización (opcional)',
+	'guidedtour-tour-gettingstarted-click-save-title' => '¡Ya casi has terminado!',
+	'guidedtour-tour-gettingstarted-end-title' => '¿Buscas más que hacer?',
+);
+
 /** Estonian (eesti)
  * @author RM87
  */
@@ -247,7 +259,7 @@ $messages['fr'] = array(
 	'guidedtour-tour-test-testing' => 'Tester',
 	'guidedtour-tour-test-test-description' => 'Ceci est un test de la description. Lorem ipsum dolor sit !',
 	'guidedtour-tour-test-callouts' => 'Tester les liens de sortie',
-	'guidedtour-tour-test-portal-description' => "Ceci est la page d'accueil de la communauté.", # Fuzzy
+	'guidedtour-tour-test-portal-description' => 'Ceci est la page {{int:portal}}.',
 	'guidedtour-tour-test-mediawiki-parse' => 'Tester le rendu MediaWiki',
 	'guidedtour-tour-test-wikitext-description' => 'Un élément du guide de visite peut contenir du wikitexte utilisant onShow et parseDescription. Utilisez-le pour créer un lien wiki vers la [[{{MediaWiki:Guidedtour-help-url}}|documentation des visites guidées]]. Ou un lien externe [https://github.com/tychay/mwgadget.GuidedTour vers GitHub] par exemple.',
 	'guidedtour-tour-test-description-page' => 'Tester les pages de description MediaWiki',
@@ -280,7 +292,7 @@ $messages['gl'] = array(
 	'guidedtour-tour-test-testing' => 'Probas',
 	'guidedtour-tour-test-test-description' => 'Esta é unha proba da descrición. Lorem ipsum dolor sit!',
 	'guidedtour-tour-test-callouts' => 'Probar as ligazóns de saída',
-	'guidedtour-tour-test-portal-description' => 'Esta é a páxina do portal da comunidade.', # Fuzzy
+	'guidedtour-tour-test-portal-description' => 'Esta é a páxina do {{int:portal}}.',
 	'guidedtour-tour-test-mediawiki-parse' => 'Probar a análise do MediaWiki',
 	'guidedtour-tour-test-wikitext-description' => 'Unha guía no seu wiki pode conter texto wiki usando onShow e parseDescription. Utilíceo para crear unha ligazón cara á [[{{MediaWiki:Guidedtour-help-url}}|documentación sobre as visitas guiadas]]. Ou unha ligazón externa [https://github.com/tychay/mwgadget.GuidedTour cara a github], por exemplo.',
 	'guidedtour-tour-test-description-page' => 'Probar as páxinas de descrición de MediaWiki',
@@ -334,7 +346,7 @@ $messages['ja'] = array(
 	'guidedtour-tour-test-testing' => 'テスト',
 	'guidedtour-tour-test-test-description' => 'これは説明のテストです。Lorem ipsum dolor sit!',
 	'guidedtour-tour-test-callouts' => '呼び出しのテスト',
-	'guidedtour-tour-test-portal-description' => 'これはコミュニティのポータルページです。', # Fuzzy
+	'guidedtour-tour-test-portal-description' => 'これは{{int:portal}}のページです。',
 	'guidedtour-tour-test-mediawiki-parse' => 'MediaWiki の構文解析のテスト',
 	'guidedtour-tour-test-description-page' => 'MediaWiki 説明ページのテスト',
 	'guidedtour-tour-test-go-description-page' => '説明ページに移動',
@@ -362,19 +374,22 @@ $messages['ka'] = array(
 $messages['ko'] = array(
 	'guidedtour-desc' => '새 사용자를 돕기 위해 팝업 가이드 투어를 문서에 제공할 수 있습니다',
 	'guidedtour-help-url' => 'Help:가이드 투어',
+	'guidedtour-help-guider-url' => 'Help:가이드 투어/안내자',
 	'guidedtour-end-tour' => '투어 끝내기',
 	'guidedtour-okay-button' => '확인',
 	'guidedtour-tour-test-testing' => '테스트',
 	'guidedtour-tour-test-test-description' => '설명의 테스트입니다. Lorem ipsum dolor sit!',
 	'guidedtour-tour-test-callouts' => '호출 텍스트',
-	'guidedtour-tour-test-portal-description' => '공동체 들머리 문서입니다.', # Fuzzy
+	'guidedtour-tour-test-portal-description' => '{{int:portal}} 문서입니다.',
 	'guidedtour-tour-test-mediawiki-parse' => '미디어위키 구문 분석 테스트',
+	'guidedtour-tour-test-wikitext-description' => '위키 투어의 안내자는 onShow와 parseDescription을 사용하여 포함할 수 있습니다. [[{{MediaWiki:Guidedtour-help-url}}|가이드 투어 설명서]]에 위키링크를 만드는 데 사용하세요. 또는 예를 들어 [https://github.com/tychay/mwgadget.GuidedTour GitHub로] 바깥 링크를 만드는 데 사용하세요.',
 	'guidedtour-tour-test-description-page' => '미디어위키 설명 문서 테스트',
 	'guidedtour-tour-test-go-description-page' => '설명 문서로 가기',
 	'guidedtour-tour-test-launch-tour' => '시작 투어 테스트',
 	'guidedtour-tour-test-launch-tour-description' => '안내자는 다른 가이드 투어를 시작할 수 있습니다. 멋지죠?',
 	'guidedtour-tour-test-launch-using-tours' => '투어를 사용하여 투어 시작',
 	'guidedtour-tour-gettingstarted-start-title' => '도움을 받을 준비가 되었습니까?',
+	'guidedtour-tour-gettingstarted-start-description' => '이 문서는 명확하고 쉽게 읽을 수 있도록 기본적인 교정 - 문법, 스타일, 어조나 맞춤법 - 이 필요합니다. 이 투어는 수행할 단계를 보여줍니다.',
 	'guidedtour-tour-gettingstarted-click-edit-title' => "'{{int:vector-view-edit}}' 클릭",
 	'guidedtour-tour-gettingstarted-click-edit-description' => '준비가 되면 문서의 어떠한 부분을 바꿀 것입니다.',
 	'guidedtour-tour-gettingstarted-click-preview-title' => '미리 보기 (선택 사항)',
@@ -412,7 +427,7 @@ $messages['mk'] = array(
 	'guidedtour-tour-test-testing' => 'Испробување',
 	'guidedtour-tour-test-test-description' => 'Ова е проба за описот. Lorem ipsum dolor sit!',
 	'guidedtour-tour-test-callouts' => 'Испробување на повици',
-	'guidedtour-tour-test-portal-description' => 'Ова е страница на порталот на заедницата.', # Fuzzy
+	'guidedtour-tour-test-portal-description' => 'Ова е страница на порталот {{int:portal}}.',
 	'guidedtour-tour-test-mediawiki-parse' => 'Испробување на парсирањето на МедијаВики',
 	'guidedtour-tour-test-wikitext-description' => 'Водичот во вашата викутира може да содржи викитекст што користи onShow и parseDescription. Користете го за да направите викиврска до [[{{MediaWiki:Guidedtour-help-url}}|Документацијата за Водени тури]]. Или пак надворешна врска, на пример [https://github.com/tychay/mwgadget.GuidedTour до github].',
 	'guidedtour-tour-test-description-page' => 'Испробување на описните страници на МедијаВики',
