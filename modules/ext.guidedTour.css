@@ -79,6 +79,7 @@
 
 .guider_arrow {
 	width: 40px;
+	/* @embed */
 	background-image: url(ext.guidedTour.arrows.png);
 }
 
