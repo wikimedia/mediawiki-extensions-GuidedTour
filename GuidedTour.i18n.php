@@ -291,15 +291,15 @@ $messages['gl'] = array(
 	'guidedtour-okay-button' => 'De acordo',
 	'guidedtour-tour-test-testing' => 'Probas',
 	'guidedtour-tour-test-test-description' => 'Esta é unha proba da descrición. Lorem ipsum dolor sit!',
-	'guidedtour-tour-test-callouts' => 'Probar as ligazóns de saída',
+	'guidedtour-tour-test-callouts' => 'Probe as ligazóns de saída',
 	'guidedtour-tour-test-portal-description' => 'Esta é a páxina do {{int:portal}}.',
-	'guidedtour-tour-test-mediawiki-parse' => 'Probar a análise do MediaWiki',
-	'guidedtour-tour-test-wikitext-description' => 'Unha guía no seu wiki pode conter texto wiki usando onShow e parseDescription. Utilíceo para crear unha ligazón cara á [[{{MediaWiki:Guidedtour-help-url}}|documentación sobre as visitas guiadas]]. Ou unha ligazón externa [https://github.com/tychay/mwgadget.GuidedTour cara a github], por exemplo.',
-	'guidedtour-tour-test-description-page' => 'Probar as páxinas de descrición de MediaWiki',
+	'guidedtour-tour-test-mediawiki-parse' => 'Probe o rendemento do MediaWiki',
+	'guidedtour-tour-test-wikitext-description' => 'Os elemento da guía poden conter texto wiki usando onShow e parseDescription. Utilíceo para crear unha ligazón cara á [[{{MediaWiki:Guidedtour-help-url}}|documentación sobre as visitas guiadas]]. Ou unha ligazón externa [https://github.com/tychay/mwgadget.GuidedTour cara a GitHub], por exemplo.',
+	'guidedtour-tour-test-description-page' => 'Probe as páxinas de descrición de MediaWiki',
 	'guidedtour-tour-test-go-description-page' => 'Ir á páxina de descrición',
-	'guidedtour-tour-test-launch-tour' => 'Probar a visita de lanzamento',
+	'guidedtour-tour-test-launch-tour' => 'Probe a visita de iniciación',
 	'guidedtour-tour-test-launch-tour-description' => 'As guías poden lanzar outras visitas guiadas. Caralludo, ou?',
-	'guidedtour-tour-test-launch-using-tours' => 'Lanzar unha guía sobre como usar as visitas',
+	'guidedtour-tour-test-launch-using-tours' => 'Iniciar a guía sobre como usar as visitas',
 	'guidedtour-tour-gettingstarted-start-title' => 'Listo para axudar?',
 	'guidedtour-tour-gettingstarted-start-description' => 'Esta páxina necesita correccións básicas (mellorar a gramática, o estilo, o ton, a lingua) para facela máis clara e fácil de ler. Esta guía halle mostrar os pasos a seguir.',
 	'guidedtour-tour-gettingstarted-click-edit-title' => 'Prema en "{{int:vector-view-edit}}"',
@@ -331,6 +331,7 @@ $messages['he'] = array(
  */
 $messages['it'] = array(
 	'guidedtour-desc' => 'Consente di gestire pagine per fornire un tour guidato tramite popup per assistere i nuovi utenti',
+	'guidedtour-tour-test-go-description-page' => 'Vai alla pagina di descrizione',
 );
 
 /** Japanese (日本語)
@@ -575,14 +576,14 @@ $messages['vi'] = array(
  */
 $messages['zh-hans'] = array(
 	'guidedtour-desc' => '允许页面提供一个弹出式菜单来帮助新用户',
-	'guidedtour-help-url' => '帮助:有引导游览', # Fuzzy
+	'guidedtour-help-url' => 'Help:有引导游览',
 	'guidedtour-help-guider-url' => '帮助:有引导游览/导游',
 	'guidedtour-end-tour' => '结束教程',
 	'guidedtour-okay-button' => '好的',
 	'guidedtour-tour-test-testing' => '测验',
 	'guidedtour-tour-test-test-description' => '这是一条描述演示。Lorem ipsum dolor sit!',
 	'guidedtour-tour-test-callouts' => '测试标注',
-	'guidedtour-tour-test-portal-description' => '这是社区门户页面。', # Fuzzy
+	'guidedtour-tour-test-portal-description' => '这是{{int:portal}}页面。',
 	'guidedtour-tour-test-mediawiki-parse' => '测试 MediaWiki 解析器',
 	'guidedtour-tour-test-description-page' => '测试 MediaWiki 描述页面',
 	'guidedtour-tour-test-go-description-page' => '转到描述页面',
