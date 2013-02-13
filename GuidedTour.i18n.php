@@ -219,6 +219,7 @@ $messages['de'] = array(
  * @author Fitoschido
  */
 $messages['es'] = array(
+	'guidedtour-okay-button' => 'Aceptar',
 	'guidedtour-tour-test-description-page' => 'Probar las páginas de descripción de MediaWiki',
 	'guidedtour-tour-test-go-description-page' => 'Ir a la página de descripción',
 	'guidedtour-tour-gettingstarted-click-edit-title' => 'Pulsa «{{int:vector-view-edit}}»',
@@ -449,10 +450,11 @@ $messages['mk'] = array(
 );
 
 /** Malayalam (മലയാളം)
+ * @author Praveenp
  * @author Santhosh.thottingal
  */
 $messages['ml'] = array(
-	'guidedtour-okay-button' => 'ശരി1',
+	'guidedtour-okay-button' => 'ശരി',
 );
 
 /** Malay (Bahasa Melayu)
