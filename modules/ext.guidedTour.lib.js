@@ -673,15 +673,17 @@
 	/**
 	 * Clones guider options and augments with two fields, onClose and showEndTour
 	 *
-	 * @param {Object} options guider options object
+	 * @param {Object} defaultOptions default options that are specific to this case
+	 * @param {Object} options user-provided options object, taking precedence over
+	 * defaultOptions
 	 *
 	 * @return {Object} augmented guider
 	 */
-	function augmentGuider( options ) {
+	function augmentGuider( defaultOptions, options ) {
 		return $.extend( true, {
 			onClose: $.noop,
 			showEndTour: true
-		}, options );
+		}, defaultOptions, options );
 	}
 
 	/**
@@ -700,19 +702,21 @@
 
 		if ( options.titlemsg ) {
 			options.title = getMessage( options.titlemsg );
-			delete options.titlemsg;
 		}
+		delete options.titlemsg;
 
 		if ( options.descriptionmsg ) {
 			options.description = getMessage( options.descriptionmsg );
-			delete options.descriptionmsg;
 		}
+		delete options.descriptionmsg;
 
 		options.buttons = getButtons( options.buttons );
 
 		if ( options.showEndTour ) {
 			options.buttonCustomHTML = getEndTourCheckbox();
 		}
+		delete options.showEndTour;
+
 		guiders.initGuider( options );
 
 		return true;
@@ -772,12 +776,15 @@
 	 *
 	 * Optional keys are:
 	 *
+	 * isSinglePage: is a single-page tour. This hides the end tour checkbox, and
+	 * disables tour cookies.
+	 *
 	 * shouldLog: Whether to log events to EventLogging.  Defaults to false.
 	 *
 	 * @return {boolean} true, on success; throws otherwise
 	 */
 	gt.defineTour = function( tourSpec ) {
-		var steps, stepInd = 0, stepCount, step, id;
+		var steps, stepInd = 0, stepCount, step, id, defaults = {};
 
 		if ( !$.isPlainObject( tourSpec ) ) {
 			throw new gt.TourDefinitionError( 'There must be a single argument, \'tourSpec\', which must be an object.' );
@@ -792,9 +799,16 @@
 			throw new gt.TourDefinitionError( '\'tourSpec.steps\' must be an array, the list of steps.' );
 		}
 
+		if ( tourSpec.isSinglePage ) {
+			// TODO (mattflaschen, 2013-02-12): This should be specific to the current tour. See https://bugzilla.wikimedia.org/show_bug.cgi?id=44924
+			guiders.cookie = "";
+
+			defaults.showEndTour = false;
+		}
+
 		stepCount = steps.length;
 		for ( stepInd = 1; stepInd <= stepCount; stepInd++ ) {
-			step = augmentGuider( steps[stepInd - 1] );
+			step = augmentGuider( defaults, steps[stepInd - 1] );
 
 			id = gt.makeTourId( {
 				name: tourSpec.name,
@@ -863,7 +877,7 @@
 			stepCount: Number( tourInfo.step )
 		};
 
-		return initializeGuiderInternal( augmentGuider( options ) );
+		return initializeGuiderInternal( augmentGuider( {}, options ) );
 	};
 
 	/**
