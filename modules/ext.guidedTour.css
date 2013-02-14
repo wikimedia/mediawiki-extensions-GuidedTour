@@ -35,10 +35,13 @@
 	line-height: 1.3em;
 }
 
-.guider_button {
+/* a adds specificity so it overrides link psuedo-classes */
+a.guider_button {
 	padding: 0.4em 0.8em 0.5em 0.8em;
 	font-size: 0.9em;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	text-decoration: none;
+	color: #fff;
 
 	background-color: #3366bb;
 	background-image: -moz-linear-gradient(top, #3670c8, #3366bb);

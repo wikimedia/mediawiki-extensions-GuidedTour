@@ -71,11 +71,9 @@ gt.defineTour( {
 		onShow: gt.getPageAsDescription,
 
 		buttons: [ {
-			namemsg: 'guidedtour-tour-test-go-description-page',
-			onclick: function() {
-				window.location = mw.util.wikiGetlink(pageName);
-				return false;
-			}
+			action: 'wikiLink',
+			page: pageName,
+			namemsg: 'guidedtour-tour-test-go-description-page'
 		}, {
 			action: 'end'
 		} ]

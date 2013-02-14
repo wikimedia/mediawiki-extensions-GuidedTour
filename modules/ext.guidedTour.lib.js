@@ -574,6 +574,31 @@
 	}
 
 	/**
+	 * Changes the button to link to the given URL, and returns it
+	 *
+	 * @param {Object} button button spec
+	 * @param {string} url url to go to
+	 * @param {string} [title] title attribute of button
+	 *
+	 * @return {Object} modified button
+	 */
+	function convertLinkButton( button, url, title ) {
+		if ( button.namemsg ) {
+			button.name = getMessage( button.namemsg );
+			delete button.namemsg;
+		}
+
+		$.extend( true, button, {
+			html: {
+				href: url,
+				title: title
+			}
+		} );
+
+		return button;
+	}
+
+	/**
 	 * Converts a tour's button specification to a button that we
 	 * pass to Guiders.
 	 *
@@ -587,7 +612,7 @@
 	 * @return {Array} array of buttons as Guiders expects
 	 */
 	function getButtons( buttonSpecs ) {
-		var okayButton, guiderButtons, currentButton;
+		var okayButton, guiderButtons, currentButton, url;
 
 		function next() {
 			guiders.next();
@@ -609,9 +634,19 @@
 					case 'end':
 						okayButton = getOkayButton( endTour );
 						break;
+					case 'wikiLink':
+						url = mw.util.wikiGetlink( currentButton.page );
+						guiderButtons.push( convertLinkButton( currentButton, url, currentButton.page ) );
+						delete currentButton.page;
+						break;
+					case 'externalLink':
+						guiderButtons.push( convertLinkButton( currentButton, currentButton.url ) );
+						delete currentButton.url;
+						break;
 					default:
 						throw new gt.TourDefinitionError( '\'' + currentButton.action + '\'' + ' is not a supported button action.' );
 				}
+				delete currentButton.action;
 
 			} else {
 				if ( currentButton.namemsg ) {
