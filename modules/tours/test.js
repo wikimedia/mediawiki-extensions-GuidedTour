@@ -55,8 +55,11 @@ gt.defineTour( {
 
 		// attachment
 		attachTo: '#searchInput',
-		position: 'bottomRight', //try descriptive position (5'oclock)
-
+		// try descriptive position (5'oclock) and use skin-specific value
+		position: {
+			fallback: 'bottomRight',
+			monobook: 'right'
+		},
 		buttons: [ {
 			action: 'next'
 		} ]

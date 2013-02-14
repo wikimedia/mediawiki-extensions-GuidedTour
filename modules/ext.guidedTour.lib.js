@@ -13,6 +13,7 @@
 
 	var gt = mw.guidedTour = mw.guidedTour || {},
 		MW_NS_TOUR_PREFIX = 'MediaWiki:Guidedtour-tour-',
+		skin = mw.config.get( 'skin' ),
 		messageParser = new mw.jqueryMsg.parser(),
 		userId = mw.config.get( 'wgUserId' ),
 		currentTourState;
@@ -687,6 +688,33 @@
 	}
 
 	/**
+	 * Gets the correct value for the current skin.
+	 *
+	 * This allows skin-specific values and a default fallback.
+	 *
+	 * @param {Object} options guider options object
+	 * @param {string} key key to handle
+	 *
+	 * @return {string} value to use
+	 */
+	function getValueForSkin( options, key ) {
+		var value = options[key], type = $.type( value );
+		if ( type === 'string' ) {
+			return value;
+		} else if ( type === 'object' ) {
+			if ( value[skin] !== undefined ) {
+				return value[skin];
+			} else if ( value.fallback !== undefined ) {
+				return value.fallback;
+			} else {
+				throw new gt.TourDefinitionError( 'No \'' + key + '\' value for skin \'' + skin + '\' or for \'fallback\'' );
+			}
+		} else {
+			throw new gt.TourDefinitionError( 'Value for \'' + key + '\' must be an object or a string.' );
+		}
+	}
+
+	/**
 	 * Internal function used for initializing a guider.  Other methods call this after all augmentation is complete.
 	 *
 	 * @param {Object} options augmented guider options object
@@ -711,6 +739,14 @@
 		delete options.descriptionmsg;
 
 		options.buttons = getButtons( options.buttons );
+
+		if ( options.attachTo !== undefined ) {
+			options.attachTo = getValueForSkin( options, 'attachTo' );
+		}
+
+		if ( options.position !== undefined ) {
+			options.position = getValueForSkin( options, 'position' );
+		}
 
 		if ( options.showEndTour ) {
 			options.buttonCustomHTML = getEndTourCheckbox();
