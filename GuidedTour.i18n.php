@@ -461,8 +461,27 @@ $messages['ml'] = array(
  * @author Anakmalaysia
  */
 $messages['ms'] = array(
+	'guidedtour-help-url' => 'Help:Lawatan berpandu',
+	'guidedtour-help-guider-url' => 'Help:Lawatan berpandu/pemandu',
+	'guidedtour-end-tour' => 'Tamatkan lawatan',
+	'guidedtour-okay-button' => 'Baik',
+	'guidedtour-tour-test-testing' => 'Menguji',
+	'guidedtour-tour-test-test-description' => 'Ini ialah ujian untuk keterangan. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-callouts' => 'Uji petak bual',
+	'guidedtour-tour-test-portal-description' => 'Ini ialah halaman {{int:portal}}.',
+	'guidedtour-tour-test-mediawiki-parse' => 'Uji huraian MediaWiki',
+	'guidedtour-tour-test-description-page' => 'Uji halaman keterangan MediaWiki',
+	'guidedtour-tour-test-go-description-page' => 'Pergi ke halaman keterangan',
+	'guidedtour-tour-test-launch-tour' => 'Uji lancar jelajah',
+	'guidedtour-tour-test-launch-tour-description' => 'Pemandu boleh melancarkan jelajah berpandu yang lain. Hebat, kan?',
+	'guidedtour-tour-test-launch-using-tours' => 'Lancarkan jelajah menggunakan jelajah',
 	'guidedtour-tour-gettingstarted-start-title' => 'Sedia untuk menolong?',
+	'guidedtour-tour-gettingstarted-start-description' => 'Halaman ini memerlukan suntingan asas - membetulkan tatabahasa, gaya, lenggok atau ejaan - supaya jelas dan mudah dibaca. Jelajah ini akan menunjukkan anda langkah-langkah yang harus diambil.',
+	'guidedtour-tour-gettingstarted-click-edit-title' => "Klik '{{int:vector-view-edit}}'",
 	'guidedtour-tour-gettingstarted-click-preview-title' => 'Pralihat (tidak wajib)',
+	'guidedtour-tour-gettingstarted-click-save-title' => 'Anda hampir siap!',
+	'guidedtour-tour-gettingstarted-end-title' => 'Nak cari kerja lagi?',
+	'guidedtour-tour-gettingstarted-end-description' => '[[Special:GettingStarted|Permulaan]] dikemaskinikan setiap jam dengan halaman baru.',
 );
 
 /** Dutch (Nederlands)
