@@ -229,10 +229,11 @@ $messages['es'] = array(
 );
 
 /** Estonian (eesti)
+ * @author Pikne
  * @author RM87
  */
 $messages['et'] = array(
-	'guidedtour-tour-gettingstarted-click-edit-title' => "Vajuta '{{int:vector-view-edit}}'",
+	'guidedtour-tour-gettingstarted-click-edit-title' => "Klõpsa '{{int:vector-view-edit}}'",
 	'guidedtour-tour-gettingstarted-click-preview-title' => 'Eelvaade (valikuline)',
 	'guidedtour-tour-gettingstarted-click-save-title' => 'Sa oled peaaegu lõpetanud!',
 	'guidedtour-tour-gettingstarted-click-save-description' => "Vajuta '{{int:savearticle}}' ja sinu muudatused on nähtavad.",
@@ -480,6 +481,7 @@ $messages['ms'] = array(
 	'guidedtour-tour-gettingstarted-click-edit-title' => "Klik '{{int:vector-view-edit}}'",
 	'guidedtour-tour-gettingstarted-click-preview-title' => 'Pralihat (tidak wajib)',
 	'guidedtour-tour-gettingstarted-click-save-title' => 'Anda hampir siap!',
+	'guidedtour-tour-gettingstarted-click-save-description' => "Klik '{{int:savearticle}}' untuk memperlihatkan suntingan anda.",
 	'guidedtour-tour-gettingstarted-end-title' => 'Nak cari kerja lagi?',
 	'guidedtour-tour-gettingstarted-end-description' => '[[Special:GettingStarted|Permulaan]] dikemaskinikan setiap jam dengan halaman baru.',
 );
@@ -556,6 +558,20 @@ $messages['ru'] = array(
 	'guidedtour-tour-test-mediawiki-parse' => 'Тест mediawiki parse',
 	'guidedtour-tour-test-go-description-page' => 'Перейти на страницу описания',
 	'guidedtour-tour-test-launch-tour' => 'Тестовый запуск тура',
+);
+
+/** Swedish (svenska)
+ * @author Ainali
+ */
+$messages['sv'] = array(
+	'guidedtour-okay-button' => 'Okej',
+	'guidedtour-tour-test-testing' => 'Testar',
+	'guidedtour-tour-test-test-description' => 'Detta är ett test av beskrivningen. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-go-description-page' => 'Gå till beskrivningssida',
+	'guidedtour-tour-gettingstarted-start-title' => 'Redo att hjälpa?',
+	'guidedtour-tour-gettingstarted-click-edit-description' => 'Detta låter dig göra ändringar i vilken del av sidan som helst när du är redo.',
+	'guidedtour-tour-gettingstarted-click-preview-title' => 'Förhandsgranska (valfritt)',
+	'guidedtour-tour-gettingstarted-click-save-title' => 'Du är nästan klar!',
 );
 
 /** Ukrainian (українська)
