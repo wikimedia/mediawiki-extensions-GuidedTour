@@ -67,7 +67,10 @@ Custom CSS for the GuidedTour extension.  Empty by default.',
 	'guidedtour-tour-test-callouts' => 'Title of second step in test tour, introducing callouts',
 	'guidedtour-tour-test-portal-description' => 'Description of second step in test tour.  It will be pointing to the page link given at {{msg-mw|portal-url}}, in the toolbox',
 	'guidedtour-tour-test-mediawiki-parse' => 'Description of third step in test tour',
-	'guidedtour-tour-test-wikitext-description' => "Title of third step in test tour.  Do not translate onShow or parseDescription, because they are JavaScript method names.  Don't be concerned if [[{{MediaWiki:Guidedtour-help-url}}]] does not yet exist.",
+	'guidedtour-tour-test-wikitext-description' => '{{doc-important|Do not translate "<code>onShow</code>" or "<code>parseDescription</code>", because they are JavaScript method names.}}
+Title of third step in test tour.
+
+Don\'t be concerned if [[{{MediaWiki:Guidedtour-help-url}}]] does not yet exist.',
 	'guidedtour-tour-test-description-page' => 'Title of fourth step in test tour',
 	'guidedtour-tour-test-go-description-page' => 'Text of the button pointing to [[{{MediaWiki:Guidedtour-help-url}}]]',
 	'guidedtour-tour-test-launch-tour' => 'Title of fifth step in test tour',
