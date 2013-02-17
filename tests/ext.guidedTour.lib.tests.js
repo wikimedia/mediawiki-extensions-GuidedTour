@@ -40,6 +40,36 @@
 		}
 	} ) );
 
+	QUnit.test( 'makeTourId', 4, function ( assert ) {
+		assert.strictEqual(
+			gt.makeTourId( {
+				name: 'test',
+				step: 3
+			} ),
+			'gt-test-3',
+			'Successful makeTourId call'
+		);
+
+		assert.strictEqual(
+			gt.makeTourId( 'test' ),
+			null,
+			'String input returns null'
+		);
+
+		assert.strictEqual(
+			gt.makeTourId( null ),
+			null,
+			'null input returns null'
+		);
+
+		assert.strictEqual(
+			gt.makeTourId(),
+			null,
+			'Missing parameter returns null'
+		);
+	} );
+
+
 	QUnit.test( 'parseTourId', 1, function ( assert ) {
 		var tourId = 'gt-test-2', expectedTourInfo;
 		expectedTourInfo = {
@@ -271,9 +301,8 @@
 		);
 	} );
 
-	QUnit.test( 'initGuider', 7, function( assert ) {
+	QUnit.test( 'initGuider', 5, function( assert ) {
 		var ID_MISSING = /'options.id' must be a string, in the form gt-tourname-stepnumber\./,
-			NEXT_MISSING = /'options.next' must be a string, in the form gt-tourname-stepnumber\./,
 			PREV_BAD_ACTION = /'prev' is not a supported button action\./,
 			guiderWithMissingId = $.extend( true, {}, VALID_SPEC ),
 			guiderWithMissingNext = $.extend( true, {}, VALID_SPEC ),
@@ -295,16 +324,6 @@
 			gt.TourDefinitionError,
 			ID_MISSING,
 			'gt.TourDefinitionError with correct error message for missing id field'
-		);
-
-		assertThrowsTypeAndMessage(
-			assert,
-			function () {
-				return gt.initGuider( guiderWithMissingNext );
-			},
-			gt.TourDefinitionError,
-			NEXT_MISSING,
-			'gt.TourDefinitionError with correct error message for missing next field'
 		);
 
 		assertThrowsTypeAndMessage(
