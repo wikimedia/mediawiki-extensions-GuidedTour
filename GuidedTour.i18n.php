@@ -636,6 +636,7 @@ $messages['zh-hans'] = array(
 	'guidedtour-tour-test-description-page' => '测试 MediaWiki 描述页面',
 	'guidedtour-tour-test-go-description-page' => '转到描述页面',
 	'guidedtour-tour-test-launch-tour' => '测试开始游览',
+	'guidedtour-tour-test-launch-tour-description' => '导向器可以启动其他导游。很酷对吧？',
 	'guidedtour-tour-gettingstarted-start-title' => '准备好开始了吗？',
 	'guidedtour-tour-gettingstarted-start-description' => '该页面需要基本的修编——修改其语法结构、语言风格、语言基调或错字——使其更易于阅读。本教程将告诉您该如何做。',
 	'guidedtour-tour-gettingstarted-click-edit-title' => '点击“{{int:vector-view-edit}}”',
