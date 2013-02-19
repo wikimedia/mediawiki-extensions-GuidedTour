@@ -337,6 +337,7 @@ $messages['he'] = array(
 $messages['it'] = array(
 	'guidedtour-desc' => 'Consente di gestire pagine per fornire un tour guidato tramite popup per assistere i nuovi utenti',
 	'guidedtour-tour-test-go-description-page' => 'Vai alla pagina di descrizione',
+	'guidedtour-tour-gettingstarted-click-preview-title' => 'Anteprima (opzionale)',
 );
 
 /** Japanese (日本語)
