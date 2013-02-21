@@ -466,6 +466,7 @@ $messages['ml'] = array(
  * @author Anakmalaysia
  */
 $messages['ms'] = array(
+	'guidedtour-desc' => 'Membolehkan halaman untuk menyediakan lawatan berpandu popup untuk membantu pengguna baru',
 	'guidedtour-help-url' => 'Help:Lawatan berpandu',
 	'guidedtour-help-guider-url' => 'Help:Lawatan berpandu/pemandu',
 	'guidedtour-end-tour' => 'Tamatkan lawatan',
@@ -475,6 +476,7 @@ $messages['ms'] = array(
 	'guidedtour-tour-test-callouts' => 'Uji petak bual',
 	'guidedtour-tour-test-portal-description' => 'Ini ialah halaman {{int:portal}}.',
 	'guidedtour-tour-test-mediawiki-parse' => 'Uji huraian MediaWiki',
+	'guidedtour-tour-test-wikitext-description' => 'Pemandu dalam jelajah dalam wiki anda boleh mengandungi teks wiki dengan menggunakan onShow dan parseDescription. Gunakannya untuk membuat pautan wiki ke [[{{MediaWiki:Guidedtour-help-url}}|dokumentasi Jelajah berpandu]]. Atau pautan luar [https://github.com/tychay/mwgadget.GuidedTour ke GitHub], contohnya.',
 	'guidedtour-tour-test-description-page' => 'Uji halaman keterangan MediaWiki',
 	'guidedtour-tour-test-go-description-page' => 'Pergi ke halaman keterangan',
 	'guidedtour-tour-test-launch-tour' => 'Uji lancar jelajah',
@@ -483,7 +485,9 @@ $messages['ms'] = array(
 	'guidedtour-tour-gettingstarted-start-title' => 'Sedia untuk menolong?',
 	'guidedtour-tour-gettingstarted-start-description' => 'Halaman ini memerlukan suntingan asas - membetulkan tatabahasa, gaya, lenggok atau ejaan - supaya jelas dan mudah dibaca. Jelajah ini akan menunjukkan anda langkah-langkah yang harus diambil.',
 	'guidedtour-tour-gettingstarted-click-edit-title' => "Klik '{{int:vector-view-edit}}'",
+	'guidedtour-tour-gettingstarted-click-edit-description' => 'Ini akan membolehkan anda untuk menyunting mana-mana bahagian halaman apabila anda bersedia.',
 	'guidedtour-tour-gettingstarted-click-preview-title' => 'Pralihat (tidak wajib)',
+	'guidedtour-tour-gettingstarted-click-preview-description' => "Mengklik '{{int:showpreview}}' membolehkan anda untuk menyemak rupa halaman dengan suntingan anda. Jangan lupa untuk simpan.",
 	'guidedtour-tour-gettingstarted-click-save-title' => 'Anda hampir siap!',
 	'guidedtour-tour-gettingstarted-click-save-description' => "Klik '{{int:savearticle}}' untuk memperlihatkan suntingan anda.",
 	'guidedtour-tour-gettingstarted-end-title' => 'Nak cari kerja lagi?',
