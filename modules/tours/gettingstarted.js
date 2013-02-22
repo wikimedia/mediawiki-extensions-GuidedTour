@@ -2,7 +2,25 @@
 
 ( function ( window, document, $, mw, gt ) {
 
-/*
+/**
+ * Gets full page name, without underscores
+ *
+ * Implemented the same way as E3Experiments
+ *
+ * @return {string} full page name
+ */
+function getFullPageName() {
+	var pageTitle = mw.config.get( 'wgTitle' ),
+		wgNamespaceNumber = mw.config.get( 'wgNamespaceNumber' ),
+		pageNamespace = mw.config.get( 'wgFormattedNamespaces' )[ wgNamespaceNumber ];
+	if ( pageNamespace ) {
+		pageTitle = pageNamespace + ':' + pageTitle;
+	}
+
+	return pageTitle;
+}
+
+/**
  * Checks whether we should skip this because of the page name.
  *
  * This can use functionality from E3Experiments to determine what task they chose, but
@@ -14,20 +32,22 @@
  *
  * Otherwise, any article counts.
  *
- * @return true to skip, false otherwise
+ * @return {boolean} true to skip, false otherwise
  */
 function shouldSkipPageName() {
+	var tasks, articles, article, pageName, index;
+
 	if ( mw.config.get( 'wgCanonicalNamespace' ) !== '' ) {
 		return true;
 	}
 
-	var tasks = $.parseJSON( $.cookie( 'openTask' ) );
-	var articles = [], article;
+	tasks = $.parseJSON( $.cookie( 'openTask' ) );
+	articles = [];
 
 	// We'll filter by their tasks if they have any.
 	if ( $.isPlainObject( tasks ) ) {
 		for ( article in tasks ){
-			articles.push( mw.util.wikiUrlencode( article ) );
+			articles.push( article );
 		}
 	}
 
@@ -36,8 +56,8 @@ function shouldSkipPageName() {
 		return false;
 	}
 
-	var pageName = mw.config.get( 'wgPageName' );
-	var index = $.inArray( pageName, articles );
+	pageName = getFullPageName();
+	index = $.inArray( pageName, articles );
 	return index === -1;
 }
 
