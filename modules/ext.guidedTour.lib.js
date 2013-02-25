@@ -12,7 +12,6 @@
 	'use strict';
 
 	var gt = mw.guidedTour = mw.guidedTour || {},
-		MW_NS_TOUR_PREFIX = 'MediaWiki:Guidedtour-tour-',
 		skin = mw.config.get( 'skin' ),
 		messageParser = new mw.jqueryMsg.parser(),
 		userId = mw.config.get( 'wgUserId' ),
@@ -132,6 +131,17 @@
 	}
 
 	/**
+	 * Gets the tour module name.  This does not guarantee there is such a module.
+	 *
+	 * @param {string} tourName tour name
+	 *
+	 * @return {string} tour module name
+	 */
+	function getTourModuleName( tourName ) {
+		return 'ext.guidedTour.tour.' + tourName;
+	}
+
+	/**
 	 * Launch a tour.  Tours start themselves, but this allows one tour to launch
 	 * another.
 	 *
@@ -146,7 +156,9 @@
 	 * @param {string} tourId id of tour (optional)
 	 */
 	gt.launchTour = function ( tourName, tourId ) {
-		var tourModuleName, onWikiTourUrl;
+		var tourModuleName,
+			onWikiTourUrl,
+			MW_NS_TOUR_PREFIX = 'MediaWiki:Guidedtour-tour-';
 
 		if ( !tourId ) {
 			tourId = gt.makeTourId( {
@@ -157,10 +169,10 @@
 
 		// Called if we successfully loaded the tour
 		function resume() {
-			guiders.resume(tourId);
+			guiders.resume( tourId );
 		}
 
-		tourModuleName = 'ext.guidedTour.tour.' + tourName;
+		tourModuleName = getTourModuleName( tourName );
 		if ( mw.loader.getState( tourModuleName ) !== null ) {
 			mw.loader.using( tourModuleName, resume, function ( err, dependencies ) {
 				mw.log( 'Failed to load tour ', tourModuleName,
@@ -715,13 +727,68 @@
 	}
 
 	/**
+	 * Determines whether we should horizontally flip the guider due to LTR/RTL
+	 *
+	 * Considers the HTML element's dir attribute and body LTR/RTL classes in addition
+	 * to parameter.
+	 *
+	 * @param {boolean} isExtensionDefined true if the tour is extension-defined,
+	 * false otherwise
+	 *
+	 * @return {boolean} true if steps should be flipped, false otherwise
+	 */
+	function getShouldFlipHorizontally( isExtensionDefined ) {
+		var tourDirection, interfaceDirection, siteDirection, $body;
+
+		$body = $( document.body );
+
+		// Main direction of the site
+		siteDirection = $body.is( '.sitedir-ltr' ) ? 'ltr' : 'rtl';
+
+		// Direction the interface is being viewed in.
+		// This can be changed by user preferences or uselang
+		interfaceDirection = $( 'html' ).attr( 'dir' );
+
+		// Direction the tour is assumed to be written for
+		tourDirection = isExtensionDefined ? 'ltr' : siteDirection;
+
+		// We flip if needed to match the interface direction
+		return tourDirection !== interfaceDirection;
+	}
+
+	/**
+	 * Flips a Guiders position horizontally, and returns the new version.
+	 *
+	 * @param {string} position original position
+	 *
+	 * @return {string} flipped position
+	 */
+	function getHorizontallyFlippedPosition ( position ) {
+		// Guiders uses a clock metaphor, so 12 is top
+		var TOP_CLOCK = 12;
+
+		// Convert to numeric
+		if ( guiders._offsetNameMapping[position] !== undefined ) {
+			position = guiders._offsetNameMapping[position];
+		}
+
+		if ( position === TOP_CLOCK ) {
+			return position;
+		} else {
+			return TOP_CLOCK - position;
+		}
+	}
+
+	/**
 	 * Internal function used for initializing a guider.  Other methods call this after all augmentation is complete.
 	 *
-	 * @param {Object} options augmented guider options object
+	 * @param {Object} options guider options object augmented with defaults
+	 * @param {boolean} shouldFlipHorizontally true to flip requested position horizontally
+	 * before calling guiders, false otherwise
 	 *
 	 * @return {boolean} true, on success; throws otherwise
 	 */
-	function initializeGuiderInternal( options ) {
+	function initializeGuiderInternal( options, shouldFlipHorizontally ) {
 		var oldOnClose = options.onClose;
 		options.onClose = function() {
 			oldOnClose.apply ( this, arguments );
@@ -746,10 +813,14 @@
 
 		if ( options.position !== undefined ) {
 			options.position = getValueForSkin( options, 'position' );
+			if ( shouldFlipHorizontally ) {
+				options.position = getHorizontallyFlippedPosition( options.position );
+			}
 		}
 
 		if ( options.showEndTour ) {
 			options.buttonCustomHTML = getEndTourCheckbox();
+			delete options.showEndTour;
 		}
 		delete options.showEndTour;
 
@@ -802,6 +873,19 @@
 	 * * Otherwise, if you passed in a action (see above), it will occur.
 	 * * Otherwise, it will close the current step.
 	 *
+	 * For position and attachTo, you can specify a simple string or the following:
+	 *
+	 * {
+	 *     fallback: 'normalValue'
+	 *     particularSkin: 'otherValue'
+	 * }
+	 *
+	 * where otherValue is a string to use for particularSkin (e.g. monobook/vector/etc.)
+	 *
+	 * and fallback is the default value if no override is present.
+	 *
+	 * position is automatically horizontally flipped if needed (LTR/RTL interfaces).
+	 *
 	 * If input is invalid, it will throw mw.guidedTour.TourDefinitionError.
 	 *
 	 * @param {Object} options options object matching the guiders one, except for
@@ -820,7 +904,8 @@
 	 * @return {boolean} true, on success; throws otherwise
 	 */
 	gt.defineTour = function( tourSpec ) {
-		var steps, stepInd = 0, stepCount, step, id, defaults = {};
+		var steps, stepInd = 0, stepCount, step, id, defaults = {},
+			isExtensionDefined, shouldFlipHorizontally, moduleName;
 
 		if ( !$.isPlainObject( tourSpec ) ) {
 			throw new gt.TourDefinitionError( 'There must be a single argument, \'tourSpec\', which must be an object.' );
@@ -838,9 +923,12 @@
 		if ( tourSpec.isSinglePage ) {
 			// TODO (mattflaschen, 2013-02-12): This should be specific to the current tour. See https://bugzilla.wikimedia.org/show_bug.cgi?id=44924
 			guiders.cookie = "";
-
 			defaults.showEndTour = false;
 		}
+
+		moduleName = getTourModuleName( tourSpec.name );
+		isExtensionDefined = ( mw.loader.getState( moduleName ) !== null );
+		shouldFlipHorizontally = getShouldFlipHorizontally( isExtensionDefined );
 
 		stepCount = steps.length;
 		for ( stepInd = 1; stepInd <= stepCount; stepInd++ ) {
@@ -859,7 +947,7 @@
 				} );
 			}
 
-			initializeGuiderInternal( step );
+			initializeGuiderInternal( step, shouldFlipHorizontally );
 		}
 
 		// Set the current tour name after all the guiders initialize successfully
@@ -913,7 +1001,7 @@
 			stepCount: Number( tourInfo.step )
 		};
 
-		return initializeGuiderInternal( augmentGuider( {}, options ) );
+		return initializeGuiderInternal( augmentGuider( {}, options ), false );
 	};
 
 	/**
