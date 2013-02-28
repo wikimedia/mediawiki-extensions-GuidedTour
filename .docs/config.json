@@ -1,0 +1,11 @@
+{
+	"--title": "GuidedTour Code Documentation",
+	"--warnings": ["-no_doc"],
+	"--builtin-classes": true,
+	"--output": "../docs",
+	"--": [
+		"../modules/ext.guidedTour.lib.js",
+		"../modules/externals/mediawiki.libs.guiders/mediawiki.libs.guiders.exposeGuiders.js",
+		"../tests/"
+	]
+}

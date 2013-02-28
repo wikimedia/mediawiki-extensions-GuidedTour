@@ -40,6 +40,36 @@
 		}
 	} ) );
 
+	QUnit.test( 'makeTourId', 4, function ( assert ) {
+		assert.strictEqual(
+			gt.makeTourId( {
+				name: 'test',
+				step: 3
+			} ),
+			'gt-test-3',
+			'Successful makeTourId call'
+		);
+
+		assert.strictEqual(
+			gt.makeTourId( 'test' ),
+			null,
+			'String input returns null'
+		);
+
+		assert.strictEqual(
+			gt.makeTourId( null ),
+			null,
+			'null input returns null'
+		);
+
+		assert.strictEqual(
+			gt.makeTourId(),
+			null,
+			'Missing parameter returns null'
+		);
+	} );
+
+
 	QUnit.test( 'parseTourId', 1, function ( assert ) {
 		var tourId = 'gt-test-2', expectedTourInfo;
 		expectedTourInfo = {
