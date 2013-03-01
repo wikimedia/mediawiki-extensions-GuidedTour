@@ -635,6 +635,7 @@
 		// cookie the users when they are in the tour
 		guiders.cookie = mw.config.get( 'wgCookiePrefix' ) + '-mw-tour';
 		guiders.cookieParams = { path: '/' };
+		guiders._defaultSettings.changeCookie = true;
 
 		// Don't show X button
 		guiders._defaultSettings.xButton = false;
@@ -1124,7 +1125,7 @@
 
 			if ( tourSpec.isSinglePage ) {
 				// TODO (mattflaschen, 2013-02-12): This should be specific to the current tour. See https://bugzilla.wikimedia.org/show_bug.cgi?id=44924
-				guiders.cookie = "";
+				defaults.changeCookie = false;
 				defaults.showEndTour = false;
 			}
 
