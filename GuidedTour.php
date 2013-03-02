@@ -140,7 +140,10 @@ $wgResourceModules['ext.guidedTour.tour.gettingstarted'] = array(
 	'scripts' => 'gettingstarted.js',
 	'localBasePath' => $dir . 'modules/tours',
 	'remoteExtPath' => 'GuidedTour/modules/tours',
-	'dependencies' => 'ext.guidedTour',
+	'dependencies' => array(
+		'mediawiki.Title',
+		'ext.guidedTour',
+	),
 	'messages' => array(
 		'savearticle',
 		'showpreview',
