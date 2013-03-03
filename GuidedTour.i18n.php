@@ -60,7 +60,8 @@ $messages['qqq'] = array(
 	'guidedtour-custom.css' => '{{Optional}}
 Custom CSS for the GuidedTour extension.  Empty by default.',
 	'guidedtour-end-tour' => 'Label text of checkbox for choosing whether to end tour',
-	'guidedtour-okay-button' => 'Main action button text.  Will dismiss single tour step, go to next step, or end tour depending on context and {{msg-mw|guidedtour-end-tour}} checkbox.',
+	'guidedtour-okay-button' => 'Main action button text.  Will dismiss single tour step, go to next step, or end tour depending on context and {{msg-mw|guidedtour-end-tour}} checkbox.
+{{Identical|OK}}',
 	'guidedtour-tour-test-testing' => 'Title of first step in test tour',
 	'guidedtour-tour-test-test-description' => 'Sample description to show how it is used.
 {{doc-important|Do not translate the Latin "Lorem ipsum dolor sit!".}}',
@@ -184,6 +185,13 @@ $messages['be-tarask'] = array(
 	'guidedtour-tour-gettingstarted-click-save-description' => 'Націсьніце «{{int:savearticle}}» і вашыя зьмены будуць бачныя ўсім.',
 	'guidedtour-tour-gettingstarted-end-title' => 'Што б зрабіць?..',
 	'guidedtour-tour-gettingstarted-end-description' => 'Старонка «[[Special:GettingStarted|З чаго пачаць]]» кожную гадзіну напаўняецца новымі старонкамі.',
+);
+
+/** Breton (brezhoneg)
+ * @author Y-M D
+ */
+$messages['br'] = array(
+	'guidedtour-okay-button' => 'A-du',
 );
 
 /** German (Deutsch)
