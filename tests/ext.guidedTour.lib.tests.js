@@ -185,7 +185,8 @@
 		var cookieName = mw.libs.guiders.cookie,
 			name = 'foo',
 			numberStep = 5,
-			stringStep = '3';
+			stringStep = '3',
+			oldCookieValue = $.cookie( cookieName );
 
 		function assertValidCookie( expectedName, expectedStep, message ) {
 			var id = $.cookie( cookieName ),
@@ -206,7 +207,7 @@
 		gt.setTourCookie( name, stringStep );
 		assertValidCookie ( name, stringStep, 'setTourCookie accepts string step' );
 
-		mw.libs.guiders.endTour();
+		$.cookie( cookieName, oldCookieValue, mw.libs.guiders.cookieParams );
 	} );
 
 	QUnit.test( 'defineTour', 11, function ( assert ) {
