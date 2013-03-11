@@ -188,10 +188,12 @@ $messages['be-tarask'] = array(
 );
 
 /** Breton (brezhoneg)
+ * @author Fohanno
  * @author Y-M D
  */
 $messages['br'] = array(
 	'guidedtour-okay-button' => 'A-du',
+	'guidedtour-tour-test-testing' => "Oc'h amprouiñ",
 );
 
 /** German (Deutsch)
