@@ -508,31 +508,6 @@
 	}
 
 	/**
-	 * Flips a Guiders position horizontally, and returns the new version.
-	 *
-	 * @private
-	 *
-	 * @param {string} position Original position
-	 *
-	 * @return {string} Flipped position
-	 */
-	function getHorizontallyFlippedPosition ( position ) {
-		// Guiders uses a clock metaphor, so 12 is top
-		var TOP_CLOCK = 12;
-
-		// Convert to numeric
-		if ( guiders._offsetNameMapping[position] !== undefined ) {
-			position = guiders._offsetNameMapping[position];
-		}
-
-		if ( position === TOP_CLOCK ) {
-			return position;
-		} else {
-			return TOP_CLOCK - position;
-		}
-	}
-
-	/**
 	 * Internal function used for initializing a guider.  Other methods call this after all augmentation is complete.
 	 *
 	 * @private
@@ -570,7 +545,9 @@
 		if ( options.position !== undefined ) {
 			options.position = getValueForSkin( options, 'position' );
 			if ( shouldFlipHorizontally ) {
-				options.position = getHorizontallyFlippedPosition( options.position );
+				options.position = guiders.getFlippedPosition( options.position, {
+					horizontal: true
+				} );
 			}
 		}
 
@@ -642,7 +619,7 @@
 
 		guiders._defaultSettings.closeOnEscape = true;
 		guiders._defaultSettings.closeOnClickOutside = true;
-
+		guiders._defaultSettings.flipToKeepOnScreen = true;
 		guiders._defaultSettings.onShow = gt.recordStats;
 	}
 
