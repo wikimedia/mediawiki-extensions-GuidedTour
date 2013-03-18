@@ -341,6 +341,33 @@ $messages['he'] = array(
 	'guidedtour-tour-test-mediawiki-parse' => 'בדיקת פענוח מדיה ויקי',
 );
 
+/** Upper Sorbian (hornjoserbsce)
+ * @author Michawiki
+ */
+$messages['hsb'] = array(
+	'guidedtour-help-url' => 'Help:Wjedźene tury',
+	'guidedtour-help-guider-url' => 'Help:Wjedźene tury/wjednik',
+	'guidedtour-end-tour' => 'Turu skónčić',
+	'guidedtour-okay-button' => 'W porjadku',
+	'guidedtour-tour-test-testing' => 'Testowanje',
+	'guidedtour-tour-test-test-description' => 'To je test wopisanja. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-callouts' => 'Wujasnjenja testować',
+	'guidedtour-tour-test-portal-description' => 'To je strona {{int:portal}}.',
+	'guidedtour-tour-test-mediawiki-parse' => 'Parsowanje MediaWiki testować',
+	'guidedtour-tour-test-description-page' => 'Wopisanske strony mdiaWiki testować',
+	'guidedtour-tour-test-go-description-page' => 'Dźi k wopisanskej stronje',
+	'guidedtour-tour-test-launch-tour' => 'Turowy start testować',
+	'guidedtour-tour-test-launch-tour-description' => 'Wjednicy móža druhe wjedźene tury startować. Dosć cool, něwěrno?',
+	'guidedtour-tour-gettingstarted-start-title' => 'Sy hotowy, zo by pomhał?',
+	'guidedtour-tour-gettingstarted-click-edit-title' => "Klikń na '{{int:vector-view-edit}}'",
+	'guidedtour-tour-gettingstarted-click-preview-title' => 'Přehlad (opcionalny)',
+	'guidedtour-tour-gettingstarted-click-preview-description' => "Kliknjenje an '{{int:showpreview}}' ći zmóžnja kontrolować, kak strona z twojimi změnami wupada. Njezabudź na składowanje.",
+	'guidedtour-tour-gettingstarted-click-save-title' => 'Sy nimale hotowy!',
+	'guidedtour-tour-gettingstarted-click-save-description' => "Klikń na '{{int:savearticle}}' a twoje změny budu widźomne.",
+	'guidedtour-tour-gettingstarted-end-title' => 'Chceš wjace činić?',
+	'guidedtour-tour-gettingstarted-end-description' => '[[Special:GettingStarted|Prěnje kroki]] so kóždu hodźinu z nowymi stronami aktualizuje.',
+);
+
 /** Italian (italiano)
  * @author Beta16
  */
