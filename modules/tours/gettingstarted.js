@@ -3,39 +3,23 @@
 ( function ( window, document, $, mw, gt ) {
 
 /**
- * Gets full page name, without underscores
- *
- * Implemented the same way as E3Experiments
- *
- * @return {string} full page name
- */
-function getFullPageName() {
-	var pageTitle = mw.config.get( 'wgTitle' ),
-		wgNamespaceNumber = mw.config.get( 'wgNamespaceNumber' ),
-		pageNamespace = mw.config.get( 'wgFormattedNamespaces' )[ wgNamespaceNumber ];
-	if ( pageNamespace ) {
-		pageTitle = pageNamespace + ':' + pageTitle;
-	}
-
-	return pageTitle;
-}
-
-/**
  * Checks whether we should skip this because of the page name.
  *
- * This can use functionality from E3Experiments to determine what task they chose, but
+ * This can use functionality from GettingStarted to determine what task they chose, but
  * it will work either way.
+ *
+ * Other code in GuidedTour decides to load the gettingstarted tour, but this function will
+ * not show it for certain pages:
  *
  * It skips everything outside the main namespace (namespace 0).
  *
- * If it's in the namespace, it checks if they have a task.  If they do, it must match.
- *
- * Otherwise, any article counts.
+ * If it's in the main namespace, it checks if they have a task.  If they do, it must match.
+ * If they have no task, the tour will be shown for any article.
  *
  * @return {boolean} true to skip, false otherwise
  */
 function shouldSkipPageName() {
-	var tasks, articles, article, pageName, index;
+	var tasks, articles, article, wgPageName, fullPageTitle, index;
 
 	if ( mw.config.get( 'wgCanonicalNamespace' ) !== '' ) {
 		return true;
@@ -56,8 +40,9 @@ function shouldSkipPageName() {
 		return false;
 	}
 
-	pageName = getFullPageName();
-	index = $.inArray( pageName, articles );
+	wgPageName = mw.config.get( 'wgPageName' );
+	fullPageTitle = new mw.Title( wgPageName ).getPrefixedText();
+	index = $.inArray( fullPageTitle, articles );
 	return index === -1;
 }
 
