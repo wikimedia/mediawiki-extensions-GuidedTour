@@ -184,6 +184,8 @@
 	 * @return {void}
 	 */
 	function callApi ( guider, source ) {
+		var ajaxParams, data;
+
 		if ( source !== 'page' && source !== 'text' ) {
 			mw.log( 'callApi called incorrectly' );
 			return;
@@ -195,7 +197,7 @@
 			return;
 		}
 
-		var ajaxParams = {
+		ajaxParams = {
 			async: false,
 			type: 'POST',
 			url: mw.util.wikiScript( 'api' ),
@@ -207,7 +209,7 @@
 		ajaxParams.data[source] = guider.description;
 
 		// parse (make synchronous API request)
-		var data = JSON.parse(
+		data = JSON.parse(
 			$.ajax( ajaxParams ).responseText
 		);
 		if ( data.error ) {
@@ -368,7 +370,7 @@
 	 * @throws {mw.guidedTour.TourDefinitionError} On invalid actions
 	 */
 	function getButtons( buttonSpecs ) {
-		var okayButton, guiderButtons, currentButton, url;
+		var i, okayButton, guiderButtons, currentButton, url;
 
 		function next() {
 			guiders.next();
@@ -380,7 +382,7 @@
 
 		buttonSpecs = buttonSpecs || [];
 		guiderButtons = [];
-		for ( var i = 0; i < buttonSpecs.length; i++ ) {
+		for ( i = 0; i < buttonSpecs.length; i++ ) {
 			currentButton = buttonSpecs[i];
 			if ( currentButton.action !== undefined ) {
 				switch ( currentButton.action ) {
@@ -634,13 +636,15 @@
 		 * @return {string} return.step Tour step
 		 */
 		parseTourId: function ( tourId ) {
+			// Keep in sync with regex in GuidedTourHooks.php
+			var TOUR_ID_REGEX = /^gt-([^.\-]+)-(\d+)$/,
+				tourMatch, tourName, tourStep;
+
 			if ( typeof tourId !== 'string' ) {
 				return null;
 			}
-			// Keep in sync with regex in GuidedTourHooks.php
-			var TOUR_ID_REGEX = /^gt-([^.-]+)-(\d+)$/;
 
-			var tourMatch = tourId.match( TOUR_ID_REGEX ), tourName, tourStep;
+			tourMatch = tourId.match( TOUR_ID_REGEX );
 			if ( ! tourMatch ) {
 				return null;
 			}
@@ -755,14 +759,14 @@
 		 */
 		launchTourFromEnvironment: function () {
 			// Tour is either in the query string or cookie (prefer query string)
-			var tourName = mw.util.getParamValue( 'tour' );
-			var tourId, tourInfo;
+			var tourName = mw.util.getParamValue( 'tour' ), tourId,
+				tourInfo, step;
 			//clean out path variables
 			if ( tourName ) {
 				tourName = cleanTourName( tourName );
 			}
 			if ( tourName !== null && tourName.length !== 0 ) {
-				var step = mw.util.getParamValue( 'step' );
+				step = mw.util.getParamValue( 'step' );
 				if ( step === null || step === '' ) {
 					step = '1';
 				}
@@ -954,8 +958,9 @@
 			} );
 			if ( (step === 0) && $.cookie( guiders.cookie ) ) {
 				// start from cookie position
-				if ( guiders.resume() )
+				if ( guiders.resume() ) {
 					return;
+				}
 			}
 
 			if (step === 0) {
