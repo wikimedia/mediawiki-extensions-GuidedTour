@@ -87,11 +87,11 @@ a.guider_button {
 }
 
 .guider_arrow_right, .guider_arrow_left {
-	height: 35px;
+	height: 39px;
 }
 
 .guider_arrow_up, .guider_arrow_down {
-	height: 23px;
+	height: 24px;
 }
 
 /**
@@ -100,7 +100,7 @@ a.guider_button {
 
 /* @noflip */
 .guider_arrow_right {
-	background-position: 0 -58px;
+	background-position: 0 -63px;
 	right: -40px;
 }
 
@@ -110,7 +110,7 @@ a.guider_button {
 }
 
 .guider_arrow_up {
-	background-position: 0 -92px;
+	background-position: 0 -102px;
 	top: -23px;
 }
 
