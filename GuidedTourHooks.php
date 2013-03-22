@@ -17,6 +17,9 @@ class GuidedTourHooks {
 
 	// Tour cookie name.  It will be prefixed automatically.
 	const COOKIE_NAME = '-mw-tour';
+
+	const TOUR_PARAM = 'tour';
+
 	/*
 	   XXX (mattflaschen, 2012-01-02):
 
@@ -125,7 +128,7 @@ class GuidedTourHooks {
 		global $wgResourceModules;
 		// test for tour enabled in url first
 		$request = $out->getRequest();
-		$queryTourName = $request->getVal('tour');
+		$queryTourName = $request->getVal( self::TOUR_PARAM );
 		if ( $queryTourName !== null ) {
 			self::addTour( $out, $queryTourName );
 		} else {
@@ -153,4 +156,8 @@ class GuidedTourHooks {
 		return true;
 	}
 
+	public static function onRedirectSpecialArticleRedirectParams( &$redirectParams ) {
+		$redirectParams[] = self::TOUR_PARAM;
+		return TRUE;
+	}
 }
