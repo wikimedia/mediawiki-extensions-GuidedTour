@@ -589,7 +589,9 @@ $messages['pms'] = array(
  * @author Joetaras
  */
 $messages['roa-tara'] = array(
+	'guidedtour-end-tour' => "Fine d'u gire",
 	'guidedtour-okay-button' => 'Apposte',
+	'guidedtour-tour-test-testing' => 'Stoche a teste',
 );
 
 /** Russian (русский)
