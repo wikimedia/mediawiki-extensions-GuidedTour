@@ -585,6 +585,71 @@ $messages['pms'] = array(
 	'guidedtour-tour-test-launch-using-tours' => 'Ancamin-a un vir dzor dovré ij vir',
 );
 
+/** Portuguese (português)
+ * @author Alchimista
+ * @author Raylton P. Sousa
+ */
+$messages['pt'] = array(
+	'guidedtour-desc' => 'Permite que páginas proporcionem uma visita guiada por pop-ups, para ajudar os novos utilizadores.',
+	'guidedtour-help-url' => 'Help:Visitas guiadas',
+	'guidedtour-help-guider-url' => 'Help:Visitas guiadas/guia',
+	'guidedtour-end-tour' => 'Terminar visita guiada',
+	'guidedtour-okay-button' => 'OK',
+	'guidedtour-tour-test-testing' => 'Testando',
+	'guidedtour-tour-test-test-description' => 'Este é um teste da descrição. Lorem ipsum sit de dolor!',
+	'guidedtour-tour-test-callouts' => 'Testes ao balão do guia',
+	'guidedtour-tour-test-portal-description' => 'Esta é a página de {{int:portal}}.',
+	'guidedtour-tour-test-mediawiki-parse' => 'Testar a análise sintáctica do Mediawiki',
+	'guidedtour-tour-test-wikitext-description' => 'Um guia na sua visita guiada pela wiki pode conter wikitexto usando onShow e parseDescription. Use-os para criar um wikilink para o [[{{MediaWiki:Guidedtour-help-url}}|Documentação das visitas guiadas]]. Ou um link externo [https://github.com/tychay/mwgadget.GuidedTour para o GitHub], por exemplo.',
+	'guidedtour-tour-test-description-page' => 'Testar páginas de descrição do MediaWiki',
+	'guidedtour-tour-test-go-description-page' => 'Ir para a página de descrição',
+	'guidedtour-tour-test-launch-tour' => 'Teste do lançamento do guia',
+	'guidedtour-tour-test-launch-tour-description' => 'Os guias podem lançar outras visitas guiadas, muito interessante, não?',
+	'guidedtour-tour-test-launch-using-tours' => 'Lançar um guia sobre como usar visitas guiadas',
+	'guidedtour-tour-gettingstarted-start-title' => 'Pronto para ajudar?',
+	'guidedtour-tour-gettingstarted-start-description' => 'Esta página precisa de edição básica – melhorar a gramática, estilo, tom ou ortografia – para tornar o texto claro e fácil de ler. Esta guia irá mostrar-lhe os passos a tomar.',
+	'guidedtour-tour-gettingstarted-click-edit-title' => "Clique '{{int:vector-view-edit}}'",
+	'guidedtour-tour-gettingstarted-click-edit-description' => 'Isso permitirá que possa fazer alterações em qualquer parte da página, quando estiver pronto.',
+	'guidedtour-tour-gettingstarted-click-preview-title' => 'Pré-visualizar (opcional)',
+	'guidedtour-tour-gettingstarted-click-preview-description' => "Clicando em '{{int:showpreview}}' permite pré-visualizar  a página com as suas alterações. Só não se esqueça de salvar.",
+	'guidedtour-tour-gettingstarted-click-save-title' => 'Está quase a terminar!',
+	'guidedtour-tour-gettingstarted-click-save-description' => "Clique em '{{int:savearticle}}' e as suas alterações serão visíveis.",
+	'guidedtour-tour-gettingstarted-end-title' => 'Procura algo mais para fazer?',
+	'guidedtour-tour-gettingstarted-end-description' => 'A página [[Special:GettingStarted|Getting Started]] é atualizado a cada hora com novas páginas.',
+);
+
+/** Brazilian Portuguese (português do Brasil)
+ * @author Raylton P. Sousa
+ */
+$messages['pt-br'] = array(
+	'guidedtour-desc' => 'Permite que páginas proporcionem uma visita guiada por pop-ups, para ajudar os novos utilizadores.',
+	'guidedtour-help-url' => 'Help:Visitas guiadas',
+	'guidedtour-help-guider-url' => 'Help:Visitas guiadas/tutorial',
+	'guidedtour-end-tour' => 'Finalizar a visita',
+	'guidedtour-okay-button' => 'Entendido',
+	'guidedtour-tour-test-testing' => 'Teste',
+	'guidedtour-tour-test-test-description' => 'Está é uma descrição teste. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-callouts' => 'Teste ao balão do guia',
+	'guidedtour-tour-test-portal-description' => 'Esta é a página do {{int:portal}}.',
+	'guidedtour-tour-test-mediawiki-parse' => 'Teste a análise sintáctica do Mediawiki',
+	'guidedtour-tour-test-wikitext-description' => 'Um guia na sua visita guiada pela wiki pode conter wikitexto usando onShow e parseDescription. Use-os para criar um wikilink para o [[{{MediaWiki:Guidedtour-help-url}}|Documentação das visitas guiadas]]. Ou um link externo [https://github.com/tychay/mwgadget.GuidedTour para o GitHub], por exemplo.',
+	'guidedtour-tour-test-description-page' => 'Teste de páginas de descrição do MediaWiki',
+	'guidedtour-tour-test-go-description-page' => 'Ir para página de descrição',
+	'guidedtour-tour-test-launch-tour' => 'Teste do lançamento do guia',
+	'guidedtour-tour-test-launch-tour-description' => 'Os guias podem lançar outras visitas guiadas, muito legal, não?',
+	'guidedtour-tour-test-launch-using-tours' => 'Lançar um guia sobre como usar visitas guiadas',
+	'guidedtour-tour-gettingstarted-start-title' => 'Pronto para ajudar?',
+	'guidedtour-tour-gettingstarted-start-description' => 'Esta página precisa de edição básica – melhorar a gramática, estilo, tom ou ortografia – para tornar o texto claro e fácil de ler. Esta guia irá mostrar-lhe as etapas que deve seguir.',
+	'guidedtour-tour-gettingstarted-click-edit-title' => "Clique em '{{int:vector-view-edit}}'",
+	'guidedtour-tour-gettingstarted-click-edit-description' => 'Isto irá permitir que faça alterações em qualquer parte da página, quando você estiver pronto.',
+	'guidedtour-tour-gettingstarted-click-preview-title' => 'Previsualização(opcional)',
+	'guidedtour-tour-gettingstarted-click-preview-description' => "Clicar em '{{int: showpreview}}' permite que você verifique como a página vai ficar depois das suas alterações. Só não esqueça de salvar.",
+	'guidedtour-tour-gettingstarted-click-save-title' => 'Você está quase terminando!',
+	'guidedtour-tour-gettingstarted-click-save-description' => "Clique em '{{int:savearticle}}' e suas alterações serão visíveis.",
+	'guidedtour-tour-gettingstarted-end-title' => 'Procurando mais o que fazer?',
+	'guidedtour-tour-gettingstarted-end-description' => 'A página [[Special:GettingStarted|Primeiros passos]] é atualizada a cada hora, com novas páginas.',
+);
+
 /** tarandíne (tarandíne)
  * @author Joetaras
  */
