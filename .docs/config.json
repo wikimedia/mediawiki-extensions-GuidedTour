@@ -1,6 +1,6 @@
 {
 	"--title": "GuidedTour Code Documentation",
-	"--warnings": ["-no_doc"],
+	"--warnings": ["nodoc(class,public)"],
 	"--builtin-classes": true,
 	"--output": "../docs",
 	"--": [

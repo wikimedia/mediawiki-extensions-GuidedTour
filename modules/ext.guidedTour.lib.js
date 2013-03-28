@@ -919,7 +919,7 @@
 		},
 
 		/**
-		 * Checks whether they just saved an edit.  Currently this uses Extension:PostEdit
+		 * Checks whether they just saved an edit.
 		 *
 		 * @return {boolean} true if they just saved an edit, false otherwise
 		 */
