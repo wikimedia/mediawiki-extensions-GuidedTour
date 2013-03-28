@@ -91,7 +91,6 @@ $wgResourceModules['ext.guidedTour.lib'] = array(
 		'mediawiki.libs.guiders',
 		'mediawiki.util',
 		'schema.GuidedTour',
-		'ext.postEdit',
 		'ext.guidedTour.siteStyles',
 	),
 	'messages' => array(
