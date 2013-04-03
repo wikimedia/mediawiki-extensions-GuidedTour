@@ -196,6 +196,13 @@ $messages['br'] = array(
 	'guidedtour-tour-test-testing' => "Oc'h amprouiñ",
 );
 
+/** Czech (česky)
+ * @author Mormegil
+ */
+$messages['cs'] = array(
+	'guidedtour-tour-gettingstarted-end-description' => 'Na [[Special:GettingStarted|Jak začít]] se každou hodinu objevují nové stránky.',
+);
+
 /** German (Deutsch)
  * @author Metalhead64
  */
