@@ -266,6 +266,13 @@ $messages['eu'] = array(
 	'guidedtour-okay-button' => 'Ados',
 );
 
+/** Finnish (suomi)
+ * @author Silvonen
+ */
+$messages['fi'] = array(
+	'guidedtour-tour-test-go-description-page' => 'Siirry kuvaussivulle',
+);
+
 /** French (français)
  * @author Gomoko
  * @author Ltrlg
