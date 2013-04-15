@@ -278,6 +278,7 @@ $messages['fi'] = array(
  * @author Ltrlg
  * @author Seb35
  * @author Trizek
+ * @author Urhixidur
  */
 $messages['fr'] = array(
 	'guidedtour-desc' => 'Autoriser les pages à afficher une visite guidée par pop-up pour aider les nouveaux utilisateurs',
@@ -296,7 +297,7 @@ $messages['fr'] = array(
 	'guidedtour-tour-test-launch-tour' => 'Tester la visite de lancement',
 	'guidedtour-tour-test-launch-tour-description' => 'Les guides peuvent créer d’autres visites guidées. Plutôt cool, non ?',
 	'guidedtour-tour-test-launch-using-tours' => "Lancer une visite sur l'utilisation des visites",
-	'guidedtour-tour-gettingstarted-start-title' => 'Prêt à aider?',
+	'guidedtour-tour-gettingstarted-start-title' => 'Prêt à aider ?',
 	'guidedtour-tour-gettingstarted-start-description' => "Cette page a besoin d’une modification sur la forme — améliorer la grammaire, le style, le ton ou l'orthographe — pour la rendre claire et facile à lire. Cette visite guidée vous montrera les étapes à entreprendre.",
 	'guidedtour-tour-gettingstarted-click-edit-title' => 'Cliquez sur « {{int:vector-view-edit}} »',
 	'guidedtour-tour-gettingstarted-click-edit-description' => 'Cela vous permettra de faire des modifications à n’importe quelle partie de la page, quand vous serez prêt.',
