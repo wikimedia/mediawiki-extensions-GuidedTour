@@ -62,18 +62,13 @@ gt.defineTour( {
 		} ],
 
 		// TODO (mattflaschen 2013-02-05): Factor out into lib.  Also, it should probably use wgAction, rather than query.
-		shouldSkip: function() {
-			// If they're already editing, skip
-			return gt.hasQuery( { action: 'edit' } );
-		}
+		shouldSkip: gt.isEditing
 	},  {
 		titlemsg: 'guidedtour-tour-gettingstarted-click-edit-title',
 		descriptionmsg: 'guidedtour-tour-gettingstarted-click-edit-description',
 		attachTo: '#ca-edit',
 		position: 'bottom',
-		shouldSkip: function() {
-			return gt.hasQuery( { action: 'edit' } );
-		}
+		shouldSkip: gt.isEditing
 	}, {
 		titlemsg: 'guidedtour-tour-gettingstarted-click-preview-title',
 		descriptionmsg: 'guidedtour-tour-gettingstarted-click-preview-description',
@@ -81,7 +76,7 @@ gt.defineTour( {
 		position: 'top',
 		closeOnClickOutside: false,
 		shouldSkip: function() {
-			return !gt.hasQuery( { action: 'edit' } );
+			return !gt.isEditing();
 		}
 	}, {
 		titlemsg: 'guidedtour-tour-gettingstarted-click-save-title',
@@ -90,8 +85,7 @@ gt.defineTour( {
 		position: 'top',
 		closeOnClickOutside: false,
 		shouldSkip: function() {
-			// If they're not previewing or doing show changes, skip
-			return !gt.hasQuery( { action: 'submit' } );
+			return !gt.isReviewing();
 		}
 	}, {
 		titlemsg: 'guidedtour-tour-gettingstarted-end-title',

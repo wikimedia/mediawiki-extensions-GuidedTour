@@ -926,6 +926,25 @@
 		},
 
 		/**
+		 * Checks whether they are editing.  Does not include previewing.
+		 *
+		 * @return {boolean} true if and only if they are on the edit action
+		 */
+		isEditing: function () {
+			return mw.config.get( 'wgAction' ) === 'edit';
+		},
+
+		/**
+		 * Checks whether they are previewing or reviewing changes (after clicking "Show changes")
+		 *
+		 * @return {boolean} true if and only if they are reviewing
+		 */
+		isReviewing: function () {
+			return mw.config.get( 'wgAction' ) === 'submit';
+		},
+
+
+		/**
 		 * Checks whether they just saved an edit.
 		 *
 		 * @return {boolean} true if they just saved an edit, false otherwise
