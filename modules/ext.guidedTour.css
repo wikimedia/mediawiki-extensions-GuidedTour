@@ -18,6 +18,11 @@
 	margin-top: 8px;
 }
 
+.guider_buttons .mw-ui-button {
+	margin-left: 6px;
+	float: right;
+}
+
 .guider_content h1 {
 	color: #252525;
 	font-size: 1.5em;
@@ -33,51 +38,6 @@
 .guider_content p {
 	font-size: 1em;
 	line-height: 1.3em;
-}
-
-/* a adds specificity so it overrides link psuedo-classes */
-a.guider_button {
-	padding: 0.4em 0.8em 0.5em 0.8em;
-	font-size: 0.9em;
-	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-	text-decoration: none;
-	color: #fff;
-
-	background-color: #3366bb;
-	background-image: -moz-linear-gradient(top, #3670c8, #3366bb);
-	background-image: -ms-linear-gradient(top, #3670c8, #3366bb);
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3670c8), color-stop(100%, #3366bb));
-	background-image: -webkit-linear-gradient(top, #3670c8, #3366bb);
-	background-image: linear-gradient(#3670c8, #3366bb);
-
-	border: 1px #33589f solid;
-
-	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#3670c8', endColorstr='#3366bb', GradientType=0);
-
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-}
-
-.guider_button:hover {
-	text-decoration: none;
-	background-color: #3f77d7;
-	background-image: -moz-linear-gradient(top, #4c84da, #3f77d7);
-	background-image: -ms-linear-gradient(top, #4c84da, #3f77d7);
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #4c84da), color-stop(100%, #3f77d7));
-	background-image: -webkit-linear-gradient(top, #4c84da, #3f77d7);
-	background-image: linear-gradient(#4c84da, #3f77d7);
-	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#4c84da', endColorstr='#3f77d7', GradientType=0);
-}
-
-.guider_button:active {
-	background-color: #2a549c;
-	background-image: -moz-linear-gradient(top, #2d5ea9, #2a549c);
-	background-image: -ms-linear-gradient(top, #2d5ea9, #2a549c);
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2d5ea9), color-stop(100%, #2a549c));
-	background-image: -webkit-linear-gradient(top, #2d5ea9, #2a549c);
-	background-image: linear-gradient(#2d5ea9, #2a549c);
-	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#2d5ea9', endColorstr='#2a549c', GradientType=0);
 }
 
 .guider_arrow {
