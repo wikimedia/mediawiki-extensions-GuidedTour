@@ -71,7 +71,10 @@ $wgResourceModules['ext.guidedTour.styles'] = array(
 	'styles' => 'ext.guidedTour.css',
 	'localBasePath' => $dir . 'modules',
 	'remoteExtPath' => 'GuidedTour/modules',
-	'dependencies' => 'mediawiki.libs.guiders',
+	'dependencies' => array(
+		'mediawiki.libs.guiders',
+		'mediawiki.ui',
+	),
 );
 
 // Depends on ext.guidedTour.styles

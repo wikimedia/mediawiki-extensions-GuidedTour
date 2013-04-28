@@ -304,7 +304,7 @@
 				okayFunction( this );
 			},
 			html: {
-				'class': 'guider_button guidedtour-okay-button'
+				'class': guiders._buttonClass + ' guidedtour-okay-button'
 			}
 		};
 	}
@@ -610,6 +610,8 @@
 			setupRepositionListeners();
 			setupGuiderListeners();
 		} );
+
+		guiders._buttonClass = 'mw-ui-button mw-ui-primary';
 
 		// cookie the users when they are in the tour
 		guiders.cookie = mw.config.get( 'wgCookiePrefix' ) + '-mw-tour';
