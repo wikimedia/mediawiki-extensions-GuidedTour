@@ -389,6 +389,9 @@
 					case 'next':
 						okayButton = getConditionalOkayButton( next );
 						break;
+					case 'okay':
+						okayButton = getConditionalOkayButton( currentButton.onclick );
+						break;
 					case 'end':
 						okayButton = getOkayButton( endTour );
 						break;
@@ -925,6 +928,25 @@
 		},
 
 		/**
+		 * Checks whether they are editing.  Does not include previewing.
+		 *
+		 * @return {boolean} true if and only if they are on the edit action
+		 */
+		isEditing: function () {
+			return mw.config.get( 'wgAction' ) === 'edit';
+		},
+
+		/**
+		 * Checks whether they are previewing or reviewing changes (after clicking "Show changes")
+		 *
+		 * @return {boolean} true if and only if they are reviewing
+		 */
+		isReviewing: function () {
+			return mw.config.get( 'wgAction' ) === 'submit';
+		},
+
+
+		/**
 		 * Checks whether they just saved an edit.
 		 *
 		 * @return {boolean} true if they just saved an edit, false otherwise
@@ -952,20 +974,20 @@
 		 * @return {void}
 		 */
 		resumeTour: function ( tourName ) {
-			var step = gt.getStep();
+			var step = gt.getStep() || 0;
 			// Bind failure step (in case there are problems).
 			guiders.failStep = gt.makeTourId( {
 				name: tourName,
 				step: 'fail'
 			} );
-			if ( (step === 0) && $.cookie( guiders.cookie ) ) {
+			if ( ( step === 0 ) && $.cookie( guiders.cookie ) ) {
 				// start from cookie position
 				if ( guiders.resume() ) {
 					return;
 				}
 			}
 
-			if (step === 0) {
+			if ( step === 0 ) {
 				step = 1;
 			}
 			// start from step specified
@@ -1064,7 +1086,7 @@
 		 * @param {Function} tourSpec.steps.buttons.onclick Function to execute
 		 *  when button is clicked
 		 *
-		 * @param {"next"|"end"|"wikiLink"|"externalLink"} tourSpec.steps.buttons.action
+		 * @param {"next"|"okay"|"end"|"wikiLink"|"externalLink"} tourSpec.steps.buttons.action
 		 *  Action keyword.  For actions listed below, you do not need to manually
 		 *  specify button name and onclick.
 		 *
@@ -1072,6 +1094,7 @@
 		 *  actions currently supported are:
 		 *
 		 *  - next - Goes to the next step.
+		 *  - okay - Arbitrary function (passed as onclick) used for okay button
 		 *  - end - Ends the tour.
 		 *  - wikiLink - links to a page on the same wiki
 		 *  - externalLink - links to an external page
