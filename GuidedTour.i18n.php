@@ -122,6 +122,38 @@ $messages['ar'] = array(
 	'guidedtour-tour-gettingstarted-end-description' => 'صفحة [[Special:GettingStarted|بداية التحرير]] يتم تحديثها كل ساعة بصفحات جديدة.',
 );
 
+/** Asturian (asturianu)
+ * @author Xuacu
+ */
+$messages['ast'] = array(
+	'guidedtour-desc' => "Permite que les páxines ufran una visita guiada p'ayudar a los usuarios nuevos",
+	'guidedtour-help-url' => 'Help:Visites guiaes',
+	'guidedtour-help-guider-url' => 'Help:Visites guiaes/guía',
+	'guidedtour-end-tour' => 'Acabar la visita',
+	'guidedtour-okay-button' => 'Aceutar',
+	'guidedtour-tour-test-testing' => 'Probar',
+	'guidedtour-tour-test-test-description' => 'Esto ye una prueba de la descripción. ¡Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-callouts' => 'Probar les llamaes de salida',
+	'guidedtour-tour-test-portal-description' => 'Esta ye la páxina del {{int:portal}}.',
+	'guidedtour-tour-test-mediawiki-parse' => "Probar l'analís de MediaWiki",
+	'guidedtour-tour-test-wikitext-description' => 'Un guía de la visita de la wiki pue contener testu wiki usando onShow y parseDescription. Uselo pa crear un enllaz a la [[{{MediaWiki:Guidedtour-help-url}}|documentación de les visites guiaes]]. O un enllaz esternu [https://github.com/tychay/mwgadget.GuidedTour a GitHub], por exemplu.',
+	'guidedtour-tour-test-description-page' => 'Probar les páxines de descripción de MediaWiki',
+	'guidedtour-tour-test-go-description-page' => 'Dir a la páxina de descripción',
+	'guidedtour-tour-test-launch-tour' => 'Probar el llanzamientu de visites',
+	'guidedtour-tour-test-launch-tour-description' => 'Los guíes puen llanzar otres visites guiaes. Prestoso, ¿acuéi?',
+	'guidedtour-tour-test-launch-using-tours' => "Llanzar una visita sobro l'usu de les visites",
+	'guidedtour-tour-gettingstarted-start-title' => "¿Preparáu p'ayudar?",
+	'guidedtour-tour-gettingstarted-start-description' => "Esta páxina necesita ediciones básiques (ameyorar la gramática, l'estilu, el tonu, o la ortografía) para facela más clara y fácil de lleer. Esta guía amosará-y los pasos a siguir.",
+	'guidedtour-tour-gettingstarted-click-edit-title' => "Calque '{{int:vector-view-edit}}'",
+	'guidedtour-tour-gettingstarted-click-edit-description' => 'Esto permitirá-y facer cambios en cualquier parte de la páxina, cuando tea preparáu.',
+	'guidedtour-tour-gettingstarted-click-preview-title' => 'Vista previa (opcional)',
+	'guidedtour-tour-gettingstarted-click-preview-description' => 'Si calca "{{int:showpreview}}" podrá comprobar como se verá la páxina colos cambios. Pero nun escaeza guardala.',
+	'guidedtour-tour-gettingstarted-click-save-title' => '¡Yá casi acabó!',
+	'guidedtour-tour-gettingstarted-click-save-description' => 'Calque "{{int:savearticle}}" y los cambios sedrán visibles.',
+	'guidedtour-tour-gettingstarted-end-title' => '¿Busca más que facer?',
+	'guidedtour-tour-gettingstarted-end-description' => 'La páxina de [[Special:GettingStarted|primeros pasos]] anuevase cada hora con páxines nueves.',
+);
+
 /** Belarusian (беларуская)
  * @author Wizardist
  */
