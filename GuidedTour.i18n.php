@@ -420,8 +420,24 @@ $messages['hsb'] = array(
  */
 $messages['it'] = array(
 	'guidedtour-desc' => 'Consente di gestire pagine per fornire un tour guidato tramite popup per assistere i nuovi utenti',
+	'guidedtour-end-tour' => 'Fine tour',
+	'guidedtour-okay-button' => 'Ok',
+	'guidedtour-tour-test-testing' => 'Prova',
+	'guidedtour-tour-test-test-description' => 'Questa è una prova della descrizione. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-callouts' => 'Prova didascalie',
+	'guidedtour-tour-test-portal-description' => 'Questa è la pagina {{int:portal}}.',
+	'guidedtour-tour-test-mediawiki-parse' => 'Prova MediaWiki parse',
+	'guidedtour-tour-test-description-page' => 'Prova le pagine di descrizione di MediaWiki',
 	'guidedtour-tour-test-go-description-page' => 'Vai alla pagina di descrizione',
+	'guidedtour-tour-gettingstarted-start-title' => 'Pronti ad aiutare?',
+	'guidedtour-tour-gettingstarted-click-edit-title' => "Fai clic su '{{int:vector-view-edit}}'",
+	'guidedtour-tour-gettingstarted-click-edit-description' => 'Questo ti consente di apportare modifiche in qualsiasi parte della pagina, quando sei pronto.',
 	'guidedtour-tour-gettingstarted-click-preview-title' => 'Anteprima (opzionale)',
+	'guidedtour-tour-gettingstarted-click-preview-description' => "Facendo clic su '{{int:showpreview}}' ti permette di verificare quello che sarà l'aspetto della pagina con le tue modifiche. Basta non dimenticare di salvare.",
+	'guidedtour-tour-gettingstarted-click-save-title' => 'Hai quasi finito!',
+	'guidedtour-tour-gettingstarted-click-save-description' => "Fai click su '{{int:savearticle}}' e le modifiche saranno visibili.",
+	'guidedtour-tour-gettingstarted-end-title' => 'Cerchi altro da fare?',
+	'guidedtour-tour-gettingstarted-end-description' => 'La [[Special:GettingStarted|guida introduttiva]] è aggiornata ogni ora con nuove pagine.',
 );
 
 /** Japanese (日本語)
