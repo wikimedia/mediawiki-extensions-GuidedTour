@@ -632,19 +632,19 @@ $messages['nl'] = array(
  */
 $messages['pms'] = array(
 	'guidedtour-desc' => "A përmët le pàgine për fornì na vìsita guidà da fnestre an riliev për giuté j'utent neuv",
-	'guidedtour-help-url' => 'Help:Vir guidà',
+	'guidedtour-help-url' => 'Help:Vìsite guidà',
 	'guidedtour-end-tour' => 'Finì la vìsita',
 	'guidedtour-tour-test-testing' => 'Prové',
-	'guidedtour-tour-test-test-description' => "Cost a l'é na preuva dla descrission. It peule anclude <b>HTML</b> an grassèt. Lorem ipsum dolor sit!", # Fuzzy
+	'guidedtour-tour-test-test-description' => "Costa a l'é na preuva dla descrission. Lorem ipsum dolor sit!",
 	'guidedtour-tour-test-callouts' => 'Fumèt ëd test',
-	'guidedtour-tour-test-portal-description' => "Costa a l'é la pagina dël portal dla comunità.", # Fuzzy
-	'guidedtour-tour-test-mediawiki-parse' => 'Preuva parsificassion dël test',
-	'guidedtour-tour-test-wikitext-description' => 'Un guidator an tò vir dla wiki a peul conten-e wikitest dovrand onShow e parse Description. Dòvrlo për creé un wikilink a la [[{{MediaWiki:Guidedtour-help-url}}|Documentassion dij vir guidà]]. O un colegament estern [https://github.com/tychay/mwgadget.GuidedTour a github], për esempi.',
-	'guidedtour-tour-test-description-page' => 'Preuva pagine ëd descrission ëd mediawiki',
-	'guidedtour-tour-test-go-description-page' => 'Và a la pagina ëd descrission',
-	'guidedtour-tour-test-launch-tour' => 'Preuva ël vir inissial',
-	'guidedtour-tour-test-launch-tour-description' => 'Ij guidator a peulo ancaminé àutr vir guidà. Bastansa bel, nò?',
-	'guidedtour-tour-test-launch-using-tours' => 'Ancamin-a un vir dzor dovré ij vir',
+	'guidedtour-tour-test-portal-description' => "Costa a l'é la pàgina {{int:portal}}.",
+	'guidedtour-tour-test-mediawiki-parse' => "Prové l'arzultà MediaWiki",
+	'guidedtour-tour-test-wikitext-description' => "N'element ëd la guida dla vìsita a peul conten-e dël wikitest ch'a deuvra onShow e parseDescription. Ch'a lo deuvra për creé na liura wiki a la [[{{MediaWiki:Guidedtour-help-url}}|Documentassion dle vìsite guidà]]. O na liura esterna [https://github.com/tychay/mwgadget.GuidedTour a Github], për esempi.",
+	'guidedtour-tour-test-description-page' => 'Prové le pàgine ëd descrission ëd mediawiki',
+	'guidedtour-tour-test-go-description-page' => 'Andé a la pàgina ëd descrission',
+	'guidedtour-tour-test-launch-tour' => 'Prové la vìsita inissial',
+	'guidedtour-tour-test-launch-tour-description' => "Le guide a peulo creé d'àutre vìsite guidà. Ròba da pocio, neh?",
+	'guidedtour-tour-test-launch-using-tours' => 'Ancaminé na vìsita su coma dovré le vìsite',
 );
 
 /** Portuguese (português)
