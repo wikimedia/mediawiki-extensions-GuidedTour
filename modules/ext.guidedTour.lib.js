@@ -29,8 +29,7 @@
 	var gt,
 		skin = mw.config.get( 'skin' ),
 		messageParser = new mw.jqueryMsg.parser(),
-		// User ID is relying on a mw.config value from E3Experiments, so it will
-		// only be non-null if that is installed and the user is logged in.
+		// Non-null if user is logged in.
 		userId = mw.config.get( 'wgUserId' ),
 		currentTourState;
 
