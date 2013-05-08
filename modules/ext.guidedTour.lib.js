@@ -136,29 +136,26 @@
 	/**
 	 * Provides onClose handler called by Guiders on a user-initiated close action.
 	 *
-	 * Determines whether to hide or end tour (the latter removes cookie).
+	 * Hides guider.  If they clicked the 'x' button, also ends the tour, removing the
+	 * cookie.
 	 *
-	 * Logs event accordingly.
+	 * Logs event.
 	 *
 	 * Distinct from guider.onHide() becase that is called even if the tour ends.
 	 *
 	 * @private
 	 *
 	 * @param {Object} guider Guider object
+	 * @param {boolean} isAlternativeClose true if is not the text close button (legacy)
+	 * @param {string} closeType Guider string identify close method, currently
+	 *  'textButton', 'xButton', 'escapeKey', or 'clickOutside'
 	 *
 	 * @return {boolean} true to end tour, false to dismiss
 	 */
-	function handleOnClose( guider ) {
-		var $guiderElem = guider.elem, $checkbox, shouldEndTour;
-		$checkbox = $guiderElem.find( '.guidedtour-end-tour-checkbox-label input' );
-		if ( $checkbox.is( ':checked' ) ) {
-			shouldEndTour = true;
-		} else {
-			shouldEndTour = false;
-		}
-
+	function handleOnClose( guider, isAlternativeClose, closeType ) {
 		logDismissal();
-		return shouldEndTour;
+
+		return closeType === 'xButton';
 	}
 
 	/*
@@ -243,86 +240,28 @@
 	}
 
 	/**
-	 * Gets a labelled checkbox for ending the tour
+	 * Gets a Guiders button specification that uses the message for the provided type
+	 * and the provided callback.
 	 *
 	 * @private
 	 *
-	 * @return {string} HTML of end tour checkbox and label
+	 * @param {string} buttonType type, currently 'next' or 'okay'
+	 * @param {Function} callback Function to call if they click the button
+	 * @param {HTMLElement} callback.btn Raw DOM element of the okay button
+	 *
+	 * @return {Object} Guiders button specification
 	 */
-	function getEndTourCheckbox() {
-		var labelContents, checkboxHtml;
-		checkboxHtml = mw.html.element( 'input', {
-			type: 'checkbox'
-		} );
-		labelContents =	checkboxHtml + mw.msg( 'guidedtour-end-tour' );
-		return mw.html.element( 'label', {
-			'class': 'guidedtour-end-tour-checkbox-label'
-		}, new mw.html.Raw( labelContents ) );
-	}
-
-	/**
-	* Handles the okay button when it depends on the end tour checkbox.
-	*
-	* Ends tour (logging it) if box is checked.  Otherwise, it calls okayFunction.
-	*
-	* @private
-	*
-	* @param {HTMLElement} btn Raw DOM element of the okay button
-	* @param {Function} okayFunction Function to execute if they did not check the
-	*  end tour box.
-	* @param {HTMLElement} okayFunction.btn Raw DOM element of the okay button
-	*
-	* @return {void}
-	*/
-	function doConditionalOkayAction( btn, okayFunction ) {
-		var $guiderElem, $checkbox;
-		$guiderElem = $( btn ).closest( '.guider' );
-		// If there is no checkbox, it will take the unchecked path.
-		$checkbox = $guiderElem.find( '.guidedtour-end-tour-checkbox-label input' );
-		if ( $checkbox.is( ':checked' ) ) {
-			gt.endTour();
-		} else {
-			okayFunction( btn );
-		}
-	}
-
-	/**
-	 * Gets an okay button as passed to guiders
-	 *
-	 * @private
-	 *
-	 * @param {Function} okayFunction Function to call if they did not end the tour.
-	 * @param {HTMLElement} okayFunction.btn Raw DOM element of the okay button
-	 *
-	 * @return {Object} Button specification
-	 */
-	function getOkayButton(	okayFunction ) {
+	function getMessageButton( buttonType, callback ) {
+		var buttonKey = 'guidedtour-' + buttonType + '-button';
 		return {
-			name: getMessage ( 'guidedtour-okay-button' ),
+			name: getMessage ( buttonKey ),
 			onclick: function () {
-				okayFunction( this );
+				callback( this );
 			},
 			html: {
-				'class': guiders._buttonClass + ' guidedtour-okay-button'
+				'class': guiders._buttonClass + ' ' + buttonKey
 			}
 		};
-	}
-
-	/**
-	 * Gets an okay button as passed to guiders.  Automatically adds conditional logic
-	 * based on end tour checkbox.
-	 *
-	 * @private
-	 *
-	 * @param {Function} conditionalFunction Function to call if they did not check the box.
-	 * @param {HTMLElement} conditionalFunction.btn The raw DOM element of the button.
-	 *
-	 * @return {Object} Button specification
-	 */
-	function getConditionalOkayButton( conditionalFunction ) {
-		return getOkayButton ( function ( btn ) {
-			doConditionalOkayAction( btn, conditionalFunction );
-		} );
 	}
 
 	/**
@@ -336,7 +275,7 @@
 	 *
 	 * @return {Object} Modified button
 	 */
-	function convertLinkButton( button, url, title ) {
+	function modifyLinkButton( button, url, title ) {
 		if ( button.namemsg ) {
 			button.name = getMessage( button.namemsg );
 			delete button.namemsg;
@@ -353,23 +292,31 @@
 	}
 
 	/**
-	 * Converts a tour's button specification to a button that we
-	 * pass to Guiders.
+	 * Converts a tour's GuidedTour button specifications to Guiders button
+	 * specifications.
 	 *
-	 * This has special handling for Okay, which is always present last.  See
-	 * gt.defineTour.
+	 * A GuidedTour button specification can specify an action and/or use MW
+	 * internationalization.
 	 *
-	 * Handles actions and i18n.
+	 * This has special handling for Okay and Next, which are always last in the
+	 * returned array (if present).
+	 *
+	 * If there is no other Okay or Next, an Okay button will be generated that hides
+	 * the tour.  If both Okay and Next are present, they will be in that order.  See
+	 * also gt.defineTour.
+	 *
+	 * Handles actions and internationalization.
 	 *
 	 * @private
 	 *
-	 * @param {Array} [buttonSpecs=[]] Button specifications as used in tour.  Will be mutated.
+	 * @param {Array} [buttonSpecs=[]] Button specifications as used in tour.  Elements
+	 *  will be mutated.
 	 *
-	 * @return {Array} Array of buttons as Guiders expects
+	 * @return {Array} Array of button specifications that Guiders expects
 	 * @throws {mw.guidedTour.TourDefinitionError} On invalid actions
 	 */
 	function getButtons( buttonSpecs ) {
-		var i, okayButton, guiderButtons, currentButton, url;
+		var i, okayButton, nextButton, guiderButtons, currentButton, url;
 
 		function next() {
 			guiders.next();
@@ -386,21 +333,21 @@
 			if ( currentButton.action !== undefined ) {
 				switch ( currentButton.action ) {
 					case 'next':
-						okayButton = getConditionalOkayButton( next );
+						nextButton = getMessageButton( 'next', next );
 						break;
 					case 'okay':
-						okayButton = getConditionalOkayButton( currentButton.onclick );
+						okayButton = getMessageButton( 'okay', currentButton.onclick );
 						break;
 					case 'end':
-						okayButton = getOkayButton( endTour );
+						okayButton = getMessageButton( 'okay', endTour );
 						break;
 					case 'wikiLink':
 						url = mw.util.wikiGetlink( currentButton.page );
-						guiderButtons.push( convertLinkButton( currentButton, url, currentButton.page ) );
+						guiderButtons.push( modifyLinkButton( currentButton, url, currentButton.page ) );
 						delete currentButton.page;
 						break;
 					case 'externalLink':
-						guiderButtons.push( convertLinkButton( currentButton, currentButton.url ) );
+						guiderButtons.push( modifyLinkButton( currentButton, currentButton.url ) );
 						delete currentButton.url;
 						break;
 					default:
@@ -417,21 +364,28 @@
 			}
 		}
 
-		// Ensure there is always an okay button.  In some cases, there will not be
+		// Ensure there is always an okay and/or next button.  In some cases, there will not be
 		// a next, since the user is prompted to do something else
 		// (e.g. click 'Edit')
-		if ( okayButton === undefined ) {
-			okayButton = getConditionalOkayButton( function () {
+		if ( okayButton === undefined  && nextButton === undefined ) {
+			okayButton = getMessageButton( 'okay', function () {
 				gt.hideAll();
 			} );
 		}
-		guiderButtons.push( okayButton );
+
+		if ( okayButton !== undefined ) {
+			guiderButtons.push( okayButton );
+		}
+
+		if ( nextButton !== undefined ) {
+			guiderButtons.push( nextButton );
+		}
 
 		return guiderButtons;
 	}
 
 	/**
-	 * Clones guider options and augments with two fields, onClose and showEndTour
+	 * Clones guider options and augments with onClose field.
 	 *
 	 * @private
 	 *
@@ -443,8 +397,7 @@
 	 */
 	function augmentGuider( defaultOptions, options ) {
 		return $.extend( true, {
-			onClose: $.noop,
-			showEndTour: true
+			onClose: $.noop
 		}, defaultOptions, options );
 	}
 
@@ -555,12 +508,6 @@
 			}
 		}
 
-		if ( options.showEndTour ) {
-			options.buttonCustomHTML = getEndTourCheckbox();
-			delete options.showEndTour;
-		}
-		delete options.showEndTour;
-
 		guiders.initGuider( options );
 
 		return true;
@@ -618,8 +565,8 @@
 		guiders.cookieParams = { path: '/' };
 		guiders._defaultSettings.changeCookie = true;
 
-		// Don't show X button
-		guiders._defaultSettings.xButton = false;
+		// Show X button
+		guiders._defaultSettings.xButton = true;
 
 		guiders._defaultSettings.closeOnEscape = true;
 		guiders._defaultSettings.closeOnClickOutside = true;
@@ -695,8 +642,9 @@
 		 * This means the caller doesn't need to know how it's implemented (which could
 		 * change).
 		 *
-		 * launchTour is used to load the tour specified in the URL too.  This case does not require
-		 * an extra request for an extension-defined tour since it is already loaded.
+		 * launchTour is used to load the tour specified in the URL too.  This case
+		 * does not require an extra request for an extension-defined tour since it
+		 * is already loaded.
 		 *
 		 * @param {string} tourName Name of tour
 		 * @param {string} [tourId='gt-' + tourName + '-1'] ID of tour
@@ -871,7 +819,8 @@
 		/**
 		 * Parses a wiki page and uses the HTML as the description.
 		 *
-		 * To use this, put the page name as the description, and use this as the value of onShow.
+		 * To use this, put the page name as the description, and use this as the
+		 * value of onShow.
 		 *
 		 * @param {Object} guider Guider object to set description on
 		 *
@@ -1003,19 +952,21 @@
 		 * Creates a tour based on an object specifying it, but does not show
 		 * it immediately
 		 *
-		 * If the user clicks Okay:
+		 * If the user clicks Okay or Next, the applicable action (see below)
+		 * will occur.
 		 *
-		 * - If the checkbox is checked, the tour will end.
-		 * - Otherwise, if you pass in a action (see below), it will occur.
-		 * - Otherwise, it will close the current step.
+		 * If there would otherwise be neither an Okay nor a Next button on a
+		 * particular guider, it will have an Okay button.  This will hide the
+		 * guider if clicked.
 		 *
-		 * If input is invalid, it will throw mw.guidedTour.TourDefinitionError.
+		 * If input to defineTour is invalid, it will throw
+		 * mw.guidedTour.TourDefinitionError.
 		 *
 		 * @param {Object} tourSpec Specification of tour
 		 * @param {string} tourSpec.name Name of tour
 		 *
 		 * @param {boolean} [tourSpec.isSinglePage=false] Tour is used on a single
-		 *  page tour. This hides the end tour checkbox, and disables tour cookies.
+		 *  page tour. This disables tour cookies.
 		 * @param {boolean} [tourSpec.shouldLog=false] Whether to log events to
 		 *  EventLogging
 		 *
@@ -1070,15 +1021,11 @@
 		 *  - gt.getPageAsDescription - Treat description as the name of a description
 		 *  page on the wiki
 		 *
-		 * @param {boolean} [tourSpec.steps.showEndTour] By default, each
-		 *  guider includes an end tour checkbox, unless isSinglePage is
-		 *  true.  Pass false to suppress the checkbox
-		 *
 		 * @param {boolean} [tourSpec.steps.closeOnClickOutside=true] Close the
 		 *  guider when the user clicks elsewhere on screen
 		 *
-		 * @param {Array} tourSpec.steps.buttons Buttons for step.  Each step
-		 *  implicitly includes an Okay button (see action).  Each button can have:
+		 * @param {Array} tourSpec.steps.buttons Buttons for step.  See also above
+		 *  regarding button behavior and defaults.  Each button can have:
 		 *
 		 * @param {string} tourSpec.steps.buttons.name Text of button.  Used only
 		 *  for on-wiki tours
@@ -1135,7 +1082,6 @@
 			if ( tourSpec.isSinglePage ) {
 				// TODO (mattflaschen, 2013-02-12): This should be specific to the current tour. See https://bugzilla.wikimedia.org/show_bug.cgi?id=44924
 				defaults.changeCookie = false;
-				defaults.showEndTour = false;
 			}
 
 			moduleName = getTourModuleName( tourSpec.name );

@@ -17,7 +17,7 @@ $messages['en'] = array(
 	'guidedtour-custom.css' => '/* Custom CSS for the GuidedTour extension. */',
 
 	// Messages useful for more than one tour
-	'guidedtour-end-tour' => 'End tour',
+	'guidedtour-next-button' => 'Next',
 	'guidedtour-okay-button' => 'Okay',
 
 	// Messages for specific tours.  These should be namespaced as
@@ -59,8 +59,8 @@ $messages['qqq'] = array(
 	'guidedtour-help-guider-url' => 'Brief GuidedTour documentation page that a tour step can transclude.  Used in the test tour.',
 	'guidedtour-custom.css' => '{{Optional}}
 Custom CSS for the GuidedTour extension.  Empty by default.',
-	'guidedtour-end-tour' => 'Label text of checkbox for choosing whether to end tour',
-	'guidedtour-okay-button' => 'Main action button text.  Will dismiss single tour step, go to next step, or end tour depending on context and {{msg-mw|guidedtour-end-tour}} checkbox.
+	'guidedtour-next-button' => 'Text for moving to next step of guided tour',
+	'guidedtour-okay-button' => 'Main action button text.  Will dismiss single tour step (ending the tour if this is the last step) or do another tour-defined action.
 {{Identical|OK}}',
 	'guidedtour-tour-test-testing' => 'Title of first step in test tour',
 	'guidedtour-tour-test-test-description' => 'Sample description to show how it is used.
