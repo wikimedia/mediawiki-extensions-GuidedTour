@@ -575,7 +575,10 @@
 	 */
 	function setupGuiderListeners() {
 		$( document.body ).on( 'click', '.guider a[href]', function () {
-			var action = $( this ).is( '.guider_button' ) ? 'button-click' : 'link-click';
+			var buttonSelector, action;
+
+			buttonSelector = '.' + guiders._buttonClass.split( /\s+/ ).join( '.' );
+			action = $( this ).is( buttonSelector ) ? 'button-click' : 'link-click';
 			pingServer( action, $( this ).parents( '.guider ').attr( 'id' ) );
 		} );
 	}
@@ -608,11 +611,6 @@
 	function initialize() {
 		setupLogging();
 
-		$( document ).ready( function () {
-			setupRepositionListeners();
-			setupGuiderListeners();
-		} );
-
 		guiders._buttonClass = 'mw-ui-button mw-ui-primary';
 
 		// cookie the users when they are in the tour
@@ -627,6 +625,11 @@
 		guiders._defaultSettings.closeOnClickOutside = true;
 		guiders._defaultSettings.flipToKeepOnScreen = true;
 		guiders._defaultSettings.onShow = gt.recordStats;
+
+		$( document ).ready( function () {
+			setupRepositionListeners();
+			setupGuiderListeners();
+		} );
 	}
 
 	gt = mw.guidedTour = {
