@@ -219,6 +219,17 @@ $messages['be-tarask'] = array(
 	'guidedtour-tour-gettingstarted-end-description' => 'Старонка «[[Special:GettingStarted|З чаго пачаць]]» кожную гадзіну напаўняецца новымі старонкамі.',
 );
 
+/** Bengali (বাংলা)
+ * @author Bellayet
+ */
+$messages['bn'] = array(
+	'guidedtour-desc' => 'নতুন ব্যবহারকারীদের সহযোগীতার জন্য পাতায় একটি ভাসমান নির্দেশক ভ্রমনের সুযোগ করে দেয়।',
+	'guidedtour-help-url' => 'Help:নির্দেশক ভ্রমণ',
+	'guidedtour-end-tour' => 'ভ্রমণ সমাপ্ত',
+	'guidedtour-okay-button' => 'ঠিক আছে',
+	'guidedtour-tour-test-testing' => 'পরীক্ষণ',
+);
+
 /** Breton (brezhoneg)
  * @author Fohanno
  * @author Y-M D
