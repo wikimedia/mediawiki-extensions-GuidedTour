@@ -704,8 +704,13 @@
 							resume();
 						}
 					})
-					.fail( function () {
-						mw.log( 'Failed to load tour ' + tourName );
+					.fail( function ( jQXHR, settings, exception ) {
+						var message = 'Failed to load tour ' + tourName;
+						if ( exception ) {
+							mw.log( message, '\n', exception );
+						} else {
+							mw.log( message );
+						}
 					});
 			}
 		},
