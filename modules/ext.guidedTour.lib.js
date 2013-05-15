@@ -311,11 +311,12 @@
 	 *
 	 * @param {Array} [buttonSpecs=[]] Button specifications as used in tour.  Elements
 	 *  will be mutated.
+	 * @param {boolean} allowAutomaticOkay true if and only if an okay can be generated
 	 *
 	 * @return {Array} Array of button specifications that Guiders expects
 	 * @throws {mw.guidedTour.TourDefinitionError} On invalid actions
 	 */
-	function getButtons( buttonSpecs ) {
+	function getButtons( buttonSpecs, allowAutomaticOkay ) {
 		var i, okayButton, nextButton, guiderButtons, currentButton, url;
 
 		function next() {
@@ -364,13 +365,15 @@
 			}
 		}
 
-		// Ensure there is always an okay and/or next button.  In some cases, there will not be
-		// a next, since the user is prompted to do something else
-		// (e.g. click 'Edit')
-		if ( okayButton === undefined  && nextButton === undefined ) {
-			okayButton = getMessageButton( 'okay', function () {
-				gt.hideAll();
-			} );
+		if ( allowAutomaticOkay ) {
+			// Ensure there is always an okay and/or next button.  In some cases, there will not be
+			// a next, since the user is prompted to do something else
+			// (e.g. click 'Edit')
+			if ( okayButton === undefined  && nextButton === undefined ) {
+				okayButton = getMessageButton( 'okay', function () {
+					gt.hideAll();
+				} );
+			}
 		}
 
 		if ( okayButton !== undefined ) {
@@ -397,7 +400,8 @@
 	 */
 	function augmentGuider( defaultOptions, options ) {
 		return $.extend( true, {
-			onClose: $.noop
+			onClose: $.noop,
+			allowAutomaticOkay: true
 		}, defaultOptions, options );
 	}
 
@@ -493,7 +497,8 @@
 		}
 		delete options.descriptionmsg;
 
-		options.buttons = getButtons( options.buttons );
+		options.buttons = getButtons( options.buttons, options.allowAutomaticOkay );
+		delete options.allowAutomaticOkay;
 
 		if ( options.attachTo !== undefined ) {
 			options.attachTo = getValueForSkin( options, 'attachTo' );
@@ -956,8 +961,8 @@
 		 * will occur.
 		 *
 		 * If there would otherwise be neither an Okay nor a Next button on a
-		 * particular guider, it will have an Okay button.  This will hide the
-		 * guider if clicked.
+		 * particular guider, it will have an Okay button
+		 * (but see allowAutomaticOkay).  This will hide the guider if clicked.
 		 *
 		 * If input to defineTour is invalid, it will throw
 		 * mw.guidedTour.TourDefinitionError.
@@ -1020,6 +1025,11 @@
 		 *  - gt.parseDescription - Treat description as wikitext
 		 *  - gt.getPageAsDescription - Treat description as the name of a description
 		 *  page on the wiki
+		 *
+		 * @param {boolean} [tourSpec.steps.allowAutomaticOkay=true] By default, if
+		 * you do not specify an Okay or Next button, an Okay button will be generated.
+		 *
+		 * To suppress this, set allowAutomaticOkay to false for the guider.
 		 *
 		 * @param {boolean} [tourSpec.steps.closeOnClickOutside=true] Close the
 		 *  guider when the user clicks elsewhere on screen
