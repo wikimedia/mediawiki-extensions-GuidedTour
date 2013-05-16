@@ -336,6 +336,9 @@
 						nextButton = getMessageButton( 'next', next );
 						break;
 					case 'okay':
+						if ( currentButton.onclick === undefined ) {
+							throw new gt.TourDefinitionError( 'You must pass an \'onclick\' function if you use an \'okay\' action.' );
+						}
 						okayButton = getMessageButton( 'okay', currentButton.onclick );
 						break;
 					case 'end':
@@ -1043,7 +1046,16 @@
 		 *  actions currently supported are:
 		 *
 		 *  - next - Goes to the next step.
-		 *  - okay - Arbitrary function (passed as onclick) used for okay button
+		 *  - okay - An arbitrary function is used for okay button.  This must have
+		 *    an accompanying 'onclick':
+		 *
+		 *     {
+		 *         action: 'okay',
+		 *         onclick: function () {
+		 *		// Do something...
+		 *         }
+		 *     }
+		 *
 		 *  - end - Ends the tour.
 		 *  - wikiLink - links to a page on the same wiki
 		 *  - externalLink - links to an external page
@@ -1053,6 +1065,8 @@
 		 *     {
 		 *         action: 'next'
 		 *     }
+		 *
+		 * Multiple action fields for a single button are not possible.
 		 *
 		 * @param {string} tourSpec.steps.buttons.page Page to link to, only for
 		 *  the wikiLink action
@@ -1181,7 +1195,9 @@
 		}
 	};
 
-	gt.TourDefinitionError.prototype = new Error();
+	gt.TourDefinitionError.prototype.toString = function () {
+		return 'TourDefinitionError: ' + this.message;
+	};
 	gt.TourDefinitionError.prototype.constructor = gt.TourDefinitionError;
 
 	initialize();
