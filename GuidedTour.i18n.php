@@ -59,7 +59,8 @@ $messages['qqq'] = array(
 	'guidedtour-help-guider-url' => 'Brief GuidedTour documentation page that a tour step can transclude.  Used in the test tour.',
 	'guidedtour-custom.css' => '{{Optional}}
 Custom CSS for the GuidedTour extension.  Empty by default.',
-	'guidedtour-next-button' => 'Text for moving to next step of guided tour',
+	'guidedtour-next-button' => 'Text for moving to next step of guided tour.
+{{Identical|Next}}',
 	'guidedtour-okay-button' => 'Main action button text.  Will dismiss single tour step (ending the tour if this is the last step) or do another tour-defined action.
 {{Identical|OK}}',
 	'guidedtour-tour-test-testing' => 'Title of first step in test tour',
@@ -225,7 +226,6 @@ $messages['be-tarask'] = array(
 $messages['bn'] = array(
 	'guidedtour-desc' => 'নতুন ব্যবহারকারীদের সহযোগীতার জন্য পাতায় একটি ভাসমান নির্দেশক ভ্রমনের সুযোগ করে দেয়।',
 	'guidedtour-help-url' => 'Help:নির্দেশক ভ্রমণ',
-	'guidedtour-end-tour' => 'ভ্রমণ সমাপ্ত',
 	'guidedtour-okay-button' => 'ঠিক আছে',
 	'guidedtour-tour-test-testing' => 'পরীক্ষণ',
 );
@@ -253,7 +253,7 @@ $messages['de'] = array(
 	'guidedtour-desc' => 'Stellt für Seiten eine popupgestützte Tour bereit, um neuen Benutzern zu helfen',
 	'guidedtour-help-url' => 'Help:Geführte Touren',
 	'guidedtour-help-guider-url' => 'Help:Geführte Touren/Guider',
-	'guidedtour-end-tour' => 'Tour beenden',
+	'guidedtour-next-button' => 'Nächster',
 	'guidedtour-okay-button' => 'Okay',
 	'guidedtour-tour-test-testing' => 'Testen',
 	'guidedtour-tour-test-test-description' => 'Dies ist ein Test der Beschreibung. Lorem ipsum dolor sit!',
@@ -327,7 +327,7 @@ $messages['fr'] = array(
 	'guidedtour-desc' => 'Autoriser les pages à afficher une visite guidée par pop-up pour aider les nouveaux utilisateurs',
 	'guidedtour-help-url' => 'Help:Visites guidées',
 	'guidedtour-help-guider-url' => 'Help:Visites guidées/guide',
-	'guidedtour-end-tour' => 'Terminer la visite',
+	'guidedtour-next-button' => 'Suivant',
 	'guidedtour-okay-button' => 'D’accord',
 	'guidedtour-tour-test-testing' => 'Tester',
 	'guidedtour-tour-test-test-description' => 'Ceci est un test de la description. Lorem ipsum dolor sit !',
@@ -459,7 +459,7 @@ $messages['ja'] = array(
 	'guidedtour-help-url' => 'Help:ガイド付きツアー',
 	'guidedtour-help-guider-url' => 'Help:ガイド付きツアー/guider',
 	'guidedtour-custom.css' => '/* ガイドツアー拡張機能用のカスタムCSS */',
-	'guidedtour-end-tour' => 'ツアーを終了',
+	'guidedtour-next-button' => '次へ',
 	'guidedtour-okay-button' => 'OK',
 	'guidedtour-tour-test-testing' => 'テスト',
 	'guidedtour-tour-test-test-description' => 'これは説明のテストです。Lorem ipsum dolor sit!',
