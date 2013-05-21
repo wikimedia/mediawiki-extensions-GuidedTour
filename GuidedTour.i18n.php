@@ -130,7 +130,7 @@ $messages['ast'] = array(
 	'guidedtour-desc' => "Permite que les páxines ufran una visita guiada p'ayudar a los usuarios nuevos",
 	'guidedtour-help-url' => 'Help:Visites guiaes',
 	'guidedtour-help-guider-url' => 'Help:Visites guiaes/guía',
-	'guidedtour-end-tour' => 'Acabar la visita',
+	'guidedtour-next-button' => 'Siguiente',
 	'guidedtour-okay-button' => 'Aceutar',
 	'guidedtour-tour-test-testing' => 'Probar',
 	'guidedtour-tour-test-test-description' => 'Esto ye una prueba de la descripción. ¡Lorem ipsum dolor sit!',
@@ -221,11 +221,13 @@ $messages['be-tarask'] = array(
 );
 
 /** Bengali (বাংলা)
+ * @author Aftab1995
  * @author Bellayet
  */
 $messages['bn'] = array(
 	'guidedtour-desc' => 'নতুন ব্যবহারকারীদের সহযোগীতার জন্য পাতায় একটি ভাসমান নির্দেশক ভ্রমনের সুযোগ করে দেয়।',
 	'guidedtour-help-url' => 'Help:নির্দেশক ভ্রমণ',
+	'guidedtour-next-button' => 'পরবর্তী',
 	'guidedtour-okay-button' => 'ঠিক আছে',
 	'guidedtour-tour-test-testing' => 'পরীক্ষণ',
 );
@@ -247,10 +249,11 @@ $messages['cs'] = array(
 );
 
 /** German (Deutsch)
+ * @author Kghbln
  * @author Metalhead64
  */
 $messages['de'] = array(
-	'guidedtour-desc' => 'Stellt für Seiten eine popupgestützte Tour bereit, um neuen Benutzern zu helfen',
+	'guidedtour-desc' => 'Ermöglicht Pop-up-gestützte Rundgänge zur Unterstützung neuer Benutzer',
 	'guidedtour-help-url' => 'Help:Geführte Touren',
 	'guidedtour-help-guider-url' => 'Help:Geführte Touren/Guider',
 	'guidedtour-next-button' => 'Nächster',
@@ -360,8 +363,8 @@ $messages['gl'] = array(
 	'guidedtour-help-url' => 'Help:Visitas guiadas',
 	'guidedtour-help-guider-url' => 'Help:Visitas guiadas/guía',
 	'guidedtour-custom.css' => '/* CSS personalizado para a extensión de visitas guiadas. */',
-	'guidedtour-end-tour' => 'Finalizar a visita',
-	'guidedtour-okay-button' => 'De acordo',
+	'guidedtour-next-button' => 'Seguinte',
+	'guidedtour-okay-button' => 'Aceptar',
 	'guidedtour-tour-test-testing' => 'Probas',
 	'guidedtour-tour-test-test-description' => 'Esta é unha proba da descrición. Lorem ipsum dolor sit!',
 	'guidedtour-tour-test-callouts' => 'Probe as ligazóns de saída',
@@ -523,13 +526,22 @@ $messages['ko'] = array(
  */
 $messages['lb'] = array(
 	'guidedtour-help-url' => 'Help:Guidéiert Touren',
-	'guidedtour-start-tour' => 'Tour ufänken',
-	'guidedtour-end-tour' => 'Mam Tour ophalen',
+	'guidedtour-next-button' => 'Nächst',
+	'guidedtour-okay-button' => 'OK',
 	'guidedtour-tour-test-testing' => 'Testen',
-	'guidedtour-tour-test-portal-description' => "Dëst ass d'Portalsäit vun der Community",
+	'guidedtour-tour-test-test-description' => 'Dëst ass en Test vun der Beschreiwung. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-portal-description' => "Dëst ass d'{{int:portal}}-Säit",
 	'guidedtour-tour-test-mediawiki-parse' => 'MediaWiki-Parser testen',
+	'guidedtour-tour-test-description-page' => 'MediaWiki-Beschreiwungssäiten testen',
 	'guidedtour-tour-test-go-description-page' => "Op d'Beschreiwungssäit goen",
 	'guidedtour-tour-test-launch-tour' => 'Ufank vum Tour testen',
+	'guidedtour-tour-gettingstarted-start-title' => 'Wëllt Dir eng Hand upaken?',
+	'guidedtour-tour-gettingstarted-click-edit-title' => "Klickt op '{{int:vector-view-edit}}'",
+	'guidedtour-tour-gettingstarted-click-preview-title' => 'Weisen ouni ze späicheren (fakuktativ)',
+	'guidedtour-tour-gettingstarted-click-save-title' => 'Dir sidd bal fäerdeg!',
+	'guidedtour-tour-gettingstarted-click-save-description' => "Klickt op '{{int:savearticle}}' an Är Ännerunge sinn ze gesinn.",
+	'guidedtour-tour-gettingstarted-end-title' => 'Wëllt Dir méi maachen?',
+	'guidedtour-tour-gettingstarted-end-description' => '[[Special:GettingStarted|Fir unzefänke]] gëtt all Stonn mat neie Säiten aktualiséiert.',
 );
 
 /** Macedonian (македонски)
@@ -612,7 +624,7 @@ $messages['nl'] = array(
 	'guidedtour-desc' => 'Maakt het mogelijk om een rondleiding weer te geven voor nieuwe gebruikers',
 	'guidedtour-help-url' => 'Help:Rondleidingen',
 	'guidedtour-help-guider-url' => 'Help:Rondleidingen/gids',
-	'guidedtour-end-tour' => 'Rondleiding beëindigen',
+	'guidedtour-next-button' => 'Volgende',
 	'guidedtour-okay-button' => 'Oké',
 	'guidedtour-tour-test-testing' => 'Testen',
 	'guidedtour-tour-test-test-description' => 'Dit is een test van de beschrijving. Lorem ipsum dolor sit!',
@@ -774,7 +786,7 @@ $messages['vi'] = array(
 	'guidedtour-help-url' => 'Help:Chương trình hướng dẫn sử dụng',
 	'guidedtour-help-guider-url' => 'Help:Chương trình hướng dẫn sử dụng/giới thiệu',
 	'guidedtour-custom.css' => '/* Mã CSS tùy biến dành cho phần mở rộng GuidedTour. */',
-	'guidedtour-end-tour' => 'Kết thúc trình hướng dẫn',
+	'guidedtour-next-button' => 'Tiếp',
 	'guidedtour-okay-button' => 'OK',
 	'guidedtour-tour-test-testing' => 'Đo thử',
 	'guidedtour-tour-test-test-description' => 'Thử lời miêu tả đây. Lorem ipsum dolor sit!',
@@ -801,6 +813,7 @@ $messages['vi'] = array(
 
 /** Simplified Chinese (中文（简体）‎)
  * @author Hydra
+ * @author Li3939108
  * @author Yfdyh000
  * @author 乌拉跨氪
  */
@@ -808,7 +821,7 @@ $messages['zh-hans'] = array(
 	'guidedtour-desc' => '允许页面提供一个弹出式菜单来帮助新用户',
 	'guidedtour-help-url' => 'Help:有引导游览',
 	'guidedtour-help-guider-url' => '帮助:有引导游览/导游',
-	'guidedtour-end-tour' => '结束教程',
+	'guidedtour-next-button' => '下一步',
 	'guidedtour-okay-button' => '好的',
 	'guidedtour-tour-test-testing' => '测验',
 	'guidedtour-tour-test-test-description' => '这是一条描述演示。Lorem ipsum dolor sit!',
