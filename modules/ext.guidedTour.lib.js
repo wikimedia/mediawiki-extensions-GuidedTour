@@ -704,10 +704,10 @@
 							resume();
 						}
 					})
-					.fail( function ( jQXHR, settings, exception ) {
+					.fail( function ( jqXHR, settings, exception ) {
 						var message = 'Failed to load tour ' + tourName;
 						if ( exception ) {
-							mw.log( message, '\n', exception );
+							mw.log( message, exception );
 						} else {
 							mw.log( message );
 						}
