@@ -47,6 +47,18 @@ $messages['en'] = array(
 	'guidedtour-tour-gettingstarted-click-save-description' => 'Click \'{{int:savearticle}}\' and your changes will be visible.',
 	'guidedtour-tour-gettingstarted-end-title' => 'Looking for more to do?',
 	'guidedtour-tour-gettingstarted-end-description' => '[[Special:GettingStarted|Getting Started]] is updated every hour with new pages.',
+
+	// firstedit
+	'guidedtour-tour-firstedit-start-title' => 'Ready to get started?',
+	'guidedtour-tour-firstedit-start-description' => 'This tour will show you the basic steps of editing any page.',
+	'guidedtour-tour-firstedit-click-edit-title' => 'Click \'{{int:vector-view-edit}}\'',
+	'guidedtour-tour-firstedit-click-edit-description' => 'This will take you in to editing mode, which shows you the source of the page, and lets you make changes to any part.',
+	'guidedtour-tour-firstedit-click-preview-title' => 'Preview (optional)',
+	'guidedtour-tour-firstedit-click-preview-description' => 'Clicking \'{{int:showpreview}}\' allows you to check what the page will look like with your changes. Just don\'t forget to save.',
+	'guidedtour-tour-firstedit-click-save-title' => 'You\'re almost finished!',
+	'guidedtour-tour-firstedit-click-save-description' => 'Click \'{{int:savearticle}}\' and your changes will be visible.',
+	'guidedtour-tour-firstedit-end-title' => 'That\'s it!',
+	'guidedtour-tour-firstedit-end-description' => 'You just made an edit. Not so scary, right?',
 );
 
 /** Message documentation (Message documentation)
@@ -91,6 +103,17 @@ See also:
 	'guidedtour-tour-gettingstarted-click-save-description' => 'Click save to save your work',
 	'guidedtour-tour-gettingstarted-end-title' => 'Title of last step of Getting Started tour!',
 	'guidedtour-tour-gettingstarted-end-description' => 'You can find other interesting things to work on',
+
+	'guidedtour-tour-firstedit-start-title' => 'Title of the first step of a tour for making an edit',
+	'guidedtour-tour-firstedit-start-description' => 'Description of first step in tour',
+	'guidedtour-tour-firstedit-click-edit-title' => 'Title of step showing users where to click edit',
+	'guidedtour-tour-firstedit-click-edit-description' => 'Description of step showing users where to click edit',
+	'guidedtour-tour-firstedit-click-preview-title' => 'Title of step explaining preview',
+	'guidedtour-tour-firstedit-click-preview-description' => 'Description of step explaining preview',
+	'guidedtour-tour-firstedit-click-save-title' => 'Title of step explaining saving an edit',
+	'guidedtour-tour-firstedit-click-save-description' => 'Description of step explaining how to save',
+	'guidedtour-tour-firstedit-end-title' => 'Title of last step of first edit tour',
+	'guidedtour-tour-firstedit-end-description' => 'Description of last step of first edit tour',
 );
 
 /** Arabic (العربية)
