@@ -38,6 +38,7 @@ $wgHooks['MakeGlobalVariablesScript'][] = 'GuidedTourHooks::onMakeGlobalVariable
 $wgHooks['ResourceLoaderTestModules'][] = 'GuidedTourHooks::onResourceLoaderTestModules';
 $wgHooks['UnitTestsList'][] = 'GuidedTourHooks::onUnitTestsList';
 $wgHooks['RedirectSpecialArticleRedirectParams'][] = 'GuidedTourHooks::onRedirectSpecialArticleRedirectParams';
+$wgHooks['ResourceLoaderRegisterModules'][] = 'GuidedTourHooks::onResourceLoaderRegisterModules';
 
 // Extension credits that will show up on Special:Version
 $wgExtensionCredits['other'][] = array(
@@ -148,6 +149,10 @@ $wgResourceModules['ext.guidedTour.tour.test'] = array(
 
 // Tour designed to help new users edit.
 // Can be used with Special:GettingStarted or independently.
+
+// TODO (mattflaschen, 2013-05-24): Move this tour (or at least the messages that are still
+// used) to the GettingStarted extension.  Since we have 'firstedit', 'gettingstarted'
+// doesn't need to be used as a generic "first edit" tour.
 $wgResourceModules['ext.guidedTour.tour.gettingstarted'] = array(
 	'scripts' => 'gettingstarted.js',
 	'localBasePath' => $dir . 'modules/tours',

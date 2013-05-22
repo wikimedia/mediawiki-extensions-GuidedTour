@@ -49,6 +49,23 @@ $messages['en'] = array(
 	'guidedtour-tour-gettingstarted-click-save-description' => 'Click \'{{int:savearticle}}\' and your changes will be visible.',
 	'guidedtour-tour-gettingstarted-end-title' => 'Looking for more to do?',
 	'guidedtour-tour-gettingstarted-end-description' => '[[Special:GettingStarted|Getting Started]] is updated every hour with new pages.',
+
+	// firstedit (wiktext version)
+	'guidedtour-tour-firstedit-edit-page-title' => 'Ready to edit?',
+
+	// Both of these refer to the wikitext edit links.  However, if VisualEditor is
+	// installed, we use a version that transcludes their tab/link text.
+	// The same applies to the edit-section-description ones.
+	'guidedtour-tour-firstedit-edit-page-description' => 'Click the \'{{int:vector-view-edit}}\' button to make your changes.',
+	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Click the \'{{int:visualeditor-ca-editsource}}\' button to make your changes.',
+
+	'guidedtour-tour-firstedit-edit-section-title' => 'Edit just a section',
+	'guidedtour-tour-firstedit-edit-section-description' => 'There are \'{{int:editsection}}\' links for each major section in an article, so you can focus on just that part.',
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'There are \'{{int:visualeditor-ca-editsource-section}}\' links for each major section in an article, so you can focus on just that part.',
+	'guidedtour-tour-firstedit-preview-title' => 'Preview your changes (optional)',
+	'guidedtour-tour-firstedit-preview-description' => 'Clicking \'{{int:showpreview}}\' allows you to check what the page will look like with your changes. Just don\'t forget to save!',
+	'guidedtour-tour-firstedit-save-title' => 'You\'re almost done!',
+	'guidedtour-tour-firstedit-save-description' => 'When you\'re ready, clicking \'{{int:savearticle}}\' will make your changes visible for everyone.',
 );
 
 /** Message documentation (Message documentation)
@@ -93,6 +110,16 @@ See also:
 	'guidedtour-tour-gettingstarted-click-save-description' => 'Description of step showing user where to click {{msg-mw|savearticle}}',
 	'guidedtour-tour-gettingstarted-end-title' => 'Title of final step of Getting Started tour',
 	'guidedtour-tour-gettingstarted-end-description' => 'Description of final step of Getting Started tour',
+	'guidedtour-tour-firstedit-edit-page-title' => 'Title of the step of the firstedit tour pointing to the main edit button',
+	'guidedtour-tour-firstedit-edit-page-description' => 'Description of the step of the firstedit tour pointing to the main edit button, if VisualEditor is not installed',
+	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Title of the step of the firstedit tour pointing to the main edit button, if VisualEditor is installed',
+	'guidedtour-tour-firstedit-edit-section-title' => 'Title of the step of the firstedit tour pointing to the section edit button',
+	'guidedtour-tour-firstedit-edit-section-description' => 'Description of the step of the firstedit tour pointing to the section edit button, if VisualEditor is not installed',
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Description of the step of the firstedit tour pointing to the section edit button, if VisualEditor is installed',
+	'guidedtour-tour-firstedit-preview-title' => 'Title of step explaining preview',
+	'guidedtour-tour-firstedit-preview-description' => 'Description of step explaining preview',
+	'guidedtour-tour-firstedit-save-title' => 'Title of step explaining saving an edit',
+	'guidedtour-tour-firstedit-save-description' => 'Description of step explaining how to save',
 );
 
 /** Arabic (العربية)

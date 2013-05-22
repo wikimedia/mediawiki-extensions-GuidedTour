@@ -193,4 +193,54 @@ class GuidedTourHooks {
 
 		return true;
 	}
+
+	/**
+	 * We should continue using $wgResourceModules for everything, except when the
+	 * definition depends on whether another extension is present.  This is to avoid
+	 * relying on the include order.
+	 *
+	 * @param $resourceLoader ResourceLoader
+	 */
+	public static function onResourceLoaderRegisterModules( &$resourceLoader ) {
+		$dir = __DIR__ . DIRECTORY_SEPARATOR;
+		$module = array(
+			'scripts' => 'firstedit.js',
+			'localBasePath' => $dir . 'modules/tours',
+			'remoteExtPath' => 'GuidedTour/modules/tours',
+			'dependencies' => array(
+				'ext.guidedTour',
+			),
+			'messages' => array(
+				'savearticle',
+				'showpreview',
+				'guidedtour-tour-firstedit-edit-page-title',
+				'guidedtour-tour-firstedit-edit-section-title',
+				'guidedtour-tour-firstedit-preview-title',
+				'guidedtour-tour-firstedit-preview-description',
+				'guidedtour-tour-firstedit-save-title',
+				'guidedtour-tour-firstedit-save-description',
+			),
+		);
+
+		// Check whether VE is installed to determine which messages to add.
+		if ( class_exists( 'VisualEditorHooks' ) ) {
+			array_push(
+				$module['messages'],
+				'visualeditor-ca-editsource',
+				'guidedtour-tour-firstedit-edit-page-visualeditor-description',
+				'visualeditor-ca-editsource-section',
+				'guidedtour-tour-firstedit-edit-section-visualeditor-description'
+			);
+		} else {
+			array_push(
+				$module['messages'],
+				'vector-view-edit',
+				'guidedtour-tour-firstedit-edit-page-description',
+				'editsection',
+				'guidedtour-tour-firstedit-edit-section-description'
+			);
+		}
+
+		$resourceLoader->register( 'ext.guidedTour.tour.firstedit', $module );
+	}
 }
