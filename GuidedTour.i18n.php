@@ -390,10 +390,11 @@ $messages['gl'] = array(
 
 /** Hebrew (עברית)
  * @author Amire80
+ * @author ExampleTomer
  */
 $messages['he'] = array(
 	'guidedtour-desc' => 'אפשרות לספק בדפים חלונות קופצים שעוזרים למשתמשים חדשים',
-	'guidedtour-end-tour' => 'לסיים את הסיור',
+	'guidedtour-next-button' => 'הבא',
 	'guidedtour-okay-button' => 'סבבה',
 	'guidedtour-tour-test-testing' => 'בדיקות',
 	'guidedtour-tour-test-test-description' => 'זוהי בדיקה של תיאור. צנח לו זלזל!',
