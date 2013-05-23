@@ -1352,8 +1352,8 @@
 		defineTour: function ( tourSpec ) {
 			var steps, stepInd = 0, stepCount, id, defaults = {};
 
-			if ( !$.isPlainObject( tourSpec ) ) {
-				throw new gt.TourDefinitionError( 'There must be a single argument, \'tourSpec\', which must be an object.' );
+			if ( !$.isPlainObject( tourSpec ) || arguments.length !== 1 ) {
+				throw new gt.TourDefinitionError( 'Check your syntax. There must be exactly one argument, \'tourSpec\', which must be an object.' );
 			}
 
 			if ( $.type( tourSpec.name ) !== 'string' ) {

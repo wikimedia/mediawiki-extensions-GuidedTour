@@ -503,10 +503,29 @@
 		);
 	} );
 
-	QUnit.test( 'defineTour', 11, function ( assert ) {
-		var SPEC_MUST_BE_OBJECT = /There must be a single argument, 'tourSpec', which must be an object\./,
+	QUnit.test( 'defineTour', 13, function ( assert ) {
+		var SPEC_MUST_BE_OBJECT = /Check your syntax. There must be exactly one argument, 'tourSpec', which must be an object\./,
 			NAME_MUST_BE_STRING = /'tourSpec.name' must be a string, the tour name\./,
-			STEPS_MUST_BE_ARRAY = /'tourSpec.steps' must be an array, the list of steps\./;
+			STEPS_MUST_BE_ARRAY = /'tourSpec.steps' must be an array, the list of steps\./,
+			VALID_TOUR_SPEC = {
+				name: 'valid',
+
+				steps: [ {
+					title: 'First step title',
+					description: 'Second step title',
+					overlay: true,
+					buttons: [ {
+						action: 'next'
+					} ]
+				}, {
+					title: 'Second step title',
+					description: 'Second step description',
+					overlay: true,
+					buttons: [ {
+						action: 'end'
+					} ]
+				} ]
+			};
 
 		assertThrowsTypeAndMessage(
 			assert,
@@ -516,6 +535,16 @@
 			gt.TourDefinitionError,
 			SPEC_MUST_BE_OBJECT,
 			'gt.TourDefinitionError with correct error message for empty call'
+		);
+
+		assertThrowsTypeAndMessage(
+			assert,
+			function () {
+				return gt.defineTour( VALID_TOUR_SPEC, VALID_STEP );
+			},
+			gt.TourDefinitionError,
+			SPEC_MUST_BE_OBJECT,
+			'gt.TourDefinitionError with correct error message for multiple parameters'
 		);
 
 		assertThrowsTypeAndMessage(
@@ -566,25 +595,7 @@
 		);
 
 		assert.strictEqual(
-			gt.defineTour( {
-					name: 'valid',
-
-					steps: [ {
-						titlemsg: 'guidedtour-tour-test-testing',
-						descriptionmsg: 'guidedtour-tour-test-test-description',
-						overlay: true,
-						buttons: [ {
-							action: 'next'
-						} ]
-					}, {
-						title: 'Valid title',
-						description: 'Valid description',
-						overlay: true,
-						buttons: [ {
-							action: 'end'
-						} ]
-					} ]
-			} ),
+			gt.defineTour( VALID_TOUR_SPEC ),
 			true,
 			'Valid tour is defined successfully'
 		);
