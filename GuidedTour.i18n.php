@@ -758,6 +758,13 @@ $messages['ru'] = array(
 	'guidedtour-tour-test-launch-tour' => 'Тестовый запуск тура',
 );
 
+/** Serbian (Cyrillic script) (српски (ћирилица)‎)
+ * @author Milicevic01
+ */
+$messages['sr-ec'] = array(
+	'guidedtour-next-button' => 'Следеће',
+);
+
 /** Swedish (svenska)
  * @author Ainali
  */
