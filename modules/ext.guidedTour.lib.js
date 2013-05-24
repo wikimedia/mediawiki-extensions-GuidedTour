@@ -610,6 +610,7 @@
 	 *
 	 * @private
 	 *
+	 * @param {string} tourName name of tour
 	 * @param {Object} options Guider options object augmented with defaults
 	 * @param {boolean} shouldFlipHorizontally true to flip requested position horizontally
 	 *  before calling guiders, false otherwise
@@ -617,7 +618,7 @@
 	 * @return {boolean} true, on success; throws otherwise
 	 * @throws {mw.guidedTour.TourDefinitionError} On invalid input
 	 */
-	function initializeGuiderInternal( options, shouldFlipHorizontally ) {
+	function initializeGuiderInternal( tourName, options, shouldFlipHorizontally ) {
 		var passedInOnClose = options.onClose, passedInOnShow;
 		options.onClose = function () {
 			passedInOnClose.apply ( this, arguments );
@@ -646,6 +647,9 @@
 		options.buttons = getButtons( options.buttons, options.allowAutomaticOkay );
 		delete options.allowAutomaticOkay;
 
+		options.classString = options.classString || '';
+		options.classString += ' ' + internal.getTourCssClass( tourName );
+
 		if ( options.attachTo !== undefined ) {
 			options.attachTo = getValueForSkin( options, 'attachTo' );
 		}
@@ -662,6 +666,38 @@
 		guiders.initGuider( options );
 
 		return true;
+	}
+
+	/**
+	 * Resumes a loaded tour, given the tour's ID.
+	 *
+	 * Wrapper around guiders.resume.  If there is already a guider showing
+	 * from the same tour, it hides the old one before showing the new one.
+	 *
+	 * @private
+	 *
+	 * @param {string} tourId Tour id
+	 *
+	 * @return {boolean} true if a guider is now showing, false otherwise
+	 */
+	function resumeTourFromId( tourId ) {
+		var tourInfo, tourVisibleSelector, guider;
+
+		tourInfo = gt.parseTourId( tourId );
+		tourVisibleSelector = '.' + internal.getTourCssClass( tourInfo.name ) + ':visible';
+
+		guider = guiders._guiderById( tourId );
+		if ( guider !== undefined && guider.elem.is( ':visible' ) ) {
+			// Already showing the one they want
+			return true;
+		}
+
+		// A guider from the same tour is visible
+		if ( $( tourVisibleSelector ).length > 0 ) {
+			guiders.hideAll();
+		}
+
+		return guiders.resume( tourId );
 	}
 
 	/**
@@ -683,10 +719,10 @@
 		shouldFlipHorizontally = getShouldFlipHorizontally( isExtensionDefined );
 
 		for ( i = 0; i < tourSpec.steps.length; i++ ) {
-			initializeGuiderInternal( tourSpec.steps[i], shouldFlipHorizontally );
+			initializeGuiderInternal( tourName, tourSpec.steps[i], shouldFlipHorizontally );
 		}
 
-		guiders.resume( tourId );
+		resumeTourFromId( tourId );
 	}
 
 	/**
@@ -1117,24 +1153,36 @@
 		},
 
 		/**
-		 * Resumes an already loaded tour
+		 * Resumes a loaded tour, specifying a tour and (optionally) a step.
+		 *
+		 * If no step is provided, it will first try to get a step from the URL.
+		 *
+		 * If that fails, it will try to resume from the cookie.
+		 *
+		 * Finally, it will default to step 1.
 		 *
 		 * @param {string} tourName Tour name
+		 * @param {number|string} [step] Step, defaulting to the cookie or first step of tour.
 		 *
 		 * @return {void}
 		 */
-		resumeTour: function ( tourName ) {
-			var step = gt.getStep() || 0, cookieValue;
+		resumeTour: function ( tourName, step ) {
+			var cookieValue;
+
+			if ( step === undefined ) {
+				step = gt.getStep() || 0;
+			}
 			// Bind failure step (in case there are problems).
 			guiders.failStep = gt.makeTourId( {
 				name: tourName,
 				step: 'fail'
 			} );
-
+			// XXX (mattflaschen, 2013-05-31): There is currently no guarantee
+			// the cookie has the same tour.
 			cookieValue = $.cookie( cookieName );
 			if ( ( step === 0 ) && cookieValue !== null ) {
 				// start from cookie position
-				if ( guiders.resume( cookieValue ) ) {
+				if ( resumeTourFromId( cookieValue ) ) {
 					return;
 				}
 			}
@@ -1143,7 +1191,7 @@
 				step = 1;
 			}
 			// start from step specified
-			guiders.resume( gt.makeTourId( {
+			resumeTourFromId( gt.makeTourId( {
 				name: tourName,
 				step: step
 			} ) );
@@ -1325,47 +1373,7 @@
 
 			return true;
 		},
-
 		/**
-		 * Initializes a guider
-		 *
-		 * This method will be removed, so you should use gt.defineTour instead.
-		 *
-		 * The parameter is the same as a step of gt.defineTour, except that gt.initGuider also requires an id and next
-		 * as part of the object.
-		 *
-		 * If using this API, you must also put:
-		 *
-		 * gt.currentTour = 'test';
-		 *
-		 * at the top of your file.
-		 *
-		 * @deprecated
-		 *
-		 * @param {Object} options Options object matching the gt.defineTour step, except as noted above
-		 *
-		 * @return {boolean} true, on success; throws otherwise
-		 * @throws {mw.guidedTour.TourDefinitionError} On invalid input
-		 */
-		initGuider: function ( options ) {
-			var tourInfo;
-
-			// Validate id and gt.currentTour, since these could cause confusion if someone copies from a gt.defineTour call to a gt.initGuider one.
-			if ( $.type( options.id ) !== 'string' ) {
-				throw new gt.TourDefinitionError( '\'options.id\' must be a string, in the form gt-tourname-stepnumber.' );
-			}
-
-			if ( $.type( gt.currentTour ) !== 'string' ) {
-				throw new gt.TourDefinitionError( '\'gt.currentTour\' must be a string, the tour name.' );
-			}
-
-			// Do this every time.  We don't have any way of knowing how many times
-			// they'll call gt.initGuider.
-			tourInfo = gt.parseTourId( options.id );
-
-			return initializeGuiderInternal( augmentGuider( {}, options ), false );
-		},
-
 		// Below are exposed for unit testing only, and should be considered
 		// private
 		/**

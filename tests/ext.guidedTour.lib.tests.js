@@ -579,48 +579,4 @@
 			'Valid tour is defined successfully'
 		);
 	} );
-
-	QUnit.test( 'initGuider', 5, function( assert ) {
-		var ID_MISSING = /'options.id' must be a string, in the form gt-tourname-stepnumber\./,
-			PREV_BAD_ACTION = /'prev' is not a supported button action\./,
-			guiderWithMissingId = $.extend( true, {}, VALID_SPEC ),
-			guiderWithMissingNext = $.extend( true, {}, VALID_SPEC ),
-			guiderWithBadAction = $.extend( true, {}, VALID_SPEC ),
-			oldCurrentTour = gt.currentTour;
-
-		delete guiderWithMissingId.id;
-		delete guiderWithMissingNext.next;
-
-		gt.currentTour = 'test';
-
-		guiderWithBadAction.buttons[0].action = 'prev';
-
-		assertThrowsTypeAndMessage(
-			assert,
-			function () {
-				return gt.initGuider( guiderWithMissingId );
-			},
-			gt.TourDefinitionError,
-			ID_MISSING,
-			'gt.TourDefinitionError with correct error message for missing id field'
-		);
-
-		assertThrowsTypeAndMessage(
-			assert,
-			function () {
-				return gt.initGuider( guiderWithBadAction );
-			},
-			gt.TourDefinitionError,
-			PREV_BAD_ACTION,
-			'gt.TourDefinitionError with correct error message for bad \'prev\' action'
-		);
-
-		assert.strictEqual(
-			gt.initGuider( VALID_SPEC ),
-			true,
-			'Valid call succeeds'
-		);
-
-		gt.currentTour = oldCurrentTour;
-	} );
 } ( mediaWiki, jQuery ) );
