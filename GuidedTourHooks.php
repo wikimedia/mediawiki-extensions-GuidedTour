@@ -157,7 +157,8 @@ class GuidedTourHooks {
 	}
 
 	public static function onRedirectSpecialArticleRedirectParams( &$redirectParams ) {
-		$redirectParams[] = self::TOUR_PARAM;
-		return TRUE;
+		array_push( $redirectParams, self::TOUR_PARAM, 'step' );
+
+		return true;
 	}
 }
