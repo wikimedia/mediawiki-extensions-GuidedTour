@@ -526,6 +526,7 @@ $messages['ko'] = array(
  * @author Robby
  */
 $messages['lb'] = array(
+	'guidedtour-desc' => "Erméiglecht Pop-up-ënnerstëtzt Toure fir nei Benotzer z'assistéieren",
 	'guidedtour-help-url' => 'Help:Guidéiert Touren',
 	'guidedtour-next-button' => 'Nächst',
 	'guidedtour-okay-button' => 'OK',
@@ -538,7 +539,9 @@ $messages['lb'] = array(
 	'guidedtour-tour-test-launch-tour' => 'Ufank vum Tour testen',
 	'guidedtour-tour-gettingstarted-start-title' => 'Wëllt Dir eng Hand upaken?',
 	'guidedtour-tour-gettingstarted-click-edit-title' => "Klickt op '{{int:vector-view-edit}}'",
+	'guidedtour-tour-gettingstarted-click-edit-description' => 'Dëst léist Iech Ännerungen op all Deel vun der Säit maachen esoubal wéi Dir prett sidd.',
 	'guidedtour-tour-gettingstarted-click-preview-title' => 'Weisen ouni ze späicheren (fakuktativ)',
+	'guidedtour-tour-gettingstarted-click-preview-description' => 'Klickt op "{{int:showpreview}}", fir ze gesinn, wéi d\'Säit mat dengen Ännerungen ausgesäit. Vergiesst net ze späicheren.',
 	'guidedtour-tour-gettingstarted-click-save-title' => 'Dir sidd bal fäerdeg!',
 	'guidedtour-tour-gettingstarted-click-save-description' => "Klickt op '{{int:savearticle}}' an Är Ännerunge sinn ze gesinn.",
 	'guidedtour-tour-gettingstarted-end-title' => 'Wëllt Dir méi maachen?',
@@ -850,4 +853,11 @@ $messages['zh-hans'] = array(
 	'guidedtour-tour-gettingstarted-click-save-description' => '点击“{{int:savearticle}}”，您将保存您所作出的更改。',
 	'guidedtour-tour-gettingstarted-end-title' => '想要寻找更多的事情做？',
 	'guidedtour-tour-gettingstarted-end-description' => '[[Special:GettingStarted|入门指南]]每小时会有新页面。',
+);
+
+/** Traditional Chinese (中文（繁體）‎)
+ * @author Simon Shek
+ */
+$messages['zh-hant'] = array(
+	'guidedtour-next-button' => '下一步',
 );
