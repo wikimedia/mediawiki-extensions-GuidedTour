@@ -177,12 +177,11 @@
 	 *
 	 * @private
 	 *
-	 * @param {string} guiderId id of guider
+	 * @param {Object} guider any guider from the tour
 	 *
 	 * @return {void}
 	 */
-	function removeCookie( guiderId ) {
-		var guider = guiders._guiderById( guiderId );
+	function removeCookie( guider ) {
 		if ( guider.changeCookie ) {
 			$.cookie( cookieName, null, cookieParams );
 		}
@@ -211,7 +210,7 @@
 		logDismissal();
 
 		if ( closeType === 'xButton' ) {
-			removeCookie( guider.id );
+			removeCookie( guider );
 		}
 	}
 
@@ -849,18 +848,20 @@
 		recordStats: $.noop,
 
 		/**
-		 * Ends the tour, then logs, passing a step of 'end'
+		 * Ends the tour and logs, passing a 'hide' action
 		 *
 		 * @return {void}
 		 */
 		endTour: function () {
+			var guider;
 			logDismissal();
-			removeCookie( guiders._currentGuiderID );
+			guider = guiders._guiderById( guiders._currentGuiderID );
+			removeCookie( guider );
 			guiders.hideAll();
 		},
 
 		/**
-		 * Hides the guider(s), then logs, passing a step of 'hide'
+		 * Hides the guider(s) and logs, passing a 'hide' action
 		 *
 		 * @return {void}
 		 */
