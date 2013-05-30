@@ -1,7 +1,7 @@
 ( function ( mw, $ ) {
 	'use strict';
 
-	var gt, originalPageName, originalGetParam,
+	var gt, originalPageName, originalGetParam, cookieName, cookieParams,
 		// This form includes the id and next.
 		VALID_SPEC = {
 			id: 'gt-test-1',
@@ -30,7 +30,11 @@
 
 	QUnit.module( 'ext.guidedTour.lib', QUnit.newMwEnvironment( {
 		setup: function () {
+			var cookieConfig;
 			gt = mw.guidedTour;
+			cookieConfig = gt.getCookieConfiguration();
+			cookieName = cookieConfig.name;
+			cookieParams = cookieConfig.parameters;
 			originalPageName = mw.config.get( 'wgPageName' );
 			originalGetParam = mw.util.getParamValue;
 		},
@@ -182,8 +186,7 @@
 	} );
 
 	QUnit.test( 'setTourCookie', 3, function ( assert ) {
-		var cookieName = mw.libs.guiders.cookie,
-			name = 'foo',
+		var name = 'foo',
 			numberStep = 5,
 			stringStep = '3',
 			oldCookieValue = $.cookie( cookieName );
@@ -207,7 +210,7 @@
 		gt.setTourCookie( name, stringStep );
 		assertValidCookie ( name, stringStep, 'setTourCookie accepts string step' );
 
-		$.cookie( cookieName, oldCookieValue, mw.libs.guiders.cookieParams );
+		$.cookie( cookieName, oldCookieValue, cookieParams );
 	} );
 
 	QUnit.test( 'defineTour', 11, function ( assert ) {

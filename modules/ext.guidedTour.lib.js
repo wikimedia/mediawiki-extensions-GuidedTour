@@ -27,6 +27,7 @@
 	'use strict';
 
 	var gt,
+		cookieName, cookieParams,
 		skin = mw.config.get( 'skin' ),
 		messageParser = new mw.jqueryMsg.parser(),
 		// Non-null if user is logged in.
@@ -88,6 +89,43 @@
 		}
 	}
 
+	/**
+	 * Record stats of guider being shown, if logging is enabled
+	 *
+	 * @private
+	 *
+	 * @param {Object} guider Guider object to record
+	 *
+	 * @return {void}
+	 */
+	function recordStats ( guider ) {
+		var tourInfo;
+
+		tourInfo = gt.parseTourId( guider.id );
+		if ( tourInfo !== null ) {
+			pingServer( 'impression', guider.id );
+		}
+	}
+
+	/**
+	 * Handles the onShow call by guiders.  May saves to cookie and log, depending
+	 * on settings.
+	 *
+	 * @private
+	 *
+	 * @param {Object} guider Guider object provided by Guiders.js
+	 *
+	 * @return {void}
+	 */
+	function handleOnShow ( guider ) {
+		//If necessary, save the guider id to a cookie
+		if ( guider.changeCookie ) {
+			$.cookie( cookieName, guider.id, cookieParams );
+		}
+
+		recordStats( guider );
+	}
+
 	// XXX (mattflaschen, 2013-01-16):
 	// I'm not sure the clean part is necessary, and the url-encoding should be done
 	// right before an actual URL is constructed.
@@ -134,6 +172,23 @@
 	}
 
 	/**
+	 * Removes the tour cookie for a given guider ID,
+	 * unless the changeCookie property of the guider is falsy.
+	 *
+	 * @private
+	 *
+	 * @param {string} guiderId id of guider
+	 *
+	 * @return {void}
+	 */
+	function removeCookie( guiderId ) {
+		var guider = guiders._guiderById( guiderId );
+		if ( guider.changeCookie ) {
+			$.cookie( cookieName, null, cookieParams );
+		}
+	}
+
+	/**
 	 * Provides onClose handler called by Guiders on a user-initiated close action.
 	 *
 	 * Hides guider.  If they clicked the 'x' button, also ends the tour, removing the
@@ -155,7 +210,9 @@
 	function handleOnClose( guider, isAlternativeClose, closeType ) {
 		logDismissal();
 
-		return closeType === 'xButton';
+		if ( closeType === 'xButton' ) {
+			removeCookie( guider.id );
+		}
 	}
 
 	/*
@@ -189,7 +246,7 @@
 
 		// don't parse if already done
 		if ( guider.isParsed ) {
-			gt.recordStats(guider);
+			recordStats( guider );
 			return;
 		}
 
@@ -222,7 +279,7 @@
 			// guider html is already "live" so edit it
 			guider.elem.find( '.guider_description' ).html( guider.description );
 
-			gt.recordStats( guider );
+			recordStats( guider );
 		}
 	}
 
@@ -404,7 +461,9 @@
 	function augmentGuider( defaultOptions, options ) {
 		return $.extend( true, {
 			onClose: $.noop,
-			allowAutomaticOkay: true
+			onShow: $.noop,
+			allowAutomaticOkay: true,
+			changeCookie: true
 		}, defaultOptions, options );
 	}
 
@@ -484,10 +543,19 @@
 	 * @throws {mw.guidedTour.TourDefinitionError} On invalid input
 	 */
 	function initializeGuiderInternal( options, shouldFlipHorizontally ) {
-		var oldOnClose = options.onClose;
-		options.onClose = function() {
-			oldOnClose.apply ( this, arguments );
+		var passedInOnClose = options.onClose, passedInOnShow;
+		options.onClose = function () {
+			passedInOnClose.apply ( this, arguments );
 			return handleOnClose.apply( this, arguments );
+		};
+
+		passedInOnShow = options.onShow;
+		options.onShow = function () {
+			// Unlike the above the order is different.  This ensures
+			// handleOnShow (which does not return a value) always runs, and
+			// the user-provided function (if any) can return a value.
+			handleOnShow.apply( this, arguments );
+			return passedInOnShow.apply( this, arguments );
 		};
 
 		if ( options.titlemsg ) {
@@ -569,9 +637,8 @@
 		guiders._buttonClass = 'mw-ui-button mw-ui-primary';
 
 		// cookie the users when they are in the tour
-		guiders.cookie = mw.config.get( 'wgCookiePrefix' ) + '-mw-tour';
-		guiders.cookieParams = { path: '/' };
-		guiders._defaultSettings.changeCookie = true;
+		cookieName = mw.config.get( 'wgCookiePrefix' ) + '-mw-tour';
+		cookieParams = { path: '/' };
 
 		// Show X button
 		guiders._defaultSettings.xButton = true;
@@ -579,7 +646,6 @@
 		guiders._defaultSettings.closeOnEscape = true;
 		guiders._defaultSettings.closeOnClickOutside = true;
 		guiders._defaultSettings.flipToKeepOnScreen = true;
-		guiders._defaultSettings.onShow = gt.recordStats;
 
 		$( document ).ready( function () {
 			setupRepositionListeners();
@@ -743,7 +809,7 @@
 					step: step
 				} );
 			} else {
-				tourId = $.cookie( guiders.cookie );
+				tourId = $.cookie( cookieName );
 				tourInfo = gt.parseTourId( tourId );
 				if ( tourInfo !== null ) {
 					tourName = tourInfo.name;
@@ -771,26 +837,16 @@
 				name: name,
 				step: step
 			} );
-			$.cookie( guiders.cookie, id, guiders.cookieParams );
+			$.cookie( cookieName, id, cookieParams );
 		},
 
 		/**
-		 * Record stats of guider being shown, if logging is enabled
+		 * @deprecated
 		 *
-		 * This is a public function so you can override onShow but still record the stat.
-		 *
-		 * @param {Object} guider Guider object to record
-		 *
-		 * @return {void}
+		 * There is no longer a need to call this public method, and it may be
+		 * removed in the future.
 		 */
-		recordStats: function ( guider ) {
-			var tourInfo;
-
-			tourInfo = gt.parseTourId( guider.id );
-			if ( tourInfo !== null ) {
-				pingServer( 'impression', guider.id );
-			}
-		},
+		recordStats: $.noop,
 
 		/**
 		 * Ends the tour, then logs, passing a step of 'end'
@@ -799,7 +855,8 @@
 		 */
 		endTour: function () {
 			logDismissal();
-			guiders.endTour();
+			removeCookie( guiders._currentGuiderID );
+			guiders.hideAll();
 		},
 
 		/**
@@ -938,15 +995,17 @@
 		 * @return {void}
 		 */
 		resumeTour: function ( tourName ) {
-			var step = gt.getStep() || 0;
+			var step = gt.getStep() || 0, cookieValue;
 			// Bind failure step (in case there are problems).
 			guiders.failStep = gt.makeTourId( {
 				name: tourName,
 				step: 'fail'
 			} );
-			if ( ( step === 0 ) && $.cookie( guiders.cookie ) ) {
+
+			cookieValue = $.cookie( cookieName );
+			if ( ( step === 0 ) && cookieValue !== null ) {
 				// start from cookie position
-				if ( guiders.resume() ) {
+				if ( guiders.resume( cookieValue ) ) {
 					return;
 				}
 			}
@@ -1109,7 +1168,6 @@
 			}
 
 			if ( tourSpec.isSinglePage ) {
-				// TODO (mattflaschen, 2013-02-12): This should be specific to the current tour. See https://bugzilla.wikimedia.org/show_bug.cgi?id=44924
 				defaults.changeCookie = false;
 			}
 
@@ -1190,6 +1248,20 @@
 			};
 
 			return initializeGuiderInternal( augmentGuider( {}, options ), false );
+		},
+
+		/*
+		 * Returns cookie configuration, for testing only.
+		 *
+		 * @private
+		 *
+		 * @return {object} cookie configuration
+		 */
+		getCookieConfiguration: function () {
+			return {
+				name: cookieName,
+				parameters: cookieParams
+			};
 		},
 
 		// Keep after regular methods.
