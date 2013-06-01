@@ -1,7 +1,7 @@
 ( function ( mw, $ ) {
 	'use strict';
 
-	var gt, originalPageName, originalGetParam, cookieName, cookieParams,
+	var gt, originalGetParam, cookieConfig, cookieName, cookieParams,
 		// This form includes the id and next.
 		VALID_SPEC = {
 			id: 'gt-test-1',
@@ -15,7 +15,12 @@
 			} ]
 		};
 
-	// QUnit throws only lets you check one at a time
+	gt = mw.guidedTour;
+	cookieConfig = gt.getCookieConfiguration();
+	cookieName = cookieConfig.name;
+	cookieParams = cookieConfig.parameters;
+
+	// QUnit's "throws" only lets you check one at a time
 	function assertThrowsTypeAndMessage( assert, block, errorConstructor, regexErrorMessage, message ) {
 		var actualException;
 		try {
@@ -24,23 +29,16 @@
 			actualException = exc;
 		}
 
-		assert.ok( actualException instanceof errorConstructor, message );
-		assert.ok( regexErrorMessage.test( actualException ), message );
+		assert.strictEqual( actualException instanceof errorConstructor, true, message );
+		assert.strictEqual( regexErrorMessage.test( actualException ), true, message );
 	}
 
 	QUnit.module( 'ext.guidedTour.lib', QUnit.newMwEnvironment( {
 		setup: function () {
-			var cookieConfig;
-			gt = mw.guidedTour;
-			cookieConfig = gt.getCookieConfiguration();
-			cookieName = cookieConfig.name;
-			cookieParams = cookieConfig.parameters;
-			originalPageName = mw.config.get( 'wgPageName' );
 			originalGetParam = mw.util.getParamValue;
 		},
 		teardown: function () {
 			mw.util.getParamValue = originalGetParam;
-			mw.config.set( 'wgPageName', originalPageName );
 		}
 	} ) );
 
@@ -279,9 +277,8 @@
 			'gt.TourDefinitionError with correct error message for missing steps'
 		);
 
-		assert.ok(
-			function () {
-				return gt.defineTour( {
+		assert.strictEqual(
+			gt.defineTour( {
 					name: 'valid',
 
 					steps: [ {
@@ -299,8 +296,8 @@
 							action: 'end'
 						} ]
 					} ]
-				} );
-			},
+			} ),
+			true,
 			'Valid tour is defined successfully'
 		);
 	} );
@@ -340,8 +337,9 @@
 			'gt.TourDefinitionError with correct error message for bad \'prev\' action'
 		);
 
-		assert.ok(
+		assert.strictEqual(
 			gt.initGuider( VALID_SPEC ),
+			true,
 			'Valid call succeeds'
 		);
 
