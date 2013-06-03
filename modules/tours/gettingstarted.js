@@ -99,7 +99,8 @@ gt.defineTour( {
 			action: 'end'
 		} ]
 	} ],
-	shouldLog: true
+	shouldLog: true,
+	showConditionally: 'stickToFirstPage'
 } );
 
 } (window, document, jQuery, mediaWiki, mediaWiki.guidedTour ) );

@@ -12,9 +12,6 @@
  */
 
 class GuidedTourHooks {
-	// Keep in sync with regex in ext.guidedTour.lib.js
-	const TOUR_ID_REGEX = '/^gt-([^.-]+)-(\d+)$/';
-
 	// Tour cookie name.  It will be prefixed automatically.
 	const COOKIE_NAME = '-mw-tour';
 
@@ -46,27 +43,44 @@ class GuidedTourHooks {
 	}
 
 	/**
-	 * Parses tour cookie
+	 * Parses tour cookie, returning an array of tour names (empty if there is no
+	 * cookie or the format is invalid)
 	 *
-	 * @private
+	 * Example cookie.  This happens to have multiple tours, but cookies with any
+	 * number of tours are accepted:
 	 *
-	 * @param WebRequest $request a request
+	 * {
+	 *	version: 1,
+	 *	tours: {
+	 *		firsttour: {
+	 *			step: 4
+	 *		},
+	 *		secondtour: {
+	 *			step: 2
+	 *		},
+	 *		thirdtour: {
+	 *			step: 3,
+	 *			firstArticleId: 38333
+	 *		}
+	 *	}
+	 * }
 	 *
-	 * @return array|null array if cookie exists and could be parsed, null otherwise
+	 * This only supports new-style cookies.  Old cookies will be converted on the
+	 * client-side, then the tour module will be loaded.
+	 *
+	 * @param string $cookieValue cookie value
+	 *
+	 * @return array array of tour names, empty if no cookie or cookie is invalid
 	 */
-	public static function parseTourCookie( $request ) {
-		$cookie = $request->getCookie( self::COOKIE_NAME );
-		if ( $cookie !== null ) {
-			$matchResult = preg_match( self::TOUR_ID_REGEX, $cookie, $matches );
-			if ( $matchResult === 1 ) {
-				return array(
-					'name' => $matches[1],
-					'step' => $matches[2],
-				);
+	public static function getTourNames( $cookieValue ) {
+		if ( $cookieValue !== null ) {
+			$parsed = FormatJson::decode( $cookieValue, true );
+			if ( isset( $parsed['tours'] ) ) {
+				return array_keys( $parsed['tours'] );
 			}
 		}
 
-		return null;
+		return array();
 	}
 
 	/**
@@ -132,9 +146,12 @@ class GuidedTourHooks {
 		if ( $queryTourName !== null ) {
 			self::addTour( $out, $queryTourName );
 		} else {
-			$tourInfo = self::parseTourCookie( $out->getRequest() );
-			if ( $tourInfo !== null ) {
-				self::addTour( $out, $tourInfo['name'] );
+			// TODO (mattflaschen, 2013-06-02): Should we add both the query
+			// tour and the cookie ones, rather than letting the query take precedence?
+			$cookieValue = $request->getCookie( self::COOKIE_NAME );
+			$tours = self::getTourNames( $cookieValue );
+			foreach ( $tours as $tourName ) {
+				self::addTour( $out, $tourName );
 			}
 		}
 
@@ -155,6 +172,18 @@ class GuidedTourHooks {
 		);
 		return true;
 	}
+
+	/**
+	 * Registers PHPUnit tests
+	 *
+	 * @param array &$files test files
+	 * @return bool always true
+	 */
+        public static function onUnitTestsList( &$files ) {
+                $testDir = __DIR__ . '/tests';
+                $files = array_merge( $files, glob( "$testDir/*Test.php" ) );
+                return true;
+        }
 
 	public static function onRedirectSpecialArticleRedirectParams( &$redirectParams ) {
 		array_push( $redirectParams, self::TOUR_PARAM, 'step' );

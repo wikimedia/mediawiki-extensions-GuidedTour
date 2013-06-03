@@ -213,6 +213,284 @@
 		$.cookie( cookieName, oldCookieValue, cookieParams );
 	} );
 
+	QUnit.test( 'convertToNewCookieFormat', 5, function ( assert ) {
+		var newCookie = $.toJSON( {
+			version: 1,
+			tours: {
+				sometour: {
+					step: 2
+				}
+			}
+		} ), newCookieMultipleTours = $.toJSON( {
+			version: 1,
+			tours: {
+				firsttour: {
+					step: 4
+				},
+				secondtour: {
+					step: 2
+				},
+				thirdtour: {
+					step: 3,
+					firstArticleId: 38333
+				}
+			}
+		} );
+
+		assert.strictEqual(
+			gt.convertToNewCookieFormat( null ),
+			null,
+			'Returns null for null parameter'
+		);
+
+		assert.strictEqual(
+			gt.convertToNewCookieFormat( 'gt-test-3' ),
+			$.toJSON( {
+				version: 1,
+				tours: {
+					test: {
+						step: 3
+					}
+				}
+			} ),
+			'Valid tour ID is upgraded correctly'
+		);
+
+		assert.strictEqual(
+			gt.convertToNewCookieFormat( newCookie ),
+			newCookie,
+			'Valid JSON cookie with single tour is preserved intact'
+		);
+
+		assert.strictEqual(
+			gt.convertToNewCookieFormat( newCookieMultipleTours ),
+			newCookieMultipleTours,
+			'Valid JSON cookie with multiple tours is preserved intact'
+		);
+
+		assert.strictEqual(
+			gt.convertToNewCookieFormat( '{"bad": "cookie"}' ),
+			null,
+			'Valid JSON with missing version field returns null'
+		);
+
+		assert.strictEqual(
+			gt.convertToNewCookieFormat( '<invalid: JSON>' ),
+			null,
+			'Invalid JSON returns null'
+		);
+	} );
+
+	QUnit.test( 'shouldShow', 11, function ( assert ) {
+		assertThrowsTypeAndMessage(
+			assert,
+			function () {
+				return gt.shouldShowTour( {
+					tourName: 'test',
+					cookieValue: {
+						version: 1,
+						tours: {
+							test: {
+								step: 1
+							}
+						}
+					},
+					pageName: 'Foo',
+					articleId: 123,
+					condition: 'bogus'
+				} );
+			},
+			gt.TourDefinitionError,
+			/'bogus' is not a supported condition/,
+			'gt.TourDefinitionError	with correct error message for invalid condition'
+		);
+
+		assert.strictEqual(
+			gt.shouldShowTour( {
+				tourName: 'test',
+				cookieValue: {
+					version: 1,
+					tours: {
+						test: {
+							firstArticleId: 123,
+							step: 1
+						}
+					}
+				},
+				pageName: 'Foo',
+				articleId: 123,
+				condition: 'stickToFirstPage'
+			} ),
+			true,
+			'Returns true for stickToFirstPage when on the original article'
+		);
+
+		assert.strictEqual(
+			gt.shouldShowTour( {
+				tourName: 'test',
+				cookieValue: {
+					version: 1,
+					tours: {
+						test: {
+							firstArticleId: 123,
+							step: 1
+						}
+					}
+				},
+				pageName: 'Foo',
+				articleId: 987,
+				condition: 'stickToFirstPage'
+			} ),
+			false,
+			'Returns false for stickToFirstPage when on a different article'
+		);
+
+		assert.strictEqual(
+			gt.shouldShowTour( {
+				tourName: 'test',
+				cookieValue: {
+					version: 1,
+					tours: {
+						test: {
+							step: 1
+						}
+					}
+				},
+				pageName: 'Bar',
+				articleId: 123
+			} ),
+			true,
+			'Returns true when there is no condition'
+		);
+
+		assert.strictEqual(
+			gt.shouldShowTour( {
+				tourName: 'test',
+				cookieValue: {
+					version: 1,
+					tours: {
+						test: {
+							firstArticleId: 234,
+							step: 1
+						}
+					}
+				},
+				pageName: 'Bar',
+				articleId: 123
+			} ),
+			true,
+			'Returns true when there is no condition even when there is a non-matching article ID in the cookie'
+		);
+
+		assert.strictEqual(
+			gt.shouldShowTour( {
+				tourName: 'test',
+				cookieValue: {
+					version: 1,
+					tours: {
+						test: {},
+						othertour: {
+							firstArticleId: 234,
+							step: 1
+						}
+					}
+				},
+				pageName: 'Bar',
+				articleId: 123
+			} ),
+			true,
+			'Returns true when there is no condition even when there is a non-matching article ID in the cookie, for another tour'
+		);
+
+		assert.strictEqual(
+			gt.shouldShowTour( {
+				tourName: 'test',
+				cookieValue: {
+					version: 1,
+					tours: {
+						test: {
+							firstSpecialPageName: 'Special:ImportantTask',
+							step: 1
+						}
+					}
+				},
+				pageName: 'Special:ImportantTask',
+				articleId: 0,
+				condition: 'stickToFirstPage'
+			} ),
+			true,
+			'Returns true for stickToFirstPage and matching special page'
+		);
+
+		assert.strictEqual(
+			gt.shouldShowTour( {
+				tourName: 'test',
+				cookieValue: {
+					version: 1,
+					tours: {
+						test: {
+							firstSpecialPageName: 'Special:ImportantTask',
+							step: 1
+						}
+					}
+				},
+				pageName: 'Special:OtherTask',
+				articleId: 0,
+				condition: 'stickToFirstPage'
+			} ),
+			false,
+			'Returns false for stickToFirstPage and different special page'
+		);
+
+		assert.strictEqual(
+			gt.shouldShowTour( {
+				tourName: 'secondtour',
+				cookieValue: {
+					version: 1,
+					tours: {
+						firsttour: {
+							firstArticleId: 123,
+							step: 1
+						},
+						secondtour: {
+							firstArticleId: 234,
+							step: 2
+						}
+					}
+				},
+				pageName: 'Foo',
+				articleId: 123,
+				condition: 'stickToFirstPage'
+			} ),
+			false,
+			'Returns false for stickToFirstPage for non-matching article ID when another tour\'s article ID matches'
+		);
+
+		assert.strictEqual(
+			gt.shouldShowTour( {
+				tourName: 'firsttour',
+				cookieValue: {
+					version: 1,
+					tours: {
+						firsttour: {
+							firstSpecialPageName: 'Special:ImportantTask',
+							step: 1
+						},
+						secondtour: {
+							firstSpecialPageName: 'Special:OtherTask',
+							step: 2
+						}
+					}
+				},
+				pageName: 'Special:OtherTask',
+				articleId: 0,
+				condition: 'stickToFirstPage'
+			} ),
+			false,
+			'Returns false for non-matching article ID when another tour\'s special page matches'
+		);
+	} );
+
 	QUnit.test( 'defineTour', 11, function ( assert ) {
 		var SPEC_MUST_BE_OBJECT = /There must be a single argument, 'tourSpec', which must be an object\./,
 			NAME_MUST_BE_STRING = /'tourSpec.name' must be a string, the tour name\./,
