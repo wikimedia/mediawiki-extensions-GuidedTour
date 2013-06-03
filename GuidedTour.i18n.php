@@ -99,7 +99,6 @@ See also:
 $messages['ar'] = array(
 	'guidedtour-desc' => 'السماح للصفحات بعرض رسائل جولات تعريفية لمساعدة المستخدمين الجدد',
 	'guidedtour-help-url' => 'مساعدة:جولات تعريفية', # Fuzzy
-	'guidedtour-end-tour' => 'نهاية الجولة',
 	'guidedtour-okay-button' => 'حسنا',
 	'guidedtour-tour-test-testing' => 'تجربة',
 	'guidedtour-tour-test-test-description' => 'هذه تجربة للوصف. أهلا بكم!',
@@ -162,7 +161,6 @@ $messages['be'] = array(
 	'guidedtour-desc' => 'Дазваляе паказваць на старонках усплыўныя падказкі для дапамогі новым удзельнікам',
 	'guidedtour-help-url' => 'Help:Экскурсіі па сайце',
 	'guidedtour-help-guider-url' => 'Help:Экскурсіі па сайце/даведка',
-	'guidedtour-end-tour' => 'Скончыць экскурсію',
 	'guidedtour-okay-button' => 'Далей',
 	'guidedtour-tour-test-testing' => 'Тэставанне',
 	'guidedtour-tour-test-test-description' => 'Гэта тэст апісання. Lorem ipsum dolor sit!',
@@ -195,7 +193,6 @@ $messages['be-tarask'] = array(
 	'guidedtour-help-url' => 'Help:Экскурсіі па сайце',
 	'guidedtour-help-guider-url' => 'Help:Экскурсіі па сайце/даведка',
 	'guidedtour-custom.css' => '/* Дадатковы CSS для пашырэньня GuidedTour. */',
-	'guidedtour-end-tour' => 'Скончыць экскурсію',
 	'guidedtour-okay-button' => 'Далей',
 	'guidedtour-tour-test-testing' => 'Тэставаньне',
 	'guidedtour-tour-test-test-description' => 'Гэта тэст апісаньня. Lorem ipsum dolor sit!',
@@ -416,7 +413,6 @@ $messages['he'] = array(
 $messages['hsb'] = array(
 	'guidedtour-help-url' => 'Help:Wjedźene tury',
 	'guidedtour-help-guider-url' => 'Help:Wjedźene tury/wjednik',
-	'guidedtour-end-tour' => 'Turu skónčić',
 	'guidedtour-okay-button' => 'W porjadku',
 	'guidedtour-tour-test-testing' => 'Testowanje',
 	'guidedtour-tour-test-test-description' => 'To je test wopisanja. Lorem ipsum dolor sit!',
@@ -442,7 +438,6 @@ $messages['hsb'] = array(
  */
 $messages['it'] = array(
 	'guidedtour-desc' => 'Consente di gestire pagine per fornire un tour guidato tramite popup per assistere i nuovi utenti',
-	'guidedtour-end-tour' => 'Fine tour',
 	'guidedtour-okay-button' => 'Ok',
 	'guidedtour-tour-test-testing' => 'Prova',
 	'guidedtour-tour-test-test-description' => 'Questa è una prova della descrizione. Lorem ipsum dolor sit!',
@@ -493,7 +488,6 @@ $messages['ja'] = array(
  * @author David1010
  */
 $messages['ka'] = array(
-	'guidedtour-end-tour' => 'ტურის დასრულება',
 	'guidedtour-tour-test-testing' => 'ტესტირება',
 );
 
@@ -669,7 +663,6 @@ $messages['nl'] = array(
 $messages['pms'] = array(
 	'guidedtour-desc' => "A përmët le pàgine për fornì na vìsita guidà da fnestre an riliev për giuté j'utent neuv",
 	'guidedtour-help-url' => 'Help:Vìsite guidà',
-	'guidedtour-end-tour' => 'Finì la vìsita',
 	'guidedtour-tour-test-testing' => 'Prové',
 	'guidedtour-tour-test-test-description' => "Costa a l'é na preuva dla descrission. Lorem ipsum dolor sit!",
 	'guidedtour-tour-test-callouts' => 'Fumèt ëd test',
@@ -691,7 +684,6 @@ $messages['pt'] = array(
 	'guidedtour-desc' => 'Permite que páginas proporcionem uma visita guiada por pop-ups, para ajudar os novos utilizadores.',
 	'guidedtour-help-url' => 'Help:Visitas guiadas',
 	'guidedtour-help-guider-url' => 'Help:Visitas guiadas/guia',
-	'guidedtour-end-tour' => 'Terminar visita guiada',
 	'guidedtour-okay-button' => 'OK',
 	'guidedtour-tour-test-testing' => 'Testando',
 	'guidedtour-tour-test-test-description' => 'Este é um teste da descrição. Lorem ipsum sit de dolor!',
@@ -723,7 +715,6 @@ $messages['pt-br'] = array(
 	'guidedtour-desc' => 'Permite que páginas proporcionem uma visita guiada por pop-ups, para ajudar os novos utilizadores.',
 	'guidedtour-help-url' => 'Help:Visitas guiadas',
 	'guidedtour-help-guider-url' => 'Help:Visitas guiadas/tutorial',
-	'guidedtour-end-tour' => 'Finalizar a visita',
 	'guidedtour-okay-button' => 'Entendido',
 	'guidedtour-tour-test-testing' => 'Teste',
 	'guidedtour-tour-test-test-description' => 'Está é uma descrição teste. Lorem ipsum dolor sit!',
@@ -752,7 +743,6 @@ $messages['pt-br'] = array(
  * @author Joetaras
  */
 $messages['roa-tara'] = array(
-	'guidedtour-end-tour' => "Fine d'u gire",
 	'guidedtour-okay-button' => 'Apposte',
 	'guidedtour-tour-test-testing' => 'Stoche a teste',
 );
@@ -761,7 +751,6 @@ $messages['roa-tara'] = array(
  * @author DCamer
  */
 $messages['ru'] = array(
-	'guidedtour-end-tour' => 'Закончить тур',
 	'guidedtour-tour-test-testing' => 'Тестирование',
 	'guidedtour-tour-test-test-description' => 'Это тест описание. Вы можете видеть что <b>HTML</b> полужирный. Lorem ipsum dolor sit!', # Fuzzy
 	'guidedtour-tour-test-callouts' => 'Тест выноски',
