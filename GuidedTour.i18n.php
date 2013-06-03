@@ -388,6 +388,13 @@ $messages['gl'] = array(
 	'guidedtour-tour-gettingstarted-end-description' => 'A páxina dos [[Special:GettingStarted|primeiros pasos]] actualízase cada hora con novas páxinas.',
 );
 
+/** Gujarati (ગુજરાતી)
+ * @author Ashok modhvadia
+ */
+$messages['gu'] = array(
+	'guidedtour-next-button' => 'આગળ',
+);
+
 /** Hebrew (עברית)
  * @author Amire80
  * @author ExampleTomer
@@ -497,7 +504,8 @@ $messages['ko'] = array(
 	'guidedtour-desc' => '새 사용자를 돕기 위해 팝업 가이드 투어를 문서에 제공할 수 있습니다',
 	'guidedtour-help-url' => 'Help:가이드 투어',
 	'guidedtour-help-guider-url' => 'Help:가이드 투어/안내자',
-	'guidedtour-end-tour' => '투어 끝내기',
+	'guidedtour-custom.css' => '/* 이 CSS 설정은 가이드 투어 확장 기능에 적용됩니다. */',
+	'guidedtour-next-button' => '다음',
 	'guidedtour-okay-button' => '확인',
 	'guidedtour-tour-test-testing' => '테스트',
 	'guidedtour-tour-test-test-description' => '설명의 테스트입니다. Lorem ipsum dolor sit!',
@@ -537,6 +545,7 @@ $messages['lb'] = array(
 	'guidedtour-tour-test-description-page' => 'MediaWiki-Beschreiwungssäiten testen',
 	'guidedtour-tour-test-go-description-page' => "Op d'Beschreiwungssäit goen",
 	'guidedtour-tour-test-launch-tour' => 'Ufank vum Tour testen',
+	'guidedtour-tour-test-launch-using-tours' => "En Tour ufänken duerch d'Benotze vun Touren",
 	'guidedtour-tour-gettingstarted-start-title' => 'Wëllt Dir eng Hand upaken?',
 	'guidedtour-tour-gettingstarted-click-edit-title' => "Klickt op '{{int:vector-view-edit}}'",
 	'guidedtour-tour-gettingstarted-click-edit-description' => 'Dëst léist Iech Ännerungen op all Deel vun der Säit maachen esoubal wéi Dir prett sidd.',
