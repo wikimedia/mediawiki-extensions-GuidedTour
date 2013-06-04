@@ -1,5 +1,5 @@
 extensions/GuidedTour
-http://www.mediawiki.org/w/index.php?title=Extension:GuidedTour
+https://www.mediawiki.org/wiki/Extension:GuidedTour
 
 MediaWiki extension that allows the creation of Guided Tours using a variant of
 Optimize.ly's Guiders.
@@ -11,7 +11,7 @@ To use:
 * Install the EventLogging extension, which is a dependency.
 * Put the extension files in your extension directory
 * Add the following line to your LocalSettings.php
-require_once( "$IP/extensions/GuidedTour/GuidedTour.php" );
+require_once "$IP/extensions/GuidedTour/GuidedTour.php";
 * Test that it worked by calling a page with tour=test appended to the URL. For
 example http://MyServer/w/index.php?tour=test
 

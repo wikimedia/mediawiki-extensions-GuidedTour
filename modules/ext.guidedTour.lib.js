@@ -443,7 +443,7 @@
 	 *
 	 * @param {Array} [buttonSpecs=[]] Button specifications as used in tour.  Elements
 	 *  will be mutated.
-	 * @param {boolean} allowAutomaticOkay true if and only if an okay can be generated
+	 * @param {boolean} [allowAutomaticOkay] True if and only if an okay can be generated
 	 *
 	 * @return {Array} Array of button specifications that Guiders expects
 	 * @throws {mw.guidedTour.TourDefinitionError} On invalid actions
