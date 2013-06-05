@@ -36,6 +36,7 @@ $wgAutoloadClasses += array(
 $wgHooks['BeforePageDisplay'][] = 'GuidedTourHooks::onBeforePageDisplay';
 $wgHooks['MakeGlobalVariablesScript'][] = 'GuidedTourHooks::onMakeGlobalVariablesScript';
 $wgHooks['ResourceLoaderTestModules'][] = 'GuidedTourHooks::onResourceLoaderTestModules';
+$wgHooks['UnitTestsList'][] = 'GuidedTourHooks::onUnitTestsList';
 $wgHooks['RedirectSpecialArticleRedirectParams'][] = 'GuidedTourHooks::onRedirectSpecialArticleRedirectParams';
 
 // Extension credits that will show up on Special:Version
@@ -90,6 +91,7 @@ $wgResourceModules['ext.guidedTour.lib'] = array(
 	'remoteExtPath' => 'GuidedTour/modules',
 	'dependencies' => array(
 		'jquery.cookie',
+		'jquery.json',
 		'mediawiki.jqueryMsg',
 		'mediawiki.libs.guiders',
 		'mediawiki.util',
