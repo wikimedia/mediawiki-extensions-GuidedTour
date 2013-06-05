@@ -83,8 +83,14 @@ $wgResourceModules['ext.guidedTour.siteStyles'] = array(
 	'class' => 'ResourceLoaderGuidedTourSiteStylesModule',
 );
 
-// The next two are separate to ease testability
-// This provides all the real functionality.
+// Internal API (refactoring to here in progress)
+$wgResourceModules['ext.guidedTour.lib.internal'] = array(
+	'scripts' => 'ext.guidedTour.lib.internal.js',
+	'localBasePath' => $dir . 'modules',
+	'remoteExtPath' => 'GuidedTour/modules',
+);
+
+// Public API, and legacy parts of the internal API pending move
 $wgResourceModules['ext.guidedTour.lib'] = array(
 	'scripts' => 'ext.guidedTour.lib.js',
 	'localBasePath' => $dir . 'modules',
@@ -96,6 +102,7 @@ $wgResourceModules['ext.guidedTour.lib'] = array(
 		'mediawiki.libs.guiders',
 		'mediawiki.util',
 		'schema.GuidedTour',
+		'ext.guidedTour.lib.internal',
 		'ext.guidedTour.siteStyles',
 	),
 	'messages' => array(

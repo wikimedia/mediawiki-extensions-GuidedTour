@@ -26,7 +26,8 @@
 ( function ( window, document, $, mw, guiders ) {
 	'use strict';
 
-	var gt,
+	var gt = mw.guidedTour,
+		internal = gt.internal,
 		cookieName, cookieParams,
 		skin = mw.config.get( 'skin' ),
 		messageParser = new mw.jqueryMsg.parser(),
@@ -190,6 +191,8 @@
 						parsed.tours[tourName].firstSpecialPageName = pageName;
 					}
 				}
+
+				parsed.tours[tourName].startTime = new Date().getTime();
 			}
 			parsed.tours[tourName].step = tourInfo.step;
 			cookieValue = $.toJSON( parsed );
@@ -216,19 +219,6 @@
 	 */
 	function cleanTourName( tourName ) {
 		return mw.util.rawurlencode( tourName.replace( /^(?:\.\.\/)+/, '' ) );
-	}
-
-	/**
-	 * Gets the tour module name.  This does not guarantee there is such a module.
-	 *
-	 * @private
-	 *
-	 * @param {string} tourName Tour name
-	 *
-	 * @return {string} Tour module name
-	 */
-	function getTourModuleName( tourName ) {
-		return 'ext.guidedTour.tour.' + tourName;
 	}
 
 	/**
@@ -688,7 +678,7 @@
 	function showTour( tourName, tourId ) {
 		var i, tourSpec, shouldFlipHorizontally, isExtensionDefined, moduleName;
 		tourSpec = definedTours[tourName];
-		moduleName = getTourModuleName( tourName );
+		moduleName = internal.getTourModuleName( tourName );
 		isExtensionDefined = ( mw.loader.getState( moduleName ) !== null );
 		shouldFlipHorizontally = getShouldFlipHorizontally( isExtensionDefined );
 
@@ -771,7 +761,8 @@
 		} );
 	}
 
-	gt = mw.guidedTour = {
+	// Add public API (internal API is at gt.internal)
+	$.extend ( gt, {
 		/**
 		 * Parses tour ID into an object with name and step keys.
 		 *
@@ -827,8 +818,9 @@
 		},
 
 		/**
-		 * Launch a tour.  Tours start themselves, but this allows one tour to launch
-		 * another.
+		 * Launch a tour.  Tours start themselves (through ext.guidedTour.js).
+		 * However, this method allows one tour to launch another.  It also allows
+		 * callers to launch a tour on demand.
 		 *
 		 * The tour will only be shown if allowed by the specification (see defineTour).
 		 *
@@ -846,10 +838,6 @@
 		 * @return {void}
 		 */
 		launchTour: function ( tourName, tourId ) {
-			var tourModuleName,
-			onWikiTourUrl,
-			MW_NS_TOUR_PREFIX = 'MediaWiki:Guidedtour-tour-';
-
 			if ( !tourId ) {
 				tourId = gt.makeTourId( {
 					name: tourName,
@@ -857,8 +845,7 @@
 				} );
 			}
 
-			// Called if we successfully loaded the tour
-			function showIfConditionsMet() {
+			internal.loadTour( tourName ).done( function () {
 				if ( gt.shouldShowTour( {
 					tourName: tourName,
 					cookieValue: getParsedCookie(),
@@ -868,52 +855,17 @@
 				} ) ) {
 					showTour( tourName, tourId );
 				}
-			}
-
-			tourModuleName = getTourModuleName( tourName );
-			if ( mw.loader.getState( tourModuleName ) !== null ) {
-				mw.loader.using( tourModuleName, showIfConditionsMet, function ( err, dependencies ) {
-					mw.log( 'Failed to load tour ', tourModuleName,
-						'as module. err: ', err, ', dependencies: ',
-						dependencies );
-				});
-			} else {
-				mw.log( tourModuleName,
-					' is not registered, probably because it is not extension-defined.' );
-
-				onWikiTourUrl = mw.config.get( 'wgScript' ) + '?' + $.param( {
-					title: MW_NS_TOUR_PREFIX + tourName + '.js',
-					action: 'raw',
-					ctype: 'text/javascript'
-				} );
-				mw.log( 'Attempting to load on-wiki tour from ', onWikiTourUrl );
-
-				$.getScript( onWikiTourUrl )
-					.done( function ( script ) {
-						// missing raw requests give 0 length document and 200 status not 404
-						if ( script.length === 0 ) {
-							mw.log( 'Tour ' + tourName + ' is empty. Does the page exist?' );
-						}
-						else {
-							showIfConditionsMet();
-						}
-					})
-					.fail( function ( jqXHR, settings, exception ) {
-						var message = 'Failed to load tour ' + tourName;
-						if ( exception ) {
-							mw.log( message, exception );
-						} else {
-							mw.log( message );
-						}
-					});
-			}
+			} );
 		},
 
 		/**
 		 * Attempts to automatically launch a tour based on the environment
 		 *
 		 * If the query string has a tour parameter, the method attempts to use that.
-		 * Otherwise, the method tries to use the cookie.
+		 *
+		 * Otherwise, the method tries to use the GuidedTour cookie.  It checks which tours
+		 * are applicable to the current page.  If more than one is, this method
+		 * loads the most recently started tour.
 		 *
 		 * If both fail, it does nothing.
 		 *
@@ -921,34 +873,71 @@
 		 */
 		launchTourFromEnvironment: function () {
 			// Tour is either in the query string or cookie (prefer query string)
-			var tourName = mw.util.getParamValue( 'tour' ),
-				tourInfo, step, parsedCookie, toursToLaunch = [], i;
-			//clean out path variables
-			if ( tourName ) {
-				tourName = cleanTourName( tourName );
-			}
+			var tourName = mw.util.getParamValue( 'tour' ), tourNames,
+			step, parsedCookie, candidateTours = [];
+
 			if ( tourName !== null && tourName.length !== 0 ) {
-				step = mw.util.getParamValue( 'step' );
+				step = gt.getStep();
 				if ( step === null || step === '' ) {
 					step = '1';
 				}
-				toursToLaunch.push( {
+
+				gt.launchTour( tourName, gt.makeTourId( {
 					name: tourName,
 					step: step
+				} ) );
+				return;
+			}
+
+			parsedCookie = getParsedCookie();
+
+			for ( tourName in parsedCookie.tours ) {
+				candidateTours.push( {
+					name: tourName,
+					step: parsedCookie.tours[tourName].step
 				} );
-			} else {
-				parsedCookie = getParsedCookie();
-				for ( tourName in parsedCookie.tours ) {
-					toursToLaunch.push( {
-						name: tourName,
-						step: parsedCookie.tours[tourName].step
-					} );
-				}
 			}
-			for ( i = 0; i < toursToLaunch.length; i++ ) {
-				tourInfo = toursToLaunch[i];
-				gt.launchTour( tourInfo.name, gt.makeTourId( tourInfo ) );
-			}
+
+			tourNames = $.map( candidateTours, function ( el ) {
+				return el.name;
+			} );
+			internal.loadMultipleTours( tourNames )
+				.always( function () {
+					var tourName, max, currentStart;
+
+					// This value is before 1970, but is a simple way
+					// to ensure the comparison below always works.
+					max = {
+						startTime: -1
+					};
+
+					// Not all the tours in the cookie necessarily
+					// loaded successfully, but the defined tours did.
+					for ( tourName in definedTours ) {
+						if ( gt.shouldShowTour( {
+							tourName: tourName,
+							cookieValue: parsedCookie,
+							pageName: mw.config.get( 'wgPageName' ),
+							articleId: mw.config.get( 'wgArticleId' ),
+							condition: definedTours[tourName].showConditionally
+						} ) ) {
+							currentStart = parsedCookie.tours[tourName].startTime || 0;
+							if ( parsedCookie.tours[tourName].startTime > max.startTime ) {
+								max = {
+									name: tourName,
+									step: parsedCookie.tours[tourName].step,
+									startTime: parsedCookie.tours[tourName].startTime
+								};
+							}
+						}
+					}
+
+					if ( max.name !== undefined ) {
+						// Launch the most recently started tour
+						// that meets the conditions.
+						gt.launchTour( max.name, gt.makeTourId( max ) );
+					}
+				} );
 		},
 
 		/**
@@ -1483,7 +1472,7 @@
 		TourDefinitionError: function ( message ) {
 			this.message = message;
 		}
-	};
+	} );
 
 	gt.TourDefinitionError.prototype.toString = function () {
 		return 'TourDefinitionError: ' + this.message;
