@@ -47,24 +47,6 @@ gt.defineTour( {
 		} ]
 	}, {
 		/*
-		 * Test out mediawiki parsing
-		 */
-		titlemsg: 'guidedtour-tour-test-mediawiki-parse',
-		// XXX (mattflaschen, 2012-01-02): See GuidedTourHooks.php
-		description: mw.config.get('wgGuidedTourTestWikitextDescription'),
-
-		// attachment
-		attachTo: '#searchInput',
-		// try descriptive position (5'oclock) and use skin-specific value
-		position: {
-			fallback: 'bottomRight',
-			monobook: 'right'
-		},
-		buttons: [ {
-			action: 'next'
-		} ]
-	}, {
-		/*
 		 * Test out mediawiki description pages
 		 */
 		titlemsg: 'guidedtour-tour-test-description-page',
