@@ -130,7 +130,6 @@ $wgResourceModules['ext.guidedTour.tour.test'] = array(
 		'guidedtour-tour-test-callouts',
 		'guidedtour-tour-test-portal-description',
 		'guidedtour-tour-test-mediawiki-parse',
-		'guidedtour-tour-test-wikitext-description',
 		'guidedtour-tour-test-description-page',
 		'guidedtour-tour-test-go-description-page',
 		'guidedtour-tour-test-launch-tour',
