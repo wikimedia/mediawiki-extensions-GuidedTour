@@ -82,6 +82,8 @@ class GuidedTourHooks {
 	/**
 	 * Adds a built-in or wiki tour.
 	 *
+	 * If user JS is disallowed on this page, it does nothing.
+	 *
 	 * If the built-in one exists as a module, it will add that.
 	 *
 	 * Otherwise, it will add the general guided tour module, which will take care of
@@ -99,7 +101,10 @@ class GuidedTourHooks {
 
 		// Exclude '-' because MediaWiki message keys use it as a separator after the tourname.
 		// Exclude '.' because module names use it as a separator.
-		if ( $tourName !== NULL && strpbrk( $tourName, '-.' ) === FALSE ) {
+
+		// "User JS" refers to on-wiki JavaScript.  In theory we could still add
+		// extension-defined tours, but it's more conservative not to.
+		if ( $out->isUserJsAllowed() && $tourName !== NULL && strpbrk( $tourName, '-.' ) === FALSE ) {
 			$tourModuleName = "ext.guidedTour.tour.$tourName";
 			if ( isset ( $wgResourceModules[$tourModuleName] ) ) {
 				// Add the tour itself for extension-defined tours.
