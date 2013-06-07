@@ -23,7 +23,10 @@ class ResourceLoaderGuidedTourSiteStylesModule extends ResourceLoaderWikiModule 
 		);
 	}
 
-	// Load custom CSS after all other Guiders and GuidedTour CSS.
+	/**
+	 * Load custom CSS after all other Guiders and GuidedTour CSS.
+	 * @return Array
+	 */
 	public function getDependencies() {
 		return array(
 			'ext.guidedTour.styles',

@@ -94,17 +94,16 @@ class GuidedTourHooks {
 	 * @param OutputPage $out output page
 	 * @param string $tourName the tour name, such as 'gettingstarted'
 	 *
-	 * @return true if a module was added, false otherwise
+	 * @return bool true if a module was added, false otherwise
 	 */
 	private static function addTour( $out, $tourName ) {
 		global $wgResourceModules;
 
 		// Exclude '-' because MediaWiki message keys use it as a separator after the tourname.
 		// Exclude '.' because module names use it as a separator.
-
 		// "User JS" refers to on-wiki JavaScript.  In theory we could still add
 		// extension-defined tours, but it's more conservative not to.
-		if ( $out->isUserJsAllowed() && $tourName !== NULL && strpbrk( $tourName, '-.' ) === FALSE ) {
+		if ( $out->isUserJsAllowed() && $tourName !== null && strpbrk( $tourName, '-.' ) === false ) {
 			$tourModuleName = "ext.guidedTour.tour.$tourName";
 			if ( isset ( $wgResourceModules[$tourModuleName] ) ) {
 				// Add the tour itself for extension-defined tours.
@@ -140,7 +139,6 @@ class GuidedTourHooks {
 	 * @return bool true in all cases
 	 */
 	public static function onBeforePageDisplay( $out, $skin ) {
-		global $wgResourceModules;
 		// test for tour enabled in url first
 		$request = $out->getRequest();
 		$queryTourName = $request->getVal( self::TOUR_PARAM );
@@ -180,12 +178,16 @@ class GuidedTourHooks {
 	 * @param array &$files test files
 	 * @return bool always true
 	 */
-        public static function onUnitTestsList( &$files ) {
-                $testDir = __DIR__ . '/tests';
-                $files = array_merge( $files, glob( "$testDir/*Test.php" ) );
-                return true;
-        }
+	public static function onUnitTestsList( &$files ) {
+		$testDir = __DIR__ . '/tests';
+		$files = array_merge( $files, glob( "$testDir/*Test.php" ) );
+		return true;
+	}
 
+	/**
+	 * @param $redirectParams array
+	 * @return bool
+	 */
 	public static function onRedirectSpecialArticleRedirectParams( &$redirectParams ) {
 		array_push( $redirectParams, self::TOUR_PARAM, 'step' );
 
