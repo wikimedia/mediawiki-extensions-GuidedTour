@@ -29,6 +29,8 @@ $messages['en'] = array(
 	'guidedtour-tour-test-callouts' => 'Test callouts',
 	'guidedtour-tour-test-portal-description' => 'This is the {{int:portal}} page.',
 	'guidedtour-tour-test-mediawiki-parse' => 'Test MediaWiki parse',
+	// TODO: This is unused since it was removed from the main code for performance reasons.
+	// It is being kept for now so it can be used if https://bugzilla.wikimedia.org/show_bug.cgi?id=25349 is fixed.
 	'guidedtour-tour-test-wikitext-description' => 'A guider in your on-wiki tour can contain wikitext using onShow and parseDescription. Use it to create a wikilink to the [[{{MediaWiki:Guidedtour-help-url}}|Guided tours documentation]]. Or an external link [https://github.com/tychay/mwgadget.GuidedTour to GitHub], for instance.',
 	'guidedtour-tour-test-description-page' => 'Test MediaWiki description pages',
 	'guidedtour-tour-test-go-description-page' => 'Go to description page',
