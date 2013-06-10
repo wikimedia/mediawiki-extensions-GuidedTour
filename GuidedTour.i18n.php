@@ -438,6 +438,7 @@ $messages['hsb'] = array(
  */
 $messages['it'] = array(
 	'guidedtour-desc' => 'Consente di gestire pagine per fornire un tour guidato tramite popup per assistere i nuovi utenti',
+	'guidedtour-next-button' => 'Successivo',
 	'guidedtour-okay-button' => 'Ok',
 	'guidedtour-tour-test-testing' => 'Prova',
 	'guidedtour-tour-test-test-description' => 'Questa è una prova della descrizione. Lorem ipsum dolor sit!',
@@ -549,6 +550,14 @@ $messages['lb'] = array(
 	'guidedtour-tour-gettingstarted-click-save-description' => "Klickt op '{{int:savearticle}}' an Är Ännerunge sinn ze gesinn.",
 	'guidedtour-tour-gettingstarted-end-title' => 'Wëllt Dir méi maachen?',
 	'guidedtour-tour-gettingstarted-end-description' => '[[Special:GettingStarted|Fir unzefänke]] gëtt all Stonn mat neie Säiten aktualiséiert.',
+);
+
+/** Lithuanian (lietuvių)
+ * @author Mantak111
+ */
+$messages['lt'] = array(
+	'guidedtour-next-button' => 'Kitas',
+	'guidedtour-okay-button' => 'Gerai',
 );
 
 /** Macedonian (македонски)
