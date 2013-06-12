@@ -31,5 +31,14 @@ MediaWiki:Guidedtour-custom.css
 
 License
 
-This is free software. You may use, modify and distribute it under the terms of
-the Apache License 2.0. http://www.apache.org/licenses/LICENSE-2.0.html
+This is free software.
+
+For the main GuidedTour code and Guiders:
+
+You may use, modify and distribute it under the terms of
+the Apache License 2.0.
+
+For the .docs dir, the MIT license applies:
+
+Copyright (c) 2011-2013 VisualEditor Team, E3 team and others under the terms
+of The MIT License.

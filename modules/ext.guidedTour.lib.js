@@ -221,6 +221,7 @@
 		return mw.util.rawurlencode( tourName.replace( /^(?:\.\.\/)+/, '' ) );
 	}
 
+	// TODO (mattflaschen, 2013-06-02): This should be changed to take a guider as parameter.
 	/**
 	 * Logs a dismissal event.
 	 *
@@ -228,7 +229,6 @@
 	 *
 	 * @return {void}
 	 */
-	// TODO (mattflaschen, 2013-06-02): This should be changed to take a guider as parameter.
 	function logDismissal() {
 		pingServer( 'hide', guiders._lastCreatedGuiderID );
 	}
@@ -1197,6 +1197,10 @@
 			} ) );
 		},
 
+		// TODO (mattflaschen, 2013-06-02): Ideally, this would do all of the
+		// option normalization, and validate all of the input, so
+		// initializeGuiderInternal wouldn't need to throw.  Invalid input should
+		// throw even if the tour is not shown on this page.
 		/**
 		 * Creates a tour based on an object specifying it, but does not show
 		 * it immediately
@@ -1332,10 +1336,6 @@
 		 * @return {boolean} true, on success; throws otherwise
 		 * @throws {mw.guidedTour.TourDefinitionError} On invalid input
 		 */
-		// TODO (mattflaschen, 2013-06-02): Ideally, this would do all of the
-		// option normalization, and validate all of the input, so
-		// initializeGuiderInternal wouldn't need to throw.  Invalid input should
-		// throw even if the tour is not shown on this page.
 		defineTour: function ( tourSpec ) {
 			var steps, stepInd = 0, stepCount, id, defaults = {};
 

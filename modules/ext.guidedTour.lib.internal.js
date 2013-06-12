@@ -18,6 +18,10 @@
 	var internal;
 
 	mw.guidedTour = {
+		/**
+		 * @class mw.guidedTour.internal
+		 * @singleton
+		 */
 		internal: {
 			/**
 			 * Returns a promise that waits for all input deferreds.
@@ -32,7 +36,7 @@
 			 *
 			 * @param {Array} deferreds array of deferreds to wait for
 			 *
-			 * @return {Promise} promise behaving as above
+			 * @return {jQuery.Promise} promise behaving as above
 			 */
 			alwaysWaitForAll: function ( deferreds ) {
 				var dfd, unresolved, allSucceeded, i;
@@ -69,8 +73,6 @@
 			/**
 			 * Gets CSS class for tour name
 			 *
-			 * @private
-			 *
 			 * @param {string} tourName
 			 *
 			 * @return {string} CSS class
@@ -81,8 +83,6 @@
 
 			/**
 			 * Gets the tour module name.  This does not guarantee there is such a module.
-			 *
-			 * @private
 			 *
 			 * @param {string} tourName Tour name
 			 *
@@ -97,7 +97,7 @@
 			 *
 			 * @param {string} tourName name of tour to load
 			 *
-			 * @return {Promise} Promise that resolves on successful load and
+			 * @return {jQuery.Promise} Promise that resolves on successful load and
 			 *   rejects on failure.
 			 */
 			loadExtensionTour: function ( tourName ) {
@@ -123,7 +123,7 @@
 			 *
 			 * @param {string} tourName name of tour to load
 			 *
-			 * @return {Promise} Promise that resolves on successful load and
+			 * @return {jQuery.Promise} Promise that resolves on successful load and
 			 *   rejects on failure.
 			 */
 			loadOnWikiTour: function ( tourName ) {
@@ -171,7 +171,7 @@
 			 *
 			 * @param {string} tourName name of tour to load
 			 *
-			 * @return {Promise} Promise that resolves on successful load andx
+			 * @return {jQuery.Promise} Promise that resolves on successful load andx
 			 *   rejects on failure.
 			 */
 			loadTour: function ( tourName ) {
@@ -192,7 +192,7 @@
 			 *
 			 * @param {Array} tourNames array of tour names to load
 			 *
-			 * @return {Promise} Promise.  It will resolve if all attempts
+			 * @return {jQuery.Promise} Promise.  It will resolve if all attempts
 			 *   succeed, and reject if any fail.  Either way, it will wait
 			 *   until all load attempts are complete.
 			 */
