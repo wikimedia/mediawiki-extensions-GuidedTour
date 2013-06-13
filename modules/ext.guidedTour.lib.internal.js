@@ -65,6 +65,20 @@
 				return dfd.promise();
 			},
 
+			// TODO (mattflaschen, 2013-06-11): Getter method for Tour class
+			/**
+			 * Gets CSS class for tour name
+			 *
+			 * @private
+			 *
+			 * @param {string} tourName
+			 *
+			 * @return {string} CSS class
+			 */
+			getTourCssClass: function ( tourName ) {
+				return 'mw-guidedtour-tour-' + tourName;
+			},
+
 			/**
 			 * Gets the tour module name.  This does not guarantee there is such a module.
 			 *
