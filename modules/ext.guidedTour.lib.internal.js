@@ -69,6 +69,30 @@
 				return dfd.promise();
 			},
 
+			/**
+			 * Returns object used for an initial user state, optionally populating it with one
+			 *  tour's data.
+			 *
+			 * @private
+			 *
+			 * @param {Object} [tourInfo] tour info object
+			 *
+			 * @return {Object} initial user state object
+			 */
+			getInitialUserStateObject: function ( tourInfo ) {
+				var userStateObject = {
+					version: 1,
+					tours: {}
+				};
+
+				if ( tourInfo !== undefined ) {
+					userStateObject.tours[tourInfo.name] = {
+						step: tourInfo.step
+					};
+				}
+				return userStateObject;
+			},
+
 			// TODO (mattflaschen, 2013-06-11): Getter method for Tour class
 			/**
 			 * Gets CSS class for tour name
@@ -202,6 +226,29 @@
 				} );
 
 				return internal.alwaysWaitForAll( loadDeferreds );
+			},
+
+			/**
+			 * Parses user state (as used in the cookie), which is passed in as JSON
+			 *
+			 * @param {string} userStateJson user state, as JSON
+			 *
+			 * @return {Object} parsed user state.  If input is null, or the format was
+			 *  invalid, returns null.
+			 */
+			parseUserState: function ( userStateJson ) {
+				var parsed;
+
+				if ( userStateJson !== null ) {
+					try {
+						parsed = $.parseJSON( userStateJson );
+						return parsed;
+					} catch ( ex ) {
+						mw.log( 'User state is invalid JSON.' );
+					}
+				}
+
+				return null;
 			}
 		}
 	};

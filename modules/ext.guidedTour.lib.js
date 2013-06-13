@@ -112,54 +112,71 @@
 	}
 
 	/**
-	 * Returns object used for an initial cookie, optionally populating it with one
-	 *  tour's data.
+	 * Returns the current user state, initalizing it if needed
 	 *
 	 * @private
 	 *
-	 * @param {Object} [tourInfo] tour info object
-	 *
-	 * @return {Object} initial cookie object
+	 * @return {Object} user state object.  If there is none, or the format was
+	 *  invalid, returns a skeleton state object from
+	 *  internal.getInitialUserStateObject
 	 */
-	function getInitialCookieObject( tourInfo ) {
-		var cookieObject = {
-			version: 1,
-			tours: {}
-		};
-
-		if ( tourInfo !== undefined ) {
-			cookieObject.tours[tourInfo.name] = {
-				step: tourInfo.step
-			};
+	function getUserState() {
+		var cookieValue, parsed;
+		cookieValue = $.cookie( cookieName );
+		parsed = internal.parseUserState( cookieValue );
+		if ( parsed !== null ) {
+			return parsed;
+		} else {
+			return internal.getInitialUserStateObject();
 		}
-		return cookieObject;
 	}
 
 	/**
-	 * Parse the cookie as JSON and return object, catching any errors
+	 * Updates a single tour in the user state.  The tour must already be loaded.
 	 *
-	 * @private
+	 * @param {Object} args keyword arguments
+	 * @param {Object} args.tourInfo tour info object with name and step
+	 * @param {boolean} args.wasShown true if the guider was actually just shown on the
+	 *   current page, false otherwise.  Certain fields can only be initialized on a
+	 *   page where it was shown.
 	 *
-	 * @return {Object} parsed cookie.  If there is none, or the format was
-	 *  invalid, returns a skeleton cookie from getInitialCookieObject.
+	 * @return {void}
 	 */
-	function getParsedCookie() {
-		var cookieValue, parsedCookie;
-		cookieValue = $.cookie( cookieName );
-		if ( cookieValue !== null ) {
-			try {
-				parsedCookie = $.parseJSON( cookieValue );
-				return parsedCookie;
-			} catch ( ex ) {
-				mw.log( 'Cookie is invalid JSON.' );
+	function updateUserStateForTour( args ) {
+		var userState = getUserState(), tourName, tourSpec, articleId, pageName,
+			cookieValue;
+
+		tourName = args.tourInfo.name;
+		// Normally, it should be defined.  But for instance, if setTourCookie is
+		// unable to load the tour, it may not be, so this is a failsafe.
+		tourSpec = definedTours[tourName] || {};
+
+		// Ensure there's a sub-object for this tour
+		if ( userState.tours[tourName] === undefined ) {
+			userState.tours[tourName] = {};
+
+			userState.tours[tourName].startTime = new Date().getTime();
+		}
+
+		if ( args.wasShown && tourSpec.showConditionally === 'stickToFirstPage' &&
+		     userState.tours[tourName].firstArticleId === undefined &&
+		     userState.tours[tourName].firstSpecialPageName === undefined ) {
+			articleId = mw.config.get( 'wgArticleId' );
+			if ( articleId !== 0 ) {
+				userState.tours[tourName].firstArticleId = articleId;
+			} else {
+				pageName = mw.config.get( 'wgPageName' );
+				userState.tours[tourName].firstSpecialPageName = pageName;
 			}
 		}
 
-		return getInitialCookieObject();
+		userState.tours[tourName].step = args.tourInfo.step;
+		cookieValue = $.toJSON( userState );
+		$.cookie( cookieName, cookieValue, cookieParams );
 	}
 
 	/**
-	 * Handles the onShow call by guiders.  May saves to cookie and log, depending
+	 * Handles the onShow call by guiders.  May save to cookie and log, depending
 	 * on settings.
 	 *
 	 * @private
@@ -169,34 +186,16 @@
 	 * @return {void}
 	 */
 	function handleOnShow ( guider ) {
-		var tourInfo, tourName, tourSpec, parsed, articleId, pageName, cookieValue;
-
+		var tourInfo, tourSpec;
 		tourInfo = gt.parseTourId( guider.id );
-		tourName = tourInfo.name;
-		tourSpec = definedTours[tourName];
+		tourSpec = definedTours[tourInfo.name];
 
 		//If this is not a single-page tour, save the guider id to a cookie
 		if ( !tourSpec.isSinglePage ) {
-			parsed = getParsedCookie();
-			// Ensure there's a sub-object for this tour
-			if ( parsed.tours[tourName] === undefined ) {
-				parsed.tours[tourName] = {};
-
-				if ( tourSpec.showConditionally === 'stickToFirstPage' ) {
-					articleId = mw.config.get( 'wgArticleId' );
-					if ( articleId !== 0 ) {
-						parsed.tours[tourName].firstArticleId = articleId;
-					} else {
-						pageName = mw.config.get( 'wgPageName' );
-						parsed.tours[tourName].firstSpecialPageName = pageName;
-					}
-				}
-
-				parsed.tours[tourName].startTime = new Date().getTime();
-			}
-			parsed.tours[tourName].step = tourInfo.step;
-			cookieValue = $.toJSON( parsed );
-			$.cookie( cookieName, cookieValue, cookieParams );
+			updateUserStateForTour( {
+				tourInfo: tourInfo,
+				wasShown: true
+			} );
 		}
 
 		recordStats( guider );
@@ -242,8 +241,8 @@
 	 *
 	 * @return {void}
 	 */
-	function removeTourFromCookieByName( tourName ) {
-		var parsedCookie = getParsedCookie();
+	function removeTourFromUserStateByName( tourName ) {
+		var parsedCookie = getUserState();
 		delete parsedCookie.tours[tourName];
 		$.cookie( cookieName, $.toJSON( parsedCookie ), cookieParams );
 	}
@@ -257,10 +256,10 @@
 	 *
 	 * @return {void}
 	 */
-	function removeTourFromCookieByGuider( guider ) {
+	function removeTourFromUserStateByGuider( guider ) {
 		var tourInfo = gt.parseTourId( guider.id );
 		if ( tourInfo !== null ) {
-			removeTourFromCookieByName( tourInfo.name );
+			removeTourFromUserStateByName( tourInfo.name );
 		}
 	}
 
@@ -287,7 +286,7 @@
 		logDismissal();
 
 		if ( closeType === 'xButton' ) {
-			removeTourFromCookieByGuider( guider );
+			removeTourFromUserStateByGuider( guider );
 		}
 	}
 
@@ -884,7 +883,7 @@
 			internal.loadTour( tourName ).done( function () {
 				if ( gt.shouldShowTour( {
 					tourName: tourName,
-					cookieValue: getParsedCookie(),
+					userState: getUserState(),
 					pageName: mw.config.get( 'wgPageName' ),
 					articleId: mw.config.get( 'wgArticleId' ),
 					condition: definedTours[tourName].showConditionally
@@ -910,7 +909,7 @@
 		launchTourFromEnvironment: function () {
 			// Tour is either in the query string or cookie (prefer query string)
 			var tourName = mw.util.getParamValue( 'tour' ), tourNames,
-			step, parsedCookie, candidateTours = [];
+			step, userState, candidateTours = [];
 
 			if ( tourName !== null && tourName.length !== 0 ) {
 				step = gt.getStep();
@@ -925,12 +924,12 @@
 				return;
 			}
 
-			parsedCookie = getParsedCookie();
+			userState = getUserState();
 
-			for ( tourName in parsedCookie.tours ) {
+			for ( tourName in userState.tours ) {
 				candidateTours.push( {
 					name: tourName,
-					step: parsedCookie.tours[tourName].step
+					step: userState.tours[tourName].step
 				} );
 			}
 
@@ -949,20 +948,23 @@
 
 					// Not all the tours in the cookie necessarily
 					// loaded successfully, but the defined tours did.
+					// So we make sure it is defined and in the user
+					// state.
 					for ( tourName in definedTours ) {
-						if ( gt.shouldShowTour( {
+						if ( userState.tours[tourName] !== undefined &&
+						     gt.shouldShowTour( {
 							tourName: tourName,
-							cookieValue: parsedCookie,
+							userState: userState,
 							pageName: mw.config.get( 'wgPageName' ),
 							articleId: mw.config.get( 'wgArticleId' ),
 							condition: definedTours[tourName].showConditionally
 						} ) ) {
-							currentStart = parsedCookie.tours[tourName].startTime || 0;
-							if ( parsedCookie.tours[tourName].startTime > max.startTime ) {
+							currentStart = userState.tours[tourName].startTime || 0;
+							if ( currentStart > max.startTime ) {
 								max = {
 									name: tourName,
-									step: parsedCookie.tours[tourName].step,
-									startTime: parsedCookie.tours[tourName].startTime
+									step: userState.tours[tourName].step,
+									startTime: currentStart
 								};
 							}
 						}
@@ -980,6 +982,10 @@
 		 * Sets the tour cookie, given a tour name and optionally, a step.
 		 *
 		 * You can use this when you want the tour to be displayed on a future page.
+		 * If there is currently no cookie, it will set the start time.  This
+		 * will not be done if only the step is changing.
+		 *
+		 * This does not take into account isSinglePage.
 		 *
 		 * @param {string} name Tour name
 		 * @param {number|string} [step=1] Tour step
@@ -987,13 +993,25 @@
 		 * @return {void}
 		 */
 		setTourCookie: function ( name, step ) {
-			var id;
 			step = step || 1;
-			id = gt.makeTourId( {
-				name: name,
-				step: step
-			} );
-			$.cookie( cookieName, id, cookieParams );
+
+			function update() {
+				updateUserStateForTour( {
+					tourInfo: {
+						name: name,
+						step: step
+					},
+					wasShown: false
+				} );
+			}
+
+			// TODO (mattflaschen, 2013-06-13): Have refactored version always
+			// use a promise that represents the tour being defined?
+			if ( definedTours[name] === undefined ) {
+				internal.loadTour( name ).done( update );
+			} else {
+				update();
+			}
 		},
 
 		/**
@@ -1016,10 +1034,10 @@
 			var guider;
 			logDismissal();
 			if ( tourName !== undefined ) {
-				removeTourFromCookieByName( tourName );
+				removeTourFromUserStateByName( tourName );
 			} else {
 				guider = guiders._guiderById( guiders._currentGuiderID );
-				removeTourFromCookieByGuider( guider );
+				removeTourFromUserStateByGuider( guider );
 			}
 			guiders.hideAll();
 		},
@@ -1167,7 +1185,7 @@
 		 * @return {void}
 		 */
 		resumeTour: function ( tourName, step ) {
-			var cookieValue;
+			var userState;
 
 			if ( step === undefined ) {
 				step = gt.getStep() || 0;
@@ -1177,12 +1195,14 @@
 				name: tourName,
 				step: 'fail'
 			} );
-			// XXX (mattflaschen, 2013-05-31): There is currently no guarantee
-			// the cookie has the same tour.
-			cookieValue = $.cookie( cookieName );
-			if ( ( step === 0 ) && cookieValue !== null ) {
+
+			userState = getUserState();
+			if ( ( step === 0 ) && userState.tours[tourName] !== undefined ) {
 				// start from cookie position
-				if ( resumeTourFromId( cookieValue ) ) {
+				if ( resumeTourFromId( gt.makeTourId( {
+					name: tourName,
+					step: userState.tours[tourName].step
+				} ) ) ) {
 					return;
 				}
 			}
@@ -1400,7 +1420,7 @@
 		 *
 		 * @param {Object} args arguments
 		 * @param {string} args.tourName name of tour
-		 * @param {Object} args.cookieValue full value of tour cookie, not null
+		 * @param {Object} args.userState full value of tour cookie, not null
 		 * @param {string} args.pageName current full page name (wgPageName format)
 		 * @param {string} args.articleId current article ID
 		 * @param {string} [args.condition] showIf condition specified in tour definition, if any
@@ -1410,7 +1430,7 @@
 		 * @throws {mw.guidedTour.TourDefinitionError} On invalid conditions
 		 */
 		shouldShowTour: function ( args ) {
-			var subCookie = args.cookieValue.tours[args.tourName];
+			var subCookie = args.userState.tours[args.tourName];
 			if ( subCookie !== undefined ) {
 				if ( args.condition === 'stickToFirstPage' ) {
 					if ( subCookie.firstArticleId !== undefined ) {
@@ -1446,12 +1466,12 @@
 				tourId = oldCookieString;
 				tourInfo = gt.parseTourId( tourId );
 				if ( tourInfo !== null ) {
-					return $.toJSON( getInitialCookieObject( tourInfo ) );
+					return $.toJSON( internal.getInitialUserStateObject( tourInfo ) );
 				} else {
 					// Try to parse as new format
-					parsedObject = getParsedCookie();
+					parsedObject = internal.parseUserState( oldCookieString );
 					// Sanity check to make sure it's the right cookie.
-					if ( parsedObject.version !== undefined ) {
+					if ( parsedObject !== null && parsedObject.version !== undefined ) {
 						return oldCookieString;
 					} else {
 						mw.log( 'Parsed as JSON but version field is missing.' );

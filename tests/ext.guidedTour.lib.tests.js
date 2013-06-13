@@ -3,13 +3,11 @@
 
 	var gt, originalGetParam, cookieConfig, cookieName, cookieParams,
 		// This form includes the id and next.
-		VALID_SPEC = {
-			id: 'gt-test-1',
+		VALID_STEP = {
 			titlemsg: 'guidedtour-tour-test-callouts',
 			descriptionmsg: 'guidedtour-tour-test-portal-description',
 			attachTo: '#n-portal a',
 			position: '3',
-			next: 'gt-test-2',
 			buttons: [ {
 				action: 'next'
 			} ]
@@ -211,7 +209,7 @@
 		$.cookie( cookieName, oldCookieValue, cookieParams );
 	} );
 
-	QUnit.test( 'convertToNewCookieFormat', 5, function ( assert ) {
+	QUnit.test( 'convertToNewCookieFormat', 6, function ( assert ) {
 		var newCookie = $.toJSON( {
 			version: 1,
 			tours: {
@@ -247,7 +245,7 @@
 				version: 1,
 				tours: {
 					test: {
-						step: 3
+						step: '3'
 					}
 				}
 			} ),
@@ -285,7 +283,7 @@
 			function () {
 				return gt.shouldShowTour( {
 					tourName: 'test',
-					cookieValue: {
+					userState: {
 						version: 1,
 						tours: {
 							test: {
@@ -306,7 +304,7 @@
 		assert.strictEqual(
 			gt.shouldShowTour( {
 				tourName: 'test',
-				cookieValue: {
+				userState: {
 					version: 1,
 					tours: {
 						test: {
@@ -326,7 +324,7 @@
 		assert.strictEqual(
 			gt.shouldShowTour( {
 				tourName: 'test',
-				cookieValue: {
+				userState: {
 					version: 1,
 					tours: {
 						test: {
@@ -346,7 +344,7 @@
 		assert.strictEqual(
 			gt.shouldShowTour( {
 				tourName: 'test',
-				cookieValue: {
+				userState: {
 					version: 1,
 					tours: {
 						test: {
@@ -364,7 +362,7 @@
 		assert.strictEqual(
 			gt.shouldShowTour( {
 				tourName: 'test',
-				cookieValue: {
+				userState: {
 					version: 1,
 					tours: {
 						test: {
@@ -383,7 +381,7 @@
 		assert.strictEqual(
 			gt.shouldShowTour( {
 				tourName: 'test',
-				cookieValue: {
+				userState: {
 					version: 1,
 					tours: {
 						test: {},
@@ -403,7 +401,7 @@
 		assert.strictEqual(
 			gt.shouldShowTour( {
 				tourName: 'test',
-				cookieValue: {
+				userState: {
 					version: 1,
 					tours: {
 						test: {
@@ -423,7 +421,7 @@
 		assert.strictEqual(
 			gt.shouldShowTour( {
 				tourName: 'test',
-				cookieValue: {
+				userState: {
 					version: 1,
 					tours: {
 						test: {
@@ -443,7 +441,7 @@
 		assert.strictEqual(
 			gt.shouldShowTour( {
 				tourName: 'secondtour',
-				cookieValue: {
+				userState: {
 					version: 1,
 					tours: {
 						firsttour: {
@@ -467,7 +465,7 @@
 		assert.strictEqual(
 			gt.shouldShowTour( {
 				tourName: 'firsttour',
-				cookieValue: {
+				userState: {
 					version: 1,
 					tours: {
 						firsttour: {
@@ -492,11 +490,7 @@
 	QUnit.test( 'defineTour', 11, function ( assert ) {
 		var SPEC_MUST_BE_OBJECT = /There must be a single argument, 'tourSpec', which must be an object\./,
 			NAME_MUST_BE_STRING = /'tourSpec.name' must be a string, the tour name\./,
-			STEPS_MUST_BE_ARRAY = /'tourSpec.steps' must be an array, the list of steps\./,
-			validDefineTourStep = $.extend( true, {}, VALID_SPEC );
-
-		delete validDefineTourStep.id;
-		delete validDefineTourStep.next;
+			STEPS_MUST_BE_ARRAY = /'tourSpec.steps' must be an array, the list of steps\./;
 
 		assertThrowsTypeAndMessage(
 			assert,
@@ -522,7 +516,7 @@
 			assert,
 			function () {
 				return gt.defineTour( {
-					steps: [ validDefineTourStep ]
+					steps: [ VALID_STEP ]
 				} );
 			},
 			gt.TourDefinitionError,
@@ -535,7 +529,7 @@
 			function () {
 				return gt.defineTour( {
 					name: 'test',
-					steps: validDefineTourStep
+					steps: VALID_STEP
 				} );
 			},
 			gt.TourDefinitionError,
