@@ -754,8 +754,31 @@ $messages['pt-br'] = array(
  * @author Joetaras
  */
 $messages['roa-tara'] = array(
+	'guidedtour-desc' => "Permette a le pàggene de avè 'nu popup cu gire guidate pe aijutà le utinde nuève",
+	'guidedtour-help-url' => 'Help:Gire guidate',
+	'guidedtour-help-guider-url' => 'Help:Gire guidate/guidature',
+	'guidedtour-next-button' => 'Prossime',
 	'guidedtour-okay-button' => 'Apposte',
 	'guidedtour-tour-test-testing' => 'Stoche a teste',
+	'guidedtour-tour-test-test-description' => "Quiste jè 'nu teste d'a descrizione. Lorem ipsum dolor sit!",
+	'guidedtour-tour-test-callouts' => 'Teste de le didascalie',
+	'guidedtour-tour-test-portal-description' => "Queste jè 'a pàgene {{int:portal}}.",
+	'guidedtour-tour-test-mediawiki-parse' => "Analizzatore d'u teste de MediaUicchi",
+	'guidedtour-tour-test-description-page' => 'Test pàggene de descrizione de MediaUicchi',
+	'guidedtour-tour-test-go-description-page' => "Vèje sus 'a pàgene de descrizione",
+	'guidedtour-tour-test-launch-tour' => "Test de lange d'u gire",
+	'guidedtour-tour-test-launch-tour-description' => 'Le guidature ponne langià otre gire guidate. A uerre, no!?',
+	'guidedtour-tour-test-launch-using-tours' => "Lange 'nu gire pe ausè le gire",
+	'guidedtour-tour-gettingstarted-start-title' => "Pronde pe dà 'na màne?",
+	'guidedtour-tour-gettingstarted-start-description' => "Sta pàgene ave abbesògne de cangiamende d'a copie 'nderra-'nderre - pe migliorà 'a grammateche, 'u stile, 'u tone o 'a pronunge - pe farle pulite e facile da leggere. Stu gire face vedè le passe ca a fà.",
+	'guidedtour-tour-gettingstarted-click-edit-title' => "Cazze '{{int:vector-view-edit}}'",
+	'guidedtour-tour-gettingstarted-click-edit-description' => "Quiste te lasse ca tu face le cangiaminde jndr'à ogne vanne d'a pàgene, quanne tu si pronde.",
+	'guidedtour-tour-gettingstarted-click-preview-title' => 'Andeprime (opzionale)',
+	'guidedtour-tour-gettingstarted-click-preview-description' => "Cazzanne '{{int:showpreview}}' te permette de verificà ca 'a pàgene iesse cu le cangiaminde tune. No te demendicà de reggistrà.",
+	'guidedtour-tour-gettingstarted-click-save-title' => "E' quase spicciate!",
+	'guidedtour-tour-gettingstarted-click-save-description' => "Cazze '{{int:savearticle}}' e le cangiaminde tune devendane visibbile.",
+	'guidedtour-tour-gettingstarted-end-title' => 'Ste cirche otre da fà?',
+	'guidedtour-tour-gettingstarted-end-description' => '[[Special:GettingStarted|Pe accumenzà]] avène aggiornate ogne ore cu pàggene nove.',
 );
 
 /** Russian (русский)
