@@ -71,7 +71,7 @@
 
 		tourInfo = gt.parseTourId( guiderId );
 		tourName = tourInfo.name;
-		tourStep = tourInfo.step;
+		tourStep = Number( tourInfo.step );
 
 		tourSpec = definedTours[tourName];
 		if ( tourSpec !== undefined && tourSpec.shouldLog && userId !== null ) {
