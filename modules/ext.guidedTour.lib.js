@@ -70,11 +70,11 @@
 		var tourInfo, tourName, tourSpec, tourStep;
 
 		tourInfo = gt.parseTourId( guiderId );
+		tourName = tourInfo.name;
+		tourStep = tourInfo.step;
+
 		tourSpec = definedTours[tourName];
 		if ( tourSpec !== undefined && tourSpec.shouldLog && userId !== null ) {
-			tourName = tourInfo.name;
-			tourStep = tourInfo.step;
-
 			mw.eventLog.logEvent( 'GuidedTour', {
 				tourName: tourName,
 				action: action,
