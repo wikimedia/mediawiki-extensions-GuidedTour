@@ -195,6 +195,7 @@ $messages['be-tarask'] = array(
 	'guidedtour-help-url' => 'Help:Экскурсіі па сайце',
 	'guidedtour-help-guider-url' => 'Help:Экскурсіі па сайце/даведка',
 	'guidedtour-custom.css' => '/* Дадатковы CSS для пашырэньня GuidedTour. */',
+	'guidedtour-next-button' => 'Далей',
 	'guidedtour-okay-button' => 'Далей',
 	'guidedtour-tour-test-testing' => 'Тэставаньне',
 	'guidedtour-tour-test-test-description' => 'Гэта тэст апісаньня. Lorem ipsum dolor sit!',
@@ -802,8 +803,10 @@ $messages['sr-ec'] = array(
 
 /** Swedish (svenska)
  * @author Ainali
+ * @author Jopparn
  */
 $messages['sv'] = array(
+	'guidedtour-next-button' => 'Nästa',
 	'guidedtour-okay-button' => 'Okej',
 	'guidedtour-tour-test-testing' => 'Testar',
 	'guidedtour-tour-test-test-description' => 'Detta är ett test av beskrivningen. Lorem ipsum dolor sit!',
@@ -812,6 +815,8 @@ $messages['sv'] = array(
 	'guidedtour-tour-gettingstarted-click-edit-description' => 'Detta låter dig göra ändringar i vilken del av sidan som helst när du är redo.',
 	'guidedtour-tour-gettingstarted-click-preview-title' => 'Förhandsgranska (valfritt)',
 	'guidedtour-tour-gettingstarted-click-save-title' => 'Du är nästan klar!',
+	'guidedtour-tour-gettingstarted-end-title' => 'Letar du efter mer att göra?',
+	'guidedtour-tour-gettingstarted-end-description' => '[[Special:GettingStarted|Komma igång]] uppdateras varje timme med nya sidor.',
 );
 
 /** Ukrainian (українська)
