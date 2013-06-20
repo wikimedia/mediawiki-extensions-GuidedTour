@@ -147,8 +147,7 @@
 			cookieValue;
 
 		tourName = args.tourInfo.name;
-		// Normally, it should be defined.  But for instance, if setTourCookie is
-		// unable to load the tour, it may not be, so this is a failsafe.
+		// It should be defined, except when wasShown is false.
 		tourSpec = definedTours[tourName] || {};
 
 		// Ensure there's a sub-object for this tour
@@ -170,7 +169,7 @@
 			}
 		}
 
-		userState.tours[tourName].step = args.tourInfo.step;
+		userState.tours[tourName].step = Number( args.tourInfo.step );
 		cookieValue = $.toJSON( userState );
 		$.cookie( cookieName, cookieValue, cookieParams );
 	}
@@ -1005,13 +1004,7 @@
 				} );
 			}
 
-			// TODO (mattflaschen, 2013-06-13): Have refactored version always
-			// use a promise that represents the tour being defined?
-			if ( definedTours[name] === undefined ) {
-				internal.loadTour( name ).done( update );
-			} else {
-				update();
-			}
+			update();
 		},
 
 		/**
@@ -1474,7 +1467,7 @@
 					if ( parsedObject !== null && parsedObject.version !== undefined ) {
 						return oldCookieString;
 					} else {
-						mw.log( 'Parsed as JSON but version field is missing.' );
+						mw.log( 'Invalid JSON or version field is missing.' );
 					}
 				}
 			}

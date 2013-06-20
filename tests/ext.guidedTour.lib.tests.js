@@ -181,30 +181,46 @@
 		);
 	} );
 
-	QUnit.test( 'setTourCookie', 3, function ( assert ) {
-		var name = 'foo',
+	QUnit.test( 'setTourCookie', 5, function ( assert ) {
+		var firstTourName = 'foo',
+			secondTourName = 'bar',
 			numberStep = 5,
 			stringStep = '3',
 			oldCookieValue = $.cookie( cookieName );
 
 		function assertValidCookie( expectedName, expectedStep, message ) {
-			var id = $.cookie( cookieName ),
-				tourInfo = gt.parseTourId( id );
+			var cookieValue = $.cookie( cookieName ),
+				userState = gt.internal.parseUserState( cookieValue );
 
-			assert.deepEqual(tourInfo, {
-				name: expectedName,
-				step: expectedStep
-			}, message);
+			// The stored step should be a number, even for
+			// string input.
+			expectedStep = Number( expectedStep );
+
+			assert.strictEqual(
+				userState.tours[expectedName].step,
+				expectedStep,
+				message
+			);
 		}
 
-		gt.setTourCookie( name );
-		assertValidCookie ( name, '1', 'Step defaults to 1' );
+		function clearCookie() {
+			$.cookie( cookieName, null, cookieParams );
+		}
 
-		gt.setTourCookie( name, numberStep );
-		assertValidCookie ( name, String( numberStep ), 'setTourCookie accepts numeric step' );
+		gt.setTourCookie( firstTourName );
+		assertValidCookie ( firstTourName, '1', 'Step defaults to 1' );
+		clearCookie();
 
-		gt.setTourCookie( name, stringStep );
-		assertValidCookie ( name, stringStep, 'setTourCookie accepts string step' );
+		gt.setTourCookie( firstTourName, numberStep );
+		assertValidCookie ( firstTourName, String( numberStep ), 'setTourCookie accepts numeric step' );
+		clearCookie();
+
+		gt.setTourCookie( firstTourName, stringStep );
+		assertValidCookie( firstTourName, stringStep, 'setTourCookie accepts string step' );
+
+		gt.setTourCookie( secondTourName, numberStep );
+		assertValidCookie( firstTourName, stringStep, 'First tour is still remembered after second is stored' );
+		assertValidCookie( secondTourName, numberStep, 'Second tour is also remembered' );
 
 		$.cookie( cookieName, oldCookieValue, cookieParams );
 	} );
