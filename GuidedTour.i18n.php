@@ -484,7 +484,7 @@ $messages['ja'] = array(
 	'guidedtour-tour-gettingstarted-click-preview-title' => 'プレビュー (省略可能)',
 	'guidedtour-tour-gettingstarted-click-preview-description' => '変更内容のプレビューを表示するには「{{int:showpreview}}」をクリックしてください', # Fuzzy
 	'guidedtour-tour-gettingstarted-click-save-title' => 'もう少しで終わります!',
-	'guidedtour-tour-gettingstarted-click-save-description' => '変更内容を保存するには「{{int:savearticle}}」をクリックしてください', # Fuzzy
+	'guidedtour-tour-gettingstarted-click-save-description' => '「{{int:savearticle}}」をクリックすると、変更内容が最新版として保存されます。',
 	'guidedtour-tour-gettingstarted-end-title' => '他にできることをお探しですか?',
 );
 
