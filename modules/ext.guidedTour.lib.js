@@ -786,6 +786,7 @@
 		// Show X button
 		guiders._defaultSettings.xButton = true;
 
+		guiders._defaultSettings.autoFocus = true;
 		guiders._defaultSettings.closeOnEscape = true;
 		guiders._defaultSettings.closeOnClickOutside = true;
 		guiders._defaultSettings.flipToKeepOnScreen = true;
