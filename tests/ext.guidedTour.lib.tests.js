@@ -1,7 +1,7 @@
 ( function ( mw, $ ) {
 	'use strict';
 
-	var gt, originalGetParam, cookieConfig, cookieName, cookieParams,
+	var gt, originalVE, originalGetParam, cookieConfig, cookieName, cookieParams,
 		// This form includes the id and next.
 		VALID_STEP = {
 			titlemsg: 'guidedtour-tour-test-callouts',
@@ -34,8 +34,10 @@
 	QUnit.module( 'ext.guidedTour.lib', QUnit.newMwEnvironment( {
 		setup: function () {
 			originalGetParam = mw.util.getParamValue;
+			originalVE = window.ve;
 		},
 		teardown: function () {
+			window.ve = originalVE;
 			mw.util.getParamValue = originalGetParam;
 		}
 	} ) );
@@ -293,7 +295,35 @@
 		);
 	} );
 
-	QUnit.test( 'shouldShow', 11, function ( assert ) {
+	QUnit.test( 'shouldShow', 19, function ( assert ) {
+		var visualEditorArgs, wikitextArgs, mockOpenVE;
+
+		visualEditorArgs = {
+			tourName: 'visualeditorintro',
+			userState: {
+				version: 1,
+				tours: {}
+			},
+			pageName: 'Page',
+			articleId: 123,
+			condition: 'VisualEditor'
+		};
+
+		wikitextArgs = {
+			tourName: 'wikitextintro',
+			userState: {
+				version: 1,
+				tours: {}
+			},
+			pageName: 'Page',
+			articleId: 123,
+			condition: 'wikitext'
+		};
+
+		mockOpenVE = {
+			instances: [ {} ]
+		};
+
 		assertThrowsTypeAndMessage(
 			assert,
 			function () {
@@ -476,6 +506,67 @@
 			} ),
 			false,
 			'Returns false for stickToFirstPage for non-matching article ID when another tour\'s article ID matches'
+		);
+
+		// Mock the ve global, and its array of instances.
+		window.ve = mockOpenVE;
+		assert.strictEqual(
+			gt.shouldShowTour( visualEditorArgs ),
+			true,
+			'Returns true for VisualEditor condition when VisualEditor open'
+		);
+
+		// ve = undefined deliberately applies to all of the below until it is
+		// reset to a mock instance for the expected false text
+		window.ve = undefined;
+		mw.config.set( 'wgAction', 'view' );
+		assert.strictEqual(
+			gt.shouldShowTour( visualEditorArgs ),
+			true,
+			'Returns true for VisualEditor condition when viewing page with VE closed'
+		);
+
+		mw.config.set( 'wgAction', 'edit' );
+		assert.strictEqual(
+			gt.shouldShowTour( visualEditorArgs ),
+			false,
+			'Returns false for VisualEditor condition when in wikitext editor'
+		);
+
+		mw.config.set( 'wgAction', 'submit' );
+		assert.strictEqual(
+			gt.shouldShowTour( visualEditorArgs ),
+			false,
+			'Returns false for VisualEditor condition when reviewing wikitext changes'
+		);
+
+		mw.config.set( 'wgAction', 'edit' );
+		assert.strictEqual(
+			gt.shouldShowTour( wikitextArgs ),
+			true,
+			'Returns true for wikitext condition when editing wikitext'
+		);
+
+		mw.config.set( 'wgAction', 'submit' );
+		assert.strictEqual(
+			gt.shouldShowTour( wikitextArgs ),
+			true,
+			'Returns true for wikitext condition when reviewing wikitext'
+		);
+
+		mw.config.set( 'wgAction', 'view' );
+		assert.strictEqual(
+			gt.shouldShowTour( wikitextArgs ),
+			true,
+			'Returns true for wikitext condition when viewing page with VE closed'
+		);
+
+		window.ve = mockOpenVE;
+		mw.config.set( 'wgAction', 'view' );
+		assert.strictEqual(
+			gt.shouldShowTour( wikitextArgs ),
+			false,
+			'Returns false for wikitext condition when VisualEditor is open'
 		);
 
 		assert.strictEqual(

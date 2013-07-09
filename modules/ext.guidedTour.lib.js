@@ -1,3 +1,4 @@
+/*global ve */
 /**
  * GuidedTour public API
  *
@@ -699,6 +700,9 @@
 		return guiders.resume( tourId );
 	}
 
+	// TODO (mattflaschen, 2013-07-10): Known issue: This runs too early on a direct
+	// visit to a veaction=edit page.  This probably affects other JS-generated
+	// interfaces too.
 	/**
 	 * Initializes guiders and shows tour, starting at the specified step.
 	 * Does not check conditions, so that should already be done
@@ -753,9 +757,35 @@
 	 * @return {void}
 	 */
 	function setupRepositionListeners() {
-		$( '#wpTextbox1' ).on( 'wikiEditor-toolbar-doneInitialSections', function () {
-			guiders.reposition();
-		} );
+		$( '#wpTextbox1' ).on( 'wikiEditor-toolbar-doneInitialSections', guiders.reposition );
+		mw.hook( 've.skinTabSetupComplete' ).add( guiders.reposition );
+	}
+
+	/**
+	 * Listen for events that may mean a tour should skip ahead to a new step.
+	 * Currently this listens for some custom events from VisualEditor.
+	 *
+	 * @private
+	 */
+	function setupSkipThenUpdateDisplayListeners() {
+		var mwHooks, i;
+
+		function skip() {
+			// I found this necessary when testing, probably to give the
+			// browser queue a chance to do pending DOM rendering.
+			setTimeout( function () {
+				guiders.skipThenUpdateDisplay();
+			}, 0 );
+		}
+
+		mwHooks = [
+			've.activationComplete',
+			've.deactivationComplete',
+			've.saveDialog.stateChanged'
+		];
+		for ( i = 0; i < mwHooks.length; i++ ) {
+			mw.hook( mwHooks[i] ).add( skip );
+		}
 	}
 
 	/**
@@ -793,6 +823,7 @@
 
 		$( document ).ready( function () {
 			setupRepositionListeners();
+			setupSkipThenUpdateDisplayListeners();
 			setupGuiderListeners();
 		} );
 	}
@@ -1127,26 +1158,80 @@
 		},
 
 		/**
-		 * Checks whether they are editing.  Does not include previewing.
+		 * Checks if the user is editing, with either wikitext or the
+		 * VisualEditor.  Does not include previewing.
+		 *
+		 * @return {boolean} true if and only if they are actively editing
+		 */
+		isEditing: function () {
+			return gt.isEditingWithWikitext() || gt.isEditingWithVisualEditor();
+		},
+
+		/**
+		 * Checks if the user is editing with wikitext.  Does not include previewing.
 		 *
 		 * @return {boolean} true if and only if they are on the edit action
 		 */
-		isEditing: function () {
+		isEditingWithWikitext: function () {
 			return mw.config.get( 'wgAction' ) === 'edit';
 		},
 
 		/**
-		 * Checks whether they are previewing or reviewing changes (after clicking "Show changes")
+		 * Checks if the user is editing with VisualEditor.  This is only true if
+		 * the surface is actually open for edits.
+		 *
+		 * Use isVisualEditorOpen instead if you want to check if there is a
+		 * VisualEditor instance on the page.
+		 *
+		 * @see mw.guidedTour#isVisualEditorOpen
+		 *
+		 * @return {boolean} true if and only if they are actively editing with VisualEditor
+		 */
+		isEditingWithVisualEditor: function () {
+			return $( '.ve-ce-documentNode[contenteditable="true"]' ).length > 0;
+		},
+
+		/**
+		 * Checks whether VisualEditor is open
+		 *
+		 * @return {boolean} true if and only if there is a VisualEditor instance
+		 * on the page
+		 */
+		isVisualEditorOpen: function () {
+			return typeof ve !== 'undefined' && ve.instances && ve.instances.length > 0;
+		},
+
+		/**
+		 * Checks whether the user is previewing or reviewing changes
+		 * (after clicking "Show changes")
 		 *
 		 * @return {boolean} true if and only if they are reviewing
 		 */
 		isReviewing: function () {
+			return gt.isReviewingWithWikitext() || gt.isReviewingWithVisualEditor();
+		},
+
+		/**
+		 * Checks whether the user is previewing or reviewing wikitext changes
+		 * (the latter meaning the screen after clicking "Show changes")
+		 *
+		 * @return {boolean} true if and only if they are reviewing wikitext
+		 */
+		isReviewingWithWikitext: function () {
 			return mw.config.get( 'wgAction' ) === 'submit';
 		},
 
+		/**
+		 * Checks whether the user is in the dialog for reviewing VisualEditor changes
+		 *
+		 * @return {boolean} true if and only if they are reviewing VisualEditor changes
+		 */
+		isReviewingWithVisualEditor: function () {
+			return $( '.ve-init-mw-viewPageTarget-saveDialog-slide-review' ).is( ':visible' );
+		},
 
 		/**
-		 * Checks whether they just saved an edit.
+		 * Checks whether the user just saved an edit.
 		 *
 		 * @return {boolean} true if they just saved an edit, false otherwise
 		 */
@@ -1236,10 +1321,16 @@
 		 * @param {boolean} [tourSpec.isSinglePage=false] Tour is used on a single
 		 *  page tour. This disables tour cookies.
 		 * @param {string} [tourSpec.showConditionally] condition for showing
-		 *  tour.  Currently, the only supported condition is 'stickToFirstPage',
-		 *  meaning it will only show on pages with the same article ID (non-
-		 *  special pages) or page name (special pages) as the first page it showed
-		 *  on.
+		 *  tour.  Currently, the supported conditions are:
+		 *
+		 *  - 'stickToFirstPage' - Only show on pages with the same article ID (non-
+		 *    special pages) or page name (special pages) as the first page it showed
+		 *    on.
+		 *  - 'wikitext' - Show on pages that are part of a wikitext flow.  This
+		 *    means all pages where the VisualEditor is not open.
+		 *  - 'VisualEditor' - Show on pages that are part of the VisualEditor flow.
+		 *    This means all pages, except for the wikitext editor, wikitext preview,
+		 *    and wikitext show changes.
 		 * @param {boolean} [tourSpec.shouldLog=false] Whether to log events to
 		 *  EventLogging
 		 *
@@ -1292,7 +1383,7 @@
 		 *
 		 *  - gt.parseDescription - Treat description as wikitext
 		 *  - gt.getPageAsDescription - Treat description as the name of a description
-		 *  page on the wiki
+		 *    page on the wiki
 		 *
 		 * @param {boolean} [tourSpec.steps.allowAutomaticOkay=true] By default, if
 		 * you do not specify an Okay or Next button, an Okay button will be generated.
@@ -1388,7 +1479,6 @@
 
 			return true;
 		},
-		/**
 		// Below are exposed for unit testing only, and should be considered
 		// private
 		/**
@@ -1426,19 +1516,35 @@
 		 */
 		shouldShowTour: function ( args ) {
 			var subCookie = args.userState.tours[args.tourName];
-			if ( subCookie !== undefined ) {
-				if ( args.condition === 'stickToFirstPage' ) {
-					if ( subCookie.firstArticleId !== undefined ) {
-						return subCookie.firstArticleId === args.articleId;
-					} else if ( subCookie.firstSpecialPageName !== undefined ) {
-						return subCookie.firstSpecialPageName === args.pageName;
-					}
-				} else if ( args.condition !== undefined ) {
-					throw new gt.TourDefinitionError( '\'' + args.condition + '\' is not a supported condition' );
+			if ( args.condition !== undefined ) {
+				// TODO (mattflaschen, 2013-07-09): Allow having multiple
+				// conditions ANDed together in an array.
+				switch ( args.condition ) {
+					case 'stickToFirstPage':
+						if ( subCookie === undefined ) {
+							// Not yet shown
+							return true;
+						}
+						if ( subCookie.firstArticleId !== undefined ) {
+							return subCookie.firstArticleId === args.articleId;
+						} else if ( subCookie.firstSpecialPageName !== undefined ) {
+							return subCookie.firstSpecialPageName === args.pageName;
+						}
+						break;
+					case 'wikitext':
+						// Any screen that is *not* VisualEditor-specific
+						// Reading, history, wikitext-specific screens, etc.
+						return !gt.isVisualEditorOpen();
+					case 'VisualEditor':
+						// Any screen that is *not* wikitext-specific
+						// Reading, history, VisualEditor screen, etc.
+						return !gt.isEditingWithWikitext() && !gt.isReviewingWithWikitext();
+					default:
+						throw new gt.TourDefinitionError( '\'' + args.condition + '\' is not a supported condition' );
 				}
 			}
 
-			// No conditions, not yet shown, or inconsistent cookie data
+			// No conditions or inconsistent cookie data
 			return true;
 		},
 
