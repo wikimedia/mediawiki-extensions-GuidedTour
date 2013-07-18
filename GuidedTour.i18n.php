@@ -534,6 +534,7 @@ $messages['ko'] = array(
 $messages['lb'] = array(
 	'guidedtour-desc' => "Erméiglecht Pop-up-ënnerstëtzt Toure fir nei Benotzer z'assistéieren",
 	'guidedtour-help-url' => 'Help:Guidéiert Touren',
+	'guidedtour-help-guider-url' => 'Help:Guided tours/Guide',
 	'guidedtour-next-button' => 'Nächst',
 	'guidedtour-okay-button' => 'OK',
 	'guidedtour-tour-test-testing' => 'Testen',
