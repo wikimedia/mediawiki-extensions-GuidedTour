@@ -785,10 +785,11 @@ $messages['roa-tara'] = array(
 
 /** Russian (русский)
  * @author DCamer
+ * @author KPu3uC B Poccuu
  */
 $messages['ru'] = array(
 	'guidedtour-tour-test-testing' => 'Тестирование',
-	'guidedtour-tour-test-test-description' => 'Это тест описание. Вы можете видеть что <b>HTML</b> полужирный. Lorem ipsum dolor sit!', # Fuzzy
+	'guidedtour-tour-test-test-description' => 'Это проверка описания. Lorem ipsum dolor sit!',
 	'guidedtour-tour-test-callouts' => 'Тест выноски',
 	'guidedtour-tour-test-mediawiki-parse' => 'Тест mediawiki parse',
 	'guidedtour-tour-test-go-description-page' => 'Перейти на страницу описания',
