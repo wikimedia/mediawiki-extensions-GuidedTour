@@ -1,8 +1,5 @@
-extensions/GuidedTour
-https://www.mediawiki.org/wiki/Extension:GuidedTour
-
-MediaWiki extension that allows the creation of Guided Tours using a variant of
-Optimize.ly's Guiders.
+This is GuidedTour ( https://www.mediawiki.org/wiki/Extension:GuidedTour ), a
+MediaWiki extension that allows the creation of guided tours.
 
 It supports both extension-defined tours (with localization) and tours defined by editing
 the MediaWiki namespace.
@@ -33,10 +30,19 @@ License
 
 This is free software.
 
-For the main GuidedTour code and Guiders:
+For the main GuidedTour code and Guiders.js:
 
 You may use, modify and distribute it under the terms of
 the Apache License 2.0.
+
+The mediawiki.libs.guiders directory is based on Guiders.js, developed by Optimizely
+and Jeff Pickhardt.
+See https://github.com/jeff-optimizely/Guiders-JS
+
+Further enhancements to Guiders.js were developed by the GuidedTour team.  Earlier
+work is at https://git.wikimedia.org/log/mediawiki%2Fextensions%2FGuidedTour%2Fguiders.git
+
+but that repository is no longer used.
 
 For the .docs dir, the MIT license applies:
 

@@ -1,9 +1,9 @@
 <?php
 /**
  * This extension allows pages to add a popup guided tour to help new users
- * It uses the Guiders JavaScript library from Optimizely.
- * There are some local changes to Guiders at
- * https://gerrit.wikimedia.org/r/#/admin/projects/mediawiki/extensions/GuidedTour/guiders
+ * It is partly based on the Guiders JavaScript library, originally developed by Optimizely.
+ *
+ * There have also been further changes to Guiders in conjunction with this extension.
  *
  * @file
  * @author Terry Chay tchay@wikimedia.org
@@ -49,7 +49,7 @@ $wgExtensionCredits['other'][] = array(
 	'version'  => 1.0,
 );
 
-$guidersPath = 'modules/externals/mediawiki.libs.guiders';
+$guidersPath = 'modules/mediawiki.libs.guiders';
 
 // Modules
 $wgResourceModules['schema.GuidedTour'] = array(
@@ -59,15 +59,17 @@ $wgResourceModules['schema.GuidedTour'] = array(
 );
 
 $wgResourceModules['mediawiki.libs.guiders'] = array(
-	'styles' => 'mediawiki.libs.guiders.submodule/guiders.css',
+	'styles' => 'mediawiki.libs.guiders.css',
 	'scripts' => array(
-		'mediawiki.libs.guiders.submodule/guiders.js',
+		'mediawiki.libs.guiders.js',
 		'mediawiki.libs.guiders.exposeGuiders.js',
 	),
 	'localBasePath' => $dir . $guidersPath,
 	'remoteExtPath' => "GuidedTour/$guidersPath",
 );
 
+// TODO (mattflaschen, 2013-07-30): When the location of the rendering code
+// is decided, this module can be merged to there.
 $wgResourceModules['ext.guidedTour.styles'] = array(
 	'styles' => 'ext.guidedTour.css',
 	'localBasePath' => $dir . 'modules',
