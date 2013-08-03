@@ -460,6 +460,22 @@ mediaWiki.libs.guiders = (function($) {
 	};
 
 	/**
+	 * Gets element to attach to, wrapped by jQuery.  Filters out elements that are not
+	 * :visible, such as (such as those with display: none).
+	 *
+	 * @private
+	 *
+	 * @param {Object} guider guider being attached
+	 *
+	 * @return {jQuery|null} jQuery node for element, or null for no match
+	 */
+	guiders._getAttachTarget = function(guider) {
+		var $node = $(guider.attachTo).filter( ':visible:first' );
+
+		return $node.length > 0 ? $node : null;
+	};
+
+	/**
 	 * Attaches a guider
 	 *
 	 * @param {Object} myGuider guider to attach
@@ -467,23 +483,23 @@ mediaWiki.libs.guiders = (function($) {
 	 *   or undefined for invalid input.
 	 */
 	guiders._attach = function(myGuider) {
-		var position, attachTo, css, rightOfGuider, flipVertically,
+		var position, $attachTarget, css, rightOfGuider, flipVertically,
 			flipHorizontally;
 
 		if (typeof myGuider !== 'object') {
 			return;
 		}
 
+		$attachTarget = guiders._getAttachTarget(myGuider);
+
 		// We keep a local position, separate from the originally requested one.
 		// We alter this locally for auto-flip and missing elements.
 		//
 		// However, the DOM or window size may change later, and on each attach we want to start
 		// with the originally requested position as the baseline.
+		position = $attachTarget !== null ? myGuider.position : 0;
 
-		attachTo = $(myGuider.attachTo);
-		position = attachTo.length > 0 ? myGuider.position : 0;
-
-		css = guiders._getAttachCss(attachTo, myGuider, position);
+		css = guiders._getAttachCss($attachTarget, myGuider, position);
 
 		if (myGuider.flipToKeepOnScreen) {
 			rightOfGuider = css.left + myGuider.width;
@@ -494,7 +510,7 @@ mediaWiki.libs.guiders = (function($) {
 					vertical: flipVertically,
 					horizontal: flipHorizontally
 				});
-				css = guiders._getAttachCss(attachTo, myGuider, position);
+				css = guiders._getAttachCss($attachTarget, myGuider, position);
 			}
 		}
 
@@ -517,8 +533,8 @@ mediaWiki.libs.guiders = (function($) {
 			}
 			var myGuider = guiders._guiderInits[id];
 			// this can happen when resume() hits a snag somewhere
-			if (myGuider.attachTo && guiders.failStep && ($(myGuider.attachTo).length === 0)) {
-				throw 'Guider attachment not found with id ' + myGuider.attachTo;
+			if (myGuider.attachTo && guiders.failStep && guiders._getAttachTarget(myGuider) !== null) {
+				throw 'Guider attachment not found with selector ' + myGuider.attachTo;
 			}
 			guiders.createGuider(myGuider);
 			delete guiders._guiderInits[id]; //prevents recursion
@@ -988,9 +1004,9 @@ mediaWiki.libs.guiders = (function($) {
 		nextGuiderId = myGuider.next || null;
 		if (nextGuiderId !== null && nextGuiderId !== '') {
 			if ( ( nextGuiderData = guiders._guiderInits[nextGuiderId] ) ) {
-				//don't attach if it doesn't exist in DOM
-				testInDom = $(nextGuiderData.attachTo);
-				if ( testInDom.length > 0 ) {
+				// Only attach if it exists and is :visible
+				testInDom = guiders._getAttachTarget(nextGuiderData);
+				if ( testInDom !== null ) {
 					guiders.createGuider(nextGuiderData);
 					nextGuiderData = undefined;
 				}
