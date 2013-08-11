@@ -808,15 +808,28 @@ $messages['sr-ec'] = array(
  * @author Jopparn
  */
 $messages['sv'] = array(
+	'guidedtour-desc' => 'Tillåter sidor att ge en popup-guidad tur för att hjälpa nya användare',
+	'guidedtour-help-url' => 'Help:Guidade turer',
+	'guidedtour-help-guider-url' => 'Help:Guidade turer/guider',
 	'guidedtour-next-button' => 'Nästa',
 	'guidedtour-okay-button' => 'Okej',
 	'guidedtour-tour-test-testing' => 'Testar',
 	'guidedtour-tour-test-test-description' => 'Detta är ett test av beskrivningen. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-portal-description' => 'Detta är sidan {{int:portal}}.',
+	'guidedtour-tour-test-mediawiki-parse' => 'Testa MediaWikitolkning',
+	'guidedtour-tour-test-description-page' => 'Testa sidbeskrivning för MediaWiki',
 	'guidedtour-tour-test-go-description-page' => 'Gå till beskrivningssida',
+	'guidedtour-tour-test-launch-tour' => 'Testa starta tur',
+	'guidedtour-tour-test-launch-tour-description' => 'Turer kan starta andra guidade turer. Ganska coolt, va?',
+	'guidedtour-tour-test-launch-using-tours' => 'Starta en tur om att använda turer',
 	'guidedtour-tour-gettingstarted-start-title' => 'Redo att hjälpa?',
+	'guidedtour-tour-gettingstarted-start-description' => 'Denna sida behöver grundläggande textförbättring – förbättra grammatik, stil, ton eller stavning – för att göra det tydligt och lätt att läsa. Denna tur visar dig stegen att ta.',
+	'guidedtour-tour-gettingstarted-click-edit-title' => 'Klicka på {{int:vector-view-edit}}',
 	'guidedtour-tour-gettingstarted-click-edit-description' => 'Detta låter dig göra ändringar i vilken del av sidan som helst när du är redo.',
 	'guidedtour-tour-gettingstarted-click-preview-title' => 'Förhandsgranska (valfritt)',
+	'guidedtour-tour-gettingstarted-click-preview-description' => "Genom att klicka på '{{int:showpreview}}' kan du kontrollera hur sidan ser ut med dina ändringar. Glöm bara inte att spara.",
 	'guidedtour-tour-gettingstarted-click-save-title' => 'Du är nästan klar!',
+	'guidedtour-tour-gettingstarted-click-save-description' => "Klicka på '{{int:savearticle}}' och dina ändringar kommer att vara synliga.",
 	'guidedtour-tour-gettingstarted-end-title' => 'Letar du efter mer att göra?',
 	'guidedtour-tour-gettingstarted-end-description' => '[[Special:GettingStarted|Komma igång]] uppdateras varje timme med nya sidor.',
 );
