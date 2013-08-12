@@ -56,7 +56,7 @@ $messages['en'] = array(
  * @author Shirayuki
  */
 $messages['qqq'] = array(
-	'guidedtour-desc' => '{{desc|name=GuidedTour|url=https://www.mediawiki.org/wiki/Extension:GuidedTour}}',
+	'guidedtour-desc' => '{{desc|name=Guided Tour|url=http://www.mediawiki.org/wiki/Extension:GuidedTour}}',
 	'guidedtour-help-url' => 'Main page for GuidedTour documentation',
 	'guidedtour-help-guider-url' => 'Brief GuidedTour documentation page that a tour step can transclude.  Used in the test tour.',
 	'guidedtour-custom.css' => '{{Optional}}
