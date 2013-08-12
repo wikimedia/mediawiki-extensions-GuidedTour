@@ -62,7 +62,6 @@ $wgResourceModules['mediawiki.libs.guiders'] = array(
 	'styles' => 'mediawiki.libs.guiders.css',
 	'scripts' => array(
 		'mediawiki.libs.guiders.js',
-		'mediawiki.libs.guiders.exposeGuiders.js',
 	),
 	'localBasePath' => $dir . $guidersPath,
 	'remoteExtPath' => "GuidedTour/$guidersPath",
