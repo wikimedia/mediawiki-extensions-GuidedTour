@@ -835,10 +835,35 @@ $messages['sv'] = array(
 );
 
 /** Ukrainian (українська)
+ * @author Andriykopanytsia
  * @author Base
  */
 $messages['uk'] = array(
 	'guidedtour-desc' => 'Дозволяє сторінкам виводити вспливаюче навчання для допомоги новачкам',
+	'guidedtour-help-url' => 'Help:Інтерактивні тури',
+	'guidedtour-help-guider-url' => 'Довідка: інтерактивні тури/гід',
+	'guidedtour-next-button' => 'Далі',
+	'guidedtour-okay-button' => 'Гаразд',
+	'guidedtour-tour-test-testing' => 'Тестування',
+	'guidedtour-tour-test-test-description' => 'Це випробування опису. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-callouts' => 'Тест виноски',
+	'guidedtour-tour-test-portal-description' => 'Це сторінка {{int:portal}}.',
+	'guidedtour-tour-test-mediawiki-parse' => 'Тест аналізу Медіавікі',
+	'guidedtour-tour-test-description-page' => 'Тест опису сторінок Медіавікі',
+	'guidedtour-tour-test-go-description-page' => 'Перейти на сторінку опису',
+	'guidedtour-tour-test-launch-tour' => 'Тестовий запуск туру',
+	'guidedtour-tour-test-launch-tour-description' => 'Гід може запускати інші інтерактивні тури. Досить непогано, так?',
+	'guidedtour-tour-test-launch-using-tours' => 'Запуск тур по використанню турів',
+	'guidedtour-tour-gettingstarted-start-title' => 'Готові до допомоги?',
+	'guidedtour-tour-gettingstarted-start-description' => 'Ця сторінка потребує основного технічного редагування – поліпшення граматики, стилю, тону або орфографії - аби зробити її легшою до читання та сприйняття. Цей тур покаже вам кроки, які потрібно зробити.',
+	'guidedtour-tour-gettingstarted-click-edit-title' => "Натисніть '{{int:vector-view-edit}}'",
+	'guidedtour-tour-gettingstarted-click-edit-description' => 'Це дозволить вам змінювати будь-яку частину сторінки, коли ви будете готові.',
+	'guidedtour-tour-gettingstarted-click-preview-title' => "Попередній перегляд (необов'язково)",
+	'guidedtour-tour-gettingstarted-click-preview-description' => 'Клацання "{{int:showpreview}}" дає змогу перевіряти вигляд сторінки із внесеними змінами. Тільки не забудьте зберегти.',
+	'guidedtour-tour-gettingstarted-click-save-title' => 'Ви майже закінчили!',
+	'guidedtour-tour-gettingstarted-click-save-description' => "Натисніть '{{int:savearticle}}' і зміни буде видно.",
+	'guidedtour-tour-gettingstarted-end-title' => 'Шукаєте ще роботи?',
+	'guidedtour-tour-gettingstarted-end-description' => '[[Special:GettingStarted|Перші кроки]] оновлюється щогодини з новими сторінками.',
 );
 
 /** Vietnamese (Tiếng Việt)
