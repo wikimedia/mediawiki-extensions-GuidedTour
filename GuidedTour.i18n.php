@@ -398,9 +398,11 @@ $messages['gu'] = array(
 /** Hebrew (עברית)
  * @author Amire80
  * @author ExampleTomer
+ * @author דוד
  */
 $messages['he'] = array(
 	'guidedtour-desc' => 'אפשרות לספק בדפים חלונות קופצים שעוזרים למשתמשים חדשים',
+	'guidedtour-help-url' => 'עזרה:סיורים מודרכים', # Fuzzy
 	'guidedtour-next-button' => 'הבא',
 	'guidedtour-okay-button' => 'סבבה',
 	'guidedtour-tour-test-testing' => 'בדיקות',
@@ -408,6 +410,9 @@ $messages['he'] = array(
 	'guidedtour-tour-test-callouts' => 'בדיקת חלונות יוצאים',
 	'guidedtour-tour-test-portal-description' => 'זהו דף שער הקהילה.', # Fuzzy
 	'guidedtour-tour-test-mediawiki-parse' => 'בדיקת פענוח מדיה ויקי',
+	'guidedtour-tour-gettingstarted-start-title' => 'מוכנים לעזור?',
+	'guidedtour-tour-gettingstarted-click-save-title' => 'כמעט סיימת!',
+	'guidedtour-tour-gettingstarted-end-title' => 'מחפש דברים נוספים לעשות?',
 );
 
 /** Upper Sorbian (hornjoserbsce)
