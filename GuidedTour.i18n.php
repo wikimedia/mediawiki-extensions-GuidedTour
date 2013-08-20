@@ -398,21 +398,35 @@ $messages['gu'] = array(
 /** Hebrew (עברית)
  * @author Amire80
  * @author ExampleTomer
+ * @author NLIGuy
  * @author דוד
  */
 $messages['he'] = array(
-	'guidedtour-desc' => 'אפשרות לספק בדפים חלונות קופצים שעוזרים למשתמשים חדשים',
-	'guidedtour-help-url' => 'עזרה:סיורים מודרכים', # Fuzzy
+	'guidedtour-desc' => 'מאפשר לספק בדפים חלונות קופצים שעוזרים למשתמשים חדשים',
+	'guidedtour-help-url' => 'Help:סיורים מודרכים',
+	'guidedtour-help-guider-url' => 'עזרה: סיורים מודרכים/צעדים בסיור',
 	'guidedtour-next-button' => 'הבא',
 	'guidedtour-okay-button' => 'סבבה',
 	'guidedtour-tour-test-testing' => 'בדיקות',
 	'guidedtour-tour-test-test-description' => 'זוהי בדיקה של תיאור. צנח לו זלזל!',
-	'guidedtour-tour-test-callouts' => 'בדיקת חלונות יוצאים',
-	'guidedtour-tour-test-portal-description' => 'זהו דף שער הקהילה.', # Fuzzy
-	'guidedtour-tour-test-mediawiki-parse' => 'בדיקת פענוח מדיה ויקי',
+	'guidedtour-tour-test-callouts' => 'בדיקת חלונות הסבר',
+	'guidedtour-tour-test-portal-description' => 'זהו דף ה{{int:portal}}.',
+	'guidedtour-tour-test-mediawiki-parse' => 'בדיקות פענוח מדיה-ויקי',
+	'guidedtour-tour-test-description-page' => 'בדקו את דפי התיאור של מדיה-ויקי',
+	'guidedtour-tour-test-go-description-page' => 'עברו לדף התיאור',
+	'guidedtour-tour-test-launch-tour' => 'בדקו את סיור הניסיון',
+	'guidedtour-tour-test-launch-tour-description' => 'שלבים בסיור יכולים להפעיל סיורים מודרכים אחרים. די מגניב, הא?',
+	'guidedtour-tour-test-launch-using-tours' => 'התחילו סיור היכרות על אודות השימוש בסיורים',
 	'guidedtour-tour-gettingstarted-start-title' => 'מוכנים לעזור?',
-	'guidedtour-tour-gettingstarted-click-save-title' => 'כמעט סיימת!',
-	'guidedtour-tour-gettingstarted-end-title' => 'מחפש דברים נוספים לעשות?',
+	'guidedtour-tour-gettingstarted-start-description' => 'דף זה דורש עריכת טקסט וליטוש - שיפור התחביר, הסגנון, הטון או האיות - על מנת להפכו לברור וקל לקריאה. סיור זה יראה לכם את הצעדים הנדרשים לכך.',
+	'guidedtour-tour-gettingstarted-click-edit-title' => 'לחצו על {{int:vector-view-edit}}',
+	'guidedtour-tour-gettingstarted-click-edit-description' => 'דבר זה יאפשר לכם לערוך שינויים לכל חלק של הדף, כאשר אתם מוכנים לכך.',
+	'guidedtour-tour-gettingstarted-click-preview-title' => 'תצוגה מקדימה (אופציונלי)',
+	'guidedtour-tour-gettingstarted-click-preview-description' => 'לחיצה על {{int:showpreview}} מאפשרת לך לבדוק כיצד ייראה העמוד עם השינויים שלך. רק לא לשכוח לשמור!',
+	'guidedtour-tour-gettingstarted-click-save-title' => 'כמעט סיימתם!',
+	'guidedtour-tour-gettingstarted-click-save-description' => 'לחצו על {{int:savearticle}} והשינוי שלכם יהיה גלוי.',
+	'guidedtour-tour-gettingstarted-end-title' => 'מחפשים דברים נוספים לעשות?',
+	'guidedtour-tour-gettingstarted-end-description' => '[[Special:GettingStarted|Getting Started]] מתעדכן מדי שעה עם דפים חדשים.',
 );
 
 /** Upper Sorbian (hornjoserbsce)
