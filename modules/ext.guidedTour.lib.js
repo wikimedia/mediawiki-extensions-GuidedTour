@@ -372,21 +372,26 @@
 	}
 
 	/**
-	 * Gets a Guiders button specification that uses the message for the provided type
-	 * and the provided callback.
+	 * Gets a Guiders button specification, using the message for the provided type
+	 * (if no text is provided) and the provided callback.
 	 *
 	 * @private
 	 *
 	 * @param {string} buttonType type, currently 'next' or 'okay'
 	 * @param {Function} callback Function to call if they click the button
 	 * @param {HTMLElement} callback.btn Raw DOM element of the okay button
+	 * @param {string} [buttonName] button text to override default.
 	 *
 	 * @return {Object} Guiders button specification
 	 */
-	function getMessageButton( buttonType, callback ) {
+	function getActionButton( buttonType, callback, buttonName ) {
 		var buttonKey = 'guidedtour-' + buttonType + '-button';
+
+		if ( buttonName === undefined ) {
+			buttonName = getMessage( buttonKey );
+		}
 		return {
-			name: getMessage ( buttonKey ),
+			name: buttonName,
 			onclick: function () {
 				callback( this );
 			},
@@ -467,16 +472,16 @@
 			if ( currentButton.action !== undefined ) {
 				switch ( currentButton.action ) {
 					case 'next':
-						nextButton = getMessageButton( 'next', next );
+						nextButton = getActionButton( 'next', next, currentButton.name );
 						break;
 					case 'okay':
 						if ( currentButton.onclick === undefined ) {
 							throw new gt.TourDefinitionError( 'You must pass an \'onclick\' function if you use an \'okay\' action.' );
 						}
-						okayButton = getMessageButton( 'okay', currentButton.onclick );
+						okayButton = getActionButton( 'okay', currentButton.onclick, currentButton.name );
 						break;
 					case 'end':
-						okayButton = getMessageButton( 'okay', endTour );
+						okayButton = getActionButton( 'okay', endTour, currentButton.name );
 						break;
 					case 'wikiLink':
 						url = mw.util.wikiGetlink( currentButton.page );
@@ -506,7 +511,7 @@
 			// a next, since the user is prompted to do something else
 			// (e.g. click 'Edit')
 			if ( okayButton === undefined  && nextButton === undefined ) {
-				okayButton = getMessageButton( 'okay', function () {
+				okayButton = getActionButton( 'okay', function () {
 					gt.hideAll();
 				} );
 			}
