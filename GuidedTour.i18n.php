@@ -285,7 +285,9 @@ $messages['de'] = array(
  * @author Fitoschido
  */
 $messages['es'] = array(
+	'guidedtour-next-button' => 'Siguiente',
 	'guidedtour-okay-button' => 'Aceptar',
+	'guidedtour-tour-test-testing' => 'Pruebas',
 	'guidedtour-tour-test-description-page' => 'Probar las páginas de descripción de MediaWiki',
 	'guidedtour-tour-test-go-description-page' => 'Ir a la página de descripción',
 	'guidedtour-tour-gettingstarted-click-edit-title' => 'Pulsa «{{int:vector-view-edit}}»',
