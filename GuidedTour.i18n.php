@@ -459,9 +459,12 @@ $messages['hsb'] = array(
 
 /** Italian (italiano)
  * @author Beta16
+ * @author Gianfranco
  */
 $messages['it'] = array(
 	'guidedtour-desc' => 'Consente di gestire pagine per fornire un tour guidato tramite popup per assistere i nuovi utenti',
+	'guidedtour-help-url' => 'Help:Visite guidate',
+	'guidedtour-help-guider-url' => 'Aiuto:Visite guidate/guida',
 	'guidedtour-next-button' => 'Successivo',
 	'guidedtour-okay-button' => 'Ok',
 	'guidedtour-tour-test-testing' => 'Prova',
@@ -471,7 +474,11 @@ $messages['it'] = array(
 	'guidedtour-tour-test-mediawiki-parse' => 'Prova MediaWiki parse',
 	'guidedtour-tour-test-description-page' => 'Prova le pagine di descrizione di MediaWiki',
 	'guidedtour-tour-test-go-description-page' => 'Vai alla pagina di descrizione',
+	'guidedtour-tour-test-launch-tour' => 'Prova la visita di partenza',
+	'guidedtour-tour-test-launch-tour-description' => 'Le guide possono lanciare altre visite guidate. Non male, eh?',
+	'guidedtour-tour-test-launch-using-tours' => "Lancia un tour sull'utilizzo delle visite",
 	'guidedtour-tour-gettingstarted-start-title' => 'Pronti ad aiutare?',
+	'guidedtour-tour-gettingstarted-start-description' => "Questa pagina ha bisogno di un editing di base – migliorare la grammatica, lo stile, il tono o l'ortografia – per renderla chiara e di facile lettura. Questo tour vi mostrerà le azioni da compiere.",
 	'guidedtour-tour-gettingstarted-click-edit-title' => "Fai clic su '{{int:vector-view-edit}}'",
 	'guidedtour-tour-gettingstarted-click-edit-description' => 'Questo ti consente di apportare modifiche in qualsiasi parte della pagina, quando sei pronto.',
 	'guidedtour-tour-gettingstarted-click-preview-title' => 'Anteprima (opzionale)',
@@ -583,6 +590,14 @@ $messages['lb'] = array(
 $messages['lt'] = array(
 	'guidedtour-next-button' => 'Kitas',
 	'guidedtour-okay-button' => 'Gerai',
+);
+
+/** Latvian (latviešu)
+ * @author Papuass
+ */
+$messages['lv'] = array(
+	'guidedtour-next-button' => 'Tālāk',
+	'guidedtour-okay-button' => 'Labi',
 );
 
 /** Macedonian (македонски)
