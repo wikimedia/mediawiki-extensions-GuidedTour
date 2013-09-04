@@ -225,11 +225,21 @@ $messages['be-tarask'] = array(
  * @author Bellayet
  */
 $messages['bn'] = array(
-	'guidedtour-desc' => 'নতুন ব্যবহারকারীদের সহযোগীতার জন্য পাতায় একটি ভাসমান নির্দেশক ভ্রমনের সুযোগ করে দেয়।',
-	'guidedtour-help-url' => 'Help:নির্দেশক ভ্রমণ',
+	'guidedtour-desc' => 'নতুন ব্যবহারকারীদের সহযোগিতার জন্য পাতায় একটি ভাসমান নির্দেশনামূলক ভ্রমণের সুযোগ করে দেয়।',
+	'guidedtour-help-url' => 'Help:নির্দেশনামূলক ভ্রমণ',
+	'guidedtour-help-guider-url' => 'Help:নির্দেশনামূলক ভ্রমণ/নির্দেশক',
 	'guidedtour-next-button' => 'পরবর্তী',
 	'guidedtour-okay-button' => 'ঠিক আছে',
 	'guidedtour-tour-test-testing' => 'পরীক্ষণ',
+	'guidedtour-tour-test-description-page' => 'পরীক্ষামূলক মিডিয়াউইকি বিবরণ পাতা',
+	'guidedtour-tour-test-go-description-page' => 'বিবরণ পাতায় যাও',
+	'guidedtour-tour-test-launch-tour' => 'পরীক্ষামূলক ভ্রমণ আরম্ভ করুন',
+	'guidedtour-tour-gettingstarted-start-title' => 'সহায়িকার জন্য প্রস্তুত?',
+	'guidedtour-tour-gettingstarted-click-edit-title' => "'{{int:vector-view-edit}}' ক্লিক করুন",
+	'guidedtour-tour-gettingstarted-click-preview-title' => 'প্রাকদর্শন (ঐচ্ছিক)',
+	'guidedtour-tour-gettingstarted-click-save-title' => 'আপনি প্রায় সম্পন্ন করেছেন!',
+	'guidedtour-tour-gettingstarted-click-save-description' => "'{{int:savearticle}}' ক্লিক করুন এবং আপনার পরিবর্তনগুলো দৃশ্যমান হবে।",
+	'guidedtour-tour-gettingstarted-end-title' => 'আরও কি করা যায় তা ভাবছেন?',
 );
 
 /** Breton (brezhoneg)
@@ -239,6 +249,37 @@ $messages['bn'] = array(
 $messages['br'] = array(
 	'guidedtour-okay-button' => 'A-du',
 	'guidedtour-tour-test-testing' => "Oc'h amprouiñ",
+);
+
+/** Catalan (català)
+ * @author QuimGil
+ */
+$messages['ca'] = array(
+	'guidedtour-desc' => 'Permet a les pàgines incorporar una visita guiada per a ajudar nous usuaris.',
+	'guidedtour-help-url' => 'Help:Visites guiades',
+	'guidedtour-help-guider-url' => 'Help:Visites guiades/guia',
+	'guidedtour-next-button' => 'Següent',
+	'guidedtour-okay-button' => "D'acord",
+	'guidedtour-tour-test-testing' => 'Proves',
+	'guidedtour-tour-test-test-description' => 'Això és una prova de la descripció. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-callouts' => 'Prova les crides',
+	'guidedtour-tour-test-portal-description' => 'Aquesta és la pàgina {{int:portal}}.',
+	'guidedtour-tour-test-mediawiki-parse' => 'Prova el processament de MediaWiki',
+	'guidedtour-tour-test-description-page' => 'Prova les pàgines de descripció de MediaWiki',
+	'guidedtour-tour-test-go-description-page' => 'Vés a la pàgina de descripció',
+	'guidedtour-tour-test-launch-tour' => "Prova l'inici de la visita",
+	'guidedtour-tour-test-launch-tour-description' => 'Les guies poden iniciar altres visites guiades. Molt bo, eh?',
+	'guidedtour-tour-test-launch-using-tours' => 'Inicia una visita guiada sobre visites guiades',
+	'guidedtour-tour-gettingstarted-start-title' => 'Esteu disposats a ajudar?',
+	'guidedtour-tour-gettingstarted-start-description' => "Aquesta pàgina necessita correccions bàsiques (millorant la gramàtica, l'estil, el to o l'ortografia) per a fer-la clara i fàcil de llegir. Aquesta visita guiada li mostrarà els passos a seguir.",
+	'guidedtour-tour-gettingstarted-click-edit-title' => "Feu clic a '{{int:vector-view-edit}}'",
+	'guidedtour-tour-gettingstarted-click-edit-description' => 'Això li permetrà fer canvis en qualsevol part de la pàgina, quan estigui a punt.',
+	'guidedtour-tour-gettingstarted-click-preview-title' => 'Mostra previsualització (opcional)',
+	'guidedtour-tour-gettingstarted-click-preview-description' => "Si feu clic a '{{int:showpreview}}' podreu comprovar com es es veurà la pàgina amb els seus canvis. No us oblideu de desar.",
+	'guidedtour-tour-gettingstarted-click-save-title' => 'Gairebé heu acabat!',
+	'guidedtour-tour-gettingstarted-click-save-description' => "Feu clic a '{{int:savearticle}}' i els seus canvis seran visibles.",
+	'guidedtour-tour-gettingstarted-end-title' => 'Busqueu més tasques a fer?',
+	'guidedtour-tour-gettingstarted-end-description' => "[[Special:GettingStarted|Introducció]] s'actualitza cada hora amb noves pàgines.",
 );
 
 /** Czech (česky)
@@ -283,17 +324,34 @@ $messages['de'] = array(
 
 /** Spanish (español)
  * @author Fitoschido
+ * @author QuimGil
  */
 $messages['es'] = array(
+	'guidedtour-desc' => 'Permite a las páginas ofrecer una visita guiada para ayudar a nuevos usuarios',
+	'guidedtour-help-url' => 'Help:Visitas guiadas',
+	'guidedtour-help-guider-url' => 'Help:Visitas guiadas/guía',
 	'guidedtour-next-button' => 'Siguiente',
 	'guidedtour-okay-button' => 'Aceptar',
 	'guidedtour-tour-test-testing' => 'Pruebas',
+	'guidedtour-tour-test-test-description' => 'Esta es una prueba de la descripción. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-callouts' => 'Prueba de llamadas',
+	'guidedtour-tour-test-portal-description' => 'Esta es la página de {{int:portal}}.',
+	'guidedtour-tour-test-mediawiki-parse' => 'Prueba del procesamiento de MediaWiki',
 	'guidedtour-tour-test-description-page' => 'Probar las páginas de descripción de MediaWiki',
 	'guidedtour-tour-test-go-description-page' => 'Ir a la página de descripción',
+	'guidedtour-tour-test-launch-tour' => 'Prueba de inicio de la visita guiada',
+	'guidedtour-tour-test-launch-tour-description' => 'Las guías pueden iniciar otras visitas guiada. Muy bueno, ¿eh?',
+	'guidedtour-tour-test-launch-using-tours' => 'Iniciar una visita guiada sobre visitas guiadas',
+	'guidedtour-tour-gettingstarted-start-title' => '¿Listo para ayudar?',
+	'guidedtour-tour-gettingstarted-start-description' => 'Esta página necesita correcciones básicas (mejorar la gramática, el estilo, el tono o la ortografía) para que sea clara y fácil de leer. Esta visita guiada le mostrará los pasos a seguir.',
 	'guidedtour-tour-gettingstarted-click-edit-title' => 'Pulsa «{{int:vector-view-edit}}»',
+	'guidedtour-tour-gettingstarted-click-edit-description' => 'Esto le permitirá realizar cambios en cualquier parte de la página, cuando esté listo.',
 	'guidedtour-tour-gettingstarted-click-preview-title' => 'Previsualización (opcional)',
-	'guidedtour-tour-gettingstarted-click-save-title' => '¡Ya casi has terminado!',
-	'guidedtour-tour-gettingstarted-end-title' => '¿Buscas más que hacer?',
+	'guidedtour-tour-gettingstarted-click-preview-description' => "Clicando en '{{int:showpreview}}' puede comprobar cómo se verá la página con sus cambios. No se olvide de guardar.",
+	'guidedtour-tour-gettingstarted-click-save-title' => '¡Ya casi ha terminado!',
+	'guidedtour-tour-gettingstarted-click-save-description' => "Haga clic en '{{int:savearticle}}' y sus cambios serán visibles.",
+	'guidedtour-tour-gettingstarted-end-title' => '¿Busca más tareas que hacer?',
+	'guidedtour-tour-gettingstarted-end-description' => '[[Special:GettingStarted|Introducción]] se actualiza cada hora con nuevas páginas.',
 );
 
 /** Estonian (eesti)
@@ -455,6 +513,37 @@ $messages['hsb'] = array(
 	'guidedtour-tour-gettingstarted-click-save-description' => "Klikń na '{{int:savearticle}}' a twoje změny budu widźomne.",
 	'guidedtour-tour-gettingstarted-end-title' => 'Chceš wjace činić?',
 	'guidedtour-tour-gettingstarted-end-description' => '[[Special:GettingStarted|Prěnje kroki]] so kóždu hodźinu z nowymi stronami aktualizuje.',
+);
+
+/** Hungarian (magyar)
+ * @author Tgr
+ */
+$messages['hu'] = array(
+	'guidedtour-desc' => 'Lehetővé teszi szövegbuborékokból álló bemutatók megjelenítését az új felhasználóknak.',
+	'guidedtour-help-url' => 'Segítség:Útikalauz', # Fuzzy
+	'guidedtour-help-guider-url' => 'Segítség:Útikalauz/kalauz',
+	'guidedtour-next-button' => 'Tovább',
+	'guidedtour-okay-button' => 'Rendben',
+	'guidedtour-tour-test-testing' => 'Teszt',
+	'guidedtour-tour-test-test-description' => 'Ez egy teszt leírás. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-callouts' => 'Szövegbuborék teszt',
+	'guidedtour-tour-test-portal-description' => 'Ez a {{int:portal}}.',
+	'guidedtour-tour-test-mediawiki-parse' => 'MediaWiki parser teszt',
+	'guidedtour-tour-test-description-page' => 'MediaWiki leírás teszt',
+	'guidedtour-tour-test-go-description-page' => 'Ugrás a leírásra',
+	'guidedtour-tour-test-launch-tour' => 'Útikalauz-indítás teszt',
+	'guidedtour-tour-test-launch-tour-description' => 'Az útikalauzok újabb útikalauzokat indíthatnak. Jó, mi?',
+	'guidedtour-tour-test-launch-using-tours' => 'Útikalauz-kalauz indítása',
+	'guidedtour-tour-gettingstarted-start-title' => 'Segítenél?',
+	'guidedtour-tour-gettingstarted-start-description' => 'Ennek az oldalnak javítani kell a  helyesírásán vagy a megfogalmazásán, hogy könnyen olvasható legyen. Végigvezetünk a szükséges lépéseken.',
+	'guidedtour-tour-gettingstarted-click-edit-title' => 'Kattints a „{{int:vector-view-edit}}” feliratra',
+	'guidedtour-tour-gettingstarted-click-edit-description' => 'Ez lehetővé teszi a szócikk bármely részének megváltoztatását, ha készen állsz.',
+	'guidedtour-tour-gettingstarted-click-preview-title' => 'Előnézet (opcionális)',
+	'guidedtour-tour-gettingstarted-click-preview-description' => 'Az „{{int:showpreview}}” gombra kattintva megnézheted, hogyan néz majd ki az oldal a módosításaid után. Csak ne felejtsd el elmenteni a végén.',
+	'guidedtour-tour-gettingstarted-click-save-title' => 'Mindjárt végzünk!',
+	'guidedtour-tour-gettingstarted-click-save-description' => 'Kattints a „{{int:savearticle}}” gombra, és a változtatásaid megjelennek.',
+	'guidedtour-tour-gettingstarted-end-title' => 'Szeretnéd folytatni?',
+	'guidedtour-tour-gettingstarted-end-description' => 'Az [[Special:GettingStarted|Első lépések]] óránként új oldalakkal frissül.',
 );
 
 /** Italian (italiano)
@@ -733,6 +822,7 @@ $messages['pt'] = array(
 	'guidedtour-desc' => 'Permite que páginas proporcionem uma visita guiada por pop-ups, para ajudar os novos utilizadores.',
 	'guidedtour-help-url' => 'Help:Visitas guiadas',
 	'guidedtour-help-guider-url' => 'Help:Visitas guiadas/guia',
+	'guidedtour-next-button' => 'Próximo',
 	'guidedtour-okay-button' => 'OK',
 	'guidedtour-tour-test-testing' => 'Testando',
 	'guidedtour-tour-test-test-description' => 'Este é um teste da descrição. Lorem ipsum sit de dolor!',
@@ -764,6 +854,7 @@ $messages['pt-br'] = array(
 	'guidedtour-desc' => 'Permite que páginas proporcionem uma visita guiada por pop-ups, para ajudar os novos utilizadores.',
 	'guidedtour-help-url' => 'Help:Visitas guiadas',
 	'guidedtour-help-guider-url' => 'Help:Visitas guiadas/tutorial',
+	'guidedtour-next-button' => 'Próximo',
 	'guidedtour-okay-button' => 'Entendido',
 	'guidedtour-tour-test-testing' => 'Teste',
 	'guidedtour-tour-test-test-description' => 'Está é uma descrição teste. Lorem ipsum dolor sit!',
@@ -851,6 +942,7 @@ $messages['sv'] = array(
 	'guidedtour-okay-button' => 'Okej',
 	'guidedtour-tour-test-testing' => 'Testar',
 	'guidedtour-tour-test-test-description' => 'Detta är ett test av beskrivningen. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-callouts' => 'Testa utpekning',
 	'guidedtour-tour-test-portal-description' => 'Detta är sidan {{int:portal}}.',
 	'guidedtour-tour-test-mediawiki-parse' => 'Testa MediaWikitolkning',
 	'guidedtour-tour-test-description-page' => 'Testa sidbeskrivning för MediaWiki',
@@ -938,34 +1030,36 @@ $messages['vi'] = array(
 /** Simplified Chinese (中文（简体）‎)
  * @author Hydra
  * @author Li3939108
+ * @author Shizhao
  * @author Yfdyh000
  * @author 乌拉跨氪
  */
 $messages['zh-hans'] = array(
-	'guidedtour-desc' => '允许页面提供一个弹出式菜单来帮助新用户',
-	'guidedtour-help-url' => 'Help:有引导游览',
-	'guidedtour-help-guider-url' => '帮助:有引导游览/导游',
+	'guidedtour-desc' => '允许页面提供一个弹出式导览来引导新用户',
+	'guidedtour-help-url' => 'Help:导览',
+	'guidedtour-help-guider-url' => 'Help:导览/向导',
 	'guidedtour-next-button' => '下一步',
 	'guidedtour-okay-button' => '好的',
-	'guidedtour-tour-test-testing' => '测验',
-	'guidedtour-tour-test-test-description' => '这是一条描述演示。Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-testing' => '测试',
+	'guidedtour-tour-test-test-description' => '这是一个描述的测试。Lorem ipsum dolor sit!',
 	'guidedtour-tour-test-callouts' => '测试标注',
-	'guidedtour-tour-test-portal-description' => '这是{{int:portal}}页面。',
-	'guidedtour-tour-test-mediawiki-parse' => '测试 MediaWiki 解析器',
-	'guidedtour-tour-test-description-page' => '测试 MediaWiki 描述页面',
+	'guidedtour-tour-test-portal-description' => '这是{{int:portal}}页。',
+	'guidedtour-tour-test-mediawiki-parse' => '测试MediaWiki解析器',
+	'guidedtour-tour-test-description-page' => '测试MediaWiki描述页',
 	'guidedtour-tour-test-go-description-page' => '转到描述页面',
-	'guidedtour-tour-test-launch-tour' => '测试开始游览',
-	'guidedtour-tour-test-launch-tour-description' => '导向器可以启动其他导游。很酷对吧？',
-	'guidedtour-tour-gettingstarted-start-title' => '准备好开始了吗？',
-	'guidedtour-tour-gettingstarted-start-description' => '该页面需要基本的修编——修改其语法结构、语言风格、语言基调或错字——使其更易于阅读。本教程将告诉您该如何做。',
+	'guidedtour-tour-test-launch-tour' => '测试启动导览',
+	'guidedtour-tour-test-launch-tour-description' => '向导可以启动其他导览。很酷，对吧？',
+	'guidedtour-tour-test-launch-using-tours' => '在使用的导览上启动一个导览',
+	'guidedtour-tour-gettingstarted-start-title' => '准备好帮助了吗？',
+	'guidedtour-tour-gettingstarted-start-description' => '此页需要基本的校对（改善其语法、文风、用词或错别字）使其更易于阅读。本导览将告诉您该如何做。',
 	'guidedtour-tour-gettingstarted-click-edit-title' => '点击“{{int:vector-view-edit}}”',
 	'guidedtour-tour-gettingstarted-click-edit-description' => '当您准备好后，点击此处便可对该页的每一部分作出更改。',
 	'guidedtour-tour-gettingstarted-click-preview-title' => '预览（可选）',
-	'guidedtour-tour-gettingstarted-click-preview-description' => '点击“{{int:showpreview}}”，您将看到您在该页面作出哪些更改。请不要忘记保存。',
-	'guidedtour-tour-gettingstarted-click-save-title' => '您马上就要完成了！',
+	'guidedtour-tour-gettingstarted-click-preview-description' => '点击“{{int:showpreview}}”，您将看到您在该页面作出了哪些更改。请不要忘记保存。',
+	'guidedtour-tour-gettingstarted-click-save-title' => '您马上就完成了！',
 	'guidedtour-tour-gettingstarted-click-save-description' => '点击“{{int:savearticle}}”，您将保存您所作出的更改。',
 	'guidedtour-tour-gettingstarted-end-title' => '想要寻找更多的事情做？',
-	'guidedtour-tour-gettingstarted-end-description' => '[[Special:GettingStarted|入门指南]]每小时会有新页面。',
+	'guidedtour-tour-gettingstarted-end-description' => '[[Special:GettingStarted|入门指南]]每小时会更新页面。',
 );
 
 /** Traditional Chinese (中文（繁體）‎)
