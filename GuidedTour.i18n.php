@@ -71,6 +71,7 @@ $messages['en'] = array(
 /** Message documentation (Message documentation)
  * @author Mattflaschen
  * @author Shirayuki
+ * @author Tgr
  */
 $messages['qqq'] = array(
 	'guidedtour-desc' => '{{desc|name=Guided Tour|url=http://www.mediawiki.org/wiki/Extension:GuidedTour}}',
@@ -111,15 +112,37 @@ See also:
 	'guidedtour-tour-gettingstarted-end-title' => 'Title of final step of Getting Started tour',
 	'guidedtour-tour-gettingstarted-end-description' => 'Description of final step of Getting Started tour',
 	'guidedtour-tour-firstedit-edit-page-title' => 'Title of the step of the firstedit tour pointing to the main edit button',
-	'guidedtour-tour-firstedit-edit-page-description' => 'Description of the step of the firstedit tour pointing to the main edit button, if VisualEditor is not installed',
-	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Title of the step of the firstedit tour pointing to the main edit button, if VisualEditor is installed',
+	'guidedtour-tour-firstedit-edit-page-description' => 'Description of the step of the firstedit tour pointing to the main edit button, if VisualEditor is not installed.
+
+See also:
+* {{msg-mw|Guidedtour-tour-firstedit-edit-page-visualeditor-description}}
+* {{msg-mw|Vector-view-edit}}',
+	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Description of the step of the firstedit tour pointing to the main edit button, if VisualEditor is installed.
+
+See also:
+* {{msg-mw|Guidedtour-tour-firstedit-edit-page-description}}
+* {{msg-mw|Visualeditor-ca-editsource}}',
 	'guidedtour-tour-firstedit-edit-section-title' => 'Title of the step of the firstedit tour pointing to the section edit button',
-	'guidedtour-tour-firstedit-edit-section-description' => 'Description of the step of the firstedit tour pointing to the section edit button, if VisualEditor is not installed',
-	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Description of the step of the firstedit tour pointing to the section edit button, if VisualEditor is installed',
-	'guidedtour-tour-firstedit-preview-title' => 'Title of step explaining preview',
-	'guidedtour-tour-firstedit-preview-description' => 'Description of step explaining preview',
+	'guidedtour-tour-firstedit-edit-section-description' => 'Description of the step of the firstedit tour pointing to the section edit button, if VisualEditor is not installed
+
+See also:
+* {{msg-mw|editsection}}',
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Description of the step of the firstedit tour pointing to the section edit button, if VisualEditor is installed
+
+See also:
+* {{msg-mw|visualeditor-ca-editsource-section}}',
+	'guidedtour-tour-firstedit-preview-title' => 'Title of step explaining preview.
+
+The body for this title is {{msg-mw|Guidedtour-tour-firstedit-preview-description}}.',
+	'guidedtour-tour-firstedit-preview-description' => 'Description of step explaining preview
+
+See also:
+* {{msg-mw|showpreview}}',
 	'guidedtour-tour-firstedit-save-title' => 'Title of step explaining saving an edit',
-	'guidedtour-tour-firstedit-save-description' => 'Description of step explaining how to save',
+	'guidedtour-tour-firstedit-save-description' => 'Description of step explaining how to save
+
+See also:
+* {{msg-mw|savearticle}}',
 );
 
 /** Arabic (العربية)
@@ -181,6 +204,16 @@ $messages['ast'] = array(
 	'guidedtour-tour-gettingstarted-click-save-description' => 'Calque "{{int:savearticle}}" y los cambios sedrán visibles.',
 	'guidedtour-tour-gettingstarted-end-title' => '¿Busca más que facer?',
 	'guidedtour-tour-gettingstarted-end-description' => 'La páxina de [[Special:GettingStarted|primeros pasos]] anuevase cada hora con páxines nueves.',
+	'guidedtour-tour-firstedit-edit-page-title' => '¿Preparáu pa editar?',
+	'guidedtour-tour-firstedit-edit-page-description' => "Calque nel botón '{{int:vector-view-edit}}' pa facer los cambios.",
+	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => "Calque nel botón '{{int:visualeditor-ca-editsource}}' pa facer los cambios.",
+	'guidedtour-tour-firstedit-edit-section-title' => 'Editar sólo una seición',
+	'guidedtour-tour-firstedit-edit-section-description' => "Hai enllaces '{{int:editsection}}' pa cada seición principal d'un artículu, de mou que pue centrase sólo nesa parte.",
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => "Hai enllaces '{{int:visualeditor-ca-editsource-section}}' pa cada seición principal d'un artículu, de mou que pue centrase sólo nesa parte.",
+	'guidedtour-tour-firstedit-preview-title' => 'Vista previa de los cambios (opcional)',
+	'guidedtour-tour-firstedit-preview-description' => "Si calca '{{int:showpreview}}' podrá comprobar como se verá la páxina colos cambios. ¡Pero nun escaeza guardala!",
+	'guidedtour-tour-firstedit-save-title' => '¡Yá casi ta fecho!',
+	'guidedtour-tour-firstedit-save-description' => "Cuando tea preparáu, en calcando '{{int:savearticle}}', los cambios sedrán visibles pa toos.",
 );
 
 /** Belarusian (беларуская)
@@ -280,6 +313,7 @@ $messages['br'] = array(
 
 /** Catalan (català)
  * @author QuimGil
+ * @author Vriullop
  */
 $messages['ca'] = array(
 	'guidedtour-desc' => 'Permet a les pàgines incorporar una visita guiada per a ajudar nous usuaris.',
@@ -307,6 +341,16 @@ $messages['ca'] = array(
 	'guidedtour-tour-gettingstarted-click-save-description' => "Feu clic a '{{int:savearticle}}' i els seus canvis seran visibles.",
 	'guidedtour-tour-gettingstarted-end-title' => 'Busqueu més tasques a fer?',
 	'guidedtour-tour-gettingstarted-end-description' => "[[Special:GettingStarted|Introducció]] s'actualitza cada hora amb noves pàgines.",
+	'guidedtour-tour-firstedit-edit-page-title' => 'Disposat a editar?',
+	'guidedtour-tour-firstedit-edit-page-description' => "Cliqueu la pestanya '{{int:vector-view-edit}}' per fer els vostres canvis.",
+	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => "Cliqueu la pestanya '{{int:visualeditor-ca-editsource}}' per fer els vostres canvis.",
+	'guidedtour-tour-firstedit-edit-section-title' => "Modificació d'una secció",
+	'guidedtour-tour-firstedit-edit-section-description' => "Hi ha enllaços '{{int:editsection}}' per a cada secció en un article que permet centrar-se només en una part.",
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => "Hi ha enllaços '{{int:visualeditor-ca-editsource-section}}' per a cada secció en un article que permet centrar-se només en una part.",
+	'guidedtour-tour-firstedit-preview-title' => 'Previsualització opcional dels canvis',
+	'guidedtour-tour-firstedit-preview-description' => "Si cliqueu a '{{int:showpreview}}' podreu comprovar com quedarà la pàgina amb els vostres canvis. En acabat, no us oblideu de desar!",
+	'guidedtour-tour-firstedit-save-title' => 'Gairebé ja està!',
+	'guidedtour-tour-firstedit-save-description' => "Quan ho tingueu a punt, cliqueu a '{{int:savearticle}}' i els vostres canvis ja seran visibles per a tothom.",
 );
 
 /** Czech (česky)
@@ -347,6 +391,16 @@ $messages['de'] = array(
 	'guidedtour-tour-gettingstarted-click-save-description' => 'Klicke auf „{{int:savearticle}}“ und deine Änderungen werden sichtbar.',
 	'guidedtour-tour-gettingstarted-end-title' => 'Willst du mehr?',
 	'guidedtour-tour-gettingstarted-end-description' => 'Die Spezialseite „[[Special:GettingStarted|Anfangen]]“ wird stündlich mit neuen Seiten aktualisiert.',
+	'guidedtour-tour-firstedit-edit-page-title' => 'Bereit zum Bearbeiten?',
+	'guidedtour-tour-firstedit-edit-page-description' => 'Klicke auf „{{int:vector-view-edit}}“, um deine Änderungen durchzuführen.',
+	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Klicke auf „{{int:visualeditor-ca-editsource}}“, um deine Änderungen durchzuführen.',
+	'guidedtour-tour-firstedit-edit-section-title' => 'Nur einen Abschnitt bearbeiten',
+	'guidedtour-tour-firstedit-edit-section-description' => 'Es gibt „{{int:editsection}}“-Links für jeden Artikelabschnitt, so dass du dich nur auf diesen Teil fokussieren kannst.',
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Es gibt „{{int:visualeditor-ca-editsource-section}}“-Links für jeden Artikelabschnitt, so dass du dich nur auf diesen Teil fokussieren kannst.',
+	'guidedtour-tour-firstedit-preview-title' => 'Vorschau deiner Änderungen (optional)',
+	'guidedtour-tour-firstedit-preview-description' => 'Mit Klick auf „{{int:showpreview}}“ kannst du überprüfen, wie die Seite mit deinen Änderungen aussehen wird. Vergiss nicht zu speichern!',
+	'guidedtour-tour-firstedit-save-title' => 'Du bist fast fertig!',
+	'guidedtour-tour-firstedit-save-description' => 'Wenn du fertig bist, macht das Klicken auf „{{int:savearticle}}“ deine Änderungen für jeden sichtbar.',
 );
 
 /** Spanish (español)
@@ -408,6 +462,7 @@ $messages['fi'] = array(
 
 /** French (français)
  * @author Gomoko
+ * @author Jean-Frédéric
  * @author Ltrlg
  * @author Seb35
  * @author Trizek
@@ -440,6 +495,16 @@ $messages['fr'] = array(
 	'guidedtour-tour-gettingstarted-click-save-description' => 'Cliquez sur «”{{int:savearticle}} » et vos modifications seront visibles.',
 	'guidedtour-tour-gettingstarted-end-title' => 'Vous cherchez autre chose à faire ?',
 	'guidedtour-tour-gettingstarted-end-description' => '[[Special:GettingStarted|Pour démarrer]] est mis à jour chaque heure avec de nouvelles pages.',
+	'guidedtour-tour-firstedit-edit-page-title' => 'Prêt à modifier ?',
+	'guidedtour-tour-firstedit-edit-page-description' => 'Cliquez sur le bouton « {{int:vector-view-edit}} » pour faire vos modifications.',
+	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Cliquez sur le bouton « {{int:visualeditor-ca-editsource}} » pour faire vos modifications.',
+	'guidedtour-tour-firstedit-edit-section-title' => 'Modifier seulement une section',
+	'guidedtour-tour-firstedit-edit-section-description' => 'Il y a des liens « {{int:editsection}} » pour chaque section majeure d’un article, afin que vous puissiez vous concentrer sur cette partie.',
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Il y a des liens « {{int:visualeditor-ca-editsource-section}} » pour chaque section majeure d’un article, afin que vous puissiez vous concentrer sur cette partie.',
+	'guidedtour-tour-firstedit-preview-title' => 'Prévisualisez vos modifications (facultatif)',
+	'guidedtour-tour-firstedit-preview-description' => 'Cliquer sur « {{int:showpreview}} » vous permet de vérifier à quoi ressemblera la page avec vos modifications. Ensuite, n’oubliez pas de publier pour enregistrer.',
+	'guidedtour-tour-firstedit-save-title' => 'Vous avez presque terminé !',
+	'guidedtour-tour-firstedit-save-description' => 'Lorsque vous êtes prêt, cliquez sur « {{int:savearticle}} » pour rendre vos modifications visibles à tous.',
 );
 
 /** Galician (galego)
@@ -473,6 +538,16 @@ $messages['gl'] = array(
 	'guidedtour-tour-gettingstarted-click-save-description' => 'Prema en "{{int:savearticle}}" para facer visibles as súas modificacións.',
 	'guidedtour-tour-gettingstarted-end-title' => 'Busca outra cousa que facer?',
 	'guidedtour-tour-gettingstarted-end-description' => 'A páxina dos [[Special:GettingStarted|primeiros pasos]] actualízase cada hora con novas páxinas.',
+	'guidedtour-tour-firstedit-edit-page-title' => 'Está listo para editar?',
+	'guidedtour-tour-firstedit-edit-page-description' => 'Prema no botón "{{int:vector-view-edit}}" para facer as súas modificacións.',
+	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Prema no botón "{{int:visualeditor-ca-editsource}}" para facer as súas modificacións.',
+	'guidedtour-tour-firstedit-edit-section-title' => 'Editar só unha sección',
+	'guidedtour-tour-firstedit-edit-section-description' => 'Hai unha ligazón "{{int:editsection}}" en cada sección, para que poida centrarse só nesa parte do artigo.',
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Hai unha ligazón "{{int:visualeditor-ca-editsource-section}}" en cada sección, para que poida centrarse só nesa parte do artigo.',
+	'guidedtour-tour-firstedit-preview-title' => 'Vista previa dos cambios (opcional)',
+	'guidedtour-tour-firstedit-preview-description' => 'Premer en "{{int:showpreview}}" serve para comprobar como se verá a páxina coas modificacións. Non esqueza gardar despois!',
+	'guidedtour-tour-firstedit-save-title' => 'Xa case rematou!',
+	'guidedtour-tour-firstedit-save-description' => 'Cando remate, prema en "{{int:savearticle}}" para que os cambios sexan visibles para todos.',
 );
 
 /** Gujarati (ગુજરાતી)
@@ -547,7 +622,7 @@ $messages['hsb'] = array(
  */
 $messages['hu'] = array(
 	'guidedtour-desc' => 'Lehetővé teszi szövegbuborékokból álló bemutatók megjelenítését az új felhasználóknak.',
-	'guidedtour-help-url' => 'Segítség:Útikalauz', # Fuzzy
+	'guidedtour-help-url' => 'Help:Útikalauz',
 	'guidedtour-help-guider-url' => 'Segítség:Útikalauz/kalauz',
 	'guidedtour-next-button' => 'Tovább',
 	'guidedtour-okay-button' => 'Rendben',
@@ -571,6 +646,16 @@ $messages['hu'] = array(
 	'guidedtour-tour-gettingstarted-click-save-description' => 'Kattints a „{{int:savearticle}}” gombra, és a változtatásaid megjelennek.',
 	'guidedtour-tour-gettingstarted-end-title' => 'Szeretnéd folytatni?',
 	'guidedtour-tour-gettingstarted-end-description' => 'Az [[Special:GettingStarted|Első lépések]] óránként új oldalakkal frissül.',
+	'guidedtour-tour-firstedit-edit-page-title' => 'Készen állsz szerkeszteni?',
+	'guidedtour-tour-firstedit-edit-page-description' => 'Kattints a „{{int:vector-view-edit}}” gombra a szöveg módosításához.',
+	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Kattints a „{{int:visualeditor-ca-editsource}}” gombra a szöveg módosításához.',
+	'guidedtour-tour-firstedit-edit-section-title' => 'Egyetlen szakasz szerkesztése',
+	'guidedtour-tour-firstedit-edit-section-description' => 'A cikk minden nagyobb szakaszához tartozik egy „{{int:editsection}}” link, ha csak azzal a résszel akarsz foglalkozni.',
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'A cikk minden nagyobb szakaszához tartozik egy „{{int:visualeditor-ca-editsource-section}}” link, ha csak azzal a résszel akarsz foglalkozni.',
+	'guidedtour-tour-firstedit-preview-title' => 'Nézd meg az eredményt (opcionális)',
+	'guidedtour-tour-firstedit-preview-description' => 'Az „{{int:showpreview}}” gombra kattintva ellenőrizheted, hogyan fog kinézni az oldal a módosításaiddal együtt. Ne felejtsd el a végén elmenteni!',
+	'guidedtour-tour-firstedit-save-title' => 'Majdnem kész vagy!',
+	'guidedtour-tour-firstedit-save-description' => 'Ha végeztél, a „{{int:savearticle}}” gombra kattintva a változtatásaid bekerülnek a cikkbe.',
 );
 
 /** Italian (italiano)
@@ -603,6 +688,16 @@ $messages['it'] = array(
 	'guidedtour-tour-gettingstarted-click-save-description' => "Fai click su '{{int:savearticle}}' e le modifiche saranno visibili.",
 	'guidedtour-tour-gettingstarted-end-title' => 'Cerchi altro da fare?',
 	'guidedtour-tour-gettingstarted-end-description' => 'La [[Special:GettingStarted|guida introduttiva]] è aggiornata ogni ora con nuove pagine.',
+	'guidedtour-tour-firstedit-edit-page-title' => 'Pronto a modificare?',
+	'guidedtour-tour-firstedit-edit-page-description' => 'Clicca "{{int:vector-view-edit}}" per fare le tue modifiche.',
+	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Clicca "{{int:visualeditor-ca-editsource}}" per fare le tue modifiche.',
+	'guidedtour-tour-firstedit-edit-section-title' => 'Modifica solo una sezione',
+	'guidedtour-tour-firstedit-edit-section-description' => 'Esistono collegamenti "{{int:editsection}}" per ogni sezione principale di un articolo, così puoi concentrarti solo quella parte.',
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Esistono collegamenti "{{int:visualeditor-ca-editsource-section}}" per ogni sezione principale di un articolo, così puoi concentrarti solo quella parte.',
+	'guidedtour-tour-firstedit-preview-title' => "Vedi un'anteprima delle tue modifiche (facoltativo)",
+	'guidedtour-tour-firstedit-preview-description' => 'Cliccando su "{{int:showpreview}}" ti permette di verificare come sarà l\'aspetto della pagina con le modifiche apportate. Non ti dimenticare di salvare!',
+	'guidedtour-tour-firstedit-save-title' => 'Hai quasi finito!',
+	'guidedtour-tour-firstedit-save-description' => 'Quando sei pronto, clicca su "{{int:savearticle}}" e renderai le tue modifiche visibili a tutti.',
 );
 
 /** Japanese (日本語)
@@ -626,10 +721,14 @@ $messages['ja'] = array(
 	'guidedtour-tour-gettingstarted-click-edit-title' => '「{{int:vector-view-edit}}」をクリック',
 	'guidedtour-tour-gettingstarted-click-edit-description' => '記事の編集を開始するには「{{int:vector-view-edit}}」をクリックしてください', # Fuzzy
 	'guidedtour-tour-gettingstarted-click-preview-title' => 'プレビュー (省略可能)',
-	'guidedtour-tour-gettingstarted-click-preview-description' => '変更内容のプレビューを表示するには「{{int:showpreview}}」をクリックしてください', # Fuzzy
+	'guidedtour-tour-gettingstarted-click-preview-description' => '「{{int:showpreview}}」をクリックすると、編集結果の見た目を確認できます。保存するのを忘れないようにしてください。',
 	'guidedtour-tour-gettingstarted-click-save-title' => 'もう少しで終わります!',
 	'guidedtour-tour-gettingstarted-click-save-description' => '「{{int:savearticle}}」をクリックすると、変更内容が最新版として保存されます。',
 	'guidedtour-tour-gettingstarted-end-title' => '他にできることをお探しですか?',
+	'guidedtour-tour-firstedit-edit-page-description' => '「{{int:vector-view-edit}}」ボタンをクリックして編集します。',
+	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => '「{{int:visualeditor-ca-editsource}}」ボタンをクリックして編集します。',
+	'guidedtour-tour-firstedit-preview-title' => '変更内容のプレビュー (省略可能)',
+	'guidedtour-tour-firstedit-save-title' => 'もう少しで完了します!',
 );
 
 /** Georgian (ქართული)
@@ -665,11 +764,21 @@ $messages['ko'] = array(
 	'guidedtour-tour-gettingstarted-click-edit-title' => "'{{int:vector-view-edit}}' 클릭",
 	'guidedtour-tour-gettingstarted-click-edit-description' => '준비가 되면 문서의 어떠한 부분을 바꿀 것입니다.',
 	'guidedtour-tour-gettingstarted-click-preview-title' => '미리 보기 (선택 사항)',
-	'guidedtour-tour-gettingstarted-click-preview-description' => "'{{int:showpreview}}'를 클릭하면 문서가 어떻게 바뀌었는지 확인할 수 있습니다. 저장하는 것을 잊지 마세요.",
+	'guidedtour-tour-gettingstarted-click-preview-description' => '"{{int:showpreview}}"를 클릭하면 문서가 어떻게 바뀌었는지 확인할 수 있습니다. 저장하는 것을 잊지 마세요.',
 	'guidedtour-tour-gettingstarted-click-save-title' => '거의 끝났습니다!',
 	'guidedtour-tour-gettingstarted-click-save-description' => "'{{int:savearticle}}'을 클릭하여 바뀜을 볼 수 있습니다.",
 	'guidedtour-tour-gettingstarted-end-title' => '다른 할 것을 찾고 있습니까?',
 	'guidedtour-tour-gettingstarted-end-description' => '[[Special:GettingStarted|시작하기]]는 새 문서로 매 시간마다 업데이트합니다.',
+	'guidedtour-tour-firstedit-edit-page-title' => '편집할 준비가 되었습니까?',
+	'guidedtour-tour-firstedit-edit-page-description' => '내용을 바꾸려면 "{{int:vector-view-edit}}" 버튼을 클릭하세요.',
+	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => '내용을 바꾸려면 "{{int:visualeditor-ca-editsource}}" 버튼을 클릭하세요.',
+	'guidedtour-tour-firstedit-edit-section-title' => '문단 편집',
+	'guidedtour-tour-firstedit-edit-section-description' => '각 주요 문단 부분에 집중할 수 있도록, 문서에 각 주요 문단에 대한 "{{int:editsection}}" 링크가 있습니다.',
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => '각 주요 문단 부분에 집중할 수 있도록, 문서에 각 주요 문단에 대한 "{{int:visualeditor-ca-editsource-section}}" 링크가 있습니다.',
+	'guidedtour-tour-firstedit-preview-title' => '바뀐 내용 미리 보기 (선택 사항)',
+	'guidedtour-tour-firstedit-preview-description' => '"{{int:showpreview}}"를 클릭하면 문서가 어떻게 바뀌었는지 확인할 수 있습니다. 저장하는 것을 잊지 마세요!',
+	'guidedtour-tour-firstedit-save-title' => '거의 끝나갑니다!',
+	'guidedtour-tour-firstedit-save-description' => '준비가 되면, "{{int:savearticle}}"을 클릭하면 바꾼 내용을 모두에게 보여줍니다.',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
@@ -698,6 +807,14 @@ $messages['lb'] = array(
 	'guidedtour-tour-gettingstarted-click-save-description' => "Klickt op '{{int:savearticle}}' an Är Ännerunge sinn ze gesinn.",
 	'guidedtour-tour-gettingstarted-end-title' => 'Wëllt Dir méi maachen?',
 	'guidedtour-tour-gettingstarted-end-description' => '[[Special:GettingStarted|Fir unzefänke]] gëtt all Stonn mat neie Säiten aktualiséiert.',
+	'guidedtour-tour-firstedit-edit-page-title' => 'Sidd Dir prëtt fir ze änneren?',
+	'guidedtour-tour-firstedit-edit-page-description' => "Klickt op de Knäppchen '{{int:vector-view-edit}}' fir Är Ännerungen ze maachen.",
+	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => "Klickt op de Knäppchen '{{int:visualeditor-ca-editsource}}' fir Är Ännerungen ze maachen.",
+	'guidedtour-tour-firstedit-edit-section-title' => 'Ännert just een Abschnitt',
+	'guidedtour-tour-firstedit-preview-title' => 'Kuckt Är Ännerungen ouni ze späicheren (fakultativ)',
+	'guidedtour-tour-firstedit-preview-description' => 'Klicken op "{{int:showpreview}}", erlaabt Iech ze gesinn, wéi d\'Säit mat Ären Ännerungen ausgesäit. Vergiesst net ze späicheren.',
+	'guidedtour-tour-firstedit-save-title' => 'Dir sidd bal fäerdeg!',
+	'guidedtour-tour-firstedit-save-description' => "Wann Dir fäerdeg sidd, klickt op {{int:savearticle}}' fir Är Ännerunge jidderengem ze weisen.",
 );
 
 /** Lithuanian (lietuvių)
@@ -747,6 +864,16 @@ $messages['mk'] = array(
 	'guidedtour-tour-gettingstarted-click-save-description' => 'Стиснете на „{{int:savearticle}}“ и измените ќе бидат видливи.',
 	'guidedtour-tour-gettingstarted-end-title' => 'Сакате повеќе да направите?',
 	'guidedtour-tour-gettingstarted-end-description' => '[[Special:GettingStarted|Први чекори]] се подновува со нови страници на секој час.',
+	'guidedtour-tour-firstedit-edit-page-title' => 'Спремни сте да уредувате?',
+	'guidedtour-tour-firstedit-edit-page-description' => 'Стиснете на копчето „{{int:vector-view-edit}}“ за да ги направите саканите измени.',
+	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Стиснете на копчето „{{int:visualeditor-ca-editsource}}“ за да ги направите саканите измени.',
+	'guidedtour-tour-firstedit-edit-section-title' => 'Уредете го само овој дел',
+	'guidedtour-tour-firstedit-edit-section-description' => 'Постојат врски „{{int:editsection}}“ во секој дел (поднаслов) од статијата, за да можете да го уредите само него.',
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Постојат врски „{{int:visualeditor-ca-editsource-section}}“ во секој дел (поднаслов) од статијата, за да можете да го уредите само него.',
+	'guidedtour-tour-firstedit-preview-title' => 'Прегледајте ги измените (по желба)',
+	'guidedtour-tour-firstedit-preview-description' => 'Стискајќи на „{{int:showpreview}}“ можете да видите како ќе изгледа изменетата страница. Само не заборавајте да ја зачувате!',
+	'guidedtour-tour-firstedit-save-title' => 'Речиси сте готови!',
+	'guidedtour-tour-firstedit-save-description' => 'Кога сте готови, стиснете на „{{int:savearticle}}“ и измените ќе бидат видливи за секого.',
 );
 
 /** Malayalam (മലയാളം)
@@ -987,6 +1114,16 @@ $messages['sv'] = array(
 	'guidedtour-tour-gettingstarted-click-save-description' => "Klicka på '{{int:savearticle}}' och dina ändringar kommer att vara synliga.",
 	'guidedtour-tour-gettingstarted-end-title' => 'Letar du efter mer att göra?',
 	'guidedtour-tour-gettingstarted-end-description' => '[[Special:GettingStarted|Komma igång]] uppdateras varje timme med nya sidor.',
+	'guidedtour-tour-firstedit-edit-page-title' => 'Redo att redigera?',
+	'guidedtour-tour-firstedit-edit-page-description' => "Klicka på '{{int:vector-view-edit}}'-knappen för att göra dina ändringar.",
+	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => "Klicka på '{{int:visualeditor-ca-editsource}}'-knappen för att göra dina ändringar.",
+	'guidedtour-tour-firstedit-edit-section-title' => 'Redigera bara ett avsnitt',
+	'guidedtour-tour-firstedit-edit-section-description' => "Det finns '{{int:editsection}}'-länkar för varje större avsnitt i en artikel, så att du kan fokusera på att bara den delen.",
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => "Det finns '{{int:visualeditor-ca-editsource-avsnitt}}'-lLänkar för varje större avsnitt i en artikel, så att du kan fokusera på att bara den delen.",
+	'guidedtour-tour-firstedit-preview-title' => 'Förhandsgranska dina ändringar (valfritt)',
+	'guidedtour-tour-firstedit-preview-description' => "Genom att klicka på '{{int:showpreview}}' kan du kontrollera hur sidan ser ut med dina ändringar. Glöm bara inte att spara!",
+	'guidedtour-tour-firstedit-save-title' => 'Du är nästan klar!',
+	'guidedtour-tour-firstedit-save-description' => "När du är redo, kommer ett klick på '{{int:savearticle}}' synliggöra ändringarna för alla.",
 );
 
 /** Ukrainian (українська)
@@ -1019,6 +1156,16 @@ $messages['uk'] = array(
 	'guidedtour-tour-gettingstarted-click-save-description' => "Натисніть '{{int:savearticle}}' і зміни буде видно.",
 	'guidedtour-tour-gettingstarted-end-title' => 'Шукаєте ще роботи?',
 	'guidedtour-tour-gettingstarted-end-description' => '[[Special:GettingStarted|Перші кроки]] оновлюється щогодини з новими сторінками.',
+	'guidedtour-tour-firstedit-edit-page-title' => 'Готові редагувати?',
+	'guidedtour-tour-firstedit-edit-page-description' => "Натисніть кнопку  '{{int:vector-view-edit}}', щоб внести зміни.",
+	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => "Натисніть кнопку '{{int:visualeditor-ca-editsource}}', аби внести зміни.",
+	'guidedtour-tour-firstedit-edit-section-title' => 'Редагувати тільки в розділі',
+	'guidedtour-tour-firstedit-edit-section-description' => "Існують посилання '{{int:editsection}}' для кожного головного розділу в статті, тому ви можете зосередитися тільки на цій частині.",
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => "Існують посилання '{{int:visualeditor-ca-editsource-section}}' для кожного головного розділу в статті, тому ви можете зосередитися тільки на цій частині.",
+	'guidedtour-tour-firstedit-preview-title' => 'Переглянути ваші зміни (за бажанням)',
+	'guidedtour-tour-firstedit-preview-description' => 'Клацання "{{int:showpreview}}" дає змогу перевіряти вигляд сторінки із внесеними змінами. Тільки не забудьте зберегти!',
+	'guidedtour-tour-firstedit-save-title' => 'Майже все готове!',
+	'guidedtour-tour-firstedit-save-description' => "Коли ви будете готові, натискання '{{int:savearticle}}' зробить ваші зміни видимими для всіх.",
 );
 
 /** Vietnamese (Tiếng Việt)
@@ -1052,6 +1199,16 @@ $messages['vi'] = array(
 	'guidedtour-tour-gettingstarted-click-save-description' => 'Bấm “{{int:savearticle}}” là các thay đổi của bạn sẽ được áp dụng vào trang.',
 	'guidedtour-tour-gettingstarted-end-title' => 'Muốn biết cái gì cần làm?',
 	'guidedtour-tour-gettingstarted-end-description' => 'Trang [[Special:GettingStarted|Bắt đầu]] được cập nhật từng giờ với trang mới.',
+	'guidedtour-tour-firstedit-edit-page-title' => 'Có sẵn sàng để sửa đổi?',
+	'guidedtour-tour-firstedit-edit-page-description' => 'Bấm nút “{{int:vector-view-edit}}” để sửa đổi trang.',
+	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Bấm nút “{{int:visualeditor-ca-editsource}}” để sửa đổi trang.',
+	'guidedtour-tour-firstedit-edit-section-title' => 'Chỉ việc sửa đôi một phần trang',
+	'guidedtour-tour-firstedit-edit-section-description' => 'Mỗi tiêu đề lớn trong bài có liên kết “{{int:editsection}}” để chỉ sửa đổi phần trang đó.',
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Mỗi tiêu đề lớn trong bài có liên kết “{{int:visualeditor-ca-editsource-section}}” để nhảy tới tiêu đề khi bắt đầu sửa đổi.',
+	'guidedtour-tour-firstedit-preview-title' => 'Xem trước các thay đổi của bạn (tùy chọn)',
+	'guidedtour-tour-firstedit-preview-description' => 'Bấm “{{int:showpreview}}” để kiểm tra các thay đổi của bạn có hiển thị như bạn muốn. Đừng quên lưu trang!',
+	'guidedtour-tour-firstedit-save-title' => 'Gần xong rồi!',
+	'guidedtour-tour-firstedit-save-description' => 'Sau khi sửa đổi xong, bấm “{{int:savearticle}}” để xuất bản các thay đổi của bạn để cho mọi người xem.',
 );
 
 /** Simplified Chinese (中文（简体）‎)
@@ -1087,6 +1244,16 @@ $messages['zh-hans'] = array(
 	'guidedtour-tour-gettingstarted-click-save-description' => '点击“{{int:savearticle}}”，您将保存您所作出的更改。',
 	'guidedtour-tour-gettingstarted-end-title' => '想要寻找更多的事情做？',
 	'guidedtour-tour-gettingstarted-end-description' => '[[Special:GettingStarted|入门指南]]每小时会更新页面。',
+	'guidedtour-tour-firstedit-edit-page-title' => '准备好编辑了吗？',
+	'guidedtour-tour-firstedit-edit-page-description' => '点击“{{int:vector-view-edit}}”按钮，确认你的修改。',
+	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => '点击“{{int:visualeditor-ca-editsource}}”按钮，确认您的修改。',
+	'guidedtour-tour-firstedit-edit-section-title' => '只编辑一个章节',
+	'guidedtour-tour-firstedit-edit-section-description' => '条目中每个主要章节都有“{{int:editsection}}”链接，这可以让你只在这部分集中精神。',
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => '条目中每个主要章节都有“{{int:visualeditor-ca-editsource-section}}”链接，这可以让你集中精神于该部分。',
+	'guidedtour-tour-firstedit-preview-title' => '预览您的更改（可选）',
+	'guidedtour-tour-firstedit-preview-description' => '点击“{{int:showpreview}}”，您将看到您在该页面作出了哪些更改。请不要忘记保存！',
+	'guidedtour-tour-firstedit-save-title' => '你马上就要完成了！',
+	'guidedtour-tour-firstedit-save-description' => '当你准备好时，点击“{{int:savearticle}}”，您所做的修改会让所有人都看到。',
 );
 
 /** Traditional Chinese (中文（繁體）‎)
