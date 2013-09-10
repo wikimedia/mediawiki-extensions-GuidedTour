@@ -357,6 +357,7 @@ $messages['ca'] = array(
  * @author Mormegil
  */
 $messages['cs'] = array(
+	'guidedtour-desc' => 'Umožňuje stránkám poskytovat vyskakovacího průvodce pro pomoc novým uživatelům',
 	'guidedtour-tour-gettingstarted-end-description' => 'Na [[Special:GettingStarted|Jak začít]] se každou hodinu objevují nové stránky.',
 );
 
