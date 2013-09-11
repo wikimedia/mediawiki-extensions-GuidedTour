@@ -434,6 +434,11 @@ $messages['es'] = array(
 	'guidedtour-tour-gettingstarted-click-save-description' => "Haga clic en '{{int:savearticle}}' y sus cambios serán visibles.",
 	'guidedtour-tour-gettingstarted-end-title' => '¿Busca más tareas que hacer?',
 	'guidedtour-tour-gettingstarted-end-description' => '[[Special:GettingStarted|Introducción]] se actualiza cada hora con nuevas páginas.',
+	'guidedtour-tour-firstedit-edit-page-title' => '¿Te animas a editar?',
+	'guidedtour-tour-firstedit-edit-section-title' => 'Editar solo una sección',
+	'guidedtour-tour-firstedit-preview-title' => 'Previsualiza tus cambios (opcional)',
+	'guidedtour-tour-firstedit-save-title' => '¡Ya casi has terminado!',
+	'guidedtour-tour-firstedit-save-description' => 'Cuando termines, pulsa en «{{int:savearticle}}» para que todos puedan ver tus cambios.',
 );
 
 /** Estonian (eesti)
@@ -812,6 +817,7 @@ $messages['lb'] = array(
 	'guidedtour-tour-firstedit-edit-page-description' => "Klickt op de Knäppchen '{{int:vector-view-edit}}' fir Är Ännerungen ze maachen.",
 	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => "Klickt op de Knäppchen '{{int:visualeditor-ca-editsource}}' fir Är Ännerungen ze maachen.",
 	'guidedtour-tour-firstedit-edit-section-title' => 'Ännert just een Abschnitt',
+	'guidedtour-tour-firstedit-edit-section-description' => 'Et gëtt "{{int:editsection}}"-Linke fir all gréisseren Abschnitt an engem Artikel, sou kënnt Dir Iech just op een Deel konzentréieren.',
 	'guidedtour-tour-firstedit-preview-title' => 'Kuckt Är Ännerungen ouni ze späicheren (fakultativ)',
 	'guidedtour-tour-firstedit-preview-description' => 'Klicken op "{{int:showpreview}}", erlaabt Iech ze gesinn, wéi d\'Säit mat Ären Ännerungen ausgesäit. Vergiesst net ze späicheren.',
 	'guidedtour-tour-firstedit-save-title' => 'Dir sidd bal fäerdeg!',
