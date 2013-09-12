@@ -460,10 +460,15 @@ $messages['eu'] = array(
 );
 
 /** Finnish (suomi)
+ * @author Samoasambia
  * @author Silvonen
  */
 $messages['fi'] = array(
 	'guidedtour-tour-test-go-description-page' => 'Siirry kuvaussivulle',
+	'guidedtour-tour-gettingstarted-click-save-description' => 'Klikkaa "{{int:savearticle}}" ja muutoksesi tulevat näkyviin.',
+	'guidedtour-tour-firstedit-edit-page-title' => 'Valmis muokkaamaan?',
+	'guidedtour-tour-firstedit-preview-title' => 'Esikatsella muutoksiasi (valinnainen)',
+	'guidedtour-tour-firstedit-save-title' => 'Olet melkein valmis!',
 );
 
 /** French (français)
