@@ -87,12 +87,18 @@ Custom CSS for the GuidedTour extension.  Empty by default.',
 	'guidedtour-tour-test-test-description' => 'Sample description to show how it is used.
 {{doc-important|Do not translate the Latin "Lorem ipsum dolor sit!".}}',
 	'guidedtour-tour-test-callouts' => 'Title of second step in test tour, introducing callouts',
-	'guidedtour-tour-test-portal-description' => 'Description of second step in test tour.  It will be pointing to the page link given at {{msg-mw|portal-url}}, in the toolbox',
+	'guidedtour-tour-test-portal-description' => 'Description of second step in test tour.
+
+It will be pointing to the page link given at {{msg-mw|Portal-url}}, in the toolbox.
+
+Refers to {{msg-mw|Portal}}.',
 	'guidedtour-tour-test-mediawiki-parse' => 'Description of third step in test tour',
 	'guidedtour-tour-test-wikitext-description' => '{{doc-important|Do not translate "<code>onShow</code>" or "<code>parseDescription</code>", because they are JavaScript method names.}}
 Title of third step in test tour.
 
-Don\'t be concerned if [[{{MediaWiki:Guidedtour-help-url}}]] does not yet exist.',
+Don\'t be concerned if [[{{MediaWiki:Guidedtour-help-url}}]] does not yet exist.
+
+Refers to {{msg-mw|Guidedtour-help-url}}.',
 	'guidedtour-tour-test-description-page' => 'Title of fourth step in test tour',
 	'guidedtour-tour-test-go-description-page' => 'Text of the button pointing to [[{{MediaWiki:Guidedtour-help-url}}]]',
 	'guidedtour-tour-test-launch-tour' => 'Title of fifth step in test tour',
@@ -1074,6 +1080,10 @@ $messages['roa-tara'] = array(
 	'guidedtour-tour-gettingstarted-click-save-description' => "Cazze '{{int:savearticle}}' e le cangiaminde tune devendane visibbile.",
 	'guidedtour-tour-gettingstarted-end-title' => 'Ste cirche otre da fà?',
 	'guidedtour-tour-gettingstarted-end-description' => '[[Special:GettingStarted|Pe accumenzà]] avène aggiornate ogne ore cu pàggene nove.',
+	'guidedtour-tour-firstedit-edit-page-title' => 'Pronde a cangià?',
+	'guidedtour-tour-firstedit-edit-page-description' => 'Cazze \'u buttone "{{int:vector-view-edit}}" pe fà le cangiaminde.',
+	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Cazze \'u buttone "{{int:visualeditor-ca-editsource}}" pe fà le cangiaminde.',
+	'guidedtour-tour-firstedit-edit-section-title' => "Cange giuste 'na sezione",
 );
 
 /** Russian (русский)
