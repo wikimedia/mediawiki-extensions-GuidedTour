@@ -1084,6 +1084,12 @@ $messages['roa-tara'] = array(
 	'guidedtour-tour-firstedit-edit-page-description' => 'Cazze \'u buttone "{{int:vector-view-edit}}" pe fà le cangiaminde.',
 	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Cazze \'u buttone "{{int:visualeditor-ca-editsource}}" pe fà le cangiaminde.',
 	'guidedtour-tour-firstedit-edit-section-title' => "Cange giuste 'na sezione",
+	'guidedtour-tour-firstedit-edit-section-description' => 'Stonne collegaminde "{{int:editsection}}" pe ogne sezione prengepàle jndr\'à vôsce, accussì tu puè congendrarte sus a quedda parte.',
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Stonne collegaminde "{{int:visualeditor-ca-editsource-section}}" pe ogne sezione prengepàle jndr\'à vôsce, accussì tu puè congendrarte sus a quedda parte.',
+	'guidedtour-tour-firstedit-preview-title' => "Fà vedè l'andeprime de le cangiaminde tune (facoltative)",
+	'guidedtour-tour-firstedit-preview-description' => "Cazzanne '{{int:showpreview}}' te permette de verificà ca 'a pàgene iesse cu le cangiaminde tune. No te demendicà de reggistrà.",
+	'guidedtour-tour-firstedit-save-title' => "Tu l'è ggià fatte!",
+	'guidedtour-tour-firstedit-save-description' => 'Quanne si pronde, cazzanne "{{int:savearticle}}" face devendà le cangiaminde tune visibbile a tutte.',
 );
 
 /** Russian (русский)
