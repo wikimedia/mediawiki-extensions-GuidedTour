@@ -675,6 +675,46 @@ $messages['hu'] = array(
 	'guidedtour-tour-firstedit-save-description' => 'Ha végeztél, a „{{int:savearticle}}” gombra kattintva a változtatásaid bekerülnek a cikkbe.',
 );
 
+/** Interlingua (interlingua)
+ * @author McDutchie
+ */
+$messages['ia'] = array(
+	'guidedtour-desc' => 'Permitte que un guida appare in paginas pro assister nove usatores',
+	'guidedtour-help-url' => 'Help:Visitas guidate',
+	'guidedtour-help-guider-url' => 'Help:Visitas guidate/guida',
+	'guidedtour-next-button' => 'Sequente',
+	'guidedtour-okay-button' => 'OK',
+	'guidedtour-tour-test-testing' => 'Test',
+	'guidedtour-tour-test-test-description' => 'Isto es un test del description. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-portal-description' => 'Iste es le pagina del {{int:portal}}.',
+	'guidedtour-tour-test-mediawiki-parse' => 'Test del analysator syntactic de MediaWiki',
+	'guidedtour-tour-test-description-page' => 'Test del paginas de description de MediaWiki',
+	'guidedtour-tour-test-go-description-page' => 'Vader al pagina de description',
+	'guidedtour-tour-test-launch-tour' => 'Test del lanceamento del visita guidate',
+	'guidedtour-tour-test-launch-tour-description' => 'Le guidas pote lancear altere visitas guidate. Multo bon, nonne?',
+	'guidedtour-tour-test-launch-using-tours' => 'Lancear un visita guidate sur le uso de visitas guidate',
+	'guidedtour-tour-gettingstarted-start-title' => 'Preste a adjutar?',
+	'guidedtour-tour-gettingstarted-start-description' => 'Iste pagina ha besonio de redaction basic (meliorar le grammatica, stilo, tono o orthographia) pro render lo clar e facile a leger. Iste visita guidate demonstra le passos a prender.',
+	'guidedtour-tour-gettingstarted-click-edit-title' => 'Clicca sur "{{int:vector-view-edit}}"',
+	'guidedtour-tour-gettingstarted-click-edit-description' => 'Isto te permitte modificar omne parte del pagina, quando tu es preste.',
+	'guidedtour-tour-gettingstarted-click-preview-title' => 'Previsualisation (optional)',
+	'guidedtour-tour-gettingstarted-click-preview-description' => 'Cliccar sur "{{int:showpreview}}" permitte verificar le aspecto del pagina con tu modificationes. Solmente non oblida de salveguardar lo.',
+	'guidedtour-tour-gettingstarted-click-save-title' => 'Tu ha quasi finite!',
+	'guidedtour-tour-gettingstarted-click-save-description' => 'Clicca sur "{{int:savearticle}}" e tu modificationes essera visibile.',
+	'guidedtour-tour-gettingstarted-end-title' => 'Cerca altere cosas a facer?',
+	'guidedtour-tour-gettingstarted-end-description' => '[[Special:GettingStarted|Prime passos]] es actualisate cata hora con nove paginas.',
+	'guidedtour-tour-firstedit-edit-page-title' => 'Preste a modificar?',
+	'guidedtour-tour-firstedit-edit-page-description' => 'Clicca sur le button "{{int:vector-view-edit}}" pro facer tu cambiamentos.',
+	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Clicca sur le button "{{int:visualeditor-ca-editsource}}" pro facer tu cambiamentos.',
+	'guidedtour-tour-firstedit-edit-section-title' => 'Modificar solmente un section',
+	'guidedtour-tour-firstedit-edit-section-description' => 'Il ha ligamines "{{int:editsection}}" pro cata major section in un articulo, de sorta que tu pote concentrar te a iste parte.',
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Il ha ligamines "{{int:visualeditor-ca-editsource-section}}" pro cata major section in un articulo, de sorta que tu pote concentrar te a iste parte.',
+	'guidedtour-tour-firstedit-preview-title' => 'Previsualisar tu modificationes (optional)',
+	'guidedtour-tour-firstedit-preview-description' => 'Cliccar sur "{{int:showpreview}}" permitte verificar le aspecto del pagina con tu modificationes. Solmente non oblida de salveguardar lo!',
+	'guidedtour-tour-firstedit-save-title' => 'Tu ha quasi finite!',
+	'guidedtour-tour-firstedit-save-description' => 'Quando tu es preste, un clic sur "{{int:savearticle}}" rendera tu cambiamentos visibile a tote le mundo.',
+);
+
 /** Italian (italiano)
  * @author Beta16
  * @author Gianfranco
