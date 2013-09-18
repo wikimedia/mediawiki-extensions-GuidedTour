@@ -28,6 +28,7 @@
 	isVeInstalled = !!mw.libs.ve;
 	gt.defineTour( {
 		name: 'firstedit',
+		shouldLog: true,
 		steps: [ {
 			titlemsg: 'guidedtour-tour-firstedit-edit-page-title',
 			descriptionmsg: isVeInstalled ?
