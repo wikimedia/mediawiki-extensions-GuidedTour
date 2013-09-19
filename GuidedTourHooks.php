@@ -203,7 +203,7 @@ class GuidedTourHooks {
 	 */
 	public static function onResourceLoaderRegisterModules( &$resourceLoader ) {
 		$dir = __DIR__ . DIRECTORY_SEPARATOR;
-		$module = array(
+		$firstEditModule = array(
 			'scripts' => 'firstedit.js',
 			'localBasePath' => $dir . 'modules/tours',
 			'remoteExtPath' => 'GuidedTour/modules/tours',
@@ -225,15 +225,37 @@ class GuidedTourHooks {
 		// Check whether VE is installed to determine which messages to add.
 		if ( class_exists( 'VisualEditorHooks' ) ) {
 			array_push(
-				$module['messages'],
+				$firstEditModule['messages'],
 				'visualeditor-ca-editsource',
 				'guidedtour-tour-firstedit-edit-page-visualeditor-description',
 				'visualeditor-ca-editsource-section',
 				'guidedtour-tour-firstedit-edit-section-visualeditor-description'
 			);
+
+			$resourceLoader->register( 'ext.guidedTour.tour.firsteditve', array(
+					'scripts' => 'firsteditve.js',
+					'localBasePath' => $dir . 'modules/tours',
+					'remoteExtPath' => 'GuidedTour/modules/tours',
+					'dependencies' => array(
+						'ext.guidedTour',
+					),
+					'messages' => array(
+						'vector-view-edit',
+						'visualeditor-beta-appendix',
+						'visualeditor-toolbar-savedialog',
+						'editsection',
+						'guidedtour-tour-firstedit-edit-page-title',
+						'guidedtour-tour-firsteditve-edit-page-description',
+						'guidedtour-tour-firstedit-edit-section-title',
+						'guidedtour-tour-firsteditve-edit-section-description',
+						'guidedtour-tour-firstedit-save-title',
+						'guidedtour-tour-firsteditve-save-description',
+					),
+				)
+			);
 		} else {
 			array_push(
-				$module['messages'],
+				$firstEditModule['messages'],
 				'vector-view-edit',
 				'guidedtour-tour-firstedit-edit-page-description',
 				'editsection',
@@ -241,6 +263,6 @@ class GuidedTourHooks {
 			);
 		}
 
-		$resourceLoader->register( 'ext.guidedTour.tour.firstedit', $module );
+		$resourceLoader->register( 'ext.guidedTour.tour.firstedit', $firstEditModule );
 	}
 }

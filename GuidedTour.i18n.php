@@ -66,6 +66,10 @@ $messages['en'] = array(
 	'guidedtour-tour-firstedit-preview-description' => 'Clicking "{{int:showpreview}}" allows you to check what the page will look like with your changes. Just don\'t forget to save!',
 	'guidedtour-tour-firstedit-save-title' => 'You\'re almost done!',
 	'guidedtour-tour-firstedit-save-description' => 'When you\'re ready, clicking "{{int:savearticle}}" will make your changes visible for everyone.',
+
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Click the "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" button to make your changes.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'There are "{{int:editsection}} {{int:visualeditor-beta-appendix}}" links for each major section in an article, so you can focus on just that part.',
+	'guidedtour-tour-firsteditve-save-description' => 'When you\'re ready, clicking "{{int:visualeditor-toolbar-savedialog}}" will make your changes visible for everyone.',
 );
 
 /** Message documentation (Message documentation)
@@ -149,6 +153,10 @@ See also:
 
 See also:
 * {{msg-mw|savearticle}}',
+
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Description of the step of the firsteditve tour pointing to the VE edit button',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Description of the step of the firsteditve tour pointing to the VE section edit button',
+	'guidedtour-tour-firsteditve-save-description' => 'Description of step of the firsteditve tour explaining how to save in VE',
 );
 
 /** Arabic (العربية)
