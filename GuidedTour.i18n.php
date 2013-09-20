@@ -153,9 +153,16 @@ See also:
 
 See also:
 * {{msg-mw|savearticle}}',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Description of the step of the firsteditve tour pointing to the VisualEditor edit button.
 
-	'guidedtour-tour-firsteditve-edit-page-description' => 'Description of the step of the firsteditve tour pointing to the VE edit button',
-	'guidedtour-tour-firsteditve-edit-section-description' => 'Description of the step of the firsteditve tour pointing to the VE section edit button',
+Refers to:
+* {{msg-mw|Vector-view-edit}}
+* {{msg-mw|Visualeditor-beta-appendix}}',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Description of the step of the firsteditve tour pointing to the VE section edit button
+
+Refers to:
+* {{msg-mw|Editsection}}
+* {{msg-mw|Visualeditor-beta-appendix}}',
 	'guidedtour-tour-firsteditve-save-description' => 'Description of step of the firsteditve tour explaining how to save in VE',
 );
 
@@ -330,7 +337,7 @@ $messages['br'] = array(
  * @author Vriullop
  */
 $messages['ca'] = array(
-	'guidedtour-desc' => 'Permet a les pàgines incorporar una visita guiada per a ajudar nous usuaris.',
+	'guidedtour-desc' => 'Permet incorporar una visita guiada a les pàgines per a ajudar nous usuaris.',
 	'guidedtour-help-url' => 'Help:Visites guiades',
 	'guidedtour-help-guider-url' => 'Help:Visites guiades/guia',
 	'guidedtour-next-button' => 'Següent',
@@ -365,6 +372,9 @@ $messages['ca'] = array(
 	'guidedtour-tour-firstedit-preview-description' => "Si cliqueu a '{{int:showpreview}}' podreu comprovar com quedarà la pàgina amb els vostres canvis. En acabat, no us oblideu de desar!",
 	'guidedtour-tour-firstedit-save-title' => 'Gairebé ja està!',
 	'guidedtour-tour-firstedit-save-description' => "Quan ho tingueu a punt, cliqueu a '{{int:savearticle}}' i els vostres canvis ja seran visibles per a tothom.",
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Feu clic a "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" per a fer els vostres canvis.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Disposeu d\'enllaços "{{int:editsection}} {{int:visualeditor-beta-appendix}}" a cada secció principal, per a concentrar-vos només en la part que vulgueu modificar.',
+	'guidedtour-tour-firsteditve-save-description' => 'Quan estigueu a punt, fent clic a "{{int:visualeditor-toolbar-savedialog}}" fareu els vostres canvis visibles per a tothom.',
 );
 
 /** Czech (česky)
@@ -416,6 +426,9 @@ $messages['de'] = array(
 	'guidedtour-tour-firstedit-preview-description' => 'Mit Klick auf „{{int:showpreview}}“ kannst du überprüfen, wie die Seite mit deinen Änderungen aussehen wird. Vergiss nicht zu speichern!',
 	'guidedtour-tour-firstedit-save-title' => 'Du bist fast fertig!',
 	'guidedtour-tour-firstedit-save-description' => 'Wenn du fertig bist, macht das Klicken auf „{{int:savearticle}}“ deine Änderungen für jeden sichtbar.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Klicke auf „{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}“, um deine Änderungen durchzuführen.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Für jeden Artikelabschnitt gibt es die Links „{{int:editsection}} {{int:visualeditor-beta-appendix}}“, so dass du dich nur auf diesen Teil konzentrieren kannst.',
+	'guidedtour-tour-firsteditve-save-description' => 'Wenn du fertig bist, klicke auf „{{int:visualeditor-toolbar-savedialog}}“, um deine Änderungen für jeden sichtbar zu machen.',
 );
 
 /** Spanish (español)
@@ -530,6 +543,9 @@ $messages['fr'] = array(
 	'guidedtour-tour-firstedit-preview-description' => 'Cliquer sur « {{int:showpreview}} » vous permet de vérifier à quoi ressemblera la page avec vos modifications. Ensuite, n’oubliez pas de publier pour enregistrer.',
 	'guidedtour-tour-firstedit-save-title' => 'Vous avez presque terminé !',
 	'guidedtour-tour-firstedit-save-description' => 'Lorsque vous êtes prêt, cliquez sur « {{int:savearticle}} » pour rendre vos modifications visibles à tous.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Cliquez sur le bouton « {{int:vector-view-edit}} {{int:visualeditor-beta-appendix}} » pour effectuer vos modifications.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Il y a des liens « {{int:editsection}} {{int:visualeditor-beta-appendix}} » pour chaque section principale dans un article, de sorte que vous puissiez vous focaliser uniquement sur cette partie.',
+	'guidedtour-tour-firsteditve-save-description' => 'Quand vous serez prêt, cliquer sur « {{int:visualeditor-toolbar-savedialog}} » rendra vos modifications visibles pour tout le monde.',
 );
 
 /** Galician (galego)
@@ -573,6 +589,9 @@ $messages['gl'] = array(
 	'guidedtour-tour-firstedit-preview-description' => 'Premer en "{{int:showpreview}}" serve para comprobar como se verá a páxina coas modificacións. Non esqueza gardar despois!',
 	'guidedtour-tour-firstedit-save-title' => 'Xa case rematou!',
 	'guidedtour-tour-firstedit-save-description' => 'Cando remate, prema en "{{int:savearticle}}" para que os cambios sexan visibles para todos.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Prema no botón "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" para realizar as súas modificacións.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Hai unha ligazón "{{int:editsection}} {{int:visualeditor-beta-appendix}}" en cada sección, para que poida centrarse só nesa parte do artigo.',
+	'guidedtour-tour-firsteditve-save-description' => 'Cando remate, prema en "{{int:visualeditor-toolbar-savedialog}}" para que os cambios sexan visibles para todos.',
 );
 
 /** Gujarati (ગુજરાતી)
@@ -763,6 +782,9 @@ $messages['it'] = array(
 	'guidedtour-tour-firstedit-preview-description' => 'Cliccando su "{{int:showpreview}}" ti permette di verificare come sarà l\'aspetto della pagina con le modifiche apportate. Non ti dimenticare di salvare!',
 	'guidedtour-tour-firstedit-save-title' => 'Hai quasi finito!',
 	'guidedtour-tour-firstedit-save-description' => 'Quando sei pronto, clicca su "{{int:savearticle}}" e renderai le tue modifiche visibili a tutti.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Clicca "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" per fare le tue modifiche.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Esistono collegamenti "{{int:editsection}} {{int:visualeditor-beta-appendix}}" per ogni sezione principale di un articolo, così puoi concentrarti solo quella parte.',
+	'guidedtour-tour-firsteditve-save-description' => 'Quando sei pronto, clicca su "{{int:visualeditor-toolbar-savedialog}}" e renderai le tue modifiche visibili a tutti.',
 );
 
 /** Japanese (日本語)
@@ -794,6 +816,8 @@ $messages['ja'] = array(
 	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => '「{{int:visualeditor-ca-editsource}}」ボタンをクリックして編集します。',
 	'guidedtour-tour-firstedit-preview-title' => '変更内容のプレビュー (省略可能)',
 	'guidedtour-tour-firstedit-save-title' => 'もう少しで完了します!',
+	'guidedtour-tour-firsteditve-edit-page-description' => '変更するには、「{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}」をクリックしてください。',
+	'guidedtour-tour-firsteditve-edit-section-description' => '主要な節それぞれに「{{int:editsection}} {{int:visualeditor-beta-appendix}}」リンクがあるため、その節のみに着目できます。',
 );
 
 /** Georgian (ქართული)
@@ -1242,6 +1266,9 @@ $messages['uk'] = array(
 	'guidedtour-tour-firstedit-preview-description' => 'Клацання "{{int:showpreview}}" дає змогу перевіряти вигляд сторінки із внесеними змінами. Тільки не забудьте зберегти!',
 	'guidedtour-tour-firstedit-save-title' => 'Майже все готове!',
 	'guidedtour-tour-firstedit-save-description' => "Коли ви будете готові, натискання '{{int:savearticle}}' зробить ваші зміни видимими для всіх.",
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Натисніть на кнопку "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}", аби внести свої зміни.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Існують посилання "{{int:editsection}} {{int:visualeditor-beta-appendix}}" для кожного головного розділу в статті, тому ви можете зосередитися тільки на цій частині.',
+	'guidedtour-tour-firsteditve-save-description' => 'Коли ви будете готові, натискання "{{int:visualeditor-toolbar-savedialog}}" зробить ваші зміни видимими для всіх.',
 );
 
 /** Vietnamese (Tiếng Việt)
@@ -1285,6 +1312,22 @@ $messages['vi'] = array(
 	'guidedtour-tour-firstedit-preview-description' => 'Bấm “{{int:showpreview}}” để kiểm tra các thay đổi của bạn có hiển thị như bạn muốn. Đừng quên lưu trang!',
 	'guidedtour-tour-firstedit-save-title' => 'Gần xong rồi!',
 	'guidedtour-tour-firstedit-save-description' => 'Sau khi sửa đổi xong, bấm “{{int:savearticle}}” để xuất bản các thay đổi của bạn để cho mọi người xem.',
+);
+
+/** Wu (吴语)
+ * @author 十弌
+ */
+$messages['wuu'] = array(
+	'guidedtour-tour-gettingstarted-click-edit-title' => '點 "{{int:vector-view-edit}}"',
+	'guidedtour-tour-gettingstarted-click-preview-description' => '點 "{{int:showpreview}}" 讓爾望得著改爻之後頁面個變化，休要忘記爻保存起。',
+	'guidedtour-tour-gettingstarted-click-save-description' => '點 "{{int:savearticle}}" 爾個改動便保存爻。',
+	'guidedtour-tour-firstedit-edit-page-title' => '準備開改來爻朆？',
+	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => '點 "{{int:visualeditor-ca-editsource}}" 捺鈕準定改動。',
+	'guidedtour-tour-firstedit-edit-section-title' => '便改一個章節',
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => '文章各個主要章節都有 "{{int:visualeditor-ca-editsource-section}}" 鏈接, 爾好專門入心一箇部份。',
+	'guidedtour-tour-firstedit-preview-title' => '改動望望相起',
+	'guidedtour-tour-firstedit-save-title' => '爾便要妝了滯爻！',
+	'guidedtour-tour-firstedit-save-description' => '準備起爻，點"{{int:savearticle}}"大家人便都望得著爾個改動爻。',
 );
 
 /** Simplified Chinese (中文（简体）‎)
