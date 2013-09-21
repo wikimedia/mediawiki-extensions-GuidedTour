@@ -487,12 +487,13 @@ $messages['eu'] = array(
 );
 
 /** Finnish (suomi)
+ * @author Nike
  * @author Samoasambia
  * @author Silvonen
  */
 $messages['fi'] = array(
 	'guidedtour-tour-test-go-description-page' => 'Siirry kuvaussivulle',
-	'guidedtour-tour-gettingstarted-click-save-description' => 'Klikkaa "{{int:savearticle}}" ja muutoksesi tulevat näkyviin.',
+	'guidedtour-tour-gettingstarted-click-save-description' => 'Napsauta »{{int:savearticle}}» ja muutoksesi tulevat näkyviin.',
 	'guidedtour-tour-firstedit-edit-page-title' => 'Valmis muokkaamaan?',
 	'guidedtour-tour-firstedit-preview-title' => 'Esikatsella muutoksiasi (valinnainen)',
 	'guidedtour-tour-firstedit-save-title' => 'Olet melkein valmis!',
@@ -905,6 +906,9 @@ $messages['lb'] = array(
 	'guidedtour-tour-firstedit-preview-description' => 'Klicken op "{{int:showpreview}}", erlaabt Iech ze gesinn, wéi d\'Säit mat Ären Ännerungen ausgesäit. Vergiesst net ze späicheren.',
 	'guidedtour-tour-firstedit-save-title' => 'Dir sidd bal fäerdeg!',
 	'guidedtour-tour-firstedit-save-description' => "Wann Dir fäerdeg sidd, klickt op {{int:savearticle}}' fir Är Ännerunge jidderengem ze weisen.",
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Klickt op de "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" Knäppche fir e maachen.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Et gëtt "{{int:editsection}} {{int:visualeditor-beta-appendix}}"-Linke fir all gréisseren Abschnitt an engem Artikel, sou kënnt Dir Iech just op een Deel konzentréieren.',
+	'guidedtour-tour-firsteditve-save-description' => 'Wann Dir fäerdeg sidd, klickt op "{{int:visualeditor-toolbar-savedialog}}" fir Är Ännerunge fir jidderee visibel ze maachen.',
 );
 
 /** Lithuanian (lietuvių)
@@ -964,6 +968,9 @@ $messages['mk'] = array(
 	'guidedtour-tour-firstedit-preview-description' => 'Стискајќи на „{{int:showpreview}}“ можете да видите како ќе изгледа изменетата страница. Само не заборавајте да ја зачувате!',
 	'guidedtour-tour-firstedit-save-title' => 'Речиси сте готови!',
 	'guidedtour-tour-firstedit-save-description' => 'Кога сте готови, стиснете на „{{int:savearticle}}“ и измените ќе бидат видливи за секого.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Стиснете на копчето „{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}“ за да ги направите промените.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Секој поважен дел (поднаслов) од статијата има врски „{{int:editsection}} {{int:visualeditor-beta-appendix}}“ за да можете да му се посветите само на тој дел.',
+	'guidedtour-tour-firsteditve-save-description' => 'Кога ќе сте готови, стиснете на „{{int:visualeditor-toolbar-savedialog}}“ и така промените ќе станат видливи за секого.',
 );
 
 /** Malayalam (മലയാളം)
@@ -1312,6 +1319,9 @@ $messages['vi'] = array(
 	'guidedtour-tour-firstedit-preview-description' => 'Bấm “{{int:showpreview}}” để kiểm tra các thay đổi của bạn có hiển thị như bạn muốn. Đừng quên lưu trang!',
 	'guidedtour-tour-firstedit-save-title' => 'Gần xong rồi!',
 	'guidedtour-tour-firstedit-save-description' => 'Sau khi sửa đổi xong, bấm “{{int:savearticle}}” để xuất bản các thay đổi của bạn để cho mọi người xem.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Bấm nút “{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}” để thực hiện các thay đổi.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Mỗi tiêu đề lớn trong bài có liên kết “{{int:editsection}} {{int:visualeditor-beta-appendix}}” để nhảy tới tiêu đề khi bắt đầu sửa đổi.',
+	'guidedtour-tour-firsteditve-save-description' => 'Sau khi sửa đổi xong, bấm “{{int:visualeditor-toolbar-savedialog}}” để xuất bản các thay đổi của bạn để cho mọi người xem.',
 );
 
 /** Wu (吴语)
