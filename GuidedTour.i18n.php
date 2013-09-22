@@ -902,6 +902,7 @@ $messages['lb'] = array(
 	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => "Klickt op de Knäppchen '{{int:visualeditor-ca-editsource}}' fir Är Ännerungen ze maachen.",
 	'guidedtour-tour-firstedit-edit-section-title' => 'Ännert just een Abschnitt',
 	'guidedtour-tour-firstedit-edit-section-description' => 'Et gëtt "{{int:editsection}}"-Linke fir all gréisseren Abschnitt an engem Artikel, sou kënnt Dir Iech just op een Deel konzentréieren.',
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Et gëtt "{{int:visualeditor-ca-editsource-section}}"-Linke fir all gréisseren Abschnitt an engem Artikel, sou kënnt Dir Iech just op een Deel konzentréieren.',
 	'guidedtour-tour-firstedit-preview-title' => 'Kuckt Är Ännerungen ouni ze späicheren (fakultativ)',
 	'guidedtour-tour-firstedit-preview-description' => 'Klicken op "{{int:showpreview}}", erlaabt Iech ze gesinn, wéi d\'Säit mat Ären Ännerungen ausgesäit. Vergiesst net ze späicheren.',
 	'guidedtour-tour-firstedit-save-title' => 'Dir sidd bal fäerdeg!',
