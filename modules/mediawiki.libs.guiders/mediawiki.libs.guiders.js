@@ -3,22 +3,19 @@
 // * Camel case - Remove the deprecated public camel case identifiers.
 // * Script URL, we need to determine the replacement, either a wrapper of the onclick that
 // calls preventDefault, or another element with no default.
-/**
+/*!
  * guiders.js
  *
- * version 1.2.8
- *
- * Developed at Optimizely. (www.optimizely.com)
+ * Developed by Jeff Pickhardt (jeff+pickhardt@optimizely.com) at Optimizely. (www.optimizely.com)
  * We make A/B testing you'll actually use.
  *
  * Released under the Apache License 2.0.
  * www.apache.org/licenses/LICENSE-2.0.html
  *
- * Questions about Guiders?
- * You may email me (Jeff Pickhardt) at jeff+pickhardt@optimizely.com
- *
  * Questions about Optimizely should be sent to:
  * sales@optimizely.com or support@optimizely.com
+ *
+ * Further developed by the Growth Team at Wikimedia.
  *
  * Enjoy!
  *
@@ -28,23 +25,31 @@
  *
  * - resume(): start up tour from current place in ookie (if set). This is useful when your tour leaves the page you are on. Unlike show, it will skip steps that need to be skipped.
  * - initGuider(): Allows for initializing Guiders without actually creating them (useful when guider is not in the DOM yet. Avoids error: base is null [Break On This Error] var top = base.top;
-
+ *
  * - autoAdvance: property allows binding to an element (and event) to auto-advance the guider. This is a combination of onShow() binding plus removing of bind when next is done.
  * - shouldSkip: property defines a function handler forces a skip of this step if function returns true.
  * - overlay "error": If not set to true, this defines the class of the overlay. (This is useful for coloring the background of the overlay red on error.
  * - onShow: If this returns a guider object, then it can shunt (skip) the rest of show()
  *
- * @author tychay@php.net mflaschen@wikimedia.org Patches for Wikimedia Guided Tour
- * @todo Merge in this https://github.com/jeff-optimizely/Guiders-JS/pull/33 and modify so it so it checks either visibility or DOM
- * @todo: add pulsing jquery.pulse https://github.com/jamespadolsey/jQuery-Plugins/tree/master/pulse/
- * @see https://github.com/wikimedia/mediawiki-extensions-GuidedTour-guiders and https://github.com/wikimedia/mediawiki-extensions-GuidedTour
+ * See https://www.mediawiki.org/wiki/Extension:GuidedTour and https://git.wikimedia.org/summary/mediawiki%2Fextensions%2FGuidedTour.git
+ *
+ * Previously, there was a MediaWiki-specific repository for
+ * Guiders (based on the upstream one).  For earlier version control history, see
+ * https://git.wikimedia.org/log/mediawiki%2Fextensions%2FGuidedTour%2Fguiders.git
  */
-
-// Previously, there was a MediaWiki-specific repository for
-// Guiders (based on the upstream one).	 For earlier version control history, see
-// https://git.wikimedia.org/log/mediawiki%2Fextensions%2FGuidedTour%2Fguiders.git
-
-// TODO (mattflaschen, 2013-07-30):
+/**
+ * Code for rendering and low-level code of moving between steps.
+ *
+ * You should use the public mw.guidedTour API when possible, rather then calling methods
+ * from this file directly.  The API of this file will change.
+ *
+ * @author jeff+pickhardt@optimizely.com
+ * @author mflaschen@wikimedia.org
+ * @author tychay@php.net
+ *
+ * @class mw.libs.guiders
+ * @singleton
+ */
 mediaWiki.libs.guiders = (function($) {
 	var guiders, _resizing;
 
@@ -691,16 +696,15 @@ mediaWiki.libs.guiders = (function($) {
 	};
 
 	/**
-	 Skips as needed then updates the displayed guider
-
-	 If it does skip:
-	 * It hides all currently showing guiders.
-	 * If it lands on a new guider, it shows that.
-
-	 The startGuider parameter is optional and defaults to the guider
-	 corresponding to guiders._currentGuiderID
-
-	 Returns true if it skipped, false otherwise
+	 * Skips as needed then updates the displayed guider.
+	 *
+	 * If it does skip, it hides all currently showing guiders. If it
+	 * lands on a new guider, it shows that.
+	 *
+	 * @param {Object} [startGuider] The guider to start skipping
+	 *  from. Defaults to the guider corresponding to
+	 *  guiders._currentGuiderID
+	 * @return {boolean} true if it skipped, false otherwise
 	 */
 	guiders.skipThenUpdateDisplay = function(startGuider) {
 		var endGuider, skipped, omitHidingOverlay;
@@ -853,11 +857,9 @@ mediaWiki.libs.guiders = (function($) {
 		}
 		guiders._lastCreatedGuiderID = myGuider.id;
 
-		/**
-		 * If the URL of the current window is of the form
-		 * http://www.myurl.com/mypage.html#guider=id
-		 * then show this guider.
-		 */
+		// If the URL of the current window is of the form
+		// http://www.myurl.com/mypage.html#guider=id
+		// then show this guider.
 		if (myGuider.isHashable) {
 			guiders._showIfHashed(myGuider);
 		}
