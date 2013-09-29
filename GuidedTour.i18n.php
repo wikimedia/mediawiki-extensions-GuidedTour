@@ -163,7 +163,9 @@ Refers to:
 Refers to:
 * {{msg-mw|Editsection}}
 * {{msg-mw|Visualeditor-beta-appendix}}',
-	'guidedtour-tour-firsteditve-save-description' => 'Description of step of the firsteditve tour explaining how to save in VE',
+	'guidedtour-tour-firsteditve-save-description' => 'Description of step of the firsteditve tour explaining how to save in VisualEditor.
+
+Refers to {{msg-mw|Visualeditor-toolbar-savedialog}}.',
 );
 
 /** Arabic (العربية)
@@ -1170,6 +1172,9 @@ $messages['roa-tara'] = array(
 	'guidedtour-tour-firstedit-preview-description' => "Cazzanne '{{int:showpreview}}' te permette de verificà ca 'a pàgene iesse cu le cangiaminde tune. No te demendicà de reggistrà.",
 	'guidedtour-tour-firstedit-save-title' => "Tu l'è ggià fatte!",
 	'guidedtour-tour-firstedit-save-description' => 'Quanne si pronde, cazzanne "{{int:savearticle}}" face devendà le cangiaminde tune visibbile a tutte.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Cazze \'u buttone "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" pe fà le cangiaminde tune.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Stonne collegaminde "{{int:editsection}} {{int:visualeditor-beta-appendix}}" pe ogne sezione prengepàle jndr\'à vôsce, accussì tu puè congendrarte sus a quedda parte.',
+	'guidedtour-tour-firsteditve-save-description' => 'Quanne sì pronde, cazzanne "{{int:visualeditor-toolbar-savedialog}}" le cangiaminde tune addevendane visibbile a tutte.',
 );
 
 /** Russian (русский)
@@ -1232,6 +1237,9 @@ $messages['sv'] = array(
 	'guidedtour-tour-firstedit-preview-description' => "Genom att klicka på '{{int:showpreview}}' kan du kontrollera hur sidan ser ut med dina ändringar. Glöm bara inte att spara!",
 	'guidedtour-tour-firstedit-save-title' => 'Du är nästan klar!',
 	'guidedtour-tour-firstedit-save-description' => "När du är redo, kommer ett klick på '{{int:savearticle}}' synliggöra ändringarna för alla.",
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Klicka på knappen "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" för att göra dina ändringar.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Det finns "{{int:editsection}} {{int:visualeditor-beta-appendix}}"-länkar för varje större avsnitt i en artikel, så att du kan fokusera på endast den delen.',
+	'guidedtour-tour-firsteditve-save-description' => 'När du är redo, kommer ett klick på "{{int:visualeditor-toolbar-savedialog}}" att synliggöra dina ändringar för alla.',
 );
 
 /** Ukrainian (українська)
