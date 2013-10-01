@@ -237,6 +237,9 @@ $messages['ast'] = array(
 	'guidedtour-tour-firstedit-preview-description' => "Si calca '{{int:showpreview}}' podrá comprobar como se verá la páxina colos cambios. ¡Pero nun escaeza guardala!",
 	'guidedtour-tour-firstedit-save-title' => '¡Yá casi ta fecho!',
 	'guidedtour-tour-firstedit-save-description' => "Cuando tea preparáu, en calcando '{{int:savearticle}}', los cambios sedrán visibles pa toos.",
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Calque nel botón "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" pa facer los sos cambios.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Hai enllaces "{{int:editsection}} {{int:visualeditor-beta-appendix}}" pa cada seición principal d\'un artículu, de mou que pue centrase sólo nesa parte.',
+	'guidedtour-tour-firsteditve-save-description' => 'Cuando tea preparáu, en calcando "{{int:visualeditor-toolbar-savedialog}}" los cambios tarán visibles pa toos.',
 );
 
 /** Belarusian (беларуская)
@@ -1231,12 +1234,12 @@ $messages['sv'] = array(
 	'guidedtour-tour-firstedit-edit-page-description' => "Klicka på '{{int:vector-view-edit}}'-knappen för att göra dina ändringar.",
 	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => "Klicka på '{{int:visualeditor-ca-editsource}}'-knappen för att göra dina ändringar.",
 	'guidedtour-tour-firstedit-edit-section-title' => 'Redigera bara ett avsnitt',
-	'guidedtour-tour-firstedit-edit-section-description' => "Det finns '{{int:editsection}}'-länkar för varje större avsnitt i en artikel, så att du kan fokusera på att bara den delen.",
-	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => "Det finns '{{int:visualeditor-ca-editsource-avsnitt}}'-lLänkar för varje större avsnitt i en artikel, så att du kan fokusera på att bara den delen.",
+	'guidedtour-tour-firstedit-edit-section-description' => 'Det finns "{{int:editsection}}"-länkar för varje större avsnitt i en artikel, så att du kan fokusera på endast den delen.',
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Det finns "{{int:visualeditor-ca-editsource-avsnitt}}"-länkar för varje större avsnitt i en artikel, så att du kan fokusera på endast den delen.',
 	'guidedtour-tour-firstedit-preview-title' => 'Förhandsgranska dina ändringar (valfritt)',
-	'guidedtour-tour-firstedit-preview-description' => "Genom att klicka på '{{int:showpreview}}' kan du kontrollera hur sidan ser ut med dina ändringar. Glöm bara inte att spara!",
+	'guidedtour-tour-firstedit-preview-description' => 'Genom att klicka på "{{int:showpreview}}" kan du kontrollera hur sidan ser ut med dina ändringar. Glöm bara inte att spara!',
 	'guidedtour-tour-firstedit-save-title' => 'Du är nästan klar!',
-	'guidedtour-tour-firstedit-save-description' => "När du är redo, kommer ett klick på '{{int:savearticle}}' synliggöra ändringarna för alla.",
+	'guidedtour-tour-firstedit-save-description' => 'När du är redo, kommer ett klick på "{{int:savearticle}}" att synliggöra dina ändringar för alla.',
 	'guidedtour-tour-firsteditve-edit-page-description' => 'Klicka på knappen "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" för att göra dina ändringar.',
 	'guidedtour-tour-firsteditve-edit-section-description' => 'Det finns "{{int:editsection}} {{int:visualeditor-beta-appendix}}"-länkar för varje större avsnitt i en artikel, så att du kan fokusera på endast den delen.',
 	'guidedtour-tour-firsteditve-save-description' => 'När du är redo, kommer ett klick på "{{int:visualeditor-toolbar-savedialog}}" att synliggöra dina ändringar för alla.',
