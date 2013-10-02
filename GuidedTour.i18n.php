@@ -1017,6 +1017,19 @@ $messages['ms'] = array(
 	'guidedtour-tour-gettingstarted-click-save-description' => "Klik '{{int:savearticle}}' untuk memperlihatkan suntingan anda.",
 	'guidedtour-tour-gettingstarted-end-title' => 'Nak cari kerja lagi?',
 	'guidedtour-tour-gettingstarted-end-description' => '[[Special:GettingStarted|Permulaan]] dikemaskinikan setiap jam dengan halaman baru.',
+	'guidedtour-tour-firstedit-edit-page-title' => 'Sedia untuk menyunting?',
+	'guidedtour-tour-firstedit-edit-page-description' => 'Klik butang "{{int:vector-view-edit}}" untuk menyiarkan suntingan anda.',
+	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Klik butang "{{int:visualeditor-ca-editsource}}" untuk menyiarkan suntingan anda.',
+	'guidedtour-tour-firstedit-edit-section-title' => 'Sunting satu bahagian sahaja',
+	'guidedtour-tour-firstedit-edit-section-description' => 'Terdapat pautan "{{int:editsection}}" untuk setiap bahagian utama pada sesebuah rencana supaya anda boleh hanya bertumpu pada bahagian berkenaan.',
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Terdapat pautan "{{int:visualeditor-ca-editsource-section}}" untuk setiap bahagian utama pada sesebuah rencana supaya anda boleh hanya bertumpu pada bahagian berkenaan.',
+	'guidedtour-tour-firstedit-preview-title' => 'Pratayangkan suntingan anda (tidak wajib)',
+	'guidedtour-tour-firstedit-preview-description' => 'Anda boleh menyemak rupa halaman selepas suntingan dengan mengklik "{{int:showpreview}}". Tapi jangan lupa untuk menyimpan!',
+	'guidedtour-tour-firstedit-save-title' => 'Hampir siap!',
+	'guidedtour-tour-firstedit-save-description' => 'Apabila anda sedia, klik "{{int:savearticle}}" dan perlihatkan suntingan anda kepada semua pembaca.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Klik butang "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" untuk menyiarkan suntingan.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Terdapat pautan "{{int:editsection}}{{int:visualeditor-beta-appendix}}" untuk setiap bahagian utama pada sesebuah rencana supaya anda boleh hanya bertumpu pada bahagian berkenaan.',
+	'guidedtour-tour-firsteditve-save-description' => 'Apabila anda sedia, klik "{{int:visualeditor-toolbar-savedialog}}" dan perlihatkan suntingan anda kepada semua pembaca.',
 );
 
 /** Dutch (Nederlands)
