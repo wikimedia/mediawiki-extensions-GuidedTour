@@ -1193,6 +1193,15 @@ $messages['ru'] = array(
 	'guidedtour-tour-test-launch-tour' => 'Тестовый запуск тура',
 );
 
+/** Slovenian (slovenščina)
+ * @author Eleassar
+ */
+$messages['sl'] = array(
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Za prikaz sprememb, ki ste jih vnesli, kliknite gumb  »{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}«.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'V vsakem večjem razdelku člankov so na razpolago povezave »{{int:editsection}} {{int:visualeditor-beta-appendix}}«, s katerimi se lahko osredotočite samo na ta del.',
+	'guidedtour-tour-firsteditve-save-description' => 'Ko boste pripravljeni, lahko s klikom gumba »{{int:visualeditor-toolbar-savedialog}}« svoje spremembe napravite vidne vsakomur.',
+);
+
 /** Serbian (Cyrillic script) (српски (ћирилица)‎)
  * @author Milicevic01
  */
