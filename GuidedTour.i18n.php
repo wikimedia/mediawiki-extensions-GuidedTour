@@ -1118,6 +1118,7 @@ $messages['pt'] = array(
 );
 
 /** Brazilian Portuguese (português do Brasil)
+ * @author HenriqueCrang
  * @author Raylton P. Sousa
  */
 $messages['pt-br'] = array(
@@ -1147,6 +1148,19 @@ $messages['pt-br'] = array(
 	'guidedtour-tour-gettingstarted-click-save-description' => "Clique em '{{int:savearticle}}' e suas alterações serão visíveis.",
 	'guidedtour-tour-gettingstarted-end-title' => 'Procurando mais o que fazer?',
 	'guidedtour-tour-gettingstarted-end-description' => 'A página [[Special:GettingStarted|Primeiros passos]] é atualizada a cada hora, com novas páginas.',
+	'guidedtour-tour-firstedit-edit-page-title' => 'Pronto para editar?',
+	'guidedtour-tour-firstedit-edit-page-description' => 'Clique no botão "{{int:vector-view-edit}}" para fazer suas mudanças.',
+	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Clique no botão "{{int:visualeditor-ca-editsource}}" para fazer suas mudanças.',
+	'guidedtour-tour-firstedit-edit-section-title' => 'Edite apenas uma seção',
+	'guidedtour-tour-firstedit-edit-section-description' => 'Existem links para "{{int:editsection}}" em cada seção principal de um artigo, para você se focar apenas naquela parte.',
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Existem links para "{{int:visualeditor-ca-editsource-section}}" em cada seção principal de um artigo, para você se focar apenas naquela parte.',
+	'guidedtour-tour-firstedit-preview-title' => 'Prever suas mudanças (opcional)',
+	'guidedtour-tour-firstedit-preview-description' => 'Clicando em "{{int:showpreview}}" você pode conferir como vai ficar com suas mudanças. Só não esqueça de salvar!',
+	'guidedtour-tour-firstedit-save-title' => 'Você está quase terminando!',
+	'guidedtour-tour-firstedit-save-description' => 'Quando estiver pronto, clique em "{{int:savearticle}}" para tornar suas mudanças visíveis para todos.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Clique no botão "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" para fazer suas mudanças.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Existem links para "{{int:editsection}} {{int:visualeditor-beta-appendix}}" em cada seção principal de um artigo, para você se focar apenas naquela parte.',
+	'guidedtour-tour-firsteditve-save-description' => 'Quando estiver pronto, clique em "{{int:visualeditor-toolbar-savedialog}}" para tornar suas mudanças visíveis para todos.',
 );
 
 /** tarandíne (tarandíne)
