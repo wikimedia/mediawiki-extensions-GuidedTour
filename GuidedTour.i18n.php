@@ -436,6 +436,15 @@ $messages['de'] = array(
 	'guidedtour-tour-firsteditve-save-description' => 'Wenn du fertig bist, klicke auf „{{int:visualeditor-toolbar-savedialog}}“, um deine Änderungen für jeden sichtbar zu machen.',
 );
 
+/** Zazaki (Zazaki)
+ * @author Gorizon
+ */
+$messages['diq'] = array(
+	'guidedtour-next-button' => 'Bahdoyên',
+	'guidedtour-okay-button' => 'Okay',
+	'guidedtour-tour-test-testing' => 'Testing',
+);
+
 /** Spanish (español)
  * @author Fitoschido
  * @author QuimGil
@@ -1222,12 +1231,16 @@ $messages['ru'] = array(
 	'guidedtour-tour-test-go-description-page' => 'Перейти на страницу описания',
 	'guidedtour-tour-test-launch-tour' => 'Тестовый запуск тура',
 	'guidedtour-tour-gettingstarted-click-edit-title' => 'Нажмите «{{int:vector-view-edit}}»',
+	'guidedtour-tour-gettingstarted-click-preview-title' => 'Предварительный просмотр (не обязательно)',
 	'guidedtour-tour-gettingstarted-click-save-title' => 'Вы почти закончили!',
 	'guidedtour-tour-gettingstarted-click-save-description' => 'Нажмите «{{int:savearticle}}» и ваши изменения станут видны.',
 	'guidedtour-tour-firstedit-edit-page-title' => 'Готовы редактировать?',
 	'guidedtour-tour-firstedit-edit-section-title' => 'Измените только раздел',
 	'guidedtour-tour-firstedit-preview-title' => 'Предварительно просмотрите свои изменения (не обязательно)',
 	'guidedtour-tour-firstedit-save-title' => 'Вы почти закончили!',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Нажмите кнопку «{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}», чтобы внести свои изменения.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Ссылки «{{int:editsection}} {{int:visualeditor-beta-appendix}}» существуют для каждого раздела в статье, так что вы можете сосредоточиться только на этой её части.',
+	'guidedtour-tour-firsteditve-save-description' => 'Когда вы будете готовы, нажатие «{{int:visualeditor-toolbar-savedialog}}» сделает изменения видимыми для всех.',
 );
 
 /** Slovenian (slovenščina)
@@ -1383,6 +1396,7 @@ $messages['vi'] = array(
 );
 
 /** Wu (吴语)
+ * @author Benojan
  * @author 十弌
  */
 $messages['wuu'] = array(
@@ -1393,7 +1407,7 @@ $messages['wuu'] = array(
 	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => '點 "{{int:visualeditor-ca-editsource}}" 捺鈕準定改動。',
 	'guidedtour-tour-firstedit-edit-section-title' => '便改一個章節',
 	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => '文章各個主要章節都有 "{{int:visualeditor-ca-editsource-section}}" 鏈接, 爾好專門入心一箇部份。',
-	'guidedtour-tour-firstedit-preview-title' => '改動望望相起',
+	'guidedtour-tour-firstedit-preview-title' => '变化望望相起（随意）',
 	'guidedtour-tour-firstedit-save-title' => '爾便要妝了滯爻！',
 	'guidedtour-tour-firstedit-save-description' => '準備起爻，點"{{int:savearticle}}"大家人便都望得著爾個改動爻。',
 );
