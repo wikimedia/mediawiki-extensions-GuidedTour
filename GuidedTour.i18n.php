@@ -1210,14 +1210,24 @@ $messages['roa-tara'] = array(
 /** Russian (русский)
  * @author DCamer
  * @author KPu3uC B Poccuu
+ * @author Okras
  */
 $messages['ru'] = array(
+	'guidedtour-next-button' => 'Далее',
+	'guidedtour-okay-button' => 'Ок',
 	'guidedtour-tour-test-testing' => 'Тестирование',
 	'guidedtour-tour-test-test-description' => 'Это проверка описания. Lorem ipsum dolor sit!',
 	'guidedtour-tour-test-callouts' => 'Тест выноски',
 	'guidedtour-tour-test-mediawiki-parse' => 'Тест mediawiki parse',
 	'guidedtour-tour-test-go-description-page' => 'Перейти на страницу описания',
 	'guidedtour-tour-test-launch-tour' => 'Тестовый запуск тура',
+	'guidedtour-tour-gettingstarted-click-edit-title' => 'Нажмите «{{int:vector-view-edit}}»',
+	'guidedtour-tour-gettingstarted-click-save-title' => 'Вы почти закончили!',
+	'guidedtour-tour-gettingstarted-click-save-description' => 'Нажмите «{{int:savearticle}}» и ваши изменения станут видны.',
+	'guidedtour-tour-firstedit-edit-page-title' => 'Готовы редактировать?',
+	'guidedtour-tour-firstedit-edit-section-title' => 'Измените только раздел',
+	'guidedtour-tour-firstedit-preview-title' => 'Предварительно просмотрите свои изменения (не обязательно)',
+	'guidedtour-tour-firstedit-save-title' => 'Вы почти закончили!',
 );
 
 /** Slovenian (slovenščina)
