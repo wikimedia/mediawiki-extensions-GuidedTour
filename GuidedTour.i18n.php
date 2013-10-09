@@ -1095,6 +1095,7 @@ $messages['pms'] = array(
 
 /** Portuguese (português)
  * @author Alchimista
+ * @author Hamilton Abreu
  * @author Raylton P. Sousa
  */
 $messages['pt'] = array(
@@ -1118,8 +1119,8 @@ $messages['pt'] = array(
 	'guidedtour-tour-gettingstarted-start-description' => 'Esta página precisa de edição básica – melhorar a gramática, estilo, tom ou ortografia – para tornar o texto claro e fácil de ler. Esta guia irá mostrar-lhe os passos a tomar.',
 	'guidedtour-tour-gettingstarted-click-edit-title' => "Clique '{{int:vector-view-edit}}'",
 	'guidedtour-tour-gettingstarted-click-edit-description' => 'Isso permitirá que possa fazer alterações em qualquer parte da página, quando estiver pronto.',
-	'guidedtour-tour-gettingstarted-click-preview-title' => 'Pré-visualizar (opcional)',
-	'guidedtour-tour-gettingstarted-click-preview-description' => "Clicando em '{{int:showpreview}}' permite pré-visualizar  a página com as suas alterações. Só não se esqueça de salvar.",
+	'guidedtour-tour-gettingstarted-click-preview-title' => 'Antevisão (opcional)',
+	'guidedtour-tour-gettingstarted-click-preview-description' => "Clicar '{{int:showpreview}}' permite verificar como a página ficará após as alterações. Mas não se esqueça de gravá-las.",
 	'guidedtour-tour-gettingstarted-click-save-title' => 'Está quase a terminar!',
 	'guidedtour-tour-gettingstarted-click-save-description' => "Clique em '{{int:savearticle}}' e as suas alterações serão visíveis.",
 	'guidedtour-tour-gettingstarted-end-title' => 'Procura algo mais para fazer?',
