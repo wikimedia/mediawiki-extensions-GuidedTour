@@ -393,12 +393,13 @@ $messages['cs'] = array(
 /** German (Deutsch)
  * @author Kghbln
  * @author Metalhead64
+ * @author Rillke
  */
 $messages['de'] = array(
 	'guidedtour-desc' => 'Ermöglicht Pop-up-gestützte Rundgänge zur Unterstützung neuer Benutzer',
 	'guidedtour-help-url' => 'Help:Geführte Touren',
 	'guidedtour-help-guider-url' => 'Help:Geführte Touren/Guider',
-	'guidedtour-next-button' => 'Nächster',
+	'guidedtour-next-button' => 'Weiter',
 	'guidedtour-okay-button' => 'Okay',
 	'guidedtour-tour-test-testing' => 'Testen',
 	'guidedtour-tour-test-test-description' => 'Dies ist ein Test der Beschreibung. Lorem ipsum dolor sit!',
@@ -887,6 +888,7 @@ $messages['ko'] = array(
 
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
+ * @author Soued031
  */
 $messages['lb'] = array(
 	'guidedtour-desc' => "Erméiglecht Pop-up-ënnerstëtzt Toure fir nei Benotzer z'assistéieren",
@@ -920,10 +922,10 @@ $messages['lb'] = array(
 	'guidedtour-tour-firstedit-preview-title' => 'Kuckt Är Ännerungen ouni ze späicheren (fakultativ)',
 	'guidedtour-tour-firstedit-preview-description' => 'Klicken op "{{int:showpreview}}", erlaabt Iech ze gesinn, wéi d\'Säit mat Ären Ännerungen ausgesäit. Vergiesst net ze späicheren.',
 	'guidedtour-tour-firstedit-save-title' => 'Dir sidd bal fäerdeg!',
-	'guidedtour-tour-firstedit-save-description' => "Wann Dir fäerdeg sidd, klickt op {{int:savearticle}}' fir Är Ännerunge jidderengem ze weisen.",
+	'guidedtour-tour-firstedit-save-description' => "Wann Dir fäerdeg sidd, klickt op {{int:savearticle}}' fir Är Ännerunge jiddwerengem ze weisen.",
 	'guidedtour-tour-firsteditve-edit-page-description' => 'Klickt op de "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" Knäppche fir e maachen.',
 	'guidedtour-tour-firsteditve-edit-section-description' => 'Et gëtt "{{int:editsection}} {{int:visualeditor-beta-appendix}}"-Linke fir all gréisseren Abschnitt an engem Artikel, sou kënnt Dir Iech just op een Deel konzentréieren.',
-	'guidedtour-tour-firsteditve-save-description' => 'Wann Dir fäerdeg sidd, klickt op "{{int:visualeditor-toolbar-savedialog}}" fir Är Ännerunge fir jidderee visibel ze maachen.',
+	'guidedtour-tour-firsteditve-save-description' => 'Wann Dir fäerdeg sidd, klickt op "{{int:visualeditor-toolbar-savedialog}}" fir Är Ännerunge fir jiddweree visibel ze maachen.',
 );
 
 /** Lithuanian (lietuvių)
@@ -1231,11 +1233,19 @@ $messages['ru'] = array(
 	'guidedtour-tour-test-mediawiki-parse' => 'Тест mediawiki parse',
 	'guidedtour-tour-test-go-description-page' => 'Перейти на страницу описания',
 	'guidedtour-tour-test-launch-tour' => 'Тестовый запуск тура',
+	'guidedtour-tour-test-launch-using-tours' => 'Запустить тур по использованию туров',
+	'guidedtour-tour-gettingstarted-start-description' => 'Эта страница нуждается в базовом редактировании — исправлении грамматики, стиля, тона или написания, чтобы сделать страницу ясной и простой для чтения. Этот тур покажет вам шаги, которые следует для этого выполнить.',
 	'guidedtour-tour-gettingstarted-click-edit-title' => 'Нажмите «{{int:vector-view-edit}}»',
+	'guidedtour-tour-gettingstarted-click-edit-description' => 'Это позволит вам внести изменения в любую часть страницы, когда вы будете готовы.',
 	'guidedtour-tour-gettingstarted-click-preview-title' => 'Предварительный просмотр (не обязательно)',
+	'guidedtour-tour-gettingstarted-click-preview-description' => 'Нажатие «{{int:showpreview}}» позволяет проверить, как будет выглядеть страница с вашими изменениями. Только не забудьте её потом сохранить.',
 	'guidedtour-tour-gettingstarted-click-save-title' => 'Вы почти закончили!',
 	'guidedtour-tour-gettingstarted-click-save-description' => 'Нажмите «{{int:savearticle}}» и ваши изменения станут видны.',
+	'guidedtour-tour-gettingstarted-end-title' => 'Ищите, что бы еще сделать?',
+	'guidedtour-tour-gettingstarted-end-description' => 'Страница [[Special:GettingStarted|Начало работы]] пополняется каждый час новыми страницами.',
 	'guidedtour-tour-firstedit-edit-page-title' => 'Готовы редактировать?',
+	'guidedtour-tour-firstedit-edit-page-description' => 'Нажмите кнопку «{{int:vector-view-edit}}, чтобы внести изменения.',
+	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Нажмите кнопку «{{int:visualeditor-ca-editsource}}, чтобы внести изменения.',
 	'guidedtour-tour-firstedit-edit-section-title' => 'Измените только раздел',
 	'guidedtour-tour-firstedit-preview-title' => 'Предварительно просмотрите свои изменения (не обязательно)',
 	'guidedtour-tour-firstedit-save-title' => 'Вы почти закончили!',
