@@ -312,7 +312,7 @@
 	 * @return {void}
 	 */
 	function callApi ( guider, source ) {
-		var ajaxParams, data;
+		var ajaxParams, ajaxData, data;
 
 		if ( source !== 'page' && source !== 'text' ) {
 			mw.log( 'callApi called incorrectly' );
@@ -325,16 +325,26 @@
 			return;
 		}
 
+		ajaxData = {
+			format: 'json',
+			action: 'parse',
+			uselang: mw.config.get( 'wgUserLanguage' )
+		};
+		// Parse text in the context of the current page (and not API)
+		// This is for example useful if you'd like to link to the talk page
+		// of the current page with [[{{TALKPAGENAME}}]].
+		// Can't do this on Special Pages due to Bug 49477
+		if ( mw.config.get( 'wgNamespaceNumber' ) !== -1 && source === 'text' ) {
+			ajaxData.title = mw.config.get( 'wgPageName' );
+		}
+		ajaxData[source] = guider.description;
+
 		ajaxParams = {
 			async: false,
 			type: 'POST',
 			url: mw.util.wikiScript( 'api' ),
-			data: {
-				action: 'parse',
-				format: 'json'
-			}
+			data: ajaxData
 		};
-		ajaxParams.data[source] = guider.description;
 
 		// parse (make synchronous API request)
 		data = $.parseJSON(
