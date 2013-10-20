@@ -649,6 +649,17 @@ $messages['he'] = array(
 	'guidedtour-tour-gettingstarted-click-save-description' => 'לחצו על {{int:savearticle}} והשינוי שלכם יהיה גלוי.',
 	'guidedtour-tour-gettingstarted-end-title' => 'מחפשים דברים נוספים לעשות?',
 	'guidedtour-tour-gettingstarted-end-description' => '[[Special:GettingStarted|Getting Started]] מתעדכן מדי שעה עם דפים חדשים.',
+	'guidedtour-tour-firstedit-edit-page-title' => 'מוכנים לערוך?',
+	'guidedtour-tour-firstedit-edit-page-description' => 'נא ללחוץ על כפתור "{{int:vector-view-edit}}" כדי לעשות את השינויים שלך.',
+	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'נא ללחוץ על כפתור "{{int:visualeditor-ca-editsource}}" כדי לעשות את השינויים שלך.',
+	'guidedtour-tour-firstedit-edit-section-title' => 'לערוך רק פסקה',
+	'guidedtour-tour-firstedit-edit-section-description' => 'יש קישורי "{{int:editsection}}" לכל פסקה גדולה בערך, אז אפשר להתמקד רק בחלק ההוא.',
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'יש קישורי "{{int:visualeditor-ca-editsource-section}}" לכל פסקה גדולה בערך, אז אפשר להתמקד רק בחלק ההוא.',
+	'guidedtour-tour-firstedit-preview-title' => 'תצוגה מקדימה של השינויים שלך (לא חובה)',
+	'guidedtour-tour-firstedit-preview-description' => 'לחיצה על "{{int:showpreview}}" מאפשרת לך לבדוק איך הדף ייראה עם השינויים שלך. רק לא לשכוח לשמור!',
+	'guidedtour-tour-firstedit-save-title' => 'כמעט סיימנו!',
+	'guidedtour-tour-firstedit-save-description' => 'כשהכול מוכן, לחיצה על "{{int:savearticle}}" תעשה את השינויים שלך גלויים לכולם.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'נא ללחוץ על כפתור "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" כדי לעשות את השינויים שלך.',
 );
 
 /** Upper Sorbian (hornjoserbsce)
