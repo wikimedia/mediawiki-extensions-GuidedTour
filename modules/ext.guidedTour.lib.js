@@ -36,7 +36,11 @@
 		userId = mw.config.get( 'wgUserId' ),
 		// Key is tour name, value is tour spec (specification).  A tour spec is
 		// exactly what is passed in to defineTour.
-		definedTours = {};
+		definedTours = {},
+		// Initialized to false at page load
+		// Will be set true any time postEdit fires, including right after
+		// legacy wgPostEdit variable is set to true.
+		isPostEdit = false;
 
 	/**
 	 * Setup default values for logging, unless they're logged out.  This doesn't mean
@@ -772,8 +776,8 @@
 	 *
 	 * @private
 	 */
-	function setupSkipThenUpdateDisplayListeners() {
-		var mwHooks, i;
+	function setupStepTransitionListeners() {
+		var generalSkipHooks, i;
 
 		function skip() {
 			// I found this necessary when testing, probably to give the
@@ -783,13 +787,24 @@
 			}, 0 );
 		}
 
-		mwHooks = [
-			've.activationComplete',
+		// The next two are handled differently since they also require
+		// settings an internal boolean.
+		mw.hook( 'postEdit' ).add( function () {
+			isPostEdit = true;
+			skip();
+		} );
+
+		mw.hook( 've.activationComplete' ).add( function () {
+			isPostEdit = false;
+			skip();
+		} );
+
+		generalSkipHooks = [
 			've.deactivationComplete',
 			've.saveDialog.stateChanged'
 		];
-		for ( i = 0; i < mwHooks.length; i++ ) {
-			mw.hook( mwHooks[i] ).add( skip );
+		for ( i = 0; i < generalSkipHooks.length; i++ ) {
+			mw.hook( generalSkipHooks[i] ).add( skip );
 		}
 	}
 
@@ -828,7 +843,7 @@
 
 		$( document ).ready( function () {
 			setupRepositionListeners();
-			setupSkipThenUpdateDisplayListeners();
+			setupStepTransitionListeners();
 			setupGuiderListeners();
 		} );
 	}
@@ -1241,7 +1256,7 @@
 		 * @return {boolean} true if they just saved an edit, false otherwise
 		 */
 		isPostEdit: function () {
-			return mw.config.get( 'wgPostEdit' );
+			return isPostEdit;
 		},
 
 		// End shouldSkip bindings section
