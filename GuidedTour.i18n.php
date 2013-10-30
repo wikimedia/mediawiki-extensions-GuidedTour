@@ -1237,6 +1237,8 @@ $messages['roa-tara'] = array(
  */
 $messages['ru'] = array(
 	'guidedtour-desc' => 'Позволяет добавлять на страницы обучающие туры со всплывающими подсказками, чтобы помочь новым пользователям',
+	'guidedtour-help-url' => 'Help:Обучающие туры',
+	'guidedtour-help-guider-url' => 'Help:Обучающие туры/гиды',
 	'guidedtour-next-button' => 'Далее',
 	'guidedtour-okay-button' => 'Ок',
 	'guidedtour-tour-test-testing' => 'Тестирование',
