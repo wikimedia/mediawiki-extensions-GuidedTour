@@ -447,6 +447,7 @@ $messages['diq'] = array(
 );
 
 /** Spanish (español)
+ * @author Benfutbol10
  * @author Fitoschido
  * @author QuimGil
  */
@@ -477,10 +478,18 @@ $messages['es'] = array(
 	'guidedtour-tour-gettingstarted-end-title' => '¿Busca más tareas que hacer?',
 	'guidedtour-tour-gettingstarted-end-description' => '[[Special:GettingStarted|Introducción]] se actualiza cada hora con nuevas páginas.',
 	'guidedtour-tour-firstedit-edit-page-title' => '¿Te animas a editar?',
+	'guidedtour-tour-firstedit-edit-page-description' => 'Haz clic en el botón de "{{int:vector-view-edit}}" para realizar tus cambios.',
+	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Haz clic en el botón de "{{int:visualeditor-ca-editsource}}" para realizar tus cambios.',
 	'guidedtour-tour-firstedit-edit-section-title' => 'Editar solo una sección',
+	'guidedtour-tour-firstedit-edit-section-description' => 'Existen enlaces de "{{int:editsection}}" en cada sección del artículo, por lo que puedes enfocarte en solo esa parte.',
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Existen enlaces de "{{int:visualeditor-ca-editsource-section}}" en cada sección del artículo, por lo que puedes enfocarte en solo esa parte.',
 	'guidedtour-tour-firstedit-preview-title' => 'Previsualiza tus cambios (opcional)',
+	'guidedtour-tour-firstedit-preview-description' => 'Cliqueando en "{{int:showpreview}}" te permite ver como se verá la página con tus cambios. ¡No olvides guardarlos!',
 	'guidedtour-tour-firstedit-save-title' => '¡Ya casi has terminado!',
 	'guidedtour-tour-firstedit-save-description' => 'Cuando termines, pulsa en «{{int:savearticle}}» para que todos puedan ver tus cambios.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Haz clic en "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" para realizar tus cambios.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Existen enlaces de "{{int:editsection}} {{int:visualeditor-beta-appendix}}" en cada sección del artículo, por lo que puedes enfocarte en solo esa parte.',
+	'guidedtour-tour-firsteditve-save-description' => 'Cuándo estés listo, haz clic en "{{int:visualeditor-toolbar-savedialog}}" para hacer que tus cambios sean visibles para todos',
 );
 
 /** Estonian (eesti)
@@ -917,7 +926,7 @@ $messages['lb'] = array(
 	'guidedtour-tour-test-launch-using-tours' => "En Tour ufänken duerch d'Benotze vun Touren",
 	'guidedtour-tour-gettingstarted-start-title' => 'Wëllt Dir eng Hand upaken?',
 	'guidedtour-tour-gettingstarted-click-edit-title' => "Klickt op '{{int:vector-view-edit}}'",
-	'guidedtour-tour-gettingstarted-click-edit-description' => 'Dëst léist Iech Ännerungen op all Deel vun der Säit maachen esoubal wéi Dir prett sidd.',
+	'guidedtour-tour-gettingstarted-click-edit-description' => 'Dëst léist Iech Ännerungen op all Deel vun der Säit maachen soubal wéi Dir prett sidd.',
 	'guidedtour-tour-gettingstarted-click-preview-title' => 'Weisen ouni ze späicheren (fakuktativ)',
 	'guidedtour-tour-gettingstarted-click-preview-description' => 'Klickt op "{{int:showpreview}}", fir ze gesinn, wéi d\'Säit mat dengen Ännerungen ausgesäit. Vergiesst net ze späicheren.',
 	'guidedtour-tour-gettingstarted-click-save-title' => 'Dir sidd bal fäerdeg!',
