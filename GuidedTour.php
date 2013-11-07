@@ -147,38 +147,6 @@ $wgResourceModules['ext.guidedTour.tour.test'] = array(
 	),
 );
 
-// Tour designed to help new users edit.
-// Can be used with Special:GettingStarted or independently.
-
-// TODO (mattflaschen, 2013-05-24): Move this tour (or at least the messages that are still
-// used) to the GettingStarted extension.  Since we have 'firstedit', 'gettingstarted'
-// doesn't need to be used as a generic "first edit" tour.
-$wgResourceModules['ext.guidedTour.tour.gettingstarted'] = array(
-	'scripts' => 'gettingstarted.js',
-	'localBasePath' => $dir . 'modules/tours',
-	'remoteExtPath' => 'GuidedTour/modules/tours',
-	'dependencies' => array(
-		'mediawiki.Title',
-		'ext.guidedTour',
-	),
-	'messages' => array(
-		'savearticle',
-		'showpreview',
-		'vector-view-edit',
-		'guidedtour-tour-gettingstarted-start-title',
-		'guidedtour-tour-gettingstarted-start-description',
-		'guidedtour-tour-gettingstarted-click-edit-title',
-		'guidedtour-tour-gettingstarted-click-edit-description',
-		'guidedtour-tour-gettingstarted-click-preview-title',
-		'guidedtour-tour-gettingstarted-click-preview-description',
-		'guidedtour-tour-gettingstarted-click-save-title',
-		'guidedtour-tour-gettingstarted-click-save-description',
-		'guidedtour-tour-gettingstarted-end-title',
-		'guidedtour-tour-gettingstarted-end-description',
-	),
-);
-
-
 // Messages
 $wgExtensionMessagesFiles += array(
 	'GuidedTour' => $dir . 'GuidedTour.i18n.php',
