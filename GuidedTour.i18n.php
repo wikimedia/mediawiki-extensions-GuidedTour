@@ -1457,6 +1457,7 @@ $messages['wuu'] = array(
 /** Simplified Chinese (中文（简体）‎)
  * @author Hydra
  * @author Li3939108
+ * @author Liuxinyu970226
  * @author Shizhao
  * @author Yfdyh000
  * @author 乌拉跨氪
@@ -1497,6 +1498,7 @@ $messages['zh-hans'] = array(
 	'guidedtour-tour-firstedit-preview-description' => '点击“{{int:showpreview}}”，您将看到您在该页面作出了哪些更改。请不要忘记保存！',
 	'guidedtour-tour-firstedit-save-title' => '你马上就要完成了！',
 	'guidedtour-tour-firstedit-save-description' => '当你准备好时，点击“{{int:savearticle}}”，您所做的修改会让所有人都看到。',
+	'guidedtour-tour-firsteditve-edit-page-description' => '单击“{{int:vector-view-edit}}{{int:visualeditor-beta-appendix}}”按钮以做出您的更改。',
 );
 
 /** Traditional Chinese (中文（繁體）‎)
