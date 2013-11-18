@@ -264,5 +264,7 @@ class GuidedTourHooks {
 		}
 
 		$resourceLoader->register( 'ext.guidedTour.tour.firstedit', $firstEditModule );
+
+		return true;
 	}
 }
