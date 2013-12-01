@@ -837,6 +837,7 @@ $messages['ms'] = array(
 );
 
 /** Dutch (Nederlands)
+ * @author Carsrac
  * @author Siebrand
  */
 $messages['nl'] = array(
@@ -856,6 +857,11 @@ $messages['nl'] = array(
 	'guidedtour-tour-test-launch-tour' => 'Test start rondleiding',
 	'guidedtour-tour-test-launch-tour-description' => 'Via raadgevers kunnen andere rondleidingen gestart worden. Leuk, toch?',
 	'guidedtour-tour-test-launch-using-tours' => 'Start een rondleiding bij het gebruik van rondleidingen',
+	'guidedtour-tour-firstedit-save-title' => 'U bent bijna klaar!',
+	'guidedtour-tour-firstedit-save-description' => 'Wanneer u klaar bent, zal te klikken op "{{int:savearticle}}" uw wijzigingen zichtbaar maken voor iedereen.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Klik op "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" toets om uw veranderingen te maken.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Er zijn "{{int:editsection}} {{int:visualeditor-bèta-aanhangsel}}" Verwijzigingen voor elke belangrijke sectie in een artikel, zodat u zich op slechts dat deel concentreren kunt.',
+	'guidedtour-tour-firsteditve-save-description' => 'Wanneer u klaar bent, zal te klikken op "{{int:savearticle}}" uw wijzigingen zichtbaar maken voor iedereen.',
 );
 
 /** Piedmontese (Piemontèis)
