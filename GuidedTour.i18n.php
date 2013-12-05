@@ -495,6 +495,7 @@ $messages['gu'] = array(
 /** Hebrew (עברית)
  * @author Amire80
  * @author ExampleTomer
+ * @author Guycn2
  * @author NLIGuy
  * @author דוד
  */
@@ -515,15 +516,15 @@ $messages['he'] = array(
 	'guidedtour-tour-test-launch-tour-description' => 'שלבים בסיור יכולים להפעיל סיורים מודרכים אחרים. די מגניב, הא?',
 	'guidedtour-tour-test-launch-using-tours' => 'התחילו סיור היכרות על אודות השימוש בסיורים',
 	'guidedtour-tour-firstedit-edit-page-title' => 'מוכנים לערוך?',
-	'guidedtour-tour-firstedit-edit-page-description' => 'נא ללחוץ על כפתור "{{int:vector-view-edit}}" כדי לעשות את השינויים שלך.',
-	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'נא ללחוץ על כפתור "{{int:visualeditor-ca-editsource}}" כדי לעשות את השינויים שלך.',
+	'guidedtour-tour-firstedit-edit-page-description' => 'נא ללחוץ על הכפתור "{{int:vector-view-edit}}" כדי לבצע את השינויים שלך.',
+	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'נא ללחוץ על הכפתור "{{int:visualeditor-ca-editsource}}" כדי לבצע את השינויים שלך.',
 	'guidedtour-tour-firstedit-edit-section-title' => 'לערוך רק פסקה',
 	'guidedtour-tour-firstedit-edit-section-description' => 'יש קישורי "{{int:editsection}}" לכל פסקה גדולה בדף, אז אפשר להתמקד רק בחלק ההוא.',
 	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'יש קישורי "{{int:visualeditor-ca-editsource-section}}" לכל פסקה גדולה בדף, אז אפשר להתמקד רק בחלק ההוא.',
 	'guidedtour-tour-firstedit-preview-title' => 'תצוגה מקדימה של השינויים שלך (לא חובה)',
 	'guidedtour-tour-firstedit-preview-description' => 'לחיצה על "{{int:showpreview}}" מאפשרת לך לבדוק איך הדף ייראה עם השינויים שלך. רק לא לשכוח לשמור!',
 	'guidedtour-tour-firstedit-save-title' => 'כמעט סיימנו!',
-	'guidedtour-tour-firstedit-save-description' => 'כשהכול מוכן, לחיצה על "{{int:savearticle}}" תעשה את השינויים שלך גלויים לכולם.',
+	'guidedtour-tour-firstedit-save-description' => 'כשהכול מוכן, לחיצה על "{{int:savearticle}}" תהפוך את השינויים שלך לגלויים לכולם.',
 	'guidedtour-tour-firsteditve-edit-page-description' => 'נא ללחוץ על כפתור "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" כדי לעשות את השינויים שלך.',
 	'guidedtour-tour-firsteditve-edit-section-description' => 'יש קישורי "{{int:editsection}} {{int:visualeditor-beta-appendix}}" לכל אחד מהחלקים החשובים בדף ואפשר להתרכז רק בחלק ההוא.',
 	'guidedtour-tour-firsteditve-save-description' => 'כשהכול מוכן, לחיצה על "{{int:visualeditor-toolbar-savedialog}}" תעשה את השינויים זמינים לכולם.',
@@ -784,14 +785,14 @@ $messages['mk'] = array(
 	'guidedtour-tour-firstedit-edit-page-description' => 'Стиснете на копчето „{{int:vector-view-edit}}“ за да ги направите саканите измени.',
 	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Стиснете на копчето „{{int:visualeditor-ca-editsource}}“ за да ги направите саканите измени.',
 	'guidedtour-tour-firstedit-edit-section-title' => 'Уредете го само овој дел',
-	'guidedtour-tour-firstedit-edit-section-description' => 'Постојат врски „{{int:editsection}}“ во секој дел (поднаслов) од статијата, за да можете да го уредите само него.',
-	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Постојат врски „{{int:visualeditor-ca-editsource-section}}“ во секој дел (поднаслов) од статијата, за да можете да го уредите само него.',
+	'guidedtour-tour-firstedit-edit-section-description' => 'Постојат врски „{{int:editsection}}“ во секој дел (поднаслов) од страницата, за да можете да го уредите само него.',
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Постојат врски „{{int:visualeditor-ca-editsource-section}}“ во секој дел (поднаслов) од страницата, за да можете да го уредите само него.',
 	'guidedtour-tour-firstedit-preview-title' => 'Прегледајте ги измените (по желба)',
 	'guidedtour-tour-firstedit-preview-description' => 'Стискајќи на „{{int:showpreview}}“ можете да видите како ќе изгледа изменетата страница. Само не заборавајте да ја зачувате!',
 	'guidedtour-tour-firstedit-save-title' => 'Речиси сте готови!',
 	'guidedtour-tour-firstedit-save-description' => 'Кога сте готови, стиснете на „{{int:savearticle}}“ и измените ќе бидат видливи за секого.',
 	'guidedtour-tour-firsteditve-edit-page-description' => 'Стиснете на копчето „{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}“ за да ги направите промените.',
-	'guidedtour-tour-firsteditve-edit-section-description' => 'Секој поважен дел (поднаслов) од статијата има врски „{{int:editsection}} {{int:visualeditor-beta-appendix}}“ за да можете да му се посветите само на тој дел.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Секој поважен дел (поднаслов) од страницата има врски „{{int:editsection}} {{int:visualeditor-beta-appendix}}“ за да можете да му се посветите само на тој дел.',
 	'guidedtour-tour-firsteditve-save-description' => 'Кога ќе сте готови, стиснете на „{{int:visualeditor-toolbar-savedialog}}“ и така промените ќе станат видливи за секого.',
 );
 
