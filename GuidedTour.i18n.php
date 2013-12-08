@@ -525,9 +525,9 @@ $messages['he'] = array(
 	'guidedtour-tour-firstedit-preview-description' => 'לחיצה על "{{int:showpreview}}" מאפשרת לך לבדוק איך הדף ייראה עם השינויים שלך. רק לא לשכוח לשמור!',
 	'guidedtour-tour-firstedit-save-title' => 'כמעט סיימנו!',
 	'guidedtour-tour-firstedit-save-description' => 'כשהכול מוכן, לחיצה על "{{int:savearticle}}" תהפוך את השינויים שלך לגלויים לכולם.',
-	'guidedtour-tour-firsteditve-edit-page-description' => 'נא ללחוץ על כפתור "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" כדי לעשות את השינויים שלך.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'נא ללחוץ על הכפתור "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" כדי לבצע את השינויים שלך.',
 	'guidedtour-tour-firsteditve-edit-section-description' => 'יש קישורי "{{int:editsection}} {{int:visualeditor-beta-appendix}}" לכל אחד מהחלקים החשובים בדף ואפשר להתרכז רק בחלק ההוא.',
-	'guidedtour-tour-firsteditve-save-description' => 'כשהכול מוכן, לחיצה על "{{int:visualeditor-toolbar-savedialog}}" תעשה את השינויים זמינים לכולם.',
+	'guidedtour-tour-firsteditve-save-description' => 'כשהכול מוכן, לחיצה על "{{int:visualeditor-toolbar-savedialog}}" תהפוך את השינויים שלך לגלויים לכולם.',
 );
 
 /** Upper Sorbian (hornjoserbsce)
