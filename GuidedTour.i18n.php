@@ -1044,6 +1044,7 @@ $messages['sr-ec'] = array(
 /** Swedish (svenska)
  * @author Ainali
  * @author Jopparn
+ * @author Tobulos1
  */
 $messages['sv'] = array(
 	'guidedtour-desc' => 'Tillåter sidor att ge en popup-guidad tur för att hjälpa nya användare',
@@ -1065,7 +1066,7 @@ $messages['sv'] = array(
 	'guidedtour-tour-firstedit-edit-page-description' => "Klicka på '{{int:vector-view-edit}}'-knappen för att göra dina ändringar.",
 	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => "Klicka på '{{int:visualeditor-ca-editsource}}'-knappen för att göra dina ändringar.",
 	'guidedtour-tour-firstedit-edit-section-title' => 'Redigera bara ett avsnitt',
-	'guidedtour-tour-firstedit-edit-section-description' => 'Det finns "{{int:editsection}}"-länkar för varje större avsnitt i en artikel, så att du kan fokusera på endast den delen.', # Fuzzy
+	'guidedtour-tour-firstedit-edit-section-description' => 'Det finns "{{int:editsection}}"-länkar för varje större avsnitt på en sida, så att du kan fokusera på endast den delen.',
 	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Det finns "{{int:visualeditor-ca-editsource-avsnitt}}"-länkar för varje större avsnitt i en artikel, så att du kan fokusera på endast den delen.', # Fuzzy
 	'guidedtour-tour-firstedit-preview-title' => 'Förhandsgranska dina ändringar (valfritt)',
 	'guidedtour-tour-firstedit-preview-description' => 'Genom att klicka på "{{int:showpreview}}" kan du kontrollera hur sidan ser ut med dina ändringar. Glöm bara inte att spara!',
