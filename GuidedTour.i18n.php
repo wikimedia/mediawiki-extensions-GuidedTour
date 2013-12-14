@@ -397,6 +397,24 @@ $messages['eu'] = array(
 	'guidedtour-okay-button' => 'Ados',
 );
 
+/** Persian (فارسی)
+ * @author Omidh
+ */
+$messages['fa'] = array(
+	'guidedtour-help-url' => 'راهنما:‌ تور‌های راهنما', # Fuzzy
+	'guidedtour-help-guider-url' => 'راهنما: تور‌های راهنما/راهنما‌ها',
+	'guidedtour-next-button' => 'بعدی',
+	'guidedtour-okay-button' => 'باشه',
+	'guidedtour-tour-test-testing' => 'آزمایش',
+	'guidedtour-tour-test-test-description' => 'این یک آزمایش برای توضیحات است. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-portal-description' => 'این صفحه {{int:portal}} است.',
+	'guidedtour-tour-test-mediawiki-parse' => 'آزمون پارسه مدیاویکی',
+	'guidedtour-tour-test-description-page' => 'تست صفحات توضیحات مدیاویکی',
+	'guidedtour-tour-test-go-description-page' => 'رفتن به صفحه توضیحات',
+	'guidedtour-tour-test-launch-tour-description' => 'راهنمایان می‌توانند تور‌های دیگری نیز اجرا کنند. خیلی باحاله، نه؟',
+	'guidedtour-tour-firstedit-edit-page-title' => 'برای ویرایش آماده‌ای؟',
+);
+
 /** Finnish (suomi)
  * @author Nike
  * @author Samoasambia
