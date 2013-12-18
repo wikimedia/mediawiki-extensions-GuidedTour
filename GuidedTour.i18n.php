@@ -290,14 +290,14 @@ $messages['ca'] = array(
 	'guidedtour-tour-firstedit-edit-page-description' => "Cliqueu la pestanya '{{int:vector-view-edit}}' per fer els vostres canvis.",
 	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => "Cliqueu la pestanya '{{int:visualeditor-ca-editsource}}' per fer els vostres canvis.",
 	'guidedtour-tour-firstedit-edit-section-title' => "Modificació d'una secció",
-	'guidedtour-tour-firstedit-edit-section-description' => "Hi ha enllaços '{{int:editsection}}' per a cada secció en un article que permet centrar-se només en una part.", # Fuzzy
-	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => "Hi ha enllaços '{{int:visualeditor-ca-editsource-section}}' per a cada secció en un article que permet centrar-se només en una part.", # Fuzzy
+	'guidedtour-tour-firstedit-edit-section-description' => 'Hi ha enllaços "{{int:editsection}}" per a cada secció en un article que permeten centrar-se només en una part.',
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Hi ha enllaços "{{int:visualeditor-ca-editsource-section}}" per a cada secció en un article que permeten centrar-se només en una part.',
 	'guidedtour-tour-firstedit-preview-title' => 'Previsualització opcional dels canvis',
 	'guidedtour-tour-firstedit-preview-description' => "Si cliqueu a '{{int:showpreview}}' podreu comprovar com quedarà la pàgina amb els vostres canvis. En acabat, no us oblideu de desar!",
 	'guidedtour-tour-firstedit-save-title' => 'Gairebé ja està!',
 	'guidedtour-tour-firstedit-save-description' => "Quan ho tingueu a punt, cliqueu a '{{int:savearticle}}' i els vostres canvis ja seran visibles per a tothom.",
 	'guidedtour-tour-firsteditve-edit-page-description' => 'Feu clic a "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" per a fer els vostres canvis.',
-	'guidedtour-tour-firsteditve-edit-section-description' => 'Disposeu d\'enllaços "{{int:editsection}} {{int:visualeditor-beta-appendix}}" a cada secció principal, per a concentrar-vos només en la part que vulgueu modificar.', # Fuzzy
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Disposeu d\'enllaços "{{int:editsection}} {{int:visualeditor-beta-appendix}}" a cada secció principal, per a concentrar-vos només en la part que vulgueu modificar.',
 	'guidedtour-tour-firsteditve-save-description' => 'Quan estigueu a punt, fent clic a "{{int:visualeditor-toolbar-savedialog}}" fareu els vostres canvis visibles per a tothom.',
 );
 
