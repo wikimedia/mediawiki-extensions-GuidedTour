@@ -467,6 +467,14 @@ $messages['fr'] = array(
 	'guidedtour-tour-firsteditve-save-description' => 'Quand vous serez prêt, cliquer sur « {{int:visualeditor-toolbar-savedialog}} » rendra vos modifications visibles pour tout le monde.',
 );
 
+/** Western Frisian (Frysk)
+ * @author Kening Aldgilles
+ */
+$messages['fy'] = array(
+	'guidedtour-next-button' => 'Folgjende',
+	'guidedtour-okay-button' => 'Okee',
+);
+
 /** Galician (galego)
  * @author Toliño
  */
