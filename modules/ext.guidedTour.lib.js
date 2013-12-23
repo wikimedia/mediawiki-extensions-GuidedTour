@@ -831,8 +831,6 @@
 
 		setupLogging();
 
-		guiders._buttonClass = 'mw-ui-button mw-ui-primary';
-
 		// cookie the users when they are in the tour
 		cookieName = mw.config.get( 'wgCookiePrefix' ) + '-mw-tour';
 		cookieParams = { path: '/' };

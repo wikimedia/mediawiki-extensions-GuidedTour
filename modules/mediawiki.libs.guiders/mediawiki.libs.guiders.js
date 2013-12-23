@@ -25,7 +25,6 @@
  * Changes:
  *
  * - failStep: guiders property allows you to name a step to show() if the show() case fails (attachTo element is missing). For obvious reasons, this should not have an attachTo
- * - _buttonClass: property allows you to change the default button "classname" for all guider buttons (default: guider_button)
  *
  * - resume(): start up tour from current place in ookie (if set). This is useful when your tour leaves the page you are on. Unlike show, it will skip steps that need to be skipped.
  * - initGuider(): Allows for initializing Guiders without actually creating them (useful when guider is not in the DOM yet. Avoids error: base is null [Break On This Error] var top = base.top;
@@ -181,7 +180,12 @@ mediaWiki.libs.guiders = (function($) {
 	guiders._backButtonTitle = 'Back';
 	guiders._buttonElement = '<a></a>';
 	guiders._buttonAttributes = {'href': 'javascript:void(0);'};
-	guiders._buttonClass = 'guider_button';
+
+	// TODO (mattflaschen, 2013-12-23): Use mw-ui-progressive (not in core yet) when the
+	// tour will proceed, and mw-ui-constructive when it will complete.  This will
+	// probably involve moving the class choice to the area where action fields
+	// (e.g. action: 'end') are understood.
+	guiders._buttonClass = 'mw-ui-button mw-ui-primary';
 	guiders._closeButtonTitle = 'Close';
 	guiders._currentGuiderID = null;
 	guiders._guiderInits = {}; //stores uncreated guiders indexed by id

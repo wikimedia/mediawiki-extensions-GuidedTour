@@ -58,29 +58,6 @@
   font-size: 13px;
 }
 
-.guider_button {
-  background: -moz-linear-gradient(top, #5CA9FF 0%, #3D79C3 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #5CA9FF), color-stop(100%, #3D79C3));
-  background-color: #4A95E0; /* overruled by background gradient, in browsers where they exist */
-  border: solid 1px #4B5D7E;
-  color: #FFF;
-  cursor: pointer;
-  display: inline-block;
-  float: right;
-  font-size: 75%;
-  font-weight: bold;
-  margin-left: 6px;
-  min-width: 40px;
-  padding: 3px 5px;
-  text-align: center;
-  text-decoration: none;
-  /* Rounded corners */
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
-  /* End rounded corners */
-}
-
 #guider_overlay {
   background-color: #000;
   width: 100%;
