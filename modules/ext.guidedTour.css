@@ -46,11 +46,13 @@
 	background-image: url(ext.guidedTour.arrows.png);
 }
 
-.guider_arrow_right, .guider_arrow_left {
+.guider_arrow_right,
+.guider_arrow_left {
 	height: 39px;
 }
 
-.guider_arrow_up, .guider_arrow_down {
+.guider_arrow_up,
+.guider_arrow_down {
 	height: 24px;
 }
 
