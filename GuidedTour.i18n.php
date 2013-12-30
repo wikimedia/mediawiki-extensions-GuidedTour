@@ -398,10 +398,11 @@ $messages['eu'] = array(
 );
 
 /** Persian (فارسی)
+ * @author Ebraminio
  * @author Omidh
  */
 $messages['fa'] = array(
-	'guidedtour-help-url' => 'راهنما:‌ تور‌های راهنما', # Fuzzy
+	'guidedtour-help-url' => 'Help:‌تور‌های راهنما',
 	'guidedtour-help-guider-url' => 'راهنما: تور‌های راهنما/راهنما‌ها',
 	'guidedtour-next-button' => 'بعدی',
 	'guidedtour-okay-button' => 'باشه',
