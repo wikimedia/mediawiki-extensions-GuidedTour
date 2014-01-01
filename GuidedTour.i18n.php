@@ -1192,13 +1192,14 @@ $messages['wuu'] = array(
 /** Simplified Chinese (中文（简体）‎)
  * @author Hydra
  * @author Li3939108
+ * @author Liflon
  * @author Liuxinyu970226
  * @author Shizhao
  * @author Yfdyh000
  * @author 乌拉跨氪
  */
 $messages['zh-hans'] = array(
-	'guidedtour-desc' => '允许页面提供一个弹出式导览来引导新用户',
+	'guidedtour-desc' => '允许页面提供弹出式导览来引导新用户',
 	'guidedtour-help-url' => 'Help:导览',
 	'guidedtour-help-guider-url' => 'Help:导览/向导',
 	'guidedtour-next-button' => '下一步',
@@ -1217,13 +1218,15 @@ $messages['zh-hans'] = array(
 	'guidedtour-tour-firstedit-edit-page-description' => '点击“{{int:vector-view-edit}}”按钮，确认你的修改。',
 	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => '点击“{{int:visualeditor-ca-editsource}}”按钮，确认您的修改。',
 	'guidedtour-tour-firstedit-edit-section-title' => '只编辑一个章节',
-	'guidedtour-tour-firstedit-edit-section-description' => '条目中每个主要章节都有“{{int:editsection}}”链接，这可以让你只在这部分集中精神。', # Fuzzy
-	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => '条目中每个主要章节都有“{{int:visualeditor-ca-editsource-section}}”链接，这可以让你集中精神于该部分。', # Fuzzy
+	'guidedtour-tour-firstedit-edit-section-description' => '页面中每个主要章节都有“{{int:editsection}}”链接，让你可以只集中精神在这一部分上。',
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => '页面中每个主要章节都有“{{int:visualeditor-ca-editsource-section}}”链接，让你可以只集中精神在这一部分上。',
 	'guidedtour-tour-firstedit-preview-title' => '预览您的更改（可选）',
-	'guidedtour-tour-firstedit-preview-description' => '点击“{{int:showpreview}}”，您将看到您在该页面作出了哪些更改。请不要忘记保存！',
+	'guidedtour-tour-firstedit-preview-description' => '点击“{{int:showpreview}}”，您将看到您作出了更改后页面看上去会如何。请不要忘记保存！',
 	'guidedtour-tour-firstedit-save-title' => '你马上就要完成了！',
-	'guidedtour-tour-firstedit-save-description' => '当你准备好时，点击“{{int:savearticle}}”，您所做的修改会让所有人都看到。',
-	'guidedtour-tour-firsteditve-edit-page-description' => '单击“{{int:vector-view-edit}}{{int:visualeditor-beta-appendix}}”按钮以做出您的更改。',
+	'guidedtour-tour-firstedit-save-description' => '当你准备好时，点击“{{int:savearticle}}”，这样您所做的修改所有人都会看到。',
+	'guidedtour-tour-firsteditve-edit-page-description' => '单击“{{int:vector-view-edit}}{{int:visualeditor-beta-appendix}}”按钮以作出您的更改。',
+	'guidedtour-tour-firsteditve-edit-section-description' => '页面中每个主要章节都有“{{int:editsection}}{{int:visualeditor-beta-appendix}}”链接，让你可以只集中精神在这一部分上。',
+	'guidedtour-tour-firsteditve-save-description' => '当你准备好时，点击“{{int:visualeditor-toolbar-savedialog}}”，便会让所有人都能看到你所做的修改。',
 );
 
 /** Traditional Chinese (中文（繁體）‎)
