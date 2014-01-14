@@ -68,7 +68,7 @@
 	opacity: 0.5;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
 	filter: alpha(opacity=50);
-	z-index: 10;
+	z-index: 100000004;
 }
 
 .guider_arrow {
