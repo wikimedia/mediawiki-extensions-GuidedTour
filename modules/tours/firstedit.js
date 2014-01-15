@@ -2,7 +2,7 @@
 // Designed to work on any Wikipedia article, and can work for other sites with minor message changes.
 
 ( function ( window, document, $, mw, gt ) {
-	var hasEditSection, isVeInstalled;
+	var hasEditSection;
 
 	function shouldShowForPage() {
 		// Excludes pages outside the main namespace and pages with editing restrictions
@@ -18,22 +18,12 @@
 
 	hasEditSection = $( '.mw-editsection' ).length > 0;
 
-	// We don't care if VE is actually available on the page.
-	// If it is installed, it controls the edit link messages, even if VE is not available.
-	//
-	// VE actually allows configuring this through $wgVisualEditorTabMessages, but we assume the defaults.
-	//
-	// We fork messages only when necessary, based on whether VE is installed.  The messages with 'visualeditor'
-	// in the name include the VE messages through {{int:}}
-	isVeInstalled = !!mw.libs.ve;
 	gt.defineTour( {
 		name: 'firstedit',
 		shouldLog: true,
 		steps: [ {
 			titlemsg: 'guidedtour-tour-firstedit-edit-page-title',
-			descriptionmsg: isVeInstalled ?
-				'guidedtour-tour-firstedit-edit-page-visualeditor-description' :
-				'guidedtour-tour-firstedit-edit-page-description',
+			descriptionmsg: 'guidedtour-tour-firstedit-edit-page-description',
 			attachTo: '#ca-edit',
 			position: 'bottom',
 			// TODO (mattflaschen, 2013-09-03): After GuidedTour API enhancements, try to replace
@@ -52,9 +42,7 @@
 			allowAutomaticOkay: false
 		}, {
 			titlemsg: 'guidedtour-tour-firstedit-edit-section-title',
-			descriptionmsg: isVeInstalled ?
-				'guidedtour-tour-firstedit-edit-section-visualeditor-description' :
-				'guidedtour-tour-firstedit-edit-section-description',
+			descriptionmsg: 'guidedtour-tour-firstedit-edit-section-description',
 			position: 'right',
 			attachTo: '.mw-editsection',
 			autoFocus: true,

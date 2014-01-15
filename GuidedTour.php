@@ -38,7 +38,6 @@ $wgHooks['MakeGlobalVariablesScript'][] = 'GuidedTourHooks::onMakeGlobalVariable
 $wgHooks['ResourceLoaderTestModules'][] = 'GuidedTourHooks::onResourceLoaderTestModules';
 $wgHooks['UnitTestsList'][] = 'GuidedTourHooks::onUnitTestsList';
 $wgHooks['RedirectSpecialArticleRedirectParams'][] = 'GuidedTourHooks::onRedirectSpecialArticleRedirectParams';
-$wgHooks['ResourceLoaderRegisterModules'][] = 'GuidedTourHooks::onResourceLoaderRegisterModules';
 
 // Extension credits that will show up on Special:Version
 $wgExtensionCredits['other'][] = array(
@@ -124,6 +123,48 @@ $wgResourceModules['ext.guidedTour'] = array(
 
 
 // Tour modules
+
+// First edit to main namespace; for when VisualEditor is unavailable or disabled
+$wgResourceModules['ext.guidedTour.tour.firstedit'] = array(
+	'scripts' => 'firstedit.js',
+	'localBasePath' => $dir . 'modules/tours',
+	'remoteExtPath' => 'GuidedTour/modules/tours',
+	'dependencies' => 'ext.guidedTour',
+	'messages' => array(
+		'editsection',
+		'savearticle',
+		'showpreview',
+		'vector-view-edit',
+		'guidedtour-tour-firstedit-edit-page-title',
+		'guidedtour-tour-firstedit-edit-page-description',
+		'guidedtour-tour-firstedit-edit-section-title',
+		'guidedtour-tour-firstedit-edit-section-description',
+		'guidedtour-tour-firstedit-preview-title',
+		'guidedtour-tour-firstedit-preview-description',
+		'guidedtour-tour-firstedit-save-title',
+		'guidedtour-tour-firstedit-save-description',
+	),
+);
+
+// First edit to main namespace; for when VisualEditor is available and enabled
+$wgResourceModules['ext.guidedTour.tour.firsteditve'] = array(
+	'scripts' => 'firsteditve.js',
+	'localBasePath' => $dir . 'modules/tours',
+	'remoteExtPath' => 'GuidedTour/modules/tours',
+	'dependencies' => 'ext.guidedTour',
+	'messages' => array(
+		'editsection',
+		'vector-view-edit',
+		'visualeditor-beta-appendix',
+		'visualeditor-toolbar-savedialog',
+		'guidedtour-tour-firstedit-edit-page-title',
+		'guidedtour-tour-firsteditve-edit-page-description',
+		'guidedtour-tour-firstedit-edit-section-title',
+		'guidedtour-tour-firsteditve-edit-section-description',
+		'guidedtour-tour-firstedit-save-title',
+		'guidedtour-tour-firsteditve-save-description',
+	),
+);
 
 // Test tour as demonstration
 $wgResourceModules['ext.guidedTour.tour.test'] = array(
