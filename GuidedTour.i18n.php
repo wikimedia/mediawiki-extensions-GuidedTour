@@ -244,6 +244,7 @@ $messages['be-tarask'] = array(
 /** Bengali (বাংলা)
  * @author Aftab1995
  * @author Bellayet
+ * @author Nasir8891
  */
 $messages['bn'] = array(
 	'guidedtour-desc' => 'নতুন ব্যবহারকারীদের সহযোগিতার জন্য পাতায় একটি ভাসমান নির্দেশনামূলক ভ্রমণের সুযোগ করে দেয়।',
@@ -252,9 +253,28 @@ $messages['bn'] = array(
 	'guidedtour-next-button' => 'পরবর্তী',
 	'guidedtour-okay-button' => 'ঠিক আছে',
 	'guidedtour-tour-test-testing' => 'পরীক্ষণ',
+	'guidedtour-tour-test-test-description' => 'বর্ণনার একটি উদাহারণ. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-callouts' => 'পরীক্ষামূলক কলআউট',
+	'guidedtour-tour-test-portal-description' => 'এটি {{int:portal}} পাতা।',
+	'guidedtour-tour-test-mediawiki-parse' => 'মিডিয়াউইকি পার্স পরীক্ষা',
 	'guidedtour-tour-test-description-page' => 'পরীক্ষামূলক মিডিয়াউইকি বিবরণ পাতা',
 	'guidedtour-tour-test-go-description-page' => 'বিবরণ পাতায় যাও',
 	'guidedtour-tour-test-launch-tour' => 'পরীক্ষামূলক ভ্রমণ আরম্ভ করুন',
+	'guidedtour-tour-test-launch-tour-description' => 'গাইডগণ আরও নতুন নতুন ভ্রমনের আয়োজন করতে পারেন।',
+	'guidedtour-tour-test-launch-using-tours' => 'ট্যুর অপশন ব্যবহার করে নতুন ট্যুর আয়োজন করুন',
+	'guidedtour-tour-firstedit-edit-page-title' => 'সম্পাদনার জন্য প্রস্তুত?',
+	'guidedtour-tour-firstedit-edit-page-description' => '"{{int:vector-view-edit}}" বাটনে ক্লিক করে আপানার পরিবর্তনগুলো সম্পন্ন করুন।',
+	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => '"{{int:visualeditor-ca-editsource}}" বাটনে ক্লিক করে আপানার পরিবর্তনগুলো সম্পন্ন করুন।',
+	'guidedtour-tour-firstedit-edit-section-title' => 'একটি অনুচ্ছেদ সম্পাদনা করুন',
+	'guidedtour-tour-firstedit-edit-section-description' => 'গুরুত্বপূর্ণ প্রতিটি অনুচ্ছেদের জন্য "{{int:editsection}}" লিংক রয়েছে, তাই আপনি নির্দিষ্ট অংশটি সরাসরি সম্পাদনা করতে পারবেন।',
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'গুরুত্বপূর্ণ প্রতিটি অনুচ্ছেদে "{{int:visualeditor-ca-editsource-section}}" লিংক রয়েছে, এর ফলে আপনি সরাসরি অনুচ্ছেদগুলো সম্পাদনা করতে পারবেন।',
+	'guidedtour-tour-firstedit-preview-title' => 'পরিবর্তনের প্রাকদর্শন (ঐচ্ছিক)',
+	'guidedtour-tour-firstedit-preview-description' => '"{{int:showpreview}}" বাটনে ক্লিক করে আপনার পরিবর্তনের পর পাতাটি কেমন দেখাবে সেটি জানতে পারবেন। সংরক্ষনের কথা ভুলবেন না!',
+	'guidedtour-tour-firstedit-save-title' => 'আপনি প্রায় সম্পন্ন করেছেন!',
+	'guidedtour-tour-firstedit-save-description' => 'আপনার কাজ সম্পন্ন হলে, "{{int:savearticle}}" বাটনে ক্লিক করুন এবং আপনার পরিবর্তনগুলো সকলে দেখতে পারবে।',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'পরিবর্তনের জন্য "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" বাটনে ক্লিক করুন।',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'গুরুত্বপূর্ণ প্রতিটি অনুচ্ছেদে "{{int:editsection}} {{int:visualeditor-beta-appendix}}" লিংক রয়েছে, এর ফলে আপনি সরাসরি অনুচ্ছেদগুলো সম্পাদনা করতে পারবেন।',
+	'guidedtour-tour-firsteditve-save-description' => 'আপনার কাজ সম্পন্ন হলে, "{{int:visualeditor-toolbar-savedialog}}" বাটনে ক্লিক করুন এবং আপনার পরিবর্তনগুলো সকলে দেখতে পারবে।',
 );
 
 /** Breton (brezhoneg)
@@ -264,6 +284,40 @@ $messages['bn'] = array(
 $messages['br'] = array(
 	'guidedtour-okay-button' => 'A-du',
 	'guidedtour-tour-test-testing' => "Oc'h amprouiñ",
+);
+
+/** Bosnian (bosanski)
+ * @author Edinwiki
+ */
+$messages['bs'] = array(
+	'guidedtour-desc' => 'Dozvoljava stranicama da koriste vodič sa skočnim prozorima da bi se pomoglo novim korisnicima',
+	'guidedtour-help-url' => 'Help:Vodiči',
+	'guidedtour-help-guider-url' => 'Pomoć:Vodiči/vodič',
+	'guidedtour-next-button' => 'Slijedeće',
+	'guidedtour-okay-button' => 'OK',
+	'guidedtour-tour-test-testing' => 'Testiranje',
+	'guidedtour-tour-test-test-description' => 'Ovo je test za opis stranice. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-callouts' => 'Test objašnjenja',
+	'guidedtour-tour-test-portal-description' => 'Ovo je stranica {{int:portal}}.',
+	'guidedtour-tour-test-mediawiki-parse' => 'Test MediaWiki parsiranje',
+	'guidedtour-tour-test-description-page' => 'Test MediaWiki opis stranica',
+	'guidedtour-tour-test-go-description-page' => 'Idi na opis stranice',
+	'guidedtour-tour-test-launch-tour' => 'Test početak vodiča',
+	'guidedtour-tour-test-launch-tour-description' => 'Vodiči mogu započeti druge vodiče. Zar nije zabavno?',
+	'guidedtour-tour-test-launch-using-tours' => 'Započni vodič o korištenju vodiča',
+	'guidedtour-tour-firstedit-edit-page-title' => 'Spremni za uređivanje?',
+	'guidedtour-tour-firstedit-edit-page-description' => 'Kliknite na dugme "{{int:vector-view-edit}}" da napravite vaše izmjene.',
+	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Kliknite na dugme "{{int:visualeditor-ca-editsource}}" da napravite vaše izmjene.',
+	'guidedtour-tour-firstedit-edit-section-title' => 'Uredi samo sekciju',
+	'guidedtour-tour-firstedit-edit-section-description' => 'Postoje "{{int:editsection}}" veza za svaku glavnu sekciju na nekoj stranici, tako da se možete fokusirati samo na taj dio.',
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Postoje "{{int:visualeditor-ca-editsource-section}}" veza za svaku glavnu sekciju na nekoj stranici, tako da se možete fokusirati samo na taj dio.',
+	'guidedtour-tour-firstedit-preview-title' => 'Prikažite izgled vaših izmjena (nije obavezno)',
+	'guidedtour-tour-firstedit-preview-description' => 'Kada kliknete na "{{int:showpreview}}" onda možete vidjeti kako će stranica izgledati sa vašim izmjenama. Samo nemojte zaboraviti da poslije sačuvate stranicu!',
+	'guidedtour-tour-firstedit-save-title' => 'Skoro ste pred kraju!',
+	'guidedtour-tour-firstedit-save-description' => 'Kada završite, možete kliknuti na "{{int:savearticle}}" da vaše izmjene budu vidljive za svakoga.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Kliknite na dugme "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" da napravite vaše izmjene.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Postoje "{{int:editsection}} {{int:visualeditor-beta-appendix}}" veza za svaku glavnu sekciju na nekoj stranici, tako da se možete fokusirati samo na taj dio.',
+	'guidedtour-tour-firsteditve-save-description' => 'Kada završite, možete kliknuti na "{{int:visualeditor-toolbar-savedialog}}" da vaše izmjene budu vidljive za svakoga.',
 );
 
 /** Catalan (català)
@@ -299,6 +353,24 @@ $messages['ca'] = array(
 	'guidedtour-tour-firsteditve-edit-page-description' => 'Feu clic a "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" per a fer els vostres canvis.',
 	'guidedtour-tour-firsteditve-edit-section-description' => 'Disposeu d\'enllaços "{{int:editsection}} {{int:visualeditor-beta-appendix}}" a cada secció principal, per a concentrar-vos només en la part que vulgueu modificar.',
 	'guidedtour-tour-firsteditve-save-description' => 'Quan estigueu a punt, fent clic a "{{int:visualeditor-toolbar-savedialog}}" fareu els vostres canvis visibles per a tothom.',
+);
+
+/** Chechen (нохчийн)
+ * @author Умар
+ */
+$messages['ce'] = array(
+	'guidedtour-next-button' => 'Кхин дӀа',
+	'guidedtour-tour-firstedit-edit-page-title' => 'Кичча дуй тадар дан?',
+	'guidedtour-tour-firstedit-edit-page-description' => 'Хьай хийцам бан тӀетаӀе кнопка «{{int:vector-view-edit}}.',
+	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Хьай хийцам бан тӀетаӀе кнопка «{{int:visualeditor-ca-editsource}}.',
+	'guidedtour-tour-firstedit-edit-section-title' => 'Дакъана бен хийцам ма бе',
+	'guidedtour-tour-firstedit-edit-section-description' => 'Хьажораг «{{int:editsection}}» хӀора дакъана ю, цундела хьа йиш ю дакъа къастина тадан.',
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Хьажораг «{{int:visualeditor-ca-editsource-section}}» хӀора дакъана ю, цундела хьа йиш ю дакъа къастина тадан.',
+	'guidedtour-tour-firstedit-save-title' => 'Ахьа долийнарг чакхдала гергга ду!',
+	'guidedtour-tour-firstedit-save-description' => 'Хьой кичча хилча, тӀетаӀе «{{int:savearticle}}» хийцамаш массарна гуш хилийта.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Хьай хийцам бан тӀетаӀе кнопка «{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}».',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Хьажораг «{{int:editsection}} {{int:visualeditor-beta-appendix}}» хӀора дакъана ю, цундела хьа йиш ю дакъа къастина тадан.',
+	'guidedtour-tour-firsteditve-save-description' => 'Хьой кичча хилча, тӀетаӀе «{{int:visualeditor-toolbar-savedialog}}» хийцамаш массарна гуш хилийта.',
 );
 
 /** Czech (čeština)
@@ -352,6 +424,40 @@ $messages['diq'] = array(
 	'guidedtour-next-button' => 'Bahdoyên',
 	'guidedtour-okay-button' => 'Okay',
 	'guidedtour-tour-test-testing' => 'Testing',
+);
+
+/** Greek (Ελληνικά)
+ * @author Geraki
+ */
+$messages['el'] = array(
+	'guidedtour-desc' => 'Επιτρέπει στις σελίδες να παρέχουν μια αναδυόμενη ξενάγηση για να βοηθήσει τους νέους χρήστες',
+	'guidedtour-help-url' => 'Βοήθεια:Ξεναγήσεις', # Fuzzy
+	'guidedtour-help-guider-url' => 'Βοήθεια:Ξεναγήσεις/οδηγητής',
+	'guidedtour-next-button' => 'Επόμενο',
+	'guidedtour-okay-button' => 'Εντάξει',
+	'guidedtour-tour-test-testing' => 'Δοκιμή',
+	'guidedtour-tour-test-test-description' => 'Αυτή είναι μια δοκιμή της περιγραφής. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-callouts' => 'Δοκιμή επεξήγησης',
+	'guidedtour-tour-test-portal-description' => 'Αυτή είναι η σελίδα {{int:portal}}.',
+	'guidedtour-tour-test-mediawiki-parse' => 'Δοκιμή MediaWiki ανάλυσης',
+	'guidedtour-tour-test-description-page' => 'Δοκιμή MediaWiki σελίδες περιγραφής',
+	'guidedtour-tour-test-go-description-page' => 'Μεταβείτε στη σελίδα περιγραφής',
+	'guidedtour-tour-test-launch-tour' => 'Δοκιμή έναρξης περιοδείας',
+	'guidedtour-tour-test-launch-tour-description' => 'Οι οδηγητές μπορούν να ξεκινήσουν άλλες ξεναγήσεις. Αρκετά καλό, ε;',
+	'guidedtour-tour-test-launch-using-tours' => 'Εκκίνηση μιας περιοδείας για τη χρήση περιοδειών',
+	'guidedtour-tour-firstedit-edit-page-title' => 'Έτοιμοι να επεξεργαστείτε;',
+	'guidedtour-tour-firstedit-edit-page-description' => 'Κάντε κλικ στο κουμπί "{{int:vector-view-edit}}" για να κάνετε τις αλλαγές σας.',
+	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Κάντε κλικ στο κουμπί "{{int:visualeditor-ca-editsource}}" για να κάνετε τις αλλαγές σας.',
+	'guidedtour-tour-firstedit-edit-section-title' => 'Επεξεργαστείτε μόνο ένα τμήμα',
+	'guidedtour-tour-firstedit-edit-section-description' => 'Υπάρχουν σύνδεσμοι "{{int:editsection}}" για κάθε σημαντικό τμήμα σε μια σελίδα, ώστε να μπορείτε να εστιάσετε μόνο σε αυτό το κομμάτι.',
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Υπάρχουν σύνδεσμοι "{{int:visualeditor-ca-editsource-ενότητα}}" για κάθε σημαντική ενότητα σε μια σελίδα, ώστε να μπορείτε να εστιάσετε μόνο σε αυτό το κομμάτι.',
+	'guidedtour-tour-firstedit-preview-title' => 'Προεπισκόπηση των αλλαγών σας (προαιρετικό)',
+	'guidedtour-tour-firstedit-preview-description' => 'Κάνοντας κλικ στο "{{int:showpreview}}" σας επιτρέπει να ελέγχετε πως θα μοιάζει η σελίδα με τις αλλαγές σας. Απλά μην ξεχάσετε να αποθηκεύσετε!',
+	'guidedtour-tour-firstedit-save-title' => 'Είστε σχεδόν έτοιμοι!',
+	'guidedtour-tour-firstedit-save-description' => 'Όταν είστε έτοιμοι, κάνοντας κλικ στο κουμπί "{{int:savearticle}}" θα κάνει τις αλλαγές σας ορατές σε όλους.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Κάντε κλικ στο κουμπί "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" για να κάνετε τις αλλαγές σας.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Υπάρχουν σύνδεσμοι "{{int:editsection}} {{int:visualeditor-beta-appendix}}" για κάθε σημαντική ενότητα σε μια σελίδα, ώστε να μπορείτε να εστιάσετε μόνο σε αυτό το κομμάτι.',
+	'guidedtour-tour-firsteditve-save-description' => 'Όταν είστε έτοιμοι, κάνοντας κλικ στο κουμπί  "{{int:visualeditor-toolbar-savedialog}}" θα κάνει τις αλλαγές σας ορατές σε όλους.',
 );
 
 /** Spanish (español)
@@ -917,6 +1023,40 @@ $messages['nl'] = array(
 	'guidedtour-tour-firsteditve-edit-page-description' => 'Klik op de knop "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" om uw wijzigingen te maken.',
 	'guidedtour-tour-firsteditve-edit-section-description' => 'Er zijn koppelingen "{{int:editsection}} {{int:visualeditor-beta-appendix}}" voor iedere onderdeel van een pagina, zodat u zich kunt concentreren op dat onderdeel.',
 	'guidedtour-tour-firsteditve-save-description' => 'Als u klaar bent, kunt u op "{{int:visualeditor-toolbar-savedialog}}" klikken om uw wijzigingen voor iedereen zichtbaar te maken.',
+);
+
+/** Polish (polski)
+ * @author Peter Bowman
+ */
+$messages['pl'] = array(
+	'guidedtour-desc' => 'Umożliwia korzystanie z interaktywnych przewodników dla początkujących',
+	'guidedtour-help-url' => 'Help:Interaktywny przewodnik',
+	'guidedtour-help-guider-url' => 'Pomoc:Interaktywny przewodnik/przewodnik',
+	'guidedtour-next-button' => 'Dalej',
+	'guidedtour-okay-button' => 'Zgoda',
+	'guidedtour-tour-test-testing' => 'Testowanie',
+	'guidedtour-tour-test-test-description' => 'To jest przykładowy tekst. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-callouts' => 'Test odniesień',
+	'guidedtour-tour-test-portal-description' => 'To jest strona „{{int:portal}}”.',
+	'guidedtour-tour-test-mediawiki-parse' => 'Test składni MediaWiki',
+	'guidedtour-tour-test-description-page' => 'Test stron opisowych MediaWiki',
+	'guidedtour-tour-test-go-description-page' => 'Przejdź na stronę opisu',
+	'guidedtour-tour-test-launch-tour' => 'Test rozpoczęcia wycieczki',
+	'guidedtour-tour-test-launch-tour-description' => 'Jeden przewodnik może uruchomić drugi. Fajne, prawda?',
+	'guidedtour-tour-test-launch-using-tours' => 'Rozpocznij przewodnik po korzystaniu z przewodników',
+	'guidedtour-tour-firstedit-edit-page-title' => '{{GENDER:|Gotowy|Gotowa}} do rozpoczęcia edytowania?',
+	'guidedtour-tour-firstedit-edit-page-description' => 'Kliknij na „{{int:vector-view-edit}}”, aby dokonać zmian.',
+	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Kliknij na „{{int:visualeditor-ca-editsource}}”, aby dokonać zmian.',
+	'guidedtour-tour-firstedit-edit-section-title' => 'Edytuj tylko jedna sekcję',
+	'guidedtour-tour-firstedit-edit-section-description' => 'Obok każdego nagłówka znajduje się odnośnik „{{int:editsection}}”, aby móc skupić się tylko na tej części.',
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Obok każdego nagłówka znajduje się odnośnik „{{int:visualeditor-ca-editsource-section}}”, aby móc skupić się tylko na tej części.',
+	'guidedtour-tour-firstedit-preview-title' => 'Przejrzyj swoje zmiany (opcjonalne)',
+	'guidedtour-tour-firstedit-preview-description' => 'Naciśnięcie na „{{int:showpreview}}” pozwoli Ci obejrzeć wygląd strony po wprowadzeniu Twoich zmian. Nie zapomnij ich zapisać!',
+	'guidedtour-tour-firstedit-save-title' => 'Prawie gotowe!',
+	'guidedtour-tour-firstedit-save-description' => 'Gdy będziesz {{GENDER:|gotowy|gotowa}}, kliknij „{{int:savearticle}}”, aby zmiany stały się widoczne dla każdego.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Kliknij na „{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}”, aby rozpocząć edycję strony.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Obok każdego nagłówka znajduje się odnośnik „{{int:editsection}} {{int:visualeditor-beta-appendix}}”, aby móc skupić się tylko na tej części.',
+	'guidedtour-tour-firsteditve-save-description' => 'Gdy skończysz, kliknięcie na „{{int:visualeditor-toolbar-savedialog}}” sprawi, że zmiany będą widoczne dla każdego.',
 );
 
 /** Piedmontese (Piemontèis)
