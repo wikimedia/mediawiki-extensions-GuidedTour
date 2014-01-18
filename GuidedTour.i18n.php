@@ -144,11 +144,13 @@ Refers to {{msg-mw|Visualeditor-toolbar-savedialog}}.',
 );
 
 /** Arabic (العربية)
+ * @author Asaifm
  * @author Ciphers
  */
 $messages['ar'] = array(
 	'guidedtour-desc' => 'السماح للصفحات بعرض رسائل جولات تعريفية لمساعدة المستخدمين الجدد',
 	'guidedtour-help-url' => 'مساعدة:جولات تعريفية', # Fuzzy
+	'guidedtour-next-button' => 'التالي',
 	'guidedtour-okay-button' => 'حسنا',
 	'guidedtour-tour-test-testing' => 'تجربة',
 	'guidedtour-tour-test-test-description' => 'هذه تجربة للوصف. أهلا بكم!',
@@ -359,7 +361,15 @@ $messages['ca'] = array(
  * @author Умар
  */
 $messages['ce'] = array(
+	'guidedtour-help-url' => 'Help:Хьехаран мураш',
+	'guidedtour-help-guider-url' => 'Help:Хьехаран мураш/гойтурш',
 	'guidedtour-next-button' => 'Кхин дӀа',
+	'guidedtour-tour-test-testing' => 'Зер',
+	'guidedtour-tour-test-test-description' => 'Цу Lorem ipsum dolor sit лаьцна хьажар!',
+	'guidedtour-tour-test-callouts' => 'Хьажар зер',
+	'guidedtour-tour-test-portal-description' => 'ХӀара агӀо ю {{int:portal}}.',
+	'guidedtour-tour-test-description-page' => 'MediaWiki лаьцна агӀонаш зер',
+	'guidedtour-tour-test-go-description-page' => 'Цунах лаьцнарг долу агӀонг гӀо',
 	'guidedtour-tour-firstedit-edit-page-title' => 'Кичча дуй тадар дан?',
 	'guidedtour-tour-firstedit-edit-page-description' => 'Хьай хийцам бан тӀетаӀе кнопка «{{int:vector-view-edit}}.',
 	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Хьай хийцам бан тӀетаӀе кнопка «{{int:visualeditor-ca-editsource}}.',
@@ -637,9 +647,18 @@ $messages['gl'] = array(
 
 /** Gujarati (ગુજરાતી)
  * @author Ashok modhvadia
+ * @author Dsvyas
  */
 $messages['gu'] = array(
 	'guidedtour-next-button' => 'આગળ',
+	'guidedtour-okay-button' => 'બરોબર',
+	'guidedtour-tour-test-testing' => 'ટેસ્ટીંગ',
+	'guidedtour-tour-test-test-description' => 'આ વર્ણનનું પરિક્ષણ છે. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-callouts' => 'Test callouts',
+	'guidedtour-tour-test-portal-description' => 'આ {{int:portal}}નું પાનું છે.',
+	'guidedtour-tour-test-mediawiki-parse' => 'Test MediaWiki parse',
+	'guidedtour-tour-test-description-page' => 'પરિક્ષણ મીડિયાવિકિ વર્ણન પૃષ્ઠ',
+	'guidedtour-tour-test-go-description-page' => 'વર્ણનના પૃષ્ઠ પર જાવ',
 );
 
 /** Hebrew (עברית)
@@ -829,6 +848,7 @@ $messages['ka'] = array(
 );
 
 /** Korean (한국어)
+ * @author Priviet
  * @author 아라
  */
 $messages['ko'] = array(
@@ -853,12 +873,13 @@ $messages['ko'] = array(
 	'guidedtour-tour-firstedit-edit-page-description' => '내용을 바꾸려면 "{{int:vector-view-edit}}" 버튼을 클릭하세요.',
 	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => '내용을 바꾸려면 "{{int:visualeditor-ca-editsource}}" 버튼을 클릭하세요.',
 	'guidedtour-tour-firstedit-edit-section-title' => '문단 편집',
-	'guidedtour-tour-firstedit-edit-section-description' => '각 주요 문단 부분에 집중할 수 있도록, 문서에 각 주요 문단에 대한 "{{int:editsection}}" 링크가 있습니다.', # Fuzzy
-	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => '각 주요 문단 부분에 집중할 수 있도록, 문서에 각 주요 문단에 대한 "{{int:visualeditor-ca-editsource-section}}" 링크가 있습니다.', # Fuzzy
+	'guidedtour-tour-firstedit-edit-section-description' => '각 주요 문단 부분에 집중할 수 있도록 문서에 각 주요 문단에 대한 "{{int:editsection}}" 링크가 있습니다.',
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => '각 주요 문단 부분에 집중할 수 있도록 문서에 각 주요 문단에 대한 "{{int:visualeditor-ca-editsource-section}}" 링크가 있습니다.',
 	'guidedtour-tour-firstedit-preview-title' => '바뀐 내용 미리 보기 (선택 사항)',
 	'guidedtour-tour-firstedit-preview-description' => '"{{int:showpreview}}"를 클릭하면 문서가 어떻게 바뀌었는지 확인할 수 있습니다. 저장하는 것을 잊지 마세요!',
 	'guidedtour-tour-firstedit-save-title' => '거의 끝나갑니다!',
 	'guidedtour-tour-firstedit-save-description' => '준비가 되면, "{{int:savearticle}}"을 클릭하면 바꾼 내용을 모두에게 보여줍니다.',
+	'guidedtour-tour-firsteditve-edit-section-description' => '각 주요 문단 부분에 집중할 수 있도록 문서에 각 주요 문단에 대한 "{{int:editsection}} {{int:visualeditor-beta-appendix}}" 링크가 있습니다.',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
