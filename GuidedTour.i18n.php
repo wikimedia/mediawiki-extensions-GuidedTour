@@ -879,7 +879,9 @@ $messages['ko'] = array(
 	'guidedtour-tour-firstedit-preview-description' => '"{{int:showpreview}}"를 클릭하면 문서가 어떻게 바뀌었는지 확인할 수 있습니다. 저장하는 것을 잊지 마세요!',
 	'guidedtour-tour-firstedit-save-title' => '거의 끝나갑니다!',
 	'guidedtour-tour-firstedit-save-description' => '준비가 되면, "{{int:savearticle}}"을 클릭하면 바꾼 내용을 모두에게 보여줍니다.',
+	'guidedtour-tour-firsteditve-edit-page-description' => '내용을 바꾸려면 "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" 단추를 클릭하세요.',
 	'guidedtour-tour-firsteditve-edit-section-description' => '각 주요 문단 부분에 집중할 수 있도록 문서에 각 주요 문단에 대한 "{{int:editsection}} {{int:visualeditor-beta-appendix}}" 링크가 있습니다.',
+	'guidedtour-tour-firsteditve-save-description' => '준비가 되면 "{{int:savearticle}}"을 클릭하여 바꾼 내용을 모두에게 보이도록 해주세요.',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
