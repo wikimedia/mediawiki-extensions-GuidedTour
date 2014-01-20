@@ -148,20 +148,34 @@ Refers to {{msg-mw|Visualeditor-toolbar-savedialog}}.',
  * @author Ciphers
  */
 $messages['ar'] = array(
-	'guidedtour-desc' => 'السماح للصفحات بعرض رسائل جولات تعريفية لمساعدة المستخدمين الجدد',
-	'guidedtour-help-url' => 'مساعدة:جولات تعريفية', # Fuzzy
+	'guidedtour-desc' => 'السماح للصفحات بعرض رسائل جولات إرشادية لمساعدة المستخدمين الجدد',
+	'guidedtour-help-url' => 'مساعدة:جولات إرشادية', # Fuzzy
+	'guidedtour-help-guider-url' => 'مساعدة:جولات إرشادية/مرشد',
 	'guidedtour-next-button' => 'التالي',
-	'guidedtour-okay-button' => 'حسنا',
+	'guidedtour-okay-button' => 'حسناً',
 	'guidedtour-tour-test-testing' => 'تجربة',
-	'guidedtour-tour-test-test-description' => 'هذه تجربة للوصف. أهلا بكم!',
+	'guidedtour-tour-test-test-description' => 'هذه تجربة للوصف. أبجد هوز حطي كلمن!',
 	'guidedtour-tour-test-callouts' => 'شرح التجربة',
-	'guidedtour-tour-test-portal-description' => 'هذه هي صفحة بوابة المجتمع.', # Fuzzy
-	'guidedtour-tour-test-mediawiki-parse' => 'تحليل تجربة الميدياويكي',
-	'guidedtour-tour-test-description-page' => 'صفحات شرح تجربة ميدياويكي',
+	'guidedtour-tour-test-portal-description' => 'هذه هي صفحة {{int:portal}}.',
+	'guidedtour-tour-test-mediawiki-parse' => 'جرب طريقة إعراب ميديا ويكي',
+	'guidedtour-tour-test-description-page' => 'جرب صفحات شرح ميديا ويكي',
 	'guidedtour-tour-test-go-description-page' => 'اذهب إلى صفحة الشرح',
-	'guidedtour-tour-test-launch-tour' => 'جولة تجربة الإطلاق',
-	'guidedtour-tour-test-launch-tour-description' => 'من الممكن للأدلاء إطلاق المزيد من الجولات التعريفية. أليس ذلك رائعا؟',
+	'guidedtour-tour-test-launch-tour' => 'جرب جولة إفتتاحية',
+	'guidedtour-tour-test-launch-tour-description' => 'من الممكن للمرشدين إطلاق المزيد من الجولات الإرشادية. أليس ذلك رائعا؟',
 	'guidedtour-tour-test-launch-using-tours' => 'إطلاق جولة حول استخدام الجولات',
+	'guidedtour-tour-firstedit-edit-page-title' => 'أمستعد للتحرير؟',
+	'guidedtour-tour-firstedit-edit-page-description' => 'إضغط على زر "{{int:vector-view-edit}}" لإضافة تغييراتك.',
+	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'إضغط على زر "{{int:visualeditor-ca-editsource}}"  لإضافة تغييراتك.',
+	'guidedtour-tour-firstedit-edit-section-title' => 'حرر قسم فقط',
+	'guidedtour-tour-firstedit-edit-section-description' => 'هناك روابط "{{int:editsection}}" لكل قسم رئيس في الصفحة لكي تتمكن من التركيز عليه.',
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'هناك روابط "{{int:visualeditor-ca-editsource-section}}" لكل قسم رئيس في الصفحة لكي تتمكن من التركيز عليه.',
+	'guidedtour-tour-firstedit-preview-title' => 'معاينة تغييراتك (اختياري)',
+	'guidedtour-tour-firstedit-preview-description' => 'يمكنك معاينة شكل الصفحة عند الضغط على "{{int:showpreview}}". لا تنسى النقر على زر الحفظ عند غنتهائك من المعاينة!',
+	'guidedtour-tour-firstedit-save-title' => 'أنت على وشك الانتهاء!',
+	'guidedtour-tour-firstedit-save-description' => 'عند انتهائك قم بالضغط على "{{int:savearticle}}" كي تظهر تغييراتك للجميع.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'إضغط على زر  "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" لحفظ تغييراتك.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'هناك روابط  "{{int:editsection}} {{int:visualeditor-beta-appendix}}" لكل قسم رئيس في الصفحة لكي تتمكن من التركيز عليه.',
+	'guidedtour-tour-firsteditve-save-description' => 'عند انتهائك قم بالضغط على "{{int:visualeditor-toolbar-savedialog}}" كي تظهر تغييراتك للجميع.',
 );
 
 /** Asturian (asturianu)
@@ -385,9 +399,37 @@ $messages['ce'] = array(
 
 /** Czech (čeština)
  * @author Mormegil
+ * @author Utar
  */
 $messages['cs'] = array(
 	'guidedtour-desc' => 'Umožňuje stránkám poskytovat vyskakovacího průvodce pro pomoc novým uživatelům',
+	'guidedtour-help-url' => 'Help:Prohlídky',
+	'guidedtour-help-guider-url' => 'Nápověda:Prohlídky/Průvodce',
+	'guidedtour-next-button' => 'Další',
+	'guidedtour-okay-button' => 'OK',
+	'guidedtour-tour-test-testing' => 'Testování',
+	'guidedtour-tour-test-test-description' => 'Toto je test popisu. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-callouts' => 'Testování popisku',
+	'guidedtour-tour-test-portal-description' => 'Toto je stránka „{{int:portal}}“.',
+	'guidedtour-tour-test-mediawiki-parse' => 'Testování parsování MediaWiki',
+	'guidedtour-tour-test-description-page' => 'Testování dokumentačních stránek MediaWiki',
+	'guidedtour-tour-test-go-description-page' => 'Přejděte na stránku s popisem',
+	'guidedtour-tour-test-launch-tour' => 'Zkušební spuštění prohlídky',
+	'guidedtour-tour-test-launch-tour-description' => 'Průvodce může spouštět další prohlídky. Dobrý, což?',
+	'guidedtour-tour-test-launch-using-tours' => 'Spustit prohlídku o používání prohlídek',
+	'guidedtour-tour-firstedit-edit-page-title' => 'Připraveni editovat?',
+	'guidedtour-tour-firstedit-edit-page-description' => 'Pro provedení změn klikněte na tlačítko „{{int:vector-view-edit}}“.',
+	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Pro provedení změn klikněte na tlačítko „{{int:visualeditor-ca-editsource}}“.',
+	'guidedtour-tour-firstedit-edit-section-title' => 'Editovat pouze jednu sekci',
+	'guidedtour-tour-firstedit-edit-section-description' => 'Pro každou sekci stránky existují odkazy  „{{int:editsection}}“, takže se můžete soustředit právě jen na danou část.',
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Pro každou sekci stránky existují odkazy  „{{int:visualeditor-ca-editsource-section}}“, takže se můžete soustředit právě jen na danou část.',
+	'guidedtour-tour-firstedit-preview-title' => 'Prohlédněte si své změny (nepovinné)',
+	'guidedtour-tour-firstedit-preview-description' => 'Kliknutím na „{{int:showpreview}}“ si můžete zkontrolovat, jak bude stránka vypadat po provedení změn. Jen ji pak nezapomeňte uložit!',
+	'guidedtour-tour-firstedit-save-title' => 'Už jste skoro hotovi!',
+	'guidedtour-tour-firstedit-save-description' => 'Až budete s editací hotovi, kliknutím na tlačítko „{{int:savearticle}}“ své změny zveřejníte.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Pro provedení změn klikněte na tlačítko „{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}“.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Pro každou sekci stránky existují odkazy  „{{int:editsection}} {{int:visualeditor-beta-appendix}}“, takže se můžete soustředit právě jen na danou část.',
+	'guidedtour-tour-firsteditve-save-description' => 'Až budete s editací hotovi, kliknutím na tlačítko „{{int:visualeditor-toolbar-savedialog}}“ své změny zveřejníte.',
 );
 
 /** German (Deutsch)
@@ -1104,6 +1146,7 @@ $messages['pms'] = array(
 
 /** Portuguese (português)
  * @author Alchimista
+ * @author Fúlvio
  * @author Hamilton Abreu
  * @author Raylton P. Sousa
  */
@@ -1124,6 +1167,19 @@ $messages['pt'] = array(
 	'guidedtour-tour-test-launch-tour' => 'Teste do lançamento do guia',
 	'guidedtour-tour-test-launch-tour-description' => 'Os guias podem lançar outras visitas guiadas, muito interessante, não?',
 	'guidedtour-tour-test-launch-using-tours' => 'Lançar um guia sobre como usar visitas guiadas',
+	'guidedtour-tour-firstedit-edit-page-title' => 'Pronto para editar?',
+	'guidedtour-tour-firstedit-edit-page-description' => 'Clica no botão "{{int:vector-view-edit}}" para realizar as suas mudanças.',
+	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Clica no botão "{{int:visualeditor-ca-editsource}}" para realizar as suas mudanças.',
+	'guidedtour-tour-firstedit-edit-section-title' => 'Editar apenas uma seção',
+	'guidedtour-tour-firstedit-edit-section-description' => 'Há ligações "{{int:editsection}}" em cada seção da página, para que você possa concentrar-se apenas nesta parte.',
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Há ligações "{{int:visualeditor-ca-editsource-section}}" em cada seção da página, para que você possa concentrar-se apenas nesta parte.',
+	'guidedtour-tour-firstedit-preview-title' => 'Visualize as suas alterações (opcional)',
+	'guidedtour-tour-firstedit-preview-description' => 'Clica em "{{int:showpreview}}" para ver como ficará a página após as suas alterações. Não esqueça de salvá-las!',
+	'guidedtour-tour-firstedit-save-title' => 'Está quase pronto!',
+	'guidedtour-tour-firstedit-save-description' => 'Quando terminar, clica em "{{int:savearticle}}" para que suas alterações sejam visíveis para todos.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Clica no botão "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" para realizar as suas mudanças.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'There are "{{int:editsection}} {{int:visualeditor-beta-appendix}}" links for each major section in a page, so you can focus on just that part.',
+	'guidedtour-tour-firsteditve-save-description' => 'Quando terminar, clica em "{{int:visualeditor-toolbar-savedialog}}" para que suas alterações sejam visíveis para todos.',
 );
 
 /** Brazilian Portuguese (português do Brasil)
