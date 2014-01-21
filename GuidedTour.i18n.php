@@ -400,6 +400,7 @@ $messages['ce'] = array(
 /** Czech (čeština)
  * @author Mormegil
  * @author Utar
+ * @author YjM
  */
 $messages['cs'] = array(
 	'guidedtour-desc' => 'Umožňuje stránkám poskytovat vyskakovacího průvodce pro pomoc novým uživatelům',
@@ -415,20 +416,20 @@ $messages['cs'] = array(
 	'guidedtour-tour-test-description-page' => 'Testování dokumentačních stránek MediaWiki',
 	'guidedtour-tour-test-go-description-page' => 'Přejděte na stránku s popisem',
 	'guidedtour-tour-test-launch-tour' => 'Zkušební spuštění prohlídky',
-	'guidedtour-tour-test-launch-tour-description' => 'Průvodce může spouštět další prohlídky. Dobrý, což?',
+	'guidedtour-tour-test-launch-tour-description' => 'Průvodce může spouštět další prohlídky. Dost dobrý, ne?',
 	'guidedtour-tour-test-launch-using-tours' => 'Spustit prohlídku o používání prohlídek',
 	'guidedtour-tour-firstedit-edit-page-title' => 'Připraveni editovat?',
 	'guidedtour-tour-firstedit-edit-page-description' => 'Pro provedení změn klikněte na tlačítko „{{int:vector-view-edit}}“.',
 	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Pro provedení změn klikněte na tlačítko „{{int:visualeditor-ca-editsource}}“.',
 	'guidedtour-tour-firstedit-edit-section-title' => 'Editovat pouze jednu sekci',
-	'guidedtour-tour-firstedit-edit-section-description' => 'Pro každou sekci stránky existují odkazy  „{{int:editsection}}“, takže se můžete soustředit právě jen na danou část.',
-	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Pro každou sekci stránky existují odkazy  „{{int:visualeditor-ca-editsource-section}}“, takže se můžete soustředit právě jen na danou část.',
+	'guidedtour-tour-firstedit-edit-section-description' => 'Pro každou sekci stránky existují odkazy  „{{int:editsection}}“, takže se můžete soustředit pouze na danou část.',
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Pro každou sekci stránky existují odkazy  „{{int:visualeditor-ca-editsource-section}}“, takže se můžete soustředit pouze na danou část.',
 	'guidedtour-tour-firstedit-preview-title' => 'Prohlédněte si své změny (nepovinné)',
 	'guidedtour-tour-firstedit-preview-description' => 'Kliknutím na „{{int:showpreview}}“ si můžete zkontrolovat, jak bude stránka vypadat po provedení změn. Jen ji pak nezapomeňte uložit!',
 	'guidedtour-tour-firstedit-save-title' => 'Už jste skoro hotovi!',
 	'guidedtour-tour-firstedit-save-description' => 'Až budete s editací hotovi, kliknutím na tlačítko „{{int:savearticle}}“ své změny zveřejníte.',
 	'guidedtour-tour-firsteditve-edit-page-description' => 'Pro provedení změn klikněte na tlačítko „{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}“.',
-	'guidedtour-tour-firsteditve-edit-section-description' => 'Pro každou sekci stránky existují odkazy  „{{int:editsection}} {{int:visualeditor-beta-appendix}}“, takže se můžete soustředit právě jen na danou část.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Pro každou sekci stránky existují odkazy  „{{int:editsection}} {{int:visualeditor-beta-appendix}}“, takže se můžete soustředit pouze na danou část.',
 	'guidedtour-tour-firsteditve-save-description' => 'Až budete s editací hotovi, kliknutím na tlačítko „{{int:visualeditor-toolbar-savedialog}}“ své změny zveřejníte.',
 );
 
@@ -1426,6 +1427,7 @@ $messages['wuu'] = array(
 );
 
 /** Simplified Chinese (中文（简体）‎)
+ * @author Byfserag
  * @author Hydra
  * @author Li3939108
  * @author Liflon
@@ -1466,8 +1468,36 @@ $messages['zh-hans'] = array(
 );
 
 /** Traditional Chinese (中文（繁體）‎)
+ * @author Byfserag
  * @author Simon Shek
  */
 $messages['zh-hant'] = array(
+	'guidedtour-desc' => '允許頁面提供彈出式導覽來引導新用戶',
+	'guidedtour-help-url' => 'Help:導覽',
+	'guidedtour-help-guider-url' => 'Help:導覽/嚮導',
 	'guidedtour-next-button' => '下一步',
+	'guidedtour-okay-button' => '好的',
+	'guidedtour-tour-test-testing' => '測試',
+	'guidedtour-tour-test-test-description' => '這是一個描述的測試。 Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-callouts' => '測試標注',
+	'guidedtour-tour-test-portal-description' => '這是 {{int:portal}} 頁。',
+	'guidedtour-tour-test-mediawiki-parse' => '測試MediaWiki解析器',
+	'guidedtour-tour-test-description-page' => '測試 MediaWiki 描述頁',
+	'guidedtour-tour-test-go-description-page' => '轉到描述頁',
+	'guidedtour-tour-test-launch-tour' => '測試啟動導覽',
+	'guidedtour-tour-test-launch-tour-description' => '嚮導可以啟動其他導覽。很酷，對吧？',
+	'guidedtour-tour-test-launch-using-tours' => '在使用的導覽上啟動一個導覽',
+	'guidedtour-tour-firstedit-edit-page-title' => '準備好編輯了嗎？',
+	'guidedtour-tour-firstedit-edit-page-description' => '點擊“{{int:vector-view-edit}}”按鈕，確認你的修改。',
+	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => '點擊“{{int:visualeditor-ca-editsource}}”按鈕，確認你的修改。',
+	'guidedtour-tour-firstedit-edit-section-title' => '只編輯一個章節',
+	'guidedtour-tour-firstedit-edit-section-description' => '頁面中每個主要章節都有“{{int:editsection}}”鏈接，讓你可以只集中精神在這一部分上。',
+	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => '頁面中每個主要章節都有“{{int:visualeditor-ca-editsource-section}}”鏈接，讓你可以只集中精神在這一部分上。',
+	'guidedtour-tour-firstedit-preview-title' => '預覽您的更改（可選）',
+	'guidedtour-tour-firstedit-preview-description' => '點擊“{{int:showpreview}}”，您將看到您作出了更改後頁面看上去會如何。請不要忘記保存！',
+	'guidedtour-tour-firstedit-save-title' => '你馬上就要完成了！',
+	'guidedtour-tour-firstedit-save-description' => '當你準備好時，點擊“{{int:savearticle}}”，這樣您所做的修改所有人都會看到。',
+	'guidedtour-tour-firsteditve-edit-page-description' => '單擊“{{int:vector-view-edit}}{{int:visualeditor-beta-appendix}}”按鈕以作出您的更改。',
+	'guidedtour-tour-firsteditve-edit-section-description' => '頁面中每個主要章節都有“{{int:editsection}}{{int:visualeditor-beta-appendix}}”鏈接，讓你可以只集中精神在這一部分上。',
+	'guidedtour-tour-firsteditve-save-description' => '當你準備好時，點擊“{{int:visualeditor-toolbar-savedialog}}”，便會讓所有人都能看到你所做的修改。',
 );
