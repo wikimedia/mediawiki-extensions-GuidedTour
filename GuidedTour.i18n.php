@@ -483,10 +483,11 @@ $messages['diq'] = array(
 
 /** Greek (Ελληνικά)
  * @author Geraki
+ * @author Nikosguard
  */
 $messages['el'] = array(
 	'guidedtour-desc' => 'Επιτρέπει στις σελίδες να παρέχουν μια αναδυόμενη ξενάγηση για να βοηθήσει τους νέους χρήστες',
-	'guidedtour-help-url' => 'Βοήθεια:Ξεναγήσεις', # Fuzzy
+	'guidedtour-help-url' => 'Βοήθεια:Ξενάγηση', # Fuzzy
 	'guidedtour-help-guider-url' => 'Βοήθεια:Ξεναγήσεις/οδηγητής',
 	'guidedtour-next-button' => 'Επόμενο',
 	'guidedtour-okay-button' => 'Εντάξει',
@@ -502,10 +503,8 @@ $messages['el'] = array(
 	'guidedtour-tour-test-launch-using-tours' => 'Εκκίνηση μιας περιοδείας για τη χρήση περιοδειών',
 	'guidedtour-tour-firstedit-edit-page-title' => 'Έτοιμοι να επεξεργαστείτε;',
 	'guidedtour-tour-firstedit-edit-page-description' => 'Κάντε κλικ στο κουμπί "{{int:vector-view-edit}}" για να κάνετε τις αλλαγές σας.',
-	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Κάντε κλικ στο κουμπί "{{int:visualeditor-ca-editsource}}" για να κάνετε τις αλλαγές σας.',
 	'guidedtour-tour-firstedit-edit-section-title' => 'Επεξεργαστείτε μόνο ένα τμήμα',
 	'guidedtour-tour-firstedit-edit-section-description' => 'Υπάρχουν σύνδεσμοι "{{int:editsection}}" για κάθε σημαντικό τμήμα σε μια σελίδα, ώστε να μπορείτε να εστιάσετε μόνο σε αυτό το κομμάτι.',
-	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Υπάρχουν σύνδεσμοι "{{int:visualeditor-ca-editsource-ενότητα}}" για κάθε σημαντική ενότητα σε μια σελίδα, ώστε να μπορείτε να εστιάσετε μόνο σε αυτό το κομμάτι.',
 	'guidedtour-tour-firstedit-preview-title' => 'Προεπισκόπηση των αλλαγών σας (προαιρετικό)',
 	'guidedtour-tour-firstedit-preview-description' => 'Κάνοντας κλικ στο "{{int:showpreview}}" σας επιτρέπει να ελέγχετε πως θα μοιάζει η σελίδα με τις αλλαγές σας. Απλά μην ξεχάσετε να αποθηκεύσετε!',
 	'guidedtour-tour-firstedit-save-title' => 'Είστε σχεδόν έτοιμοι!',
