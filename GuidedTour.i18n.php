@@ -612,11 +612,13 @@ $messages['fi'] = array(
  * @author Seb35
  * @author Trizek
  * @author Urhixidur
+ * @author Verdy p
  */
 $messages['fr'] = array(
 	'guidedtour-desc' => 'Autoriser les pages à afficher une visite guidée par pop-up pour aider les nouveaux utilisateurs',
 	'guidedtour-help-url' => 'Help:Visites guidées',
 	'guidedtour-help-guider-url' => 'Help:Visites guidées/guide',
+	'guidedtour-custom.css' => '/* CSS personnalisé pour l’extension Visite guidée. */',
 	'guidedtour-next-button' => 'Suivant',
 	'guidedtour-okay-button' => 'D’accord',
 	'guidedtour-tour-test-testing' => 'Tester',
@@ -632,10 +634,8 @@ $messages['fr'] = array(
 	'guidedtour-tour-test-launch-using-tours' => "Lancer une visite sur l'utilisation des visites",
 	'guidedtour-tour-firstedit-edit-page-title' => 'Prêt à modifier ?',
 	'guidedtour-tour-firstedit-edit-page-description' => 'Cliquez sur le bouton « {{int:vector-view-edit}} » pour faire vos modifications.',
-	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Cliquez sur le bouton « {{int:visualeditor-ca-editsource}} » pour faire vos modifications.',
 	'guidedtour-tour-firstedit-edit-section-title' => 'Modifier seulement une section',
 	'guidedtour-tour-firstedit-edit-section-description' => 'Il y a des liens « {{int:editsection}} » pour chaque section majeure d’une page, afin que vous puissiez vous concentrer sur cette partie.',
-	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Il y a des liens « {{int:visualeditor-ca-editsource-section}} » pour chaque section majeure d’une page, afin que vous puissiez vous concentrer sur cette partie.',
 	'guidedtour-tour-firstedit-preview-title' => 'Prévisualisez vos modifications (facultatif)',
 	'guidedtour-tour-firstedit-preview-description' => 'Cliquer sur « {{int:showpreview}} » vous permet de vérifier à quoi ressemblera la page avec vos modifications. Ensuite, n’oubliez pas de publier pour enregistrer.',
 	'guidedtour-tour-firstedit-save-title' => 'Vous avez presque terminé !',
