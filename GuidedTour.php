@@ -75,7 +75,10 @@ $wgResourceModules['ext.guidedTour.styles'] = array(
 	'remoteExtPath' => 'GuidedTour/modules',
 	'dependencies' => array(
 		'mediawiki.libs.guiders',
-		'mediawiki.ui',
+		// Ideally 'mediawiki.ui.button' should be added with addModuleStyles to
+		// avoid duplication.
+		// However, that wouldn't work if a tour is loaded dynamically on the client-side.
+		'mediawiki.ui.button',
 	),
 );
 
