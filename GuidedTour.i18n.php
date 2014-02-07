@@ -1172,6 +1172,7 @@ $messages['pms'] = array(
  * @author Alchimista
  * @author Fúlvio
  * @author Hamilton Abreu
+ * @author Imperadeiro98
  * @author Josep Maria 15.
  * @author Raylton P. Sousa
  */
@@ -1196,10 +1197,10 @@ $messages['pt'] = array(
 	'guidedtour-tour-firstedit-edit-page-description' => 'Clique no botão "{{int:vector-view-edit}}" para realizar as suas mudanças.',
 	'guidedtour-tour-firstedit-edit-section-title' => 'Editar apenas uma secção',
 	'guidedtour-tour-firstedit-edit-section-description' => 'Há ligações "{{int:editsection}}" em cada secção da página, para que você possa concentrar-se apenas nesta parte.',
-	'guidedtour-tour-firstedit-preview-title' => 'Visualize as suas alterações (opcional)',
+	'guidedtour-tour-firstedit-preview-title' => 'Pré-visualize as suas alterações (opcional)',
 	'guidedtour-tour-firstedit-preview-description' => 'Clique em "{{int:showpreview}}" para ver como ficará a página após as suas alterações. Não esqueça de salvá-las!',
 	'guidedtour-tour-firstedit-save-title' => 'Está quase pronto!',
-	'guidedtour-tour-firstedit-save-description' => 'Quando termine, clique em "{{int:savearticle}}" para que as suas alterações sejam visíveis para todos.',
+	'guidedtour-tour-firstedit-save-description' => 'Quando estiver pronto, clicando em "{{int:savearticle}}" fará as alterações visíveis para todos.',
 	'guidedtour-tour-firsteditve-edit-page-description' => 'Clique no botão "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" para realizar as suas mudanças.',
 	'guidedtour-tour-firsteditve-edit-section-description' => 'There are "{{int:editsection}} {{int:visualeditor-beta-appendix}}" links for each major section in a page, so you can focus on just that part.',
 	'guidedtour-tour-firsteditve-save-description' => 'Quando termine, clique em "{{int:visualeditor-toolbar-savedialog}}" para que as suas alterações sejam visíveis para todos.',
