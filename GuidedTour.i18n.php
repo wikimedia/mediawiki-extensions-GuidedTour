@@ -362,16 +362,14 @@ $messages['ca'] = array(
 	'guidedtour-tour-test-launch-using-tours' => 'Inicia una visita guiada sobre visites guiades',
 	'guidedtour-tour-firstedit-edit-page-title' => 'Disposat a editar?',
 	'guidedtour-tour-firstedit-edit-page-description' => "Cliqueu la pestanya '{{int:vector-view-edit}}' per fer els vostres canvis.",
-	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => "Cliqueu la pestanya '{{int:visualeditor-ca-editsource}}' per fer els vostres canvis.",
 	'guidedtour-tour-firstedit-edit-section-title' => "Modificació d'una secció",
 	'guidedtour-tour-firstedit-edit-section-description' => 'Hi ha enllaços "{{int:editsection}}" per a cada secció en un article que permeten centrar-se només en una part.',
-	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Hi ha enllaços "{{int:visualeditor-ca-editsource-section}}" per a cada secció en un article que permeten centrar-se només en una part.',
 	'guidedtour-tour-firstedit-preview-title' => 'Previsualització opcional dels canvis',
 	'guidedtour-tour-firstedit-preview-description' => "Si cliqueu a '{{int:showpreview}}' podreu comprovar com quedarà la pàgina amb els vostres canvis. En acabat, no us oblideu de desar!",
 	'guidedtour-tour-firstedit-save-title' => 'Gairebé ja està!',
 	'guidedtour-tour-firstedit-save-description' => "Quan ho tingueu a punt, cliqueu a '{{int:savearticle}}' i els vostres canvis ja seran visibles per a tothom.",
-	'guidedtour-tour-firsteditve-edit-page-description' => 'Feu clic a "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" per a fer els vostres canvis.',
-	'guidedtour-tour-firsteditve-edit-section-description' => 'Disposeu d\'enllaços "{{int:editsection}} {{int:visualeditor-beta-appendix}}" a cada secció principal, per a concentrar-vos només en la part que vulgueu modificar.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Feu clic a «{{int:vector-view-edit}}» per a fer els vostres canvis.',
+	'guidedtour-tour-firsteditve-edit-section-description' => "Disposeu d'enllaços «{{int:editsection}}» a cada secció principal, per a concentrar-vos només en aquesta part.",
 	'guidedtour-tour-firsteditve-save-description' => 'Quan estigueu a punt, fent clic a "{{int:visualeditor-toolbar-savedialog}}" fareu els vostres canvis visibles per a tothom.',
 );
 
@@ -779,14 +777,15 @@ $messages['hu'] = array(
 	'guidedtour-tour-test-launch-using-tours' => 'Útikalauz-kalauz indítása',
 	'guidedtour-tour-firstedit-edit-page-title' => 'Készen állsz szerkeszteni?',
 	'guidedtour-tour-firstedit-edit-page-description' => 'Kattints a „{{int:vector-view-edit}}” gombra a szöveg módosításához.',
-	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Kattints a „{{int:visualeditor-ca-editsource}}” gombra a szöveg módosításához.',
 	'guidedtour-tour-firstedit-edit-section-title' => 'Egyetlen szakasz szerkesztése',
-	'guidedtour-tour-firstedit-edit-section-description' => 'A cikk minden nagyobb szakaszához tartozik egy „{{int:editsection}}” link, ha csak azzal a résszel akarsz foglalkozni.', # Fuzzy
-	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'A cikk minden nagyobb szakaszához tartozik egy „{{int:visualeditor-ca-editsource-section}}” link, ha csak azzal a résszel akarsz foglalkozni.', # Fuzzy
+	'guidedtour-tour-firstedit-edit-section-description' => 'A lap minden nagyobb szakaszához tartozik egy „{{int:editsection}}” link, ha csak azzal a résszel akarsz foglalkozni.',
 	'guidedtour-tour-firstedit-preview-title' => 'Nézd meg az eredményt (opcionális)',
 	'guidedtour-tour-firstedit-preview-description' => 'Az „{{int:showpreview}}” gombra kattintva ellenőrizheted, hogyan fog kinézni az oldal a módosításaiddal együtt. Ne felejtsd el a végén elmenteni!',
 	'guidedtour-tour-firstedit-save-title' => 'Majdnem kész vagy!',
 	'guidedtour-tour-firstedit-save-description' => 'Ha végeztél, a „{{int:savearticle}}” gombra kattintva a változtatásaid bekerülnek a cikkbe.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'A lap módosításához kattints a „{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}” gombra.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'A lap minden nagyobb szakaszához tartozik egy „{{int:editsection}} {{int:visualeditor-beta-appendix}}” link, ha csak azzal a résszel akarsz foglalkozni.',
+	'guidedtour-tour-firsteditve-save-description' => 'Ha kész vagy, a „{{int:visualeditor-toolbar-savedialog}}” gombra kattintva teheted a változtatásaidat mindenki számára láthatóvá.',
 );
 
 /** Interlingua (interlingua)
@@ -817,6 +816,29 @@ $messages['ia'] = array(
 	'guidedtour-tour-firstedit-preview-description' => 'Cliccar sur "{{int:showpreview}}" permitte verificar le aspecto del pagina con tu modificationes. Solmente non oblida de salveguardar lo!',
 	'guidedtour-tour-firstedit-save-title' => 'Tu ha quasi finite!',
 	'guidedtour-tour-firstedit-save-description' => 'Quando tu es preste, un clic sur "{{int:savearticle}}" rendera tu cambiamentos visibile a tote le mundo.',
+);
+
+/** Icelandic (íslenska)
+ * @author Snævar
+ */
+$messages['is'] = array(
+	'guidedtour-next-button' => 'Áfram',
+	'guidedtour-okay-button' => 'Í lagi',
+	'guidedtour-tour-test-testing' => 'Prufa',
+	'guidedtour-tour-test-test-description' => 'Þetta er prófun á lýsingu. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-portal-description' => 'Þetta er síðan {{int:portal}}.',
+	'guidedtour-tour-test-mediawiki-parse' => 'Prufa þáttun MediaWiki',
+	'guidedtour-tour-firstedit-edit-page-title' => 'Tilbúin/n að breyta?',
+	'guidedtour-tour-firstedit-edit-page-description' => 'Smelltu á „{{int:vector-view-edit}}” takkann til að gera breytingarnar þínar.',
+	'guidedtour-tour-firstedit-edit-section-title' => 'Breyta eingöngu kafla',
+	'guidedtour-tour-firstedit-edit-section-description' => 'Það eru „{{int:editsection}}” tenglar fyrir hvern kafla á síðu, svo þú getir einblínt á þann hluta.',
+	'guidedtour-tour-firstedit-preview-title' => 'Forskoða breytingarnar þínar (valfrjálst)',
+	'guidedtour-tour-firstedit-preview-description' => 'Með því að smella á „{{int:showpreview}}” getur þú séð hvernig síðan mun líta út með breytingunum þínum. Bara ekki gleyma að vista!',
+	'guidedtour-tour-firstedit-save-title' => 'Þú ert næstum búin/n!',
+	'guidedtour-tour-firstedit-save-description' => 'Þegar þú ert tilbúin/n, mun smellur á „{{int:savearticle}}” gera breytingarnar þínar sýnilegar öllum.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Smelltu á „{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}” takkann til að gera breytingarnar þínar.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Það eru „{{int:editsection}} {{int:visualeditor-beta-appendix}}” tenglar fyrir hvern kafla á síðu, svo þú getir einbínt á þann hluta.',
+	'guidedtour-tour-firsteditve-save-description' => 'Þegar þú ert tilbúin/n, mun smellur á „{{int:visualeditor-toolbar-savedialog}}” gera breytingarnar þínar sýnilegar öllum.',
 );
 
 /** Italian (italiano)
