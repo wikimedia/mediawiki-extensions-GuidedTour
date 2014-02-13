@@ -1137,14 +1137,16 @@ $messages['nl'] = array(
 );
 
 /** Polish (polski)
+ * @author Matma Rex
  * @author Peter Bowman
+ * @author Tar Lócesilion
  */
 $messages['pl'] = array(
 	'guidedtour-desc' => 'Umożliwia korzystanie z interaktywnych przewodników dla początkujących',
 	'guidedtour-help-url' => 'Help:Interaktywny przewodnik',
 	'guidedtour-help-guider-url' => 'Pomoc:Interaktywny przewodnik/przewodnik',
 	'guidedtour-next-button' => 'Dalej',
-	'guidedtour-okay-button' => 'Zgoda',
+	'guidedtour-okay-button' => 'Okej',
 	'guidedtour-tour-test-testing' => 'Testowanie',
 	'guidedtour-tour-test-test-description' => 'To jest przykładowy tekst. Lorem ipsum dolor sit!',
 	'guidedtour-tour-test-callouts' => 'Test odniesień',
@@ -1155,12 +1157,10 @@ $messages['pl'] = array(
 	'guidedtour-tour-test-launch-tour' => 'Test rozpoczęcia wycieczki',
 	'guidedtour-tour-test-launch-tour-description' => 'Jeden przewodnik może uruchomić drugi. Fajne, prawda?',
 	'guidedtour-tour-test-launch-using-tours' => 'Rozpocznij przewodnik po korzystaniu z przewodników',
-	'guidedtour-tour-firstedit-edit-page-title' => '{{GENDER:|Gotowy|Gotowa}} do rozpoczęcia edytowania?',
+	'guidedtour-tour-firstedit-edit-page-title' => 'Zaczynamy edytowanie?',
 	'guidedtour-tour-firstedit-edit-page-description' => 'Kliknij na „{{int:vector-view-edit}}”, aby dokonać zmian.',
-	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Kliknij na „{{int:visualeditor-ca-editsource}}”, aby dokonać zmian.',
 	'guidedtour-tour-firstedit-edit-section-title' => 'Edytuj tylko jedna sekcję',
 	'guidedtour-tour-firstedit-edit-section-description' => 'Obok każdego nagłówka znajduje się odnośnik „{{int:editsection}}”, aby móc skupić się tylko na tej części.',
-	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Obok każdego nagłówka znajduje się odnośnik „{{int:visualeditor-ca-editsource-section}}”, aby móc skupić się tylko na tej części.',
 	'guidedtour-tour-firstedit-preview-title' => 'Przejrzyj swoje zmiany (opcjonalne)',
 	'guidedtour-tour-firstedit-preview-description' => 'Naciśnięcie na „{{int:showpreview}}” pozwoli Ci obejrzeć wygląd strony po wprowadzeniu Twoich zmian. Nie zapomnij ich zapisać!',
 	'guidedtour-tour-firstedit-save-title' => 'Prawie gotowe!',
@@ -1194,9 +1194,11 @@ $messages['pms'] = array(
  * @author Alchimista
  * @author Fúlvio
  * @author Hamilton Abreu
+ * @author HenriqueCrang
  * @author Imperadeiro98
  * @author Josep Maria 15.
  * @author Raylton P. Sousa
+ * @author Vitorvicentevalente
  */
 $messages['pt'] = array(
 	'guidedtour-desc' => 'Permite que páginas proporcionem uma visita guiada por pop-ups, para ajudar os novos utilizadores.',
@@ -1204,9 +1206,9 @@ $messages['pt'] = array(
 	'guidedtour-help-guider-url' => 'Help:Visitas guiadas/guia',
 	'guidedtour-next-button' => 'Próximo',
 	'guidedtour-okay-button' => 'OK',
-	'guidedtour-tour-test-testing' => 'Testando',
+	'guidedtour-tour-test-testing' => 'A testar',
 	'guidedtour-tour-test-test-description' => 'Este é um teste da descrição. Lorem ipsum sit de dolor!',
-	'guidedtour-tour-test-callouts' => 'Testes ao balão do guia',
+	'guidedtour-tour-test-callouts' => 'Textos explicativos de teste',
 	'guidedtour-tour-test-portal-description' => 'Esta é a página de {{int:portal}}.',
 	'guidedtour-tour-test-mediawiki-parse' => 'Testar a análise sintáctica do Mediawiki',
 	'guidedtour-tour-test-wikitext-description' => 'Um guia na sua visita guiada pela wiki pode conter wikitexto usando onShow e parseDescription. Use-os para criar um wikilink para o [[{{MediaWiki:Guidedtour-help-url}}|Documentação das visitas guiadas]]. Ou um link externo [https://github.com/tychay/mwgadget.GuidedTour para o GitHub], por exemplo.',
@@ -1222,10 +1224,10 @@ $messages['pt'] = array(
 	'guidedtour-tour-firstedit-preview-title' => 'Pré-visualize as suas alterações (opcional)',
 	'guidedtour-tour-firstedit-preview-description' => 'Clique em "{{int:showpreview}}" para ver como ficará a página após as suas alterações. Não esqueça de salvá-las!',
 	'guidedtour-tour-firstedit-save-title' => 'Está quase pronto!',
-	'guidedtour-tour-firstedit-save-description' => 'Quando estiver pronto, clicando em "{{int:savearticle}}" fará as alterações visíveis para todos.',
-	'guidedtour-tour-firsteditve-edit-page-description' => 'Clique no botão "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" para realizar as suas mudanças.',
-	'guidedtour-tour-firsteditve-edit-section-description' => 'There are "{{int:editsection}} {{int:visualeditor-beta-appendix}}" links for each major section in a page, so you can focus on just that part.',
-	'guidedtour-tour-firsteditve-save-description' => 'Quando termine, clique em "{{int:visualeditor-toolbar-savedialog}}" para que as suas alterações sejam visíveis para todos.',
+	'guidedtour-tour-firstedit-save-description' => 'Quando estiver pronto, clique em "{{int:savearticle}}" para as alterações ficarem visíveis para todos.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Clique no botão "{{int:vector-view-edit}}" para realizar as suas mudanças.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Há ligações "{{int:editsection}}" em cada secção da página, para que você possa concentrar-se apenas nesta parte.',
+	'guidedtour-tour-firsteditve-save-description' => 'Quando terminar, clique em "{{int:visualeditor-toolbar-savedialog}}" para as alterações ficarem visíveis para todos.',
 );
 
 /** Brazilian Portuguese (português do Brasil)
@@ -1251,16 +1253,14 @@ $messages['pt-br'] = array(
 	'guidedtour-tour-test-launch-using-tours' => 'Lançar um guia sobre como usar visitas guiadas',
 	'guidedtour-tour-firstedit-edit-page-title' => 'Pronto para editar?',
 	'guidedtour-tour-firstedit-edit-page-description' => 'Clique no botão "{{int:vector-view-edit}}" para fazer suas mudanças.',
-	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Clique no botão "{{int:visualeditor-ca-editsource}}" para fazer suas mudanças.',
 	'guidedtour-tour-firstedit-edit-section-title' => 'Edite apenas uma seção',
-	'guidedtour-tour-firstedit-edit-section-description' => 'Existem links para "{{int:editsection}}" em cada seção principal de um artigo, para você se focar apenas naquela parte.', # Fuzzy
-	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Existem links para "{{int:visualeditor-ca-editsource-section}}" em cada seção principal de um artigo, para você se focar apenas naquela parte.', # Fuzzy
+	'guidedtour-tour-firstedit-edit-section-description' => 'Existem links para "{{int:editsection}}" em cada seção principal de um artigo, assim você pode se focar na edição apenas naquela parte.',
 	'guidedtour-tour-firstedit-preview-title' => 'Prever suas mudanças (opcional)',
 	'guidedtour-tour-firstedit-preview-description' => 'Clicando em "{{int:showpreview}}" você pode conferir como vai ficar com suas mudanças. Só não esqueça de salvar!',
 	'guidedtour-tour-firstedit-save-title' => 'Você está quase terminando!',
 	'guidedtour-tour-firstedit-save-description' => 'Quando estiver pronto, clique em "{{int:savearticle}}" para tornar suas mudanças visíveis para todos.',
-	'guidedtour-tour-firsteditve-edit-page-description' => 'Clique no botão "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" para fazer suas mudanças.',
-	'guidedtour-tour-firsteditve-edit-section-description' => 'Existem links para "{{int:editsection}} {{int:visualeditor-beta-appendix}}" em cada seção principal de um artigo, para você se focar apenas naquela parte.', # Fuzzy
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Clique no botão "{{int:vector-view-edit}}" para fazer suas mudanças.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Existem links para "{{int:editsection}}" em cada seção principal de um artigo, assim você pode se focar na edição apenas naquela parte.',
 	'guidedtour-tour-firsteditve-save-description' => 'Quando estiver pronto, clique em "{{int:visualeditor-toolbar-savedialog}}" para tornar suas mudanças visíveis para todos.',
 );
 
