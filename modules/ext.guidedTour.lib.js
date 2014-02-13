@@ -31,7 +31,6 @@
 		internal = gt.internal,
 		cookieName, cookieParams,
 		skin = mw.config.get( 'skin' ),
-		messageParser = new mw.jqueryMsg.parser(),
 		// Non-null if user is logged in.
 		userId = mw.config.get( 'wgUserId' ),
 		// Key is tour name, value is tour spec (specification).  A tour spec is
@@ -382,7 +381,7 @@
 	 * @return {string} HTML of parsed message
 	 */
 	function getMessage( key ) {
-		return messageParser.parse( key ).html();
+		return mw.message( key ).parse();
 	}
 
 	/**
