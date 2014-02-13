@@ -39,7 +39,7 @@ $messages['en'] = array(
 	'guidedtour-tour-test-launch-using-tours' => 'Launch a tour on using tours',
 
 	// firstedit (wiktext version)
-	'guidedtour-tour-firstedit-edit-page-title' => 'Ready to edit?',
+	'guidedtour-tour-firstedit-edit-page-title' => '{{GENDER:|Ready}} to edit?',
 	'guidedtour-tour-firstedit-edit-page-description' => 'Click the "{{int:vector-view-edit}}" button to make your changes.',
 	'guidedtour-tour-firstedit-edit-section-title' => 'Edit just a section',
 	'guidedtour-tour-firstedit-edit-section-description' => 'There are "{{int:editsection}}" links for each major section in a page, so you can focus on just that part.',
