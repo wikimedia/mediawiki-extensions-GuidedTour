@@ -591,12 +591,13 @@ $messages['fa'] = array(
 
 /** Finnish (suomi)
  * @author Nike
+ * @author Pxos
  * @author Samoasambia
  * @author Silvonen
  */
 $messages['fi'] = array(
 	'guidedtour-tour-test-go-description-page' => 'Siirry kuvaussivulle',
-	'guidedtour-tour-firstedit-edit-page-title' => 'Valmis muokkaamaan?',
+	'guidedtour-tour-firstedit-edit-page-title' => '{{GENDER:|Valmiina}} muokkaamaan?',
 	'guidedtour-tour-firstedit-preview-title' => 'Esikatsella muutoksiasi (valinnainen)',
 	'guidedtour-tour-firstedit-save-title' => 'Olet melkein valmis!',
 );
@@ -723,7 +724,7 @@ $messages['he'] = array(
 	'guidedtour-tour-test-launch-tour' => 'בדקו את סיור הניסיון',
 	'guidedtour-tour-test-launch-tour-description' => 'שלבים בסיור יכולים להפעיל סיורים מודרכים אחרים. די מגניב, הא?',
 	'guidedtour-tour-test-launch-using-tours' => 'התחילו סיור היכרות על אודות השימוש בסיורים',
-	'guidedtour-tour-firstedit-edit-page-title' => 'מוכנים לערוך?',
+	'guidedtour-tour-firstedit-edit-page-title' => '{{GENDER:|מוכן|מוכנה}} לערוך?',
 	'guidedtour-tour-firstedit-edit-page-description' => 'נא ללחוץ על הכפתור "{{int:vector-view-edit}}" כדי לבצע את השינויים שלך.',
 	'guidedtour-tour-firstedit-edit-section-title' => 'לערוך רק פסקה',
 	'guidedtour-tour-firstedit-edit-section-description' => 'יש קישורי "{{int:editsection}}" לכל פסקה גדולה בדף, אז אפשר להתמקד רק בחלק ההוא.',
@@ -930,12 +931,10 @@ $messages['ko'] = array(
 	'guidedtour-tour-test-launch-tour' => '시작 투어 테스트',
 	'guidedtour-tour-test-launch-tour-description' => '안내자는 다른 가이드 투어를 시작할 수 있습니다. 멋지죠?',
 	'guidedtour-tour-test-launch-using-tours' => '투어를 사용하여 투어 시작',
-	'guidedtour-tour-firstedit-edit-page-title' => '편집할 준비가 되었습니까?',
+	'guidedtour-tour-firstedit-edit-page-title' => '편집할 {{GENDER:준비가 되었습니까}}?',
 	'guidedtour-tour-firstedit-edit-page-description' => '내용을 바꾸려면 "{{int:vector-view-edit}}" 버튼을 클릭하세요.',
-	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => '내용을 바꾸려면 "{{int:visualeditor-ca-editsource}}" 버튼을 클릭하세요.',
 	'guidedtour-tour-firstedit-edit-section-title' => '문단 편집',
 	'guidedtour-tour-firstedit-edit-section-description' => '각 주요 문단 부분에 집중할 수 있도록 문서에 각 주요 문단에 대한 "{{int:editsection}}" 링크가 있습니다.',
-	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => '각 주요 문단 부분에 집중할 수 있도록 문서에 각 주요 문단에 대한 "{{int:visualeditor-ca-editsource-section}}" 링크가 있습니다.',
 	'guidedtour-tour-firstedit-preview-title' => '바뀐 내용 미리 보기 (선택 사항)',
 	'guidedtour-tour-firstedit-preview-description' => '"{{int:showpreview}}"를 클릭하면 문서가 어떻게 바뀌었는지 확인할 수 있습니다. 저장하는 것을 잊지 마세요!',
 	'guidedtour-tour-firstedit-save-title' => '거의 끝나갑니다!',
@@ -963,12 +962,10 @@ $messages['lb'] = array(
 	'guidedtour-tour-test-go-description-page' => "Op d'Beschreiwungssäit goen",
 	'guidedtour-tour-test-launch-tour' => 'Ufank vum Tour testen',
 	'guidedtour-tour-test-launch-using-tours' => "En Tour ufänken duerch d'Benotze vun Touren",
-	'guidedtour-tour-firstedit-edit-page-title' => 'Sidd Dir prëtt fir ze änneren?',
+	'guidedtour-tour-firstedit-edit-page-title' => '{{GENDER:|Sidd Dir}} prëtt fir ze änneren?',
 	'guidedtour-tour-firstedit-edit-page-description' => "Klickt op de Knäppchen '{{int:vector-view-edit}}' fir Är Ännerungen ze maachen.",
-	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => "Klickt op de Knäppchen '{{int:visualeditor-ca-editsource}}' fir Är Ännerungen ze maachen.",
 	'guidedtour-tour-firstedit-edit-section-title' => 'Ännert just een Abschnitt',
 	'guidedtour-tour-firstedit-edit-section-description' => 'Et gëtt "{{int:editsection}}"-Linke fir all gréisseren Abschnitt op enger Säit, sou kënnt Dir Iech just op deen Deel konzentréieren.',
-	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Et gëtt "{{int:visualeditor-ca-editsource-section}}"-Linke fir all gréisseren Abschnitt op enger Säit, sou kënnt Dir Iech just op deen Deel konzentréieren.',
 	'guidedtour-tour-firstedit-preview-title' => 'Kuckt Är Ännerungen ouni ze späicheren (fakultativ)',
 	'guidedtour-tour-firstedit-preview-description' => 'Klicken op "{{int:showpreview}}", erlaabt Iech ze gesinn, wéi d\'Säit mat Ären Ännerungen ausgesäit. Vergiesst net ze späicheren.',
 	'guidedtour-tour-firstedit-save-title' => 'Dir sidd bal fäerdeg!',
@@ -1133,6 +1130,7 @@ $messages['nl'] = array(
 );
 
 /** Polish (polski)
+ * @author Chrumps
  * @author Matma Rex
  * @author Peter Bowman
  * @author Tar Lócesilion
@@ -1153,7 +1151,7 @@ $messages['pl'] = array(
 	'guidedtour-tour-test-launch-tour' => 'Test rozpoczęcia wycieczki',
 	'guidedtour-tour-test-launch-tour-description' => 'Jeden przewodnik może uruchomić drugi. Fajne, prawda?',
 	'guidedtour-tour-test-launch-using-tours' => 'Rozpocznij przewodnik po korzystaniu z przewodników',
-	'guidedtour-tour-firstedit-edit-page-title' => '{{GENDER:|Gotowy|Gotowa}} do rozpoczęcia edytowania?', # Fuzzy
+	'guidedtour-tour-firstedit-edit-page-title' => '{{GENDER:|Gotowy|Gotowa}} do edytowania?',
 	'guidedtour-tour-firstedit-edit-page-description' => 'Kliknij na „{{int:vector-view-edit}}”, aby dokonać zmian.',
 	'guidedtour-tour-firstedit-edit-section-title' => 'Edytuj tylko jedna sekcję',
 	'guidedtour-tour-firstedit-edit-section-description' => 'Obok każdego nagłówka znajduje się odnośnik „{{int:editsection}}”, aby móc skupić się tylko na tej części.',
