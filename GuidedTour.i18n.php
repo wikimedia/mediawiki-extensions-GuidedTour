@@ -574,12 +574,10 @@ $messages['fa'] = array(
 	'guidedtour-tour-test-launch-tour' => 'آزمایش راه‌اندازی تور',
 	'guidedtour-tour-test-launch-tour-description' => 'راهنمایان می‌توانند تور‌های دیگری نیز اجرا کنند. خیلی جالب هست، نه؟',
 	'guidedtour-tour-test-launch-using-tours' => 'راه‌اندازی یک تور در استفاده از تورها',
-	'guidedtour-tour-firstedit-edit-page-title' => 'برای ویرایش آماده‌اید؟',
+	'guidedtour-tour-firstedit-edit-page-title' => 'برای ویرایش {{GENDER:|آماده‌اید}}؟',
 	'guidedtour-tour-firstedit-edit-page-description' => 'برای ذخیرهٔ تغییراتتان بر روی دکمهٔ «{{int:vector-view-edit}}» کلیک کنید.',
-	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'برای انجام تغییراتتان بر روی دکمهٔ «{{int:visualeditor-ca-editsource}}» کلیک کنید.',
 	'guidedtour-tour-firstedit-edit-section-title' => 'فقط ویرایش یک بخش',
 	'guidedtour-tour-firstedit-edit-section-description' => 'پیوندها «{{int:editsection}}» برای هر بحش اصلی در صفحه وجود دارد، پس شما می‌تواند فقط به آن بحش تمرکز کنید.',
-	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'پیوندها «{{int:visualeditor-ca-editsource-section}}» برای هر بحش اصلی در صفحه وجود دارد، پس شما می‌تواند فقط به آن بحش تمرکز کنید.',
 	'guidedtour-tour-firstedit-preview-title' => 'پیش‌نمایش تغییرات شما (اختیاری)',
 	'guidedtour-tour-firstedit-preview-description' => 'کلیک‌کردن بر «{{int:showpreview}}» اجازه می‌دهد که شما بررسی کنید چه صفحه‌هایی شبیه تغییراتتان خواهند بود. فقط دکمهٔ ذخیره را فراموش نکنید!',
 	'guidedtour-tour-firstedit-save-title' => 'تقریباً تمام است!',
@@ -594,8 +592,15 @@ $messages['fa'] = array(
  * @author Pxos
  * @author Samoasambia
  * @author Silvonen
+ * @author Stryn
  */
 $messages['fi'] = array(
+	'guidedtour-help-url' => 'Help:Opastetut kiertueet',
+	'guidedtour-help-guider-url' => 'Help:Opastetut kiertueet/opas',
+	'guidedtour-next-button' => 'Seuraava',
+	'guidedtour-okay-button' => 'Selvä',
+	'guidedtour-tour-test-testing' => 'Testaus',
+	'guidedtour-tour-test-test-description' => 'Tämä on kuvauksen testi. Lorem ipsum dolor sit!',
 	'guidedtour-tour-test-go-description-page' => 'Siirry kuvaussivulle',
 	'guidedtour-tour-firstedit-edit-page-title' => '{{GENDER:|Valmiina}} muokkaamaan?',
 	'guidedtour-tour-firstedit-preview-title' => 'Esikatsella muutoksiasi (valinnainen)',
