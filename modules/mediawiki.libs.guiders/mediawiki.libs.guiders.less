@@ -1,3 +1,6 @@
+@import '../ext.guidedTour.mixins';
+@import 'mediawiki.mixins';
+
 .guider {
 	background: #FFF;
 	border: 1px solid #666;
@@ -7,18 +10,8 @@
 	padding: 4px 12px;
 	width: 500px;
 	z-index: 100000005 !important;
-
-	/* Shadow */
-	-moz-box-shadow: 0 0px 8px #111;
-	-webkit-box-shadow: 0 0px 8px #111;
-	box-shadow: 0 0px 8px #111;
-	/* End shadow */
-
-	/* Rounded corners */
-	-moz-border-radius: 4px;
-	-webkit-border-radius: 4px;
-	border-radius: 4px;
-	/* End rounded corners */
+	.box-shadow(0 0px 8px #111);
+	.border-radius(4px);
 }
 
 .guider_buttons {
@@ -29,13 +22,19 @@
 
 .guider_content {
 	position: relative;
-}
 
-.guider_content h1 {
-	color: #1054AA;
-	float: left;
-	font-size: 21px;
-	width: 95%;
+	h1 {
+		color: #1054AA;
+		float: left;
+		font-size: 21px;
+		width: 95%;
+	}
+
+	p {
+		clear: both;
+		color: #333;
+		font-size: 13px;
+	}
 }
 
 .guider_close {
@@ -48,14 +47,7 @@
 	height: 13px;
 	width: 13px;
 	background-repeat: no-repeat;
-	/* @embed */
-	background-image: url('x_close_button.jpg');
-}
-
-.guider_content p {
-	clear: both;
-	color: #333;
-	font-size: 13px;
+	.background-image('x_close_button.jpg');
 }
 
 #guider_overlay {
@@ -65,6 +57,7 @@
 	position: fixed;
 	top: 0px;
 	left: 0px;
+	/* TODO (phuedx 2014-02-19): Create the .opacity mixin. */
 	opacity: 0.5;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
 	filter: alpha(opacity=50);
@@ -78,19 +71,17 @@
 	display: none;
 	background-repeat: no-repeat;
 	z-index: 100000006 !important;
-
-	/* @embed */
-	background-image: url('guider_arrows.png');
+	.background-image('guider_arrows.png');
 }
 
 /**
    Since Guiders uses dynamic absolute positioning, the below flipping needs to be handled at a higher level.
 */
 
-/* @noflip */
 .guider_arrow_right {
 	display: block;
 	background-position: 0px 0px;
+	/* @noflip */
 	right: -42px;
 }
 
@@ -106,10 +97,10 @@
 	top: -42px;
 }
 
-/* @noflip */
 .guider_arrow_left {
 	display: block;
 	background-position: 0px -84px;
+	/* @noflip */
 	left: -42px;
 }
 
