@@ -269,7 +269,7 @@ $messages['bn'] = array(
 	'guidedtour-tour-test-launch-tour' => 'পরীক্ষামূলক ভ্রমণ আরম্ভ করুন',
 	'guidedtour-tour-test-launch-tour-description' => 'গাইডগণ আরও নতুন নতুন ভ্রমনের আয়োজন করতে পারেন।',
 	'guidedtour-tour-test-launch-using-tours' => 'ট্যুর অপশন ব্যবহার করে নতুন ট্যুর আয়োজন করুন',
-	'guidedtour-tour-firstedit-edit-page-title' => 'সম্পাদনার জন্য প্রস্তুত?',
+	'guidedtour-tour-firstedit-edit-page-title' => 'সম্পাদনার জন্য {{GENDER:|প্রস্তুত}}?',
 	'guidedtour-tour-firstedit-edit-page-description' => '"{{int:vector-view-edit}}" বাটনে ক্লিক করে আপানার পরিবর্তনগুলো সম্পন্ন করুন।',
 	'guidedtour-tour-firstedit-edit-section-title' => 'একটি অনুচ্ছেদ সম্পাদনা করুন',
 	'guidedtour-tour-firstedit-edit-section-description' => 'গুরুত্বপূর্ণ প্রতিটি অনুচ্ছেদের জন্য "{{int:editsection}}" লিংক রয়েছে, তাই আপনি নির্দিষ্ট অংশটি সরাসরি সম্পাদনা করতে পারবেন।',
@@ -386,12 +386,10 @@ $messages['ce'] = array(
 	'guidedtour-tour-test-portal-description' => 'ХӀара агӀо ю {{int:portal}}.',
 	'guidedtour-tour-test-description-page' => 'MediaWiki лаьцна агӀонаш зер',
 	'guidedtour-tour-test-go-description-page' => 'Цунах лаьцнарг долу агӀонг гӀо',
-	'guidedtour-tour-firstedit-edit-page-title' => 'Кичча дуй тадар дан?',
+	'guidedtour-tour-firstedit-edit-page-title' => '{{GENDER:|Кийча дуй}} тадарш дан?',
 	'guidedtour-tour-firstedit-edit-page-description' => 'Хьай хийцам бан тӀетаӀе кнопка «{{int:vector-view-edit}}.',
-	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Хьай хийцам бан тӀетаӀе кнопка «{{int:visualeditor-ca-editsource}}.',
 	'guidedtour-tour-firstedit-edit-section-title' => 'Дакъана бен хийцам ма бе',
 	'guidedtour-tour-firstedit-edit-section-description' => 'Хьажораг «{{int:editsection}}» хӀора дакъана ю, цундела хьа йиш ю дакъа къастина тадан.',
-	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Хьажораг «{{int:visualeditor-ca-editsource-section}}» хӀора дакъана ю, цундела хьа йиш ю дакъа къастина тадан.',
 	'guidedtour-tour-firstedit-save-title' => 'Ахьа долийнарг чакхдала гергга ду!',
 	'guidedtour-tour-firstedit-save-description' => 'Хьой кичча хилча, тӀетаӀе «{{int:savearticle}}» хийцамаш массарна гуш хилийта.',
 	'guidedtour-tour-firsteditve-edit-page-description' => 'Хьай хийцам бан тӀетаӀе кнопка «{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}».',
@@ -420,7 +418,7 @@ $messages['cs'] = array(
 	'guidedtour-tour-test-launch-tour' => 'Zkušební spuštění prohlídky',
 	'guidedtour-tour-test-launch-tour-description' => 'Průvodce může spouštět další prohlídky. Dost dobrý, ne?',
 	'guidedtour-tour-test-launch-using-tours' => 'Spustit prohlídku o používání prohlídek',
-	'guidedtour-tour-firstedit-edit-page-title' => 'Připraveni editovat?',
+	'guidedtour-tour-firstedit-edit-page-title' => '{{GENDER:|Připraven|Připravena|Připraveni}} editovat?',
 	'guidedtour-tour-firstedit-edit-page-description' => 'Pro provedení změn klikněte na tlačítko „{{int:vector-view-edit}}“.',
 	'guidedtour-tour-firstedit-edit-section-title' => 'Editovat pouze jednu sekci',
 	'guidedtour-tour-firstedit-edit-section-description' => 'Pro každou sekci stránky existují odkazy  „{{int:editsection}}“, takže se můžete soustředit pouze na danou část.',
@@ -1063,6 +1061,13 @@ $messages['ml'] = array(
 	'guidedtour-tour-firsteditve-save-description' => 'താങ്കൾ തയ്യാറായി കഴിഞ്ഞാൽ, "{{int:visualeditor-toolbar-savedialog}}" അമർത്തി താങ്കൾ വരുത്തിയ മാറ്റങ്ങൾ എല്ലാവർക്കും കാണാനാവുന്ന വിധത്തിൽ പങ്ക് വെയ്ക്കാം.',
 );
 
+/** Marathi (मराठी)
+ * @author V.narsikar
+ */
+$messages['mr'] = array(
+	'guidedtour-tour-firstedit-edit-page-title' => 'संपादनास {{GENDER:|तयार}} ?',
+);
+
 /** Malay (Bahasa Melayu)
  * @author Anakmalaysia
  */
@@ -1492,7 +1497,7 @@ $messages['zh-hans'] = array(
 	'guidedtour-tour-test-launch-tour' => '测试启动导览',
 	'guidedtour-tour-test-launch-tour-description' => '向导可以启动其他导览。很酷，对吧？',
 	'guidedtour-tour-test-launch-using-tours' => '在使用的导览上启动一个导览',
-	'guidedtour-tour-firstedit-edit-page-title' => '准备好编辑了吗？',
+	'guidedtour-tour-firstedit-edit-page-title' => '{{GENDER:|准备好}}编辑了吗？',
 	'guidedtour-tour-firstedit-edit-page-description' => '点击“{{int:vector-view-edit}}”按钮，确认你的修改。',
 	'guidedtour-tour-firstedit-edit-section-title' => '只编辑一个章节',
 	'guidedtour-tour-firstedit-edit-section-description' => '页面中每个主要章节都有“{{int:editsection}}”链接，让你可以只集中精神在这一部分上。',
