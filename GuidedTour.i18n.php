@@ -1336,6 +1336,13 @@ $messages['ru'] = array(
 	'guidedtour-tour-firsteditve-save-description' => 'Когда вы будете готовы, нажатие «{{int:visualeditor-toolbar-savedialog}}» сделает изменения видимыми для всех.',
 );
 
+/** Scots (Scots)
+ * @author John Reid
+ */
+$messages['sco'] = array(
+	'guidedtour-tour-firstedit-edit-page-title' => '{{GENDER:|Ready}} fer tae edit?',
+);
+
 /** Slovenian (slovenščina)
  * @author Dbc334
  * @author Eleassar
