@@ -95,20 +95,11 @@ Refers to {{msg-mw|Guidedtour-help-url}}.',
 See also:
 * {{msg-mw|Guidedtour-tour-firstedit-edit-page-visualeditor-description}}
 * {{msg-mw|Vector-view-edit}}',
-	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Description of the step of the firstedit tour pointing to the main edit button, if VisualEditor is installed.
-
-See also:
-* {{msg-mw|Guidedtour-tour-firstedit-edit-page-description}}
-* {{msg-mw|Visualeditor-ca-editsource}}',
 	'guidedtour-tour-firstedit-edit-section-title' => 'Title of the step of the firstedit tour pointing to the section edit button',
 	'guidedtour-tour-firstedit-edit-section-description' => 'Description of the step of the firstedit tour pointing to the section edit button, if VisualEditor is not installed
 
 See also:
 * {{msg-mw|editsection}}',
-	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Description of the step of the firstedit tour pointing to the section edit button, if VisualEditor is installed
-
-See also:
-* {{msg-mw|visualeditor-ca-editsource-section}}',
 	'guidedtour-tour-firstedit-preview-title' => 'Title of step explaining preview.
 
 The body for this title is {{msg-mw|Guidedtour-tour-firstedit-preview-description}}.',
@@ -281,8 +272,8 @@ $messages['bn'] = array(
 	'guidedtour-tour-firstedit-preview-description' => '"{{int:showpreview}}" বাটনে ক্লিক করে আপনার পরিবর্তনের পর পাতাটি কেমন দেখাবে সেটি জানতে পারবেন। সংরক্ষনের কথা ভুলবেন না!',
 	'guidedtour-tour-firstedit-save-title' => 'আপনি প্রায় সম্পন্ন করেছেন!',
 	'guidedtour-tour-firstedit-save-description' => 'আপনার কাজ সম্পন্ন হলে, "{{int:savearticle}}" বাটনে ক্লিক করুন এবং আপনার পরিবর্তনগুলো সকলে দেখতে পারবে।',
-	'guidedtour-tour-firsteditve-edit-page-description' => 'পরিবর্তনের জন্য "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" বাটনে ক্লিক করুন।',
-	'guidedtour-tour-firsteditve-edit-section-description' => 'গুরুত্বপূর্ণ প্রতিটি অনুচ্ছেদে "{{int:editsection}} {{int:visualeditor-beta-appendix}}" লিংক রয়েছে, এর ফলে আপনি সরাসরি অনুচ্ছেদগুলো সম্পাদনা করতে পারবেন।',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'পরিবর্তনের জন্য "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" বাটনে ক্লিক করুন।', # Fuzzy
+	'guidedtour-tour-firsteditve-edit-section-description' => 'গুরুত্বপূর্ণ প্রতিটি অনুচ্ছেদে "{{int:editsection}} {{int:visualeditor-beta-appendix}}" লিংক রয়েছে, এর ফলে আপনি সরাসরি অনুচ্ছেদগুলো সম্পাদনা করতে পারবেন।', # Fuzzy
 	'guidedtour-tour-firsteditve-save-description' => 'আপনার কাজ সম্পন্ন হলে, "{{int:visualeditor-toolbar-savedialog}}" বাটনে ক্লিক করুন এবং আপনার পরিবর্তনগুলো সকলে দেখতে পারবে।',
 );
 
@@ -396,8 +387,8 @@ $messages['ce'] = array(
 	'guidedtour-tour-firstedit-edit-section-description' => 'Хьажораг «{{int:editsection}}» хӀора дакъана ю, цундела хьа йиш ю дакъа къастина тадан.',
 	'guidedtour-tour-firstedit-save-title' => 'Ахьа долийнарг чакхдала гергга ду!',
 	'guidedtour-tour-firstedit-save-description' => 'Хьой кичча хилча, тӀетаӀе «{{int:savearticle}}» хийцамаш массарна гуш хилийта.',
-	'guidedtour-tour-firsteditve-edit-page-description' => 'Хьай хийцам бан тӀетаӀе кнопка «{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}».',
-	'guidedtour-tour-firsteditve-edit-section-description' => 'Хьажораг «{{int:editsection}} {{int:visualeditor-beta-appendix}}» хӀора дакъана ю, цундела хьа йиш ю дакъа къастина тадан.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Хьай хийцам бан тӀетаӀе кнопка «{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}».', # Fuzzy
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Хьажораг «{{int:editsection}} {{int:visualeditor-beta-appendix}}» хӀора дакъана ю, цундела хьа йиш ю дакъа къастина тадан.', # Fuzzy
 	'guidedtour-tour-firsteditve-save-description' => 'Хьой кичча хилча, тӀетаӀе «{{int:visualeditor-toolbar-savedialog}}» хийцамаш массарна гуш хилийта.',
 );
 
@@ -430,8 +421,8 @@ $messages['cs'] = array(
 	'guidedtour-tour-firstedit-preview-description' => 'Kliknutím na „{{int:showpreview}}“ si můžete zkontrolovat, jak bude stránka vypadat po provedení změn. Jen ji pak nezapomeňte uložit!',
 	'guidedtour-tour-firstedit-save-title' => 'Už jste skoro hotovi!',
 	'guidedtour-tour-firstedit-save-description' => 'Až budete s editací hotovi, kliknutím na tlačítko „{{int:savearticle}}“ své změny zveřejníte.',
-	'guidedtour-tour-firsteditve-edit-page-description' => 'Pro provedení změn klikněte na tlačítko „{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}“.',
-	'guidedtour-tour-firsteditve-edit-section-description' => 'Pro každou sekci stránky existují odkazy  „{{int:editsection}} {{int:visualeditor-beta-appendix}}“, takže se můžete soustředit pouze na danou část.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Pro provedení změn klikněte na tlačítko „{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}“.', # Fuzzy
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Pro každou sekci stránky existují odkazy  „{{int:editsection}} {{int:visualeditor-beta-appendix}}“, takže se můžete soustředit pouze na danou část.', # Fuzzy
 	'guidedtour-tour-firsteditve-save-description' => 'Až budete s editací hotovi, kliknutím na tlačítko „{{int:visualeditor-toolbar-savedialog}}“ své změny zveřejníte.',
 );
 
@@ -465,8 +456,8 @@ $messages['de'] = array(
 	'guidedtour-tour-firstedit-preview-description' => 'Mit Klick auf „{{int:showpreview}}“ kannst du überprüfen, wie die Seite mit deinen Änderungen aussehen wird. Vergiss nicht zu speichern!',
 	'guidedtour-tour-firstedit-save-title' => 'Du bist fast fertig!',
 	'guidedtour-tour-firstedit-save-description' => 'Wenn du fertig bist, macht das Klicken auf „{{int:savearticle}}“ deine Änderungen für jeden sichtbar.',
-	'guidedtour-tour-firsteditve-edit-page-description' => 'Klicke auf „{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}“, um deine Änderungen durchzuführen.',
-	'guidedtour-tour-firsteditve-edit-section-description' => 'Für jeden Seitenabschnitt gibt es die Links „{{int:editsection}} {{int:visualeditor-beta-appendix}}“, so dass du dich nur auf diesen Teil konzentrieren kannst.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Klicke auf „$1“, um deine Änderungen durchzuführen.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Für jeden Seitenabschnitt gibt es die Links „$1“, so dass du dich nur auf diesen Teil konzentrieren kannst.',
 	'guidedtour-tour-firsteditve-save-description' => 'Wenn du fertig bist, klicke auf „{{int:visualeditor-toolbar-savedialog}}“, um deine Änderungen für jeden sichtbar zu machen.',
 );
 
@@ -584,8 +575,8 @@ $messages['fa'] = array(
 	'guidedtour-tour-firstedit-preview-description' => 'کلیک‌کردن بر «{{int:showpreview}}» اجازه می‌دهد که شما بررسی کنید چه صفحه‌هایی شبیه تغییراتتان خواهند بود. فقط دکمهٔ ذخیره را فراموش نکنید!',
 	'guidedtour-tour-firstedit-save-title' => 'تقریباً تمام است!',
 	'guidedtour-tour-firstedit-save-description' => 'هنگامی که انجام دادید، کلیک بر «{{int:savearticle}}» تغییراتتان را برای همه قابل مشاهده خواهد کرد.',
-	'guidedtour-tour-firsteditve-edit-page-description' => 'با کلیک بر دکمهٔ «{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}» تغییراتتان را اعمال کنید.',
-	'guidedtour-tour-firsteditve-edit-section-description' => 'پیوندهای «{{int:editsection}} {{int:visualeditor-beta-appendix}}» برای بحش اصلی در صفحه وجود دارد، بنابراین می‌تواند فقط بر آن بخش تمرکز کنید.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'با کلیک بر دکمهٔ «{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}» تغییراتتان را اعمال کنید.', # Fuzzy
+	'guidedtour-tour-firsteditve-edit-section-description' => 'پیوندهای «{{int:editsection}} {{int:visualeditor-beta-appendix}}» برای بحش اصلی در صفحه وجود دارد، بنابراین می‌تواند فقط بر آن بخش تمرکز کنید.', # Fuzzy
 	'guidedtour-tour-firsteditve-save-description' => 'هنگامی که کارتان را انجام دادید، کلیک بر «{{int:visualeditor-toolbar-savedialog}}» تغییراتتان را برای همه قابل مشاهده خواهد کرد.',
 );
 
@@ -644,8 +635,8 @@ $messages['fr'] = array(
 	'guidedtour-tour-firstedit-preview-description' => 'Cliquer sur « {{int:showpreview}} » vous permet de vérifier à quoi ressemblera la page avec vos modifications. Ensuite, n’oubliez pas de publier pour enregistrer.',
 	'guidedtour-tour-firstedit-save-title' => 'Vous avez presque terminé !',
 	'guidedtour-tour-firstedit-save-description' => 'Lorsque vous êtes prêt, cliquez sur « {{int:savearticle}} » pour rendre vos modifications visibles à tous.',
-	'guidedtour-tour-firsteditve-edit-page-description' => 'Cliquez sur le bouton « {{int:vector-view-edit}} {{int:visualeditor-beta-appendix}} » pour effectuer vos modifications.',
-	'guidedtour-tour-firsteditve-edit-section-description' => 'Il y a des liens « {{int:editsection}} {{int:visualeditor-beta-appendix}} » pour chaque section principale dans une page, de sorte que vous puissiez vous focaliser uniquement sur cette partie.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Cliquez sur le bouton « {{int:vector-view-edit}} {{int:visualeditor-beta-appendix}} » pour effectuer vos modifications.', # Fuzzy
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Il y a des liens « {{int:editsection}} {{int:visualeditor-beta-appendix}} » pour chaque section principale dans une page, de sorte que vous puissiez vous focaliser uniquement sur cette partie.', # Fuzzy
 	'guidedtour-tour-firsteditve-save-description' => 'Quand vous serez prêt, cliquer sur « {{int:visualeditor-toolbar-savedialog}} » rendra vos modifications visibles pour tout le monde.',
 );
 
@@ -739,8 +730,8 @@ $messages['he'] = array(
 	'guidedtour-tour-firstedit-preview-description' => 'לחיצה על "{{int:showpreview}}" מאפשרת לך לבדוק איך הדף ייראה עם השינויים שלך. רק לא לשכוח לשמור!',
 	'guidedtour-tour-firstedit-save-title' => 'כמעט סיימנו!',
 	'guidedtour-tour-firstedit-save-description' => 'כשהכול מוכן, לחיצה על "{{int:savearticle}}" תהפוך את השינויים שלך לגלויים לכולם.',
-	'guidedtour-tour-firsteditve-edit-page-description' => 'נא ללחוץ על הכפתור "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" כדי לבצע את השינויים שלך.',
-	'guidedtour-tour-firsteditve-edit-section-description' => 'יש קישורי "{{int:editsection}} {{int:visualeditor-beta-appendix}}" לכל אחד מהחלקים החשובים בדף ואפשר להתרכז רק בחלק ההוא.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'נא ללחוץ על הכפתור "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" כדי לבצע את השינויים שלך.', # Fuzzy
+	'guidedtour-tour-firsteditve-edit-section-description' => 'יש קישורי "{{int:editsection}} {{int:visualeditor-beta-appendix}}" לכל אחד מהחלקים החשובים בדף ואפשר להתרכז רק בחלק ההוא.', # Fuzzy
 	'guidedtour-tour-firsteditve-save-description' => 'כשהכול מוכן, לחיצה על "{{int:visualeditor-toolbar-savedialog}}" תהפוך את השינויים שלך לגלויים לכולם.',
 );
 
@@ -884,6 +875,7 @@ $messages['it'] = array(
 
 /** Japanese (日本語)
  * @author Shirayuki
+ * @author Whym
  */
 $messages['ja'] = array(
 	'guidedtour-desc' => '新しい利用者を支援するポップアップのガイド付きツアーをページで提供できるようにする',
@@ -899,14 +891,20 @@ $messages['ja'] = array(
 	'guidedtour-tour-test-mediawiki-parse' => 'MediaWiki の構文解析のテスト',
 	'guidedtour-tour-test-description-page' => 'MediaWiki 説明ページのテスト',
 	'guidedtour-tour-test-go-description-page' => '説明ページに移動',
-	'guidedtour-tour-firstedit-edit-page-description' => '「{{int:vector-view-edit}}」ボタンをクリックして編集します。',
-	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => '「{{int:visualeditor-ca-editsource}}」ボタンをクリックして編集します。',
+	'guidedtour-tour-test-launch-tour' => 'ツアー起動のテスト',
+	'guidedtour-tour-test-launch-tour-description' => 'guider は他のガイド付きツアーを起動できます。すごいでしょう？',
+	'guidedtour-tour-test-launch-using-tours' => 'ツアーの使い方についてのツアーを起動する',
+	'guidedtour-tour-firstedit-edit-page-title' => '編集をはじめてみましょう',
+	'guidedtour-tour-firstedit-edit-page-description' => '「{{int:vector-view-edit}}」ボタンをクリックすると編集をはじめられます。',
+	'guidedtour-tour-firstedit-edit-section-title' => '1セクションだけ編集してみましょう',
 	'guidedtour-tour-firstedit-edit-section-description' => 'ページ内の主要な節それぞれに「{{int:editsection}}」リンクがあるため、その節のみに着目できます。',
-	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'ページ内の主要な節それぞれに「{{int:visualeditor-ca-editsource-section}}」リンクがあるため、その節のみに着目できます。',
 	'guidedtour-tour-firstedit-preview-title' => '変更内容のプレビュー (省略可能)',
+	'guidedtour-tour-firstedit-preview-description' => '「{{int:showpreview}}」をクリックすると、変更した結果、ページがどのようになるか確認することができます。保存するのもお忘れなく！',
 	'guidedtour-tour-firstedit-save-title' => 'もう少しで完了します!',
-	'guidedtour-tour-firsteditve-edit-page-description' => '変更するには、「{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}」をクリックしてください。',
-	'guidedtour-tour-firsteditve-edit-section-description' => 'ページ内の主要な節それぞれに「{{int:editsection}} {{int:visualeditor-beta-appendix}}」リンクがあるため、その節のみに着目できます。',
+	'guidedtour-tour-firstedit-save-description' => '大丈夫だと思ったら「{{int:savearticle}}」をクリックして、この変更を誰にでも見られるようにしましょう。',
+	'guidedtour-tour-firsteditve-edit-page-description' => '「{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}」ボタンをクリックすると編集をはじめられます。', # Fuzzy
+	'guidedtour-tour-firsteditve-edit-section-description' => 'ページには主要なセクションひとつひとつに「{{int:editsection}} {{int:visualeditor-beta-appendix}}」リンクがあります。これを使うとそのセクションだけに集中できます。', # Fuzzy
+	'guidedtour-tour-firsteditve-save-description' => '大丈夫だと思ったら「{{int:visualeditor-toolbar-savedialog}}」をクリックして、この変更を誰にでも見られるようにしましょう。',
 );
 
 /** Georgian (ქართული)
@@ -946,8 +944,8 @@ $messages['ko'] = array(
 	'guidedtour-tour-firstedit-preview-description' => '"{{int:showpreview}}"를 클릭하면 문서가 어떻게 바뀌었는지 확인할 수 있습니다. 저장하는 것을 잊지 마세요!',
 	'guidedtour-tour-firstedit-save-title' => '거의 끝나갑니다!',
 	'guidedtour-tour-firstedit-save-description' => '준비가 되면, "{{int:savearticle}}"을 클릭하면 바꾼 내용을 모두에게 보여줍니다.',
-	'guidedtour-tour-firsteditve-edit-page-description' => '내용을 바꾸려면 "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" 단추를 클릭하세요.',
-	'guidedtour-tour-firsteditve-edit-section-description' => '각 주요 문단 부분에 집중할 수 있도록 문서에 각 주요 문단에 대한 "{{int:editsection}} {{int:visualeditor-beta-appendix}}" 링크가 있습니다.',
+	'guidedtour-tour-firsteditve-edit-page-description' => '내용을 바꾸려면 "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" 단추를 클릭하세요.', # Fuzzy
+	'guidedtour-tour-firsteditve-edit-section-description' => '각 주요 문단 부분에 집중할 수 있도록 문서에 각 주요 문단에 대한 "{{int:editsection}} {{int:visualeditor-beta-appendix}}" 링크가 있습니다.', # Fuzzy
 	'guidedtour-tour-firsteditve-save-description' => '준비가 되면 "{{int:savearticle}}"을 클릭하여 바꾼 내용을 모두에게 보이도록 해주세요.',
 );
 
@@ -977,8 +975,8 @@ $messages['lb'] = array(
 	'guidedtour-tour-firstedit-preview-description' => 'Klicken op "{{int:showpreview}}", erlaabt Iech ze gesinn, wéi d\'Säit mat Ären Ännerungen ausgesäit. Vergiesst net ze späicheren.',
 	'guidedtour-tour-firstedit-save-title' => 'Dir sidd bal fäerdeg!',
 	'guidedtour-tour-firstedit-save-description' => "Wann Dir fäerdeg sidd, klickt op {{int:savearticle}}' fir Är Ännerunge jiddwerengem ze weisen.",
-	'guidedtour-tour-firsteditve-edit-page-description' => 'Klickt op de "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" Knäppche fir e maachen.',
-	'guidedtour-tour-firsteditve-edit-section-description' => 'Et gëtt "{{int:editsection}} {{int:visualeditor-beta-appendix}}"-Linke fir all gréisseren Abschnitt op enger Säit, sou kënnt Dir Iech just op deen Deel konzentréieren.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Klickt op de "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" Knäppche fir e maachen.', # Fuzzy
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Et gëtt "{{int:editsection}} {{int:visualeditor-beta-appendix}}"-Linke fir all gréisseren Abschnitt op enger Säit, sou kënnt Dir Iech just op deen Deel konzentréieren.', # Fuzzy
 	'guidedtour-tour-firsteditve-save-description' => 'Wann Dir fäerdeg sidd, klickt op "{{int:visualeditor-toolbar-savedialog}}" fir Är Ännerunge fir jiddweree visibel ze maachen.',
 );
 
@@ -1027,8 +1025,8 @@ $messages['mk'] = array(
 	'guidedtour-tour-firstedit-preview-description' => 'Стискајќи на „{{int:showpreview}}“ можете да видите како ќе изгледа изменетата страница. Само не заборавајте да ја зачувате!',
 	'guidedtour-tour-firstedit-save-title' => 'Речиси сте готови!',
 	'guidedtour-tour-firstedit-save-description' => 'Кога сте готови, стиснете на „{{int:savearticle}}“ и измените ќе бидат видливи за секого.',
-	'guidedtour-tour-firsteditve-edit-page-description' => 'Стиснете на копчето „{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}“ за да ги направите промените.',
-	'guidedtour-tour-firsteditve-edit-section-description' => 'Секој поважен дел (поднаслов) од страницата има врски „{{int:editsection}} {{int:visualeditor-beta-appendix}}“ за да можете да му се посветите само на тој дел.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Стиснете на копчето „{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}“ за да ги направите промените.', # Fuzzy
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Секој поважен дел (поднаслов) од страницата има врски „{{int:editsection}} {{int:visualeditor-beta-appendix}}“ за да можете да му се посветите само на тој дел.', # Fuzzy
 	'guidedtour-tour-firsteditve-save-description' => 'Кога ќе сте готови, стиснете на „{{int:visualeditor-toolbar-savedialog}}“ и така промените ќе станат видливи за секого.',
 );
 
@@ -1145,6 +1143,7 @@ $messages['nl'] = array(
 
 /** Polish (polski)
  * @author Chrumps
+ * @author Dalis
  * @author Matma Rex
  * @author Peter Bowman
  * @author Tar Lócesilion
@@ -1173,8 +1172,8 @@ $messages['pl'] = array(
 	'guidedtour-tour-firstedit-preview-description' => 'Naciśnięcie na „{{int:showpreview}}” pozwoli Ci obejrzeć wygląd strony po wprowadzeniu Twoich zmian. Nie zapomnij ich zapisać!',
 	'guidedtour-tour-firstedit-save-title' => 'Prawie gotowe!',
 	'guidedtour-tour-firstedit-save-description' => 'Gdy będziesz {{GENDER:|gotowy|gotowa}}, kliknij „{{int:savearticle}}”, aby zmiany stały się widoczne dla każdego.',
-	'guidedtour-tour-firsteditve-edit-page-description' => 'Kliknij na „{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}”, aby rozpocząć edycję strony.',
-	'guidedtour-tour-firsteditve-edit-section-description' => 'Obok każdego nagłówka znajduje się odnośnik „{{int:editsection}} {{int:visualeditor-beta-appendix}}”, aby móc skupić się tylko na tej części.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Kliknij przycisk " $1 ", aby dokonać zmian.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Obok każdego nagłówka znajduje się odnośnik „{{int:editsection}} {{int:visualeditor-beta-appendix}}”, aby móc skupić się tylko na tej części.', # Fuzzy
 	'guidedtour-tour-firsteditve-save-description' => 'Gdy skończysz, kliknięcie na „{{int:visualeditor-toolbar-savedialog}}” sprawi, że zmiany będą widoczne dla każdego.',
 );
 
@@ -1233,8 +1232,8 @@ $messages['pt'] = array(
 	'guidedtour-tour-firstedit-preview-description' => 'Clique em "{{int:showpreview}}" para ver como ficará a página após as suas alterações. Não esqueça de salvá-las!',
 	'guidedtour-tour-firstedit-save-title' => 'Está quase pronto!',
 	'guidedtour-tour-firstedit-save-description' => 'Quando estiver pronto, clique em "{{int:savearticle}}" para as alterações ficarem visíveis para todos.',
-	'guidedtour-tour-firsteditve-edit-page-description' => 'Clique no botão "{{int:vector-view-edit}}" para realizar as suas mudanças.',
-	'guidedtour-tour-firsteditve-edit-section-description' => 'Há ligações "{{int:editsection}}" em cada secção da página, para que você possa concentrar-se apenas nesta parte.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Clique no botão "{{int:vector-view-edit}}" para realizar as suas mudanças.', # Fuzzy
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Há ligações "{{int:editsection}}" em cada secção da página, para que você possa concentrar-se apenas nesta parte.', # Fuzzy
 	'guidedtour-tour-firsteditve-save-description' => 'Quando terminar, clique em "{{int:visualeditor-toolbar-savedialog}}" para as alterações ficarem visíveis para todos.',
 );
 
@@ -1267,8 +1266,8 @@ $messages['pt-br'] = array(
 	'guidedtour-tour-firstedit-preview-description' => 'Clicando em "{{int:showpreview}}" você pode conferir como vai ficar com suas mudanças. Só não esqueça de salvar!',
 	'guidedtour-tour-firstedit-save-title' => 'Você está quase terminando!',
 	'guidedtour-tour-firstedit-save-description' => 'Quando estiver pronto, clique em "{{int:savearticle}}" para tornar suas mudanças visíveis para todos.',
-	'guidedtour-tour-firsteditve-edit-page-description' => 'Clique no botão "{{int:vector-view-edit}}" para fazer suas mudanças.',
-	'guidedtour-tour-firsteditve-edit-section-description' => 'Existem links para "{{int:editsection}}" em cada seção principal de um artigo, assim você pode se focar na edição apenas naquela parte.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Clique no botão "{{int:vector-view-edit}}" para fazer suas mudanças.', # Fuzzy
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Existem links para "{{int:editsection}}" em cada seção principal de um artigo, assim você pode se focar na edição apenas naquela parte.', # Fuzzy
 	'guidedtour-tour-firsteditve-save-description' => 'Quando estiver pronto, clique em "{{int:visualeditor-toolbar-savedialog}}" para tornar suas mudanças visíveis para todos.',
 );
 
@@ -1335,8 +1334,8 @@ $messages['ru'] = array(
 	'guidedtour-tour-firstedit-preview-description' => 'Нажатие «{{int:showpreview}}» позволяет проверить, как будет выглядеть страница с вашими изменениями. Только не забудьте её потом сохранить!',
 	'guidedtour-tour-firstedit-save-title' => 'Вы почти закончили!',
 	'guidedtour-tour-firstedit-save-description' => 'Когда вы будете готовы, нажатие «{{int:savearticle}}» сделает изменения видимыми для всех.',
-	'guidedtour-tour-firsteditve-edit-page-description' => 'Нажмите кнопку «{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}», чтобы внести свои изменения.',
-	'guidedtour-tour-firsteditve-edit-section-description' => 'Ссылки «{{int:editsection}} {{int:visualeditor-beta-appendix}}» существуют для каждого раздела страницы, так что вы можете сосредоточиться только на этой её части.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Нажмите кнопку «{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}», чтобы внести свои изменения.', # Fuzzy
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Ссылки «{{int:editsection}} {{int:visualeditor-beta-appendix}}» существуют для каждого раздела страницы, так что вы можете сосредоточиться только на этой её части.', # Fuzzy
 	'guidedtour-tour-firsteditve-save-description' => 'Когда вы будете готовы, нажатие «{{int:visualeditor-toolbar-savedialog}}» сделает изменения видимыми для всех.',
 );
 
@@ -1394,8 +1393,8 @@ $messages['sv'] = array(
 	'guidedtour-tour-firstedit-preview-description' => 'Genom att klicka på "{{int:showpreview}}" kan du kontrollera hur sidan ser ut med dina ändringar. Glöm bara inte att spara!',
 	'guidedtour-tour-firstedit-save-title' => 'Du är nästan klar!',
 	'guidedtour-tour-firstedit-save-description' => 'När du är redo, kommer ett klick på "{{int:savearticle}}" att synliggöra dina ändringar för alla.',
-	'guidedtour-tour-firsteditve-edit-page-description' => 'Klicka på knappen "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" för att göra dina ändringar.',
-	'guidedtour-tour-firsteditve-edit-section-description' => 'Det finns "{{int:editsection}} {{int:visualeditor-beta-appendix}}"-länkar för varje större avsnitt på en sida, så att du kan fokusera på endast den delen.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Klicka på knappen "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" för att göra dina ändringar.', # Fuzzy
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Det finns "{{int:editsection}} {{int:visualeditor-beta-appendix}}"-länkar för varje större avsnitt på en sida, så att du kan fokusera på endast den delen.', # Fuzzy
 	'guidedtour-tour-firsteditve-save-description' => 'När du är redo, kommer ett klick på "{{int:visualeditor-toolbar-savedialog}}" att synliggöra dina ändringar för alla.',
 );
 
@@ -1427,8 +1426,8 @@ $messages['uk'] = array(
 	'guidedtour-tour-firstedit-preview-description' => 'Клацання "{{int:showpreview}}" дає змогу перевіряти вигляд сторінки із внесеними змінами. Тільки не забудьте зберегти!',
 	'guidedtour-tour-firstedit-save-title' => 'Майже все готове!',
 	'guidedtour-tour-firstedit-save-description' => "Коли ви будете готові, натискання '{{int:savearticle}}' зробить ваші зміни видимими для всіх.",
-	'guidedtour-tour-firsteditve-edit-page-description' => 'Натисніть на кнопку "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}", аби внести свої зміни.',
-	'guidedtour-tour-firsteditve-edit-section-description' => 'Існують посилання "{{int:editsection}} {{int:visualeditor-beta-appendix}}" для кожного головного розділу на сторінці, тому ви можете зосередитися тільки на цій частині.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Натисніть на кнопку "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}", аби внести свої зміни.', # Fuzzy
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Існують посилання "{{int:editsection}} {{int:visualeditor-beta-appendix}}" для кожного головного розділу на сторінці, тому ви можете зосередитися тільки на цій частині.', # Fuzzy
 	'guidedtour-tour-firsteditve-save-description' => 'Коли ви будете готові, натискання "{{int:visualeditor-toolbar-savedialog}}" зробить ваші зміни видимими для всіх.',
 );
 
@@ -1516,8 +1515,8 @@ $messages['zh-hans'] = array(
 	'guidedtour-tour-firstedit-preview-description' => '点击“{{int:showpreview}}”，您将看到您作出了更改后页面看上去会如何。请不要忘记保存！',
 	'guidedtour-tour-firstedit-save-title' => '你马上就要完成了！',
 	'guidedtour-tour-firstedit-save-description' => '当你准备好时，点击“{{int:savearticle}}”，这样您所做的修改所有人都会看到。',
-	'guidedtour-tour-firsteditve-edit-page-description' => '单击“{{int:vector-view-edit}}{{int:visualeditor-beta-appendix}}”按钮以作出您的更改。',
-	'guidedtour-tour-firsteditve-edit-section-description' => '页面中每个主要章节都有“{{int:editsection}}{{int:visualeditor-beta-appendix}}”链接，让你可以只集中精神在这一部分上。',
+	'guidedtour-tour-firsteditve-edit-page-description' => '单击“{{int:vector-view-edit}}{{int:visualeditor-beta-appendix}}”按钮以作出您的更改。', # Fuzzy
+	'guidedtour-tour-firsteditve-edit-section-description' => '页面中每个主要章节都有“{{int:editsection}}{{int:visualeditor-beta-appendix}}”链接，让你可以只集中精神在这一部分上。', # Fuzzy
 	'guidedtour-tour-firsteditve-save-description' => '当你准备好时，点击“{{int:visualeditor-toolbar-savedialog}}”，便会让所有人都能看到你所做的修改。',
 );
 
