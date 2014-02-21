@@ -2,7 +2,9 @@
 // Designed to work on any Wikipedia article, and can work for other sites with minor message changes.
 
 ( function ( window, document, $, mw, gt ) {
-	var hasEditSectionAtLoadTime, editSectionSelector = '.mw-editsection-visualeditor';
+	var hasEditSectionAtLoadTime, editSectionSelector = '.mw-editsection-visualeditor',
+		tabMessages, editTabText, editSectionText, editPageDescription,
+		editSectionDescription;
 
 	function shouldShowForPage() {
 		// Excludes pages outside the main namespace and pages with editing restrictions
@@ -23,6 +25,22 @@
 
 	hasEditSectionAtLoadTime = $( editSectionSelector ).length > 0;
 
+	tabMessages = mw.config.get( 'wgVisualEditorConfig' ).tabMessages;
+
+	editTabText = mw.message( 'vector-view-edit' ).parse();
+	if ( tabMessages.editappendix !== null ) {
+		editTabText += '&nbsp;' + mw.message( tabMessages.editappendix ).parse();
+	}
+	editPageDescription = mw.message( 'guidedtour-tour-firsteditve-edit-page-description', editTabText ).parse();
+
+	editSectionText = mw.message( 'editsection' ).parse();
+	if ( tabMessages.editsectionappendix !== null ) {
+		editSectionText += '&nbsp;' + mw.message( tabMessages.editsectionappendix ).parse();
+	}
+	editSectionDescription = mw.message(
+		'guidedtour-tour-firsteditve-edit-section-description', editSectionText
+	).parse();
+
 	// Reuses messages from the 'firstedit' tour where it semantically makes sense
 	gt.defineTour( {
 		name: 'firsteditve',
@@ -30,7 +48,7 @@
 		showConditionally: 'VisualEditor',
 		steps: [ {
 			titlemsg: 'guidedtour-tour-firstedit-edit-page-title',
-			descriptionmsg: 'guidedtour-tour-firsteditve-edit-page-description',
+			description: editPageDescription,
 			position: 'bottom',
 			attachTo: '#ca-ve-edit',
 			// TODO (mattflaschen, 2013-09-03): After GuidedTour API enhancements, try to replace
@@ -49,7 +67,7 @@
 			allowAutomaticOkay: false
 		}, {
 			titlemsg: 'guidedtour-tour-firstedit-edit-section-title',
-			descriptionmsg: 'guidedtour-tour-firsteditve-edit-section-description',
+			description: editSectionDescription,
 			position: 'right',
 			attachTo: editSectionSelector,
 			width: 300,

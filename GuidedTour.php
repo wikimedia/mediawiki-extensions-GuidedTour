@@ -158,7 +158,6 @@ $wgResourceModules['ext.guidedTour.tour.firsteditve'] = array(
 	'messages' => array(
 		'editsection',
 		'vector-view-edit',
-		'visualeditor-beta-appendix',
 		'visualeditor-toolbar-savedialog',
 		'guidedtour-tour-firstedit-edit-page-title',
 		'guidedtour-tour-firsteditve-edit-page-description',
@@ -195,3 +194,6 @@ $wgResourceModules['ext.guidedTour.tour.test'] = array(
 $wgExtensionMessagesFiles += array(
 	'GuidedTour' => $dir . 'GuidedTour.i18n.php',
 );
+
+// Extension function
+$wgExtensionFunctions[] = 'GuidedTourHooks::onSetup';

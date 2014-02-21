@@ -48,8 +48,8 @@ $messages['en'] = array(
 	'guidedtour-tour-firstedit-save-title' => 'You\'re almost done!',
 	'guidedtour-tour-firstedit-save-description' => 'When you\'re ready, clicking "{{int:savearticle}}" will make your changes visible for everyone.',
 
-	'guidedtour-tour-firsteditve-edit-page-description' => 'Click the "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" button to make your changes.',
-	'guidedtour-tour-firsteditve-edit-section-description' => 'There are "{{int:editsection}} {{int:visualeditor-beta-appendix}}" links for each major section in a page, so you can focus on just that part.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Click the "$1" button to make your changes.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'There are "$1" links for each major section in a page, so you can focus on just that part.',
 	'guidedtour-tour-firsteditve-save-description' => 'When you\'re ready, clicking "{{int:visualeditor-toolbar-savedialog}}" will make your changes visible for everyone.',
 );
 
@@ -123,10 +123,14 @@ See also:
 * {{msg-mw|savearticle}}',
 	'guidedtour-tour-firsteditve-edit-page-description' => 'Description of the step of the firsteditve tour pointing to the VisualEditor edit button.
 
+$1 - Text of VisualEditor edit tab
+
 Refers to:
 * {{msg-mw|Vector-view-edit}}
 * {{msg-mw|Visualeditor-beta-appendix}}',
 	'guidedtour-tour-firsteditve-edit-section-description' => 'Description of the step of the firsteditve tour pointing to the VE section edit button
+
+$1 - Text of VisualEditor section edit link
 
 Refers to:
 * {{msg-mw|Editsection}}
