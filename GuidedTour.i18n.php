@@ -633,8 +633,8 @@ $messages['fr'] = array(
 	'guidedtour-tour-firstedit-preview-description' => 'Cliquer sur « {{int:showpreview}} » vous permet de vérifier à quoi ressemblera la page avec vos modifications. Ensuite, n’oubliez pas de publier pour enregistrer.',
 	'guidedtour-tour-firstedit-save-title' => 'Vous avez presque terminé !',
 	'guidedtour-tour-firstedit-save-description' => 'Lorsque vous êtes prêt, cliquez sur « {{int:savearticle}} » pour rendre vos modifications visibles à tous.',
-	'guidedtour-tour-firsteditve-edit-page-description' => 'Cliquez sur le bouton « {{int:vector-view-edit}} {{int:visualeditor-beta-appendix}} » pour effectuer vos modifications.', # Fuzzy
-	'guidedtour-tour-firsteditve-edit-section-description' => 'Il y a des liens « {{int:editsection}} {{int:visualeditor-beta-appendix}} » pour chaque section principale dans une page, de sorte que vous puissiez vous focaliser uniquement sur cette partie.', # Fuzzy
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Cliquez sur le bouton « $1 » pour effectuer vos modifications.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Il y a des liens « $1 » pour chaque section principale dans une page, de sorte que vous puissiez vous focaliser uniquement sur cette partie.',
 	'guidedtour-tour-firsteditve-save-description' => 'Quand vous serez prêt, cliquer sur « {{int:visualeditor-toolbar-savedialog}} » rendra vos modifications visibles pour tout le monde.',
 );
 
@@ -1398,8 +1398,8 @@ $messages['sv'] = array(
 	'guidedtour-tour-firstedit-preview-description' => 'Genom att klicka på "{{int:showpreview}}" kan du kontrollera hur sidan ser ut med dina ändringar. Glöm bara inte att spara!',
 	'guidedtour-tour-firstedit-save-title' => 'Du är nästan klar!',
 	'guidedtour-tour-firstedit-save-description' => 'När du är redo, kommer ett klick på "{{int:savearticle}}" att synliggöra dina ändringar för alla.',
-	'guidedtour-tour-firsteditve-edit-page-description' => 'Klicka på knappen "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" för att göra dina ändringar.', # Fuzzy
-	'guidedtour-tour-firsteditve-edit-section-description' => 'Det finns "{{int:editsection}} {{int:visualeditor-beta-appendix}}"-länkar för varje större avsnitt på en sida, så att du kan fokusera på endast den delen.', # Fuzzy
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Klicka på "$1"-knappen för att göra dina ändringar.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Det finns "$1"-länkar för varje större avsnitt på en sida, så att du kan fokusera på endast den delen.',
 	'guidedtour-tour-firsteditve-save-description' => 'När du är redo, kommer ett klick på "{{int:visualeditor-toolbar-savedialog}}" att synliggöra dina ändringar för alla.',
 );
 
