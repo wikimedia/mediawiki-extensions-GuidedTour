@@ -197,6 +197,13 @@ $messages['ast'] = array(
 	'guidedtour-tour-firsteditve-save-description' => 'Cuando tea preparáu, en calcando "{{int:visualeditor-toolbar-savedialog}}" los cambios tarán visibles pa toos.',
 );
 
+/** Bikol Central (Bikol Central)
+ * @author Geopoet
+ */
+$messages['bcl'] = array(
+	'guidedtour-tour-firsteditve-edit-page-description' => 'I-klik an "$1" na pindutan sa paghimo kan saimong mga pagliliwat.',
+);
+
 /** Belarusian (беларуская)
  * @author Wizardist
  */
@@ -733,6 +740,14 @@ $messages['he'] = array(
 	'guidedtour-tour-firsteditve-save-description' => 'כשהכול מוכן, לחיצה על "{{int:visualeditor-toolbar-savedialog}}" תהפוך את השינויים שלך לגלויים לכולם.',
 );
 
+/** Hindi (हिन्दी)
+ * @author Vivek Rai
+ */
+$messages['hi'] = array(
+	'guidedtour-tour-firsteditve-edit-page-description' => ' परिवर्तन करने के लिए "$1" पर क्लिक करें।',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'एक पृष्ट के प्रत्येक प्रमुख खंड में " $1 " लिंक हैं, जिसपर आप सिर्फ उस भाग पर ध्यान केंद्रित कर सकते हैं।',
+);
+
 /** Upper Sorbian (hornjoserbsce)
  * @author Michawiki
  */
@@ -942,7 +957,7 @@ $messages['ko'] = array(
 	'guidedtour-tour-firstedit-preview-description' => '"{{int:showpreview}}"를 클릭하면 문서가 어떻게 바뀌었는지 확인할 수 있습니다. 저장하는 것을 잊지 마세요!',
 	'guidedtour-tour-firstedit-save-title' => '거의 끝나갑니다!',
 	'guidedtour-tour-firstedit-save-description' => '준비가 되면, "{{int:savearticle}}"을 클릭하면 바꾼 내용을 모두에게 보여줍니다.',
-	'guidedtour-tour-firsteditve-edit-page-description' => '내용을 바꾸려면 "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" 단추를 클릭하세요.', # Fuzzy
+	'guidedtour-tour-firsteditve-edit-page-description' => '내용을 바꾸려면 "$1" 단추를 클릭하세요.',
 	'guidedtour-tour-firsteditve-edit-section-description' => '각 주요 문단 부분에 집중할 수 있도록 문서에 각 주요 문단에 대한 "{{int:editsection}} {{int:visualeditor-beta-appendix}}" 링크가 있습니다.', # Fuzzy
 	'guidedtour-tour-firsteditve-save-description' => '준비가 되면 "{{int:savearticle}}"을 클릭하여 바꾼 내용을 모두에게 보이도록 해주세요.',
 );
@@ -1111,6 +1126,7 @@ $messages['ms'] = array(
 );
 
 /** Dutch (Nederlands)
+ * @author Arent
  * @author Carsrac
  * @author Siebrand
  */
@@ -1133,16 +1149,14 @@ $messages['nl'] = array(
 	'guidedtour-tour-test-launch-using-tours' => 'Start een rondleiding bij het gebruik van rondleidingen',
 	'guidedtour-tour-firstedit-edit-page-title' => 'Klaar om te bewerken?',
 	'guidedtour-tour-firstedit-edit-page-description' => 'Klik op de knop "{{int:vector-view-edit}}" om uw wijzigingen te maken.',
-	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Klik op de knop "{{int:visualeditor-ca-editsource}}" om uw wijzigingen te maken.',
 	'guidedtour-tour-firstedit-edit-section-title' => 'Alleen een paragraaf bewerken',
 	'guidedtour-tour-firstedit-edit-section-description' => 'Er zijn koppelingen "{{int:editsection}}" voor iedere onderdeel van een pagina, zodat u zich kunt concentreren op dat onderdeel.',
-	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Er zijn koppelingen "{{int:visualeditor-ca-editsource-section}}" voor iedere onderdeel van een pagina, zodat u zich kunt concentreren op dat onderdeel.',
 	'guidedtour-tour-firstedit-preview-title' => 'Voorvertoning van uw wijzigingen (optioneel)',
 	'guidedtour-tour-firstedit-preview-description' => 'Door te klikken op "{{int:showpreview}}" krijgt u de pagina te zien inclusief uw wijzigingen. Vergeet niet de pagina ook echt op te slaan als u dat wilt!',
 	'guidedtour-tour-firstedit-save-title' => 'U bent bijna klaar!',
 	'guidedtour-tour-firstedit-save-description' => 'Als u klaar bent, kunt u op "{{int:savearticle}}" klikken om uw wijzigingen voor iedereen zichtbaar te maken.',
-	'guidedtour-tour-firsteditve-edit-page-description' => 'Klik op de knop "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" om uw wijzigingen te maken.',
-	'guidedtour-tour-firsteditve-edit-section-description' => 'Er zijn koppelingen "{{int:editsection}} {{int:visualeditor-beta-appendix}}" voor iedere onderdeel van een pagina, zodat u zich kunt concentreren op dat onderdeel.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Klik op de knop "$1" om wijzigingen te maken.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Er zijn koppelingen "$1" voor iedere onderdeel van een pagina, zodat u zich kunt concentreren op dat onderdeel.',
 	'guidedtour-tour-firsteditve-save-description' => 'Als u klaar bent, kunt u op "{{int:visualeditor-toolbar-savedialog}}" klikken om uw wijzigingen voor iedereen zichtbaar te maken.',
 );
 
@@ -1237,7 +1251,7 @@ $messages['pt'] = array(
 	'guidedtour-tour-firstedit-preview-description' => 'Clique em "{{int:showpreview}}" para ver como ficará a página após as suas alterações. Não esqueça de salvá-las!',
 	'guidedtour-tour-firstedit-save-title' => 'Está quase pronto!',
 	'guidedtour-tour-firstedit-save-description' => 'Quando estiver pronto, clique em "{{int:savearticle}}" para as alterações ficarem visíveis para todos.',
-	'guidedtour-tour-firsteditve-edit-page-description' => 'Clique no botão "{{int:vector-view-edit}}" para realizar as suas mudanças.', # Fuzzy
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Clique no botão "$1" para realizar as suas mudanças.',
 	'guidedtour-tour-firsteditve-edit-section-description' => 'Há ligações "{{int:editsection}}" em cada secção da página, para que você possa concentrar-se apenas nesta parte.', # Fuzzy
 	'guidedtour-tour-firsteditve-save-description' => 'Quando terminar, clique em "{{int:visualeditor-toolbar-savedialog}}" para as alterações ficarem visíveis para todos.',
 );
@@ -1349,6 +1363,8 @@ $messages['ru'] = array(
  */
 $messages['sco'] = array(
 	'guidedtour-tour-firstedit-edit-page-title' => '{{GENDER:|Ready}} fer tae edit?',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Clap the "$1" button tae mak yer chynges.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'There ar "$1" links fer ilka muckle section in ae page, sae ye can focus oan jyst that pairt.',
 );
 
 /** Slovenian (slovenščina)
