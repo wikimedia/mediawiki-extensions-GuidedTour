@@ -52,12 +52,6 @@ $wgExtensionCredits['other'][] = array(
 $guidersPath = 'modules/mediawiki.libs.guiders';
 
 // Modules
-$wgResourceModules['schema.GuidedTour'] = array(
-	'class' => 'ResourceLoaderSchemaModule',
-	'schema' => 'GuidedTour',
-	'revision' => 5222838,
-);
-
 $wgResourceModules['mediawiki.libs.guiders'] = array(
 	'styles' => 'mediawiki.libs.guiders.less',
 	'scripts' => array(
@@ -90,25 +84,30 @@ $wgResourceModules['ext.guidedTour.siteStyles'] = array(
 	'class' => 'ResourceLoaderGuidedTourSiteStylesModule',
 );
 
-// Internal API (refactoring to here in progress)
 $wgResourceModules['ext.guidedTour.lib.internal'] = array(
 	'scripts' => 'ext.guidedTour.lib.internal.js',
 	'localBasePath' => $dir . 'modules',
 	'remoteExtPath' => 'GuidedTour/modules',
 );
 
-// Public API, and legacy parts of the internal API pending move
 $wgResourceModules['ext.guidedTour.lib'] = array(
-	'scripts' => 'ext.guidedTour.lib.js',
-	'localBasePath' => $dir . 'modules',
-	'remoteExtPath' => 'GuidedTour/modules',
+	'scripts' => array(
+		'ext.guidedTour.lib.TransitionEvent.js',
+		'ext.guidedTour.lib.main.js',
+		'ext.guidedTour.lib.TransitionAction.js',
+		'ext.guidedTour.lib.StepBuilder.js',
+		'ext.guidedTour.lib.Step.js',
+		'ext.guidedTour.lib.TourBuilder.js',
+		'ext.guidedTour.lib.Tour.js',
+	),
+	'localBasePath' => $dir . 'modules/ext.guidedTour.lib',
+	'remoteExtPath' => 'GuidedTour/modules/ext.guidedTour.lib',
 	'dependencies' => array(
 		'jquery.cookie',
 		'jquery.json',
 		'mediawiki.jqueryMsg',
 		'mediawiki.libs.guiders',
 		'mediawiki.util',
-		'schema.GuidedTour',
 		'ext.guidedTour.lib.internal',
 		'ext.guidedTour.siteStyles',
 	),

@@ -11,12 +11,18 @@
  *
  * @class mw.guidedTour.internal
  * @singleton
+ * @private
  */
 ( function ( mw, $ ) {
 	var internal;
 
 	mw.guidedTour = mw.guidedTour || {};
 	mw.guidedTour.internal = internal = {
+		/**
+		 * Mapping between tour name and ext.guidedTour.lib.Tour object
+		 */
+		definedTours: {},
+
 		/**
 		 * Returns a promise that waits for all input promises.
 		 *
@@ -67,8 +73,6 @@
 		 * Returns object used for an initial user state, optionally populating it with one
 		 *  tour's data.
 		 *
-		 * @private
-		 *
 		 * @param {Object} [tourInfo] tour info object
 		 *
 		 * @return {Object} initial user state object
@@ -87,18 +91,8 @@
 			return userStateObject;
 		},
 
-		// TODO (mattflaschen, 2013-06-11): Getter method for Tour class
-		/**
-		 * Gets CSS class for tour name
-		 *
-		 * @param {string} tourName
-		 *
-		 * @return {string} CSS class
-		 */
-		getTourCssClass: function ( tourName ) {
-			return 'mw-guidedtour-tour-' + tourName;
-		},
-
+		// This is not a Tour instance method or field, since it is called
+		// before the script is loaded, and thus before there is a Tour.
 		/**
 		 * Gets the tour module name.  This does not guarantee there is such a module.
 		 *

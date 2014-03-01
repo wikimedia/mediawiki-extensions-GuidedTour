@@ -23,11 +23,9 @@
  *
  * - failStep: guiders property allows you to name a step to show() if the show() case fails (attachTo element is missing). For obvious reasons, this should not have an attachTo
  *
- * - resume(): start up tour from current place in ookie (if set). This is useful when your tour leaves the page you are on. Unlike show, it will skip steps that need to be skipped.
  * - initGuider(): Allows for initializing Guiders without actually creating them (useful when guider is not in the DOM yet. Avoids error: base is null [Break On This Error] var top = base.top;
  *
- * - autoAdvance: property allows binding to an element (and event) to auto-advance the guider. This is a combination of onShow() binding plus removing of bind when next is done.
- * - shouldSkip: property defines a function handler forces a skip of this step if function returns true.
+ * - autoAdvance (deprecated): property allows binding to an element (and event) to auto-advance the guider. This is a combination of onShow() binding plus removing of bind when next is done.
  * - overlay "error": If not set to true, this defines the class of the overlay. (This is useful for coloring the background of the overlay red on error.
  * - onShow: If this returns a guider object, then it can shunt (skip) the rest of show()
  *
@@ -104,10 +102,6 @@ mediaWiki.libs.guiders = (function($) {
 		// 1-12 follows an analog clock, 0 means centered. You can also use the string positions
 		// listed below at guiders._offsetNameMapping, such as "topRight".
 		position: 0,
-		// Function handler that allows you to skip this guider if the function returns true.
-		shouldSkip: function () {
-			return false;
-		},
 		title: 'Sample title goes here',
 		width: 400,
 		xButton: false, // this places a closer "x" button in the top right of the guider
@@ -124,7 +118,7 @@ mediaWiki.libs.guiders = (function($) {
 		/**
 		 * Auto-advance if the element is missing
 		 *
-		 * @deprecated Use shouldSkip
+		 * @deprecated Use mw.guidedTour.StepBuilder#transition
 		 */
 		advance_if_not_exists: function() {
 			return guiders._defaultSettings._bindAdvanceHandler;
@@ -132,7 +126,7 @@ mediaWiki.libs.guiders = (function($) {
 		/**
 		 * Advance if testFunction() returns true
 		 *
-		 * @deprecated Use shouldSkip
+		 * @deprecated Use mw.guidedTour.StepBuilder#transition
 		 */
 		advance_if_test: function(testFunction) {
 			return function(thisObj) {
@@ -147,7 +141,7 @@ mediaWiki.libs.guiders = (function($) {
 		/**
 		 * Advance if the form element has content
 		 *
-		 * @deprecated Use shouldSkip
+		 * @deprecated Use mw.guidedTour.StepBuilder#transition
 		 */
 		advance_if_form_content: function(thisObj) {
 			var bindObj = $(thisObj.autoAdvance[0]);
@@ -162,7 +156,7 @@ mediaWiki.libs.guiders = (function($) {
 		 *
 		 * this context will be inside the actual guider step, not here
 		 *
-		 * @deprecated Use shouldSkip
+		 * @deprecated Use mw.guidedTour.StepBuilder#transition
 		 */
 		skip_if_form_content: function() { //skip if form element has content
 			return ($(this.autoAdvance[0]).val() !== '');
@@ -185,7 +179,6 @@ mediaWiki.libs.guiders = (function($) {
 	].join('');
 
 	guiders._arrowSize = 42; // This is the arrow's width and height.
-	guiders._backButtonTitle = 'Back';
 	guiders._buttonElement = '<a></a>';
 	guiders._buttonAttributes = {'href': 'javascript:void(0);'};
 
@@ -243,12 +236,6 @@ mediaWiki.libs.guiders = (function($) {
 			}
 		}
 
-		function handlePrevButton() {
-			if ( !myGuider.elem.data('locked') ) {
-				guiders.prev();
-			}
-		}
-
 		// Add buttons
 		guiderButtonsContainer = myGuider.elem.find('.guider_buttons');
 
@@ -279,9 +266,6 @@ mediaWiki.libs.guiders = (function($) {
 					break;
 				case guiders._nextButtonTitle.toLowerCase():
 					thisButtonElem.bind( 'click', handleNextButton );
-					break;
-				case guiders._backButtonTitle.toLowerCase():
-					thisButtonElem.bind( 'click', handlePrevButton );
 					break;
 				}
 			}
@@ -715,62 +699,8 @@ mediaWiki.libs.guiders = (function($) {
 		guiders._attach(currentGuider);
 	};
 
-	/**
-	 Follows the chain of shouldSkip and returns the resulting guider, or undefined
-	 if the last shouldSkip returns true
-	 */
-	guiders._followShouldSkip = function(guider) {
-		var guiderId;
-
-		while (guider.shouldSkip()) {
-			guiderId = guider.next;
-			if (guiderId === undefined) {
-				return undefined;
-			} else {
-				guider = guiders._guiderById(guiderId);
-			}
-		}
-
-		return guider;
-	};
-
-	/**
-	 * Skips as needed then updates the displayed guider.
-	 *
-	 * If it does skip, it hides all currently showing guiders. If it
-	 * lands on a new guider, it shows that.
-	 *
-	 * @param {Object} [startGuider] The guider to start skipping
-	 *  from. Defaults to the guider corresponding to
-	 *  guiders._currentGuiderID
-	 * @return {boolean} true if it skipped, false otherwise
-	 */
-	guiders.skipThenUpdateDisplay = function(startGuider) {
-		var endGuider, skipped, omitHidingOverlay;
-
-		if (startGuider === undefined) {
-			if (guiders._currentGuiderID === null ) {
-				return false;
-			}
-			startGuider = guiders._guiderById(guiders._currentGuiderID);
-		}
-
-		endGuider = guiders._followShouldSkip(startGuider);
-
-		skipped = endGuider !== startGuider;
-		if (skipped) {
-			if (endGuider !== undefined) {
-				omitHidingOverlay = endGuider.overlay ? true : false;
-				guiders.hideAll(omitHidingOverlay, true);
-				guiders.show(endGuider.id);
-			} else {
-				guiders.hideAll();
-			}
-		}
-
-		return skipped;
-	};
-
+	// Note: This formerly checked for shouldSkip, but this has been moved out of the
+	// guiders module.
 	guiders.next = function() {
 		var currentGuider, nextGuiderId, myGuider, omitHidingOverlay;
 		try {
@@ -784,48 +714,19 @@ mediaWiki.libs.guiders = (function($) {
 			$(currentGuider.autoAdvance[0]).unbind(currentGuider.autoAdvance[1], currentGuider._advanceHandler);
 		}
 
-		nextGuiderId = currentGuider.next || null;
+		if ( currentGuider.next ) {
+			nextGuiderId = currentGuider.next();
+		}
+		nextGuiderId = nextGuiderId || null;
+
 		if (nextGuiderId !== null && nextGuiderId !== '') {
 			myGuider = guiders._guiderById(nextGuiderId);
-			// If skip function is bound, check to see if we should advance the guider
-			if (guiders.skipThenUpdateDisplay(myGuider)) {
-				return;
-			}
 			omitHidingOverlay = myGuider.overlay ? true : false;
 			guiders.hideAll(omitHidingOverlay, true);
 			if (currentGuider && currentGuider.highlight) {
 				guiders._dehighlightElement(currentGuider.highlight);
 			}
 			guiders.show(nextGuiderId);
-		}
-	};
-
-	guiders.prev = function () {
-		var currentGuider, prevGuider, prevGuiderId, myGuider, omitHidingOverlay;
-
-		currentGuider = guiders._guiders[guiders._currentGuiderID];
-		if (typeof currentGuider === 'undefined') {
-			// not what we think it is
-			return;
-		}
-		if (currentGuider.prev === null) {
-			// no previous to look at
-			return;
-		}
-
-		prevGuider = guiders._guiders[currentGuider.prev];
-		prevGuider.elem.data('locked', true);
-
-		// Note we use prevGuider.id as "prevGuider" is _already_ looking at the previous guider
-		prevGuiderId = prevGuider.id || null;
-		if (prevGuiderId !== null && prevGuiderId !== '') {
-			myGuider = guiders._guiderById(prevGuiderId);
-			omitHidingOverlay = myGuider.overlay ? true : false;
-			guiders.hideAll(omitHidingOverlay, true);
-			if (prevGuider && prevGuider.highlight) {
-				guiders._dehighlightElement(prevGuider.highlight);
-			}
-			guiders.show(prevGuiderId);
 		}
 	};
 
@@ -891,9 +792,6 @@ mediaWiki.libs.guiders = (function($) {
 		guiders._initializeOverlay();
 
 		guiders._guiders[myGuider.id] = myGuider;
-		if ( guiders._lastCreatedGuiderID !== null ) {
-			myGuider.prev = guiders._lastCreatedGuiderID;
-		}
 		guiders._lastCreatedGuiderID = myGuider.id;
 
 		// If the URL of the current window is of the form
@@ -936,8 +834,13 @@ mediaWiki.libs.guiders = (function($) {
 		return guiders;
 	};
 
+	// TODO (mattflaschen, 2014-03-18): Decide what to do about failStep, then
+	// deprecate this.
 	/**
-	 * Like show() but skips steps if necessary, and you must specify an id.
+	 * Like show(), but you must specify an id.
+	 *
+	 * Formerly skipped according to shouldSkip, but that functionality has been moved
+	 * out of the guiders module.
 	 *
 	 * @param {string} id id of guider to resume from
 	 * @return {boolean} true if the displayed guider was changed,
@@ -961,15 +864,12 @@ mediaWiki.libs.guiders = (function($) {
 			}
 		}
 
-		if (guiders.skipThenUpdateDisplay(myGuider)) {
-			return true;
-		}
 		guiders.show(id);
 		return true;
 	};
 
 	/**
-	 * Show a guider, ignoring shouldSkip
+	 * Show a guider
 	 *
 	 * @param {string} id id of guider to show.  The default is the last guider created.
 	 * @return {undefined|boolean|Object} Undefined in case of error, return value
