@@ -398,6 +398,7 @@ $messages['ce'] = array(
 );
 
 /** Czech (čeština)
+ * @author Matěj Suchánek
  * @author Mormegil
  * @author Utar
  * @author YjM
@@ -417,7 +418,7 @@ $messages['cs'] = array(
 	'guidedtour-tour-test-go-description-page' => 'Přejděte na stránku s popisem',
 	'guidedtour-tour-test-launch-tour' => 'Zkušební spuštění prohlídky',
 	'guidedtour-tour-test-launch-tour-description' => 'Průvodce může spouštět další prohlídky. Dost dobrý, ne?',
-	'guidedtour-tour-test-launch-using-tours' => 'Spustit prohlídku o používání prohlídek',
+	'guidedtour-tour-test-launch-using-tours' => 'Spustit prohlídku o jejich používání',
 	'guidedtour-tour-firstedit-edit-page-title' => '{{GENDER:|Připraven|Připravena|Připraveni}} editovat?',
 	'guidedtour-tour-firstedit-edit-page-description' => 'Pro provedení změn klikněte na tlačítko „{{int:vector-view-edit}}“.',
 	'guidedtour-tour-firstedit-edit-section-title' => 'Editovat pouze jednu sekci',
@@ -426,8 +427,8 @@ $messages['cs'] = array(
 	'guidedtour-tour-firstedit-preview-description' => 'Kliknutím na „{{int:showpreview}}“ si můžete zkontrolovat, jak bude stránka vypadat po provedení změn. Jen ji pak nezapomeňte uložit!',
 	'guidedtour-tour-firstedit-save-title' => 'Už jste skoro hotovi!',
 	'guidedtour-tour-firstedit-save-description' => 'Až budete s editací hotovi, kliknutím na tlačítko „{{int:savearticle}}“ své změny zveřejníte.',
-	'guidedtour-tour-firsteditve-edit-page-description' => 'Pro provedení změn klikněte na tlačítko „{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}“.', # Fuzzy
-	'guidedtour-tour-firsteditve-edit-section-description' => 'Pro každou sekci stránky existují odkazy  „{{int:editsection}} {{int:visualeditor-beta-appendix}}“, takže se můžete soustředit pouze na danou část.', # Fuzzy
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Pro provedení změn klikněte na tlačítko „$1“.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Pro každou sekci stránky existují odkazy  „$1“, takže se můžete soustředit pouze na danou část.',
 	'guidedtour-tour-firsteditve-save-description' => 'Až budete s editací hotovi, kliknutím na tlačítko „{{int:visualeditor-toolbar-savedialog}}“ své změny zveřejníte.',
 );
 
@@ -741,11 +742,12 @@ $messages['he'] = array(
 );
 
 /** Hindi (हिन्दी)
+ * @author Siddhartha Ghai
  * @author Vivek Rai
  */
 $messages['hi'] = array(
-	'guidedtour-tour-firsteditve-edit-page-description' => ' परिवर्तन करने के लिए "$1" पर क्लिक करें।',
-	'guidedtour-tour-firsteditve-edit-section-description' => 'एक पृष्ट के प्रत्येक प्रमुख खंड में " $1 " लिंक हैं, जिसपर आप सिर्फ उस भाग पर ध्यान केंद्रित कर सकते हैं।',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'परिवर्तन करने के लिए "$1" पर क्लिक करें।',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'एक पृष्ट के प्रत्येक अनुभाग में "$1" कड़ियाँ हैं, जिससे आप सिर्फ़ उस भाग पर ध्यान केंद्रित कर सकते हैं।',
 );
 
 /** Upper Sorbian (hornjoserbsce)
@@ -1367,6 +1369,13 @@ $messages['sco'] = array(
 	'guidedtour-tour-firsteditve-edit-section-description' => 'There ar "$1" links fer ilka muckle section in ae page, sae ye can focus oan jyst that pairt.',
 );
 
+/** Sinhala (සිංහල)
+ * @author Sahan.ssw
+ */
+$messages['si'] = array(
+	'guidedtour-tour-firsteditve-edit-page-description' => '$1 මත ක්ලික් කිරීමෙන් ඔබගේ වෙනස්කම් සිදුකරන්න.',
+);
+
 /** Slovenian (slovenščina)
  * @author Dbc334
  * @author Eleassar
@@ -1419,6 +1428,16 @@ $messages['sv'] = array(
 	'guidedtour-tour-firsteditve-save-description' => 'När du är redo, kommer ett klick på "{{int:visualeditor-toolbar-savedialog}}" att synliggöra dina ändringar för alla.',
 );
 
+/** Telugu (తెలుగు)
+ * @author Chaduvari
+ */
+$messages['te'] = array(
+	'guidedtour-next-button' => 'తరువాత',
+	'guidedtour-okay-button' => 'సరే',
+	'guidedtour-tour-test-testing' => 'పరీక్ష',
+	'guidedtour-tour-firstedit-edit-page-title' => 'మార్పుచేర్పులు చేసేందుకు {{GENDER:|సిద్ధమేనా}}?',
+);
+
 /** Ukrainian (українська)
  * @author Andriykopanytsia
  * @author Base
@@ -1447,8 +1466,8 @@ $messages['uk'] = array(
 	'guidedtour-tour-firstedit-preview-description' => 'Клацання "{{int:showpreview}}" дає змогу перевіряти вигляд сторінки із внесеними змінами. Тільки не забудьте зберегти!',
 	'guidedtour-tour-firstedit-save-title' => 'Майже все готове!',
 	'guidedtour-tour-firstedit-save-description' => "Коли ви будете готові, натискання '{{int:savearticle}}' зробить ваші зміни видимими для всіх.",
-	'guidedtour-tour-firsteditve-edit-page-description' => 'Натисніть на кнопку "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}", аби внести свої зміни.', # Fuzzy
-	'guidedtour-tour-firsteditve-edit-section-description' => 'Існують посилання "{{int:editsection}} {{int:visualeditor-beta-appendix}}" для кожного головного розділу на сторінці, тому ви можете зосередитися тільки на цій частині.', # Fuzzy
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Натисніть на кнопку "$1", аби внести свої зміни.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Існують посилання "$1" для кожного головного розділу на сторінці, тому ви можете зосередитися тільки на цій частині.',
 	'guidedtour-tour-firsteditve-save-description' => 'Коли ви будете готові, натискання "{{int:visualeditor-toolbar-savedialog}}" зробить ваші зміни видимими для всіх.',
 );
 
