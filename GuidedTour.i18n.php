@@ -132,6 +132,7 @@ Refers to {{msg-mw|Visualeditor-toolbar-savedialog}}.',
 /** Arabic (العربية)
  * @author Asaifm
  * @author Ciphers
+ * @author Emara
  */
 $messages['ar'] = array(
 	'guidedtour-desc' => 'السماح للصفحات بعرض رسائل جولات إرشادية لمساعدة المستخدمين الجدد',
@@ -149,7 +150,7 @@ $messages['ar'] = array(
 	'guidedtour-tour-test-launch-tour' => 'جرب جولة إفتتاحية',
 	'guidedtour-tour-test-launch-tour-description' => 'من الممكن للمرشدين إطلاق المزيد من الجولات الإرشادية. أليس ذلك رائعا؟',
 	'guidedtour-tour-test-launch-using-tours' => 'إطلاق جولة حول استخدام الجولات',
-	'guidedtour-tour-firstedit-edit-page-title' => 'أمستعد للتحرير؟',
+	'guidedtour-tour-firstedit-edit-page-title' => '{{GENDER:|مستعد}} للتحرير؟',
 	'guidedtour-tour-firstedit-edit-page-description' => 'إضغط على زر "{{int:vector-view-edit}}" لإضافة تغييراتك.',
 	'guidedtour-tour-firstedit-edit-section-title' => 'حرر قسم فقط',
 	'guidedtour-tour-firstedit-edit-section-description' => 'هناك روابط "{{int:editsection}}" لكل قسم رئيس في الصفحة لكي تتمكن من التركيز عليه.',
@@ -157,8 +158,8 @@ $messages['ar'] = array(
 	'guidedtour-tour-firstedit-preview-description' => 'يمكنك معاينة شكل الصفحة عند الضغط على "{{int:showpreview}}". لا تنسى النقر على زر الحفظ عند غنتهائك من المعاينة!',
 	'guidedtour-tour-firstedit-save-title' => 'أنت على وشك الانتهاء!',
 	'guidedtour-tour-firstedit-save-description' => 'عند انتهائك قم بالضغط على "{{int:savearticle}}" كي تظهر تغييراتك للجميع.',
-	'guidedtour-tour-firsteditve-edit-page-description' => 'إضغط على زر  "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" لحفظ تغييراتك.',
-	'guidedtour-tour-firsteditve-edit-section-description' => 'هناك روابط  "{{int:editsection}} {{int:visualeditor-beta-appendix}}" لكل قسم رئيس في الصفحة لكي تتمكن من التركيز عليه.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'أضغط زر "$1 لإجراء تعديلاتك.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'هناك وصلات "$1" لكل قسم رئيسي في الصفحة، لكي تتمكن من التركيز على هذا الجزء فقط.',
 	'guidedtour-tour-firsteditve-save-description' => 'عند انتهائك قم بالضغط على "{{int:visualeditor-toolbar-savedialog}}" كي تظهر تغييراتك للجميع.',
 );
 
@@ -606,6 +607,38 @@ $messages['fi'] = array(
 	'guidedtour-tour-firstedit-save-title' => 'Olet melkein valmis!',
 );
 
+/** Faroese (føroyskt)
+ * @author EileenSanda
+ */
+$messages['fo'] = array(
+	'guidedtour-desc' => 'Loyvir síðum at veita ein kunnandi túr gjøgnum popp-up vindeyga fyri at hjálpa nýggjum brúkarum',
+	'guidedtour-help-url' => 'Help:Kunnandi túrar',
+	'guidedtour-help-guider-url' => 'Help:Kunnandi túrar',
+	'guidedtour-next-button' => 'Næsta',
+	'guidedtour-okay-button' => 'Í lagi',
+	'guidedtour-tour-test-testing' => 'Ein roynd',
+	'guidedtour-tour-test-test-description' => 'Hetta er ein roynd av frágreiðingini. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-callouts' => 'Royn útpeikan',
+	'guidedtour-tour-test-portal-description' => 'Hetta er síðan {{int:portal}}.',
+	'guidedtour-tour-test-mediawiki-parse' => 'Royna MediaWiki tulking',
+	'guidedtour-tour-test-description-page' => 'Royna síðufrágreiðing fyri MediaWiki',
+	'guidedtour-tour-test-go-description-page' => 'Far til frágreiðingarsíðu',
+	'guidedtour-tour-test-launch-tour' => 'Royn byrjunartúr',
+	'guidedtour-tour-test-launch-tour-description' => 'Túrar kunnu seta aðrir kunnandi túrar í gongd. Rættiliga kul, ha?',
+	'guidedtour-tour-test-launch-using-tours' => 'Byrja ein túr um at brúka túrar',
+	'guidedtour-tour-firstedit-edit-page-title' => '{{GENDER:|Til reiðar}} at rætta?',
+	'guidedtour-tour-firstedit-edit-page-description' => 'Trýst á "{{int:vector-view-edit}}" knøttin fyri at gera tínar broytingar.',
+	'guidedtour-tour-firstedit-edit-section-title' => 'Rætta bert eitt brot',
+	'guidedtour-tour-firstedit-edit-section-description' => 'Tað eru "{{int:editsection}}" leinkjur fyri hvønn høvuðspart á einari síðu, so tú kanst fokusera á júst tann partin.',
+	'guidedtour-tour-firstedit-preview-title' => 'Síggj tínar rættingar áðrenn tú goymir (valfrítt)',
+	'guidedtour-tour-firstedit-preview-description' => 'Eitt klikk á "{{int:showpreview}}" loyvir tær at eftirkanna, hvussu síðan fer at síggja út við tínum broytingum. Tú mást bara ikki gloyma at goyma.',
+	'guidedtour-tour-firstedit-save-title' => 'Tú ert næstan liðug/ur!',
+	'guidedtour-tour-firstedit-save-description' => 'Tá tú ert liguð/ur, so kemur eitt klikk á "{{int:savearticle}}" at gera tínar broytingar sjónligar fyri øllum.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Trýst á "$1" knøttin fyri at gera tínar broytingar.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Tað eru "$1" leinkjur fyri hvønn høvuðspart á einari síðu, so tú kanst fokusera um júst tann partin.',
+	'guidedtour-tour-firsteditve-save-description' => 'Tá tú ert liguð/ur, so kemur eitt klikk á "{{int:visualeditor-toolbar-savedialog}}" at gera tínar broytingar sjónligar fyri øllum.',
+);
+
 /** French (français)
  * @author Gomoko
  * @author Jean-Frédéric
@@ -710,6 +743,7 @@ $messages['gu'] = array(
  * @author ExampleTomer
  * @author Guycn2
  * @author NLIGuy
+ * @author Yona b
  * @author דוד
  */
 $messages['he'] = array(
@@ -723,7 +757,7 @@ $messages['he'] = array(
 	'guidedtour-tour-test-callouts' => 'בדיקת חלונות הסבר',
 	'guidedtour-tour-test-portal-description' => 'זהו דף ה{{int:portal}}.',
 	'guidedtour-tour-test-mediawiki-parse' => 'בדיקות פענוח מדיה-ויקי',
-	'guidedtour-tour-test-description-page' => 'בדקו את דפי התיאור של מדיה-ויקי',
+	'guidedtour-tour-test-description-page' => 'בדקו את דפי התיאור של מדיה־ויקי',
 	'guidedtour-tour-test-go-description-page' => 'עברו לדף התיאור',
 	'guidedtour-tour-test-launch-tour' => 'בדקו את סיור הניסיון',
 	'guidedtour-tour-test-launch-tour-description' => 'שלבים בסיור יכולים להפעיל סיורים מודרכים אחרים. די מגניב, הא?',
@@ -976,11 +1010,13 @@ $messages['lb'] = array(
 	'guidedtour-okay-button' => 'OK',
 	'guidedtour-tour-test-testing' => 'Testen',
 	'guidedtour-tour-test-test-description' => 'Dëst ass en Test vun der Beschreiwung. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-callouts' => 'Callouts testen',
 	'guidedtour-tour-test-portal-description' => "Dëst ass d'{{int:portal}}-Säit",
 	'guidedtour-tour-test-mediawiki-parse' => 'MediaWiki-Parser testen',
 	'guidedtour-tour-test-description-page' => 'MediaWiki-Beschreiwungssäiten testen',
 	'guidedtour-tour-test-go-description-page' => "Op d'Beschreiwungssäit goen",
 	'guidedtour-tour-test-launch-tour' => 'Ufank vum Tour testen',
+	'guidedtour-tour-test-launch-tour-description' => 'Guide kënne aner geféiert Toure lancéieren. Cool, oder net?',
 	'guidedtour-tour-test-launch-using-tours' => "En Tour ufänken duerch d'Benotze vun Touren",
 	'guidedtour-tour-firstedit-edit-page-title' => '{{GENDER:|Sidd Dir}} prëtt fir ze änneren?',
 	'guidedtour-tour-firstedit-edit-page-description' => "Klickt op de Knäppchen '{{int:vector-view-edit}}' fir Är Ännerungen ze maachen.",
@@ -1245,7 +1281,7 @@ $messages['pt'] = array(
 	'guidedtour-tour-test-launch-tour' => 'Teste do lançamento do guia',
 	'guidedtour-tour-test-launch-tour-description' => 'Os guias podem lançar outras visitas guiadas, muito interessante, não?',
 	'guidedtour-tour-test-launch-using-tours' => 'Lançar um guia sobre como usar visitas guiadas',
-	'guidedtour-tour-firstedit-edit-page-title' => 'Pronto para editar?', # Fuzzy
+	'guidedtour-tour-firstedit-edit-page-title' => '{{GENDER:|Pronto|Pronta}} para editar?',
 	'guidedtour-tour-firstedit-edit-page-description' => 'Clique no botão "{{int:vector-view-edit}}" para realizar as suas mudanças.',
 	'guidedtour-tour-firstedit-edit-section-title' => 'Editar apenas uma secção',
 	'guidedtour-tour-firstedit-edit-section-description' => 'Há ligações "{{int:editsection}}" em cada secção da página, para que você possa concentrar-se apenas nesta parte.',
@@ -1254,7 +1290,7 @@ $messages['pt'] = array(
 	'guidedtour-tour-firstedit-save-title' => 'Está quase pronto!',
 	'guidedtour-tour-firstedit-save-description' => 'Quando estiver pronto, clique em "{{int:savearticle}}" para as alterações ficarem visíveis para todos.',
 	'guidedtour-tour-firsteditve-edit-page-description' => 'Clique no botão "$1" para realizar as suas mudanças.',
-	'guidedtour-tour-firsteditve-edit-section-description' => 'Há ligações "{{int:editsection}}" em cada secção da página, para que você possa concentrar-se apenas nesta parte.', # Fuzzy
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Há ligações "$1" em cada secção da página, para que você possa concentrar-se apenas nesta parte.',
 	'guidedtour-tour-firsteditve-save-description' => 'Quando terminar, clique em "{{int:visualeditor-toolbar-savedialog}}" para as alterações ficarem visíveis para todos.',
 );
 
@@ -1374,6 +1410,18 @@ $messages['sco'] = array(
  */
 $messages['si'] = array(
 	'guidedtour-tour-firsteditve-edit-page-description' => '$1 මත ක්ලික් කිරීමෙන් ඔබගේ වෙනස්කම් සිදුකරන්න.',
+);
+
+/** Slovak (slovenčina)
+ * @author Sudo77(new)
+ */
+$messages['sk'] = array(
+	'guidedtour-next-button' => 'Ďalší',
+	'guidedtour-okay-button' => 'V poriadku',
+	'guidedtour-tour-test-testing' => 'Testovanie',
+	'guidedtour-tour-test-test-description' => 'Toto je test popisu. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-portal-description' => 'Toto je stránka „{{int:portal}}“.',
+	'guidedtour-tour-test-go-description-page' => 'Prejdite na stránku s popisom',
 );
 
 /** Slovenian (slovenščina)
