@@ -36,5 +36,6 @@
 		"mediaWiki",
 		"jQuery",
 		"QUnit"
-	]
+	],
+	"es3": true
 }
