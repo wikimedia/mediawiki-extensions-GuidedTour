@@ -946,7 +946,7 @@ $messages['ja'] = array(
 	'guidedtour-tour-firstedit-edit-page-title' => '編集をはじめてみましょう',
 	'guidedtour-tour-firstedit-edit-page-description' => '「{{int:vector-view-edit}}」ボタンをクリックすると編集をはじめられます。',
 	'guidedtour-tour-firstedit-edit-section-title' => '1セクションだけ編集してみましょう',
-	'guidedtour-tour-firstedit-edit-section-description' => 'ページ内の主要な節それぞれに「{{int:editsection}}」リンクがあるため、その節のみに着目できます。',
+	'guidedtour-tour-firstedit-edit-section-description' => '1つの部分だけの着目できるよう、ページ内の主要な節それぞれに対応する「{{int:editsection}}」リンクがあります。',
 	'guidedtour-tour-firstedit-preview-title' => '変更内容のプレビュー (省略可能)',
 	'guidedtour-tour-firstedit-preview-description' => '「{{int:showpreview}}」をクリックすると、変更した結果、ページがどのようになるか確認できます。保存するのもお忘れなく!',
 	'guidedtour-tour-firstedit-save-title' => 'もう少しで完了します!',
@@ -964,6 +964,7 @@ $messages['ka'] = array(
 );
 
 /** Korean (한국어)
+ * @author Hym411
  * @author Priviet
  * @author 아라
  */
@@ -994,7 +995,7 @@ $messages['ko'] = array(
 	'guidedtour-tour-firstedit-save-title' => '거의 끝나갑니다!',
 	'guidedtour-tour-firstedit-save-description' => '준비가 되면, "{{int:savearticle}}"을 클릭하면 바꾼 내용을 모두에게 보여줍니다.',
 	'guidedtour-tour-firsteditve-edit-page-description' => '내용을 바꾸려면 "$1" 단추를 클릭하세요.',
-	'guidedtour-tour-firsteditve-edit-section-description' => '각 주요 문단 부분에 집중할 수 있도록 문서에 각 주요 문단에 대한 "{{int:editsection}} {{int:visualeditor-beta-appendix}}" 링크가 있습니다.', # Fuzzy
+	'guidedtour-tour-firsteditve-edit-section-description' => '각 주요 문단 부분에 집중할 수 있도록 문서에 각 주요 문단에 대한 "$1" 링크가 있습니다.',
 	'guidedtour-tour-firsteditve-save-description' => '준비가 되면 "{{int:savearticle}}"을 클릭하여 바꾼 내용을 모두에게 보이도록 해주세요.',
 );
 
@@ -1108,7 +1109,7 @@ $messages['ml'] = array(
 	'guidedtour-tour-test-launch-tour' => 'പര്യടനം തുടങ്ങൽ പരീക്ഷിക്കുക',
 	'guidedtour-tour-test-launch-tour-description' => 'വഴികാട്ടികൾക്ക് മറ്റ് വഴികാട്ടികൾ ഉപയോഗിച്ചുള്ള പര്യടനവും തുടങ്ങാനാവും. കൊള്ളാം, ല്ലേ?',
 	'guidedtour-tour-test-launch-using-tours' => 'പര്യടനം ഉപയോഗിച്ച് മറ്റൊരു പര്യടനം നടത്തുക',
-	'guidedtour-tour-firstedit-edit-page-title' => 'തിരുത്താൻ തയ്യാറല്ലേ?',
+	'guidedtour-tour-firstedit-edit-page-title' => 'തിരുത്താൻ {{GENDER:|തയ്യാറല്ലേ}}?',
 	'guidedtour-tour-firstedit-edit-page-description' => 'താങ്കളുടെ മാറ്റങ്ങൾ വരുത്താനായി  "{{int:vector-view-edit}}" ബട്ടൺ അമർത്തുക.',
 	'guidedtour-tour-firstedit-edit-section-title' => 'ഒരു ഭാഗം മാത്രം തിരുത്തുക',
 	'guidedtour-tour-firstedit-edit-section-description' => 'താളിലെ ഒരോ ഭാഗത്തും "{{int:editsection}}" കണ്ണികളുണ്ട്, അവിടെ മാത്രം അങ്ങനെ താങ്കൾക്ക് ശ്രദ്ധ കേന്ദ്രീകരിക്കാം.',
@@ -1116,8 +1117,8 @@ $messages['ml'] = array(
 	'guidedtour-tour-firstedit-preview-description' => '"{{int:showpreview}}" അമർത്തുമ്പോൾ, താങ്കൾ ചേർത്ത തിരുത്തുകളുൾപ്പെടെ താൾ എപ്രകാരമാണ് പ്രത്യക്ഷപ്പെടുക എന്ന് കാണാനാവും. പിന്നീട് മാറ്റങ്ങൾ സേവ് ചെയ്യാൻ മറക്കരുത്!',
 	'guidedtour-tour-firstedit-save-title' => 'മിക്കവാറും പൂർത്തിയായിരിക്കുന്നു!',
 	'guidedtour-tour-firstedit-save-description' => 'താങ്കൾ തയ്യാറായി കഴിഞ്ഞാൽ, "{{int:savearticle}}" അമർത്തി താങ്കൾ വരുത്തിയ മാറ്റങ്ങൾ എല്ലാവർക്കും കാണാനാവുന്ന വിധത്തിൽ പങ്ക് വെയ്ക്കാം.',
-	'guidedtour-tour-firsteditve-edit-page-description' => 'മാറ്റങ്ങൾ വരുത്താനായി "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" ബട്ടൺ അമർത്തുക.',
-	'guidedtour-tour-firsteditve-edit-section-description' => 'താളിലെ ഒരോ ഭാഗത്തും "{{int:editsection}} {{int:visualeditor-beta-appendix}}" കണ്ണികളുണ്ട്, അവിടെ മാത്രം അങ്ങനെ താങ്കൾക്ക് ശ്രദ്ധ കേന്ദ്രീകരിക്കാം.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'മാറ്റങ്ങൾ വരുത്താനായി "$1" ബട്ടൺ അമർത്തുക.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'താളിലെ ഒരോ ഭാഗത്തും "$1" കണ്ണികളുണ്ട്, അവിടെ മാത്രം അങ്ങനെ താങ്കൾക്ക് ശ്രദ്ധ കേന്ദ്രീകരിക്കാം.',
 	'guidedtour-tour-firsteditve-save-description' => 'താങ്കൾ തയ്യാറായി കഴിഞ്ഞാൽ, "{{int:visualeditor-toolbar-savedialog}}" അമർത്തി താങ്കൾ വരുത്തിയ മാറ്റങ്ങൾ എല്ലാവർക്കും കാണാനാവുന്ന വിധത്തിൽ പങ്ക് വെയ്ക്കാം.',
 );
 
