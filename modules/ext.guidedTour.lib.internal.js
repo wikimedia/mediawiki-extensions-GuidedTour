@@ -6,39 +6,33 @@
  *
  * Will change without notice.
  *
- * Maintainer:
- *
  * @author Matt Flaschen <mflaschen@wikimedia.org>
  * @author Ori Livneh <ori@wikimedia.org>
  *
- * @class mw.guidedTour
+ * @class mw.guidedTour.internal
  * @singleton
  */
 ( function ( mw, $ ) {
 	var internal;
 
 	mw.guidedTour = {
-		/**
-		 * @class mw.guidedTour.internal
-		 * @singleton
-		 */
 		internal: {
 			/**
-			 * Returns a promise that waits for all input deferreds.
+			 * Returns a promise that waits for all input promises.
 			 *
-			 * This will resolve if all of the input deferreds resolve
+			 * This will resolve if all of the input promises resolve
 			 * successfully.
 			 *
 			 * It will reject if any of them fail (reject).
 			 *
-			 * However, in either case it waits until all input deferreds are
+			 * However, in either case it waits until all input promises are
 			 * completed (either resolved or rejected).
 			 *
-			 * @param {Array} deferreds array of deferreds to wait for
+			 * @param {jQuery.Promise[]} promises array of promises to wait for
 			 *
 			 * @return {jQuery.Promise} promise behaving as above
 			 */
-			alwaysWaitForAll: function ( deferreds ) {
+			alwaysWaitForAll: function ( promises ) {
 				var dfd, unresolved, allSucceeded, i;
 
 				function always() {
@@ -57,13 +51,13 @@
 				}
 
 				dfd = $.Deferred();
-				unresolved = deferreds.length;
+				unresolved = promises.length;
 				allSucceeded = true;
-				for ( i = 0; i < deferreds.length; i++ ) {
+				for ( i = 0; i < promises.length; i++ ) {
 					// First, if it fails we mark allSucceeded false.
-					deferreds[i].fail( fail );
+					promises[i].fail( fail );
 					// Then, we run the always handler regardless.
-					deferreds[i].always( always );
+					promises[i].always( always );
 				}
 
 				return dfd.promise();
@@ -231,9 +225,9 @@
 			/**
 			 * Parses user state (as used in the cookie), which is passed in as JSON
 			 *
-			 * @param {string} userStateJson user state, as JSON
+			 * @param {string} userStateJson User state, as JSON
 			 *
-			 * @return {Object} parsed user state.  If input is null, or the format was
+			 * @return {Object|null} Parsed user state.  If input is null, or the format was
 			 *  invalid, returns null.
 			 */
 			parseUserState: function ( userStateJson ) {

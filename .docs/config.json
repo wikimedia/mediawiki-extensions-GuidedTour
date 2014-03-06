@@ -6,9 +6,7 @@
 	"--output": "../docs",
 	"--": [
 		"./external.js",
-		"../modules/ext.guidedTour.lib.js",
-		"../modules/ext.guidedTour.lib.internal.js",
-		"../modules/externals/mediawiki.libs.guiders/mediawiki.libs.guiders.exposeGuiders.js",
+		"../modules/",
 		"../tests/"
 	]
 }

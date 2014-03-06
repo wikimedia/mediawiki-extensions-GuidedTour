@@ -4,12 +4,7 @@
  *
  * Set as mw.guidedTour and often aliased to gt locally
  *
- * Maintainer:
- *
  * @author Matt Flaschen <mflaschen@wikimedia.org>
- *
- * Contributors:
- *
  * @author Terry Chay <tchay@wikimedia.org>
  * @author Ori Livneh <olivneh@wikimedia.org>
  * @author S Page <spage@wikimedia.org>
@@ -61,7 +56,7 @@
 	/**
 	 * If logging is enabled, log.
 	 *
-	 * See https://meta.wikimedia.org/wiki/Schema:GuidedTour for more information.
+	 * See <https://meta.wikimedia.org/wiki/Schema:GuidedTour> for more information.
 	 *
 	 * @private
 	 *
@@ -122,7 +117,7 @@
 	 *
 	 * @return {Object} user state object.  If there is none, or the format was
 	 *  invalid, returns a skeleton state object from
-	 *  internal.getInitialUserStateObject
+	 *  mw.guidedTour.internal#getInitialUserStateObject
 	 */
 	function getUserState() {
 		var cookieValue, parsed;
@@ -901,7 +896,7 @@
 		 * @param {string} tourInfo.name Tour name
 		 * @param {number|string} tourInfo.step Tour step
 		 *
-		 * @return {string} ID of tour, or null if invalid input
+		 * @return {string|null} ID of tour, or null if invalid input
 		 */
 		makeTourId: function( tourInfo ) {
 			if ( !$.isPlainObject( tourInfo ) ) {
@@ -1442,12 +1437,12 @@
 		 *  - okay - An arbitrary function is used for okay button.  This must have
 		 *    an accompanying 'onclick':
 		 *
-		 *     {
-		 *         action: 'okay',
-		 *         onclick: function () {
-		 *		// Do something...
-		 *         }
-		 *     }
+		 *        {
+		 *            action: 'okay',
+		 *            onclick: function () {
+		 *                 // Do something...
+		 *            }
+		 *        }
 		 *
 		 *  - end - Ends the tour.
 		 *  - wikiLink - links to a page on the same wiki
