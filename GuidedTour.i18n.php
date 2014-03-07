@@ -1348,18 +1348,16 @@ $messages['roa-tara'] = array(
 	'guidedtour-tour-test-launch-tour' => "Test de lange d'u gire",
 	'guidedtour-tour-test-launch-tour-description' => 'Le guidature ponne langià otre gire guidate. A uerre, no!?',
 	'guidedtour-tour-test-launch-using-tours' => "Lange 'nu gire pe ausè le gire",
-	'guidedtour-tour-firstedit-edit-page-title' => 'Pronde a cangià?',
+	'guidedtour-tour-firstedit-edit-page-title' => '{{GENDER|Pronde}} a cangià?',
 	'guidedtour-tour-firstedit-edit-page-description' => 'Cazze \'u buttone "{{int:vector-view-edit}}" pe fà le cangiaminde.',
-	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Cazze \'u buttone "{{int:visualeditor-ca-editsource}}" pe fà le cangiaminde.',
 	'guidedtour-tour-firstedit-edit-section-title' => "Cange giuste 'na sezione",
-	'guidedtour-tour-firstedit-edit-section-description' => 'Stonne collegaminde "{{int:editsection}}" pe ogne sezione prengepàle jndr\'à vôsce, accussì tu puè congendrarte sus a quedda parte.', # Fuzzy
-	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Stonne collegaminde "{{int:visualeditor-ca-editsource-section}}" pe ogne sezione prengepàle jndr\'à vôsce, accussì tu puè congendrarte sus a quedda parte.', # Fuzzy
+	'guidedtour-tour-firstedit-edit-section-description' => 'Stonne collegaminde "{{int:editsection}}" pe ogne sezione prengepàle jndr\'à vôsce, accussì tu puè congendrarte sus a quedda parte.',
 	'guidedtour-tour-firstedit-preview-title' => "Fà vedè l'andeprime de le cangiaminde tune (facoltative)",
 	'guidedtour-tour-firstedit-preview-description' => "Cazzanne '{{int:showpreview}}' te permette de verificà ca 'a pàgene iesse cu le cangiaminde tune. No te demendicà de reggistrà.",
 	'guidedtour-tour-firstedit-save-title' => "Tu l'è ggià fatte!",
 	'guidedtour-tour-firstedit-save-description' => 'Quanne si pronde, cazzanne "{{int:savearticle}}" face devendà le cangiaminde tune visibbile a tutte.',
-	'guidedtour-tour-firsteditve-edit-page-description' => 'Cazze \'u buttone "{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}" pe fà le cangiaminde tune.',
-	'guidedtour-tour-firsteditve-edit-section-description' => 'Stonne collegaminde "{{int:editsection}} {{int:visualeditor-beta-appendix}}" pe ogne sezione prengepàle jndr\'à vôsce, accussì tu puè congendrarte sus a quedda parte.', # Fuzzy
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Cazze \'u buttone "$1" pe fà le cangiaminde tune.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Stonne collegaminde "$1" pe ogne sezione prengepàle jndr\'à vôsce, accussì tu puè congendrarte sus a quedda parte.',
 	'guidedtour-tour-firsteditve-save-description' => 'Quanne sì pronde, cazzanne "{{int:visualeditor-toolbar-savedialog}}" le cangiaminde tune addevendane visibbile a tutte.',
 );
 
