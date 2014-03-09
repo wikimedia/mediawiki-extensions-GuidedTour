@@ -600,9 +600,15 @@ $messages['fi'] = array(
 	'guidedtour-next-button' => 'Seuraava',
 	'guidedtour-okay-button' => 'Selvä',
 	'guidedtour-tour-test-testing' => 'Testaus',
-	'guidedtour-tour-test-test-description' => 'Tämä on kuvauksen testi. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-test-description' => 'Tämä on kuvauksen testaamista. Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-callouts' => 'Kuvatekstien testaus',
+	'guidedtour-tour-test-portal-description' => 'Tämä on {{int:portal}}-sivu.',
+	'guidedtour-tour-test-description-page' => 'Testaa MediaWikin kuvaussivuja',
 	'guidedtour-tour-test-go-description-page' => 'Siirry kuvaussivulle',
+	'guidedtour-tour-test-launch-tour' => 'Testaa kiertueen käynnistymistä',
 	'guidedtour-tour-firstedit-edit-page-title' => '{{GENDER:|Valmiina}} muokkaamaan?',
+	'guidedtour-tour-firstedit-edit-page-description' => 'Klikkaa "{{int:vector-view-edit}}"-painiketta tehdäksesi muutoksesi.',
+	'guidedtour-tour-firstedit-edit-section-title' => 'Muokkaa vain osiota',
 	'guidedtour-tour-firstedit-preview-title' => 'Esikatsella muutoksiasi (valinnainen)',
 	'guidedtour-tour-firstedit-save-title' => 'Olet melkein valmis!',
 );
@@ -821,7 +827,7 @@ $messages['hu'] = array(
 	'guidedtour-tour-test-launch-tour' => 'Útikalauz-indítás teszt',
 	'guidedtour-tour-test-launch-tour-description' => 'Az útikalauzok újabb útikalauzokat indíthatnak. Jó, mi?',
 	'guidedtour-tour-test-launch-using-tours' => 'Útikalauz-kalauz indítása',
-	'guidedtour-tour-firstedit-edit-page-title' => 'Készen állsz szerkeszteni?', # Fuzzy
+	'guidedtour-tour-firstedit-edit-page-title' => 'Készen állsz szerkeszteni?',
 	'guidedtour-tour-firstedit-edit-page-description' => 'Kattints a „{{int:vector-view-edit}}” gombra a szöveg módosításához.',
 	'guidedtour-tour-firstedit-edit-section-title' => 'Egyetlen szakasz szerkesztése',
 	'guidedtour-tour-firstedit-edit-section-description' => 'A lap minden nagyobb szakaszához tartozik egy „{{int:editsection}}” link, ha csak azzal a résszel akarsz foglalkozni.',
@@ -829,8 +835,8 @@ $messages['hu'] = array(
 	'guidedtour-tour-firstedit-preview-description' => 'Az „{{int:showpreview}}” gombra kattintva ellenőrizheted, hogyan fog kinézni az oldal a módosításaiddal együtt. Ne felejtsd el a végén elmenteni!',
 	'guidedtour-tour-firstedit-save-title' => 'Majdnem kész vagy!',
 	'guidedtour-tour-firstedit-save-description' => 'Ha végeztél, a „{{int:savearticle}}” gombra kattintva a változtatásaid bekerülnek a cikkbe.',
-	'guidedtour-tour-firsteditve-edit-page-description' => 'A lap módosításához kattints a „{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}” gombra.',
-	'guidedtour-tour-firsteditve-edit-section-description' => 'A lap minden nagyobb szakaszához tartozik egy „{{int:editsection}} {{int:visualeditor-beta-appendix}}” link, ha csak azzal a résszel akarsz foglalkozni.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'A lap módosításához kattints a „$1” gombra.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'A lap minden nagyobb szakaszához tartozik egy „$1” link, ha csak azzal a résszel akarsz foglalkozni.',
 	'guidedtour-tour-firsteditve-save-description' => 'Ha kész vagy, a „{{int:visualeditor-toolbar-savedialog}}” gombra kattintva teheted a változtatásaidat mindenki számára láthatóvá.',
 );
 
