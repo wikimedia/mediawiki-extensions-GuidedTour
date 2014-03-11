@@ -1205,6 +1205,26 @@ $messages['nl'] = array(
 	'guidedtour-tour-firsteditve-save-description' => 'Als u klaar bent, kunt u op "{{int:visualeditor-toolbar-savedialog}}" klikken om uw wijzigingen voor iedereen zichtbaar te maken.',
 );
 
+/** Occitan (occitan)
+ * @author Cedric31
+ */
+$messages['oc'] = array(
+	'guidedtour-help-url' => 'Help:Visitas guidadas',
+	'guidedtour-help-guider-url' => 'Help:Visitas guidadas/guida',
+	'guidedtour-next-button' => 'Seguent',
+	'guidedtour-okay-button' => "D'acòrdi",
+	'guidedtour-tour-test-testing' => 'Testar',
+	'guidedtour-tour-test-callouts' => 'Testar los ligams de sortida',
+	'guidedtour-tour-test-portal-description' => 'Aquò es la pagina {{int:portal}}.',
+	'guidedtour-tour-test-mediawiki-parse' => 'Testar lo rendut MediaWiki',
+	'guidedtour-tour-test-description-page' => 'Testar las paginas de descripcion MediaWiki',
+	'guidedtour-tour-test-go-description-page' => 'Anar a la pagina de descripcion',
+	'guidedtour-tour-test-launch-tour' => "Testar la visita d'aviada",
+	'guidedtour-tour-firstedit-edit-page-title' => '{{GENDER:|Prèst|Prèsta}} a modificar ?',
+	'guidedtour-tour-firstedit-edit-section-title' => "Modificar pas qu'una seccion",
+	'guidedtour-tour-firstedit-save-title' => 'Avètz gaireben acabat !',
+);
+
 /** Polish (polski)
  * @author Chrumps
  * @author Dalis
