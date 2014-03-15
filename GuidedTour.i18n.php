@@ -607,10 +607,11 @@ $messages['fi'] = array(
 	'guidedtour-tour-test-go-description-page' => 'Siirry kuvaussivulle',
 	'guidedtour-tour-test-launch-tour' => 'Testaa kiertueen käynnistymistä',
 	'guidedtour-tour-firstedit-edit-page-title' => '{{GENDER:|Valmiina}} muokkaamaan?',
-	'guidedtour-tour-firstedit-edit-page-description' => 'Klikkaa "{{int:vector-view-edit}}"-painiketta tehdäksesi muutoksesi.',
+	'guidedtour-tour-firstedit-edit-page-description' => 'Aloita muokkaaminen napsauttamalla »{{int:vector-view-edit}}».',
 	'guidedtour-tour-firstedit-edit-section-title' => 'Muokkaa vain osiota',
 	'guidedtour-tour-firstedit-preview-title' => 'Esikatsella muutoksiasi (valinnainen)',
 	'guidedtour-tour-firstedit-save-title' => 'Olet melkein valmis!',
+	'guidedtour-tour-firsteditve-save-description' => 'Kun olet valmis, klikkaamalla "{{int:visualeditor-toolbar-savedialog}}" -painiketta tekemäsi muutokset tulevat näkyviin kaikille.',
 );
 
 /** Faroese (føroyskt)
@@ -1425,7 +1426,7 @@ $messages['ru'] = array(
  * @author John Reid
  */
 $messages['sco'] = array(
-	'guidedtour-tour-firstedit-edit-page-title' => '{{GENDER:|Ready}} fer tae edit?',
+	'guidedtour-tour-firstedit-edit-page-title' => '{{GENDER:|Readie}} tae eedit?',
 	'guidedtour-tour-firsteditve-edit-page-description' => 'Clap the "$1" button tae mak yer chynges.',
 	'guidedtour-tour-firsteditve-edit-section-description' => 'There ar "$1" links fer ilka muckle section in ae page, sae ye can focus oan jyst that pairt.',
 );
