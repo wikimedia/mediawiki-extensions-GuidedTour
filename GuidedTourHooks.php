@@ -125,11 +125,13 @@ class GuidedTourHooks {
 	private static function addTour( $out, $tourName ) {
 		global $wgResourceModules;
 
+		$isUserJsAllowed = $out->getAllowedModules( ResourceLoaderModule::TYPE_SCRIPTS ) >= ResourceLoaderModule::ORIGIN_USER_INDIVIDUAL;
+
 		// Exclude '-' because MediaWiki message keys use it as a separator after the tourname.
 		// Exclude '.' because module names use it as a separator.
 		// "User JS" refers to on-wiki JavaScript. In theory we could still add
 		// extension-defined tours, but it's more conservative not to.
-		if ( $out->isUserJsAllowed() && $tourName !== null && strpbrk( $tourName, '-.' ) === false ) {
+		if ( $isUserJsAllowed && $tourName !== null && strpbrk( $tourName, '-.' ) === false ) {
 			$tourModuleName = "ext.guidedTour.tour.$tourName";
 			if ( isset( $wgResourceModules[$tourModuleName] ) ) {
 				// Add the tour itself for extension-defined tours.
