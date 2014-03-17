@@ -611,6 +611,7 @@ $messages['fi'] = array(
 	'guidedtour-tour-firstedit-edit-section-title' => 'Muokkaa vain osiota',
 	'guidedtour-tour-firstedit-preview-title' => 'Esikatsella muutoksiasi (valinnainen)',
 	'guidedtour-tour-firstedit-save-title' => 'Olet melkein valmis!',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Klikkaa painiketta "$1" tehdäksesi muutoksesi.',
 	'guidedtour-tour-firsteditve-save-description' => 'Kun olet valmis, klikkaamalla "{{int:visualeditor-toolbar-savedialog}}" -painiketta tekemäsi muutokset tulevat näkyviin kaikille.',
 );
 
