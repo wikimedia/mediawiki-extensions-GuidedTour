@@ -1560,7 +1560,7 @@ $messages['vi'] = array(
 	'guidedtour-tour-test-callouts' => 'Thử ô gọi',
 	'guidedtour-tour-test-portal-description' => 'Đây là trang {{int:portal}}.',
 	'guidedtour-tour-test-mediawiki-parse' => 'Kiểm tra bộ phân tích MediaWiki',
-	'guidedtour-tour-test-wikitext-description' => 'Một hộp trong chương trình hướng dẫn wiki có thể sử dụng onShow và parseDescription trong văn bản wiki. Bạn có thể chẳng hạn đặt một liên kết đến [[{{MediaWiki:Guidedtour-help-url}}|tài liệu chương trình hướng dẫn]] hoặc đến [https://github.com/tychay/mwgadget.GuidedTour tài liệu tại GitHub] trong hộp hướng dẫn.',
+	'guidedtour-tour-test-wikitext-description' => 'Một hộp trong chương trình hướng dẫn wiki có thể sử dụng onShow và parseDescription trong mã wiki. Bạn có thể chẳng hạn đặt một liên kết đến [[{{MediaWiki:Guidedtour-help-url}}|tài liệu chương trình hướng dẫn]] hoặc đến [https://github.com/tychay/mwgadget.GuidedTour tài liệu tại GitHub] trong hộp hướng dẫn.',
 	'guidedtour-tour-test-description-page' => 'Kiểm tra trang miêu tả MediaWiki',
 	'guidedtour-tour-test-go-description-page' => 'Mở trang miêu tả.',
 	'guidedtour-tour-test-launch-tour' => 'Thử mở hướng dẫn',
@@ -1568,16 +1568,14 @@ $messages['vi'] = array(
 	'guidedtour-tour-test-launch-using-tours' => 'Mở hướng dẫn chỉ cách sử dụng hướng dẫn',
 	'guidedtour-tour-firstedit-edit-page-title' => 'Có sẵn sàng để sửa đổi?',
 	'guidedtour-tour-firstedit-edit-page-description' => 'Bấm nút “{{int:vector-view-edit}}” để sửa đổi trang.',
-	'guidedtour-tour-firstedit-edit-page-visualeditor-description' => 'Bấm nút “{{int:visualeditor-ca-editsource}}” để sửa đổi trang.',
 	'guidedtour-tour-firstedit-edit-section-title' => 'Chỉ việc sửa đôi một phần trang',
 	'guidedtour-tour-firstedit-edit-section-description' => 'Mỗi tiêu đề lớn trên trang có liên kết “{{int:editsection}}” để chỉ sửa đổi phần trang đó.',
-	'guidedtour-tour-firstedit-edit-section-visualeditor-description' => 'Mỗi tiêu đề lớn trên trang có liên kết “{{int:visualeditor-ca-editsource-section}}” để nhảy tới tiêu đề khi bắt đầu sửa đổi.',
 	'guidedtour-tour-firstedit-preview-title' => 'Xem trước các thay đổi của bạn (tùy chọn)',
 	'guidedtour-tour-firstedit-preview-description' => 'Bấm “{{int:showpreview}}” để kiểm tra các thay đổi của bạn có hiển thị như bạn muốn. Đừng quên lưu trang!',
 	'guidedtour-tour-firstedit-save-title' => 'Gần xong rồi!',
 	'guidedtour-tour-firstedit-save-description' => 'Sau khi sửa đổi xong, bấm “{{int:savearticle}}” để xuất bản các thay đổi của bạn để cho mọi người xem.',
-	'guidedtour-tour-firsteditve-edit-page-description' => 'Bấm nút “{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}” để thực hiện các thay đổi.',
-	'guidedtour-tour-firsteditve-edit-section-description' => 'Mỗi tiêu đề lớn trên trang có liên kết “{{int:editsection}} {{int:visualeditor-beta-appendix}}” để nhảy tới tiêu đề khi bắt đầu sửa đổi.',
+	'guidedtour-tour-firsteditve-edit-page-description' => 'Bấm nút “$1” để thực hiện các thay đổi.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Mỗi tiêu đề lớn trên trang có liên kết “$1” để nhảy tới tiêu đề khi bắt đầu sửa đổi.',
 	'guidedtour-tour-firsteditve-save-description' => 'Sau khi sửa đổi xong, bấm “{{int:visualeditor-toolbar-savedialog}}” để xuất bản các thay đổi của bạn để cho mọi người xem.',
 );
 
@@ -1602,6 +1600,7 @@ $messages['wuu'] = array(
  * @author Liflon
  * @author Liuxinyu970226
  * @author Shizhao
+ * @author Xiaomingyan
  * @author Yfdyh000
  * @author 乌拉跨氪
  */
@@ -1612,12 +1611,12 @@ $messages['zh-hans'] = array(
 	'guidedtour-next-button' => '下一步',
 	'guidedtour-okay-button' => '好的',
 	'guidedtour-tour-test-testing' => '测试',
-	'guidedtour-tour-test-test-description' => '这是一个描述的测试。Lorem ipsum dolor sit!',
+	'guidedtour-tour-test-test-description' => '这是一个说明的测试。Lorem ipsum dolor sit!',
 	'guidedtour-tour-test-callouts' => '测试标注',
 	'guidedtour-tour-test-portal-description' => '这是{{int:portal}}页。',
 	'guidedtour-tour-test-mediawiki-parse' => '测试MediaWiki解析器',
-	'guidedtour-tour-test-description-page' => '测试MediaWiki描述页',
-	'guidedtour-tour-test-go-description-page' => '转到描述页面',
+	'guidedtour-tour-test-description-page' => '测试MediaWiki说明页面',
+	'guidedtour-tour-test-go-description-page' => '前往说明页面',
 	'guidedtour-tour-test-launch-tour' => '测试启动导览',
 	'guidedtour-tour-test-launch-tour-description' => '向导可以启动其他导览。很酷，对吧？',
 	'guidedtour-tour-test-launch-using-tours' => '在使用的导览上启动一个导览',
