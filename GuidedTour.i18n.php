@@ -1428,7 +1428,7 @@ $messages['ru'] = array(
 $messages['sco'] = array(
 	'guidedtour-tour-firstedit-edit-page-title' => '{{GENDER:|Readie}} tae eedit?',
 	'guidedtour-tour-firsteditve-edit-page-description' => 'Clap the "$1" button tae mak yer chynges.',
-	'guidedtour-tour-firsteditve-edit-section-description' => 'There ar "$1" links fer ilka muckle section in ae page, sae ye can focus oan jyst that pairt.',
+	'guidedtour-tour-firsteditve-edit-section-description' => 'Thaur\'s "$1" airtins fer ilka muckle section in ae page, sae ye can focus oan jist that pairt.',
 );
 
 /** Sinhala (සිංහල)
