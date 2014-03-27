@@ -1,0 +1,35 @@
+{
+    "@metadata": {
+        "authors": [
+            "Minh Nguyen"
+        ]
+    },
+    "guidedtour-desc": "Hiển thị chương trình hướng dẫn sử dụng cho những người dùng mới",
+    "guidedtour-help-url": "Help:Chương trình hướng dẫn sử dụng",
+    "guidedtour-help-guider-url": "Help:Chương trình hướng dẫn sử dụng/giới thiệu",
+    "guidedtour-custom.css": "/* Mã CSS tùy biến dành cho phần mở rộng GuidedTour. */",
+    "guidedtour-next-button": "Tiếp",
+    "guidedtour-okay-button": "OK",
+    "guidedtour-tour-test-testing": "Đo thử",
+    "guidedtour-tour-test-test-description": "Thử lời miêu tả đây. Lorem ipsum dolor sit!",
+    "guidedtour-tour-test-callouts": "Thử ô gọi",
+    "guidedtour-tour-test-portal-description": "Đây là trang {{int:portal}}.",
+    "guidedtour-tour-test-mediawiki-parse": "Kiểm tra bộ phân tích MediaWiki",
+    "guidedtour-tour-test-wikitext-description": "Một hộp trong chương trình hướng dẫn wiki có thể sử dụng onShow và parseDescription trong mã wiki. Bạn có thể chẳng hạn đặt một liên kết đến [[{{MediaWiki:Guidedtour-help-url}}|tài liệu chương trình hướng dẫn]] hoặc đến [https://github.com/tychay/mwgadget.GuidedTour tài liệu tại GitHub] trong hộp hướng dẫn.",
+    "guidedtour-tour-test-description-page": "Kiểm tra trang miêu tả MediaWiki",
+    "guidedtour-tour-test-go-description-page": "Mở trang miêu tả.",
+    "guidedtour-tour-test-launch-tour": "Thử mở hướng dẫn",
+    "guidedtour-tour-test-launch-tour-description": "Các hộp hướng dẫn có thể mở hướng dẫn khác. Hay nhỉ?",
+    "guidedtour-tour-test-launch-using-tours": "Mở hướng dẫn chỉ cách sử dụng hướng dẫn",
+    "guidedtour-tour-firstedit-edit-page-title": "Có sẵn sàng để sửa đổi?",
+    "guidedtour-tour-firstedit-edit-page-description": "Bấm nút “{{int:vector-view-edit}}” để sửa đổi trang.",
+    "guidedtour-tour-firstedit-edit-section-title": "Chỉ việc sửa đôi một phần trang",
+    "guidedtour-tour-firstedit-edit-section-description": "Mỗi tiêu đề lớn trên trang có liên kết “{{int:editsection}}” để chỉ sửa đổi phần trang đó.",
+    "guidedtour-tour-firstedit-preview-title": "Xem trước các thay đổi của bạn (tùy chọn)",
+    "guidedtour-tour-firstedit-preview-description": "Bấm “{{int:showpreview}}” để kiểm tra các thay đổi của bạn có hiển thị như bạn muốn. Đừng quên lưu trang!",
+    "guidedtour-tour-firstedit-save-title": "Gần xong rồi!",
+    "guidedtour-tour-firstedit-save-description": "Sau khi sửa đổi xong, bấm “{{int:savearticle}}” để xuất bản các thay đổi của bạn để cho mọi người xem.",
+    "guidedtour-tour-firsteditve-edit-page-description": "Bấm nút “$1” để thực hiện các thay đổi.",
+    "guidedtour-tour-firsteditve-edit-section-description": "Mỗi tiêu đề lớn trên trang có liên kết “$1” để nhảy tới tiêu đề khi bắt đầu sửa đổi.",
+    "guidedtour-tour-firsteditve-save-description": "Sau khi sửa đổi xong, bấm “{{int:visualeditor-toolbar-savedialog}}” để xuất bản các thay đổi của bạn để cho mọi người xem."
+}

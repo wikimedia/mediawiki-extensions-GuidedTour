@@ -46,7 +46,7 @@ $wgExtensionCredits['other'][] = array(
 	'author' => array('Terry Chay', 'Matthew Flaschen', 'Luke Welling',),
 	'url' => 'https://www.mediawiki.org/wiki/Extension:GuidedTour',
 	'descriptionmsg' => 'guidedtour-desc',
-	'version'  => 1.0,
+	'version'  => '1.1.0',
 );
 
 $guidersPath = 'modules/mediawiki.libs.guiders';
@@ -191,6 +191,7 @@ $wgResourceModules['ext.guidedTour.tour.test'] = array(
 );
 
 // Messages
+$wgMessagesDirs['GuidedTour'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles += array(
 	'GuidedTour' => $dir . 'GuidedTour.i18n.php',
 );

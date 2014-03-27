@@ -1,0 +1,34 @@
+{
+    "@metadata": {
+        "authors": [
+            "Andriykopanytsia",
+            "Base"
+        ]
+    },
+    "guidedtour-desc": "Дозволяє сторінкам виводити вспливаюче навчання для допомоги новачкам",
+    "guidedtour-help-url": "Help:Інтерактивні тури",
+    "guidedtour-help-guider-url": "Довідка: інтерактивні тури/гід",
+    "guidedtour-next-button": "Далі",
+    "guidedtour-okay-button": "Гаразд",
+    "guidedtour-tour-test-testing": "Тестування",
+    "guidedtour-tour-test-test-description": "Це випробування опису. Lorem ipsum dolor sit!",
+    "guidedtour-tour-test-callouts": "Тест виноски",
+    "guidedtour-tour-test-portal-description": "Це сторінка {{int:portal}}.",
+    "guidedtour-tour-test-mediawiki-parse": "Тест аналізу Медіавікі",
+    "guidedtour-tour-test-description-page": "Тест опису сторінок Медіавікі",
+    "guidedtour-tour-test-go-description-page": "Перейти на сторінку опису",
+    "guidedtour-tour-test-launch-tour": "Тестовий запуск туру",
+    "guidedtour-tour-test-launch-tour-description": "Гід може запускати інші інтерактивні тури. Досить непогано, так?",
+    "guidedtour-tour-test-launch-using-tours": "Запуск тур по використанню турів",
+    "guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|Готовий|Готова}} редагувати?",
+    "guidedtour-tour-firstedit-edit-page-description": "Натисніть кнопку  '{{int:vector-view-edit}}', щоб внести зміни.",
+    "guidedtour-tour-firstedit-edit-section-title": "Редагувати тільки в розділі",
+    "guidedtour-tour-firstedit-edit-section-description": "Існують посилання \"{{int:editsection}}\" для кожного головного розділу на сторінці, тому ви можете зосередитися тільки на цій частині.",
+    "guidedtour-tour-firstedit-preview-title": "Переглянути ваші зміни (за бажанням)",
+    "guidedtour-tour-firstedit-preview-description": "Клацання \"{{int:showpreview}}\" дає змогу перевіряти вигляд сторінки із внесеними змінами. Тільки не забудьте зберегти!",
+    "guidedtour-tour-firstedit-save-title": "Майже все готове!",
+    "guidedtour-tour-firstedit-save-description": "Коли ви будете готові, натискання '{{int:savearticle}}' зробить ваші зміни видимими для всіх.",
+    "guidedtour-tour-firsteditve-edit-page-description": "Натисніть на кнопку \"$1\", аби внести свої зміни.",
+    "guidedtour-tour-firsteditve-edit-section-description": "Існують посилання \"$1\" для кожного головного розділу на сторінці, тому ви можете зосередитися тільки на цій частині.",
+    "guidedtour-tour-firsteditve-save-description": "Коли ви будете готові, натискання \"{{int:visualeditor-toolbar-savedialog}}\" зробить ваші зміни видимими для всіх."
+}

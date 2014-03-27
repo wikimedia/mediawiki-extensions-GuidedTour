@@ -1,0 +1,37 @@
+{
+    "@metadata": {
+        "authors": [
+            "Terry Chay tchay@wikimedia.org",
+            "Matthew Flaschen mflaschen@wikimedia.org",
+            "Luke Welling lwelling@wikimedia.org"
+        ]
+    },
+    "guidedtour-desc": "Allows pages to provide a popup guided tour to assist new users",
+    "guidedtour-help-url": "Help:Guided tours",
+    "guidedtour-help-guider-url": "Help:Guided tours/guider",
+    "guidedtour-custom.css": "/* Custom CSS for the GuidedTour extension. */",
+    "guidedtour-next-button": "Next",
+    "guidedtour-okay-button": "Okay",
+    "guidedtour-tour-test-testing": "Testing",
+    "guidedtour-tour-test-test-description": "This is a test of the description. Lorem ipsum dolor sit!",
+    "guidedtour-tour-test-callouts": "Test callouts",
+    "guidedtour-tour-test-portal-description": "This is the {{int:portal}} page.",
+    "guidedtour-tour-test-mediawiki-parse": "Test MediaWiki parse",
+    "guidedtour-tour-test-wikitext-description": "A guider in your on-wiki tour can contain wikitext using onShow and parseDescription. Use it to create a wikilink to the [[{{MediaWiki:Guidedtour-help-url}}|Guided tours documentation]]. Or an external link [https://github.com/tychay/mwgadget.GuidedTour to GitHub], for instance.",
+    "guidedtour-tour-test-description-page": "Test MediaWiki description pages",
+    "guidedtour-tour-test-go-description-page": "Go to description page",
+    "guidedtour-tour-test-launch-tour": "Test launch tour",
+    "guidedtour-tour-test-launch-tour-description": "Guiders can launch other guided tours. Pretty cool, huh?",
+    "guidedtour-tour-test-launch-using-tours": "Launch a tour on using tours",
+    "guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|Ready}} to edit?",
+    "guidedtour-tour-firstedit-edit-page-description": "Click the \"{{int:vector-view-edit}}\" button to make your changes.",
+    "guidedtour-tour-firstedit-edit-section-title": "Edit just a section",
+    "guidedtour-tour-firstedit-edit-section-description": "There are \"{{int:editsection}}\" links for each major section in a page, so you can focus on just that part.",
+    "guidedtour-tour-firstedit-preview-title": "Preview your changes (optional)",
+    "guidedtour-tour-firstedit-preview-description": "Clicking \"{{int:showpreview}}\" allows you to check what the page will look like with your changes. Just don't forget to save!",
+    "guidedtour-tour-firstedit-save-title": "You're almost done!",
+    "guidedtour-tour-firstedit-save-description": "When you're ready, clicking \"{{int:savearticle}}\" will make your changes visible for everyone.",
+    "guidedtour-tour-firsteditve-edit-page-description": "Click the \"$1\" button to make your changes.",
+    "guidedtour-tour-firsteditve-edit-section-description": "There are \"$1\" links for each major section in a page, so you can focus on just that part.",
+    "guidedtour-tour-firsteditve-save-description": "When you're ready, clicking \"{{int:visualeditor-toolbar-savedialog}}\" will make your changes visible for everyone."
+}
