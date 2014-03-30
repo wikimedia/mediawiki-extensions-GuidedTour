@@ -20,7 +20,7 @@
     "guidedtour-tour-test-launch-tour": "Probar el llanzamientu de visites",
     "guidedtour-tour-test-launch-tour-description": "Los guíes puen llanzar otres visites guiaes. Prestoso, ¿acuéi?",
     "guidedtour-tour-test-launch-using-tours": "Llanzar una visita sobro l'usu de les visites",
-    "guidedtour-tour-firstedit-edit-page-title": "¿Preparáu pa editar?",
+    "guidedtour-tour-firstedit-edit-page-title": "¿{{GENDER:|Preparáu|Preparada}} pa editar?",
     "guidedtour-tour-firstedit-edit-page-description": "Calque nel botón '{{int:vector-view-edit}}' pa facer los cambios.",
     "guidedtour-tour-firstedit-edit-section-title": "Editar sólo una seición",
     "guidedtour-tour-firstedit-edit-section-description": "Hai enllaces «{{int:editsection}}» pa cada seición principal d'una páxina, de mou que pue centrase sólo nesa parte.",
@@ -28,7 +28,7 @@
     "guidedtour-tour-firstedit-preview-description": "Si calca '{{int:showpreview}}' podrá comprobar como se verá la páxina colos cambios. ¡Pero nun escaeza guardala!",
     "guidedtour-tour-firstedit-save-title": "¡Yá casi ta fecho!",
     "guidedtour-tour-firstedit-save-description": "Cuando tea preparáu, en calcando '{{int:savearticle}}', los cambios sedrán visibles pa toos.",
-    "guidedtour-tour-firsteditve-edit-page-description": "Calque nel botón \"{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}\" pa facer los sos cambios.",
-    "guidedtour-tour-firsteditve-edit-section-description": "Hai enllaces «{{int:editsection}} {{int:visualeditor-beta-appendix}}» pa cada seición principal d'una páxina, de mou que pue centrase sólo nesa parte.",
+    "guidedtour-tour-firsteditve-edit-page-description": "Calque nel botón «$1» pa facer los sos cambios.",
+    "guidedtour-tour-firsteditve-edit-section-description": "Hai enllaces «$1» pa cada seición principal d'una páxina, de mou que pue centrase sólo nesa parte.",
     "guidedtour-tour-firsteditve-save-description": "Cuando tea preparáu, en calcando \"{{int:visualeditor-toolbar-savedialog}}\" los cambios tarán visibles pa toos."
 }

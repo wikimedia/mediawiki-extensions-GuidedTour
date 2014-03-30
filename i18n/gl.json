@@ -21,7 +21,7 @@
     "guidedtour-tour-test-launch-tour": "Probe a visita de iniciación",
     "guidedtour-tour-test-launch-tour-description": "As guías poden lanzar outras visitas guiadas. Caralludo, ou?",
     "guidedtour-tour-test-launch-using-tours": "Iniciar a guía sobre como usar as visitas",
-    "guidedtour-tour-firstedit-edit-page-title": "Está listo para editar?",
+    "guidedtour-tour-firstedit-edit-page-title": "Está {{GENDER:|listo|lista}} para editar?",
     "guidedtour-tour-firstedit-edit-page-description": "Prema no botón \"{{int:vector-view-edit}}\" para facer as súas modificacións.",
     "guidedtour-tour-firstedit-edit-section-title": "Editar só unha sección",
     "guidedtour-tour-firstedit-edit-section-description": "Hai unha ligazón \"{{int:editsection}}\" en cada sección, para que poida centrarse só nesa parte da páxina.",
@@ -29,7 +29,7 @@
     "guidedtour-tour-firstedit-preview-description": "Premer en \"{{int:showpreview}}\" serve para comprobar como se verá a páxina coas modificacións. Non esqueza gardar despois!",
     "guidedtour-tour-firstedit-save-title": "Xa case rematou!",
     "guidedtour-tour-firstedit-save-description": "Cando remate, prema en \"{{int:savearticle}}\" para que os cambios sexan visibles para todos.",
-    "guidedtour-tour-firsteditve-edit-page-description": "Prema no botón \"{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}\" para realizar as súas modificacións.",
-    "guidedtour-tour-firsteditve-edit-section-description": "Hai unha ligazón \"{{int:editsection}} {{int:visualeditor-beta-appendix}}\" en cada sección, para que poida centrarse só nesa parte da páxina.",
+    "guidedtour-tour-firsteditve-edit-page-description": "Prema no botón \"$1\" para realizar as súas modificacións.",
+    "guidedtour-tour-firsteditve-edit-section-description": "Hai unha ligazón \"$1\" en cada sección, para que poida centrarse só nesa parte da páxina.",
     "guidedtour-tour-firsteditve-save-description": "Cando remate, prema en \"{{int:visualeditor-toolbar-savedialog}}\" para que os cambios sexan visibles para todos."
 }
