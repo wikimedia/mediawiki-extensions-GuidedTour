@@ -93,7 +93,10 @@ mediaWiki.libs.guiders = (function($) {
 			top: null,
 			left: null
 		},
-		onClose: null, // Function taking two arguments, the guider and a boolean for close type (false for text close button, true for everything else).  Returns true to end tour, false or undefined to dismiss current step.  If there is no function, dismiss-only is default.
+		// Function taking three arguments, the guider, a legacy boolean for close
+		// type (false for text close button, true for everything else), and a text
+		// string for closeMethod ('textButton', 'xButton', 'escapeKey', 'clickOutside')
+		onClose: null,
 		onHide: null,
 		onShow: null,
 		overlay: false,
