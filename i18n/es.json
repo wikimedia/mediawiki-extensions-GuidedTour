@@ -4,7 +4,9 @@
             "Benfutbol10",
             "Ciencia Al Poder",
             "Fitoschido",
-            "QuimGil"
+            "QuimGil",
+            "Chocolate con galleta",
+            "VegaDark"
         ]
     },
     "guidedtour-desc": "Permite a las páginas ofrecer una visita guiada para ayudar a nuevos usuarios",
@@ -22,9 +24,9 @@
     "guidedtour-tour-test-launch-tour": "Prueba de inicio de la visita guiada",
     "guidedtour-tour-test-launch-tour-description": "Las guías pueden iniciar otras visitas guiada. Muy bueno, ¿eh?",
     "guidedtour-tour-test-launch-using-tours": "Iniciar una visita guiada sobre visitas guiadas",
-    "guidedtour-tour-firstedit-edit-page-title": "¿Te animas a editar?",
+    "guidedtour-tour-firstedit-edit-page-title": "Edita dicha página...",
     "guidedtour-tour-firstedit-edit-page-description": "Haz clic en el botón de \"{{int:vector-view-edit}}\" para realizar tus cambios.",
-    "guidedtour-tour-firstedit-edit-section-title": "Editar solo una sección",
+    "guidedtour-tour-firstedit-edit-section-title": "O edita una sección",
     "guidedtour-tour-firstedit-edit-section-description": "Existen enlaces de \"{{int:editsection}}\" en cada sección de la página, para que puedes centrarte solo en esa parte.",
     "guidedtour-tour-firstedit-preview-title": "Previsualiza tus cambios (opcional)",
     "guidedtour-tour-firstedit-preview-description": "Cliqueando en \"{{int:showpreview}}\" te permite ver como se verá la página con tus cambios. ¡No olvides guardarlos!",
