@@ -26,7 +26,7 @@
     "guidedtour-tour-test-launch-using-tours": "투어를 사용하여 투어 시작",
     "guidedtour-tour-firstedit-edit-page-title": "편집할 {{GENDER:준비가 되었습니까}}?",
     "guidedtour-tour-firstedit-edit-page-description": "내용을 바꾸려면 \"{{int:vector-view-edit}}\" 버튼을 클릭하세요.",
-    "guidedtour-tour-firstedit-edit-section-title": "또는 문단 {{GENDER:|edit}}",
+    "guidedtour-tour-firstedit-edit-section-title": "또는 문단 {{GENDER:|편집}}",
     "guidedtour-tour-firstedit-edit-section-description": "각 주요 문단 부분에 집중할 수 있도록 문서에 각 주요 문단에 대한 \"{{int:editsection}}\" 링크가 있습니다.",
     "guidedtour-tour-firstedit-preview-title": "바뀐 내용 {{GENDER:|미리 보기}} (선택 사항)",
     "guidedtour-tour-firstedit-preview-description": "\"{{int:showpreview}}\"를 클릭하면 문서가 어떻게 바뀌었는지 확인할 수 있습니다. 저장하는 것을 잊지 마세요!",
