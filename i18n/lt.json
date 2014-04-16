@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "Mantak111"
-        ]
-    },
-    "guidedtour-next-button": "Kitas",
-    "guidedtour-okay-button": "Gerai"
+	"@metadata": {
+		"authors": [
+			"Mantak111"
+		]
+	},
+	"guidedtour-next-button": "Kitas",
+	"guidedtour-okay-button": "Gerai"
 }

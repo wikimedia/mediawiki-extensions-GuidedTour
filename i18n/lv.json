@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "Papuass"
-        ]
-    },
-    "guidedtour-next-button": "Tālāk",
-    "guidedtour-okay-button": "Labi"
+	"@metadata": {
+		"authors": [
+			"Papuass"
+		]
+	},
+	"guidedtour-next-button": "Tālāk",
+	"guidedtour-okay-button": "Labi"
 }

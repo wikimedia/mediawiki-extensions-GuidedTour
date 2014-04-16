@@ -1,34 +1,34 @@
 {
-    "@metadata": {
-        "authors": [
-            "Geraki",
-            "Nikosguard"
-        ]
-    },
-    "guidedtour-desc": "Επιτρέπει στις σελίδες να παρέχουν μια αναδυόμενη ξενάγηση για να βοηθήσει τους νέους χρήστες",
-    "guidedtour-help-url": "Βοήθεια:Ξενάγηση",
-    "guidedtour-help-guider-url": "Βοήθεια:Ξεναγήσεις/οδηγητής",
-    "guidedtour-next-button": "Επόμενο",
-    "guidedtour-okay-button": "Εντάξει",
-    "guidedtour-tour-test-testing": "Δοκιμή",
-    "guidedtour-tour-test-test-description": "Αυτή είναι μια δοκιμή της περιγραφής. Lorem ipsum dolor sit!",
-    "guidedtour-tour-test-callouts": "Δοκιμή επεξήγησης",
-    "guidedtour-tour-test-portal-description": "Αυτή είναι η σελίδα {{int:portal}}.",
-    "guidedtour-tour-test-mediawiki-parse": "Δοκιμή MediaWiki ανάλυσης",
-    "guidedtour-tour-test-description-page": "Δοκιμή MediaWiki σελίδες περιγραφής",
-    "guidedtour-tour-test-go-description-page": "Μεταβείτε στη σελίδα περιγραφής",
-    "guidedtour-tour-test-launch-tour": "Δοκιμή έναρξης περιοδείας",
-    "guidedtour-tour-test-launch-tour-description": "Οι οδηγητές μπορούν να ξεκινήσουν άλλες ξεναγήσεις. Αρκετά καλό, ε;",
-    "guidedtour-tour-test-launch-using-tours": "Εκκίνηση μιας περιοδείας για τη χρήση περιοδειών",
-    "guidedtour-tour-firstedit-edit-page-title": "Έτοιμοι να επεξεργαστείτε;",
-    "guidedtour-tour-firstedit-edit-page-description": "Κάντε κλικ στο κουμπί \"{{int:vector-view-edit}}\" για να κάνετε τις αλλαγές σας.",
-    "guidedtour-tour-firstedit-edit-section-title": "Επεξεργαστείτε μόνο ένα τμήμα",
-    "guidedtour-tour-firstedit-edit-section-description": "Υπάρχουν σύνδεσμοι \"{{int:editsection}}\" για κάθε σημαντικό τμήμα σε μια σελίδα, ώστε να μπορείτε να εστιάσετε μόνο σε αυτό το κομμάτι.",
-    "guidedtour-tour-firstedit-preview-title": "Προεπισκόπηση των αλλαγών σας (προαιρετικό)",
-    "guidedtour-tour-firstedit-preview-description": "Κάνοντας κλικ στο \"{{int:showpreview}}\" σας επιτρέπει να ελέγχετε πως θα μοιάζει η σελίδα με τις αλλαγές σας. Απλά μην ξεχάσετε να αποθηκεύσετε!",
-    "guidedtour-tour-firstedit-save-title": "Είστε σχεδόν έτοιμοι!",
-    "guidedtour-tour-firstedit-save-description": "Όταν είστε έτοιμοι, κάνοντας κλικ στο κουμπί \"{{int:savearticle}}\" θα κάνει τις αλλαγές σας ορατές σε όλους.",
-    "guidedtour-tour-firsteditve-edit-page-description": "Κάντε κλικ στο κουμπί \"{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}\" για να κάνετε τις αλλαγές σας.",
-    "guidedtour-tour-firsteditve-edit-section-description": "Υπάρχουν σύνδεσμοι \"{{int:editsection}} {{int:visualeditor-beta-appendix}}\" για κάθε σημαντική ενότητα σε μια σελίδα, ώστε να μπορείτε να εστιάσετε μόνο σε αυτό το κομμάτι.",
-    "guidedtour-tour-firsteditve-save-description": "Όταν είστε έτοιμοι, κάνοντας κλικ στο κουμπί  \"{{int:visualeditor-toolbar-savedialog}}\" θα κάνει τις αλλαγές σας ορατές σε όλους."
+	"@metadata": {
+		"authors": [
+			"Geraki",
+			"Nikosguard"
+		]
+	},
+	"guidedtour-desc": "Επιτρέπει στις σελίδες να παρέχουν μια αναδυόμενη ξενάγηση για να βοηθήσει τους νέους χρήστες",
+	"guidedtour-help-url": "Βοήθεια:Ξενάγηση",
+	"guidedtour-help-guider-url": "Βοήθεια:Ξεναγήσεις/οδηγητής",
+	"guidedtour-next-button": "Επόμενο",
+	"guidedtour-okay-button": "Εντάξει",
+	"guidedtour-tour-test-testing": "Δοκιμή",
+	"guidedtour-tour-test-test-description": "Αυτή είναι μια δοκιμή της περιγραφής. Lorem ipsum dolor sit!",
+	"guidedtour-tour-test-callouts": "Δοκιμή επεξήγησης",
+	"guidedtour-tour-test-portal-description": "Αυτή είναι η σελίδα {{int:portal}}.",
+	"guidedtour-tour-test-mediawiki-parse": "Δοκιμή MediaWiki ανάλυσης",
+	"guidedtour-tour-test-description-page": "Δοκιμή MediaWiki σελίδες περιγραφής",
+	"guidedtour-tour-test-go-description-page": "Μεταβείτε στη σελίδα περιγραφής",
+	"guidedtour-tour-test-launch-tour": "Δοκιμή έναρξης περιοδείας",
+	"guidedtour-tour-test-launch-tour-description": "Οι οδηγητές μπορούν να ξεκινήσουν άλλες ξεναγήσεις. Αρκετά καλό, ε;",
+	"guidedtour-tour-test-launch-using-tours": "Εκκίνηση μιας περιοδείας για τη χρήση περιοδειών",
+	"guidedtour-tour-firstedit-edit-page-title": "Έτοιμοι να επεξεργαστείτε;",
+	"guidedtour-tour-firstedit-edit-page-description": "Κάντε κλικ στο κουμπί \"{{int:vector-view-edit}}\" για να κάνετε τις αλλαγές σας.",
+	"guidedtour-tour-firstedit-edit-section-title": "Επεξεργαστείτε μόνο ένα τμήμα",
+	"guidedtour-tour-firstedit-edit-section-description": "Υπάρχουν σύνδεσμοι \"{{int:editsection}}\" για κάθε σημαντικό τμήμα σε μια σελίδα, ώστε να μπορείτε να εστιάσετε μόνο σε αυτό το κομμάτι.",
+	"guidedtour-tour-firstedit-preview-title": "Προεπισκόπηση των αλλαγών σας (προαιρετικό)",
+	"guidedtour-tour-firstedit-preview-description": "Κάνοντας κλικ στο \"{{int:showpreview}}\" σας επιτρέπει να ελέγχετε πως θα μοιάζει η σελίδα με τις αλλαγές σας. Απλά μην ξεχάσετε να αποθηκεύσετε!",
+	"guidedtour-tour-firstedit-save-title": "Είστε σχεδόν έτοιμοι!",
+	"guidedtour-tour-firstedit-save-description": "Όταν είστε έτοιμοι, κάνοντας κλικ στο κουμπί \"{{int:savearticle}}\" θα κάνει τις αλλαγές σας ορατές σε όλους.",
+	"guidedtour-tour-firsteditve-edit-page-description": "Κάντε κλικ στο κουμπί \"{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}\" για να κάνετε τις αλλαγές σας.",
+	"guidedtour-tour-firsteditve-edit-section-description": "Υπάρχουν σύνδεσμοι \"{{int:editsection}} {{int:visualeditor-beta-appendix}}\" για κάθε σημαντική ενότητα σε μια σελίδα, ώστε να μπορείτε να εστιάσετε μόνο σε αυτό το κομμάτι.",
+	"guidedtour-tour-firsteditve-save-description": "Όταν είστε έτοιμοι, κάνοντας κλικ στο κουμπί  \"{{int:visualeditor-toolbar-savedialog}}\" θα κάνει τις αλλαγές σας ορατές σε όλους."
 }

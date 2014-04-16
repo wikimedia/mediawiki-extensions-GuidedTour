@@ -1,15 +1,13 @@
 {
-    "@metadata": {
-        "authors": [
-            "Benojan",
-            "十弌"
-        ]
-    },
-    "guidedtour-tour-firstedit-edit-page-title": "準備開改來爻朆？",
-    "guidedtour-tour-firstedit-edit-page-visualeditor-description": "點 \"{{int:visualeditor-ca-editsource}}\" 捺鈕準定改動。",
-    "guidedtour-tour-firstedit-edit-section-title": "便改一個章節",
-    "guidedtour-tour-firstedit-edit-section-visualeditor-description": "文章各個主要章節都有 \"{{int:visualeditor-ca-editsource-section}}\" 鏈接, 爾好專門入心一箇部份。",
-    "guidedtour-tour-firstedit-preview-title": "变化望望相起（随意）",
-    "guidedtour-tour-firstedit-save-title": "爾便要妝了滯爻！",
-    "guidedtour-tour-firstedit-save-description": "準備起爻，點\"{{int:savearticle}}\"大家人便都望得著爾個改動爻。"
+	"@metadata": {
+		"authors": [
+			"Benojan",
+			"十弌"
+		]
+	},
+	"guidedtour-tour-firstedit-edit-page-title": "準備開改來爻朆？",
+	"guidedtour-tour-firstedit-edit-section-title": "便改一個章節",
+	"guidedtour-tour-firstedit-preview-title": "变化望望相起（随意）",
+	"guidedtour-tour-firstedit-save-title": "爾便要妝了滯爻！",
+	"guidedtour-tour-firstedit-save-description": "準備起爻，點\"{{int:savearticle}}\"大家人便都望得著爾個改動爻。"
 }

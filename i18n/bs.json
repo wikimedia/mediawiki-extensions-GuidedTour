@@ -1,34 +1,34 @@
 {
-    "@metadata": {
-        "authors": [
-            "CERminator",
-            "Edinwiki"
-        ]
-    },
-    "guidedtour-desc": "Dozvoljava stranicama da koriste vodič sa skočnim prozorima da bi se pomoglo novim korisnicima",
-    "guidedtour-help-url": "Help:Vodiči",
-    "guidedtour-help-guider-url": "Pomoć:Vodiči/vodič",
-    "guidedtour-next-button": "Sljedeće",
-    "guidedtour-okay-button": "OK",
-    "guidedtour-tour-test-testing": "Testiranje",
-    "guidedtour-tour-test-test-description": "Ovo je test za opis stranice. Lorem ipsum dolor sit!",
-    "guidedtour-tour-test-callouts": "Test objašnjenja",
-    "guidedtour-tour-test-portal-description": "Ovo je stranica {{int:portal}}.",
-    "guidedtour-tour-test-mediawiki-parse": "Test MediaWiki parsiranje",
-    "guidedtour-tour-test-description-page": "Test MediaWiki opis stranica",
-    "guidedtour-tour-test-go-description-page": "Idi na opis stranice",
-    "guidedtour-tour-test-launch-tour": "Test početak vodiča",
-    "guidedtour-tour-test-launch-tour-description": "Vodiči mogu započeti druge vodiče. Zar nije zabavno?",
-    "guidedtour-tour-test-launch-using-tours": "Započni vodič o korištenju vodiča",
-    "guidedtour-tour-firstedit-edit-page-title": "Spremni za uređivanje?",
-    "guidedtour-tour-firstedit-edit-page-description": "Kliknite na dugme \"{{int:vector-view-edit}}\" da napravite vaše izmjene.",
-    "guidedtour-tour-firstedit-edit-section-title": "Uredi samo sekciju",
-    "guidedtour-tour-firstedit-edit-section-description": "Postoje \"{{int:editsection}}\" veza za svaku glavnu sekciju na nekoj stranici, tako da se možete fokusirati samo na taj dio.",
-    "guidedtour-tour-firstedit-preview-title": "Prikažite izgled vaših izmjena (nije obavezno)",
-    "guidedtour-tour-firstedit-preview-description": "Kada kliknete na \"{{int:showpreview}}\" onda možete vidjeti kako će stranica izgledati sa vašim izmjenama. Samo nemojte zaboraviti da poslije sačuvate stranicu!",
-    "guidedtour-tour-firstedit-save-title": "Skoro ste pri kraju!",
-    "guidedtour-tour-firstedit-save-description": "Kada završite, možete kliknuti na \"{{int:savearticle}}\" da vaše izmjene budu vidljive za svakoga.",
-    "guidedtour-tour-firsteditve-edit-page-description": "Kliknite na dugme \"{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}\" da napravite vaše izmjene.",
-    "guidedtour-tour-firsteditve-edit-section-description": "Postoje \"{{int:editsection}} {{int:visualeditor-beta-appendix}}\" veza za svaku glavnu sekciju na nekoj stranici, tako da se možete fokusirati samo na taj dio.",
-    "guidedtour-tour-firsteditve-save-description": "Kada završite, možete kliknuti na \"{{int:visualeditor-toolbar-savedialog}}\" da vaše izmjene budu vidljive za svakoga."
+	"@metadata": {
+		"authors": [
+			"CERminator",
+			"Edinwiki"
+		]
+	},
+	"guidedtour-desc": "Dozvoljava stranicama da koriste vodič sa skočnim prozorima da bi se pomoglo novim korisnicima",
+	"guidedtour-help-url": "Help:Vodiči",
+	"guidedtour-help-guider-url": "Pomoć:Vodiči/vodič",
+	"guidedtour-next-button": "Sljedeće",
+	"guidedtour-okay-button": "OK",
+	"guidedtour-tour-test-testing": "Testiranje",
+	"guidedtour-tour-test-test-description": "Ovo je test za opis stranice. Lorem ipsum dolor sit!",
+	"guidedtour-tour-test-callouts": "Test objašnjenja",
+	"guidedtour-tour-test-portal-description": "Ovo je stranica {{int:portal}}.",
+	"guidedtour-tour-test-mediawiki-parse": "Test MediaWiki parsiranje",
+	"guidedtour-tour-test-description-page": "Test MediaWiki opis stranica",
+	"guidedtour-tour-test-go-description-page": "Idi na opis stranice",
+	"guidedtour-tour-test-launch-tour": "Test početak vodiča",
+	"guidedtour-tour-test-launch-tour-description": "Vodiči mogu započeti druge vodiče. Zar nije zabavno?",
+	"guidedtour-tour-test-launch-using-tours": "Započni vodič o korištenju vodiča",
+	"guidedtour-tour-firstedit-edit-page-title": "Spremni za uređivanje?",
+	"guidedtour-tour-firstedit-edit-page-description": "Kliknite na dugme \"{{int:vector-view-edit}}\" da napravite vaše izmjene.",
+	"guidedtour-tour-firstedit-edit-section-title": "Uredi samo sekciju",
+	"guidedtour-tour-firstedit-edit-section-description": "Postoje \"{{int:editsection}}\" veza za svaku glavnu sekciju na nekoj stranici, tako da se možete fokusirati samo na taj dio.",
+	"guidedtour-tour-firstedit-preview-title": "Prikažite izgled vaših izmjena (nije obavezno)",
+	"guidedtour-tour-firstedit-preview-description": "Kada kliknete na \"{{int:showpreview}}\" onda možete vidjeti kako će stranica izgledati sa vašim izmjenama. Samo nemojte zaboraviti da poslije sačuvate stranicu!",
+	"guidedtour-tour-firstedit-save-title": "Skoro ste pri kraju!",
+	"guidedtour-tour-firstedit-save-description": "Kada završite, možete kliknuti na \"{{int:savearticle}}\" da vaše izmjene budu vidljive za svakoga.",
+	"guidedtour-tour-firsteditve-edit-page-description": "Kliknite na dugme \"{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}\" da napravite vaše izmjene.",
+	"guidedtour-tour-firsteditve-edit-section-description": "Postoje \"{{int:editsection}} {{int:visualeditor-beta-appendix}}\" veza za svaku glavnu sekciju na nekoj stranici, tako da se možete fokusirati samo na taj dio.",
+	"guidedtour-tour-firsteditve-save-description": "Kada završite, možete kliknuti na \"{{int:visualeditor-toolbar-savedialog}}\" da vaše izmjene budu vidljive za svakoga."
 }

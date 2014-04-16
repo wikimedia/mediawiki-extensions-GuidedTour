@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "Kening Aldgilles"
-        ]
-    },
-    "guidedtour-next-button": "Folgjende",
-    "guidedtour-okay-button": "Okee"
+	"@metadata": {
+		"authors": [
+			"Kening Aldgilles"
+		]
+	},
+	"guidedtour-next-button": "Folgjende",
+	"guidedtour-okay-button": "Okee"
 }
