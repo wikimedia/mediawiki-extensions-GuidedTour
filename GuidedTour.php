@@ -49,6 +49,14 @@ $wgExtensionCredits['other'][] = array(
 	'version'  => '1.1.0',
 );
 
+// Schemas
+$wgEventLoggingSchemas['GuidedTourGuiderImpression'] = 8694395;
+$wgEventLoggingSchemas['GuidedTourGuiderHidden'] = 8690549;
+$wgEventLoggingSchemas['GuidedTourButtonClick'] = 8690550;
+$wgEventLoggingSchemas['GuidedTourInternalLinkActivation'] = 8690553;
+$wgEventLoggingSchemas['GuidedTourExternalLinkActivation'] = 8690560;
+$wgEventLoggingSchemas['GuidedTourExited'] = 8690566;
+
 $guidersPath = 'modules/mediawiki.libs.guiders';
 
 // Modules
@@ -94,6 +102,7 @@ $wgResourceModules['ext.guidedTour.lib'] = array(
 	'scripts' => array(
 		'ext.guidedTour.lib.TransitionEvent.js',
 		'ext.guidedTour.lib.main.js',
+		'ext.guidedTour.lib.EventLogger.js',
 		'ext.guidedTour.lib.TransitionAction.js',
 		'ext.guidedTour.lib.StepBuilder.js',
 		'ext.guidedTour.lib.Step.js',
@@ -105,9 +114,17 @@ $wgResourceModules['ext.guidedTour.lib'] = array(
 	'dependencies' => array(
 		'jquery.cookie',
 		'jquery.json',
+		'mediawiki.Title',
 		'mediawiki.jqueryMsg',
 		'mediawiki.libs.guiders',
+		'mediawiki.user',
 		'mediawiki.util',
+		'schema.GuidedTourGuiderImpression',
+		'schema.GuidedTourGuiderHidden',
+		'schema.GuidedTourButtonClick',
+		'schema.GuidedTourInternalLinkActivation',
+		'schema.GuidedTourExternalLinkActivation',
+		'schema.GuidedTourExited',
 		'ext.guidedTour.lib.internal',
 		'ext.guidedTour.siteStyles',
 	),

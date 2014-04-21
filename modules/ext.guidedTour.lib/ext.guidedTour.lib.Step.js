@@ -124,29 +124,50 @@
 	 *
 	 * @private
 	 *
-	 * @param {string} buttonType type, currently 'next' or 'okay'
+	 * @param {string} buttonAction Semantic button action handled by this method,
+	 *   currently 'next', 'okay', or 'end'
 	 * @param {Function} callback Function to call if they click the button
-	 * @param {HTMLElement} callback.btn Raw DOM element of the okay button
-	 * @param {string} [buttonName] button text to override default.
+	 * @param {HTMLElement} callback.btn Raw DOM element of the button
+	 * @param {string} [buttonName] Button text to override default.
 	 *
 	 * @return {Object} Guiders button specification
 	 */
-	function getActionButton( buttonType, callback, buttonName ) {
-		var buttonKey = 'guidedtour-' + buttonType + '-button';
+	Step.prototype.getActionButton = function ( buttonAction, callback, buttonName ) {
+		var messageKey, actionButtonClass = 'guidedtour-' + buttonAction + '-button',
+			messageKeyMapping, step = this;
+
+		messageKeyMapping = {
+			next: 'guidedtour-next-button',
+			okay: 'guidedtour-okay-button',
+			end: 'guidedtour-okay-button'
+		};
 
 		if ( buttonName === undefined ) {
-			buttonName = mw.message( buttonKey ).parse();
+			messageKey = messageKeyMapping[buttonAction];
+			buttonName = mw.message( messageKey ).parse();
 		}
 		return {
 			name: buttonName,
 			onclick: function () {
+				var event = {
+					label: buttonName,
+					action: buttonAction
+				};
+
+				if ( messageKey ) {
+					event.labelKey = messageKey;
+				}
+
+				// 'this' is the DOM element of the button; not the same as
+				// 'step'
 				callback( this );
+				gt.EventLogger.log( 'GuidedTourButtonClick', step, event );
 			},
 			html: {
-				'class': guiders._buttonClass + ' ' + buttonKey
+				'class': guiders._buttonClass + ' ' + actionButtonClass
 			}
 		};
-	}
+	};
 
 	/**
 	 * Changes the button to link to the given URL, and returns it
@@ -154,26 +175,79 @@
 	 * @private
 	 *
 	 * @param {Object} button Button spec
+	 * @param {boolean} isExternal Whether the URL is considered external
 	 * @param {string} url URL to go to
 	 * @param {string} [title] Title attribute of button
 	 *
 	 * @return {Object} Modified button
 	 */
-	function modifyLinkButton( button, url, title ) {
+	function modifyLinkButton( button, isExternal, url, title ) {
+		var klass = guiders._buttonClass +
+			// Distinguish between fake javascript void(0) links and these
+			// (semantically links).
+			' guidedtour-link-button' +
+			// Use 'external' class for external links, as parser does.
+			( isExternal ? ' external' : '' ),
+			html;
+
+		html = {
+			href: url,
+			title: title,
+			'class': klass
+		};
+
 		if ( button.namemsg ) {
 			button.name = mw.message( button.namemsg ).parse();
+			// Logging for both this ButtonClick and LinkActivation needs to be
+			// coordinated with the actual page navigation,
+			//
+			// They are done together in the general-purpose link handler
+			// (handleLinkClick). That means this button type is logged
+			// somewhat differently from the others.  The message key is saved
+			// in the element for use in logging later.
+			html['data-label-key'] = button.namemsg;
 			delete button.namemsg;
 		}
 
 		$.extend( true, button, {
-			html: {
-				href: url,
-				title: title
-			}
+			html: html
 		} );
 
 		return button;
 	}
+
+	/**
+	 * Changes a custom (no action) button to pass to guiders
+	 *
+	 * Handles wrapping onclick to add logging, and i18n
+	 *
+	 * @private
+	 *
+	 * @param {Object} button Button spec
+	 */
+	Step.prototype.modifyCustomButton = function ( button ) {
+		var messageKey, originalOnClick = button.onclick, step = this;
+
+		if ( button.namemsg ) {
+			messageKey = button.namemsg;
+			button.name = mw.message( button.namemsg ).parse();
+			delete button.namemsg;
+		}
+
+		button.onclick = function ( jQueryEvent ) {
+			var event = {
+				action: 'custom',
+				label: button.name
+			};
+
+			if ( messageKey ) {
+				event.labelKey = messageKey;
+			}
+
+			originalOnClick.call( this, jQueryEvent );
+			gt.EventLogger.log( 'GuidedTourButtonClick', step, event );
+		};
+	};
 
 	/**
 	 * Converts a tour's GuidedTour button specifications to Guiders button
@@ -201,7 +275,7 @@
 	 * @return {Array} Array of button specifications that Guiders expects
 	 * @throws {mw.guidedTour.TourDefinitionError} On invalid actions
 	 */
-	function getButtons( buttonSpecs, allowAutomaticOkay ) {
+	Step.prototype.getButtons = function ( buttonSpecs, allowAutomaticOkay ) {
 		var i, okayButton, nextButton, guiderButtons, currentButton, url;
 
 		function next() {
@@ -210,6 +284,7 @@
 
 		function endTour() {
 			gt.endTour();
+			gt.EventLogger.log( 'GuidedTourExited', this );
 		}
 
 		buttonSpecs = buttonSpecs || [];
@@ -219,24 +294,25 @@
 			if ( currentButton.action !== undefined ) {
 				switch ( currentButton.action ) {
 				case 'next':
-					nextButton = getActionButton( 'next', next, currentButton.name );
+					nextButton = this.getActionButton( 'next', next, currentButton.name );
 					break;
 				case 'okay':
 					if ( currentButton.onclick === undefined ) {
 						throw new gt.TourDefinitionError( 'You must pass an \'onclick\' function if you use an \'okay\' action.' );
 					}
-					okayButton = getActionButton( 'okay', currentButton.onclick, currentButton.name );
+					okayButton = this.getActionButton( 'okay', currentButton.onclick, currentButton.name );
 					break;
 				case 'end':
-					okayButton = getActionButton( 'okay', endTour, currentButton.name );
+					// Currently only proxying the ones that need to be
+					okayButton = this.getActionButton( 'end', $.proxy( endTour, this ), currentButton.name );
 					break;
 				case 'wikiLink':
 					url = mw.util.wikiGetlink( currentButton.page );
-					guiderButtons.push( modifyLinkButton( currentButton, url, currentButton.page ) );
+					guiderButtons.push( modifyLinkButton( currentButton, false, url, currentButton.page ) );
 					delete currentButton.page;
 					break;
 				case 'externalLink':
-					guiderButtons.push( modifyLinkButton( currentButton, currentButton.url ) );
+					guiderButtons.push( modifyLinkButton( currentButton, true, currentButton.url ) );
 					delete currentButton.url;
 					break;
 				default:
@@ -245,10 +321,7 @@
 				delete currentButton.action;
 
 			} else {
-				if ( currentButton.namemsg ) {
-					currentButton.name = mw.message( currentButton.namemsg ).parse();
-					delete currentButton.namemsg;
-				}
+				this.modifyCustomButton( currentButton );
 				guiderButtons.push( currentButton );
 			}
 		}
@@ -258,9 +331,9 @@
 			// a next, since the user is prompted to do something else
 			// (e.g. click 'Edit')
 			if ( okayButton === undefined  && nextButton === undefined ) {
-				okayButton = getActionButton( 'okay', function () {
+				okayButton = this.getActionButton( 'okay', $.proxy( function () {
 					gt.hideAll();
-				} );
+				}, this ) );
 			}
 		}
 
@@ -273,7 +346,7 @@
 		}
 
 		return guiderButtons;
-	}
+	};
 
 	/**
 	 * Gets the correct value for the current skin.
@@ -405,7 +478,8 @@
 	 * @return {void}
 	 */
 	Step.prototype.handleOnShow = function ( guider ) {
-		var tourInfo = gt.parseTourId( guider.id ), priorCurrentStep;
+		var tourInfo = gt.parseTourId( guider.id ), priorCurrentStep,
+			handleLinkClickProxy = $.proxy( this.handleLinkClick, this );
 
 		//If this is not part of a single-page tour, save the guider id to a cookie
 		if ( !this.tour.isSinglePage ) {
@@ -422,6 +496,114 @@
 
 		this.registerMwHooks();
 		this.tour.currentStep = this;
+
+		// All links in title and description
+		guider.elem.find( '.guider_title, .guider_description' )
+			.on( 'click', 'a[href]', handleLinkClickProxy );
+
+		// Only real links in the buttons (not javascript:void(0))
+		guider.elem.find( '.guider_buttons' )
+			.on( 'click', 'a.guidedtour-link-button', handleLinkClickProxy );
+
+		gt.EventLogger.log( 'GuidedTourGuiderImpression', this );
+	};
+
+	// From old version of GettingStarted.  Put this in core?
+	/**
+	 * Gets a page name from a jQuery-wrapped link, in prefixed text format.
+	 *
+	 * @private
+	 *
+	 * @param {jQuery} $link wrapped link
+	 *
+	 * @return {string} page name
+	 */
+	function getPageFromLink( $link ) {
+		var titleText, href, titleFromQuery, titleObj;
+
+		titleText = $link.attr( 'title' );
+		href = $link.attr( 'href' );
+
+		titleFromQuery = mw.util.getParamValue( 'title', href );
+		// Red links will use first branch.
+		if ( titleFromQuery !== null ) {
+			titleObj = new mw.Title( titleFromQuery );
+			return titleObj.getPrefixedText();
+		} else {
+			return titleText;
+		}
+	}
+
+	/**
+	 * Handles a click on a link in the body or title of a guider, or a button link
+	 * (wikiLink or externalLink) in the buttons.
+	 *
+	 * Note, internal vs. external link detection uses the 'external' class.
+	 * If HTML is being used (rather than wikitext), this must be set manually.
+	 *
+	 * @private
+	 *
+	 * @param {jQuery.Event} jQueryEvent jQuery event for click
+	 *
+	 * @return {void}
+	 */
+	Step.prototype.handleLinkClick = function ( jQueryEvent ) {
+		var activationEvent, buttonEvent, isExternal, labelKey, loggingOverDfd,
+			logPromises = [], $link = $( jQueryEvent.target ),
+			url = $link.attr( 'href' ), label = $link.text(),
+			LOGGING_TIMEOUT_MS = 500;
+
+		jQueryEvent.preventDefault();
+
+		activationEvent = {
+			label: label
+		};
+
+		isExternal = $link.hasClass( 'external' );
+
+		// Resolves when all logging events resolve, at least one rejects, or there
+		// is a timeout (which is overall, not per event).
+		//
+		// Workaround to limit delay due to logging; see
+		// https://bugzilla.wikimedia.org/show_bug.cgi?id=52287
+		loggingOverDfd = $.Deferred();
+
+		window.setTimeout( loggingOverDfd.reject, LOGGING_TIMEOUT_MS );
+
+		if ( isExternal ) {
+			activationEvent.href = url;
+			logPromises.push(
+				gt.EventLogger.log( 'GuidedTourExternalLinkActivation', this, activationEvent )
+			);
+		} else {
+			activationEvent.pageName = getPageFromLink( $link );
+			logPromises.push(
+				gt.EventLogger.log( 'GuidedTourInternalLinkActivation', this, activationEvent )
+			);
+		}
+
+		if ( $link.hasClass( 'guidedtour-link-button' ) ) {
+			buttonEvent = {
+				label: label
+			};
+
+			labelKey = $link.data( 'labelKey' );
+			if ( labelKey ) {
+				buttonEvent.labelKey = labelKey;
+			}
+
+			buttonEvent.action = isExternal ? 'externalLink' : 'internalLink';
+
+			logPromises.push(
+				gt.EventLogger.log( 'GuidedTourButtonClick', this, buttonEvent )
+			);
+		}
+
+		$.when.apply( $, logPromises ).then( loggingOverDfd.resolve, loggingOverDfd.reject );
+
+		loggingOverDfd.always( function () {
+			window.location = url;
+		} );
 	};
 
 	/**
@@ -447,7 +629,12 @@
 	 */
 	Step.prototype.handleOnClose = function ( guider, isAlternativeClose, closeType ) {
 		if ( closeType === 'xButton' ) {
+			// User-initiated exit
 			gt.removeTourFromUserStateByGuider( guider );
+			gt.EventLogger.log( 'GuidedTourExited', this );
+		} else {
+			// User-initiated hide
+			gt.EventLogger.log( 'GuidedTourGuiderHidden', this );
 		}
 	};
 
@@ -501,7 +688,7 @@
 		}
 		delete options.descriptionmsg;
 
-		options.buttons = getButtons( options.buttons, options.allowAutomaticOkay );
+		options.buttons = this.getButtons( options.buttons, options.allowAutomaticOkay );
 		delete options.allowAutomaticOkay;
 
 		options.classString = options.classString || '';
@@ -545,8 +732,6 @@
 
 		if ( $.type( transitionReturn ) === 'number' ) {
 			// TransitionAction enum
-			// XXX (mattflaschen, 2014-03-17): These methods affect logging, so
-			// finalize that discussion, then correct this part.
 			if ( transitionReturn === gt.TransitionAction.HIDE ) {
 				guiders.hideAll();
 			} else if ( transitionReturn === gt.TransitionAction.END ) {

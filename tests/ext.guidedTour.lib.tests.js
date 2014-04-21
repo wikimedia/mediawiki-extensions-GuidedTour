@@ -1167,7 +1167,9 @@
 			updateUserStateSpy = this.spy( gt, 'updateUserStateForTour' ),
 			unregisterSpy = this.spy( gt.Step.prototype, 'unregisterMwHooks' );
 
-		firstStep.handleOnShow( { id: firstStep.specification.id } );
+		// Use an empty jQuery context for elem since we're not testing the logging
+		// event registration currently.
+		firstStep.handleOnShow( { id: firstStep.specification.id, elem: $() } );
 		assert.strictEqual(
 			unregisterSpy.callCount,
 			0,
@@ -1185,7 +1187,7 @@
 		);
 
 		unregisterSpy.reset();
-		showChangesStep.handleOnShow( { id: showChangesStep.specification.id } );
+		showChangesStep.handleOnShow( { id: showChangesStep.specification.id, elem: $() } );
 		assert.strictEqual(
 			unregisterSpy.thisValues[0],
 			firstStep,
@@ -1193,7 +1195,7 @@
 		);
 
 		updateUserStateSpy.reset();
-		singlePageStep.handleOnShow( { id: singlePageStep.specification.id } );
+		singlePageStep.handleOnShow( { id: singlePageStep.specification.id, elem: $() } );
 		assert.strictEqual(
 			updateUserStateSpy.callCount,
 			0,
