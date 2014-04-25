@@ -157,6 +157,8 @@
 	 *  the wikiLink action
 	 * @param {string} stepSpec.buttons.url URL to link to, only for the
 	 *  externalLink action
+	 * @param {string} [stepSpec.buttons.classString] Space-separated list of
+	 *  additional class names
 	 *
 	 * @return {mw.guidedTour.StepBuilder} Created StepBuilder object
 	 * @throws {mw.guidedTour.TourDefinitionError} When the step specification is
