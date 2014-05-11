@@ -307,7 +307,7 @@
 					okayButton = this.getActionButton( 'end', $.proxy( endTour, this ), currentButton.name );
 					break;
 				case 'wikiLink':
-					url = mw.util.wikiGetlink( currentButton.page );
+					url = mw.util.getUrl( currentButton.page );
 					guiderButtons.push( modifyLinkButton( currentButton, false, url, currentButton.page ) );
 					delete currentButton.page;
 					break;
