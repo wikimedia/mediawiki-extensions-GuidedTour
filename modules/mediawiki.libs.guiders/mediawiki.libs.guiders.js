@@ -181,12 +181,7 @@ mediaWiki.libs.guiders = (function($) {
 	guiders._arrowSize = 42; // This is the arrow's width and height.
 	guiders._buttonElement = '<a></a>';
 	guiders._buttonAttributes = {'href': 'javascript:void(0);'};
-
-	// TODO (mattflaschen, 2013-12-23): Use mw-ui-progressive (not in core yet) when the
-	// tour will proceed, and mw-ui-constructive when it will complete.  This will
-	// probably involve moving the class choice to the area where action fields
-	// (e.g. action: 'end') are understood.
-	guiders._buttonClass = 'mw-ui-button mw-ui-primary';
+	guiders._buttonClass = 'mw-ui-button mw-ui-progressive';
 	guiders._currentGuiderID = null;
 	guiders._guiderInits = {}; //stores uncreated guiders indexed by id
 	guiders._guiders = {}; //stores created guiders indexed by id
