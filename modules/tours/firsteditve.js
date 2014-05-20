@@ -4,7 +4,9 @@
 ( function ( window, document, $, mw, gt ) {
 	var hasEditSectionAtLoadTime, editSectionSelector = '.mw-editsection-visualeditor',
 		tabMessages, editTabText, editSectionText, editPageDescription,
-		editSectionDescription;
+		editSectionDescription,
+		// Work around jQueryMsg issue (\u00A0 is a non-breaking space (i.e. &nbsp;))
+		NBSP = '\u00A0';
 
 	function shouldShowForPage() {
 		// Excludes pages outside the main namespace and pages with editing restrictions
@@ -29,13 +31,13 @@
 
 	editTabText = mw.message( 'vector-view-edit' ).parse();
 	if ( tabMessages.editappendix !== null ) {
-		editTabText += '&nbsp;' + mw.message( tabMessages.editappendix ).parse();
+		editTabText += NBSP + mw.message( tabMessages.editappendix ).parse();
 	}
 	editPageDescription = mw.message( 'guidedtour-tour-firsteditve-edit-page-description', editTabText ).parse();
 
 	editSectionText = mw.message( 'editsection' ).parse();
 	if ( tabMessages.editsectionappendix !== null ) {
-		editSectionText += '&nbsp;' + mw.message( tabMessages.editsectionappendix ).parse();
+		editSectionText += NBSP + mw.message( tabMessages.editsectionappendix ).parse();
 	}
 	editSectionDescription = mw.message(
 		'guidedtour-tour-firsteditve-edit-section-description', editSectionText
