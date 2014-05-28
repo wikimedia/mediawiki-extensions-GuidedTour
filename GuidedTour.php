@@ -114,6 +114,7 @@ $wgResourceModules['ext.guidedTour.lib'] = array(
 	'dependencies' => array(
 		'jquery.cookie',
 		'jquery.json',
+		'jquery.client',
 		'mediawiki.Title',
 		'mediawiki.jqueryMsg',
 		'mediawiki.libs.guiders',
@@ -214,6 +215,14 @@ $wgResourceModules['ext.guidedTour.tour.test'] = array(
 		'guidedtour-tour-test-launch-tour-description',
 		'guidedtour-tour-test-launch-using-tours',
 	),
+);
+
+// HTML and CSS pokey demonstration.
+$wgResourceModules['ext.guidedTour.tour.uprightdownleft'] = array(
+	'scripts' => 'uprightdownleft.js',
+	'localBasePath' => $dir . 'modules/tours',
+	'remoteExtPath' => 'GuidedTour/modules/tours',
+	'dependencies' => 'ext.guidedTour',
 );
 
 // Messages

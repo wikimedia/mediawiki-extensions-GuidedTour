@@ -167,13 +167,15 @@ mediaWiki.libs.guiders = (function($) {
 	guiders._htmlSkeleton = [
 		'<div class="guider">',
 		'  <div class="guider_content">',
-		'	 <h1 class="guider_title"></h1>',
-		'	 <div class="guider_close"></div>',
-		'	 <p class="guider_description"></p>',
-		'	 <div class="guider_buttons">',
-		'	 </div>',
+		'    <h1 class="guider_title"></h1>',
+		'    <div class="guider_close"></div>',
+		'    <p class="guider_description"></p>',
+		'    <div class="guider_buttons"></div>',
 		'  </div>',
 		'  <div class="guider_arrow">',
+		'    <div class="guider_arrow_inner_container">',
+		'      <div class="guider_arrow_inner"></div>',
+		'    </div>',
 		'  </div>',
 		'</div>'
 	].join('');
@@ -383,7 +385,8 @@ mediaWiki.libs.guiders = (function($) {
 
 		attachToHeight = attachTo.innerHeight();
 		attachToWidth = attachTo.innerWidth();
-		bufferOffset = 0.9 * guiders._arrowSize;
+
+		bufferOffset = 0.9 * guiders._arrowSize - 10;
 
 		// offsetMap follows the form: [height, width]
 		offsetMap = {
