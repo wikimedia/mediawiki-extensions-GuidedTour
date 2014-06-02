@@ -1,0 +1,96 @@
+/* animation mixins from core */
+@import "mediawiki.mixins.animation";
+
+.mwe-gt-animation-forward () {
+	/* Leave the element in its final animation state */
+        -webkit-animation-fill-mode: forwards; /* Chrome 16+, Safari 4+ */
+        -moz-animation-fill-mode: forwards; /* FF 5+ */
+        -o-animation-fill-mode: forwards; /* not implemented yet */
+        -ms-animation-fill-mode: forwards; /* IE 10+ */
+        animation-fill-mode: forwards; /* when the spec is finished */
+}
+
+.mwe-gt-translate (@x, @y) {
+	-webkit-transform: translate(@x, @y);
+	-moz-transform: translate(@x, @y);
+	-ms-transform: translate(@x, @y);
+	-o-transform: translate(@x, @y);
+	transform: translate(@x, @y);
+}
+
+/* fade-in */
+.mwe-gt-fade-in-frames () {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes mwe-gt-fade-in {
+	.mwe-gt-fade-in-frames();
+}
+
+@-moz-keyframes mwe-gt-fade-in {
+	.mwe-gt-fade-in-frames();
+}
+
+@-o-keyframes mwe-gt-fade-in {
+	.mwe-gt-fade-in-frames();
+}
+
+@keyframes mwe-gt-fade-in {
+	.mwe-gt-fade-in-frames();
+}
+
+.mwe-gt-fade-in {
+	.animation(mwe-gt-fade-in 0.3s, ease);
+	.mwe-gt-animation-forward();
+}
+
+/* fade-in-translate-frames */
+.mwe-gt-fade-in-translate-frames (@x, @y) {
+	0% {
+		opacity: 0;
+		.mwe-gt-translate(@x, @y);
+	}
+
+	100% {
+		opacity: 1;
+		.mwe-gt-translate(0, 0);
+	}
+}
+
+.fade-in-keyframes-for-direction (@direction, @dx, @dy) {
+	@-webkit-keyframes mwe-gt-fade-in-@{direction} {
+		.mwe-gt-fade-in-translate-frames(@dx, @dy);
+	}
+
+	@-moz-keyframes mwe-gt-fade-in-@{direction} {
+		.mwe-gt-fade-in-translate-frames(@dx, @dy);
+	}
+
+	@-o-keyframes mwe-gt-fade-in-@{direction} {
+		.mwe-gt-fade-in-translate-frames(@dx, @dy);
+	}
+
+	@keyframes mwe-gt-fade-in-@{direction} {
+		.mwe-gt-fade-in-translate-frames(@dx, @dy);
+	}
+
+	.mwe-gt-fade-in-@{direction} {
+		/**
+		 * TODO (phuedx, 2014-05-29): 0.3s and ease should be either generated
+		   by another mixin or should be constants.
+		 */
+		.animation(~"mwe-gt-fade-in-@{direction}" 0.3s, ease);
+		.mwe-gt-animation-forward();
+	}
+}
+
+.fade-in-keyframes-for-direction(up, 0, 20px);
+.fade-in-keyframes-for-direction(left, 20px, 0);
+.fade-in-keyframes-for-direction(down, 0, -20px);
+.fade-in-keyframes-for-direction(right, -20px, 0);

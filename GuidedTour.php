@@ -70,7 +70,10 @@ $wgResourceModules['mediawiki.libs.guiders'] = array(
 // TODO (mattflaschen, 2013-07-30): When the location of the rendering code
 // is decided, this module can be merged to there.
 $wgResourceModules['ext.guidedTour.styles'] = array(
-	'styles' => 'ext.guidedTour.less',
+	'styles' => array(
+		'ext.guidedTour.less',
+		'ext.guidedTour.animations.less'
+	),
 	'localBasePath' => $dir . 'modules',
 	'remoteExtPath' => 'GuidedTour/modules',
 	'dependencies' => array(

@@ -527,6 +527,7 @@ mediaWiki.libs.guiders = (function($) {
 		}
 
 		guiders._styleArrow(myGuider, position);
+		guiders._setupAnimations(myGuider, position);
 		return myGuider.elem.css(css);
 	};
 
@@ -645,6 +646,41 @@ mediaWiki.libs.guiders = (function($) {
 		myGuiderArrow.css(arrowPosition[0], arrowPosition[1] + 'px');
 		// TODO: experiment with pulsing
 		//myGuiderArrow.css(position[0], position[1] + "px").stop().pulse({backgroundPosition:["7px 0","0 0"],right:["-35px","-42px"]}, {times: 10, duration: 'slow'});
+	};
+
+	/**
+	 * Remove all animation classes
+	 * @param {Object} myGuider guider to remove animations from
+	 */
+	guiders._removeAnimations = function(myGuider) {
+		myGuider.elem.removeClass('mwe-gt-fade-in-down mwe-gt-fade-in-up mwe-gt-fade-in-left mwe-gt-fade-in-right');
+	};
+
+	/**
+	 * Add appropriate animation class rtelative to guider position
+	 * @param {Object} myGuider guider to add animation class to
+	 * @param {number} position guider attachment position
+	 */
+	guiders._setupAnimations = function(myGuider, position) {
+		var classMap = {
+			1: 'mwe-gt-fade-in-down',
+			2: 'mwe-gt-fade-in-left',
+			3: 'mwe-gt-fade-in-left',
+			4: 'mwe-gt-fade-in-left',
+			5: 'mwe-gt-fade-in-up',
+			6: 'mwe-gt-fade-in-up',
+			7: 'mwe-gt-fade-in-up',
+			8: 'mwe-gt-fade-in-right',
+			9: 'mwe-gt-fade-in-right',
+			10: 'mwe-gt-fade-in-right',
+			11: 'mwe-gt-fade-in-down',
+			12: 'mwe-gt-fade-in-down'
+		};
+		guiders._removeAnimations( myGuider );
+		// Assign animation class for myGuider
+		if (position !== 0) {
+			myGuider.elem.addClass(classMap[position]);
+		}
 	};
 
 	/**
@@ -1004,6 +1040,7 @@ mediaWiki.libs.guiders = (function($) {
 		if (myGuider.autoFocus && (isGuiderBelow || isGuiderAbove)) {
 			// Sometimes the browser won't scroll if the person just clicked,
 			// so let's do this in a setTimeout.
+			guiders._removeAnimations(myGuider);
 			setTimeout(guiders.scrollToCurrent, 10);
 		}
 
