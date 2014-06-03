@@ -2,7 +2,7 @@
 // Designed to work on any Wikipedia article, and can work for other sites with minor message changes.
 
 ( function ( window, document, $, mw, gt ) {
-	var hasEditSection, tour;
+	var hasEditSection, tour, editPageButtons = [];
 
 	function shouldShowForPage() {
 		// Excludes pages outside the main namespace and pages with editing restrictions
@@ -18,6 +18,12 @@
 
 	hasEditSection = $( '.mw-editsection' ).length > 0;
 
+	if ( hasEditSection ) {
+		editPageButtons.push( {
+			action: 'next'
+		} );
+	}
+
 	tour = new gt.TourBuilder( {
 		name: 'firstedit',
 		shouldLog: true
@@ -29,17 +35,7 @@
 		descriptionmsg: 'guidedtour-tour-firstedit-edit-page-description',
 		attachTo: '#ca-edit',
 		position: 'bottom',
-		buttons: [ {
-			action: hasEditSection ? 'next' : 'okay',
-			onclick: function() {
-				if ( hasEditSection ) {
-					mw.libs.guiders.next();
-				} else {
-					mw.libs.guiders.hideAll();
-				}
-			}
-		} ],
-		allowAutomaticOkay: false
+		buttons: editPageButtons
 	} )
 	.transition( function () {
 		if ( gt.isEditing() ) {

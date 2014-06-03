@@ -50,6 +50,28 @@
 	.background-image('images/x_close_button.jpg');
 }
 
+.guider_button_icon {
+	display: block;
+	height: 1.4em;
+	width: 1.4em;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 1.4em;
+}
+
+body.ltr .guidedtour-next-button .guider_button_icon {
+	.background-image-svg('images/next-button-ltr.svg', 'images/next-button-ltr.png');
+}
+
+body.rtl .guidedtour-next-button .guider_button_icon {
+	.background-image-svg('images/next-button-rtl.svg', 'images/next-button-rtl.png');
+}
+
+.guidedtour-okay-button .guider_button_icon,
+.guidedtour-end-button .guider_button_icon {
+	.background-image-svg('images/okay-button.svg', 'images/okay-button.png');
+}
+
 #guider_overlay {
 	background-color: #000;
 	width: 100%;

@@ -226,7 +226,7 @@ mediaWiki.libs.guiders = (function($) {
 
 	guiders._addButtons = function(myGuider) {
 		var guiderButtonsContainer, i, thisButton, thisButtonElem,
-			myCustomHTML;
+			thisButtonHtml, myCustomHTML;
 
 		// Add buttons
 		guiderButtonsContainer = myGuider.elem.find('.guider_buttons');
@@ -238,8 +238,18 @@ mediaWiki.libs.guiders = (function($) {
 
 		for (i = myGuider.buttons.length - 1; i >= 0; i--) {
 			thisButton = myGuider.buttons[i];
+			if ( thisButton.hasIcon ) {
+				thisButtonHtml = $( '<span>' )
+					.addClass( 'guider_button_icon' )
+					.attr( 'aria-label', thisButton.name );
+			} else {
+				thisButtonHtml = thisButton.name;
+			}
 			thisButtonElem = $(guiders._buttonElement,
-					       $.extend({'class': guiders._buttonClass, html: thisButton.name }, guiders._buttonAttributes, thisButton.html || {})
+					       $.extend({
+								'class': guiders._buttonClass,
+								'html': thisButtonHtml
+							}, guiders._buttonAttributes, thisButton.html || {})
 					      );
 
 			if (typeof thisButton.classString !== 'undefined' && thisButton.classString !== null) {

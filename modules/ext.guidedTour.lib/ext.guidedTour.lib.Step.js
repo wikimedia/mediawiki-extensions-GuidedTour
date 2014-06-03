@@ -165,7 +165,8 @@
 			},
 			html: {
 				'class': guiders._buttonClass + ' ' + actionButtonClass
-			}
+			},
+			hasIcon: buttonAction === 'next' || buttonAction === 'okay' || buttonAction === 'end'
 		};
 	};
 
