@@ -1,15 +1,6 @@
 /* animation mixins from core */
 @import "mediawiki.mixins.animation";
 
-.mwe-gt-animation-forward () {
-	/* Leave the element in its final animation state */
-        -webkit-animation-fill-mode: forwards; /* Chrome 16+, Safari 4+ */
-        -moz-animation-fill-mode: forwards; /* FF 5+ */
-        -o-animation-fill-mode: forwards; /* not implemented yet */
-        -ms-animation-fill-mode: forwards; /* IE 10+ */
-        animation-fill-mode: forwards; /* when the spec is finished */
-}
-
 .mwe-gt-translate (@x, @y) {
 	-webkit-transform: translate(@x, @y);
 	-moz-transform: translate(@x, @y);
@@ -46,8 +37,7 @@
 }
 
 .mwe-gt-fade-in {
-	.animation(mwe-gt-fade-in 0.3s, ease);
-	.mwe-gt-animation-forward();
+	.animation(mwe-gt-fade-in 0.3s, ease, forwards);
 }
 
 /* fade-in-translate-frames */
@@ -85,8 +75,7 @@
 		 * TODO (phuedx, 2014-05-29): 0.3s and ease should be either generated
 		   by another mixin or should be constants.
 		 */
-		.animation(~"mwe-gt-fade-in-@{direction}" 0.3s, ease);
-		.mwe-gt-animation-forward();
+		.animation(~"mwe-gt-fade-in-@{direction}" 0.3s, ease, forwards);
 	}
 }
 
