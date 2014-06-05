@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Anakmalaysia"
+			"Anakmalaysia",
+			"Pizza1016"
 		]
 	},
 	"guidedtour-desc": "Membolehkan halaman untuk menyediakan lawatan berpandu popup untuk membantu pengguna baru",
@@ -14,7 +15,7 @@
 	"guidedtour-tour-test-callouts": "Uji petak bual",
 	"guidedtour-tour-test-portal-description": "Ini ialah halaman {{int:portal}}.",
 	"guidedtour-tour-test-mediawiki-parse": "Uji huraian MediaWiki",
-	"guidedtour-tour-test-wikitext-description": "Pemandu dalam jelajah dalam wiki anda boleh mengandungi teks wiki dengan menggunakan onShow dan parseDescription. Gunakannya untuk membuat pautan wiki ke [[{{MediaWiki:Guidedtour-help-url}}|dokumentasi Jelajah berpandu]]. Atau pautan luar [https://github.com/tychay/mwgadget.GuidedTour ke GitHub], contohnya.",
+	"guidedtour-tour-test-wikitext-description": "Pemandu dalam jelajah dalam wiki anda boleh mengandungi teks wiki dengan menggunakan onShow dan parseDescription. Gunakannya untuk membuat pautan wiki ke [[{{MediaWiki:Guidedtour-help-url}}|pendokumenan jelajah berpandu]]. Atau pautan luar [https://github.com/tychay/mwgadget.GuidedTour ke GitHub], contohnya.",
 	"guidedtour-tour-test-description-page": "Uji halaman keterangan MediaWiki",
 	"guidedtour-tour-test-go-description-page": "Pergi ke halaman keterangan",
 	"guidedtour-tour-test-launch-tour": "Uji lancar jelajah",
