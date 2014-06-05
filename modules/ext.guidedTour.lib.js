@@ -921,8 +921,12 @@
 		 * does not require an extra request for an extension-defined tour since it
 		 * is already loaded.
 		 *
+		 * `mw.guidedTour.launcher.launchTour` should always be used over this method.
+		 *
 		 * @param {string} tourName Name of tour
 		 * @param {string} [tourId='gt-' + tourName + '-' + step] ID of tour and step
+		 *
+		 * @private
 		 *
 		 * @return {void}
 		 */

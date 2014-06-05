@@ -118,6 +118,13 @@ $wgResourceModules['ext.guidedTour.lib'] = array(
 	),
 );
 
+// Lightweight launcher module
+$wgResourceModules['ext.guidedTour.launcher'] = array(
+	'scripts' => 'ext.guidedTour.launcher.js',
+	'localBasePath' => $dir . 'modules',
+	'remoteExtPath' => 'GuidedTour/modules',
+);
+
 // This calls code in guidedTour.lib to attempt to launch a tour, based on the environment
 // (currently query string and a cookie)
 $wgResourceModules['ext.guidedTour'] = array(
