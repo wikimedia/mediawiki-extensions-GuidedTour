@@ -132,6 +132,7 @@ $wgResourceModules['ext.guidedTour.lib'] = array(
 	'messages' => array(
 		'guidedtour-next-button',
 		'guidedtour-okay-button',
+		'guidedtour-back-button',
 	),
 );
 

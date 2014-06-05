@@ -24,10 +24,7 @@
 		name: 'overlay',
 		titlemsg: 'guidedtour-tour-test-testing',
 		descriptionmsg: 'guidedtour-tour-test-test-description',
-		overlay: true,
-		buttons: [ {
-			action: 'next'
-		} ]
+		overlay: true
 	} )
 	.next( 'callout' );
 
@@ -40,12 +37,10 @@
 		descriptionmsg: 'guidedtour-tour-test-portal-description',
 		// attachment
 		attachTo: '#n-portal a',
-		position: '3',
-		buttons: [ {
-			action: 'next'
-		} ]
+		position: '3'
 	} )
-	.next( 'description' );
+	.next( 'description' )
+	.back( 'overlay' );
 
 	tour.step( {
 		/*
@@ -62,9 +57,8 @@
 			action: 'wikiLink',
 			page: pageName,
 			namemsg: 'guidedtour-tour-test-go-description-page'
-		}, {
-			action: 'end'
 		} ]
-	} );
+	} )
+	.back( 'callout' );
 
 } ( window, document, jQuery, mediaWiki, mediaWiki.guidedTour ) );

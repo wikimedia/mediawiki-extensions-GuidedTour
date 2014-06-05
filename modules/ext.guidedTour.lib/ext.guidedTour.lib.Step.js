@@ -1,7 +1,12 @@
 ( function ( mw, $ ) {
 	var gt = mw.guidedTour,
 		guiders = mw.libs.guiders,
-		skin = mw.config.get( 'skin' );
+		skin = mw.config.get( 'skin' ),
+		callbackNameToPropertySetMap = {
+			next: 'isNextCallbackSet',
+			back: 'isBackCallbackSet',
+			transition: 'isTransitionCallbackSet'
+		};
 
 	/**
 	 * @class mw.guidedTour.Step
@@ -77,6 +82,30 @@
 		this.hookListeners = {};
 
 		/**
+		  * True if and only if .next() has been called
+		  *
+		  * @property {boolean}
+		  * @private
+		  */
+		this.isNextCallbackSet = false;
+
+		/**
+		  * True if and only if .back() has been called
+		  *
+		  * @property {boolean}
+		  * @private
+		  */
+		this.isBackCallbackSet = false;
+
+		 /**
+		  * True if and only if .transition() has been called
+		  *
+		  * @property {boolean}
+		  * @private
+		  */
+		this.isTransitionCallbackSet = false;
+
+		/**
 		 * Function called to determine the next step, if action: 'next' is used
 		 *
 		 * This is already canonicalized, so it can simply be called, and will
@@ -119,13 +148,35 @@
 	}
 
 	/**
+	 * Checks if the specified callback is set
+	 *
+	 * @param {string} name callback name as string
+	 * @returns {Boolean} returns true if specified callback is set
+	 */
+	Step.prototype.hasCallback = function ( name ) {
+		return this[callbackNameToPropertySetMap[name]];
+	};
+
+	/**
+	 * Sets a callback by name
+	 * @param {string} name callback name as string
+	 * @param {Function} callback Function to call if they click the button
+	 */
+	Step.prototype.setCallback = function ( name, callback ) {
+		// Set callback
+		this[name + 'Callback'] = callback;
+		// Flag this callback as set
+		this[callbackNameToPropertySetMap[name]] = true;
+	};
+
+	/**
 	 * Gets a Guiders button specification, using the message for the provided type
 	 * (if no text is provided) and the provided callback.
 	 *
 	 * @private
 	 *
 	 * @param {string} buttonAction Semantic button action handled by this method,
-	 *   currently 'next', 'okay', or 'end'
+	 *   currently 'next', 'back', okay', or 'end'
 	 * @param {Function} callback Function to call if they click the button
 	 * @param {HTMLElement} callback.btn Raw DOM element of the button
 	 * @param {string} [buttonName] Button text to override default.
@@ -133,11 +184,15 @@
 	 * @return {Object} Guiders button specification
 	 */
 	Step.prototype.getActionButton = function ( buttonAction, callback, buttonName ) {
-		var messageKey, actionButtonClass = 'guidedtour-' + buttonAction + '-button',
-			messageKeyMapping, step = this;
+		var step = this,
+			messageKey,
+			actionButtonClass = 'guidedtour-' + buttonAction + '-button',
+			buttonTypeClass = buttonAction !== 'back' ? 'mw-ui-progressive' : '',
+			messageKeyMapping;
 
 		messageKeyMapping = {
 			next: 'guidedtour-next-button',
+			back: 'guidedtour-back-button',
 			okay: 'guidedtour-okay-button',
 			end: 'guidedtour-okay-button'
 		};
@@ -146,6 +201,7 @@
 			messageKey = messageKeyMapping[buttonAction];
 			buttonName = mw.message( messageKey ).parse();
 		}
+
 		return {
 			name: buttonName,
 			onclick: function () {
@@ -164,9 +220,9 @@
 				gt.EventLogger.log( 'GuidedTourButtonClick', step, event );
 			},
 			html: {
-				'class': guiders._buttonClass + ' ' + actionButtonClass
+				'class': guiders._buttonClass + ' ' + actionButtonClass + ' ' + buttonTypeClass
 			},
-			hasIcon: buttonAction === 'next' || buttonAction === 'okay' || buttonAction === 'end'
+			hasIcon: true
 		};
 	};
 
@@ -276,11 +332,16 @@
 	 * @return {Array} Array of button specifications that Guiders expects
 	 * @throws {mw.guidedTour.TourDefinitionError} On invalid actions
 	 */
+
 	Step.prototype.getButtons = function ( buttonSpecs, allowAutomaticOkay ) {
-		var i, okayButton, nextButton, guiderButtons, currentButton, url;
+		var i, okayButton, nextButton, backButton, guiderButtons, currentButton, url;
 
 		function next() {
 			guiders.next();
+		}
+
+		function back() {
+			guiders.back();
 		}
 
 		function endTour() {
@@ -296,6 +357,9 @@
 				switch ( currentButton.action ) {
 				case 'next':
 					nextButton = this.getActionButton( 'next', next, currentButton.name );
+					break;
+				case 'back':
+					backButton = this.getActionButton( 'back', back, currentButton.name );
 					break;
 				case 'okay':
 					if ( currentButton.onclick === undefined ) {
@@ -327,6 +391,16 @@
 			}
 		}
 
+		// Auto add a back button if the back callback is defined.
+		if ( this.hasCallback( 'back' ) && backButton === undefined ) {
+			backButton = this.getActionButton( 'back', back );
+		}
+
+		// Auto add a next button if the next callback is defined.
+		if ( this.hasCallback( 'next' ) && nextButton === undefined ) {
+			nextButton = this.getActionButton( 'next', next );
+		}
+
 		if ( allowAutomaticOkay ) {
 			// Ensure there is always an okay and/or next button.  In some cases, there will not be
 			// a next, since the user is prompted to do something else
@@ -336,6 +410,10 @@
 					gt.hideAll();
 				}, this ) );
 			}
+		}
+
+		if ( backButton !== undefined ) {
+			guiderButtons.push( backButton );
 		}
 
 		if ( okayButton !== undefined ) {
@@ -710,6 +788,10 @@
 
 		options.next = function () {
 			return self.nextCallback().specification.id;
+		};
+
+		options.back = function () {
+			return self.backCallback().specification.id;
 		};
 
 		guiders.initGuider( options );

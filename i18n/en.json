@@ -12,6 +12,7 @@
     "guidedtour-custom.css": "/* Custom CSS for the GuidedTour extension. */",
     "guidedtour-next-button": "Next",
     "guidedtour-okay-button": "Okay",
+    "guidedtour-back-button": "Back",
     "guidedtour-tour-test-testing": "Testing",
     "guidedtour-tour-test-test-description": "This is a test of the description. Lorem ipsum dolor sit!",
     "guidedtour-tour-test-callouts": "Test callouts",

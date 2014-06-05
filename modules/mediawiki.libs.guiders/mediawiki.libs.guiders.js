@@ -183,7 +183,7 @@ mediaWiki.libs.guiders = (function($) {
 	guiders._arrowSize = 42; // This is the arrow's width and height.
 	guiders._buttonElement = '<a></a>';
 	guiders._buttonAttributes = {'href': 'javascript:void(0);'};
-	guiders._buttonClass = 'mw-ui-button mw-ui-progressive';
+	guiders._buttonClass = 'mw-ui-button';
 	guiders._currentGuiderID = null;
 	guiders._guiderInits = {}; //stores uncreated guiders indexed by id
 	guiders._guiders = {}; //stores created guiders indexed by id
@@ -692,34 +692,46 @@ mediaWiki.libs.guiders = (function($) {
 		guiders._attach(currentGuider);
 	};
 
-	// Note: This formerly checked for shouldSkip, but this has been moved out of the
-	// guiders module.
+	/**
+	 * Shows the 'next' step
+	 */
 	guiders.next = function() {
-		var currentGuider, nextGuiderId, myGuider, omitHidingOverlay;
+		return guiders.doStep('next');
+	};
+
+	/**
+	 * Shows the 'back' step
+	 */
+	guiders.back = function() {
+		return guiders.doStep('back');
+	};
+
+	/**
+	 * Move the guider directionally to the corresponding step. eg. next, back
+	 * @param string direction next or back
+	 */
+	guiders.doStep = function(direction) {
+		var currentGuider, moveToGuiderId, myGuider, omitHidingOverlay;
 		try {
 			currentGuider = guiders._guiderById(guiders._currentGuiderID); //has check to make sure guider is initialized
 		} catch (err) {
 			return;
 		}
 		currentGuider.elem.data('locked', true);
-		//remove current auto-advance handler bound before advancing
-		if (currentGuider.autoAdvance) {
-			$(currentGuider.autoAdvance[0]).unbind(currentGuider.autoAdvance[1], currentGuider._advanceHandler);
-		}
 
-		if ( currentGuider.next ) {
-			nextGuiderId = currentGuider.next();
+		if ( currentGuider[direction] ) {
+			moveToGuiderId = currentGuider[direction]();
 		}
-		nextGuiderId = nextGuiderId || null;
+		moveToGuiderId = moveToGuiderId || null;
 
-		if (nextGuiderId !== null && nextGuiderId !== '') {
-			myGuider = guiders._guiderById(nextGuiderId);
+		if (moveToGuiderId !== null && moveToGuiderId !== '') {
+			myGuider = guiders._guiderById(moveToGuiderId);
 			omitHidingOverlay = myGuider.overlay ? true : false;
 			guiders.hideAll(omitHidingOverlay, true);
 			if (currentGuider && currentGuider.highlight) {
 				guiders._dehighlightElement(currentGuider.highlight);
 			}
-			guiders.show(nextGuiderId);
+			guiders.show(moveToGuiderId);
 		}
 	};
 
