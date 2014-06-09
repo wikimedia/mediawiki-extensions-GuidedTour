@@ -623,7 +623,7 @@
 	 * @param {Object} guider Guider object
 	 * @param {boolean} isAlternativeClose true if is not the text close button (legacy)
 	 * @param {string} closeType Guider string identify close method, currently
-	 *  'textButton', 'xButton', 'escapeKey', or 'clickOutside'
+	 *  'xButton', 'escapeKey', or 'clickOutside'
 	 *
 	 * @return {boolean} true to end tour, false to dismiss
 	 */

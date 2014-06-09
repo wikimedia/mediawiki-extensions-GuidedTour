@@ -93,7 +93,7 @@ mediaWiki.libs.guiders = (function($) {
 		},
 		// Function taking three arguments, the guider, a legacy boolean for close
 		// type (false for text close button, true for everything else), and a text
-		// string for closeMethod ('textButton', 'xButton', 'escapeKey', 'clickOutside')
+		// string for closeMethod ('xButton', 'escapeKey', 'clickOutside')
 		onClose: null,
 		onHide: null,
 		onShow: null,
@@ -187,12 +187,10 @@ mediaWiki.libs.guiders = (function($) {
 	// probably involve moving the class choice to the area where action fields
 	// (e.g. action: 'end') are understood.
 	guiders._buttonClass = 'mw-ui-button mw-ui-primary';
-	guiders._closeButtonTitle = 'Close';
 	guiders._currentGuiderID = null;
 	guiders._guiderInits = {}; //stores uncreated guiders indexed by id
 	guiders._guiders = {}; //stores created guiders indexed by id
 	guiders._lastCreatedGuiderID = null;
-	guiders._nextButtonTitle = 'Next';
 	guiders._scrollDuration = 750; // In milliseconds
 
 	// See position above in guiders._defaultSettings
@@ -223,18 +221,8 @@ mediaWiki.libs.guiders = (function($) {
 	};
 
 	guiders._addButtons = function(myGuider) {
-		var guiderButtonsContainer, i, thisButton, thisButtonElem, thisButtonName,
+		var guiderButtonsContainer, i, thisButton, thisButtonElem,
 			myCustomHTML;
-
-		function handleTextButton() {
-			guiders.handleOnClose(myGuider, false, 'textButton' /* close by button */);
-		}
-
-		function handleNextButton() {
-			if ( !myGuider.elem.data('locked') ) {
-				guiders.next();
-			}
-		}
 
 		// Add buttons
 		guiderButtonsContainer = myGuider.elem.find('.guider_buttons');
@@ -256,18 +244,8 @@ mediaWiki.libs.guiders = (function($) {
 
 			guiderButtonsContainer.append(thisButtonElem);
 
-			thisButtonName = thisButton.name.toLowerCase();
 			if (thisButton.onclick) {
 				thisButtonElem.bind('click', thisButton.onclick);
-			} else {
-				switch (thisButtonName) {
-				case guiders._closeButtonTitle.toLowerCase():
-					thisButtonElem.bind( 'click', handleTextButton );
-					break;
-				case guiders._nextButtonTitle.toLowerCase():
-					thisButtonElem.bind( 'click', handleNextButton );
-					break;
-				}
 			}
 		}
 
