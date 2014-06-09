@@ -132,6 +132,11 @@
 		}
 		ajaxData[source] = guider.description;
 
+		if ( source === 'page' ) {
+			// If page name is a redirect, follow it.
+			ajaxData.redirects = 'true';
+		}
+
 		ajaxParams = {
 			async: false,
 			type: 'POST',
