@@ -4,9 +4,10 @@
 ( function ( window, document, $, mw, gt ) {
 	var hasEditSectionAtLoadTime, editSectionSelector = '.mw-editsection-visualeditor',
 		tabMessages, editTabText, editSectionText, editPageDescription,
-		editSectionDescription,
-		// Work around jQueryMsg issue (\u00A0 is a non-breaking space (i.e. &nbsp;))
-		NBSP = '\u00A0';
+		editSectionDescription, tour, introStep, editSectionStep,
+		pointSavePageStep,
+			// Work around jQueryMsg issue (\u00A0 is a non-breaking space (i.e. &nbsp;))
+			NBSP = '\u00A0';
 
 	function shouldShowForPage() {
 		// Excludes pages outside the main namespace and pages with editing restrictions
@@ -22,6 +23,21 @@
 
 	function hasEditSection() {
 		return $( editSectionSelector ).length > 0;
+	}
+
+	function handleVeChange( transitionEvent ) {
+		var isSaveButtonDisabled;
+
+		if ( transitionEvent.type === gt.TransitionEvent.MW_HOOK ) {
+			if ( transitionEvent.hookName === 've.toolbarSaveButton.stateChanged' ) {
+				isSaveButtonDisabled = transitionEvent.hookArguments[0];
+				if ( !isSaveButtonDisabled ) {
+					return pointSavePageStep;
+				}
+			}
+
+			return gt.TransitionAction.HIDE;
+		}
 	}
 
 
@@ -43,49 +59,63 @@
 		'guidedtour-tour-firsteditve-edit-section-description', editSectionText
 	).parse();
 
-	// Reuses messages from the 'firstedit' tour where it semantically makes sense
-	gt.defineTour( {
+	tour = new gt.TourBuilder( {
 		name: 'firsteditve',
 		shouldLog: true,
-		showConditionally: 'VisualEditor',
-		steps: [ {
-			titlemsg: 'guidedtour-tour-firstedit-edit-page-title',
-			description: editPageDescription,
-			position: 'bottom',
-			attachTo: '#ca-ve-edit',
-			// TODO (mattflaschen, 2013-09-03): After GuidedTour API enhancements, try to replace
-			// section-related shouldSkip and onclick code with proceedTo.
-			shouldSkip: gt.isVisualEditorOpen,
-			buttons: [ {
-				namemsg: hasEditSectionAtLoadTime ? 'guidedtour-next-button' : 'guidedtour-okay-button',
-				onclick: function () {
-					if ( hasEditSection() ) {
-						mw.libs.guiders.next();
-					} else {
-						mw.libs.guiders.hideAll();
-					}
-				}
-			} ],
-			allowAutomaticOkay: false
-		}, {
-			titlemsg: 'guidedtour-tour-firstedit-edit-section-title',
-			description: editSectionDescription,
-			position: 'right',
-			attachTo: editSectionSelector,
-			width: 300,
-			shouldSkip: function () {
-				return gt.isVisualEditorOpen() || !hasEditSection();
-			}
-		}, {
-			titlemsg: 'guidedtour-tour-firstedit-save-title',
-			descriptionmsg: 'guidedtour-tour-firsteditve-save-description',
-			attachTo: '.ve-ui-toolbar-saveButton',
-			position: 'left',
-			closeOnClickOutside: false,
-			shouldSkip: function() {
-				return !gt.isEditing();
-			}
-		} ]
+		showConditionally: 'VisualEditor'
 	} );
+
+	introStep = tour.firstStep( {
+		name: 'intro',
+		titlemsg: 'guidedtour-tour-firstedit-edit-page-title',
+		description: editPageDescription,
+		position: 'bottom',
+		attachTo: '#ca-ve-edit',
+		buttons: [ {
+			namemsg: hasEditSectionAtLoadTime ? 'guidedtour-next-button' : 'guidedtour-okay-button',
+			onclick: function () {
+				if ( hasEditSection() ) {
+					mw.libs.guiders.next();
+				} else {
+					mw.libs.guiders.hideAll();
+				}
+			}
+		} ],
+		allowAutomaticOkay: false
+	// Tour-level listeners would avoid repeating this for two steps
+	} ).listenForMwHooks( 've.activationComplete', 've.toolbarSaveButton.stateChanged' )
+		.transition( handleVeChange )
+		.next( 'editSection' );
+
+	editSectionStep = tour.step( {
+		name: 'editSection',
+		titlemsg: 'guidedtour-tour-firstedit-edit-section-title',
+		description: editSectionDescription,
+		position: 'right',
+		attachTo: editSectionSelector,
+		width: 300
+	} ).listenForMwHooks( 've.activationComplete', 've.toolbarSaveButton.stateChanged' )
+		.transition( function ( transitionEvent ) {
+			if ( transitionEvent.type === gt.TransitionEvent.BUILTIN &&
+			     !hasEditSection() ) {
+				return gt.TransitionAction.HIDE;
+			} else {
+				return handleVeChange( transitionEvent );
+			}
+		} );
+
+	pointSavePageStep = tour.step( {
+		name: 'pointSavePage',
+		titlemsg: 'guidedtour-tour-firstedit-save-title',
+		descriptionmsg: 'guidedtour-tour-firsteditve-save-description',
+		attachTo: '.ve-ui-toolbar-saveButton',
+		position: 'bottomRight',
+		closeOnClickOutside: false
+	} ).listenForMwHooks( 've.deactivationComplete' )
+		.transition( function () {
+			if ( !gt.isEditing() ) {
+				return gt.TransitionAction.END;
+			}
+		} );
 
 } (window, document, jQuery, mediaWiki, mediaWiki.guidedTour ) );
