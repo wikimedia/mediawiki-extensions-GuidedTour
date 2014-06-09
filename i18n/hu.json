@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Tgr"
+			"Tgr",
+			"Misibacsi"
 		]
 	},
 	"guidedtour-desc": "Lehetővé teszi szövegbuborékokból álló bemutatók megjelenítését az új felhasználóknak.",
@@ -19,11 +20,11 @@
 	"guidedtour-tour-test-launch-tour": "Útikalauz-indítás teszt",
 	"guidedtour-tour-test-launch-tour-description": "Az útikalauzok újabb útikalauzokat indíthatnak. Jó, mi?",
 	"guidedtour-tour-test-launch-using-tours": "Útikalauz-kalauz indítása",
-	"guidedtour-tour-firstedit-edit-page-title": "Készen állsz szerkeszteni?",
+	"guidedtour-tour-firstedit-edit-page-title": "A teljes oldal szerkesztése...",
 	"guidedtour-tour-firstedit-edit-page-description": "Kattints a „{{int:vector-view-edit}}” gombra a szöveg módosításához.",
 	"guidedtour-tour-firstedit-edit-section-title": "Egyetlen szakasz szerkesztése",
 	"guidedtour-tour-firstedit-edit-section-description": "A lap minden nagyobb szakaszához tartozik egy „{{int:editsection}}” link, ha csak azzal a résszel akarsz foglalkozni.",
-	"guidedtour-tour-firstedit-preview-title": "Nézd meg az eredményt (opcionális)",
+	"guidedtour-tour-firstedit-preview-title": "Nézd meg az előnézetet (opcionális)",
 	"guidedtour-tour-firstedit-preview-description": "Az „{{int:showpreview}}” gombra kattintva ellenőrizheted, hogyan fog kinézni az oldal a módosításaiddal együtt. Ne felejtsd el a végén elmenteni!",
 	"guidedtour-tour-firstedit-save-title": "Majdnem kész vagy!",
 	"guidedtour-tour-firstedit-save-description": "Ha végeztél, a „{{int:savearticle}}” gombra kattintva a változtatásaid bekerülnek a cikkbe.",

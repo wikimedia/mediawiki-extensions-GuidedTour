@@ -3,11 +3,12 @@
 		"authors": [
 			"Asaifm",
 			"Ciphers",
-			"Emara"
+			"Emara",
+			"زكريا"
 		]
 	},
 	"guidedtour-desc": "السماح للصفحات بعرض رسائل جولات إرشادية لمساعدة المستخدمين الجدد",
-	"guidedtour-help-url": "مساعدة:جولات إرشادية",
+	"guidedtour-help-url": "Help:جولات إرشادية",
 	"guidedtour-help-guider-url": "مساعدة:جولات إرشادية/مرشد",
 	"guidedtour-next-button": "التالي",
 	"guidedtour-okay-button": "حسناً",
@@ -21,15 +22,15 @@
 	"guidedtour-tour-test-launch-tour": "جرب جولة إفتتاحية",
 	"guidedtour-tour-test-launch-tour-description": "من الممكن للمرشدين إطلاق المزيد من الجولات الإرشادية. أليس ذلك رائعا؟",
 	"guidedtour-tour-test-launch-using-tours": "إطلاق جولة حول استخدام الجولات",
-	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|مستعد}} للتحرير؟",
-	"guidedtour-tour-firstedit-edit-page-description": "إضغط على زر \"{{int:vector-view-edit}}\" لإضافة تغييراتك.",
-	"guidedtour-tour-firstedit-edit-section-title": "حرر قسم فقط",
+	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|تعديل}} كامل الصفحة...",
+	"guidedtour-tour-firstedit-edit-page-description": "اضغط{{GENDER:||ي}} \"{{int:vector-view-edit}}\" لإضافة تعديلاتك.",
+	"guidedtour-tour-firstedit-edit-section-title": "أو عدلي{{GENDER:||ي}} قسما",
 	"guidedtour-tour-firstedit-edit-section-description": "هناك روابط \"{{int:editsection}}\" لكل قسم رئيس في الصفحة لكي تتمكن من التركيز عليه.",
-	"guidedtour-tour-firstedit-preview-title": "معاينة تغييراتك (اختياري)",
+	"guidedtour-tour-firstedit-preview-title": "عاين{{GENDER:||ي}} تغييراتك (اختياري)",
 	"guidedtour-tour-firstedit-preview-description": "يمكنك معاينة شكل الصفحة عند الضغط على \"{{int:showpreview}}\". لا تنسى النقر على زر الحفظ عند غنتهائك من المعاينة!",
 	"guidedtour-tour-firstedit-save-title": "أنت على وشك الانتهاء!",
 	"guidedtour-tour-firstedit-save-description": "عند انتهائك قم بالضغط على \"{{int:savearticle}}\" كي تظهر تغييراتك للجميع.",
-	"guidedtour-tour-firsteditve-edit-page-description": "أضغط زر \"$1 لإجراء تعديلاتك.",
+	"guidedtour-tour-firsteditve-edit-page-description": "اضغط{{GENDER:||ي}} \"$1\" لإجراء تعديلاتك.",
 	"guidedtour-tour-firsteditve-edit-section-description": "هناك وصلات \"$1\" لكل قسم رئيسي في الصفحة، لكي تتمكن من التركيز على هذا الجزء فقط.",
 	"guidedtour-tour-firsteditve-save-description": "عند انتهائك قم بالضغط على \"{{int:visualeditor-toolbar-savedialog}}\" كي تظهر تغييراتك للجميع."
 }

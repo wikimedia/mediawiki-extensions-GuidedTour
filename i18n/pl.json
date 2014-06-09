@@ -26,7 +26,7 @@
 	"guidedtour-tour-test-launch-using-tours": "Rozpocznij przewodnik po korzystaniu z przewodników",
 	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|Gotowy|Gotowa}} do edytowania?",
 	"guidedtour-tour-firstedit-edit-page-description": "Kliknij na „{{int:vector-view-edit}}”, aby dokonać zmian.",
-	"guidedtour-tour-firstedit-edit-section-title": "Edytuj tylko jedna sekcję",
+	"guidedtour-tour-firstedit-edit-section-title": "Lub {{GENDER:|edytuj}} sekcję",
 	"guidedtour-tour-firstedit-edit-section-description": "Obok każdego nagłówka znajduje się odnośnik „{{int:editsection}}”, aby móc skupić się tylko na tej części.",
 	"guidedtour-tour-firstedit-preview-title": "Skontroluj swoje zmiany (opcjonalne)",
 	"guidedtour-tour-firstedit-preview-description": "Naciśnięcie na „{{int:showpreview}}” pozwoli Ci obejrzeć wygląd strony po wprowadzeniu Twoich zmian. Nie zapomnij ich zapisać!",
