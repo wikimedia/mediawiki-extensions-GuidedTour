@@ -217,6 +217,13 @@ mediaWiki.libs.guiders = (function($) {
 		guiders.hideAll();
 	};
 
+	guiders._makeButtonListener = function(onclickCallback) {
+		return function(evt) {
+			evt.preventDefault();
+			onclickCallback.call(this, evt);
+		};
+	};
+
 	guiders._addButtons = function(myGuider) {
 		var guiderButtonsContainer, i, thisButton, thisButtonElem,
 			myCustomHTML;
@@ -242,7 +249,7 @@ mediaWiki.libs.guiders = (function($) {
 			guiderButtonsContainer.append(thisButtonElem);
 
 			if (thisButton.onclick) {
-				thisButtonElem.bind('click', thisButton.onclick);
+				thisButtonElem.bind('click', guiders._makeButtonListener(thisButton.onclick));
 			}
 		}
 
