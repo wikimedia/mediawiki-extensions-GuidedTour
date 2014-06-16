@@ -6,7 +6,8 @@
 			"Fitoschido",
 			"QuimGil",
 			"Chocolate con galleta",
-			"VegaDark"
+			"VegaDark",
+			"Macofe"
 		]
 	},
 	"guidedtour-desc": "Permite a las páginas ofrecer una visita guiada para ayudar a nuevos usuarios",
@@ -33,6 +34,6 @@
 	"guidedtour-tour-firstedit-save-title": "¡Ya casi has terminado!",
 	"guidedtour-tour-firstedit-save-description": "Cuando termines, pulsa en «{{int:savearticle}}» para que todos puedan ver tus cambios.",
 	"guidedtour-tour-firsteditve-edit-page-description": "Pulsa en el botón «$1» para realizar los cambios.",
-	"guidedtour-tour-firsteditve-edit-section-description": "Existen enlaces de \"{{int:editsection}} {{int:visualeditor-beta-appendix}}\" en cada sección de la página, para que puedes centrarte solo en esa parte.",
+	"guidedtour-tour-firsteditve-edit-section-description": "Existen enlaces de \"$1\" para cada sección en una página, para que puedas centrarte solo en esa parte.",
 	"guidedtour-tour-firsteditve-save-description": "Cuándo estés listo, haz clic en \"{{int:visualeditor-toolbar-savedialog}}\" para hacer que tus cambios sean visibles para todos"
 }
