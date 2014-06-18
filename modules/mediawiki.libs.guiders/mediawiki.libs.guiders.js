@@ -277,12 +277,14 @@ mediaWiki.libs.guiders = (function($) {
 		var xButtonContainer, xButton;
 
 		xButtonContainer = myGuider.elem.find('.guider_close');
-		xButton = $('<div></div>', {
-			'class': 'x_button',
-			role: 'button' });
+		xButton = $('<a>',
+			$.extend({'class': 'x_button'}, guiders._buttonAttributes)
+		);
 		xButtonContainer.append(xButton);
-		xButton.click(function() {
-			guiders.handleOnClose(myGuider, true, 'xButton');
+		xButton.on({
+			click: function() {
+				guiders.handleOnClose(myGuider, true, 'xButton');
+			}
 		});
 	};
 
@@ -950,6 +952,7 @@ mediaWiki.libs.guiders = (function($) {
 		}
 
 		$(myGuider.elem).trigger('guiders.show');
+		$(myGuider.elem).find('.mw-ui-progressive:first-child').focus();
 
 		// Create (preload) next guider if it hasn't been created
 		nextGuiderId = myGuider.next || null;
