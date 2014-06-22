@@ -35,5 +35,5 @@
 	"guidedtour-tour-firstedit-save-description": "Cuando termines, pulsa en «{{int:savearticle}}» para que todos puedan ver tus cambios.",
 	"guidedtour-tour-firsteditve-edit-page-description": "Pulsa en el botón «$1» para realizar los cambios.",
 	"guidedtour-tour-firsteditve-edit-section-description": "Existen enlaces de \"$1\" para cada sección en una página, para que puedas centrarte solo en esa parte.",
-	"guidedtour-tour-firsteditve-save-description": "Cuándo estés listo, haz clic en \"{{int:visualeditor-toolbar-savedialog}}\" para hacer que tus cambios sean visibles para todos"
+	"guidedtour-tour-firsteditve-save-description": "Cuando termines, pulsa en «{{int:visualeditor-toolbar-savedialog}}» para que tus cambios sean visibles para todos."
 }
