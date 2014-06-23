@@ -260,6 +260,30 @@
 		} );
 	}
 
+	// TODO (phuedx, 2014-05-27): Use conditional comments to add these classes
+	// to the html element /in the HTML/.
+	/**
+	* If the browser is IE, then CSS classes are added to the html element
+	* conveying which version of IE it is.
+	*
+	* @private
+	*
+	* @return {void}
+	*/
+	function setupIECssClasses() {
+		var clientProfile = $.client.profile(),
+			classes = [];
+
+		if (clientProfile.name !== 'msie') {
+			return;
+		}
+
+		classes.push( 'ie' );
+		classes.push( 'ie' + clientProfile.versionNumber );
+
+		$( 'html' ).addClass( classes.join( ' ' ) );
+	}
+
 	/**
 	 * Internal initialization of guiders and guidedtour, called once after singleton
 	 * is built.
@@ -270,6 +294,8 @@
 	 */
 	function initialize() {
 		var cookieValue, newCookieValue;
+
+		setupIECssClasses();
 
 		// cookie the users when they are in the tour
 		cookieName = mw.config.get( 'wgCookiePrefix' ) + '-mw-tour';
