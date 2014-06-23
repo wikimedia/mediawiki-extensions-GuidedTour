@@ -443,8 +443,8 @@ mediaWiki.libs.guiders = (function($) {
 
 		return {
 			position: positionType,
-			top: top,
-			left: left
+			top: parseInt( top, 10 ),
+			left: parseInt( left, 10 )
 		};
 	};
 
