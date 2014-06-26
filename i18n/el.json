@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Geraki",
-			"Nikosguard"
+			"Nikosguard",
+			"Glavkos"
 		]
 	},
 	"guidedtour-desc": "Επιτρέπει στις σελίδες να παρέχουν μια αναδυόμενη ξενάγηση για να βοηθήσει τους νέους χρήστες",
@@ -10,6 +11,7 @@
 	"guidedtour-help-guider-url": "Βοήθεια:Ξεναγήσεις/οδηγητής",
 	"guidedtour-next-button": "Επόμενο",
 	"guidedtour-okay-button": "Εντάξει",
+	"guidedtour-back-button": "Πίσω",
 	"guidedtour-tour-test-testing": "Δοκιμή",
 	"guidedtour-tour-test-test-description": "Αυτή είναι μια δοκιμή της περιγραφής. Lorem ipsum dolor sit!",
 	"guidedtour-tour-test-callouts": "Δοκιμή επεξήγησης",
