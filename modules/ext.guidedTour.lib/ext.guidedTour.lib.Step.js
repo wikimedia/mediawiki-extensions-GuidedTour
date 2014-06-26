@@ -396,11 +396,6 @@
 			backButton = this.getActionButton( 'back', back );
 		}
 
-		// Auto add a next button if the next callback is defined.
-		if ( this.hasCallback( 'next' ) && nextButton === undefined ) {
-			nextButton = this.getActionButton( 'next', next );
-		}
-
 		if ( allowAutomaticOkay ) {
 			// Ensure there is always an okay and/or next button.  In some cases, there will not be
 			// a next, since the user is prompted to do something else
@@ -410,6 +405,11 @@
 					gt.hideAll();
 				}, this ) );
 			}
+		}
+
+		// Auto add a next button if the next callback is defined.
+		if ( this.hasCallback( 'next' ) && nextButton === undefined && okayButton === undefined ) {
+			nextButton = this.getActionButton( 'next', next );
 		}
 
 		if ( backButton !== undefined ) {
