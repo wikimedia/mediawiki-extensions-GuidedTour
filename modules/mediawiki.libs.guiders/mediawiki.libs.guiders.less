@@ -47,29 +47,38 @@
 	height: 13px;
 	width: 13px;
 	background-repeat: no-repeat;
-	.background-image('images/x_close_button.jpg');
+	.background-image('images/x-close-icon.jpg');
 }
 
 .guider_button_icon {
 	display: block;
 	height: 1.4em;
-	width: 1.4em;
+	width: 3em;
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: 1.4em;
 }
 
+// Next button
 body.ltr .guidedtour-next-button .guider_button_icon {
-	.background-image-svg('images/next-button-ltr.svg', 'images/next-button-ltr.png');
+	.background-image-svg('images/arrow-icon-right.svg', 'images/arrow-icon-right.png');
 }
-
 body.rtl .guidedtour-next-button .guider_button_icon {
-	.background-image-svg('images/next-button-rtl.svg', 'images/next-button-rtl.png');
+	.background-image-svg('images/arrow-icon-left.svg', 'images/arrow-icon-left.png');
 }
 
+// Back button
+body.ltr .guidedtour-back-button .guider_button_icon {
+	.background-image-svg('images/arrow-icon-left-dark.svg', 'images/arrow-icon-left-dark.png');
+}
+body.rtl .guidedtour-back-button .guider_button_icon {
+	.background-image-svg('images/arrow-icon-right-dark.svg', 'images/arrow-icon-right-dark.png');
+}
+
+// Okay or End button
 .guidedtour-okay-button .guider_button_icon,
 .guidedtour-end-button .guider_button_icon {
-	.background-image-svg('images/okay-button.svg', 'images/okay-button.png');
+	.background-image-svg('images/okay-icon.svg', 'images/okay-icon.png');
 }
 
 #guider_overlay {

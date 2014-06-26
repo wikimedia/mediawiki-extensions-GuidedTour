@@ -36,22 +36,6 @@
 		 * @private
 		 */
 		this.step = new gt.Step( tour, stepSpec );
-
-		/**
-		 * True if and only if .next() has been called
-		 *
-		 * @property {boolean}
-		 * @private
-		 */
-		this.isNextCallbackSet = false;
-
-		/**
-		 * True if and only if .transition() has been called
-		 *
-		 * @property {boolean}
-		 * @private
-		 */
-		this.isTransitionCallbackSet = false;
 	}
 
 	// TODO (mattflaschen, 2014-03-18): Tour-level listeners and jQuery listeners (at
@@ -108,10 +92,12 @@
 
 	/**
 	 * Tell the step how to determine the next step
+	 * Calling 'next' in the tour definition now automatically creates a next button
+	 * if one isn't specified already.
 	 *
 	 * Invalid values or return values from the callback (a step name that does not
 	 * refer to a valid step, a StepBuilder that is not part of the same tour) will
-	 * cause an mw.guidedTour.TourDefinitionError exception to be thrown when the next
+	 * cause an mw.guidedTour.TourDefinitionError exception to be thrown when the
 	 * step is requested.
 	 *
 	 * @param {mw.guidedTour.StepBuilder|string|Function} nextValue Value used to
@@ -124,37 +110,91 @@
 	 *    dynamically
 	 *
 	 * @chainable
-	 * @throws {mw.guidedTour.TourDefinitionError} If StepBuilder.next() has already
-	 *  been called
+	 * @throws {mw.guidedTour.TourDefinitionError} If this direction callback has has already
+	 *  been set
 	 */
 	StepBuilder.prototype.next = function ( nextValue ) {
-		var stepBuilder = this;
+		return this.setDirectionCallback( 'next', nextValue );
+	};
 
-		if ( this.isNextCallbackSet ) {
-			throw new gt.TourDefinitionError( '.next() can not be called more than once per StepBuilder' );
+	/**
+	 * Tell the step how to determine the back step
+	 * Calling 'back' in the tour definition now automatically creates a back button
+	 * if one isn't specified already.
+	 *
+	 * Invalid values or return values from the callback (a step name that does not
+	 * refer to a valid step, a StepBuilder that is not part of the same tour) will
+	 * cause an mw.guidedTour.TourDefinitionError exception to be thrown when the
+	 * step is requested.
+	 *
+	 * @param {mw.guidedTour.StepBuilder|string|Function} backValue Value used to
+	 *  determine the back step.  Either:
+	 *
+	 *  - a mw.guidedTour.StepBuilder; the corresponding step is always back; this must
+	 *   belong to the same tour
+	 *  - a step name as string; the corresponding step is always back
+	 *  - a Function that returns one of the above; this allows the back step to vary
+	 *    dynamically
+	 *
+	 * @chainable
+	 * @throws {mw.guidedTour.TourDefinitionError} If this direction callback has has already
+	 *  been set
+	 */
+	StepBuilder.prototype.back = function ( backValue ) {
+		return this.setDirectionCallback( 'back', backValue );
+	};
+
+	/**
+	 * Set the callback of the step direction.
+	 *
+	 * Invalid values or return values from the callback (a step name that does not
+	 * refer to a valid step, a StepBuilder that is not part of the same tour) will
+	 * cause an mw.guidedTour.TourDefinitionError exception to be thrown when the
+	 * step is requested.
+	 *
+	 * @private
+	 * @param string direction name of direction.  Currently next and back are supported.
+	 * @param {mw.guidedTour.StepBuilder|string|Function} step Value used to
+	 *  determine the step callback for the specified direction.  Either:
+	 *
+	 *  - a mw.guidedTour.StepBuilder;  this must belong to the same tour
+	 *  - a step name as string;
+	 *  - a Function that returns one of the above; this allows the step callback to vary
+	 *    dynamically
+	 *
+	 * @chainable
+	 * @throws {mw.guidedTour.TourDefinitionError} If this direction callback has has already
+	 *  been set
+	 */
+	StepBuilder.prototype.setDirectionCallback = function ( direction, step ) {
+		var stepBuilder = this,
+			currentStep = this.step,
+			callback;
+
+		if ( currentStep.hasCallback( direction ) ) {
+			throw new gt.TourDefinitionError( '.' + direction + '() can not be called more than once per StepBuilder' );
 		}
 
-		if ( $.isFunction( nextValue ) ) {
-			this.step.nextCallback = function () {
-				var nextReturn = nextValue();
+		if ( $.isFunction( step ) ) {
+			callback = function () {
+				var directionReturn = step();
 				return stepBuilder.canonicalizeStep(
-					nextReturn,
-					'Callback passed to .next() returned invalid value'
+					directionReturn,
+					'Callback passed to .' + direction + '() returned invalid value'
 				);
 			};
 		} else {
-			// This allow forward references (passing the name of a step that
-			// isn't built yet), validation is done when the next step is
+			// This allows for step references (passing the name of a step that
+			// isn't built yet), validation is done when the back step is
 			// requested.
-			this.step.nextCallback = function () {
+			callback = function () {
 				return stepBuilder.canonicalizeStep(
-					nextValue,
-					'Value passed to .next() does not refer to a valid step'
+					step,
+					'Value passed to .' + direction + '() does not refer to a valid step'
 				);
 			};
 		}
-
-		this.isNextCallbackSet = true;
+		currentStep.setCallback( direction, callback );
 		return this;
 	};
 
@@ -192,9 +232,10 @@
 	 *  been called, or callback is not a function
 	 */
 	StepBuilder.prototype.transition = function ( callback ) {
-		var stepBuilder = this, currentStep = this.step;
+		var stepBuilder = this,
+			currentStep = this.step;
 
-		if ( this.isTransitionCallbackSet ) {
+		if ( currentStep.hasCallback( 'transition' ) ) {
 			throw new gt.TourDefinitionError( '.transition() can not be called more than once per StepBuilder' );
 		}
 
@@ -203,7 +244,7 @@
 			throw new gt.TourDefinitionError( '.transition() takes one argument, a function' );
 		}
 
-		currentStep.transitionCallback = function ( transitionEvent ) {
+		currentStep.setCallback( 'transition', function ( transitionEvent ) {
 			var transitionReturn = callback( transitionEvent );
 
 			if ( $.type( transitionReturn ) === 'number' ) {
@@ -224,9 +265,7 @@
 					'Callback passed to .transition() returned invalid value'
 				);
 			}
-		};
-
-		this.isTransitionCallbackSet = true;
+		} );
 		return this;
 	};
 
