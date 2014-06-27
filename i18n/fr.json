@@ -17,6 +17,7 @@
 	"guidedtour-custom.css": "/* CSS personnalisé pour l’extension Visite guidée. */",
 	"guidedtour-next-button": "Suivant",
 	"guidedtour-okay-button": "D’accord",
+	"guidedtour-back-button": "Retour",
 	"guidedtour-tour-test-testing": "Tester",
 	"guidedtour-tour-test-test-description": "Ceci est un test de la description. Lorem ipsum dolor sit !",
 	"guidedtour-tour-test-callouts": "Tester les liens de sortie",

@@ -11,6 +11,7 @@
 	"guidedtour-custom.css": "/* ガイドツアー拡張機能用のカスタムCSS */",
 	"guidedtour-next-button": "次へ",
 	"guidedtour-okay-button": "OK",
+	"guidedtour-back-button": "戻る",
 	"guidedtour-tour-test-testing": "テスト",
 	"guidedtour-tour-test-test-description": "これは説明のテストです。Lorem ipsum dolor sit!",
 	"guidedtour-tour-test-callouts": "呼び出しのテスト",
