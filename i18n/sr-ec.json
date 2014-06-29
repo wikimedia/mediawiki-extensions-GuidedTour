@@ -4,5 +4,6 @@
 			"Milicevic01"
 		]
 	},
-	"guidedtour-next-button": "Следеће"
+	"guidedtour-next-button": "Следеће",
+	"guidedtour-tour-firsteditve-save-description": "Када завршите, кликните на „{{int:visualeditor-toolbar-savedialog}}“ да ваше измене постану видљиве свима."
 }
