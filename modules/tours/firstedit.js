@@ -59,7 +59,8 @@
 		} else if ( !hasEditSection ) {
 			return gt.TransitionAction.HIDE;
 		}
-	} );
+	} )
+	.back( 'intro' );
 
 	tour.step( {
 		name: 'preview',
