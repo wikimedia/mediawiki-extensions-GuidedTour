@@ -106,7 +106,13 @@
 	 * @param {boolean} [stepSpec.allowAutomaticOkay=true] By default, if
 	 * you do not specify an Okay or Next button, an Okay button will be generated.
 	 *
-	 * To suppress this, set allowAutomaticOkay to false for the guider.
+	 * To suppress this, set allowAutomaticOkay to false for the step.
+	 *
+	 * @param {boolean} [stepSpec.allowAutomaticNext=true] By default, if
+	 * you call .next() and do not specify a Next button a next button will be
+	 * generated automatically.
+	 *
+	 * To suppress this, set allowAutomaticNext to false for the step.
 	 *
 	 * @param {boolean} [stepSpec.closeOnClickOutside=true] Close the
 	 *  guider when the user clicks elsewhere on screen
@@ -122,7 +128,7 @@
 	 * @param {Function} stepSpec.buttons.onclick Function to execute
 	 *  when button is clicked
 	 *
-	 * @param {"next"|"okay"|"end"|"wikiLink"|"externalLink"} stepSpec.buttons.action
+	 * @param {string} stepSpec.buttons.action
 	 *  Action keyword.  For actions listed below, you do not need to manually
 	 *  specify button name and onclick.
 	 *
@@ -131,6 +137,8 @@
 	 *
 	 *  - next - Goes to the next step.  Requires mw.guidedTour.StepBuilder#next
 	 *    also be called, to specify how the next step is determined.
+	 *  - back - Goes back specified step.  Requires mw.guidedTour.StepBuilder#back
+	 *    also be called, to specify how the step is determined.
 	 *  - okay - An arbitrary function is used for okay button.  This must have
 	 *    an accompanying 'onclick':
 	 *
@@ -157,8 +165,11 @@
 	 *  the wikiLink action
 	 * @param {string} stepSpec.buttons.url URL to link to, only for the
 	 *  externalLink action
+	 * @param {string} stepSpec.buttons.flagType string to add button type
+	 *  class.  Currently supports: primary, progressive, constructive, destructive.
 	 * @param {string} [stepSpec.buttons.classString] Space-separated list of
 	 *  additional class names
+	 *
 	 *
 	 * @return {mw.guidedTour.StepBuilder} Created StepBuilder object
 	 * @throws {mw.guidedTour.TourDefinitionError} When the step specification is

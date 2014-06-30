@@ -176,19 +176,20 @@
 	 *
 	 * @private
 	 *
-	 * @param {string} buttonAction Semantic button action handled by this method,
-	 *   currently 'next', 'back', okay', or 'end'
-	 * @param {Function} callback Function to call if they click the button
-	 * @param {HTMLElement} callback.btn Raw DOM element of the button
-	 * @param {string} [buttonName] Button text to override default.
+	 * @param {Object} button button specification object
+	 * * @param {string} button.action Semantic button action handled by this method,
+	 * *   currently 'next', 'back', okay', or 'end'
+	 * * @param {Function} button.callback Function to call if they click the button
+	 * * @param {HTMLElement} button.callback.btn Raw DOM element of the button
+	 * * @param {string} [button.name] Button text to override default.
 	 *
 	 * @return {Object} Guiders button specification
 	 */
-	Step.prototype.getActionButton = function ( buttonAction, callback, buttonName ) {
+	Step.prototype.getActionButton = function ( button ) {
 		var step = this,
 			messageKey,
-			actionButtonClass = 'guidedtour-' + buttonAction + '-button',
-			buttonTypeClass = buttonAction !== 'back' ? 'mw-ui-progressive' : '',
+			actionButtonClass = 'guidedtour-' + button.action + '-button',
+			buttonTypeClass = getButtonTypeClass( button ),
 			messageKeyMapping;
 
 		messageKeyMapping = {
@@ -198,17 +199,17 @@
 			end: 'guidedtour-okay-button'
 		};
 
-		if ( buttonName === undefined ) {
-			messageKey = messageKeyMapping[buttonAction];
-			buttonName = mw.message( messageKey ).parse();
+		if ( !button.name ) {
+			messageKey = messageKeyMapping[button.action];
+			button.name = mw.message( messageKey ).parse();
 		}
 
 		return {
-			name: buttonName,
+			name: button.name,
 			onclick: function () {
 				var event = {
-					label: buttonName,
-					action: buttonAction
+					label: button.name,
+					action: button.action
 				};
 
 				if ( messageKey ) {
@@ -217,7 +218,7 @@
 
 				// 'this' is the DOM element of the button; not the same as
 				// 'step'
-				callback( this );
+				button.callback( this );
 				gt.EventLogger.log( 'GuidedTourButtonClick', step, event );
 			},
 			html: {
@@ -226,6 +227,42 @@
 			hasIcon: true
 		};
 	};
+
+	/**
+	 * Returns button type class.  Allows for flagging button type in
+	 * tour specification to override default button styles.
+	 * Currently all buttons aside from back and link have a defaultButtonClass
+	 * unless otherwise flagged with button.flagType.
+	 *
+	 * @private
+	 *
+	 * @param {Object} button button specification defined in tour
+	 *
+	 * @return {string} returns mw style button class
+	 */
+	function getButtonTypeClass( button ) {
+		var buttonTypes = {
+			primary: 'mw-ui-primary',
+			progressive: 'mw-ui-progressive',
+			constructive: 'mw-ui-constructive',
+			destructive: 'mw-ui-destructive'
+		};
+		// Button have a flagged type?
+		// TODO: rmoen 7/7/14 in the future it might be nice to have
+		// flagType optionally an array so we can add additional classes here.
+		// example: mw-ui-quiet
+		if ( button.flagType ) {
+			return buttonTypes[button.flagType] || '';
+		} else if ( button.action === 'back' ||
+					button.action === 'wikiLink' ||
+					button.action === 'externalLink'
+		) {
+			// No additional classes for the above buttons
+			return '';
+		}
+		// Otherwise, make the button progressive
+		return buttonTypes.progressive;
+	}
 
 	/**
 	 * Changes the button to link to the given URL, and returns it
@@ -240,7 +277,8 @@
 	 * @return {Object} Modified button
 	 */
 	function modifyLinkButton( button, isExternal, url, title ) {
-		var klass = guiders._buttonClass +
+		var classString = guiders._buttonClass +
+			' ' + getButtonTypeClass( button ) +
 			// Distinguish between fake javascript void(0) links and these
 			// (semantically links).
 			' guidedtour-link-button' +
@@ -251,7 +289,7 @@
 		html = {
 			href: url,
 			title: title,
-			'class': klass
+			'class': classString
 		};
 
 		if ( button.namemsg ) {
@@ -305,6 +343,7 @@
 			originalOnClick.call( this, jQueryEvent );
 			gt.EventLogger.log( 'GuidedTourButtonClick', step, event );
 		};
+		button.html = { 'class': guiders._buttonClass + ' ' + getButtonTypeClass( button ) };
 	};
 
 	/**
@@ -358,20 +397,24 @@
 			if ( currentButton.action !== undefined ) {
 				switch ( currentButton.action ) {
 				case 'next':
-					nextButton = this.getActionButton( 'next', next, currentButton.name );
+					currentButton.callback = next;
+					nextButton = this.getActionButton( currentButton );
 					break;
 				case 'back':
-					backButton = this.getActionButton( 'back', back, currentButton.name );
+					currentButton.callback = back;
+					backButton = this.getActionButton( currentButton );
 					break;
 				case 'okay':
 					if ( currentButton.onclick === undefined ) {
 						throw new gt.TourDefinitionError( 'You must pass an \'onclick\' function if you use an \'okay\' action.' );
 					}
-					okayButton = this.getActionButton( 'okay', currentButton.onclick, currentButton.name );
+					currentButton.callback = currentButton.onclick;
+					okayButton = this.getActionButton( currentButton );
 					break;
 				case 'end':
 					// Currently only proxying the ones that need to be
-					okayButton = this.getActionButton( 'end', $.proxy( endTour, this ), currentButton.name );
+					currentButton.callback = $.proxy( endTour, this );
+					okayButton = this.getActionButton( currentButton );
 					break;
 				case 'wikiLink':
 					url = mw.util.getUrl( currentButton.page );
@@ -395,13 +438,13 @@
 
 		// Auto add a back button if the back callback is defined.
 		if ( this.hasCallback( 'back' ) && backButton === undefined ) {
-			backButton = this.getActionButton( 'back', back );
+			backButton = this.getActionButton( { action: 'back', callback: back } );
 		}
 
 		if ( options.allowAutomaticNext ) {
 			// Auto add a next button if the next callback is defined.
 			if ( this.hasCallback( 'next' ) && nextButton === undefined && okayButton === undefined ) {
-				nextButton = this.getActionButton( 'next', next );
+				nextButton = this.getActionButton( { action: 'next', callback: next } );
 			}
 		}
 		if ( options.allowAutomaticOkay ) {
@@ -409,9 +452,10 @@
 			// a next, since the user is prompted to do something else
 			// (e.g. click 'Edit')
 			if ( okayButton === undefined  && nextButton === undefined ) {
-				okayButton = this.getActionButton( 'okay', $.proxy( function () {
-					gt.hideAll();
-				}, this ) );
+				okayButton = this.getActionButton( {
+					action: 'okay',
+					callback: $.proxy( function () { gt.hideAll(); }, this )
+				} );
 			}
 		}
 

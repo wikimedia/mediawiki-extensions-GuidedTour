@@ -56,7 +56,8 @@
 		buttons: [ {
 			action: 'wikiLink',
 			page: pageName,
-			namemsg: 'guidedtour-tour-test-go-description-page'
+			namemsg: 'guidedtour-tour-test-go-description-page',
+			flagType: 'progressive'
 		}, {
 			action: 'end'
 		} ]
