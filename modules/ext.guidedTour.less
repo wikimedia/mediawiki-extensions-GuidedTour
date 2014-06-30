@@ -1,6 +1,13 @@
 @import 'ext.guidedTour.mixins';
 @import 'mediawiki.mixins';
 
+// Variables
+
+@guider_arrow_height = 42px;
+@half_guider_arrow_height = @guider_arrow_height / 2;
+
+// Rules
+
 .guider {
 	border: 1px solid #ccc;
 	font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
@@ -52,10 +59,6 @@
 	}
 }
 
-.guider_arrow {
-	background: none;
-}
-
 .guider_arrow_inner_container {
 	position: relative;
 	overflow: hidden;
@@ -73,6 +76,44 @@
 	-webkit-transform: rotate(45deg);
 	    -ms-transform: rotate(45deg);
 	        transform: rotate(45deg);
+}
+
+.guider_arrow {
+	background: none;
+	overflow: hidden;
+
+	.guider_arrow_up&,
+	.guider_arrow_down& {
+		width: @guider_arrow_height;
+		height: @half_guider_arrow_height;
+	}
+
+	.guider_arrow_right&,
+	.guider_arrow_left& {
+		width: @half_guider_arrow_height;
+		height: @guider_arrow_height;
+	}
+}
+
+.guider_arrow_inner_container {
+	height: @guider_arrow_height;
+	width: @guider_arrow_height;
+}
+
+.guider_arrow_up {
+	top: -@half_guider_arrow_height;
+}
+
+.guider_arrow_right {
+	right: -@half_guider_arrow_height;
+}
+
+.guider_arrow_down {
+	bottom: -@half_guider_arrow_height;
+}
+
+.guider_arrow_left {
+	left: -@half_guider_arrow_height;
 }
 
 /*
@@ -98,10 +139,10 @@
 	}
 }
 
-.position_guider_arrow_by_direction(up, 38px, 0);
-.position_guider_arrow_by_direction(right, 0, -40px);
-.position_guider_arrow_by_direction(down, -40px, 0);
-.position_guider_arrow_by_direction(left, 0, 38px);
+.position_guider_arrow_by_direction(up, @half_guider_arrow_height, 0);
+.position_guider_arrow_by_direction(right, 0, -@guider_arrow_height);
+.position_guider_arrow_by_direction(down, -@guider_arrow_height, 0);
+.position_guider_arrow_by_direction(left, 0, @half_guider_arrow_height);
 
 // NOTE (phuedx, 2014-05-28): The filter declaration breaks IE7- CSS parsing so
 // it must follow the .guider_arrow_foo rules.
