@@ -10,6 +10,7 @@
 	"guidedtour-custom.css": "/* Mã CSS tùy biến dành cho phần mở rộng GuidedTour. */",
 	"guidedtour-next-button": "Tiếp",
 	"guidedtour-okay-button": "OK",
+	"guidedtour-back-button": "Quay lại",
 	"guidedtour-tour-test-testing": "Đo thử",
 	"guidedtour-tour-test-test-description": "Thử lời miêu tả đây. Lorem ipsum dolor sit!",
 	"guidedtour-tour-test-callouts": "Thử ô gọi",
