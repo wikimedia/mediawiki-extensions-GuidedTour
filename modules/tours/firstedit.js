@@ -35,7 +35,8 @@
 		descriptionmsg: 'guidedtour-tour-firstedit-edit-page-description',
 		attachTo: '#ca-edit',
 		position: 'bottom',
-		buttons: editPageButtons
+		buttons: editPageButtons,
+		allowAutomaticNext: false
 	} )
 	.transition( function () {
 		if ( gt.isEditing() ) {

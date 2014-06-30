@@ -61,6 +61,7 @@
 			// document or remove support.
 			onClose: $.noop,
 			onShow: $.noop,
+			allowAutomaticNext: true,
 			allowAutomaticOkay: true
 		}, stepSpec );
 
@@ -323,18 +324,19 @@
 	 * Handles actions and internationalization.
 	 *
 	 * @private
-	 *
-	 * @param {Array} buttonSpecs Button specifications as used in tour.  Elements
-	 *  will be mutated.  It must be passed, but if the value is falsy it will be
-	 *  treated as an empty array.
-	 * @param {boolean} allowAutomaticOkay True if and only if an okay can be generated.
+	 * @param {Object} options Button options object
+	 * * @param {Array} options.buttons Button specifications as used in tour.  Elements
+	 *   will be mutated.  It must be passed, but if the value is falsy it will be
+	 *   treated as an empty array.
+	 * * @param {boolean} options.allowAutomaticNext True if and only if an next can be generated.
+	 * * @param {boolean} options.allowAutomaticOkay True if and only if an okay can be generated.
 	 *
 	 * @return {Array} Array of button specifications that Guiders expects
 	 * @throws {mw.guidedTour.TourDefinitionError} On invalid actions
 	 */
 
-	Step.prototype.getButtons = function ( buttonSpecs, allowAutomaticOkay ) {
-		var i, okayButton, nextButton, backButton, guiderButtons, currentButton, url;
+	Step.prototype.getButtons = function ( options ) {
+		var i, buttons, okayButton, nextButton, backButton, guiderButtons, currentButton, url;
 
 		function next() {
 			guiders.next();
@@ -349,10 +351,10 @@
 			gt.EventLogger.log( 'GuidedTourExited', this );
 		}
 
-		buttonSpecs = buttonSpecs || [];
+		buttons = options.buttons || [];
 		guiderButtons = [];
-		for ( i = 0; i < buttonSpecs.length; i++ ) {
-			currentButton = buttonSpecs[i];
+		for ( i = 0; i < buttons.length; i++ ) {
+			currentButton = buttons[i];
 			if ( currentButton.action !== undefined ) {
 				switch ( currentButton.action ) {
 				case 'next':
@@ -396,7 +398,13 @@
 			backButton = this.getActionButton( 'back', back );
 		}
 
-		if ( allowAutomaticOkay ) {
+		if ( options.allowAutomaticNext ) {
+			// Auto add a next button if the next callback is defined.
+			if ( this.hasCallback( 'next' ) && nextButton === undefined && okayButton === undefined ) {
+				nextButton = this.getActionButton( 'next', next );
+			}
+		}
+		if ( options.allowAutomaticOkay ) {
 			// Ensure there is always an okay and/or next button.  In some cases, there will not be
 			// a next, since the user is prompted to do something else
 			// (e.g. click 'Edit')
@@ -405,11 +413,6 @@
 					gt.hideAll();
 				}, this ) );
 			}
-		}
-
-		// Auto add a next button if the next callback is defined.
-		if ( this.hasCallback( 'next' ) && nextButton === undefined && okayButton === undefined ) {
-			nextButton = this.getActionButton( 'next', next );
 		}
 
 		if ( backButton !== undefined ) {
@@ -767,7 +770,8 @@
 		}
 		delete options.descriptionmsg;
 
-		options.buttons = this.getButtons( options.buttons, options.allowAutomaticOkay );
+		options.buttons = this.getButtons( options );
+		delete options.allowAutomaticNext;
 		delete options.allowAutomaticOkay;
 
 		options.classString = options.classString || '';
