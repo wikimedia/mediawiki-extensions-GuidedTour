@@ -57,6 +57,8 @@
 			action: 'wikiLink',
 			page: pageName,
 			namemsg: 'guidedtour-tour-test-go-description-page'
+		}, {
+			action: 'end'
 		} ]
 	} )
 	.back( 'callout' );

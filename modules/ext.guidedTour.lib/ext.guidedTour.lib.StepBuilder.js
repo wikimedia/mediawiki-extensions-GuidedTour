@@ -184,9 +184,9 @@
 				);
 			};
 		} else {
-			// This allows for step references (passing the name of a step that
-			// isn't built yet), validation is done when the back step is
-			// requested.
+			// This allows for forward references (passing the name of a step
+			// that isn't built yet) in the tour script.  Validation is done
+			// when the step change is requested.
 			callback = function () {
 				return stepBuilder.canonicalizeStep(
 					step,
