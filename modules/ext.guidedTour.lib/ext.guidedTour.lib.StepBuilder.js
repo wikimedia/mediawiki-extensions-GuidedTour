@@ -91,7 +91,7 @@
 	};
 
 	/**
-	 * Tell the step how to determine the next step
+	 * Tell the step how to determine the next step.
 	 * Calling 'next' in the tour definition now automatically creates a next button
 	 * if one isn't specified already.
 	 *
