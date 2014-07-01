@@ -111,7 +111,8 @@
 			} else {
 				return handleVeChange( transitionEvent );
 			}
-		} );
+		} )
+		.back( 'intro' );
 
 	pointSavePageStep = tour.step( {
 		name: 'pointSavePage',
