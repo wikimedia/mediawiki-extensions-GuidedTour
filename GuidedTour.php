@@ -113,8 +113,8 @@ $wgResourceModules['ext.guidedTour.lib'] = array(
 	'remoteExtPath' => 'GuidedTour/modules/ext.guidedTour.lib',
 	'dependencies' => array(
 		'jquery.cookie',
-		'jquery.json',
 		'jquery.client',
+		'json',
 		'mediawiki.Title',
 		'mediawiki.jqueryMsg',
 		'mediawiki.libs.guiders',

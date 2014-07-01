@@ -229,7 +229,7 @@
 
 			if ( userStateJson !== null ) {
 				try {
-					parsed = $.parseJSON( userStateJson );
+					parsed = JSON.parse( userStateJson );
 					return parsed;
 				} catch ( ex ) {
 					mw.log( 'User state is invalid JSON.' );

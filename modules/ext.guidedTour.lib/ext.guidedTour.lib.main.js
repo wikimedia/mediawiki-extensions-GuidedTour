@@ -81,7 +81,7 @@
 	function removeTourFromUserStateByName( tourName ) {
 		var parsedCookie = getUserState();
 		delete parsedCookie.tours[tourName];
-		$.cookie( cookieName, $.toJSON( parsedCookie ), cookieParams );
+		$.cookie( cookieName, JSON.stringify( parsedCookie ), cookieParams );
 	}
 
 	/*
@@ -145,7 +145,7 @@
 		};
 
 		// parse (make synchronous API request)
-		data = $.parseJSON(
+		data = JSON.parse(
 			$.ajax( ajaxParams ).responseText
 		);
 		if ( data.error ) {
@@ -859,7 +859,7 @@
 			     }
 
 			userState.tours[tourName].step = String( args.tourInfo.step );
-			cookieValue = $.toJSON( userState );
+			cookieValue = JSON.stringify( userState );
 			$.cookie( cookieName, cookieValue, cookieParams );
 		},
 
@@ -951,7 +951,7 @@
 				tourId = oldCookieString;
 				tourInfo = gt.parseTourId( tourId );
 				if ( tourInfo !== null ) {
-					return $.toJSON( internal.getInitialUserStateObject( tourInfo ) );
+					return JSON.stringify( internal.getInitialUserStateObject( tourInfo ) );
 				} else {
 					// Try to parse as new format
 					parsedObject = internal.parseUserState( oldCookieString );

@@ -245,14 +245,14 @@
 	} );
 
 	QUnit.test( 'convertToNewCookieFormat', 6, function ( assert ) {
-		var newCookie = $.toJSON( {
+		var newCookie = JSON.stringify( {
 			version: 1,
 			tours: {
 				sometour: {
 					step: 2
 				}
 			}
-		} ), newCookieMultipleTours = $.toJSON( {
+		} ), newCookieMultipleTours = JSON.stringify( {
 			version: 1,
 			tours: {
 				firsttour: {
@@ -276,7 +276,7 @@
 
 		assert.strictEqual(
 			gt.convertToNewCookieFormat( 'gt-test-3' ),
-			$.toJSON( {
+			JSON.stringify( {
 				version: 1,
 				tours: {
 					test: {
