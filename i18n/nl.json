@@ -3,7 +3,8 @@
 		"authors": [
 			"Arent",
 			"Carsrac",
-			"Siebrand"
+			"Siebrand",
+			"Sjoerddebruin"
 		]
 	},
 	"guidedtour-desc": "Maakt het mogelijk om een rondleiding weer te geven voor nieuwe gebruikers",
@@ -11,6 +12,7 @@
 	"guidedtour-help-guider-url": "Help:Rondleidingen/gids",
 	"guidedtour-next-button": "Volgende",
 	"guidedtour-okay-button": "Oké",
+	"guidedtour-back-button": "Terug",
 	"guidedtour-tour-test-testing": "Testen",
 	"guidedtour-tour-test-test-description": "Dit is een test van de beschrijving. Lorem ipsum dolor sit!",
 	"guidedtour-tour-test-callouts": "Test toelichtingen",
