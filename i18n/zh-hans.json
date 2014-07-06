@@ -9,7 +9,8 @@
 			"Shizhao",
 			"Xiaomingyan",
 			"Yfdyh000",
-			"乌拉跨氪"
+			"乌拉跨氪",
+			"范"
 		]
 	},
 	"guidedtour-desc": "允许页面提供弹出式导览来引导新用户",
@@ -17,6 +18,7 @@
 	"guidedtour-help-guider-url": "Help:导览/向导",
 	"guidedtour-next-button": "下一步",
 	"guidedtour-okay-button": "好的",
+	"guidedtour-back-button": "返回",
 	"guidedtour-tour-test-testing": "测试",
 	"guidedtour-tour-test-test-description": "这是一个说明的测试。Lorem ipsum dolor sit!",
 	"guidedtour-tour-test-callouts": "测试标注",
