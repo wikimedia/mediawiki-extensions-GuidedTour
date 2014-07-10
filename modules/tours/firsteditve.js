@@ -90,6 +90,7 @@
 		position: 'bottom',
 		attachTo: '#ca-ve-edit',
 		buttons: editPageButtons,
+		allowAutomaticNext: false,
 		allowAutomaticOkay: false
 	// Tour-level listeners would avoid repeating this for two steps
 	} ).listenForMwHooks( 've.activationComplete', 've.toolbarSaveButton.stateChanged' )
