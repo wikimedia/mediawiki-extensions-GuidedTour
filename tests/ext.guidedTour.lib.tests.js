@@ -1078,6 +1078,51 @@
 		);
 	} );
 
+	QUnit.test( 'Step.getButtons', 6, function ( assert ) {
+		var buttons = [
+				{ flagType: 'destructive' },
+				{ action: 'wikiLink', flagType: 'constructive' },
+				{ action: 'externalLink' },
+				{ action: 'back' },
+				{ action: 'okay', onclick: function() {} },
+				{ action: 'next' }
+			],
+			spy = this.spy( gt.Step.prototype, 'getButtons' ),
+			tourBuilder = new gt.TourBuilder( { name: 'buttonsTest' } ),
+			firstStepBuilder = tourBuilder.firstStep( $.extend( true, {}, { buttons: buttons }, VALID_BUILDER_STEP_SPEC ) ),
+			firstStep = firstStepBuilder.step,
+			returnedButtons;
+
+		tourBuilder.tour.showStep( firstStep );
+		returnedButtons = spy.lastCall.args[0].buttons;
+
+		assert.ok(
+			returnedButtons[0].html['class'].indexOf( 'mw-ui-destructive' ) &&
+			returnedButtons[0].html['class'].indexOf( 'mw-ui-button' ) !== -1,
+			'Custom button flagged as destructive'
+		);
+		assert.ok(
+			returnedButtons[1].html['class'].indexOf( 'mw-ui-constructive' ) !== -1,
+			'Internal link button flagged as constructive'
+		);
+		assert.ok(
+			returnedButtons[2].html['class'].indexOf( 'mw-ui-progressive' ) === -1,
+			'External link button is not progressive by default'
+		);
+		assert.ok(
+			returnedButtons[3].html['class'].indexOf( 'mw-ui-progressive' ) === -1,
+			'Back button is not progressive by default'
+		);
+		assert.ok(
+			returnedButtons[4].html['class'].indexOf( 'mw-ui-progressive' ) !== -1,
+			'Okay button is progressive by default'
+		);
+		assert.ok(
+			returnedButtons[5].html['class'].indexOf( 'mw-ui-progressive' ) !== -1,
+			'Next button is progressive by default'
+		);
+	} );
+
 	QUnit.test( 'Step.registerMwHookListener', 4, function ( assert ) {
 		var step = firstStepBuilder.step,
 			HOOK_NAME = 'Step.registerMwHookListener.happened',
