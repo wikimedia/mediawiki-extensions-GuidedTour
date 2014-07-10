@@ -165,8 +165,8 @@
 	 *  the wikiLink action
 	 * @param {string} stepSpec.buttons.url URL to link to, only for the
 	 *  externalLink action
-	 * @param {string} stepSpec.buttons.flagType string to add button type
-	 *  class.  Currently supports: primary, progressive, constructive, destructive.
+	 * @param {string} stepSpec.buttons.type string to add button type
+	 *  class.  Currently supports: progressive, constructive, destructive.
 	 * @param {string} [stepSpec.buttons.classString] Space-separated list of
 	 *  additional class names
 	 *

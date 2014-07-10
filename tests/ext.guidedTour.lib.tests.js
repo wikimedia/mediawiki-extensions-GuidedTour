@@ -1080,8 +1080,8 @@
 
 	QUnit.test( 'Step.getButtons', 6, function ( assert ) {
 		var buttons = [
-				{ flagType: 'destructive' },
-				{ action: 'wikiLink', flagType: 'constructive' },
+				{ type: 'destructive' },
+				{ action: 'wikiLink', type: 'constructive' },
 				{ action: 'externalLink' },
 				{ action: 'back' },
 				{ action: 'okay', onclick: function() {} },
@@ -1099,11 +1099,11 @@
 		assert.ok(
 			returnedButtons[0].html['class'].indexOf( 'mw-ui-destructive' ) &&
 			returnedButtons[0].html['class'].indexOf( 'mw-ui-button' ) !== -1,
-			'Custom button flagged as destructive'
+			'Destructive Custom button'
 		);
 		assert.ok(
 			returnedButtons[1].html['class'].indexOf( 'mw-ui-constructive' ) !== -1,
-			'Internal link button flagged as constructive'
+			'Constructive internal link'
 		);
 		assert.ok(
 			returnedButtons[2].html['class'].indexOf( 'mw-ui-progressive' ) === -1,

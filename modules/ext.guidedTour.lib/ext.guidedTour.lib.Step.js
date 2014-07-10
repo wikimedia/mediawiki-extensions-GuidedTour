@@ -232,7 +232,7 @@
 	 * Returns button type class.  Allows for flagging button type in
 	 * tour specification to override default button styles.
 	 * Currently all buttons aside from back and link have a defaultButtonClass
-	 * unless otherwise flagged with button.flagType.
+	 * unless otherwise flagged with button.type.
 	 *
 	 * @private
 	 *
@@ -242,17 +242,16 @@
 	 */
 	function getButtonTypeClass( button ) {
 		var buttonTypes = {
-			primary: 'mw-ui-primary',
 			progressive: 'mw-ui-progressive',
 			constructive: 'mw-ui-constructive',
 			destructive: 'mw-ui-destructive'
 		};
 		// Button have a flagged type?
 		// TODO: rmoen 7/7/14 in the future it might be nice to have
-		// flagType optionally an array so we can add additional classes here.
+		// type optionally an array so we can add additional classes here.
 		// example: mw-ui-quiet
-		if ( button.flagType ) {
-			return buttonTypes[button.flagType] || '';
+		if ( button.type ) {
+			return buttonTypes[button.type] || '';
 		} else if ( button.action === 'back' ||
 					button.action === 'wikiLink' ||
 					button.action === 'externalLink'
