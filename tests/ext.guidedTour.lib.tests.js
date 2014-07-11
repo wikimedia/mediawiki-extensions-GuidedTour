@@ -56,6 +56,8 @@
 			otherTourStepBuilder = otherTourBuilder.step( {
 				name: 'filename'
 			} );
+
+			this.stub( mw.libs.guiders, 'show' );
 		},
 		teardown: function () {
 			window.ve = originalVE;
@@ -1511,8 +1513,6 @@
 			expectedTransitionEvent,
 			'Calls checkTransition with expected event'
 		);
-
-		gt.endTour();
 	} );
 
 	QUnit.test( 'Tour.start', 2, function ( assert ) {
