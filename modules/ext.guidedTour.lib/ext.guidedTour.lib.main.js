@@ -236,7 +236,7 @@
 					return;
 				}
 
-				tour = internal.definedTours[currentStepInfo.tour];
+				tour = internal.definedTours[currentStepInfo.name];
 				currentStep = tour.getStep( currentStepInfo.step );
 				nextStep = currentStep.checkTransition( transitionEvent );
 				if ( nextStep !== currentStep && nextStep !== null ) {
