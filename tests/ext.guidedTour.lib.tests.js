@@ -1080,9 +1080,10 @@
 		);
 	} );
 
-	QUnit.test( 'Step.getButtons', 6, function ( assert ) {
+	QUnit.test( 'Step.getButtons', 7, function ( assert ) {
 		var buttons = [
 				{ type: 'destructive' },
+				{ type: ['progressive', 'quiet'] },
 				{ action: 'wikiLink', type: 'constructive' },
 				{ action: 'externalLink' },
 				{ action: 'back' },
@@ -1097,30 +1098,35 @@
 
 		tourBuilder.tour.showStep( firstStep );
 		returnedButtons = spy.lastCall.args[0].buttons;
-
 		assert.ok(
-			returnedButtons[0].html['class'].indexOf( 'mw-ui-destructive' ) &&
+			returnedButtons[0].html['class'].indexOf( 'mw-ui-destructive' ) !== -1 &&
 			returnedButtons[0].html['class'].indexOf( 'mw-ui-button' ) !== -1,
-			'Destructive Custom button'
+			'Destructive custom button'
 		);
 		assert.ok(
-			returnedButtons[1].html['class'].indexOf( 'mw-ui-constructive' ) !== -1,
+			returnedButtons[1].html['class'].indexOf( 'mw-ui-button' ) !== -1 &&
+			returnedButtons[1].html['class'].indexOf( 'mw-ui-progressive' ) !== -1 &&
+			returnedButtons[1].html['class'].indexOf( 'mw-ui-quiet' ) !== -1,
+			'A quietly progressive custom button'
+		);
+		assert.ok(
+			returnedButtons[2].html['class'].indexOf( 'mw-ui-constructive' ) !== -1,
 			'Constructive internal link'
 		);
 		assert.ok(
-			returnedButtons[2].html['class'].indexOf( 'mw-ui-progressive' ) === -1,
+			returnedButtons[3].html['class'].indexOf( 'mw-ui-progressive' ) === -1,
 			'External link button is not progressive by default'
 		);
 		assert.ok(
-			returnedButtons[3].html['class'].indexOf( 'mw-ui-progressive' ) === -1,
+			returnedButtons[4].html['class'].indexOf( 'mw-ui-progressive' ) === -1,
 			'Back button is not progressive by default'
 		);
 		assert.ok(
-			returnedButtons[4].html['class'].indexOf( 'mw-ui-progressive' ) !== -1,
+			returnedButtons[5].html['class'].indexOf( 'mw-ui-progressive' ) !== -1,
 			'Okay button is progressive by default'
 		);
 		assert.ok(
-			returnedButtons[5].html['class'].indexOf( 'mw-ui-progressive' ) !== -1,
+			returnedButtons[6].html['class'].indexOf( 'mw-ui-progressive' ) !== -1,
 			'Next button is progressive by default'
 		);
 	} );

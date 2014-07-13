@@ -242,22 +242,28 @@
 	 */
 	function getButtonTypeClass( button ) {
 		var buttonTypes = {
-			progressive: 'mw-ui-progressive',
-			constructive: 'mw-ui-constructive',
-			destructive: 'mw-ui-destructive'
-		};
-		// Button have a flagged type?
-		// TODO: rmoen 7/7/14 in the future it might be nice to have
-		// type optionally an array so we can add additional classes here.
-		// example: mw-ui-quiet
+				progressive: 'mw-ui-progressive',
+				constructive: 'mw-ui-constructive',
+				destructive: 'mw-ui-destructive',
+				quiet: 'mw-ui-quiet'
+			},
+			classString = '';
+
+		// Build button class string
 		if ( button.type ) {
+			if ( $.isArray( button.type ) ) {
+				$.each( button.type, function( i , key ) {
+					classString += buttonTypes[key] + ' ';
+				} );
+				return classString;
+			}
 			return buttonTypes[button.type] || '';
 		} else if ( button.action === 'back' ||
 					button.action === 'wikiLink' ||
 					button.action === 'externalLink'
 		) {
 			// No additional classes for the above buttons
-			return '';
+			return classString;
 		}
 		// Otherwise, make the button progressive
 		return buttonTypes.progressive;
