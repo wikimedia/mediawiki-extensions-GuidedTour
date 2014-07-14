@@ -3,7 +3,7 @@
 
 ( function ( window, document, $, mw, gt ) {
 	var hasEditSectionAtLoadTime, editSectionSelector = '.mw-editsection-visualeditor',
-		tabMessages, editTabText, editSectionText, editPageDescription, editPageButtons = [],
+		tabMessages, editTabText, editSectionText, editPageDescription,
 		editSectionDescription, tour, introStep, editSectionStep,
 		pointSavePageStep,
 			// Work around jQueryMsg issue (\u00A0 is a non-breaking space (i.e. &nbsp;))
@@ -59,24 +59,6 @@
 		'guidedtour-tour-firsteditve-edit-section-description', editSectionText
 	).parse();
 
-	// Setup edit page buttons
-	if ( hasEditSectionAtLoadTime ) {
-		editPageButtons.push( {
-			action: 'next'
-		} );
-	} else {
-		editPageButtons.push( {
-			namemsg: 'guidedtour-okay-button',
-			onclick: function () {
-				if ( hasEditSection() ) {
-					mw.libs.guiders.next();
-				} else {
-					mw.libs.guiders.hideAll();
-				}
-			}
-		} );
-	}
-
 	tour = new gt.TourBuilder( {
 		name: 'firsteditve',
 		shouldLog: true,
@@ -89,7 +71,16 @@
 		description: editPageDescription,
 		position: 'bottom',
 		attachTo: '#ca-ve-edit',
-		buttons: editPageButtons,
+		buttons: [ {
+			action: hasEditSectionAtLoadTime ? 'next' : 'okay',
+			onclick: function () {
+				if ( hasEditSection() ) {
+					mw.libs.guiders.next();
+				} else {
+					mw.libs.guiders.hideAll();
+				}
+			}
+		} ],
 		allowAutomaticNext: false,
 		allowAutomaticOkay: false
 	// Tour-level listeners would avoid repeating this for two steps
