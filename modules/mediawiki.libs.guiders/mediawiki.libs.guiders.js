@@ -636,7 +636,7 @@ mediaWiki.libs.guiders = (function($) {
 	};
 
 	/**
-	 * Add appropriate animation class rtelative to guider position
+	 * Add appropriate animation class relative to guider position
 	 * @param {Object} myGuider guider to add animation class to
 	 * @param {number} position guider attachment position
 	 */
