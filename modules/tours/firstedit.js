@@ -75,6 +75,8 @@
 	.transition( function () {
 		if ( gt.isReviewing() ) {
 			return 'save';
+		} else if ( !gt.isEditing() ) {
+			return gt.TransitionAction.END;
 		}
 	} );
 
