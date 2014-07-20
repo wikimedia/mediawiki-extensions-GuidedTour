@@ -14,11 +14,11 @@
 	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Smelltu}} á „{{int:vector-view-edit}}” takkann til að gera breytingarnar þínar.",
 	"guidedtour-tour-firstedit-edit-section-title": "Eða {{GENDER:|breyttu}} eingöngu kafla",
 	"guidedtour-tour-firstedit-edit-section-description": "Það eru „{{int:editsection}}” tenglar fyrir hvern kafla á síðu, svo þú getir einblínt á þann hluta.",
-	"guidedtour-tour-firstedit-preview-title": "Forskoða breytingarnar þínar (valfrjálst)",
+	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|Forskoða}} breytingarnar þínar (valfrjálst)",
 	"guidedtour-tour-firstedit-preview-description": "Með því að smella á „{{int:showpreview}}” getur þú séð hvernig síðan mun líta út með breytingunum þínum. Bara ekki gleyma að vista!",
 	"guidedtour-tour-firstedit-save-title": "Þú ert næstum búin/n!",
 	"guidedtour-tour-firstedit-save-description": "Þegar þú ert tilbúin/n, mun smellur á „{{int:savearticle}}” gera breytingarnar þínar sýnilegar öllum.",
-	"guidedtour-tour-firsteditve-edit-page-description": "Smelltu á „{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}” takkann til að gera breytingarnar þínar.",
-	"guidedtour-tour-firsteditve-edit-section-description": "Það eru „{{int:editsection}} {{int:visualeditor-beta-appendix}}” tenglar fyrir hvern kafla á síðu, svo þú getir einbínt á þann hluta.",
+	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|Smelltu}} á „$1” takkann til að gera breytingarnar þínar.",
+	"guidedtour-tour-firsteditve-edit-section-description": "Það eru „$1” tenglar fyrir hvern kafla á síðu, svo þú getir einblínt á þann hluta.",
 	"guidedtour-tour-firsteditve-save-description": "Þegar þú ert tilbúin/n, mun smellur á „{{int:visualeditor-toolbar-savedialog}}” gera breytingarnar þínar sýnilegar öllum."
 }
