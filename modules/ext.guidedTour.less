@@ -9,15 +9,22 @@
 // Rules
 
 .guider {
+	background: #FFF;
+	position: absolute;
 	border: 1px solid #ccc;
-	font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
-	font-size: 14px;
+	width: 500px;
 	padding: 12px;
+	outline: none;
+	font-size: 14px;
+	font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
 	.box-shadow(0 0 4px rgba(0, 0, 0, 0.2));
 	.border-radius(3px);
+	z-index: 100000005 !important;
 }
 
 .guider_buttons {
+	position: relative;
+	width: 100%;
 	margin-top: 8px;
 
 	.mw-ui-button {
@@ -34,7 +41,11 @@
 }
 
 .guider_content {
+	position: relative;
+
 	h1 {
+		float: left;
+		width: 95%;
 		color: #000;
 		font-size: 1.5em;
 		font-weight: bold;
@@ -44,6 +55,7 @@
 	}
 
 	p {
+		clear: both;
 		font-size: 1em;
 		line-height: 1.3em;
 		color: #252525;
@@ -52,11 +64,67 @@
 }
 
 .guider_close {
+	float: right;
 	padding: 0;
 
 	.x_button {
+		cursor: pointer;
+		display: block;
+		height: 13px;
+		width: 13px;
+		background-repeat: no-repeat;
 		.background-image-svg('images/ext.guidedTour.x.svg', 'images/ext.guidedTour.x.png');
 	}
+}
+
+.guider_button_icon {
+	display: block;
+	height: 1.4em;
+	width: 3em;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 1.4em;
+}
+
+// Arrow icon buttons
+// TODO: rmoen 2014-07-22
+// Revise when cssjanus supports flipping in less Bug: 66091
+body.ltr {
+	.guidedtour-next-button .guider_button_icon {
+		.background-image-svg('images/arrow-icon-right.svg', 'images/arrow-icon-right.png');
+	}
+	.guidedtour-back-button .guider_button_icon {
+		.background-image-svg('images/arrow-icon-left-dark.svg', 'images/arrow-icon-left-dark.png');
+	}
+}
+
+body.rtl {
+	.guidedtour-next-button .guider_button_icon {
+		.background-image-svg('images/arrow-icon-left.svg', 'images/arrow-icon-left.png');
+	}
+	.guidedtour-back-button .guider_button_icon {
+		.background-image-svg('images/arrow-icon-right-dark.svg', 'images/arrow-icon-right-dark.png');
+	}
+}
+
+// Okay or End button
+.guidedtour-okay-button .guider_button_icon,
+.guidedtour-end-button .guider_button_icon {
+	.background-image-svg('images/okay-icon.svg', 'images/okay-icon.png');
+}
+
+#guider_overlay {
+	background-color: #000;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	/* TODO (phuedx 2014-02-19): Create the .opacity mixin. */
+	opacity: 0.5;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: alpha(opacity=50);
+	z-index: 100000004;
 }
 
 .guider_arrow_inner_container {
@@ -79,6 +147,8 @@
 }
 
 .guider_arrow {
+	position: absolute;
+	display: none;
 	background: none;
 	overflow: hidden;
 
@@ -101,18 +171,22 @@
 }
 
 .guider_arrow_up {
+	display: block;
 	top: -@half_guider_arrow_height;
 }
 
 .guider_arrow_right {
+	display: block;
 	right: -@half_guider_arrow_height;
 }
 
 .guider_arrow_down {
+	display: block;
 	bottom: -@half_guider_arrow_height;
 }
 
 .guider_arrow_left {
+	display: block;
 	left: -@half_guider_arrow_height;
 }
 

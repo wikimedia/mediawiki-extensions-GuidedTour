@@ -61,7 +61,6 @@ $guidersPath = 'modules/mediawiki.libs.guiders';
 
 // Modules
 $wgResourceModules['mediawiki.libs.guiders'] = array(
-	'styles' => 'mediawiki.libs.guiders.less',
 	'scripts' => array(
 		'mediawiki.libs.guiders.js',
 	),
