@@ -274,7 +274,7 @@
 				guiders.hideAll();
 			}
 
-			guiders.resume( step.specification.id );
+			guiders.show( step.specification.id );
 		}
 	};
 

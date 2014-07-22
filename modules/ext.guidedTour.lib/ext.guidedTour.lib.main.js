@@ -777,11 +777,6 @@
 			if ( step === undefined ) {
 				step = gt.getStepFromQuery() || 0;
 			}
-			// Bind failure step (in case there are problems).
-			guiders.failStep = gt.makeTourId( {
-				name: tourName,
-				step: 'fail'
-			} );
 
 			userState = getUserState();
 			if ( ( step === 0 ) && userState.tours[tourName] !== undefined ) {

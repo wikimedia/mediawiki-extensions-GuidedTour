@@ -1,6 +1,5 @@
 /*jshint camelcase: false, scripturl: true*/
 // TODO (mattflaschen, 2013-07-30): Remove these after the following are resolved:
-// * Camel case - Remove the deprecated public camel case identifiers.
 // * Script URL, we need to determine the replacement, either a wrapper of the onclick that
 // calls preventDefault, or another element with no default.
 /*!
@@ -21,11 +20,8 @@
  *
  * Changes:
  *
- * - failStep: guiders property allows you to name a step to show() if the show() case fails (attachTo element is missing). For obvious reasons, this should not have an attachTo
- *
  * - initGuider(): Allows for initializing Guiders without actually creating them (useful when guider is not in the DOM yet. Avoids error: base is null [Break On This Error] var top = base.top;
  *
- * - autoAdvance (deprecated): property allows binding to an element (and event) to auto-advance the guider. This is a combination of onShow() binding plus removing of bind when next is done.
  * - overlay "error": If not set to true, this defines the class of the overlay. (This is useful for coloring the background of the overlay red on error.
  * - onShow: If this returns a guider object, then it can shunt (skip) the rest of show()
  *
@@ -49,44 +45,22 @@
  * @singleton
  */
 mediaWiki.libs.guiders = (function($) {
-	var guiders, _resizing;
-
-	guiders = {};
-
-	guiders.version = '1.2.8';
+	var guiders = {},
+		_resizing;
 
 	guiders._defaultSettings = {
 		attachTo: null, // Selector of the element to attach to.
-		autoAdvance: null, //replace with array of selector, event to bind to cause auto-advance
 		autoFocus: false, // Determines whether or not the browser scrolls to the element.
-		bindAdvanceHandler: function(thisObj) { //see guiders.handlers below for other common options
-			if (!thisObj.autoAdvance) { return; }
-			thisObj._advanceHandler = function() {
-				$(thisObj.autoAdvance[0]).unbind(thisObj.autoAdvance[1], thisObj._advanceHandler); //unbind event before next
-				switch (thisObj.autoAdvance[1]) {
-					case 'hover': //delay hover so the guider has time to get into position (in the case of flyout menus, etc)
-						guiders.hideAll(); //hide immediately
-						setTimeout(function() { guiders.next(); }, 1000); //1 second delay
-						break;
-					case 'blur':
-						/* falls through */
-					default:
-						guiders.next();
-				}
-			};
-		},
 		buttons: [{name: 'Close'}],
 		buttonCustomHTML: '',
 		classString: null,
 		closeOnEscape: false,
 		closeOnClickOutside: false,
 		description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-		highlight: null,
 		// If guider would go off screen to the left or right, flip horizontally.
 		// If guider would go off the top of the screen, flip vertically. If it would go off the bottom of the screen do nothing, since most pages scroll in the vertical direction.
 		// It will be flipped both ways if it would be off-screen on two sides.
 		flipToKeepOnScreen: false,
-		isHashable: true,
 		offset: {
 			top: null,
 			left: null
@@ -107,62 +81,6 @@ mediaWiki.libs.guiders = (function($) {
 		xButton: false, // this places a closer "x" button in the top right of the guider
 		_advanceHandler: null //action to do on advance. Set by bindAdvanceHandler closure done on show()
 	};
-
-	// Begin additional functionality
-	guiders.failStep = '';
-	/**
-	 * Various common utility handlers you can bind as advance handlers to your
-	 * guider configurations
-	 */
-	guiders.handlers = {
-		/**
-		 * Auto-advance if the element is missing
-		 *
-		 * @deprecated Use mw.guidedTour.StepBuilder#transition
-		 */
-		advance_if_not_exists: function() {
-			return guiders._defaultSettings._bindAdvanceHandler;
-		},
-		/**
-		 * Advance if testFunction() returns true
-		 *
-		 * @deprecated Use mw.guidedTour.StepBuilder#transition
-		 */
-		advance_if_test: function(testFunction) {
-			return function(thisObj) {
-				var bindObj = $(thisObj.autoAdvance[0]);
-				thisObj._advanceHandler = function() {
-					if (!testFunction()) { return; } //don't advance if testFunction is false
-					bindObj.unbind(thisObj.autoAdvance[1], thisObj._advanceHandler); //unbind event before next
-					guiders.next();
-				};
-			};
-		},
-		/**
-		 * Advance if the form element has content
-		 *
-		 * @deprecated Use mw.guidedTour.StepBuilder#transition
-		 */
-		advance_if_form_content: function(thisObj) {
-			var bindObj = $(thisObj.autoAdvance[0]);
-			thisObj._advanceHandler = function() {
-				if ($(thisObj.autoAdvance[0]).val() === '') { return; } //don't advance if you haven't added content
-				bindObj.unbind(thisObj.autoAdvance[1], thisObj._advanceHandler); //unbind event before next
-				guiders.next();
-			};
-		},
-		/**
-		 * Skip if form element has content
-		 *
-		 * this context will be inside the actual guider step, not here
-		 *
-		 * @deprecated Use mw.guidedTour.StepBuilder#transition
-		 */
-		skip_if_form_content: function() { //skip if form element has content
-			return ($(this.autoAdvance[0]).val() !== '');
-		}
-	};
-	// end additional functionality
 
 	guiders._htmlSkeleton = [
 		'<div class="guider">',
@@ -524,10 +442,6 @@ mediaWiki.libs.guiders = (function($) {
 				throw 'Cannot find guider with id ' + id;
 			}
 			var myGuider = guiders._guiderInits[id];
-			// this can happen when resume() hits a snag somewhere
-			if (myGuider.attachTo && guiders.failStep && guiders._getAttachTarget(myGuider) !== null) {
-				throw 'Guider attachment not found with selector ' + myGuider.attachTo;
-			}
 			guiders.createGuider(myGuider);
 			delete guiders._guiderInits[id]; //prevents recursion
 			// fall through ...
@@ -548,14 +462,6 @@ mediaWiki.libs.guiders = (function($) {
 		// This callback is needed to fix an IE opacity bug.
 		// See also:
 		// http://www.kevinleary.net/jquery-fadein-fadeout-problems-in-internet-explorer/
-	};
-
-	guiders._highlightElement = function(selector) {
-		$(selector).addClass('guider_highlight');
-	};
-
-	guiders._dehighlightElement = function(selector) {
-		$(selector).removeClass('guider_highlight');
 	};
 
 	guiders._hideOverlay = function() {
@@ -623,8 +529,6 @@ mediaWiki.libs.guiders = (function($) {
 		};
 		arrowPosition = positionMap[position];
 		myGuiderArrow.css(arrowPosition[0], arrowPosition[1] + 'px');
-		// TODO: experiment with pulsing
-		//myGuiderArrow.css(position[0], position[1] + "px").stop().pulse({backgroundPosition:["7px 0","0 0"],right:["-35px","-42px"]}, {times: 10, duration: 'slow'});
 	};
 
 	/**
@@ -659,33 +563,6 @@ mediaWiki.libs.guiders = (function($) {
 		// Assign animation class for myGuider
 		if (position !== 0) {
 			myGuider.elem.addClass(classMap[position]);
-		}
-	};
-
-	/**
-	 * One way to show a guider to new users is to direct new users to a URL such as
-	 * http://www.mysite.com/myapp#guider=welcome
-	 *
-	 * This can also be used to run guiders on multiple pages, by redirecting from
-	 * one page to another, with the guider id in the hash tag.
-	 *
-	 * Alternatively, if you use a session variable or flash messages after sign up,
-	 * you can add selectively add JavaScript to the page: "guiders.show('first');"
-	 *
-	 * @deprecated Use the tour parameter (and optionally step as well),
-	 *   mw.guidedTour.setTourCookie, or another launching mechanism.
-	 */
-	guiders._showIfHashed = function(myGuider) {
-		var GUIDER_HASH_TAG, hashIndex, hashGuiderId;
-
-		GUIDER_HASH_TAG = 'guider=';
-		hashIndex = window.location.hash.indexOf(GUIDER_HASH_TAG);
-		if (hashIndex !== -1) {
-			hashGuiderId = window.location.hash.substr(hashIndex + GUIDER_HASH_TAG.length);
-			if (myGuider.id.toLowerCase() === hashGuiderId.toLowerCase()) {
-				// Success!
-				guiders.show(myGuider.id);
-			}
 		}
 	};
 
@@ -730,9 +607,6 @@ mediaWiki.libs.guiders = (function($) {
 			myGuider = guiders._guiderById(moveToGuiderId);
 			omitHidingOverlay = myGuider.overlay ? true : false;
 			guiders.hideAll(omitHidingOverlay, true);
-			if (currentGuider && currentGuider.highlight) {
-				guiders._dehighlightElement(currentGuider.highlight);
-			}
 			guiders.show(moveToGuiderId);
 		}
 	};
@@ -801,13 +675,6 @@ mediaWiki.libs.guiders = (function($) {
 		guiders._guiders[myGuider.id] = myGuider;
 		guiders._lastCreatedGuiderID = myGuider.id;
 
-		// If the URL of the current window is of the form
-		// http://www.myurl.com/mypage.html#guider=id
-		// then show this guider.
-		if (myGuider.isHashable) {
-			guiders._showIfHashed(myGuider);
-		}
-
 		return guiders;
 	};
 
@@ -831,48 +698,10 @@ mediaWiki.libs.guiders = (function($) {
 		});
 		guiders._unWireClickOutside();
 		$('.guider').fadeOut('fast');
-		var currentGuider = guiders._guiders[guiders._currentGuiderID];
-		if (currentGuider && currentGuider.highlight) {
-			guiders._dehighlightElement(currentGuider.highlight);
-		}
 		if (omitHidingOverlay !== true) {
 			guiders._hideOverlay();
 		}
 		return guiders;
-	};
-
-	// TODO (mattflaschen, 2014-03-18): Decide what to do about failStep, then
-	// deprecate this.
-	/**
-	 * Like show(), but you must specify an id.
-	 *
-	 * Formerly skipped according to shouldSkip, but that functionality has been moved
-	 * out of the guiders module.
-	 *
-	 * @param {string} id id of guider to resume from
-	 * @return {boolean} true if the displayed guider was changed,
-	 *   false otherwise
-	 */
-	guiders.resume = function(id) {
-		var myGuider;
-
-		//if no id, don't resume (user code can call show)
-		if ( !id ) {
-			return false;
-		}
-		try {
-			myGuider = guiders._guiderById(id);
-		} catch (err) {
-			if ( guiders.failStep ) {
-				guiders.show(guiders.failStep);
-				return true;
-			} else {
-				return false;
-			}
-		}
-
-		guiders.show(id);
-		return true;
 	};
 
 	/**
@@ -895,7 +724,6 @@ mediaWiki.libs.guiders = (function($) {
 		try {
 			myGuider = guiders._guiderById(id);
 		} catch (err) {
-			//console.log(err);
 			return;
 		}
 
@@ -908,18 +736,9 @@ mediaWiki.libs.guiders = (function($) {
 				return showReturn;
 			}
 		}
-		// handle binding of auto-advance action
-		if (myGuider.autoAdvance) {
-			myGuider.bindAdvanceHandler(myGuider);
-			$(myGuider.autoAdvance[0]).bind(myGuider.autoAdvance[1], myGuider._advanceHandler);
-		}
-		// handle overlay and highlight
+		// handle overlay
 		if (myGuider.overlay) {
 			guiders._showOverlay(myGuider.overlay);
-			// if guider is attached to an element, make sure it's visible
-			if (myGuider.highlight) {
-				guiders._highlightElement(myGuider.highlight);
-			}
 		}
 		// bind esc = close action
 		if (myGuider.closeOnEscape) {

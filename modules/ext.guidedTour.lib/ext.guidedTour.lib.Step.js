@@ -393,11 +393,11 @@
 		var i, buttons, okayButton, nextButton, backButton, guiderButtons, currentButton, url;
 
 		function next() {
-			guiders.next();
+			guiders.doStep( 'next' );
 		}
 
 		function back() {
-			guiders.back();
+			guiders.doStep( 'back' );
 		}
 
 		function endTour() {
