@@ -237,11 +237,21 @@
 	 * @private
 	 *
 	 * @param {Object} button button specification defined in tour
+	 * @param {Array|string} [button.type] A type
+	 *  for the button, which will be converted to the class.  Either one of the
+	 *  following or an array of them:
+	 *
+	 *  * neutral
+	 *  * progressive
+	 *  * constructive
+	 *  * destructive
+	 *  * quiet
 	 *
 	 * @return {string} returns mw style button class
 	 */
 	function getButtonTypeClass( button ) {
 		var buttonTypes = {
+				neutral: '',
 				progressive: 'mw-ui-progressive',
 				constructive: 'mw-ui-constructive',
 				destructive: 'mw-ui-destructive',
