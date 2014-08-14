@@ -1,12 +1,20 @@
-/* animation mixins from core */
-@import "mediawiki.mixins.animation";
-
 .mwe-gt-translate (@x, @y) {
 	-webkit-transform: translate(@x, @y);
 	-moz-transform: translate(@x, @y);
 	-ms-transform: translate(@x, @y);
 	-o-transform: translate(@x, @y);
 	transform: translate(@x, @y);
+}
+
+.animation (...) {
+	/* @noflip */
+	-webkit-animation: @arguments;
+	/* @noflip */
+	-moz-animation: @arguments;
+	/* @noflip */
+	-o-animation: @arguments;
+	/* @noflip */
+	animation: @arguments;
 }
 
 /* fade-in */
