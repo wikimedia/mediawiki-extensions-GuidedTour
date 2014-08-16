@@ -81,7 +81,8 @@
 		} else if ( !gt.isEditing() ) {
 			return gt.TransitionAction.END;
 		}
-	} );
+	} )
+	.next( 'save' );
 
 	tour.step( {
 		name: 'save',
@@ -96,6 +97,7 @@
 		if ( !gt.isReviewing() ) {
 			return gt.TransitionAction.END;
 		}
-	} );
+	} )
+	.back( 'preview' );
 
 } ( window, document, jQuery, mediaWiki, mediaWiki.guidedTour ) );
