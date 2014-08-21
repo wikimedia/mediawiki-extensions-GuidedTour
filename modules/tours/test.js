@@ -14,8 +14,6 @@
 		 *
 		 * If this is an on-wiki tour, it should match the MediaWiki page.  For instance,
 		 * if this were on-wiki, it would be MediaWiki:Guidedtour-tour-test.js
-		 *
-		 * The IDs below should use the same name in the middle (e.g. gt-test-2).
 		 */
 		name: 'test'
 	} );
