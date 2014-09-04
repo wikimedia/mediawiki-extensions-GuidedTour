@@ -21,7 +21,7 @@
 	"guidedtour-tour-test-launch-tour": "পরীক্ষামূলক ভ্রমণ আরম্ভ করুন",
 	"guidedtour-tour-test-launch-tour-description": "গাইডগণ আরও নতুন নতুন ভ্রমনের আয়োজন করতে পারেন।",
 	"guidedtour-tour-test-launch-using-tours": "ট্যুর অপশন ব্যবহার করে নতুন ট্যুর আয়োজন করুন",
-	"guidedtour-tour-firstedit-edit-page-title": "সম্পাদনার জন্য {{GENDER:|প্রস্তুত}}?",
+	"guidedtour-tour-firstedit-edit-page-title": "সম্পূর্ণ পাতাটি {{GENDER:|সম্পাদনা করুন}}...",
 	"guidedtour-tour-firstedit-edit-page-description": "\"{{int:vector-view-edit}}\" বাটনে {{GENDER:|ক্লিক}} করে আপানার পরিবর্তনগুলো সম্পন্ন করুন।",
 	"guidedtour-tour-firstedit-edit-section-title": "অথবা একটি অনুচ্ছেদ {{GENDER:|সম্পাদনা করুন}}",
 	"guidedtour-tour-firstedit-edit-section-description": "গুরুত্বপূর্ণ প্রতিটি অনুচ্ছেদের জন্য \"{{int:editsection}}\" লিংক রয়েছে, তাই আপনি নির্দিষ্ট অংশটি সরাসরি সম্পাদনা করতে পারবেন।",
