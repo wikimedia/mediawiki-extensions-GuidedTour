@@ -17,11 +17,11 @@
 	"guidedtour-tour-test-launch-tour": "Amprouiñ an droiad lañsañ",
 	"guidedtour-tour-test-launch-tour-description": "Gallout a ra an heñcherien krouiñ troiadoù heñchet all. N'eo ket fall, geo ?",
 	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|Aozañ}} ar bajenn a-bezh…",
-	"guidedtour-tour-firstedit-edit-page-description": "Klikit war ar bouton \"{{int:vector-view-edit}}\" evit ober ho kemmoù.",
+	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Klikit}} war ar bouton \"{{int:vector-view-edit}}\" evit ober ho kemmoù.",
 	"guidedtour-tour-firstedit-edit-section-title": "Pe {{GENDER:|aozañ}} ur rann",
-	"guidedtour-tour-firstedit-preview-title": "Rakwelet ho kemmoù (diret)",
+	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|Rakwelet}} ho kemmoù (diret)",
 	"guidedtour-tour-firstedit-save-title": "Tost echu eo ganeoc'h !",
 	"guidedtour-tour-firstedit-save-description": "Pa viot prest, klkit war \"{{int:savearticle}}\" hag e c'hallo an holl gwelet ho kemmoù.",
-	"guidedtour-tour-firsteditve-edit-page-description": "Klikit war ar bouton \"{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}\" evit ober ho kemmoù.",
+	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|Klikit}} war ar bouton \"$1\" evit ober ho kemmoù.",
 	"guidedtour-tour-firsteditve-save-description": "Pa viot prest, klkit war \"{{int:visualeditor-toolbar-savedialog}}\" hag e c'hallo an holl gwelet ho kemmoù."
 }
