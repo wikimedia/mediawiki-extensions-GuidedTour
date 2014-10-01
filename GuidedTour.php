@@ -34,7 +34,7 @@ $wgAutoloadClasses += array(
 );
 
 $wgHooks['BeforePageDisplay'][] = 'GuidedTourHooks::onBeforePageDisplay';
-$wgHooks['MakeGlobalVariablesScript'][] = 'GuidedTourHooks::onMakeGlobalVariablesScript';
+$wgHooks['ResourceLoaderGetConfigVars'][] = 'GuidedTourHooks::onResourceLoaderGetConfigVars';
 $wgHooks['ResourceLoaderTestModules'][] = 'GuidedTourHooks::onResourceLoaderTestModules';
 $wgHooks['UnitTestsList'][] = 'GuidedTourHooks::onUnitTestsList';
 $wgHooks['RedirectSpecialArticleRedirectParams'][] = 'GuidedTourHooks::onRedirectSpecialArticleRedirectParams';

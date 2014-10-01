@@ -50,14 +50,15 @@ class GuidedTourHooks {
 	   https://bugzilla.wikimedia.org/show_bug.cgi?id=25349
 	*/
 	/**
-	 * MakeGlobalVariablesScript hook.
-	 * Add config vars to mw.config.
+	 * Add static config vars to startup module that will be exposed via mw.config.
 	 *
-	 * @param $vars array
-	 * @param $out OutputPage output page
+	 * No value added here can depend on the page name, user, or other request-specific
+	 * data.
+	 *
+	 * @param array $vars Associative array of config variables
 	 * @return bool
 	 */
-	public static function onMakeGlobalVariablesScript( &$vars, $out ) {
+	public static function onResourceLoaderGetConfigVars( &$vars ) {
 		$vars['wgGuidedTourHelpGuiderUrl'] =
 			wfMessage( 'guidedtour-help-guider-url' )->inContentLanguage()->plain();
 
