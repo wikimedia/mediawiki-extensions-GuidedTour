@@ -1004,7 +1004,8 @@
 		 */
 		function convertStepSpec( index, stepSpec ) {
 			return $.extend( true, {
-				name: ( index + 1 ).toString()
+				name: ( index + 1 ).toString(),
+				allowAutomaticNext: false
 			}, stepSpec );
 		}
 
