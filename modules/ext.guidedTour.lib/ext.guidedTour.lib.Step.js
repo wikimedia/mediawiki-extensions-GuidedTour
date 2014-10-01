@@ -690,7 +690,7 @@
 	 */
 	Step.prototype.handleLinkClick = function ( jQueryEvent ) {
 		var activationEvent, buttonEvent, isExternal, labelKey, loggingOverDfd,
-			logPromises = [], $link = $( jQueryEvent.target ),
+			logPromises = [], $link = $( jQueryEvent.currentTarget ),
 			url = $link.attr( 'href' ), label = $link.text(),
 			LOGGING_TIMEOUT_MS = 500;
 
