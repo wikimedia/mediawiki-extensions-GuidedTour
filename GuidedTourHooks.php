@@ -174,8 +174,6 @@ class GuidedTourHooks {
 		if ( $queryTourName !== null ) {
 			self::addTour( $out, $queryTourName );
 		} else {
-			// TODO (mattflaschen, 2013-06-02): Should we add both the query
-			// tour and the cookie ones, rather than letting the query take precedence?
 			$cookieValue = $request->getCookie( self::COOKIE_NAME );
 			$tours = self::getTourNames( $cookieValue );
 			foreach ( $tours as $tourName ) {

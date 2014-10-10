@@ -25,8 +25,6 @@ EOT;
 $dir = __DIR__ . DIRECTORY_SEPARATOR;
 $wgAutoloadClasses += array(
 	'GuidedTourHooks' => $dir . 'GuidedTourHooks.php',
-	'ResourceLoaderGuidedTourSiteStylesModule' =>
-	$dir . 'includes/ResourceLoaderGuidedTourSiteStylesModule.php',
 );
 
 $wgHooks['BeforePageDisplay'][] = 'GuidedTourHooks::onBeforePageDisplay';
@@ -94,11 +92,6 @@ $wgResourceModules['ext.guidedTour.styles'] = array(
 	),
 );
 
-// Depends on ext.guidedTour.styles
-$wgResourceModules['ext.guidedTour.siteStyles'] = array(
-	'class' => 'ResourceLoaderGuidedTourSiteStylesModule',
-);
-
 $wgResourceModules['ext.guidedTour.lib.internal'] = array(
 	'scripts' => 'ext.guidedTour.lib.internal.js',
 	'localBasePath' => $dir . 'modules',
@@ -119,10 +112,10 @@ $wgResourceModules['ext.guidedTour.lib'] = array(
 	'localBasePath' => $dir . 'modules/ext.guidedTour.lib',
 	'remoteExtPath' => 'GuidedTour/modules/ext.guidedTour.lib',
 	'dependencies' => array(
-		'jquery.cookie',
 		'jquery.client',
 		'json',
 		'mediawiki.Title',
+		'mediawiki.cookie',
 		'mediawiki.jqueryMsg',
 		'mediawiki.libs.guiders',
 		'mediawiki.user',
@@ -134,7 +127,7 @@ $wgResourceModules['ext.guidedTour.lib'] = array(
 		'schema.GuidedTourExternalLinkActivation',
 		'schema.GuidedTourExited',
 		'ext.guidedTour.lib.internal',
-		'ext.guidedTour.siteStyles',
+		'ext.guidedTour.styles',
 	),
 	'messages' => array(
 		'guidedtour-next-button',
@@ -153,7 +146,7 @@ $wgResourceModules['ext.guidedTour.launcher'] = array(
 // This calls code in guidedTour.lib to attempt to launch a tour, based on the environment
 // (currently query string and a cookie)
 $wgResourceModules['ext.guidedTour'] = array(
-	'scripts' => 'ext.guidedTour.js',
+	'scripts' => 'ext.guidedTour.autolauncher.js',
 	'localBasePath' => $dir . 'modules',
 	'remoteExtPath' => 'GuidedTour/modules',
 	'dependencies' => 'ext.guidedTour.lib',
@@ -235,9 +228,6 @@ $wgResourceModules['ext.guidedTour.tour.uprightdownleft'] = array(
 
 // Messages
 $wgMessagesDirs['GuidedTour'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles += array(
-	'GuidedTour' => $dir . 'GuidedTour.i18n.php',
-);
 
 // Extension function
 $wgExtensionFunctions[] = 'GuidedTourHooks::onSetup';

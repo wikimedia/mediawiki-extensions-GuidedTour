@@ -211,10 +211,10 @@
 			secondTourName = 'bar',
 			numberStep = 5,
 			stringStep = '3',
-			oldCookieValue = $.cookie( cookieName );
+			oldCookieValue = mw.cookie.get( cookieName );
 
 		function assertValidCookie( expectedName, expectedStep, message ) {
-			var cookieValue = $.cookie( cookieName ),
+			var cookieValue = mw.cookie.get( cookieName ),
 				userState = gt.internal.parseUserState( cookieValue );
 
 			assert.strictEqual(
@@ -225,7 +225,7 @@
 		}
 
 		function clearCookie() {
-			$.cookie( cookieName, null, cookieParams );
+			mw.cookie.set( cookieName, null, cookieParams );
 		}
 
 		gt.setTourCookie( firstTourName );
@@ -243,75 +243,7 @@
 		assertValidCookie( firstTourName, stringStep, 'First tour is still remembered after second is stored' );
 		assertValidCookie( secondTourName, String( numberStep ), 'Second tour is also remembered' );
 
-		$.cookie( cookieName, oldCookieValue, cookieParams );
-	} );
-
-	QUnit.test( 'convertToNewCookieFormat', 6, function ( assert ) {
-		var newCookie = JSON.stringify( {
-			version: 1,
-			tours: {
-				sometour: {
-					step: 2
-				}
-			}
-		} ), newCookieMultipleTours = JSON.stringify( {
-			version: 1,
-			tours: {
-				firsttour: {
-					step: 4
-				},
-				secondtour: {
-					step: 2
-				},
-				thirdtour: {
-					step: 3,
-					firstArticleId: 38333
-				}
-			}
-		} );
-
-		assert.strictEqual(
-			gt.convertToNewCookieFormat( null ),
-			null,
-			'Returns null for null parameter'
-		);
-
-		assert.strictEqual(
-			gt.convertToNewCookieFormat( 'gt-test-3' ),
-			JSON.stringify( {
-				version: 1,
-				tours: {
-					test: {
-						step: '3'
-					}
-				}
-			} ),
-			'Valid tour ID is upgraded correctly'
-		);
-
-		assert.strictEqual(
-			gt.convertToNewCookieFormat( newCookie ),
-			newCookie,
-			'Valid JSON cookie with single tour is preserved intact'
-		);
-
-		assert.strictEqual(
-			gt.convertToNewCookieFormat( newCookieMultipleTours ),
-			newCookieMultipleTours,
-			'Valid JSON cookie with multiple tours is preserved intact'
-		);
-
-		assert.strictEqual(
-			gt.convertToNewCookieFormat( '{"bad": "cookie"}' ),
-			null,
-			'Valid JSON with missing version field returns null'
-		);
-
-		assert.strictEqual(
-			gt.convertToNewCookieFormat( '<invalid: JSON>' ),
-			null,
-			'Invalid JSON returns null'
-		);
+		mw.cookie.set( cookieName, oldCookieValue, cookieParams );
 	} );
 
 	QUnit.test( 'shouldShow', 19, function ( assert ) {

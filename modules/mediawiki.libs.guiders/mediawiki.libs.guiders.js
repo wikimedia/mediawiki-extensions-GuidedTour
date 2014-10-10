@@ -51,7 +51,7 @@ mediaWiki.libs.guiders = (function($) {
 	guiders._defaultSettings = {
 		attachTo: null, // Selector of the element to attach to.
 		autoFocus: false, // Determines whether or not the browser scrolls to the element.
-		buttons: [{name: 'Close'}],
+		buttons: [],
 		buttonCustomHTML: '',
 		classString: null,
 		closeOnEscape: false,
@@ -78,8 +78,7 @@ mediaWiki.libs.guiders = (function($) {
 		position: 0,
 		title: 'Sample title goes here',
 		width: 400,
-		xButton: false, // this places a closer "x" button in the top right of the guider
-		_advanceHandler: null //action to do on advance. Set by bindAdvanceHandler closure done on show()
+		xButton: false // this places a closer "x" button in the top right of the guider
 	};
 
 	guiders._htmlSkeleton = [

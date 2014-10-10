@@ -4,10 +4,12 @@
  *
  * Set as mw.guidedTour and often aliased to gt locally
  *
- * @author Matt Flaschen <mflaschen@wikimedia.org>
  * @author Terry Chay <tchay@wikimedia.org>
+ * @author Matt Flaschen <mflaschen@wikimedia.org>
  * @author Ori Livneh <olivneh@wikimedia.org>
+ * @author Rob Moen <rmoen@wikimedia.org>
  * @author S Page <spage@wikimedia.org>
+ * @author Sam Smith <git@samsmith.io>
  * @author Luke Welling <lwelling@wikimedia.org>
  *
  * @class mw.guidedTour
@@ -41,32 +43,13 @@
 	 */
 	function getUserState() {
 		var cookieValue, parsed;
-		cookieValue = $.cookie( cookieName );
+		cookieValue = mw.cookie.get( cookieName );
 		parsed = internal.parseUserState( cookieValue );
 		if ( parsed !== null ) {
 			return parsed;
 		} else {
 			return internal.getInitialUserStateObject();
 		}
-	}
-
-	// XXX (mattflaschen, 2013-01-16):
-	// I'm not sure the clean part is necessary, and the url-encoding should be done
-	// right before an actual URL is constructed.
-	//
-	// Right now, it will probably not work correctly if it uses special characters.
-	// The URL-encoded version is used too many places.
-	/**
-	 * Clean out path variables and rawurlencode tour names
-	 *
-	 * @private
-	 *
-	 * @param {string} tourName Tour name
-	 *
-	 * @return {string} Processed tour name
-	 */
-	function cleanTourName( tourName ) {
-		return mw.util.rawurlencode( tourName.replace( /^(?:\.\.\/)+/, '' ) );
 	}
 
 	/**
@@ -81,7 +64,7 @@
 	function removeTourFromUserStateByName( tourName ) {
 		var parsedCookie = getUserState();
 		delete parsedCookie.tours[tourName];
-		$.cookie( cookieName, JSON.stringify( parsedCookie ), cookieParams );
+		mw.cookie.set( cookieName, JSON.stringify( parsedCookie ), cookieParams );
 	}
 
 	/*
@@ -293,19 +276,12 @@
 	 * @return {void}
 	 */
 	function initialize() {
-		var cookieValue, newCookieValue;
-
 		setupIECssClasses();
 
-		// cookie the users when they are in the tour
-		cookieName = mw.config.get( 'wgCookiePrefix' ) + '-mw-tour';
-		cookieParams = { path: '/' };
-
-		cookieValue = $.cookie( cookieName );
-		newCookieValue = gt.convertToNewCookieFormat( cookieValue );
-		if ( newCookieValue !== cookieValue  ) {
-			$.cookie( cookieName, newCookieValue, cookieParams );
-		}
+		// GuidedTour uses cookies to keep the user's progress when they are in the
+		// tour, unless it's single-page.
+		cookieName = '-mw-tour';
+		cookieParams = { expires: null }; // null means to use a session cookie.
 
 		// Show X button
 		guiders._defaultSettings.xButton = true;
@@ -350,7 +326,6 @@
 			}
 
 			tourName = tourMatch[1];
-			tourName = cleanTourName( tourName );
 			tourStep = tourMatch[2];
 
 			if ( tourName.length === 0) {
@@ -428,22 +403,12 @@
 		},
 
 		/**
-		 * Attempts to automatically launch a tour based on the environment
+		 * Attempts to launch a tour from the query string (tour parameter)
 		 *
-		 * If the query string has a tour parameter, the method attempts to use that.
-		 *
-		 * Otherwise, the method tries to use the GuidedTour cookie.  It checks which tours
-		 * are applicable to the current page.  If more than one is, this method
-		 * loads the most recently started tour.
-		 *
-		 * If both fail, it does nothing.
-		 *
-		 * @return {void}
+		 * @return {boolean} Whether a tour was launched
 		 */
-		launchTourFromEnvironment: function () {
-			// Tour is either in the query string or cookie (prefer query string)
-			var tourName = mw.util.getParamValue( 'tour' ), tourNames,
-				step, userState, candidateTours = [], tourId;
+		launchTourFromQueryString: function () {
+			var step, tourId, tourName = mw.util.getParamValue( 'tour' );
 
 			if ( tourName !== null && tourName.length !== 0 ) {
 				step = gt.getStepFromQuery();
@@ -457,8 +422,22 @@
 				}
 
 				gt.launchTour( tourName, tourId );
-				return;
+
+				return true;
 			}
+
+			return false;
+		},
+
+		/**
+		 * Attempts to launch a tour from the user state (cookie)
+		 *
+		 * @return {boolean} Whether a tour was launched
+		 */
+		launchTourFromUserState: function () {
+			var tourName, tourNames,
+				userState, candidateTours = [];
+
 
 			userState = getUserState();
 
@@ -512,6 +491,30 @@
 						gt.launchTour( max.name, gt.makeTourId( max ) );
 					}
 				} );
+		},
+
+		/**
+		 * Attempts to automatically launch a tour based on the environment
+		 *
+		 * If the query string has a tour parameter, the method attempts to use that.
+		 *
+		 * Otherwise, the method tries to use the GuidedTour cookie.  It checks which tours
+		 * are applicable to the current page.  If more than one is, this method
+		 * loads the most recently started tour.
+		 *
+		 * If both fail, it does nothing.
+		 *
+		 * @return {void}
+		 */
+		launchTourFromEnvironment: function () {
+			// Tour is either in the query string or cookie (prefer query string)
+
+			if ( this.launchTourFromQueryString() ) {
+
+				return;
+			}
+
+			this.launchTourFromUserState();
 		},
 
 		/**
@@ -855,7 +858,7 @@
 
 			userState.tours[tourName].step = String( args.tourInfo.step );
 			cookieValue = JSON.stringify( userState );
-			$.cookie( cookieName, cookieValue, cookieParams );
+			mw.cookie.set( cookieName, cookieValue, cookieParams );
 		},
 
 		// Below are exposed for unit testing only, and should be considered
@@ -925,43 +928,6 @@
 
 			// No conditions or inconsistent cookie data
 			return true;
-		},
-
-		/**
-		 * Upgrades cookie to new format, and returns new version
-		 *
-		 * Exposed only for testing.
-		 *
-		 * @private
-		 *
-		 * @param {string|null} oldCookieString old cookie string, or null for no
-		 *   cookie
-		 * @return {string|null} upgraded cookie string, or null for no cookie
-		 */
-		convertToNewCookieFormat: function ( oldCookieString ) {
-			var tourId, tourInfo, parsedObject;
-
-			if ( oldCookieString !== null ) {
-				// First try parsing as old-style cookie
-				tourId = oldCookieString;
-				tourInfo = gt.parseTourId( tourId );
-				if ( tourInfo !== null ) {
-					return JSON.stringify( internal.getInitialUserStateObject( tourInfo ) );
-				} else {
-					// Try to parse as new format
-					parsedObject = internal.parseUserState( oldCookieString );
-					// Sanity check to make sure it's the right cookie.
-					if ( parsedObject !== null && parsedObject.version !== undefined ) {
-						return oldCookieString;
-					} else {
-						mw.log( 'Invalid JSON or version field is missing.' );
-					}
-				}
-			}
-
-
-			// Cookie was null or invalid
-			return null;
 		}
 	} );
 
@@ -1095,15 +1061,6 @@
 
 		return true;
 	} );
-
-	/**
-	 * @method recordStats
-	 * @deprecated
-	 *
-	 * There is no longer a need to call this public method, and it may be
-	 * removed in the future.
-	 */
-	mw.log.deprecate( gt, 'recordStats', $.noop );
 
 	// Keep after main mw.guidedTour methods.
 	// jsduck assumes methods belong to the classes they follow in source
