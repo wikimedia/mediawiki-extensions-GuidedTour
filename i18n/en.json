@@ -9,7 +9,6 @@
     "guidedtour-desc": "Allows pages to provide a popup guided tour to assist new users",
     "guidedtour-help-url": "Help:Guided tours",
     "guidedtour-help-guider-url": "Help:Guided tours/guider",
-    "guidedtour-custom.css": "/* Custom CSS for the GuidedTour extension. */",
     "guidedtour-next-button": "Next",
     "guidedtour-okay-button": "Okay",
     "guidedtour-back-button": "Back",

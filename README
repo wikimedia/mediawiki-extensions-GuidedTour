@@ -23,9 +23,6 @@ http://MyServer/w/index.php?tour=mytour
 * The name of the tour is the parameter you call it with.
 In the examples above, that's 'test' and 'mytour'
 
-* To style the output provide a file of overrides on the wiki page
-MediaWiki:Guidedtour-custom.css
-
 License
 
 This is free software.
