@@ -14,7 +14,6 @@
 	"guidedtour-desc": "Autoriser les pages à afficher une visite guidée par pop-up pour aider les nouveaux utilisateurs",
 	"guidedtour-help-url": "Help:Visites guidées",
 	"guidedtour-help-guider-url": "Help:Visites guidées/guide",
-	"guidedtour-custom.css": "/* CSS personnalisé pour l’extension Visite guidée. */",
 	"guidedtour-next-button": "Suivant",
 	"guidedtour-okay-button": "D’accord",
 	"guidedtour-back-button": "Retour",

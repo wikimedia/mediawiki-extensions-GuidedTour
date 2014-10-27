@@ -9,7 +9,6 @@
 	"guidedtour-desc": "{{desc|name=Guided Tour|url=http://www.mediawiki.org/wiki/Extension:GuidedTour}}",
 	"guidedtour-help-url": "Main page for GuidedTour documentation",
 	"guidedtour-help-guider-url": "Brief GuidedTour documentation page that a tour step can transclude.  Used in the test tour.",
-	"guidedtour-custom.css": "{{Optional}}\nCustom CSS for the GuidedTour extension.  Empty by default.",
 	"guidedtour-next-button": "Text for moving to next step of guided tour.\n\nSee also:\n* {{msg-mw|Guidedtour-back-button}}\n{{Identical|Next}}",
 	"guidedtour-okay-button": "Main action button text.  Will dismiss single tour step (ending the tour if this is the last step) or do another tour-defined action.\n{{Identical|OK}}",
 	"guidedtour-back-button": "Used as label for the Back button.\n\nSee also:\n* {{msg-mw|Guidedtour-next-button}}\n{{Identical|Back}}",
