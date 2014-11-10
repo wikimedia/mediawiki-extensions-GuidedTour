@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kening Aldgilles"
+			"Kening Aldgilles",
+			"Robin0van0der0vliet"
 		]
 	},
 	"guidedtour-next-button": "Folgjende",
-	"guidedtour-okay-button": "Okee"
+	"guidedtour-okay-button": "OK"
 }
