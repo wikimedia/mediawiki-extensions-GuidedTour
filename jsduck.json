@@ -1,12 +1,12 @@
 {
 	"--title": "GuidedTour Code Documentation",
 	"--warnings": ["-nodoc(class,public)"],
-	"--tags": "./CustomTags.rb",
+	"--tags": ".jsduck/CustomTags.rb",
 	"--builtin-classes": true,
-	"--output": "../docs",
+	"--output": "docs",
 	"--": [
-		"./external.js",
-		"../modules/",
-		"../tests/"
+		".jsduck/external.js",
+		"modules/",
+		"tests/"
 	]
 }
