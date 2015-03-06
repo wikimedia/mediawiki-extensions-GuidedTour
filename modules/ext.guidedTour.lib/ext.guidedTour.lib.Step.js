@@ -189,6 +189,8 @@
 		var step = this,
 			messageKey,
 			actionButtonClass = 'guidedtour-' + button.action + '-button',
+		        // button.action will be deleted with the delete operator later in the flow.
+			buttonAction = button.action,
 			buttonTypeClass = getButtonTypeClass( button ),
 			messageKeyMapping;
 
@@ -209,7 +211,7 @@
 			onclick: function () {
 				var event = {
 					label: button.name,
-					action: button.action
+					action: buttonAction
 				};
 
 				if ( messageKey ) {
