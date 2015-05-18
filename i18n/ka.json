@@ -4,5 +4,12 @@
 			"David1010"
 		]
 	},
-	"guidedtour-tour-test-testing": "ტესტირება"
+	"guidedtour-help-url": "Help:ინტერაქტიული ტურები",
+	"guidedtour-help-guider-url": "Help:ინტერაქტიული ტურები/მეგზური",
+	"guidedtour-next-button": "შემდეგი",
+	"guidedtour-okay-button": "კარგი",
+	"guidedtour-back-button": "უკან",
+	"guidedtour-tour-test-testing": "ტესტირება",
+	"guidedtour-tour-test-test-description": "ეს აღწერის ტესტია. Lorem ipsum dolor sit!",
+	"guidedtour-tour-test-portal-description": "ეს არის {{int:portal}}-ის გვერდი."
 }
