@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Shirayuki",
-			"Whym"
+			"Whym",
+			"Sujiniku"
 		]
 	},
 	"guidedtour-desc": "新しい利用者を支援するポップアップのガイド付きツアーをページで提供できるようにする",
@@ -23,7 +24,7 @@
 	"guidedtour-tour-test-launch-using-tours": "ツアーの使い方についてのツアーを起動する",
 	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|編集}}をはじめてみましょう",
 	"guidedtour-tour-firstedit-edit-page-description": "「{{int:vector-view-edit}}」ボタンを{{GENDER:|クリック}}すると編集をはじめられます。",
-	"guidedtour-tour-firstedit-edit-section-title": "1セクションだけ{{GENDER:|編集}してみましょう",
+	"guidedtour-tour-firstedit-edit-section-title": "1セクションだけ{{GENDER:|編集}}してみましょう",
 	"guidedtour-tour-firstedit-edit-section-description": "1つの部分だけに着目できるよう、ページ内の主要な節それぞれに対応する「{{int:editsection}}」リンクがあります。",
 	"guidedtour-tour-firstedit-preview-title": "変更内容の{{GENDER:|プレビュー}} (省略可能)",
 	"guidedtour-tour-firstedit-preview-description": "「{{int:showpreview}}」をクリックすると、変更した結果、ページがどのようになるか確認できます。保存するのもお忘れなく!",
