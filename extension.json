@@ -1,0 +1,172 @@
+{
+	"name": "GuidedTour",
+	"version": "2.0",
+	"author": [
+		"Munaf Assaf",
+		"Terry Chay",
+		"Matthew Flaschen",
+		"Pau Giner",
+		"Ori Livneh",
+		"Rob Moen",
+		"S Page",
+		"Sam Smith",
+		"Moiz Syed",
+		"Luke Welling"
+	],
+	"url": "https://www.mediawiki.org/wiki/Extension:GuidedTour",
+	"descriptionmsg": "guidedtour-desc",
+	"type": "other",
+	"ExtensionFunctions": [
+		"GuidedTourHooks::onSetup"
+	],
+	"MessagesDirs": {
+		"GuidedTour": [
+			"i18n"
+		]
+	},
+	"AutoloadClasses": {
+		"GuidedTourHooks": "GuidedTourHooks.php"
+	},
+	"ResourceModules": {
+		"mediawiki.libs.guiders": {
+			"scripts": [
+				"mediawiki.libs.guiders/mediawiki.libs.guiders.js"
+			]
+		},
+		"ext.guidedTour.styles": {
+			"styles": [
+				"ext.guidedTour.less",
+				"ext.guidedTour.animations.less"
+			],
+			"dependencies": [
+				"mediawiki.libs.guiders",
+				"mediawiki.ui.button"
+			]
+		},
+		"ext.guidedTour.lib.internal": {
+			"scripts": "ext.guidedTour.lib.internal.js"
+		},
+		"ext.guidedTour.lib": {
+			"scripts": [
+				"ext.guidedTour.lib/ext.guidedTour.lib.TransitionEvent.js",
+				"ext.guidedTour.lib/ext.guidedTour.lib.main.js",
+				"ext.guidedTour.lib/ext.guidedTour.lib.EventLogger.js",
+				"ext.guidedTour.lib/ext.guidedTour.lib.TransitionAction.js",
+				"ext.guidedTour.lib/ext.guidedTour.lib.StepBuilder.js",
+				"ext.guidedTour.lib/ext.guidedTour.lib.Step.js",
+				"ext.guidedTour.lib/ext.guidedTour.lib.TourBuilder.js",
+				"ext.guidedTour.lib/ext.guidedTour.lib.Tour.js"
+			],
+			"dependencies": [
+				"jquery.client",
+				"json",
+				"mediawiki.Title",
+				"mediawiki.cookie",
+				"mediawiki.jqueryMsg",
+				"mediawiki.libs.guiders",
+				"mediawiki.user",
+				"mediawiki.util",
+				"schema.GuidedTourGuiderImpression",
+				"schema.GuidedTourGuiderHidden",
+				"schema.GuidedTourButtonClick",
+				"schema.GuidedTourInternalLinkActivation",
+				"schema.GuidedTourExternalLinkActivation",
+				"schema.GuidedTourExited",
+				"ext.guidedTour.lib.internal",
+				"ext.guidedTour.styles"
+			],
+			"messages": [
+				"guidedtour-next-button",
+				"guidedtour-okay-button",
+				"guidedtour-back-button"
+			]
+		},
+		"ext.guidedTour.launcher": {
+			"scripts": "ext.guidedTour.launcher.js"
+		},
+		"ext.guidedTour": {
+			"scripts": "ext.guidedTour.autolauncher.js",
+			"dependencies": "ext.guidedTour.lib"
+		},
+		"ext.guidedTour.tour.firstedit": {
+			"scripts": "tours/firstedit.js",
+			"dependencies": "ext.guidedTour",
+			"messages": [
+				"editsection",
+				"savearticle",
+				"showpreview",
+				"vector-view-edit",
+				"guidedtour-tour-firstedit-edit-page-title",
+				"guidedtour-tour-firstedit-edit-page-description",
+				"guidedtour-tour-firstedit-edit-section-title",
+				"guidedtour-tour-firstedit-edit-section-description",
+				"guidedtour-tour-firstedit-preview-title",
+				"guidedtour-tour-firstedit-preview-description",
+				"guidedtour-tour-firstedit-save-title",
+				"guidedtour-tour-firstedit-save-description"
+			]
+		},
+		"ext.guidedTour.tour.firsteditve": {
+			"scripts": "tours/firsteditve.js",
+			"dependencies": "ext.guidedTour",
+			"messages": [
+				"editsection",
+				"vector-view-edit",
+				"visualeditor-toolbar-savedialog",
+				"guidedtour-tour-firstedit-edit-page-title",
+				"guidedtour-tour-firsteditve-edit-page-description",
+				"guidedtour-tour-firstedit-edit-section-title",
+				"guidedtour-tour-firsteditve-edit-section-description",
+				"guidedtour-tour-firstedit-save-title",
+				"guidedtour-tour-firsteditve-save-description"
+			]
+		},
+		"ext.guidedTour.tour.test": {
+			"scripts": "tours/test.js",
+			"dependencies": "ext.guidedTour",
+			"messages": [
+				"portal",
+				"guidedtour-help-url",
+				"guidedtour-tour-test-testing",
+				"guidedtour-tour-test-test-description",
+				"guidedtour-tour-test-callouts",
+				"guidedtour-tour-test-portal-description",
+				"guidedtour-tour-test-mediawiki-parse",
+				"guidedtour-tour-test-description-page",
+				"guidedtour-tour-test-go-description-page",
+				"guidedtour-tour-test-launch-tour",
+				"guidedtour-tour-test-launch-tour-description",
+				"guidedtour-tour-test-launch-using-tours"
+			]
+		},
+		"ext.guidedTour.tour.uprightdownleft": {
+			"scripts": "tours/uprightdownleft.js",
+			"dependencies": "ext.guidedTour"
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "modules",
+		"remoteExtPath": "GuidedTour/modules"
+	},
+	"Hooks": {
+		"BeforePageDisplay": [
+			"GuidedTourHooks::onBeforePageDisplay"
+		],
+		"ResourceLoaderGetConfigVars": [
+			"GuidedTourHooks::onResourceLoaderGetConfigVars"
+		],
+		"ResourceLoaderTestModules": [
+			"GuidedTourHooks::onResourceLoaderTestModules"
+		],
+		"UnitTestsList": [
+			"GuidedTourHooks::onUnitTestsList"
+		],
+		"RedirectSpecialArticleRedirectParams": [
+			"GuidedTourHooks::onRedirectSpecialArticleRedirectParams"
+		],
+		"EventLoggingRegisterSchemas": [
+			"GuidedTourHooks::addEventLogging"
+		]
+	},
+	"manifest_version": 1
+}
