@@ -213,6 +213,11 @@
 			setTimeout( function () {
 				var currentStepInfo, currentStep, nextStep, tour;
 
+				if ( guiders._currentGuiderID === null ) {
+					// Ignore transitions if there is no active tour.
+					return;
+				}
+
 				currentStepInfo = gt.parseTourId( guiders._currentGuiderID );
 				if ( currentStepInfo === null ) {
 					mw.log.warn( 'Invalid _currentGuiderID.  Returning early' );
