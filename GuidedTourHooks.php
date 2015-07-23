@@ -220,4 +220,16 @@ class GuidedTourHooks {
 
 		return true;
 	}
+
+	/**
+	 * EventLoggingRegisterSchemas
+	 */
+	public static function addEventLogging( array &$schemas ) {
+		$schemas['GuidedTourGuiderImpression'] = 8694395;
+		$schemas['GuidedTourGuiderHidden'] = 8690549;
+		$schemas['GuidedTourButtonClick'] = 8690550;
+		$schemas['GuidedTourInternalLinkActivation'] = 8690553;
+		$schemas['GuidedTourExternalLinkActivation'] = 8690560;
+		$schemas['GuidedTourExited'] = 8690566;
+	}
 }
