@@ -1,8 +1,7 @@
 /**
  * GuidedTour internal API
  *
- * For use only in mw.guidedTour.lib.js, ext.guidedTour.js, and unit tests of the internal
- * API.
+ * For use only in GuidedTour.
  *
  * Will change without notice.
  *

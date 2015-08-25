@@ -123,7 +123,7 @@ class GuidedTourHooks {
 	 *
 	 * @return bool true if a module was added, false otherwise
 	 */
-	private static function addTour( $out, $tourName ) {
+	public static function addTour( $out, $tourName ) {
 		global $wgResourceModules;
 
 		$isUserJsAllowed = $out->getAllowedModules( ResourceLoaderModule::TYPE_SCRIPTS ) >= ResourceLoaderModule::ORIGIN_USER_INDIVIDUAL;
@@ -191,7 +191,7 @@ class GuidedTourHooks {
 	 */
 	public static function onResourceLoaderTestModules( &$testModules, &$resourceLoader ) {
 		$testModules[ 'qunit' ][ 'ext.guidedTour.lib.tests' ] = array(
-			'scripts' => array( 'tests/ext.guidedTour.lib.tests.js' ),
+			'scripts' => array( 'tests/qunit/ext.guidedTour.lib.tests.js' ),
 			'dependencies' => array( 'ext.guidedTour.lib' ),
 			'localBasePath' => __DIR__,
 			'remoteExtPath' => 'GuidedTour',
@@ -206,7 +206,7 @@ class GuidedTourHooks {
 	 * @return bool always true
 	 */
 	public static function onUnitTestsList( &$files ) {
-		$testDir = __DIR__ . '/tests';
+		$testDir = __DIR__ . '/tests/phpunit';
 		$files = array_merge( $files, glob( "$testDir/*Test.php" ) );
 		return true;
 	}

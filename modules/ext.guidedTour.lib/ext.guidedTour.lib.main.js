@@ -363,7 +363,9 @@
 		},
 
 		/**
-		 * Launch a tour.  Tours start themselves (through ext.guidedTour.js).
+		 * Launch a tour.  Tours start automatically if the environment is present
+		 * (user string or cookie).
+		 *
 		 * However, this method allows one tour to launch another.  It also allows
 		 * callers to launch a tour on demand.
 		 *

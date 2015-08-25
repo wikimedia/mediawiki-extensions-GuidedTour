@@ -1,6 +1,6 @@
 <?php
 
-class GuidedTourTest extends MediaWikiTestCase {
+class GuidedTourHooksTest extends MediaWikiTestCase {
 	public function testGetTourNames() {
 		$this->assertSame(
 			array(),
