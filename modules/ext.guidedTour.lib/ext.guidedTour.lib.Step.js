@@ -624,8 +624,11 @@
 		var tourInfo = gt.parseTourId( guider.id ), priorCurrentStep,
 			handleLinkClickProxy = $.proxy( this.handleLinkClick, this );
 
-		//If this is not part of a single-page tour, save the guider id to a cookie
-		if ( !this.tour.isSinglePage ) {
+		// We delete the cookie to allow the server to launch single-page
+		// tours by cookie.
+		if ( this.tour.isSinglePage ) {
+			gt.removeTourFromUserStateByGuider( guider );
+		} else {
 			gt.updateUserStateForTour( {
 				tourInfo: tourInfo,
 				wasShown: true
