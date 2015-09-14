@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"VASANTH S.N.",
-			"Yogesh"
+			"Yogesh",
+			"Omshivaprakash"
 		]
 	},
 	"guidedtour-next-button": "ನಂತರ",
@@ -14,6 +15,8 @@
 	"guidedtour-tour-test-go-description-page": "ವಿವರಣೆ ಪುಟಕ್ಕೆ ನಡೆಯಿರಿ",
 	"guidedtour-tour-firstedit-edit-page-title": "ಪೂರ್ಣ ಪುಟ {{GENDER:|Edit}}...",
 	"guidedtour-tour-firstedit-edit-page-description": "ನಿಮ್ಮ ಬದಲಾವಣೆಗಳನ್ನು ಮಾಡಲು \"{{int:vector-view-edit}}\" ಅನ್ನು {{GENDER:|Click}} ಮಾಡಿ",
+	"guidedtour-tour-firstedit-edit-section-title": "ಅಥವಾ {{GENDER:|edit}} ಒಂದು ವಿಭಾಗ",
+	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|Preview}} ನಿಮ್ಮ ಬದಲಾವಣೆಗಳು (ಐಚ್ಛಿಕ)",
 	"guidedtour-tour-firstedit-save-title": "ನೀವು ಇನ್ನೇನು ಮುಗಿಸಲಿದ್ದೀರಿ !",
 	"guidedtour-tour-firsteditve-edit-page-description": "ನಿಮ್ಮ ಬದಲಾವಣೆಗಳನ್ನು ಮಾಡಲು \"$1\" ಅನ್ನು {{GENDER:|Click}} ಮಾಡಿ"
 }
