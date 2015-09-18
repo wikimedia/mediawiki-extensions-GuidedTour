@@ -10,7 +10,7 @@
 			"Macofe"
 		]
 	},
-	"guidedtour-desc": "Permite a las páginas ofrecer una visita guiada para ayudar a nuevos usuarios",
+	"guidedtour-desc": "Permite a las páginas ofrecer una visita guiada para ayudar a los usuarios nuevos",
 	"guidedtour-help-url": "Help:Visitas guiadas",
 	"guidedtour-help-guider-url": "Help:Visitas guiadas/guía",
 	"guidedtour-next-button": "Siguiente",
@@ -26,15 +26,15 @@
 	"guidedtour-tour-test-launch-tour": "Prueba de inicio de la visita guiada",
 	"guidedtour-tour-test-launch-tour-description": "Las guías pueden iniciar otras visitas guiada. Muy bueno, ¿eh?",
 	"guidedtour-tour-test-launch-using-tours": "Iniciar una visita guiada sobre visitas guiadas",
-	"guidedtour-tour-firstedit-edit-page-title": "Edita la página completa…",
-	"guidedtour-tour-firstedit-edit-page-description": "Haz clic en el botón de \"{{int:vector-view-edit}}\" para realizar tus cambios.",
+	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|Edita}} la página completa…",
+	"guidedtour-tour-firstedit-edit-page-description": "Haz {{GENDER:|clic}} en el botón \"{{int:vector-view-edit}}\" para realizar tus cambios.",
 	"guidedtour-tour-firstedit-edit-section-title": "O {{GENDER:|edita}} una sección",
-	"guidedtour-tour-firstedit-edit-section-description": "Existen enlaces de \"{{int:editsection}}\" en cada sección de la página, para que puedes centrarte solo en esa parte.",
-	"guidedtour-tour-firstedit-preview-title": "Previsualiza tus cambios (opcional)",
-	"guidedtour-tour-firstedit-preview-description": "Cliqueando en \"{{int:showpreview}}\" te permite ver como se verá la página con tus cambios. ¡No olvides guardarlos!",
+	"guidedtour-tour-firstedit-edit-section-description": "Existen enlaces de \"{{int:editsection}}\" en cada sección principal de la página, para que puedas centrarte solo en esa parte.",
+	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|Previsualiza}} tus cambios (opcional)",
+	"guidedtour-tour-firstedit-preview-description": "Al hacer clic en \"{{int:showpreview}}\" podrás verificar cómo se verá la página con tus cambios. ¡No olvides guardarlos!",
 	"guidedtour-tour-firstedit-save-title": "¡Ya casi has terminado!",
 	"guidedtour-tour-firstedit-save-description": "Cuando termines, pulsa en «{{int:savearticle}}» para que todos puedan ver tus cambios.",
-	"guidedtour-tour-firsteditve-edit-page-description": "Pulsa en el botón «$1» para realizar los cambios.",
+	"guidedtour-tour-firsteditve-edit-page-description": "Haz {{GENDER:|clic}} en el botón «$1» para realizar los cambios.",
 	"guidedtour-tour-firsteditve-edit-section-description": "Existen enlaces de «$1» en cada sección principal de la página, para que puedas centrarte solo en esa parte.",
 	"guidedtour-tour-firsteditve-save-description": "Cuando termines, pulsa en «{{int:visualeditor-toolbar-savedialog}}» para que tus cambios sean visibles para todos."
 }
