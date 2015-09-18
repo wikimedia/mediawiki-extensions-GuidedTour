@@ -1,93 +1,384 @@
-.mwe-gt-translate (@x, @y) {
-	-webkit-transform: translate(@x, @y);
-	-moz-transform: translate(@x, @y);
-	-ms-transform: translate(@x, @y);
-	-o-transform: translate(@x, @y);
-	transform: translate(@x, @y);
-}
-
-.mwe-gt-animation (...) {
-	/* @noflip */
-	-webkit-animation: @arguments;
-	/* @noflip */
-	-moz-animation: @arguments;
-	/* @noflip */
-	-o-animation: @arguments;
-	/* @noflip */
-	animation: @arguments;
-}
-
+/* @noflip */
 /* fade-in */
-.mwe-gt-fade-in-frames () {
-	0% {
-		opacity: 0;
-	}
-
-	100% {
-		opacity: 1;
-	}
-}
-
-@-webkit-keyframes mwe-gt-fade-in {
-	.mwe-gt-fade-in-frames();
-}
-
-@-moz-keyframes mwe-gt-fade-in {
-	.mwe-gt-fade-in-frames();
-}
-
-@-o-keyframes mwe-gt-fade-in {
-	.mwe-gt-fade-in-frames();
-}
-
-@keyframes mwe-gt-fade-in {
-	.mwe-gt-fade-in-frames();
-}
-
-.mwe-gt-fade-in {
-	.mwe-gt-animation(mwe-gt-fade-in 0.3s, ease, forwards);
-}
-
 /* fade-in-translate-frames */
-.mwe-gt-fade-in-translate-frames (@x, @y) {
-	0% {
-		opacity: 0;
-		.mwe-gt-translate(@x, @y);
-	}
-
-	100% {
-		opacity: 1;
-		.mwe-gt-translate(0, 0);
-	}
+@-webkit-keyframes mwe-gt-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-
-.mwe-gt-fade-in-keyframes-for-direction (@direction, @dx, @dy) {
-	@-webkit-keyframes mwe-gt-fade-in-@{direction} {
-		.mwe-gt-fade-in-translate-frames(@dx, @dy);
-	}
-
-	@-moz-keyframes mwe-gt-fade-in-@{direction} {
-		.mwe-gt-fade-in-translate-frames(@dx, @dy);
-	}
-
-	@-o-keyframes mwe-gt-fade-in-@{direction} {
-		.mwe-gt-fade-in-translate-frames(@dx, @dy);
-	}
-
-	@keyframes mwe-gt-fade-in-@{direction} {
-		.mwe-gt-fade-in-translate-frames(@dx, @dy);
-	}
-
-	.mwe-gt-fade-in-@{direction} {
-		/**
+@-moz-keyframes mwe-gt-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes mwe-gt-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes mwe-gt-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.mwe-gt-fade-in {
+  -webkit-animation: mwe-gt-fade-in 0.3s ease forwards;
+  /* @noflip */
+  -moz-animation: mwe-gt-fade-in 0.3s ease forwards;
+  /* @noflip */
+  -o-animation: mwe-gt-fade-in 0.3s ease forwards;
+  /* @noflip */
+  animation: mwe-gt-fade-in 0.3s ease forwards;
+}
+@-webkit-keyframes mwe-gt-fade-in-up {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(0,20px);
+    -moz-transform: translate(0,20px);
+    -ms-transform: translate(0,20px);
+    -o-transform: translate(0,20px);
+    transform: translate(0,20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+  }
+}
+@-moz-keyframes mwe-gt-fade-in-up {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(0,20px);
+    -moz-transform: translate(0,20px);
+    -ms-transform: translate(0,20px);
+    -o-transform: translate(0,20px);
+    transform: translate(0,20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+  }
+}
+@-o-keyframes mwe-gt-fade-in-up {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(0,20px);
+    -moz-transform: translate(0,20px);
+    -ms-transform: translate(0,20px);
+    -o-transform: translate(0,20px);
+    transform: translate(0,20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+  }
+}
+@keyframes mwe-gt-fade-in-up {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(0,20px);
+    -moz-transform: translate(0,20px);
+    -ms-transform: translate(0,20px);
+    -o-transform: translate(0,20px);
+    transform: translate(0,20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+  }
+}
+.mwe-gt-fade-in-up {
+  /**
 		 * TODO (phuedx, 2014-05-29): 0.3s and ease should be either generated
 		   by another mixin or should be constants.
 		 */
-		.mwe-gt-animation(~"mwe-gt-fade-in-@{direction}" 0.3s, ease, forwards);
-	}
+  -webkit-animation: mwe-gt-fade-in-up 0.3s ease forwards;
+  /* @noflip */
+  -moz-animation: mwe-gt-fade-in-up 0.3s ease forwards;
+  /* @noflip */
+  -o-animation: mwe-gt-fade-in-up 0.3s ease forwards;
+  /* @noflip */
+  animation: mwe-gt-fade-in-up 0.3s ease forwards;
 }
-
-.mwe-gt-fade-in-keyframes-for-direction(up, 0, 20px);
-.mwe-gt-fade-in-keyframes-for-direction(left, 20px, 0);
-.mwe-gt-fade-in-keyframes-for-direction(down, 0, -20px);
-.mwe-gt-fade-in-keyframes-for-direction(right, -20px, 0);
+@-webkit-keyframes mwe-gt-fade-in-left {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(20px,0);
+    -moz-transform: translate(20px,0);
+    -ms-transform: translate(20px,0);
+    -o-transform: translate(20px,0);
+    transform: translate(20px,0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+  }
+}
+@-moz-keyframes mwe-gt-fade-in-left {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(20px,0);
+    -moz-transform: translate(20px,0);
+    -ms-transform: translate(20px,0);
+    -o-transform: translate(20px,0);
+    transform: translate(20px,0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+  }
+}
+@-o-keyframes mwe-gt-fade-in-left {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(20px,0);
+    -moz-transform: translate(20px,0);
+    -ms-transform: translate(20px,0);
+    -o-transform: translate(20px,0);
+    transform: translate(20px,0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+  }
+}
+@keyframes mwe-gt-fade-in-left {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(20px,0);
+    -moz-transform: translate(20px,0);
+    -ms-transform: translate(20px,0);
+    -o-transform: translate(20px,0);
+    transform: translate(20px,0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+  }
+}
+.mwe-gt-fade-in-left {
+  /**
+		 * TODO (phuedx, 2014-05-29): 0.3s and ease should be either generated
+		   by another mixin or should be constants.
+		 */
+  -webkit-animation: mwe-gt-fade-in-left 0.3s ease forwards;
+  /* @noflip */
+  -moz-animation: mwe-gt-fade-in-left 0.3s ease forwards;
+  /* @noflip */
+  -o-animation: mwe-gt-fade-in-left 0.3s ease forwards;
+  /* @noflip */
+  animation: mwe-gt-fade-in-left 0.3s ease forwards;
+}
+@-webkit-keyframes mwe-gt-fade-in-down {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(0,-20px);
+    -moz-transform: translate(0,-20px);
+    -ms-transform: translate(0,-20px);
+    -o-transform: translate(0,-20px);
+    transform: translate(0,-20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+  }
+}
+@-moz-keyframes mwe-gt-fade-in-down {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(0,-20px);
+    -moz-transform: translate(0,-20px);
+    -ms-transform: translate(0,-20px);
+    -o-transform: translate(0,-20px);
+    transform: translate(0,-20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+  }
+}
+@-o-keyframes mwe-gt-fade-in-down {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(0,-20px);
+    -moz-transform: translate(0,-20px);
+    -ms-transform: translate(0,-20px);
+    -o-transform: translate(0,-20px);
+    transform: translate(0,-20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+  }
+}
+@keyframes mwe-gt-fade-in-down {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(0,-20px);
+    -moz-transform: translate(0,-20px);
+    -ms-transform: translate(0,-20px);
+    -o-transform: translate(0,-20px);
+    transform: translate(0,-20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+  }
+}
+.mwe-gt-fade-in-down {
+  /**
+		 * TODO (phuedx, 2014-05-29): 0.3s and ease should be either generated
+		   by another mixin or should be constants.
+		 */
+  -webkit-animation: mwe-gt-fade-in-down 0.3s ease forwards;
+  /* @noflip */
+  -moz-animation: mwe-gt-fade-in-down 0.3s ease forwards;
+  /* @noflip */
+  -o-animation: mwe-gt-fade-in-down 0.3s ease forwards;
+  /* @noflip */
+  animation: mwe-gt-fade-in-down 0.3s ease forwards;
+}
+@-webkit-keyframes mwe-gt-fade-in-right {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-20px,0);
+    -moz-transform: translate(-20px,0);
+    -ms-transform: translate(-20px,0);
+    -o-transform: translate(-20px,0);
+    transform: translate(-20px,0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+  }
+}
+@-moz-keyframes mwe-gt-fade-in-right {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-20px,0);
+    -moz-transform: translate(-20px,0);
+    -ms-transform: translate(-20px,0);
+    -o-transform: translate(-20px,0);
+    transform: translate(-20px,0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+  }
+}
+@-o-keyframes mwe-gt-fade-in-right {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-20px,0);
+    -moz-transform: translate(-20px,0);
+    -ms-transform: translate(-20px,0);
+    -o-transform: translate(-20px,0);
+    transform: translate(-20px,0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+  }
+}
+@keyframes mwe-gt-fade-in-right {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-20px,0);
+    -moz-transform: translate(-20px,0);
+    -ms-transform: translate(-20px,0);
+    -o-transform: translate(-20px,0);
+    transform: translate(-20px,0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+  }
+}
+.mwe-gt-fade-in-right {
+  /**
+		 * TODO (phuedx, 2014-05-29): 0.3s and ease should be either generated
+		   by another mixin or should be constants.
+		 */
+  -webkit-animation: mwe-gt-fade-in-right 0.3s ease forwards;
+  /* @noflip */
+  -moz-animation: mwe-gt-fade-in-right 0.3s ease forwards;
+  /* @noflip */
+  -o-animation: mwe-gt-fade-in-right 0.3s ease forwards;
+  /* @noflip */
+  animation: mwe-gt-fade-in-right 0.3s ease forwards;
+}
