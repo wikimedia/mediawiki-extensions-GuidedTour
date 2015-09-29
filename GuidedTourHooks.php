@@ -227,7 +227,7 @@ class GuidedTourHooks {
 	public static function addEventLogging( array &$schemas ) {
 		$schemas['GuidedTourGuiderImpression'] = 8694395;
 		$schemas['GuidedTourGuiderHidden'] = 8690549;
-		$schemas['GuidedTourButtonClick'] = 8690550;
+		$schemas['GuidedTourButtonClick'] = 13869649;
 		$schemas['GuidedTourInternalLinkActivation'] = 8690553;
 		$schemas['GuidedTourExternalLinkActivation'] = 8690560;
 		$schemas['GuidedTourExited'] = 8690566;
