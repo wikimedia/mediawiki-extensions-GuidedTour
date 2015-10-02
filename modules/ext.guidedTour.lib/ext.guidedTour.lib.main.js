@@ -710,6 +710,7 @@
 			return typeof ve !== 'undefined' && ve.instances && ve.instances.length > 0;
 		},
 
+		// TODO: Doesn't currently detect reviewing with VE
 		/**
 		 * Checks whether the user is previewing or reviewing changes
 		 * (after clicking "Show changes")
@@ -717,7 +718,7 @@
 		 * @return {boolean} true if and only if they are reviewing
 		 */
 		isReviewing: function () {
-			return gt.isReviewingWithWikitext() || gt.isReviewingWithVisualEditor();
+			return gt.isReviewingWithWikitext();
 		},
 
 		/**
@@ -728,15 +729,6 @@
 		 */
 		isReviewingWithWikitext: function () {
 			return mw.config.get( 'wgAction' ) === 'submit';
-		},
-
-		/**
-		 * Checks whether the user is in the dialog for reviewing VisualEditor changes
-		 *
-		 * @return {boolean} true if and only if they are reviewing VisualEditor changes
-		 */
-		isReviewingWithVisualEditor: function () {
-			return $( '.ve-init-mw-viewPageTarget-saveDialog-slide-review' ).is( ':visible' );
 		},
 
 		/**
