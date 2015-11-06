@@ -2,11 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Milicevic01",
-			"Milicacob"
+			"Milicacob",
+			"Сербијана"
 		]
 	},
 	"guidedtour-desc": "Омогућава страницама да избаце прозор кроз који ће се нови корисници обучавати у виду туторијала",
-	"guidedtour-help-url": "Помоћ: туторијал",
+	"guidedtour-help-url": "Помоћ:Туторијал",
 	"guidedtour-help-guider-url": "Help:Guided tours/guider",
 	"guidedtour-next-button": "Следеће",
 	"guidedtour-okay-button": "У реду",
