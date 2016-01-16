@@ -17,32 +17,6 @@ class GuidedTourHooks {
 
 	const TOUR_PARAM = 'tour';
 
-	/**
-	 * Add dynamic VE messages we care about to firsteditve tour.
-	 *
-	 * Extension function ($wgExtensionFunctions)
-	 *
-	 * @see VisualEditorHooks::onSetup
-	 */
-	public static function onSetup() {
-		global $wgResourceModules, $wgVisualEditorTabMessages;
-
-		// This can be extended if we need to support customization of
-		// additional types, such as 'edit' or 'editsection'.
-		$firstEditVeTabAppendixTypes = array(
-			'editappendix',
-			'editsectionappendix',
-		);
-
-		foreach( $firstEditVeTabAppendixTypes as $messageType ) {
-			$messageKey = $wgVisualEditorTabMessages[$messageType];
-			if ( $messageKey !== null ) {
-				// ResourceLoaderFileModule strips duplicates
-				$wgResourceModules['ext.guidedTour.tour.firsteditve']['messages'][] = $messageKey;
-			}
-		}
-	}
-
 	/*
 	   XXX (mattflaschen, 2012-01-02):
 

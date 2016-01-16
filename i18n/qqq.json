@@ -32,7 +32,7 @@
 	"guidedtour-tour-firstedit-preview-description": "Description of step explaining preview\n\nSee also:\n* {{msg-mw|showpreview}}",
 	"guidedtour-tour-firstedit-save-title": "Title of step explaining saving an edit",
 	"guidedtour-tour-firstedit-save-description": "Description of step explaining how to save\n\nSee also:\n* {{msg-mw|savearticle}}",
-	"guidedtour-tour-firsteditve-edit-page-description": "Description of the step of the firsteditve tour pointing to the VisualEditor edit button.\n\nParameters:\n* $1 - Text of VisualEditor edit tab: {{msg-mw|Vector-view-edit}} and {{msg-mw|Visualeditor-beta-appendix}}\nSee also:\n* {{msg-mw|Guidedtour-tour-firsteditve-edit-section-description}}",
-	"guidedtour-tour-firsteditve-edit-section-description": "Description of the step of the firsteditve tour pointing to the VE section edit button.\n\nParameters:\n* $1 - Text of VisualEditor section edit link: {{msg-mw|Editsection}} and {{msg-mw|Visualeditor-beta-appendix}}\nSee also:\n* {{msg-mw|Guidedtour-tour-firsteditve-edit-page-description}}",
+	"guidedtour-tour-firsteditve-edit-page-description": "Description of the step of the firsteditve tour pointing to the VisualEditor edit button.\n\nParameters:\n* $1 - Text of VisualEditor edit tab (please pass this through unaltered)\nSee also:\n* {{msg-mw|Guidedtour-tour-firsteditve-edit-section-description}}",
+	"guidedtour-tour-firsteditve-edit-section-description": "Description of the step of the firsteditve tour pointing to the VE section edit button.\n\nParameters:\n* $1 - Text of VisualEditor section edit link (please pass this through unaltered)\nSee also:\n* {{msg-mw|Guidedtour-tour-firsteditve-edit-page-description}}",
 	"guidedtour-tour-firsteditve-save-description": "Description of step of the firsteditve tour explaining how to save in VisualEditor.\n\nRefers to {{msg-mw|Visualeditor-toolbar-savedialog}}."
 }

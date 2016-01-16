@@ -17,9 +17,6 @@
 	"descriptionmsg": "guidedtour-desc",
 	"license-name": "Apache-2.0",
 	"type": "other",
-	"ExtensionFunctions": [
-		"GuidedTourHooks::onSetup"
-	],
 	"MessagesDirs": {
 		"GuidedTour": [
 			"i18n"
