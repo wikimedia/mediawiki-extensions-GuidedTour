@@ -67,8 +67,10 @@
 	 * @param {string} stepSpec.titlemsg Message key for title of
 	 *  guider.  Used only for extension-defined tours
 	 *
-	 * @param {string} stepSpec.description Description of guider.
-	 *  By default, this is just HTML.
+	 * @param {string|mw.guidedTour.WikitextDescription|mw.Title} stepSpec.description
+	 *  Description of guider.  A string is treated as HTML, except that for
+	 *  backwards compatibility, if onShow is gt.parseDescription or
+	 *  gt.getPageAsDescription, the string is interpreted as described in onShow.
 	 * @param {string} stepSpec.descriptionmsg Message key for
 	 *  description of guider.  Used only for extension-defined tours.
 	 *
@@ -97,7 +99,9 @@
 	 *  position
 	 *
 	 * @param {Function} [stepSpec.onShow] Function to execute immediately
-	 *  before the guider is shown.  The most commonly used values are:
+	 *  before the guider is shown.  Using this for gt.parseDescription or
+	 *  gt.getPageAsDescription is deprecated.  However, a string value of description
+	 *  is interpreted as follows:
 	 *
 	 *  - gt.parseDescription - Treat description as wikitext
 	 *  - gt.getPageAsDescription - Treat description as the name of a description

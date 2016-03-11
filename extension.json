@@ -54,11 +54,13 @@
 				"ext.guidedTour.lib/ext.guidedTour.lib.StepBuilder.js",
 				"ext.guidedTour.lib/ext.guidedTour.lib.Step.js",
 				"ext.guidedTour.lib/ext.guidedTour.lib.TourBuilder.js",
-				"ext.guidedTour.lib/ext.guidedTour.lib.Tour.js"
+				"ext.guidedTour.lib/ext.guidedTour.lib.Tour.js",
+				"ext.guidedTour.lib/ext.guidedTour.lib.WikitextDescription.js"
 			],
 			"dependencies": [
 				"jquery.client",
 				"mediawiki.Title",
+				"mediawiki.api.parse",
 				"mediawiki.cookie",
 				"mediawiki.jqueryMsg",
 				"mediawiki.libs.guiders",
@@ -121,7 +123,10 @@
 		},
 		"ext.guidedTour.tour.test": {
 			"scripts": "tours/test.js",
-			"dependencies": "ext.guidedTour",
+			"dependencies": [
+				"mediawiki.Title",
+				"ext.guidedTour"
+			],
 			"messages": [
 				"portal",
 				"guidedtour-help-url",
@@ -132,9 +137,22 @@
 				"guidedtour-tour-test-mediawiki-parse",
 				"guidedtour-tour-test-description-page",
 				"guidedtour-tour-test-go-description-page",
+				"guidedtour-tour-test-launch-editing",
 				"guidedtour-tour-test-launch-tour",
 				"guidedtour-tour-test-launch-tour-description",
-				"guidedtour-tour-test-launch-using-tours"
+				"guidedtour-tour-test-wikitext-description"
+			]
+		},
+		"ext.guidedTour.tour.onshow": {
+			"scripts": "tours/onshow.js",
+			"dependencies": "ext.guidedTour",
+			"messages": [
+				"portal",
+				"guidedtour-help-url",
+				"guidedtour-tour-test-mediawiki-parse",
+				"guidedtour-tour-test-description-page",
+				"guidedtour-tour-test-go-description-page",
+				"guidedtour-tour-test-wikitext-description"
 			]
 		},
 		"ext.guidedTour.tour.uprightdownleft": {

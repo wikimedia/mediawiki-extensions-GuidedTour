@@ -35,3 +35,8 @@
  * @class QUnit
  * @source <http://api.qunitjs.com/>
  */
+
+/**
+ * @class mw.Title
+ * @source <https://doc.wikimedia.org/mediawiki-core/master/js/#!/api/mw.Title>
+ */

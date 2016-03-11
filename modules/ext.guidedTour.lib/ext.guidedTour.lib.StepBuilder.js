@@ -15,6 +15,8 @@
 	 *
 	 * @param {mw.guidedTour.Tour} tour Tour the corresponding Step belongs to
 	 * @param {Object} stepSpec See {mw.guidedTour.TourBuilder#step} for details.
+	 *
+	 * @throws {mw.guidedTour.TourDefinitionError} On invalid step name
 	 */
 	function StepBuilder( tour, stepSpec ) {
 		/**
@@ -25,8 +27,8 @@
 		 */
 		this.tour = tour;
 
-		if ( $.type( stepSpec.name ) !== 'string' ) {
-			throw new gt.TourDefinitionError( '\'stepSpec.name\' must be a string, the step name.' );
+		if ( typeof stepSpec.name !== 'string' || /[.\-]/.test( stepSpec.name ) ) {
+			throw new gt.TourDefinitionError( '\'stepSpec.name\' must be a string, the step name, without the characters \'.\' and \'-\'.' );
 		}
 
 		/**

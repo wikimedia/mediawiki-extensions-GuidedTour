@@ -54,7 +54,8 @@
 				name: 'upload'
 			} );
 			otherTourStepBuilder = otherTourBuilder.step( {
-				name: 'filename'
+				name: 'filename',
+				description: 'filename description'
 			} );
 
 			this.stub( mw.libs.guiders, 'show' );
@@ -740,23 +741,28 @@
 		}
 
 		linkStepBuilder = validTourBuilder.step( {
-			name: 'link'
+			name: 'link',
+			description: 'link description'
 		} );
 
 		editStepBuilder = validTourBuilder.step( {
-			name: 'edit'
+			name: 'edit',
+			description: 'edit description'
 		} );
 
 		previewStepBuilder = validTourBuilder.step( {
-			name: 'preview'
+			name: 'preview',
+			description: 'preview description'
 		} );
 
 		saveStepBuilder = validTourBuilder.step( {
-			name: 'save'
+			name: 'save',
+			description: 'save description'
 		} );
 
 		pointsInvalidNameStepBuilder = validTourBuilder.step( {
-			name: 'returnsToInvalidName'
+			name: 'returnsToInvalidName',
+			description: 'returnsToInvalidName description'
 		} );
 		pointsInvalidNameStepBuilder.next( 'bogus' );
 		assertThrowsTypeAndMessage(
@@ -787,7 +793,8 @@
 		);
 
 		pointsOtherTourStepBuilder = validTourBuilder.step( {
-			name: 'returnsToOtherTour'
+			name: 'returnsToOtherTour',
+			description: 'returnsToOtherTour description'
 		} );
 		pointsOtherTourStepBuilder.next( otherTourStepBuilder );
 		assertThrowsTypeAndMessage(
@@ -809,7 +816,8 @@
 		);
 
 		returnsInvalidNameCallbackStepBuilder = validTourBuilder.step( {
-			name: 'returnsInvalidNameCallback'
+			name: 'returnsInvalidNameCallback',
+			description: 'returnsInvalidNameCallback description'
 		} );
 		returnsInvalidNameCallbackStepBuilder.next( function () {
 			return 'bogus';
@@ -834,7 +842,8 @@
 		);
 
 		returnsOtherTourCallbackStepBuilder = validTourBuilder.step( {
-			name: 'returnsToOtherTourCallback'
+			name: 'returnsToOtherTourCallback',
+			description: 'returnsToOtherTourCallback description'
 		} );
 		returnsOtherTourCallbackStepBuilder.next( function () {
 			return otherTourStepBuilder;
@@ -867,7 +876,10 @@
 
 		CALLBACK_PASSED_TRANSITION_RETURNED_INVALID = /Callback passed to \.transition\(\) returned invalid value/;
 
-		linkStepBuilder = validTourBuilder.step( { name: 'link' } );
+		linkStepBuilder = validTourBuilder.step( {
+			name: 'link',
+			description: 'link description'
+		} );
 		firstStepBuilder.transition( function () {
 			return linkStepBuilder;
 		} );
@@ -877,7 +889,10 @@
 			'Registers a callback that returns the correct Step, given a callback returning a StepBuilder'
 		);
 
-		editStepBuilder = validTourBuilder.step( { name: 'edit' } );
+		editStepBuilder = validTourBuilder.step( {
+			name: 'edit',
+			description: 'edit description'
+		} );
 		linkStepBuilder.transition( function () {
 			return 'edit';
 		} );
@@ -896,7 +911,10 @@
 			'Valid TransitionAction (HIDE) is preserved'
 		);
 
-		previewStepBuilder = validTourBuilder.step( { name: 'preview' } );
+		previewStepBuilder = validTourBuilder.step( {
+			name: 'preview',
+			description: 'preview description'
+		} );
 		previewStepBuilder.transition( $.noop );
 		assert.strictEqual(
 			previewStepBuilder.step.transitionCallback(),
@@ -905,7 +923,8 @@
 		);
 
 		returnsInvalidNameCallbackStepBuilder = validTourBuilder.step( {
-			name: 'returnsInvalidNameCallback'
+			name: 'returnsInvalidNameCallback',
+			description: 'returnsInvalidNameCallback description'
 		} );
 		returnsInvalidNameCallbackStepBuilder.transition( function () {
 			return 'bogus';
@@ -921,7 +940,8 @@
 		);
 
 		returnsOtherTourCallbackStepBuilder = validTourBuilder.step( {
-			name: 'returnsToOtherTourCallback'
+			name: 'returnsToOtherTourCallback',
+			description: 'returnsToOtherTourCallback description'
 		} );
 		returnsOtherTourCallbackStepBuilder.transition( function () {
 			return otherTourStepBuilder;
@@ -937,7 +957,8 @@
 		);
 
 		returnsInvalidTransitionActionStepBuilder = validTourBuilder.step( {
-			name: 'returnsInvalidTransitionAction'
+			name: 'returnsInvalidTransitionAction',
+			description: 'returnsInvalidTransitionAction description'
 		} );
 		returnsInvalidTransitionActionStepBuilder.transition( function () {
 			return 3;
@@ -965,7 +986,8 @@
 		);
 
 		parameterNotFunctionStepBuilder = validTourBuilder.step( {
-			name: 'parameterNotFunctionStepBuilder'
+			name: 'parameterNotFunctionStepBuilder',
+			description: 'parameterNotFunctionStepBuilder description'
 		} );
 		assertThrowsTypeAndMessage(
 			assert,
@@ -980,7 +1002,8 @@
 
 	QUnit.test( 'Step.constructor', 5, function ( assert ) {
 		var step = new gt.Step( validTour, {
-				name: 'first'
+				name: 'first',
+				description: 'first description'
 			} );
 
 		assert.strictEqual(
@@ -1138,7 +1161,8 @@
 
 	QUnit.test( 'Step.handleOnShow', 5, function ( assert ) {
 		var showChangesStepBuilder = validTourBuilder.step( {
-			name: 'showChanges'
+			name: 'showChanges',
+			description: 'showChanges description'
 		} ),
 			showChangesStep = showChangesStepBuilder.step,
 			singlePageTourBuilder = new gt.TourBuilder( {
@@ -1146,7 +1170,8 @@
 				isSinglePage: true
 			} ),
 			singlePageStepBuilder = singlePageTourBuilder.step( {
-				name: 'beginning'
+				name: 'beginning',
+				description: 'beginning description'
 			} ),
 			singlePageStep = singlePageStepBuilder.step,
 			updateUserStateSpy = this.spy( gt, 'updateUserStateForTour' ),
@@ -1235,9 +1260,15 @@
 	QUnit.test( 'TourBuilder.step', 3, function ( assert ) {
 		var save1, save2;
 
-		validTourBuilder.step( { name: 'preview' } );
+		validTourBuilder.step( {
+			name: 'preview',
+			description: 'preview description'
+		} );
 
-		save1 = validTourBuilder.step( { name: 'save' } );
+		save1 = validTourBuilder.step( {
+			name: 'save',
+			description: 'save description'
+		} );
 
 		assert.strictEqual(
 			validTour.stepCount,
@@ -1248,7 +1279,10 @@
 		assertThrowsTypeAndMessage(
 			assert,
 			function () {
-				save2 = validTourBuilder.step( { name: 'save' } );
+				save2 = validTourBuilder.step( {
+					name: 'save',
+					description: 'save description'
+				} );
 			},
 			gt.TourDefinitionError,
 			/The name "save" is already taken\.  Two steps in a tour can not have the same name/,
@@ -1374,31 +1408,40 @@
 	} );
 
 	QUnit.test( 'Tour.initialize', 3, function ( assert ) {
-		var stepInitializeSpy, previewStepBuilder;
+		var stepInitializeSpy, previewStepBuilder, done;
 
 		stepInitializeSpy = this.spy( gt.Step.prototype, 'initialize' );
 
 		previewStepBuilder = validTourBuilder.step( {
-			name: 'preview'
+			name: 'preview',
+			description: 'preview description'
 		} );
 
-		validTour.initialize();
-		assert.assertTrue(
-			stepInitializeSpy.calledOn( firstStep ),
-			'Initializing tour first time initializes first step'
-		);
-		assert.assertTrue(
-			stepInitializeSpy.calledOn( previewStepBuilder.step ),
-			'Initializing tour first time initializes other steps'
-		);
+		done = assert.async();
 
-		stepInitializeSpy.reset();
-		validTour.initialize();
-		assert.strictEqual(
-			stepInitializeSpy.callCount,
-			0,
-			'Steps are not reinitialized if Tour.initialize is called again'
-		);
+		validTour.initialize().done( function () {
+			assert.assertTrue(
+				stepInitializeSpy.calledOn( firstStep ),
+				'Initializing tour first time initializes first step'
+			);
+
+			assert.assertTrue(
+				stepInitializeSpy.calledOn( previewStepBuilder.step ),
+				'Initializing tour first time initializes other steps'
+			);
+
+			stepInitializeSpy.reset();
+
+			validTour.initialize().done( function () {
+				assert.strictEqual(
+					stepInitializeSpy.callCount,
+					0,
+					'Steps are not reinitialized if Tour.initialize is called again'
+				);
+
+				done();
+			} );
+		} );
 	} );
 
 	QUnit.test( 'Tour.getStep', 6, function ( assert ) {

@@ -20,7 +20,7 @@
 	 *
 	 * See mw.guidedTour.TourBuilder#constructor, which passes through to this.
 	 */
-        function Tour ( tourSpec ) {
+	function Tour( tourSpec ) {
 		var moduleName;
 
 		/**
@@ -173,22 +173,24 @@
 	 *
 	 * @private
 	 *
-	 * @return {void}
+	 * @return {jQuery.Promise} Promise that waits on all steps to initialize (or one to fail)
 	 */
 	Tour.prototype.initialize = function () {
-		var stepName, shouldFlipHorizontally;
+		var stepName, shouldFlipHorizontally, promises = [], tour = this;
 
 		if ( this.isInitialized ) {
-			return;
+			return $.Deferred().resolve();
 		}
 
 		shouldFlipHorizontally = this.getShouldFlipHorizontally();
 
 		for ( stepName in this.steps ) {
-			this.steps[stepName].initialize( shouldFlipHorizontally );
+			promises.push( this.steps[stepName].initialize( shouldFlipHorizontally ) );
 		}
 
-		this.isInitialized = true;
+		return $.when.apply( $, promises ).then( function () {
+			tour.isInitialized = true;
+		} );
 	};
 
 	/**
@@ -247,35 +249,39 @@
 	 *
 	 * @param {mw.guidedTour.Step|string} step Step name or object
 	 *
+	 * @throws {Error} If initialize fails
+	 *
 	 * @return {void}
 	 */
 	Tour.prototype.showStep = function ( step ) {
-		var guider, transitionEvent;
+		var guider, transitionEvent, tour = this;
 
-		this.initialize();
+		step = tour.getStep( step );
 
-		step = this.getStep( step );
+		this.initialize().done( function () {
+			transitionEvent = new gt.TransitionEvent();
+			transitionEvent.type = gt.TransitionEvent.BUILTIN;
+			transitionEvent.subtype = gt.TransitionEvent.TRANSITION_BEFORE_SHOW;
+			step = step.checkTransition( transitionEvent );
 
-		transitionEvent = new gt.TransitionEvent();
-		transitionEvent.type = gt.TransitionEvent.BUILTIN;
-		transitionEvent.subtype = gt.TransitionEvent.TRANSITION_BEFORE_SHOW;
-		step = step.checkTransition( transitionEvent );
+			// null means a TransitionAction (hide/end)
+			if ( step !== null ) {
+				guider = guiders._guiderById( step.specification.id );
+				if ( guider !== undefined && guider.elem.is( ':visible' ) ) {
+					// Already showing the same one
+					return;
+				}
 
-		// null means a TransitionAction (hide/end)
-		if ( step !== null ) {
-			guider = guiders._guiderById( step.specification.id );
-			if ( guider !== undefined && guider.elem.is( ':visible' ) ) {
-				// Already showing the same one
-				return;
+				// A guider from the same tour is visible
+				if ( tour.isVisible() ) {
+					guiders.hideAll();
+				}
+
+				guiders.show( step.specification.id );
 			}
-
-			// A guider from the same tour is visible
-			if ( this.isVisible() ) {
-				guiders.hideAll();
-			}
-
-			guiders.show( step.specification.id );
-		}
+		} ).fail( function ( e ) {
+			throw new Error( 'Could not show step \'' + step.name + '\' because this.initialize() failed.  Underlying error: ' + e );
+		} );
 	};
 
 	/**
