@@ -8,7 +8,8 @@
 			"Imperadeiro98",
 			"Josep Maria 15.",
 			"Raylton P. Sousa",
-			"Vitorvicentevalente"
+			"Vitorvicentevalente",
+			"Diniscoelho"
 		]
 	},
 	"guidedtour-desc": "Permite que páginas proporcionem uma visita guiada por pop-ups, para ajudar os novos utilizadores.",
@@ -26,7 +27,7 @@
 	"guidedtour-tour-test-description-page": "Testar páginas de descrição do MediaWiki",
 	"guidedtour-tour-test-go-description-page": "Ir para a página de descrição",
 	"guidedtour-tour-test-launch-tour": "Teste do lançamento do guia",
-	"guidedtour-tour-test-launch-tour-description": "Os guias podem lançar outras visitas guiadas. Muito interessante, não?",
+	"guidedtour-tour-test-launch-tour-description": "Guias podem lançar outras visitas guiadas. Muito interessante, não?",
 	"guidedtour-tour-test-launch-using-tours": "Lançar um guia sobre como usar visitas guiadas",
 	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|Editar}} a página toda...",
 	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Clique}} no botão \"{{int:vector-view-edit}}\" para realizar as suas mudanças.",
