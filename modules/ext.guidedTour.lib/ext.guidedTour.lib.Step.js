@@ -840,15 +840,12 @@
 	 * Initializes step, making it ready to be displayed.
 	 * Other methods call this after all augmentation is complete.
 	 *
-	 * @param {boolean} shouldFlipHorizontally true to flip requested position
-	 *  horizontally before calling low-level guiders library, false otherwise
-	 *
 	 * @return {jQuery.Promise} Promise that resolves successfully, except on AJAX failure
 	 * when mw.guidedTour.WikitextDescription or mw.Title are used for a description.
 	 *
 	 * @private
 	 */
-	Step.prototype.initialize = function ( shouldFlipHorizontally ) {
+	Step.prototype.initialize = function () {
 		var self = this, options = this.specification,
 			passedInOnClose = options.onClose, passedInOnShow = options.onShow;
 
@@ -911,7 +908,7 @@
 
 		if ( options.position !== undefined ) {
 			options.position = getValueForSkin( options, 'position' );
-			if ( shouldFlipHorizontally ) {
+			if ( this.tour.flipRTL ) {
 				options.position = guiders.getFlippedPosition( options.position, {
 					horizontal: true
 				} );

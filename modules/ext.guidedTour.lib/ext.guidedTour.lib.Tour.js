@@ -115,6 +115,13 @@
 		 */
 		this.cssClass = 'mw-guidedtour-tour-' + this.name;
 
+		/**
+		 * Whether the tour should be flipped; see getShouldFlipHorizontally.
+		 *
+		 * Initialized in initialize()
+		 */
+		this.flipRTL = null;
+
 		moduleName = internal.getTourModuleName( this.name );
 
 		/**
@@ -135,30 +142,38 @@
 		this.isInitialized = false;
 	}
 
+	// TODO: Change this to use before/after (T142267)
 	/**
 	 * Determines whether guiders in this tour should be horizontally flipped due to LTR/RTL
 	 *
 	 * Considers the HTML element's dir attribute and body LTR/RTL classes in addition
 	 * to parameter.
 	 *
+	 * We assume that all tours defined in extensions use LTR, as with CSS/LESS.
+	 *
+	 * We assume that tours defined on-wiki use their site's directionality.
+	 *
+	 * Examples:
+	 *
+	 * * A user on Arabic Wikipedia views an extension-defined tour in the default
+	 * language for their wiki (Arabic).  The tour is flipped.
+	 *
+	 * * A user on Hebrew Wikipedia writes a tour in the MediaWiki namespace.  They
+	 * view the tour in the default language (Hebrew).  The tour is not flipped.
+	 *
+	 * * A user on English Wikipedia is browsing with the user language set to Farsi.
+	 * They view an extension-defined tour.  The tour is flipped.
+	 *
 	 * @private
 	 *
-	 * @param {boolean} isExtensionDefined true if the tour is extension-defined,
-	 *  false otherwise
+	 * @param {'ltr'|'rtl'} interfaceDirection Direction the interface is being viewed
+	 *   in; can be changed by user preferences or uselang
+	 * @param {'ltr'|'rtl'} siteDirection Main direction of site
 	 *
 	 * @return {boolean} true if steps should be flipped, false otherwise
 	 */
-	Tour.prototype.getShouldFlipHorizontally = function () {
-		var tourDirection, interfaceDirection, siteDirection, $body;
-
-		$body = $( document.body );
-
-		// Main direction of the site
-		siteDirection = $body.is( '.sitedir-ltr' ) ? 'ltr' : 'rtl';
-
-		// Direction the interface is being viewed in.
-		// This can be changed by user preferences or uselang
-		interfaceDirection = $( 'html' ).attr( 'dir' );
+	Tour.prototype.getShouldFlipHorizontally = function ( interfaceDirection, siteDirection ) {
+		var tourDirection;
 
 		// Direction the tour is assumed to be written for
 		tourDirection = this.isExtensionDefined ? 'ltr' : siteDirection;
@@ -176,16 +191,19 @@
 	 * @return {jQuery.Promise} Promise that waits on all steps to initialize (or one to fail)
 	 */
 	Tour.prototype.initialize = function () {
-		var stepName, shouldFlipHorizontally, promises = [], tour = this;
+		var stepName, promises = [], tour = this,
+			$body = $( document.body ),
+			interfaceDirection = $( 'html' ).attr( 'dir' ),
+			siteDirection = $body.hasClass( 'sitedir-ltr' ) ? 'ltr' : 'rtl';
 
 		if ( this.isInitialized ) {
 			return $.Deferred().resolve();
 		}
 
-		shouldFlipHorizontally = this.getShouldFlipHorizontally();
+		this.flipRTL = this.getShouldFlipHorizontally( interfaceDirection, siteDirection );
 
 		for ( stepName in this.steps ) {
-			promises.push( this.steps[stepName].initialize( shouldFlipHorizontally ) );
+			promises.push( this.steps[stepName].initialize() );
 		}
 
 		return $.when.apply( $, promises ).then( function () {

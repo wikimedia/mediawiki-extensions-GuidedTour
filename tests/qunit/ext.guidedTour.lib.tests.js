@@ -1320,8 +1320,7 @@
 		// Full coverage of all code paths
 
 		var getStateStub, EXTENSION_NAME = 'extension', ONWIKI_NAME = 'onwiki',
-			extensionTour, onwikiTour, $body = $( document.body ),
-			$html = $( 'html' ), originalSiteDir, originalInterfaceDir;
+			extensionTour, onwikiTour;
 
 		getStateStub = this.stub( mw.loader, 'getState' );
 		getStateStub.withArgs( gt.internal.getTourModuleName( ONWIKI_NAME ) )
@@ -1338,11 +1337,6 @@
 			name: ONWIKI_NAME
 		} );
 
-		originalSiteDir = $body.is( '.sitedir-ltr' ) ? 'ltr' : 'rtl';
-		originalInterfaceDir = $( 'html' ).attr( 'dir' );
-
-		$body.removeClass( 'sitedir-rtl' ).addClass( 'sitedir-ltr' );
-
 		// There are two different directionalities
 		// * Site as a whole (sitedir- class)
 		// * User interface (html[dir])
@@ -1351,60 +1345,49 @@
 		// Extension tours don't care about site language; tour direction is ltr
 		// Should flip if interface direction is different from tour direction
 
-		$html.attr( 'dir', 'ltr' );
 		assert.strictEqual(
-			extensionTour.getShouldFlipHorizontally(),
+			extensionTour.getShouldFlipHorizontally( 'ltr', 'ltr' ),
 			false,
 			'No flip for extension tour when interface language and site language are both ltr'
 		);
 		assert.strictEqual(
-			onwikiTour.getShouldFlipHorizontally(),
+			onwikiTour.getShouldFlipHorizontally( 'ltr', 'ltr' ),
 			false,
 			'No flip for onwiki tour when interface language and site language are both ltr'
 		);
 
-		$html.attr( 'dir', 'rtl' );
 		assert.strictEqual(
-			extensionTour.getShouldFlipHorizontally(),
+			extensionTour.getShouldFlipHorizontally( 'rtl', 'ltr' ),
 			true,
 			'Flip for extension tour when interface language is rtl and site language is ltr'
 		);
 		assert.strictEqual(
-			onwikiTour.getShouldFlipHorizontally(),
+			onwikiTour.getShouldFlipHorizontally( 'rtl', 'ltr' ),
 			true,
 			'Flip for onwiki tour when interface language is rtl and site language is ltr'
 		);
 
-		$body.removeClass( 'sitedir-ltr' ).addClass( 'sitedir-rtl' );
-
-		$html.attr( 'dir', 'ltr' );
 		assert.strictEqual(
-			extensionTour.getShouldFlipHorizontally(),
+			extensionTour.getShouldFlipHorizontally( 'ltr', 'rtl' ),
 			false,
 			'No flip for extension tour when interface language is ltr and site language is rtl'
 		);
 		assert.strictEqual(
-			onwikiTour.getShouldFlipHorizontally(),
+			onwikiTour.getShouldFlipHorizontally( 'ltr', 'rtl' ),
 			true,
 			'Flip for onwiki tour when interface language is ltr and site language is rtl'
 		);
 
-		$html.attr( 'dir', 'rtl' );
 		assert.strictEqual(
-			extensionTour.getShouldFlipHorizontally(),
+			extensionTour.getShouldFlipHorizontally( 'rtl', 'rtl' ),
 			true,
 			'Flip for extension tour when interface language is rtl and site language is rtl'
 		);
 		assert.strictEqual(
-			onwikiTour.getShouldFlipHorizontally(),
+			onwikiTour.getShouldFlipHorizontally( 'rtl', 'rtl' ),
 			false,
 			'No flip for onwiki tour when interface language and site language are both rtl'
 		);
-
-		$body.removeClass( 'sitedir-ltr sitedir-rtl' )
-			.addClass( 'sitedir-' + originalSiteDir );
-
-		$html.attr( 'dir', originalInterfaceDir );
 	} );
 
 	QUnit.test( 'Tour.initialize', 3, function ( assert ) {
