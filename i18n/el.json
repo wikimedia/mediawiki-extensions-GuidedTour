@@ -30,7 +30,7 @@
 	"guidedtour-tour-firstedit-preview-description": "Κάνοντας κλικ στο \"{{int:showpreview}}\" σας επιτρέπει να ελέγχετε πως θα μοιάζει η σελίδα με τις αλλαγές σας. Απλά μην ξεχάσετε να αποθηκεύσετε!",
 	"guidedtour-tour-firstedit-save-title": "Είστε σχεδόν έτοιμοι!",
 	"guidedtour-tour-firstedit-save-description": "Όταν είστε έτοιμοι, κάνοντας κλικ στο κουμπί \"{{int:savearticle}}\" θα κάνει τις αλλαγές σας ορατές σε όλους.",
-	"guidedtour-tour-firsteditve-edit-page-description": "Κάντε κλικ στο κουμπί \"{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}\" για να κάνετε τις αλλαγές σας.",
-	"guidedtour-tour-firsteditve-edit-section-description": "Υπάρχουν σύνδεσμοι \"{{int:editsection}} {{int:visualeditor-beta-appendix}}\" για κάθε σημαντική ενότητα σε μια σελίδα, ώστε να μπορείτε να εστιάσετε μόνο σε αυτό το κομμάτι.",
+	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|Πατήστε}} το κουμπί \"$1\" για να κάνετε τις αλλαγές σας.",
+	"guidedtour-tour-firsteditve-edit-section-description": "Υπάρχουν \"$1\" σύνδεσμοι για κάθε σημαντική ενότητα σε μια σελίδα, ώστε να μπορείτε να εστιάσετε μόνο σε εκείνο το κομμάτι.",
 	"guidedtour-tour-firsteditve-save-description": "Όταν είστε έτοιμοι, κάνοντας κλικ στο κουμπί  \"{{int:visualeditor-toolbar-savedialog}}\" θα κάνει τις αλλαγές σας ορατές σε όλους."
 }
