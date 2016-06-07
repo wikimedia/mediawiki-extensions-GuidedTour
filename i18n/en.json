@@ -24,7 +24,7 @@
 	"guidedtour-tour-test-launch-tour-description": "Guiders can launch other guided tours. Pretty cool, huh?",
 	"guidedtour-tour-test-launch-using-tours": "Launch a tour on using tours",
 	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|Edit}} the whole page…",
-	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Click}} the \"{{int:vector-view-edit}}\" button to make your changes.",
+	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Click}} the \"$1\" button to make your changes.",
 	"guidedtour-tour-firstedit-edit-section-title": "Or {{GENDER:|edit}} a section",
 	"guidedtour-tour-firstedit-edit-section-description": "There are \"{{int:editsection}}\" links for each major section in a page, so you can focus on just that part.",
 	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|Preview}} your changes (optional)",

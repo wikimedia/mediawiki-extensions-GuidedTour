@@ -26,7 +26,10 @@
 	tour.firstStep( {
 		name: 'intro',
 		titlemsg: 'guidedtour-tour-firstedit-edit-page-title',
-		descriptionmsg: 'guidedtour-tour-firstedit-edit-page-description',
+		description: mw.message(
+			'guidedtour-tour-firstedit-edit-page-description',
+			$( '#ca-edit a' ).text()
+		).parse(),
 		attachTo: '#ca-edit',
 		position: 'bottom',
 		allowAutomaticNext: false,

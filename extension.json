@@ -93,7 +93,6 @@
 				"editsection",
 				"savearticle",
 				"showpreview",
-				"vector-view-edit",
 				"guidedtour-tour-firstedit-edit-page-title",
 				"guidedtour-tour-firstedit-edit-page-description",
 				"guidedtour-tour-firstedit-edit-section-title",
@@ -109,7 +108,6 @@
 			"dependencies": "ext.guidedTour",
 			"messages": [
 				"editsection",
-				"vector-view-edit",
 				"visualeditor-toolbar-savedialog",
 				"guidedtour-tour-firstedit-edit-page-title",
 				"guidedtour-tour-firsteditve-edit-page-description",

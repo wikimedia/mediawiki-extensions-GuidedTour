@@ -41,7 +41,7 @@
 
 	editPageDescription = mw.message(
 			'guidedtour-tour-firsteditve-edit-page-description',
-			mw.message( 'vector-view-edit' ).parse()
+			$( '#ca-edit a' ).text()
 		).parse();
 
 	editSectionDescription = mw.message(
