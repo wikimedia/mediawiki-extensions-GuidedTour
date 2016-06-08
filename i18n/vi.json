@@ -22,7 +22,7 @@
 	"guidedtour-tour-test-launch-tour-description": "Các hộp hướng dẫn có thể mở hướng dẫn khác. Hay nhỉ?",
 	"guidedtour-tour-test-launch-using-tours": "Mở hướng dẫn chỉ cách sử dụng hướng dẫn",
 	"guidedtour-tour-firstedit-edit-page-title": "Sửa đổi toàn bộ trang…",
-	"guidedtour-tour-firstedit-edit-page-description": "Bấm nút “{{int:vector-view-edit}}” để sửa đổi trang.",
+	"guidedtour-tour-firstedit-edit-page-description": "Bấm nút “$1” để sửa đổi trang.",
 	"guidedtour-tour-firstedit-edit-section-title": "Hoặc chỉ sửa một phần",
 	"guidedtour-tour-firstedit-edit-section-description": "Mỗi tiêu đề lớn trên trang có liên kết “{{int:editsection}}” để chỉ sửa đổi phần trang đó.",
 	"guidedtour-tour-firstedit-preview-title": "Xem trước các thay đổi của bạn (tùy chọn)",

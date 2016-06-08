@@ -22,7 +22,7 @@
 	"guidedtour-tour-test-launch-tour-description": "„Föhrer“ künne andere „Föhronge“ aanfange. Joht, wah?",
 	"guidedtour-tour-test-launch-using-tours": "Donn en „Föhrong“ övver „Föhronge“ aanfange.",
 	"guidedtour-tour-firstedit-edit-page-title": "Donn de jannze Sigg ändere&nbsp;…{{GENDER:|}}",
-	"guidedtour-tour-firstedit-edit-page-description": "Donn „{{int:vector-view-edit}}“ klecke, öm Ding Änderonge op Dohr faßzehallde.{{GENDER:|}}",
+	"guidedtour-tour-firstedit-edit-page-description": "Donn „$1“ klecke, öm Ding Änderonge op Dohr faßzehallde.{{GENDER:|}}",
 	"guidedtour-tour-firstedit-edit-section-title": "udder änder ene Affschnett{{GENDER:|}}",
 	"guidedtour-tour-firstedit-edit-section-description": "För jehde Affschnedd en dä Sigg häs De ene Lengk „{{int:editsection}}“. Su kanns De Desch op dä Affschnett konzäntrehre.",
 	"guidedtour-tour-firstedit-preview-title": "Donn Ding Änderonge aanlohre, der ohne se ald em Wikki faßzehallde un öffentlesch ze maache. Dat moß nit sin, es ävver nözlesch.\n{{GENDER:|}}",

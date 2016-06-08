@@ -27,7 +27,7 @@
 	"guidedtour-tour-test-launch-tour-description": "Las guías pueden iniciar otras visitas guiada. Muy bueno, ¿eh?",
 	"guidedtour-tour-test-launch-using-tours": "Iniciar una visita guiada sobre visitas guiadas",
 	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|Edita}} la página completa…",
-	"guidedtour-tour-firstedit-edit-page-description": "Haz {{GENDER:|clic}} en el botón \"{{int:vector-view-edit}}\" para realizar tus cambios.",
+	"guidedtour-tour-firstedit-edit-page-description": "Haz {{GENDER:|clic}} en el botón \"$1\" para realizar tus cambios.",
 	"guidedtour-tour-firstedit-edit-section-title": "O {{GENDER:|edita}} una sección",
 	"guidedtour-tour-firstedit-edit-section-description": "Existen enlaces de \"{{int:editsection}}\" en cada sección principal de la página, para que puedas centrarte solo en esa parte.",
 	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|Previsualiza}} tus cambios (opcional)",

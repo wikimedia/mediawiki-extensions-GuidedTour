@@ -24,7 +24,7 @@
 	"guidedtour-tour-test-launch-tour-description": "Guider können andere geführte Touren starten. Ziemlich cool, nicht wahr?",
 	"guidedtour-tour-test-launch-using-tours": "Eine Tour durch Verwendung von Touren starten",
 	"guidedtour-tour-firstedit-edit-page-title": "Die ganze Seite {{GENDER:|bearbeiten}} …",
-	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Klicke}} auf „{{int:vector-view-edit}}“, um deine Änderungen durchzuführen.",
+	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Klicke}} auf „$1“, um deine Änderungen durchzuführen.",
 	"guidedtour-tour-firstedit-edit-section-title": "Oder einen Abschnitt {{GENDER:|bearbeiten}}",
 	"guidedtour-tour-firstedit-edit-section-description": "Es gibt „{{int:editsection}}“-Links für jeden Seitenabschnitt, so dass du dich nur auf diesen Teil fokussieren kannst.",
 	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|Vorschau}} deiner Änderungen (optional)",

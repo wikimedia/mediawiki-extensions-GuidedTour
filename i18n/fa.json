@@ -24,7 +24,7 @@
 	"guidedtour-tour-test-launch-tour-description": "راهنمایان می‌توانند تور‌های دیگری نیز اجرا کنند. خیلی جالب هست، نه؟",
 	"guidedtour-tour-test-launch-using-tours": "راه‌اندازی یک تور در استفاده از تورها",
 	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|ویرایش}} تمام صفحه…",
-	"guidedtour-tour-firstedit-edit-page-description": "برای ذخیرهٔ تغییراتتان بر روی دکمهٔ «{{int:vector-view-edit}}» {{GENDER:|کلیک کنید}}.",
+	"guidedtour-tour-firstedit-edit-page-description": "برای ذخیرهٔ تغییراتتان بر روی دکمهٔ «$1» {{GENDER:|کلیک کنید}}.",
 	"guidedtour-tour-firstedit-edit-section-title": "یا {{GENDER:|ویرایش}} یک بخش",
 	"guidedtour-tour-firstedit-edit-section-description": "پیوندها «{{int:editsection}}» برای هر بحش اصلی در صفحه وجود دارد، پس شما می‌تواند فقط به آن بحش تمرکز کنید.",
 	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|پیش‌نمایش}} تغییرات شما (اختیاری)",

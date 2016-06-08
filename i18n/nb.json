@@ -20,7 +20,7 @@
 	"guidedtour-tour-test-launch-tour-description": "Gauider kan starte andre guidete turer. Ganske flott, hva?",
 	"guidedtour-tour-test-launch-using-tours": "Start en tur om a bruke turer",
 	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|Rediger}} hele siden…",
-	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Klikk}} på «{{int:vector-view-edit}}»-knappen for å gjøre dine endringer.",
+	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Klikk}} på «$1»-knappen for å gjøre dine endringer.",
 	"guidedtour-tour-firstedit-edit-section-title": "Eller {{GENDER:|rediger}} en seksjon",
 	"guidedtour-tour-firstedit-edit-section-description": "Det er «{{int:editsection}}»-lenker for hver større seksjon på en side, så du kan fokusere på akkurat den den delen.",
 	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|Forhåndsvis}} dine endringer (valgfri)",

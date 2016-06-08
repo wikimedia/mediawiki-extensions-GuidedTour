@@ -22,7 +22,7 @@
 	"guidedtour-tour-test-launch-tour-description": "Vodiči mogu započeti druge vodiče. Zar nije zabavno?",
 	"guidedtour-tour-test-launch-using-tours": "Započni vodič o korištenju vodiča",
 	"guidedtour-tour-firstedit-edit-page-title": "Spremni za uređivanje?",
-	"guidedtour-tour-firstedit-edit-page-description": "Kliknite na dugme \"{{int:vector-view-edit}}\" da napravite vaše izmjene.",
+	"guidedtour-tour-firstedit-edit-page-description": "Kliknite na dugme \"$1\" da napravite vaše izmjene.",
 	"guidedtour-tour-firstedit-edit-section-title": "Ili {{GENDER:|uredi}} odlomak",
 	"guidedtour-tour-firstedit-edit-section-description": "Postoje \"{{int:editsection}}\" veza za svaku glavnu sekciju na nekoj stranici, tako da se možete fokusirati samo na taj dio.",
 	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|Prikaži}} izgled svojih izmjena (neobavezno)",

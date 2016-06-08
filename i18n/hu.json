@@ -23,7 +23,7 @@
 	"guidedtour-tour-test-launch-tour-description": "Az útikalauzok újabb útikalauzokat indíthatnak. Jó, mi?",
 	"guidedtour-tour-test-launch-using-tours": "Útikalauz-kalauz indítása",
 	"guidedtour-tour-firstedit-edit-page-title": "A teljes oldal {{GENDER:|szerkesztése}}...",
-	"guidedtour-tour-firstedit-edit-page-description": "Kattints a „{{int:vector-view-edit}}” gombra a szöveg módosításához.",
+	"guidedtour-tour-firstedit-edit-page-description": "Kattints a „$1” gombra a szöveg módosításához.",
 	"guidedtour-tour-firstedit-edit-section-title": "Egyetlen szakasz szerkesztése",
 	"guidedtour-tour-firstedit-edit-section-description": "A lap minden nagyobb szakaszához tartozik egy „{{int:editsection}}” link, ha csak azzal a résszel akarsz foglalkozni.",
 	"guidedtour-tour-firstedit-preview-title": "Nézd meg az {{GENDER:|előnézetet}} (opcionális)",

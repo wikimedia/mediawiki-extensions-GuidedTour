@@ -5,7 +5,8 @@
 			"Carsrac",
 			"Siebrand",
 			"Sjoerddebruin",
-			"Robin0van0der0vliet"
+			"Robin0van0der0vliet",
+			"Robin van der Vliet"
 		]
 	},
 	"guidedtour-desc": "Maakt het mogelijk om een rondleiding weer te geven voor nieuwe gebruikers",
@@ -26,7 +27,7 @@
 	"guidedtour-tour-test-launch-tour-description": "Via raadgevers kunnen andere rondleidingen gestart worden. Leuk, toch?",
 	"guidedtour-tour-test-launch-using-tours": "Start een rondleiding bij het gebruik van rondleidingen",
 	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|Bewerk}} de hele pagina...",
-	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Klik}} op de knop \"{{int:vector-view-edit}}\" om uw wijzigingen te maken.",
+	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Klik}} op de knop \"$1\" om uw wijzigingen te maken.",
 	"guidedtour-tour-firstedit-edit-section-title": "Of {{PLURAL:|bewerk}} een paragraaf",
 	"guidedtour-tour-firstedit-edit-section-description": "Er zijn koppelingen \"{{int:editsection}}\" voor iedere onderdeel van een pagina, zodat u zich kunt concentreren op dat onderdeel.",
 	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|Voorvertoning}} van uw wijzigingen (optioneel)",

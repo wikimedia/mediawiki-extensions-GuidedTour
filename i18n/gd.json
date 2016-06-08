@@ -21,7 +21,7 @@
 	"guidedtour-tour-test-launch-tour-description": "'S urrainn dha threòirichean sgrìobhan treòirichte eile a cur gu dol. Nach math sin?",
 	"guidedtour-tour-test-launch-using-tours": "Tòisich sgrìobh air cleachdadh nan sgrìob",
 	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|Deasaich}} an duilleag shlàn…",
-	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Briog}} air a' phutan \"{{int:vector-view-edit}}\" gus na h-atharraichean agad a dhèanamh.",
+	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Briog}} air a' phutan \"$1\" gus na h-atharraichean agad a dhèanamh.",
 	"guidedtour-tour-firstedit-edit-section-title": "No {{GENDER:|deasaich}} earrann",
 	"guidedtour-tour-firstedit-edit-section-description": "Tha ceanglaichean \"{{int:editsection}}\" ann airson gach mòr-earrainn air duilleag ach an urrainn dhut d' aire a thoirt air a' phàirt sin.",
 	"guidedtour-tour-firstedit-preview-title": "Dèan {{GENDER:|ro-sealladh}} air na dh'atharraich thu (roghainneil)",

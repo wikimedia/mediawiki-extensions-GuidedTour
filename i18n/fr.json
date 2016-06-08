@@ -29,7 +29,7 @@
 	"guidedtour-tour-test-launch-tour-description": "Les guides peuvent créer d’autres visites guidées. Plutôt cool, non ?",
 	"guidedtour-tour-test-launch-using-tours": "Lancer une visite sur l’utilisation des visites",
 	"guidedtour-tour-firstedit-edit-page-title": "Modifier  toute la page...",
-	"guidedtour-tour-firstedit-edit-page-description": "Cliquez le bouton « {{int:vector-view-edit}} » pour faire vos modifications.",
+	"guidedtour-tour-firstedit-edit-page-description": "Cliquez le bouton « $1 » pour faire vos modifications.",
 	"guidedtour-tour-firstedit-edit-section-title": "Ou modifier une section",
 	"guidedtour-tour-firstedit-edit-section-description": "Il y a des liens « {{int:editsection}} » pour chaque section majeure d’une page, afin que vous puissiez vous concentrer sur cette partie.",
 	"guidedtour-tour-firstedit-preview-title": "Prévisualisez vos modifications (facultatif)",

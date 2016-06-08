@@ -22,7 +22,7 @@
 	"guidedtour-tour-test-launch-tour-description": "As guías poden lanzar outras visitas guiadas. Caralludo, ou?",
 	"guidedtour-tour-test-launch-using-tours": "Iniciar a guía sobre como usar as visitas",
 	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|Edite}} toda a páxina...",
-	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Prema}} no botón \"{{int:vector-view-edit}}\" para facer as súas modificacións.",
+	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Prema}} no botón \"$1\" para facer as súas modificacións.",
 	"guidedtour-tour-firstedit-edit-section-title": "Ou {{GENDER:|edite}} unha sección",
 	"guidedtour-tour-firstedit-edit-section-description": "Hai unha ligazón \"{{int:editsection}}\" en cada sección, para que poida centrarse só nesa parte da páxina.",
 	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|Vista previa}} dos cambios (opcional)",

@@ -26,7 +26,7 @@
 	"guidedtour-tour-test-launch-tour-description": "שלבים בסיור יכולים להפעיל סיורים מודרכים אחרים. די מגניב, הא?",
 	"guidedtour-tour-test-launch-using-tours": "התחילו סיור היכרות על אודות השימוש בסיורים",
 	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|ערוך|ערכי}} את כל הדף...",
-	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|לחץ|לחצי}} על כפתור \"{{int:vector-view-edit}}\" כדי לעשות את השינויים.",
+	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|לחץ|לחצי|לחצו}} על הכפתור \"{{int:vector-view-edit}}\" כדי לבצע את השינויים {{GENDER:|שלך|שלך|שלכם}}.",
 	"guidedtour-tour-firstedit-edit-section-title": "או {{GENDER:|ערוך|ערכי}} פסקה",
 	"guidedtour-tour-firstedit-edit-section-description": "יש קישורי \"{{int:editsection}}\" לכל פסקה גדולה בדף, אז אפשר להתמקד רק בחלק ההוא.",
 	"guidedtour-tour-firstedit-preview-title": "תצוגה מקדימה של השינויים שלך (לא חובה)",

@@ -15,7 +15,7 @@
 	"guidedtour-tour-test-description-page": "MediaWiki лаьцна агӀонаш зер",
 	"guidedtour-tour-test-go-description-page": "Цунах лаьцнарг долу агӀонг гӀо",
 	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|Кийча дуй}} тадарш дан?",
-	"guidedtour-tour-firstedit-edit-page-description": "Хьай хийцам бан тӀетаӀе кнопка «{{int:vector-view-edit}}.",
+	"guidedtour-tour-firstedit-edit-page-description": "Хьай хийцам бан тӀетаӀе кнопка «$1.",
 	"guidedtour-tour-firstedit-edit-section-title": "Дакъана бен хийцам ма бе",
 	"guidedtour-tour-firstedit-edit-section-description": "Хьажорг «{{int:editsection}}» хӀора дакъана ю, цундела хьа йиш ю дакъа къастина тадан.",
 	"guidedtour-tour-firstedit-save-title": "Ахьа долийнарг чакхдала гергга ду!",

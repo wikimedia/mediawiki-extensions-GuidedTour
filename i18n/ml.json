@@ -22,7 +22,7 @@
 	"guidedtour-tour-test-launch-tour-description": "വഴികാട്ടികൾക്ക് മറ്റ് വഴികാട്ടികൾ ഉപയോഗിച്ചുള്ള പര്യടനവും തുടങ്ങാനാവും. കൊള്ളാം, ല്ലേ?",
 	"guidedtour-tour-test-launch-using-tours": "പര്യടനം ഉപയോഗിച്ച് മറ്റൊരു പര്യടനം നടത്തുക",
 	"guidedtour-tour-firstedit-edit-page-title": "താൾ പൂർണ്ണമായി {{GENDER:|തിരുത്തുക}}...",
-	"guidedtour-tour-firstedit-edit-page-description": "താങ്കളുടെ മാറ്റങ്ങൾ വരുത്താനായി  \"{{int:vector-view-edit}}\" ബട്ടൺ {{GENDER:|അമർത്തുക}}.",
+	"guidedtour-tour-firstedit-edit-page-description": "താങ്കളുടെ മാറ്റങ്ങൾ വരുത്താനായി  \"$1\" ബട്ടൺ {{GENDER:|അമർത്തുക}}.",
 	"guidedtour-tour-firstedit-edit-section-title": "അഥവാ ഒരു ഭാഗം {{GENDER:|തിരുത്തുക}}",
 	"guidedtour-tour-firstedit-edit-section-description": "താളിലെ ഒരോ ഭാഗത്തും \"{{int:editsection}}\" കണ്ണികളുണ്ട്, അവിടെ മാത്രം അങ്ങനെ താങ്കൾക്ക് ശ്രദ്ധ കേന്ദ്രീകരിക്കാം.",
 	"guidedtour-tour-firstedit-preview-title": "താങ്കളുടെ മാറ്റങ്ങൾ എങ്ങനെയുണ്ടെന്ന് {{GENDER:|കാണുക}} (ഐച്ഛികം)",
