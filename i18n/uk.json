@@ -23,7 +23,7 @@
 	"guidedtour-tour-test-launch-tour-description": "Гід може запускати інші інтерактивні тури. Досить непогано, так?",
 	"guidedtour-tour-test-launch-using-tours": "Запуск тур по використанню турів",
 	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|Редагувати}} сторінку цілком…",
-	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Натисніть}} кнопку «$1, щоб внести зміни.",
+	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Натисніть}} кнопку «$1», щоб внести зміни.",
 	"guidedtour-tour-firstedit-edit-section-title": "Або {{GENDER:|редагувати}} розділ",
 	"guidedtour-tour-firstedit-edit-section-description": "Існують посилання \"{{int:editsection}}\" для кожного головного розділу на сторінці, тому ви можете зосередитися тільки на цій частині.",
 	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|Попередньо переглянути}} ваші зміни (за бажанням)",
