@@ -23,7 +23,7 @@
 	"guidedtour-tour-test-launch-tour-description": "Гиды могут запускать другие туры. Довольно круто, да?",
 	"guidedtour-tour-test-launch-using-tours": "Запустить тур по использованию туров",
 	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|Редактировать}} всю страницу…",
-	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Нажмите}} кнопку «$1, чтобы внести изменения.",
+	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Нажмите}} кнопку «$1», чтобы внести изменения.",
 	"guidedtour-tour-firstedit-edit-section-title": "Или {{GENDER:|измените}} только раздел",
 	"guidedtour-tour-firstedit-edit-section-description": "Cсылки «{{int:editsection}}» есть для каждого из основных разделов страницы, так что вы можете сосредоточиться только на конкретной её части.",
 	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|Предварительно просмотрите}} свои изменения (не обязательно)",
