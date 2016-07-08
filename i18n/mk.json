@@ -22,7 +22,7 @@
 	"guidedtour-tour-test-launch-tour-description": "Водичите можат да пуштаат други водени тури. Баш добро, нели?",
 	"guidedtour-tour-test-launch-using-tours": "Пушти тура за користење на тури",
 	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|Преведете}} ја целата страница…",
-	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Стиснете}}  на копчето „$1“ за да ги направите саканите измени.",
+	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Стиснете}} на копчето „$1“ за да ги направите саканите измени.",
 	"guidedtour-tour-firstedit-edit-section-title": "Или пак {{GENDER:|уредете}} во некој поднаслов",
 	"guidedtour-tour-firstedit-edit-section-description": "Постојат врски „{{int:editsection}}“ во секој дел (поднаслов) од страницата, за да можете да го уредите само него.",
 	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|Прегледајте}} ги измените (по желба)",
