@@ -4,7 +4,8 @@
 			"Asaifm",
 			"Ciphers",
 			"Emara",
-			"زكريا"
+			"زكريا",
+			"Meno25"
 		]
 	},
 	"guidedtour-desc": "السماح للصفحات بعرض رسائل جولات إرشادية لمساعدة المستخدمين الجدد",
@@ -20,7 +21,7 @@
 	"guidedtour-tour-test-mediawiki-parse": "جرب طريقة إعراب ميديا ويكي",
 	"guidedtour-tour-test-description-page": "جرب صفحات شرح ميديا ويكي",
 	"guidedtour-tour-test-go-description-page": "اذهب إلى صفحة الشرح",
-	"guidedtour-tour-test-launch-tour": "جرب جولة إفتتاحية",
+	"guidedtour-tour-test-launch-tour": "جرب جولة افتتاحية",
 	"guidedtour-tour-test-launch-tour-description": "من الممكن للمرشدين إطلاق المزيد من الجولات الإرشادية. أليس ذلك رائعا؟",
 	"guidedtour-tour-test-launch-using-tours": "إطلاق جولة حول استخدام الجولات",
 	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|تعديل}} كامل الصفحة...",
