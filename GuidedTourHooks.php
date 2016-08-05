@@ -174,18 +174,6 @@ class GuidedTourHooks {
 	}
 
 	/**
-	 * Registers PHPUnit tests
-	 *
-	 * @param array &$files test files
-	 * @return bool always true
-	 */
-	public static function onUnitTestsList( &$files ) {
-		$testDir = __DIR__ . '/tests/phpunit';
-		$files = array_merge( $files, glob( "$testDir/*Test.php" ) );
-		return true;
-	}
-
-	/**
 	 * @param $redirectParams array
 	 * @return bool
 	 */

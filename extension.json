@@ -154,9 +154,6 @@
 		"ResourceLoaderTestModules": [
 			"GuidedTourHooks::onResourceLoaderTestModules"
 		],
-		"UnitTestsList": [
-			"GuidedTourHooks::onUnitTestsList"
-		],
 		"RedirectSpecialArticleRedirectParams": [
 			"GuidedTourHooks::onRedirectSpecialArticleRedirectParams"
 		],
