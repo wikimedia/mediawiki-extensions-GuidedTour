@@ -23,7 +23,7 @@
 	"guidedtour-tour-test-go-description-page": "Text of the button pointing to [[{{MediaWiki:Guidedtour-help-url}}]]",
 	"guidedtour-tour-test-launch-tour": "Title of fifth step in test tour",
 	"guidedtour-tour-test-launch-tour-description": "Description of fifth step in test tour",
-	"guidedtour-tour-test-launch-using-tours": "Button text for launching a tour on making tours",
+	"guidedtour-tour-test-launch-editing": "Button text for launching a tour on editing",
 	"guidedtour-tour-firstedit-edit-page-title": "Title of the step of the firstedit tour pointing to the main edit button",
 	"guidedtour-tour-firstedit-edit-page-description": "Description of the step of the firstedit tour pointing to the main edit button, if VisualEditor is not installed.\n\nSee also:\n* {{msg-mw|Guidedtour-tour-firstedit-edit-page-visualeditor-description}}\n* {{msg-mw|Vector-view-edit}}",
 	"guidedtour-tour-firstedit-edit-section-title": "Title of the step of the firstedit tour pointing to the section edit button",

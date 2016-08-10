@@ -67,85 +67,6 @@
 		mw.cookie.set( cookieName, JSON.stringify( parsedCookie ), cookieParams );
 	}
 
-	/*
-	 * TODO (mattflaschen, 2012-12-29): Find a way to remove or improve this.
-	 * Synchronous requests are generally considered bad, and even an async request
-	 * for each guider wouldn't be ideal.
-	 *
-	 * If we can get everything we need from jqueryMsg, we can deprecate this for
-	 * extension-defined tours.
-	 */
-	/**
-	 * Calls the MediaWiki API to parse wiki text.
-	 *
-	 * Called by parseDescription and getPageAsDescription.
-	 *
-	 * @private
-	 *
-	 * @param {Object} guider Guider object to set description on
-	 * @param {string} source Source of wikitext, either 'page' for a wiki page name, or
-	 *  'text' for wikitext.  In either case, the value goes in the description
-	 *
-	 * @return {void}
-	 */
-	function callApi ( guider, source ) {
-		var ajaxParams, ajaxData, data;
-
-		if ( source !== 'page' && source !== 'text' ) {
-			mw.log( 'callApi called incorrectly' );
-			return;
-		}
-
-		// don't parse if already done
-		if ( guider.isParsed ) {
-			return;
-		}
-
-		ajaxData = {
-			format: 'json',
-			action: 'parse',
-			uselang: mw.config.get( 'wgUserLanguage' )
-		};
-		// Parse text in the context of the current page (and not API)
-		// This is for example useful if you'd like to link to the talk page
-		// of the current page with [[{{TALKPAGENAME}}]].
-		// Can't do this on Special Pages due to Bug 49477
-		if ( mw.config.get( 'wgNamespaceNumber' ) !== -1 && source === 'text' ) {
-			ajaxData.title = mw.config.get( 'wgPageName' );
-		}
-		ajaxData[source] = guider.description;
-
-		if ( source === 'page' ) {
-			// If page name is a redirect, follow it.
-			ajaxData.redirects = 'true';
-		}
-
-		ajaxParams = {
-			async: false,
-			type: 'POST',
-			url: mw.util.wikiScript( 'api' ),
-			data: ajaxData
-		};
-
-		// parse (make synchronous API request)
-		data = JSON.parse(
-			$.ajax( ajaxParams ).responseText
-		);
-		if ( data.error ) {
-			if ( source === 'page' ) {
-				mw.log( 'Failed fetching description.' + data.error.info );
-			}
-			else if ( source === 'text' ) {
-				mw.log( 'Failed parsing description.' + data.error.info );
-			}
-		}
-		else {
-			guider.description = data.parse.text['*'];
-			guider.isParsed = true;
-			// guider html is already "live" so edit it
-			guider.elem.find( '.guider_description' ).html( guider.description );
-		}
-	}
 
 	// TODO (mattflaschen, 2013-07-10): Known issue: This runs too early on a direct
 	// visit to a veaction=edit page.  This probably affects other JS-generated
@@ -591,33 +512,37 @@
 		// Begin onShow bindings section
 		//
 		// These are used as the value of the onShow field of a step.
-
+		// These are deprecated.  To allow async API calls, they are now
+		// implemented another way in mw.GuidedTour.Step, but this is a temporary
+		// backwards compatibility shim.
 		/**
 		 * Parses description as wikitext
 		 *
 		 * Add this to onShow.
 		 *
+		 * @deprecated
+		 *
 		 * @param {Object} guider Guider object to set description on
 		 *
 		 * @return {void}
 		 */
-		parseDescription: function ( guider ) {
-			callApi( guider, 'text' );
-		},
+		parseDescription: 'parseDescription is not a real function',
 
+		// Do not use mw.log.deprecate for this, since there is some magic
+		// in StepBuilder that accesses it to check equality.
 		/**
 		 * Parses a wiki page and uses the HTML as the description.
 		 *
 		 * To use this, put the page name as the description, and use this as the
 		 * value of onShow.
 		 *
+		 * @deprecated
+		 *
 		 * @param {Object} guider Guider object to set description on
 		 *
 		 * @return {void}
 		 */
-		getPageAsDescription: function ( guider ) {
-			callApi( guider, 'page' );
-		},
+		getPageAsDescription: 'getPageAsDescription is not a real function',
 
 		// End onShow bindings section
 

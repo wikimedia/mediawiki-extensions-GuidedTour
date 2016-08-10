@@ -1,5 +1,6 @@
 /*
- * Guided Tour to test guided tour features.
+ * This exercises the deprecated onShow wikitext-parsing features.  It will be removed
+ * when they are.
  */
 ( function ( window, document, $, mw, gt ) {
 
@@ -15,38 +16,17 @@
 		 * If this is an on-wiki tour, it should match the MediaWiki page.  For instance,
 		 * if this were on-wiki, it would be MediaWiki:Guidedtour-tour-test.js
 		 */
-		name: 'test'
+		name: 'onshow'
 	} );
 
 	tour.firstStep( {
-		name: 'overlay',
-		titlemsg: 'guidedtour-tour-test-testing',
-		descriptionmsg: 'guidedtour-tour-test-test-description',
-		overlay: true
-	} )
-	.next( 'callout' );
-
-	tour.step( {
-		/*
-		 * Callout of left menu
-		 */
-		name: 'callout',
-		titlemsg: 'guidedtour-tour-test-callouts',
-		descriptionmsg: 'guidedtour-tour-test-portal-description',
-		// attachment
-		attachTo: '#n-portal a',
-		position: '3'
-	} )
-	.next( 'descriptionwikitext' )
-	.back( 'overlay' );
-
-	tour.step( {
 		name: 'descriptionwikitext',
 		titlemsg: 'guidedtour-tour-test-mediawiki-parse',
 		// This deliberately does not use descriptionmsg in order to demonstrate
 		// API-based parsing as used by some on-wiki tours.
 		// Normal Extension tours should use descriptionmsg.
-		description: new gt.WikitextDescription( mw.message( 'guidedtour-tour-test-wikitext-description' ).plain() ),
+		description: mw.message( 'guidedtour-tour-test-wikitext-description' ).plain(),
+		onShow: gt.parseDescription,
 		attachTo: '#searchInput',
 		// try descriptive position (5'oclock) and use skin-specific value
 		position: {
@@ -54,8 +34,7 @@
 			monobook: 'right'
 		}
 	} )
-	.next( 'descriptionpage' )
-	.back( 'callout' );
+	.next( 'descriptionpage' );
 
 	tour.step( {
 		/*
@@ -63,40 +42,19 @@
 		 */
 		name: 'descriptionpage',
 		titlemsg: 'guidedtour-tour-test-description-page',
-		description: new mw.Title( pageName ),
+		description: pageName,
 
 		overlay: true,
+		onShow: gt.getPageAsDescription,
 
 		buttons: [ {
 			action: 'wikiLink',
 			page: pageName,
 			namemsg: 'guidedtour-tour-test-go-description-page',
 			type: 'progressive'
-		} ]
-	} )
-	.next( 'launchtour' )
-	.back( 'descriptionwikitext' );
-
-	/*
-	 * Test out tour launching
-	 */
-	tour.step({
-		name: 'launchtour',
-		titlemsg: 'guidedtour-tour-test-launch-tour',
-		descriptionmsg: 'guidedtour-tour-test-launch-tour-description',
-
-		// attachment
-		overlay: true,
-
-		buttons: [ {
-			namemsg: 'guidedtour-tour-test-launch-editing',
-			onclick: function() {
-				gt.endTour();
-				gt.launchTour( 'firstedit' );
-			}
 		}, {
 			action: 'end'
 		} ]
-	})
-	.back( 'descriptionpage' );
+	} )
+	.back( 'descriptionwikitext' );
 } ( window, document, jQuery, mediaWiki, mediaWiki.guidedTour ) );

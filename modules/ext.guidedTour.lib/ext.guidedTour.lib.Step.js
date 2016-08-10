@@ -784,6 +784,51 @@
 		}
 	};
 
+	// Extension-defined tours should use descriptionmsg, rather than this.  In the
+	// Glorious Future, it would be nice if on-wiki tours also could, which would help
+	// reduce usage of this feature (better not to do do API requests for parsing).
+	//
+	// jQueryMsg also lacks certain parsing features, but usually you can make do
+	// without (or enhance it).
+	/**
+	 * Gets a description, calling the API if necessary
+	 *
+	 *
+	 * @param {mw.guidedTour.WikitextDescription|mw.Title|string} descriptionSource Source
+	 *   of description content, as wikitext, a page title, or HTML
+	 *
+	 * @return {jQuery.Promise} Promise, resolving with HTML on success or failing if mw.Api
+	 *   fails
+	 *
+	 * @throws {mw.guidedTour.TourDefinitionError} On invalid input
+	 */
+	Step.prototype.getDescription = function ( descriptionSource ) {
+		var contentToParse, api, ajaxData = {
+			uselang: mw.config.get( 'wgUserLanguage' )
+		};
+
+		if ( descriptionSource instanceof mw.guidedTour.WikitextDescription ) {
+			contentToParse = descriptionSource.getWikitext();
+
+			// Parse text in the context of the current page (and not API)
+			// This is for example useful if you'd like to link to the talk page
+			// of the current page with [[{{TALKPAGENAME}}]].
+			ajaxData.title = mw.config.get( 'wgPageName' );
+		} else if ( descriptionSource instanceof mw.Title ) {
+			contentToParse = descriptionSource;
+			// If page name is a redirect, follow it.
+			ajaxData.redirects = 'true';
+
+		} else if ( typeof descriptionSource === 'string' ) {
+			return $.Deferred().resolve( descriptionSource ).promise();
+		} else {
+			return $.Deferred().reject( new gt.TourDefinitionError( 'description must be mw.guidedTour.WikitextDescription (wikitext), mw.Title (a page title), or a string (HTML)' ) );
+		}
+
+		api = new mw.Api();
+		return api.parse( contentToParse, ajaxData );
+	};
+
 	// TODO (mattflaschen, 2014-03-11): When the rendering code is no longer a separate
 	// layer (guiders), eliminate the specification field.
 	//
@@ -798,7 +843,8 @@
 	 * @param {boolean} shouldFlipHorizontally true to flip requested position
 	 *  horizontally before calling low-level guiders library, false otherwise
 	 *
-	 * @return {boolean} true
+	 * @return {jQuery.Promise} Promise that resolves successfully, except on AJAX failure
+	 * when mw.guidedTour.WikitextDescription or mw.Title are used for a description.
 	 *
 	 * @private
 	 */
@@ -816,14 +862,6 @@
 			return Step.prototype.handleOnClose.apply( self, arguments );
 		};
 
-		options.onShow = function () {
-			// Unlike the above the order is different.  This ensures
-			// handleOnShow (which does not return a value) always runs, and
-			// the user-provided function (if any) can return a value.
-			Step.prototype.handleOnShow.apply( self, arguments );
-			return passedInOnShow.apply( this, arguments );
-		};
-
 		if ( options.titlemsg ) {
 			options.title = mw.message( options.titlemsg ).parse();
 		}
@@ -833,6 +871,32 @@
 			options.description = mw.message( options.descriptionmsg ).parse();
 		}
 		delete options.descriptionmsg;
+
+		// DEPRECATED: Will be removed
+		if ( options.onShow === gt.parseDescription || options.onShow === gt.getPageAsDescription ) {
+			mw.log.warn( 'gt.parseDescription and gt.getPageAsDescription are deprecated and will be removed.  Pass a mw.guidedTour.WikitextDescription or mw.Title object instead.  See https://doc.wikimedia.org/GuidedTour/master/js/#!/api/mw.guidedTour.TourBuilder-method-step for details on how to update your code.' );
+
+			if ( typeof options.description !== 'string' ) {
+				throw new gt.TourDefinitionError( 'If special values (gt.parseDescription or gt.getPageAsDescription) are used, \'description\' must be a string.' );
+			}
+
+			if ( options.onShow === gt.parseDescription ) {
+				options.description = new gt.WikitextDescription( options.description );
+			} else {
+				// getPageAsDescription
+				options.description = new mw.Title( options.description );
+			}
+
+			passedInOnShow = $.noop;
+		}
+
+		options.onShow = function () {
+			// Unlike the above the order is different.  This ensures
+			// handleOnShow (which does not return a value) always runs, and
+			// the user-provided function (if any) can return a value.
+			Step.prototype.handleOnShow.apply( self, arguments );
+			return passedInOnShow.apply( this, arguments );
+		};
 
 		options.buttons = this.getButtons( options );
 		delete options.allowAutomaticNext;
@@ -862,9 +926,13 @@
 			return self.backCallback().specification.id;
 		};
 
-		guiders.initGuider( options );
+		return this.getDescription( options.description ).then(
+			function ( description ) {
+				options.description = description;
 
-		return true;
+				guiders.initGuider( options );
+			}
+		);
 	};
 
 	/**
