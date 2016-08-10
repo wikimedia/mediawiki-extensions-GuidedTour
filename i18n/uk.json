@@ -3,7 +3,8 @@
 		"authors": [
 			"Andriykopanytsia",
 			"Base",
-			"Ата"
+			"Ата",
+			"Piramidion"
 		]
 	},
 	"guidedtour-desc": "Дозволяє сторінкам виводити вспливаюче навчання для допомоги новачкам",
@@ -21,7 +22,7 @@
 	"guidedtour-tour-test-go-description-page": "Перейти на сторінку опису",
 	"guidedtour-tour-test-launch-tour": "Тестовий запуск туру",
 	"guidedtour-tour-test-launch-tour-description": "Гід може запускати інші інтерактивні тури. Досить непогано, так?",
-	"guidedtour-tour-test-launch-using-tours": "Запуск тур по використанню турів",
+	"guidedtour-tour-test-launch-editing": "Запустити тур про редагування",
 	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|Редагувати}} сторінку цілком…",
 	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Натисніть}} кнопку «$1», щоб внести зміни.",
 	"guidedtour-tour-firstedit-edit-section-title": "Або {{GENDER:|редагувати}} розділ",
