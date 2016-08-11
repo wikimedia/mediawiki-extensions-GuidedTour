@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Toliño"
+			"Toliño",
+			"Elisardojm"
 		]
 	},
 	"guidedtour-desc": "Permite que as páxinas proporcionen unha visita guiada para axudar aos usuarios novos",
@@ -20,7 +21,7 @@
 	"guidedtour-tour-test-go-description-page": "Ir á páxina de descrición",
 	"guidedtour-tour-test-launch-tour": "Probe a visita de iniciación",
 	"guidedtour-tour-test-launch-tour-description": "As guías poden lanzar outras visitas guiadas. Caralludo, ou?",
-	"guidedtour-tour-test-launch-using-tours": "Iniciar a guía sobre como usar as visitas",
+	"guidedtour-tour-test-launch-editing": "Lanzar unha visita sobre a edición",
 	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|Edite}} toda a páxina...",
 	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Prema}} no botón \"$1\" para facer as súas modificacións.",
 	"guidedtour-tour-firstedit-edit-section-title": "Ou {{GENDER:|edite}} unha sección",
