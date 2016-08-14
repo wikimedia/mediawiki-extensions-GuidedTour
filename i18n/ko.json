@@ -7,7 +7,8 @@
 			"Keysuck",
 			"Namoroka",
 			"Revi",
-			"Hwangjy9"
+			"Hwangjy9",
+			"Ykhwong"
 		]
 	},
 	"guidedtour-desc": "새 사용자를 돕기 위해 팝업 가이드 투어를 문서에 제공할 수 있습니다",
@@ -25,7 +26,7 @@
 	"guidedtour-tour-test-go-description-page": "설명 문서로 가기",
 	"guidedtour-tour-test-launch-tour": "시작 투어 테스트",
 	"guidedtour-tour-test-launch-tour-description": "안내자는 다른 가이드 투어를 시작할 수 있습니다. 멋지죠?",
-	"guidedtour-tour-test-launch-using-tours": "투어를 사용하여 투어 시작",
+	"guidedtour-tour-test-launch-editing": "편집 둘러보기 실행",
 	"guidedtour-tour-firstedit-edit-page-title": "모든 문서 {{GENDER:|편집하기}}…",
 	"guidedtour-tour-firstedit-edit-page-description": "내용을 바꾸려면 \"$1\" 버튼을 {{GENDER:|클릭}}하세요.",
 	"guidedtour-tour-firstedit-edit-section-title": "또는 문단 {{GENDER:|편집}}",

@@ -23,7 +23,7 @@
 	"guidedtour-tour-test-go-description-page": "Gå till beskrivningssida",
 	"guidedtour-tour-test-launch-tour": "Testa starta tur",
 	"guidedtour-tour-test-launch-tour-description": "Turer kan starta andra guidade turer. Ganska coolt, va?",
-	"guidedtour-tour-test-launch-using-tours": "Starta en tur om att använda turer",
+	"guidedtour-tour-test-launch-editing": "Starta en tur om redigering",
 	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|Redigera}} hela sidan...",
 	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Klicka}} på knappen \"$1\" för att göra dina ändringar.",
 	"guidedtour-tour-firstedit-edit-section-title": "Eller {{GENDER:|redigera}} ett avsnitt",
