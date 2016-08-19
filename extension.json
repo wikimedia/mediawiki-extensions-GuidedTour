@@ -105,20 +105,6 @@
 				"guidedtour-tour-firstedit-save-description"
 			]
 		},
-		"ext.guidedTour.tour.firsteditve": {
-			"scripts": "tours/firsteditve.js",
-			"dependencies": "ext.guidedTour",
-			"messages": [
-				"editsection",
-				"visualeditor-toolbar-savedialog",
-				"guidedtour-tour-firstedit-edit-page-title",
-				"guidedtour-tour-firsteditve-edit-page-description",
-				"guidedtour-tour-firstedit-edit-section-title",
-				"guidedtour-tour-firsteditve-edit-section-description",
-				"guidedtour-tour-firstedit-save-title",
-				"guidedtour-tour-firsteditve-save-description"
-			]
-		},
 		"ext.guidedTour.tour.test": {
 			"scripts": "tours/test.js",
 			"dependencies": [
@@ -168,6 +154,9 @@
 		],
 		"ResourceLoaderGetConfigVars": [
 			"GuidedTourHooks::onResourceLoaderGetConfigVars"
+		],
+		"ResourceLoaderRegisterModules": [
+			"GuidedTourHooks::onResourceLoaderRegisterModules"
 		],
 		"ResourceLoaderTestModules": [
 			"GuidedTourHooks::onResourceLoaderTestModules"
