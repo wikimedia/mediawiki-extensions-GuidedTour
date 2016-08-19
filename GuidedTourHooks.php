@@ -159,6 +159,40 @@ class GuidedTourHooks {
 	}
 
 	/**
+	 * Registers VisualEditor tour if VE is installed
+	 *
+	 * @param ResourceLoader &$resourceLoader
+	 * @return true
+	 */
+	public static function onResourceLoaderRegisterModules( &$resourceLoader ) {
+		-$dir = __DIR__ . DIRECTORY_SEPARATOR;
+
+		if ( class_exists( 'VisualEditorHooks' ) ) {
+			$resourceLoader->register(
+				'ext.guidedTour.tour.firsteditve',
+				[
+					'scripts' => 'tours/firsteditve.js',
+					'localBasePath' => $dir . 'modules',
+					'remoteExtPath' => 'GuidedTour/modules',
+					'dependencies' => 'ext.guidedTour',
+					'messages' => [
+						'editsection',
+						'visualeditor-toolbar-savedialog',
+						'guidedtour-tour-firstedit-edit-page-title',
+						'guidedtour-tour-firsteditve-edit-page-description',
+						'guidedtour-tour-firstedit-edit-section-title',
+						'guidedtour-tour-firsteditve-edit-section-description',
+						'guidedtour-tour-firstedit-save-title',
+						'guidedtour-tour-firsteditve-save-description'
+					]
+				]
+			);
+		}
+
+		return true;
+	}
+
+	/**
 	 * @param array &$testModules
 	 * @param ResourceLoader $resourceLoader
 	 * @return bool
