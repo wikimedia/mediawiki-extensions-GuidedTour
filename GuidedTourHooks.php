@@ -165,7 +165,7 @@ class GuidedTourHooks {
 	 * @return true
 	 */
 	public static function onResourceLoaderRegisterModules( &$resourceLoader ) {
-		-$dir = __DIR__ . DIRECTORY_SEPARATOR;
+		$dir = __DIR__ . DIRECTORY_SEPARATOR;
 
 		if ( class_exists( 'VisualEditorHooks' ) ) {
 			$resourceLoader->register(
