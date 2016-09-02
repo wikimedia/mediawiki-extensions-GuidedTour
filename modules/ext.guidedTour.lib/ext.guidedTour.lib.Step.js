@@ -501,24 +501,24 @@
 	 * @param {Object} options Guider options object
 	 * @param {string} key Key to handle
 	 *
-	 * @return {string} Value to use
+	 * @return {string|jQuery} Value to use
 	 * @throws {mw.guidedTour.TourDefinitionError} When skin and fallback are both missing, or
 	 *  value for key has an invalid type
 	 */
 	function getValueForSkin( options, key ) {
-		var value = options[key], type = $.type( value );
-		if ( type === 'string' ) {
+		var value = options[ key ], type = $.type( value );
+		if ( type === 'string' || value instanceof $ ) {
 			return value;
-		} else if ( type === 'object' ) {
-			if ( value[skin] !== undefined ) {
-				return value[skin];
+		} else if ( $.isPlainObject( value ) ) {
+			if ( value[ skin ] !== undefined ) {
+				return value[ skin ];
 			} else if ( value.fallback !== undefined ) {
 				return value.fallback;
 			} else {
 				throw new gt.TourDefinitionError( 'No \'' + key + '\' value for skin \'' + skin + '\' or for \'fallback\'' );
 			}
 		} else {
-			throw new gt.TourDefinitionError( 'Value for \'' + key + '\' must be an object or a string.' );
+			throw new gt.TourDefinitionError( 'Value for \'' + key + '\' must be an object, a jQuery set, or a string.' );
 		}
 	}
 
