@@ -94,9 +94,10 @@
 	 *  The position is automatically horizontally flipped if needed (LTR/RTL
 	 *  interfaces).
 	 *
-	 * @param {string|Object} stepSpec.attachTo The selector for an element to
-	 *  attach to, or an object for that purpose with the same format as
-	 *  position
+	 * @param {string|Object|jQuery} stepSpec.attachTo The selector for an element to
+	 *  attach to, a jQuery-wrapped node, or an object for that purpose with the same
+	 *  format as position.  The values within the structure can also be selectors or
+	 *  jQuery-wrapped nodes.
 	 *
 	 * @param {Function} [stepSpec.onShow] Function to execute immediately
 	 *  before the guider is shown.  Using this for gt.parseDescription or
