@@ -1039,7 +1039,7 @@
 		var buttons = [
 				{ type: 'destructive' },
 				{ type: ['progressive', 'quiet'] },
-				{ action: 'wikiLink', type: 'constructive' },
+				{ action: 'wikiLink', type: 'progressive' },
 				{ action: 'externalLink' },
 				{ action: 'back' },
 				{ action: 'okay', onclick: function() {} },
@@ -1065,8 +1065,8 @@
 			'A quietly progressive custom button'
 		);
 		assert.ok(
-			returnedButtons[2].html['class'].indexOf( 'mw-ui-constructive' ) !== -1,
-			'Constructive internal link'
+			returnedButtons[2].html['class'].indexOf( 'mw-ui-progressive' ) !== -1,
+			'Progressive internal link'
 		);
 		assert.ok(
 			returnedButtons[3].html['class'].indexOf( 'mw-ui-progressive' ) === -1,

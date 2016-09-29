@@ -245,7 +245,6 @@
 	 *
 	 *  * neutral
 	 *  * progressive
-	 *  * constructive
 	 *  * destructive
 	 *  * quiet
 	 *
@@ -255,7 +254,6 @@
 		var buttonTypes = {
 				neutral: '',
 				progressive: 'mw-ui-progressive',
-				constructive: 'mw-ui-constructive',
 				destructive: 'mw-ui-destructive',
 				quiet: 'mw-ui-quiet'
 			},
