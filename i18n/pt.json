@@ -34,7 +34,7 @@
 	"guidedtour-tour-firstedit-edit-section-title": "Ou {{GENDER:|edita}} uma secção",
 	"guidedtour-tour-firstedit-edit-section-description": "Há ligações \"{{int:editsection}}\" em cada secção da página, para que você possa concentrar-se apenas nesta parte.",
 	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|Antever}} as suas alterações (opcional)",
-	"guidedtour-tour-firstedit-preview-description": "Clique em \"{{int:showpreview}}\" para ver como ficará a página após as suas alterações. Não esqueça de salvá-las!",
+	"guidedtour-tour-firstedit-preview-description": "Clicar \"{{int:showpreview}}\" permite ver como ficará a página após as suas alterações. Não se esqueça de gravá-las!",
 	"guidedtour-tour-firstedit-save-title": "Está quase pronto!",
 	"guidedtour-tour-firstedit-save-description": "Quando estiver pronto, clique em \"{{int:savearticle}}\" para as alterações ficarem visíveis para todos.",
 	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|Clique}} no botão \"$1\" para realizar as suas mudanças.",
