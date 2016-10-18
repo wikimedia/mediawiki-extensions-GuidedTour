@@ -24,16 +24,15 @@
 	"guidedtour-tour-test-go-description-page": "Przejdź na stronę opisu",
 	"guidedtour-tour-test-launch-tour": "Test rozpoczęcia wycieczki",
 	"guidedtour-tour-test-launch-tour-description": "Jeden przewodnik może uruchomić drugi. Fajne, prawda?",
-	"guidedtour-tour-test-launch-using-tours": "Rozpocznij przewodnik po korzystaniu z przewodników",
 	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|Gotowy|Gotowa}} do edytowania?",
 	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Kliknij}} na „$1”, aby dokonać zmian.",
 	"guidedtour-tour-firstedit-edit-section-title": "Lub {{GENDER:|edytuj}} sekcję",
 	"guidedtour-tour-firstedit-edit-section-description": "Obok każdego nagłówka znajduje się odnośnik „{{int:editsection}}”, aby móc skupić się tylko na tej części.",
-	"guidedtour-tour-firstedit-preview-title": "Skontroluj swoje zmiany (opcjonalne)",
+	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|Przejrzyj}} swoje zmiany (opcjonalne)",
 	"guidedtour-tour-firstedit-preview-description": "Naciśnięcie na „{{int:showpreview}}” pozwoli Ci obejrzeć wygląd strony po wprowadzeniu Twoich zmian. Nie zapomnij ich zapisać!",
 	"guidedtour-tour-firstedit-save-title": "Prawie gotowe!",
 	"guidedtour-tour-firstedit-save-description": "Gdy będziesz {{GENDER:|gotowy|gotowa}}, kliknij „{{int:savearticle}}”, aby zmiany stały się widoczne dla każdego.",
-	"guidedtour-tour-firsteditve-edit-page-description": "Kliknij przycisk „$1”, aby dokonać zmian.",
+	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|Kliknij}} przycisk „$1”, aby dokonać zmian.",
 	"guidedtour-tour-firsteditve-edit-section-description": "Obok każdego nagłówka znajduje się przycisk „$1”, aby móc skupić się tylko na tej części.",
 	"guidedtour-tour-firsteditve-save-description": "Gdy skończysz, kliknięcie na „{{int:visualeditor-toolbar-savedialog}}” sprawi, że zmiany będą widoczne dla każdego."
 }
