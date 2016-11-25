@@ -8,7 +8,8 @@
 			"Trizek",
 			"Urhixidur",
 			"Verdy p",
-			"Sherbrooke"
+			"Sherbrooke",
+			"Derugon"
 		]
 	},
 	"guidedtour-desc": "Autoriser les pages à afficher une visite guidée par pop-up pour aider les nouveaux utilisateurs",
@@ -22,7 +23,7 @@
 	"guidedtour-tour-test-callouts": "Tester les liens de sortie",
 	"guidedtour-tour-test-portal-description": "Ceci est la page {{int:portal}}.",
 	"guidedtour-tour-test-mediawiki-parse": "Tester le rendu MediaWiki",
-	"guidedtour-tour-test-wikitext-description": "Un élément du guide de visite peut contenir du wikitexte utilisant onShow et parseDescription. Utilisez-le pour créer un lien wiki vers la [[{{MediaWiki:Guidedtour-help-url}}|documentation des visites guidées]]. Ou un lien externe [https://github.com/tychay/mwgadget.GuidedTour vers GitHub] par exemple.",
+	"guidedtour-tour-test-wikitext-description": "Un élément du guide de visite peut contenir du wikitexte. Utilisez-le pour créer un lien wiki vers la [[{{MediaWiki:Guidedtour-help-url}}|documentation des visites guidées]]. Ou un [https://example.com lien externe] par exemple.",
 	"guidedtour-tour-test-description-page": "Tester les pages de description MediaWiki",
 	"guidedtour-tour-test-go-description-page": "Aller à la page de description",
 	"guidedtour-tour-test-launch-tour": "Tester la visite de lancement",
