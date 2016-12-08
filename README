@@ -34,7 +34,7 @@ the Apache License 2.0.
 
 The mediawiki.libs.guiders directory is based on Guiders.js, developed by Optimizely
 and Jeff Pickhardt.
-See https://github.com/jeff-optimizely/Guiders-JS
+See https://github.com/pickhardt/Guiders-JS
 
 Further enhancements to Guiders.js were developed by the GuidedTour team.  Earlier
 work is at https://git.wikimedia.org/log/mediawiki%2Fextensions%2FGuidedTour%2Fguiders.git
