@@ -4,7 +4,8 @@
 			"HenriqueCrang",
 			"Raylton P. Sousa",
 			"Dianakc",
-			"Araceletorres"
+			"Araceletorres",
+			"!Silent"
 		]
 	},
 	"guidedtour-desc": "Permite que páginas proporcionem uma visita guiada por pop-ups, para ajudar os novos usuários.",
@@ -23,9 +24,9 @@
 	"guidedtour-tour-test-go-description-page": "Ir para página de descrição",
 	"guidedtour-tour-test-launch-tour": "Teste do lançamento do guia",
 	"guidedtour-tour-test-launch-tour-description": "Os guias podem lançar outras visitas guiadas, muito legal, não?",
-	"guidedtour-tour-test-launch-using-tours": "Lançar um guia sobre como usar visitas guiadas",
+	"guidedtour-tour-test-launch-editing": "Iniciar um ''tour'' na edição",
 	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|Editar}} a página inteira…",
-	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Clique}} no botão \"$1\" para confirmar suas alterações.",
+	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Clique}} o botão \"$1\" para realizar as suas mudanças.",
 	"guidedtour-tour-firstedit-edit-section-title": "Ou {{GENDER:|edite}} uma seção",
 	"guidedtour-tour-firstedit-edit-section-description": "Existem links para \"{{int:editsection}}\" em cada seção principal de um artigo, assim você pode se focar na edição apenas naquela parte.",
 	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|Pré-visualize}} suas alterações (opcional)",
