@@ -3,10 +3,9 @@
  * when they are.
  */
 ( function ( window, document, $, mw, gt ) {
-
 	// XXX (mattflaschen, 2012-01-02): See GuidedTourHooks.php
 	var pageName = mw.config.get( 'wgGuidedTourHelpGuiderUrl' ),
-		tour;
+		tour, firstStepButtons, firstStep;
 
 	tour = new gt.TourBuilder( {
 		/*
@@ -19,7 +18,12 @@
 		name: 'onshow'
 	} );
 
-	tour.firstStep( {
+	// If there is no page, this is also the last step.
+	firstStepButtons = ( pageName === null ) ?
+		[ { action: 'end' } ] :
+		[];
+
+	firstStep = tour.firstStep( {
 		name: 'descriptionwikitext',
 		titlemsg: 'guidedtour-tour-test-mediawiki-parse',
 		// This deliberately does not use descriptionmsg in order to demonstrate
@@ -32,29 +36,33 @@
 		position: {
 			fallback: 'bottomRight',
 			monobook: 'right'
-		}
-	} )
-	.next( 'descriptionpage' );
+		},
+		buttons: firstStepButtons
+	} );
 
-	tour.step( {
-		/*
-		 * Test out mediawiki description pages
-		 */
-		name: 'descriptionpage',
-		titlemsg: 'guidedtour-tour-test-description-page',
-		description: pageName,
+	if ( pageName !== null ) {
+		firstStep.next( 'descriptionpage' );
 
-		overlay: true,
-		onShow: gt.getPageAsDescription,
+		tour.step( {
+			/*
+			 * Test out mediawiki description pages
+			 */
+			name: 'descriptionpage',
+			titlemsg: 'guidedtour-tour-test-description-page',
+			description: pageName,
 
-		buttons: [ {
-			action: 'wikiLink',
-			page: pageName,
-			namemsg: 'guidedtour-tour-test-go-description-page',
-			type: 'progressive'
-		}, {
-			action: 'end'
-		} ]
-	} )
-	.back( 'descriptionwikitext' );
+			overlay: true,
+			onShow: gt.getPageAsDescription,
+
+			buttons: [ {
+				action: 'wikiLink',
+				page: pageName,
+				namemsg: 'guidedtour-tour-test-go-description-page',
+				type: 'progressive'
+			}, {
+				action: 'end'
+			} ]
+		} )
+		.back( 'descriptionwikitext' );
+	}
 } ( window, document, jQuery, mediaWiki, mediaWiki.guidedTour ) );
