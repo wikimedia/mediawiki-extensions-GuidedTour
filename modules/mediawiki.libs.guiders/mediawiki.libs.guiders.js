@@ -829,7 +829,7 @@ mediaWiki.libs.guiders = (function($) {
 		}, 20);
 	});
 
-	$(document).ready(function() {
+	$(function() {
 		guiders.reposition();
 	});
 

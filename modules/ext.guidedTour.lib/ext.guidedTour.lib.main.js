@@ -217,7 +217,7 @@
 		guiders._defaultSettings.closeOnClickOutside = true;
 		guiders._defaultSettings.flipToKeepOnScreen = true;
 
-		$( document ).ready( function () {
+		$( function () {
 			setupRepositionListeners();
 			setupStepTransitionListeners();
 		} );
