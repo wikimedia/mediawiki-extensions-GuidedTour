@@ -314,7 +314,7 @@
 			internal.loadTour( tourName ).done( function () {
 				var tour = internal.definedTours[tourName];
 
-				if ( gt.shouldShowTour( {
+				if ( tour && gt.shouldShowTour( {
 					tourName: tourName,
 					userState: getUserState(),
 					pageName: mw.config.get( 'wgPageName' ),

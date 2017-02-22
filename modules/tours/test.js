@@ -2,10 +2,14 @@
  * Guided Tour to test guided tour features.
  */
 ( function ( window, document, $, mw, gt ) {
-
 	// XXX (mattflaschen, 2012-01-02): See GuidedTourHooks.php
-	var pageName = mw.config.get( 'wgGuidedTourHelpGuiderUrl' ),
-		tour;
+	var tour, launchTourButtons,
+		pageName = mw.config.get( 'wgGuidedTourHelpGuiderUrl' );
+
+	// Should match shouldShowForPage from firstedit.js
+	function shouldShowFirstEdit() {
+		return ( mw.config.get( 'wgCanonicalNamespace' ) === '' && mw.config.get( 'wgIsProbablyEditable' ) );
+	}
 
 	tour = new gt.TourBuilder( {
 		/*
@@ -54,28 +58,44 @@
 			monobook: 'right'
 		}
 	} )
-	.next( 'descriptionpage' )
+	.next( pageName ? 'descriptionpage' : 'launchtour' )
 	.back( 'callout' );
 
-	tour.step( {
-		/*
-		 * Test out mediawiki description pages
-		 */
-		name: 'descriptionpage',
-		titlemsg: 'guidedtour-tour-test-description-page',
-		description: new mw.Title( pageName ),
+	if ( pageName ) {
+		tour.step( {
+			/*
+			 * Test out mediawiki description pages
+			 */
+			name: 'descriptionpage',
+			titlemsg: 'guidedtour-tour-test-description-page',
+			description: new mw.Title( pageName ),
 
-		overlay: true,
+			overlay: true,
 
-		buttons: [ {
-			action: 'wikiLink',
-			page: pageName,
-			namemsg: 'guidedtour-tour-test-go-description-page',
-			type: 'progressive'
-		} ]
-	} )
-	.next( 'launchtour' )
-	.back( 'descriptionwikitext' );
+			buttons: [ {
+				action: 'wikiLink',
+				page: pageName,
+				namemsg: 'guidedtour-tour-test-go-description-page',
+				type: 'progressive'
+			} ]
+		} )
+		.next( 'launchtour' )
+		.back( 'descriptionwikitext' );
+	}
+
+	launchTourButtons = [ {
+		action: 'end'
+	} ];
+
+	if ( shouldShowFirstEdit() ) {
+		launchTourButtons.unshift( {
+			namemsg: 'guidedtour-tour-test-launch-editing',
+			onclick: function() {
+				gt.endTour();
+				gt.launchTour( 'firstedit' );
+			}
+		} );
+	}
 
 	/*
 	 * Test out tour launching
@@ -88,15 +108,7 @@
 		// attachment
 		overlay: true,
 
-		buttons: [ {
-			namemsg: 'guidedtour-tour-test-launch-editing',
-			onclick: function() {
-				gt.endTour();
-				gt.launchTour( 'firstedit' );
-			}
-		}, {
-			action: 'end'
-		} ]
+		buttons: launchTourButtons
 	})
-	.back( 'descriptionpage' );
+	.back( pageName ? 'descriptionpage' : 'descriptionwikitext' );
 } ( window, document, jQuery, mediaWiki, mediaWiki.guidedTour ) );
