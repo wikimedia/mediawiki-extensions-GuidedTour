@@ -1,7 +1,7 @@
 ( function ( mw, $ ) {
 	'use strict';
 
-	var gt, originalVE, originalGetParam, cookieConfig, cookieName, cookieParams,
+	var gt, originalVE, cookieConfig, cookieName, cookieParams,
 		// Step specification as passed to the legacy defineTour method
 		VALID_DEFINE_TOUR_STEP_SPEC = {
 			titlemsg: 'guidedtour-tour-test-callouts',
@@ -42,7 +42,6 @@
 
 	QUnit.module( 'ext.guidedTour.lib', QUnit.newMwEnvironment( {
 		setup: function () {
-			originalGetParam = mw.util.getParamValue;
 			originalVE = window.ve;
 
 			validTourBuilder = new gt.TourBuilder( { name: 'placeholder' } );
@@ -62,7 +61,6 @@
 		},
 		teardown: function () {
 			window.ve = originalVE;
-			mw.util.getParamValue = originalGetParam;
 		}
 	} ) );
 
@@ -94,7 +92,6 @@
 			'Missing parameter returns null'
 		);
 	} );
-
 
 	QUnit.test( 'parseTourId', 1, function ( assert ) {
 		var tourId = 'gt-test-2', expectedTourInfo;
@@ -133,9 +130,9 @@
 			PAGE_NAME_TO_SKIP = 'RightPage',
 			OTHER_PAGE_NAME = 'OtherPage';
 
-		mw.util.getParamValue =	function ( param ) {
-			return paramMap[param];
-		};
+		this.sandbox.stub( mw.util, 'getParamValue', function ( param ) {
+			return paramMap[ param ];
+		} );
 
 		paramMap = { action: 'edit', debug: 'true' };
 
@@ -188,9 +185,9 @@
 
 	QUnit.test( 'getStepFromQuery', 2, function ( assert ) {
 		var step;
-		mw.util.getParamValue = function () {
+		this.sandbox.stub( mw.util, 'getParamValue', function () {
 			return step;
-		};
+		} );
 
 		step = 6;
 		assert.strictEqual(
