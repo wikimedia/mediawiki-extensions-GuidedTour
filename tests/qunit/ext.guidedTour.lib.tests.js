@@ -1462,13 +1462,13 @@
 		var checkTransitionSpy = this.spy( firstStep, 'checkTransition' ),
 			actualTransitionEvent, expectedTransitionEvent;
 
+		validTour.showStep( firstStep );
+
+		expectedTransitionEvent = new gt.TransitionEvent();
+		expectedTransitionEvent.type = gt.TransitionEvent.BUILTIN;
+		expectedTransitionEvent.subtype = gt.TransitionEvent.TRANSITION_BEFORE_SHOW;
+
 		return validTour.initialize().then( function () {
-			validTour.showStep( firstStep );
-
-			expectedTransitionEvent = new gt.TransitionEvent();
-			expectedTransitionEvent.type = gt.TransitionEvent.BUILTIN;
-			expectedTransitionEvent.subtype = gt.TransitionEvent.TRANSITION_BEFORE_SHOW;
-
 			actualTransitionEvent = checkTransitionSpy.lastCall.args[ 0 ];
 
 			assert.deepEqual(

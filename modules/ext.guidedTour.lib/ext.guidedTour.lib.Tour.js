@@ -134,12 +134,12 @@
 		this.isExtensionDefined = ( mw.loader.getState( moduleName ) !== null );
 
 		/**
-		 * Whether this tour has been initialized (guiders have been created)
+		 * Promise tracking when this tour is initialized (guiders have been created)
 		 *
-		 * @property {boolean}
+		 * @property {null|jQuery.Deferred}
 		 * @private
 		 */
-		this.isInitialized = false;
+		this.initialized = null;
 	}
 
 	// TODO: Change this to use before/after (T142267)
@@ -191,24 +191,20 @@
 	 * @return {jQuery.Promise} Promise that waits on all steps to initialize (or one to fail)
 	 */
 	Tour.prototype.initialize = function () {
-		var stepName, promises = [], tour = this,
+		var stepName, promises = [],
 			$body = $( document.body ),
 			interfaceDirection = $( 'html' ).attr( 'dir' ),
 			siteDirection = $body.hasClass( 'sitedir-ltr' ) ? 'ltr' : 'rtl';
 
-		if ( this.isInitialized ) {
-			return $.Deferred().resolve();
+		if ( !this.initialized ) {
+			this.flipRTL = this.getShouldFlipHorizontally( interfaceDirection, siteDirection );
+			for ( stepName in this.steps ) {
+				promises.push( this.steps[ stepName ].initialize() );
+			}
+			this.initialized = $.when.apply( $, promises );
 		}
 
-		this.flipRTL = this.getShouldFlipHorizontally( interfaceDirection, siteDirection );
-
-		for ( stepName in this.steps ) {
-			promises.push( this.steps[stepName].initialize() );
-		}
-
-		return $.when.apply( $, promises ).then( function () {
-			tour.isInitialized = true;
-		} );
+		return this.initialized;
 	};
 
 	/**
