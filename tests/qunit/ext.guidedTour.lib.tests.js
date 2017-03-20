@@ -1462,18 +1462,21 @@
 		var checkTransitionSpy = this.spy( firstStep, 'checkTransition' ),
 			actualTransitionEvent, expectedTransitionEvent;
 
-		validTour.showStep( firstStep );
-		actualTransitionEvent = checkTransitionSpy.lastCall.args[0];
+		return validTour.initialize().then( function () {
+			validTour.showStep( firstStep );
 
-		expectedTransitionEvent = new gt.TransitionEvent();
-		expectedTransitionEvent.type = gt.TransitionEvent.BUILTIN;
-		expectedTransitionEvent.subtype = gt.TransitionEvent.TRANSITION_BEFORE_SHOW;
+			expectedTransitionEvent = new gt.TransitionEvent();
+			expectedTransitionEvent.type = gt.TransitionEvent.BUILTIN;
+			expectedTransitionEvent.subtype = gt.TransitionEvent.TRANSITION_BEFORE_SHOW;
 
-		assert.deepEqual(
-			actualTransitionEvent,
-			expectedTransitionEvent,
-			'Calls checkTransition with expected event'
-		);
+			actualTransitionEvent = checkTransitionSpy.lastCall.args[ 0 ];
+
+			assert.deepEqual(
+				actualTransitionEvent,
+				expectedTransitionEvent,
+				'Calls checkTransition with expected event'
+			);
+		} );
 	} );
 
 	QUnit.test( 'Tour.start', 2, function ( assert ) {
