@@ -18,10 +18,10 @@ class GuidedTourHooks {
 	const TOUR_PARAM = 'tour';
 
 	/*
-	   XXX (mattflaschen, 2013-01-02):
-
-	   wgGuidedTourHelpGuiderUrl is a hack pending forcontent messages:
-	   https://bugzilla.wikimedia.org/show_bug.cgi?id=25349
+	 * XXX (mattflaschen, 2013-01-02):
+	 *
+	 * wgGuidedTourHelpGuiderUrl is a hack pending forcontent messages:
+	 * https://phabricator.wikimedia.org/T27349
 	*/
 	/**
 	 * Adds the page name of a GuidedTour local documentation page,
