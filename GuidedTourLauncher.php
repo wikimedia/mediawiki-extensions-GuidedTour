@@ -42,7 +42,7 @@ class GuidedTourLauncher {
 
 		$oldCookie = $wgRequest->getCookie( GuidedTourHooks::COOKIE_NAME );
 		$newCookie = self::getNewCookie( $oldCookie, $tourName, $step );
-		$wgRequest->response()->setcookie( GuidedTourHooks::COOKIE_NAME, $newCookie, 0, array(
+		$wgRequest->response()->setCookie( GuidedTourHooks::COOKIE_NAME, $newCookie, 0, array(
 			'httpOnly' => false,
 		) );
 
