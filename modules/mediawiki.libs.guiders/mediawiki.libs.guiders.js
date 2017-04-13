@@ -176,7 +176,7 @@ mediaWiki.libs.guiders = (function($) {
 			guiderButtonsContainer.append(thisButtonElem);
 
 			if (thisButton.onclick) {
-				thisButtonElem.bind('click', guiders._makeButtonListener(thisButton.onclick));
+				thisButtonElem.on('click', guiders._makeButtonListener(thisButton.onclick));
 			}
 		}
 
@@ -216,11 +216,11 @@ mediaWiki.libs.guiders = (function($) {
 
 	// myGuider is passed though it's not currently used.
 	guiders._unWireEscape = function (/* myGuider */) {
-		$(document).unbind('keydown');
+		$(document).off('keydown');
 	};
 
 	guiders._wireClickOutside = function (myGuider) {
-		$(document).bind('click.guiders', function (event) {
+		$(document).on('click.guiders', function (event) {
 			if ($(event.target).closest('.guider').length === 0) {
 				guiders.handleOnClose(myGuider, true, 'clickOutside' /* close by clicking outside */);
 				if (event.target.id === 'guider_overlay') {
@@ -231,7 +231,7 @@ mediaWiki.libs.guiders = (function($) {
 	};
 
 	guiders._unWireClickOutside = function () {
-		$(document).unbind('click.guiders');
+		$(document).off('click.guiders');
 	};
 
 
