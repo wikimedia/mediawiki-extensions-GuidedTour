@@ -10,15 +10,15 @@
 // Rules
 
 .guider {
-	background: #FFF;
+	background: #fff;
 	position: absolute;
 	border: 1px solid #ccc;
 	width: 500px;
 	padding: 12px;
-	outline: none;
+	outline: 0;
 	font-size: 14px;
-	font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
-	.box-shadow(0 0 4px rgba(0, 0, 0, 0.2));
+	font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	.box-shadow( 0 0 4px rgba( 0, 0, 0, 0.2 ) );
 	border-radius: 3px;
 	z-index: 100000005 !important;
 }
@@ -52,7 +52,7 @@
 		font-weight: bold;
 		padding-top: 0.1em;
 		margin-bottom: 4px;
-		border-bottom: none;
+		border-bottom: 0;
 	}
 
 	p {
@@ -74,7 +74,7 @@
 		height: 13px;
 		width: 13px;
 		background-repeat: no-repeat;
-		.background-image-svg('images/ext.guidedTour.x.svg', 'images/ext.guidedTour.x.png');
+		.background-image-svg( 'images/ext.guidedTour.x.svg', 'images/ext.guidedTour.x.png' );
 	}
 }
 
@@ -89,16 +89,16 @@
 
 // Arrow icon buttons
 .guidedtour-next-button .guider_button_icon {
-	.background-image-svg('images/arrow-icon-next-ltr.svg', 'images/arrow-icon-next-ltr.png');
+	.background-image-svg( 'images/arrow-icon-next-ltr.svg', 'images/arrow-icon-next-ltr.png' );
 }
 .guidedtour-back-button .guider_button_icon {
-	.background-image-svg('images/arrow-icon-back-ltr.svg', 'images/arrow-icon-back-ltr.png');
+	.background-image-svg( 'images/arrow-icon-back-ltr.svg', 'images/arrow-icon-back-ltr.png' );
 }
 
 // Okay or End button
 .guidedtour-okay-button .guider_button_icon,
 .guidedtour-end-button .guider_button_icon {
-	.background-image-svg('images/okay-icon.svg', 'images/okay-icon.png');
+	.background-image-svg( 'images/okay-icon.svg', 'images/okay-icon.png' );
 }
 
 #guider_overlay {
@@ -106,11 +106,11 @@
 	width: 100%;
 	height: 100%;
 	position: fixed;
-	top: 0px;
-	left: 0px;
+	top: 0;
+	left: 0;
 	opacity: 0.5;
 	/* The only browser we support that doesn't have standard opacity is IE 8, which supports -ms-filter */
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=50)';
 	z-index: 100000004;
 }
 
@@ -215,5 +215,5 @@
 .position_guider_arrow_by_direction(left, 0, @half_guider_arrow_height);
 
 .ie8 .guider_arrow_inner {
-	-ms-filter: "progid:DXImageTransform.Microsoft.Matrix(SizingMethod='auto expand', M11=0.7071067811865476, M12=-0.7071067811865475, M21=0.7071067811865475, M22=0.7071067811865476)";
+	-ms-filter: "progid:DXImageTransform.Microsoft.Matrix(SizingMethod='auto expand', M11=0.7071067811865476, M12=-0.7071067811865475, M21=0.7071067811865475, M22=0.7071067811865476)"; /* stylelint-disable-line string-quotes */
 }
