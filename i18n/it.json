@@ -3,7 +3,8 @@
 		"authors": [
 			"Beta16",
 			"Gianfranco",
-			"Ontsed"
+			"Ontsed",
+			"Melos"
 		]
 	},
 	"guidedtour-desc": "Consente di gestire pagine per fornire un tour guidato tramite popup per assistere i nuovi utenti",
@@ -21,7 +22,7 @@
 	"guidedtour-tour-test-go-description-page": "Vai alla pagina di descrizione",
 	"guidedtour-tour-test-launch-tour": "Prova la visita di partenza",
 	"guidedtour-tour-test-launch-tour-description": "Le guide possono lanciare altre visite guidate. Non male, eh?",
-	"guidedtour-tour-test-launch-using-tours": "Lancia un tour sull'utilizzo delle visite",
+	"guidedtour-tour-test-launch-editing": "Avvia una visita guidata su come modificare",
 	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|Modifica}} l'intera pagina…",
 	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Clicca}} \"$1\" per fare le tue modifiche.",
 	"guidedtour-tour-firstedit-edit-section-title": "Oppure {{GENDER:|modifica}} una sezione",
