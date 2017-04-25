@@ -4,7 +4,8 @@
 			"Ebraminio",
 			"Omidh",
 			"Calak",
-			"Alirezaaa"
+			"Alirezaaa",
+			"Reza1615"
 		]
 	},
 	"guidedtour-desc": "اجازه می‌دهند صفحه‌ها یک پاپ‌آپ راهنمای تور برای راهنمایی کاربران تازه فراهم کنند",
@@ -22,7 +23,7 @@
 	"guidedtour-tour-test-go-description-page": "رفتن به صفحهٔ توضیحات",
 	"guidedtour-tour-test-launch-tour": "آزمایش راه‌اندازی تور",
 	"guidedtour-tour-test-launch-tour-description": "راهنمایان می‌توانند تور‌های دیگری نیز اجرا کنند. خیلی جالب هست، نه؟",
-	"guidedtour-tour-test-launch-using-tours": "راه‌اندازی یک تور در استفاده از تورها",
+	"guidedtour-tour-test-launch-editing": "اجرای تور بر روی ویرایش",
 	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|ویرایش}} تمام صفحه…",
 	"guidedtour-tour-firstedit-edit-page-description": "برای ذخیرهٔ تغییراتتان بر روی دکمهٔ «$1» {{GENDER:|کلیک کنید}}.",
 	"guidedtour-tour-firstedit-edit-section-title": "یا {{GENDER:|ویرایش}} یک بخش",
