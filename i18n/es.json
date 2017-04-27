@@ -8,7 +8,8 @@
 			"Chocolate con galleta",
 			"VegaDark",
 			"Macofe",
-			"Dgstranz"
+			"Dgstranz",
+			"Luzcaru"
 		]
 	},
 	"guidedtour-desc": "Permite a las páginas ofrecer una visita guiada para ayudar a los usuarios nuevos",
@@ -25,8 +26,8 @@
 	"guidedtour-tour-test-description-page": "Probar las páginas de descripción de MediaWiki",
 	"guidedtour-tour-test-go-description-page": "Ir a la página de descripción",
 	"guidedtour-tour-test-launch-tour": "Prueba de inicio de la visita guiada",
-	"guidedtour-tour-test-launch-tour-description": "Las guías pueden iniciar otras visitas guiadas. Muy bueno, ¿eh?",
-	"guidedtour-tour-test-launch-editing": "Lanzar una visita guiada sobre la edición",
+	"guidedtour-tour-test-launch-tour-description": "Los guías pueden iniciar otras visitas guiadas. Muy bueno, ¿eh?",
+	"guidedtour-tour-test-launch-editing": "Iniciar una visita guiada sobre la edición",
 	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|Edita}} la página completa…",
 	"guidedtour-tour-firstedit-edit-page-description": "Haz {{GENDER:|clic}} en el botón \"$1\" para realizar tus cambios.",
 	"guidedtour-tour-firstedit-edit-section-title": "O {{GENDER:|edita}} una sección",
