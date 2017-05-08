@@ -171,8 +171,11 @@
 	};
 
 	/**
-	 * Gets a Guiders button specification, using the message for the provided type
-	 * (if no text is provided) and the provided callback.
+	 * Gets a Guiders button specification, using the message and icon for the provided
+	 * type (if no text is provided) and the provided callback.
+	 *
+	 * If a name or namemsg is provided, the icon will not be shown and the text will
+	 * be used.
 	 *
 	 * @private
 	 *
@@ -192,7 +195,8 @@
 		        // button.action will be deleted with the delete operator later in the flow.
 			buttonAction = button.action,
 			buttonTypeClass = getButtonTypeClass( button ),
-			messageKeyMapping;
+			messageKeyMapping,
+			hasIcon;
 
 		messageKeyMapping = {
 			next: 'guidedtour-next-button',
@@ -201,9 +205,19 @@
 			end: 'guidedtour-okay-button'
 		};
 
-		if ( !button.name ) {
+		// TODO: Refactor how namemsg is handled, for code reuse.
+		if ( button.namemsg ) {
+			messageKey = button.namemsg;
+			button.name = mw.message( button.namemsg ).parse();
+			delete button.namemsg;
+		}
+
+		if ( button.name ) {
+			hasIcon = false;
+		} else {
 			messageKey = messageKeyMapping[button.action];
 			button.name = mw.message( messageKey ).parse();
+			hasIcon = true;
 		}
 
 		return {
@@ -226,7 +240,7 @@
 			html: {
 				'class': guiders._buttonClass + ' ' + actionButtonClass + ' ' + buttonTypeClass
 			},
-			hasIcon: true
+			hasIcon: hasIcon
 		};
 	};
 
