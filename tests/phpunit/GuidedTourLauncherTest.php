@@ -13,85 +13,85 @@ class GuidedTourLauncherTest extends MediaWikiTestCase {
 	}
 
 	public function getNewCookieProvider() {
-		$simpleExpectedCookieString = FormatJson::encode( array(
+		$simpleExpectedCookieString = FormatJson::encode( [
 			'version' => 1,
-			'tours' => array(
-				'example' => array(
+			'tours' => [
+				'example' => [
 					'step' => 'bar',
-				),
-			),
-		) );
+				],
+			],
+		] );
 
-		return array(
-			array(
-				FormatJson::encode( array(
+		return [
+			[
+				FormatJson::encode( [
 					'version' => 1,
-					'tours' => array(
-						'example' => array(
+					'tours' => [
+						'example' => [
 							'step' => 'foo',
 							'firstArticleId' => 123,
-						),
-					),
-				) ),
+						],
+					],
+				] ),
 				'example',
 				'bar',
-				FormatJson::encode( array(
+				FormatJson::encode( [
 					'version' => 1,
-					'tours' => array(
-						'example' => array(
+					'tours' => [
+						'example' => [
 							'step' => 'bar',
 							'firstArticleId' => 123,
-						),
-					)
-				) )
-			),
+						],
+					]
+				] )
+			],
 
-			array(
+			[
 				null,
 				'example',
 				'bar',
 				$simpleExpectedCookieString,
-			),
+			],
 
-			array(
+			[
 				'',
 				'example',
 				'bar',
 				$simpleExpectedCookieString
-			),
+			],
 
-			array(
+			[
 				'{}',
 				'example',
 				'bar',
 				$simpleExpectedCookieString
-			),
+			],
 
-			array(
-				FormatJson::encode( array(
+			[
+				FormatJson::encode( [
 					'version' => 1,
-					'tours' => array(
-						'someOtherTour' => array(
+					'tours' => [
+						'someOtherTour' => [
 							'step' => 'baz',
 							'firstSpecialPageName' => 'Special:Watchlist',
-						),
-					)
-				) ),
+						],
+					]
+				] ),
 				'example',
 				'bar',
-				FormatJson::encode( array(
+				FormatJson::encode( [
 					'version' => 1,
-					'tours' => array(
-						'someOtherTour' => array(
+					'tours' => [
+						'someOtherTour' => [
 							'step' => 'baz',
 							'firstSpecialPageName' => 'Special:Watchlist',
-						),
-						'example' => array(
+						],
+						'example' => [
 							'step' => 'bar',
-						),
-					)
-				) ),
-			),
-		);
+						],
+					]
+				] ),
+			],
+		];
 	}
 }

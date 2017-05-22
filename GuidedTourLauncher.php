@@ -19,17 +19,17 @@ class GuidedTourLauncher {
 
 		$newCookie = FormatJson::decode( $oldCookieValue, true );
 		if ( $newCookie === null ) {
-			$newCookie = array();
+			$newCookie = [];
 		}
 
-		$newCookie = array_replace_recursive( $newCookie, array(
+		$newCookie = array_replace_recursive( $newCookie, [
 			'version' => 1,
-			'tours' => array(
-				$tourName => array(
+			'tours' => [
+				$tourName => [
 					'step' => $step,
-				),
-			)
-		) );
+				],
+			]
+		] );
 
 		return FormatJson::encode( $newCookie );
 	}
@@ -42,9 +42,9 @@ class GuidedTourLauncher {
 
 		$oldCookie = $wgRequest->getCookie( GuidedTourHooks::COOKIE_NAME );
 		$newCookie = self::getNewCookie( $oldCookie, $tourName, $step );
-		$wgRequest->response()->setCookie( GuidedTourHooks::COOKIE_NAME, $newCookie, 0, array(
+		$wgRequest->response()->setCookie( GuidedTourHooks::COOKIE_NAME, $newCookie, 0, [
 			'httpOnly' => false,
-		) );
+		] );
 
 		GuidedTourHooks::addTour( $wgOut, $tourName );
 	}

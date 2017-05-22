@@ -47,7 +47,6 @@ class GuidedTourHooks {
 			$vars['wgGuidedTourHelpGuiderUrl'] = $pageName;
 		}
 
-
 		return true;
 	}
 
@@ -89,7 +88,7 @@ class GuidedTourHooks {
 			}
 		}
 
-		return array();
+		return [];
 	}
 
 	/**
@@ -112,7 +111,8 @@ class GuidedTourHooks {
 	public static function addTour( $out, $tourName ) {
 		global $wgResourceModules;
 
-		$isUserJsAllowed = $out->getAllowedModules( ResourceLoaderModule::TYPE_SCRIPTS ) >= ResourceLoaderModule::ORIGIN_USER_INDIVIDUAL;
+		$isUserJsAllowed = $out->getAllowedModules( ResourceLoaderModule::TYPE_SCRIPTS )
+			>= ResourceLoaderModule::ORIGIN_USER_INDIVIDUAL;
 
 		// Exclude '-' because MediaWiki message keys use it as a separator after the tourname.
 		// Exclude '.' because module names use it as a separator.
@@ -123,8 +123,7 @@ class GuidedTourHooks {
 			if ( isset( $wgResourceModules[$tourModuleName] ) ) {
 				// Add the tour itself for extension-defined tours.
 				$out->addModules( $tourModuleName );
-			}
-			else {
+			} else {
 				/*
 				  Otherwise, add the main module, which attempts to import an
 				  on-wiki tour.
@@ -210,12 +209,12 @@ class GuidedTourHooks {
 	 * @return bool
 	 */
 	public static function onResourceLoaderTestModules( &$testModules, &$resourceLoader ) {
-		$testModules[ 'qunit' ][ 'ext.guidedTour.lib.tests' ] = array(
-			'scripts' => array( 'tests/qunit/ext.guidedTour.lib.tests.js' ),
-			'dependencies' => array( 'ext.guidedTour.lib' ),
+		$testModules['qunit']['ext.guidedTour.lib.tests'] = [
+			'scripts' => [ 'tests/qunit/ext.guidedTour.lib.tests.js' ],
+			'dependencies' => [ 'ext.guidedTour.lib' ],
 			'localBasePath' => __DIR__,
 			'remoteExtPath' => 'GuidedTour',
-		);
+		];
 		return true;
 	}
 

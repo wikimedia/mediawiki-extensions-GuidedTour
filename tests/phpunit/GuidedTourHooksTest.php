@@ -3,52 +3,52 @@
 class GuidedTourHooksTest extends MediaWikiTestCase {
 	public function testGetTourNames() {
 		$this->assertSame(
-			array(),
+			[],
 			GuidedTourHooks::getTourNames( null ),
 			'Returns empty array for null parameter'
 		);
 
 		$this->assertSame(
-			array( 'test' ),
-			GuidedTourHooks::getTourNames( FormatJson::encode( array(
+			[ 'test' ],
+			GuidedTourHooks::getTourNames( FormatJson::encode( [
 				'version' => 1,
-				'tours' => array(
-					'test' => array(
+				'tours' => [
+					'test' => [
 						'step' => 3,
-					),
-				),
-			) ) ),
+					],
+				],
+			] ) ),
 			'Valid JSON cookie with a single tour is parsed correctly'
 		);
 
 		$this->assertSame(
-			array( 'firsttour', 'secondtour', 'thirdtour' ),
-			GuidedTourHooks::getTourNames( FormatJson::encode( array(
+			[ 'firsttour', 'secondtour', 'thirdtour' ],
+			GuidedTourHooks::getTourNames( FormatJson::encode( [
 				'version' => 1,
-				'tours' => array(
-					'firsttour' => array(
+				'tours' => [
+					'firsttour' => [
 						'step' => 4,
-					),
-					'secondtour' => array(
+					],
+					'secondtour' => [
 						'step' => 2,
-					),
-					'thirdtour' => array(
+					],
+					'thirdtour' => [
 						'step' => 3,
 						'firstArticleId' => 38333
-					),
-				),
-			) ) ),
+					],
+				],
+			] ) ),
 			'Valid JSON cookie with multiple tours is parsed correctly'
 		);
 
 		$this->assertSame(
-			array(),
+			[],
 			GuidedTourHooks::getTourNames( '{"bad": "cookie"}' ),
 			'Valid JSON with missing tours field returns empty array'
 		);
 
 		$this->assertSame(
-			array(),
+			[],
 			GuidedTourHooks::getTourNames( '<invalid: JSON>' ),
 			'Invalid JSON returns empty array'
 		);
