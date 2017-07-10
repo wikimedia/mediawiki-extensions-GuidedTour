@@ -21,7 +21,7 @@
 	"guidedtour-tour-test-go-description-page": "Перейти на страницу описания",
 	"guidedtour-tour-test-launch-tour": "Тестовый запуск тура",
 	"guidedtour-tour-test-launch-tour-description": "Гиды могут запускать другие туры. Довольно круто, да?",
-	"guidedtour-tour-test-launch-using-tours": "Запустить тур по использованию туров",
+	"guidedtour-tour-test-launch-editing": "Запустить тур по редактированию",
 	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|Редактировать}} всю страницу…",
 	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Нажмите}} кнопку «$1», чтобы внести изменения.",
 	"guidedtour-tour-firstedit-edit-section-title": "Или {{GENDER:|измените}} только раздел",
