@@ -20,7 +20,7 @@
 	"guidedtour-tour-test-callouts": "Chamadas de teste",
 	"guidedtour-tour-test-portal-description": "Esta é a página do {{int:portal}}.",
 	"guidedtour-tour-test-mediawiki-parse": "Teste de parsing do Mediawiki",
-	"guidedtour-tour-test-wikitext-description": "Um guia em sua turnê on-wiki pode conter texto wiki. Use-o para criar um wikilink para a  [[{{MediaWiki:Guidedtour-help-url}}|Documentação de visitas guiadas]]. Ou um [https://example.com link externo], por exemplo.",
+	"guidedtour-tour-test-wikitext-description": "Um guia em sua turnê on-wiki pode conter texto wiki. Use-o para criar um wikilink para a [[{{MediaWiki:Guidedtour-help-url}}|Documentação de visitas guiadas]]. Ou um [https://example.com link externo], por exemplo.",
 	"guidedtour-tour-test-description-page": "Teste de páginas de descrição do MediaWiki",
 	"guidedtour-tour-test-go-description-page": "Ir para página de descrição",
 	"guidedtour-tour-test-launch-tour": "Teste do lançamento do guia",
