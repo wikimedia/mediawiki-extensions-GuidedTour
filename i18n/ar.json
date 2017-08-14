@@ -5,7 +5,8 @@
 			"Ciphers",
 			"Emara",
 			"زكريا",
-			"Meno25"
+			"Meno25",
+			"ديفيد"
 		]
 	},
 	"guidedtour-desc": "السماح للصفحات بعرض رسائل جولات إرشادية لمساعدة المستخدمين الجدد",
@@ -24,7 +25,7 @@
 	"guidedtour-tour-test-launch-tour": "جرب جولة افتتاحية",
 	"guidedtour-tour-test-launch-tour-description": "من الممكن للمرشدين إطلاق المزيد من الجولات الإرشادية. أليس ذلك رائعا؟",
 	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|تعديل}} كامل الصفحة...",
-	"guidedtour-tour-firstedit-edit-page-description": "اضغط{{GENDER:||ي}} \"$1\" لإضافة تعديلاتك.",
+	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|اضغط}} الزر \"$1\" لإجراء تعديلاتك.",
 	"guidedtour-tour-firstedit-edit-section-title": "أو عدلي{{GENDER:||ي}} قسما",
 	"guidedtour-tour-firstedit-edit-section-description": "هناك روابط \"{{int:editsection}}\" لكل قسم رئيس في الصفحة لكي تتمكن من التركيز عليه.",
 	"guidedtour-tour-firstedit-preview-title": "عاين{{GENDER:||ي}} تغييراتك (اختياري)",
