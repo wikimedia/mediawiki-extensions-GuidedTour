@@ -31,6 +31,10 @@
 			throw new gt.TourDefinitionError( '\'stepSpec.name\' must be a string, the step name, without the characters \'.\' and \'-\'.' );
 		}
 
+		if ( stepSpec.attachTo && stepSpec.position === undefined ) {
+			throw new gt.TourDefinitionError( 'If you specify an \'attachTo\', you must also specify \'position\'; see TourBuilder.step' );
+		}
+
 		/**
 		 * Step being built by this StepBuilder
 		 *

@@ -56,7 +56,7 @@ mediaWiki.libs.guiders = (function($) {
 		classString: null,
 		closeOnEscape: false,
 		closeOnClickOutside: false,
-		description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+		description: '',
 		// If guider would go off screen to the left or right, flip horizontally.
 		// If guider would go off the top of the screen, flip vertically. If it would go off the bottom of the screen do nothing, since most pages scroll in the vertical direction.
 		// It will be flipped both ways if it would be off-screen on two sides.
@@ -76,7 +76,7 @@ mediaWiki.libs.guiders = (function($) {
 		// 1-12 follows an analog clock, 0 means centered. You can also use the string positions
 		// listed below at guiders._offsetNameMapping, such as "topRight".
 		position: 0,
-		title: 'Sample title goes here',
+		title: '',
 		width: 400,
 		xButton: false // this places a closer "x" button in the top right of the guider
 	};
