@@ -184,6 +184,8 @@
 	 * *   currently 'next', 'back', okay', or 'end'
 	 * * @param {Function} button.callback Function to call if they click the button
 	 * * @param {HTMLElement} button.callback.btn Raw DOM element of the button
+	 * * @param {string} [button.namemsg] Message key of button text to override
+	 * *   default.
 	 * * @param {string} [button.name] Button text to override default.
 	 *
 	 * @return {Object} Guiders button specification
