@@ -99,6 +99,8 @@
 	 *  format as position.  The values within the structure can also be selectors or
 	 *  jQuery-wrapped nodes.
 	 *
+	 * @param {Number} [stepSpec.width=400] Width, in pixels.
+	 *
 	 * @param {Function} [stepSpec.onShow] Function to execute immediately
 	 *  before the guider is shown.  Using this for gt.parseDescription or
 	 *  gt.getPageAsDescription is deprecated.  However, a string value of description
@@ -118,6 +120,11 @@
 	 * generated automatically.
 	 *
 	 * To suppress this, set allowAutomaticNext to false for the step.
+	 *
+	 * @param {boolean} [stepSpec.autoFocus=true] By default, the browser will scroll
+	 * to make the guider visible.
+	 *
+	 * To avoid this, set autoFocus to false for the step.
 	 *
 	 * @param {boolean} [stepSpec.closeOnClickOutside=true] Close the
 	 *  guider when the user clicks elsewhere on screen
