@@ -127,8 +127,8 @@
 .guider_arrow_inner_container {
 	position: relative;
 	overflow: hidden;
-	width: 100%;
-	height: 100%;
+	width: @guider_arrow_height;
+	height: @guider_arrow_height;
 }
 
 .guider_arrow_inner {
@@ -162,20 +162,6 @@
 	}
 }
 
-.guider_arrow_inner_container {
-	height: @guider_arrow_height;
-	width: @guider_arrow_height;
-
-	.guider_arrow_right & {
-		/* @noflip */
-		left: -@half_guider_arrow_height;
-	}
-
-	.guider_arrow_down & {
-		top: -@half_guider_arrow_height;
-	}
-}
-
 .guider_arrow_up {
 	display: block;
 	top: -@half_guider_arrow_height;
@@ -185,11 +171,20 @@
 	display: block;
 	/* @noflip */
 	right: -@half_guider_arrow_height;
+
+	& .guider_arrow_inner_container {
+		/* @noflip */
+		left: -@half_guider_arrow_height;
+	}
 }
 
 .guider_arrow_down {
 	display: block;
 	bottom: -@half_guider_arrow_height;
+
+	& .guider_arrow_inner_container {
+		top: -@half_guider_arrow_height;
+	}
 }
 
 .guider_arrow_left {
