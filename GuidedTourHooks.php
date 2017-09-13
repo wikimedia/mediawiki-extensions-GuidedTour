@@ -109,8 +109,6 @@ class GuidedTourHooks {
 	 * @return bool true if a module was added, false otherwise
 	 */
 	public static function addTour( $out, $tourName ) {
-		global $wgResourceModules;
-
 		$isUserJsAllowed = $out->getAllowedModules( ResourceLoaderModule::TYPE_SCRIPTS )
 			>= ResourceLoaderModule::ORIGIN_USER_INDIVIDUAL;
 
@@ -120,7 +118,7 @@ class GuidedTourHooks {
 		// extension-defined tours, but it's more conservative not to.
 		if ( $isUserJsAllowed && $tourName !== null && strpbrk( $tourName, '-.' ) === false ) {
 			$tourModuleName = "ext.guidedTour.tour.$tourName";
-			if ( isset( $wgResourceModules[$tourModuleName] ) ) {
+			if ( $out->getResourceLoader()->getModule( $tourModuleName ) ) {
 				// Add the tour itself for extension-defined tours.
 				$out->addModules( $tourModuleName );
 			} else {
@@ -130,7 +128,6 @@ class GuidedTourHooks {
 				*/
 				$out->addModules( 'ext.guidedTour' );
 			}
-
 			return true;
 		}
 
