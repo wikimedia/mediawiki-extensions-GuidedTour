@@ -166,6 +166,9 @@
 		],
 		"EventLoggingRegisterSchemas": [
 			"GuidedTourHooks::addEventLogging"
+		],
+		"MakeGlobalVariablesScript": [
+			"GuidedTourLauncher::addLaunchVariable"
 		]
 	},
 	"manifest_version": 1

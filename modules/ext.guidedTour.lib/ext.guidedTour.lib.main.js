@@ -41,7 +41,7 @@
 	 *  invalid, returns a skeleton state object from
 	 *  mw.guidedTour.internal#getInitialUserStateObject
 	 */
-	function getUserState() {
+	function getCookieState() {
 		var cookieValue, parsed;
 		cookieValue = mw.cookie.get( cookieName );
 		parsed = internal.parseUserState( cookieValue );
@@ -50,6 +50,31 @@
 		} else {
 			return internal.getInitialUserStateObject();
 		}
+	}
+
+	/**
+	 * Returns the current combined user state (cookie state and server-launched state)
+	 * Basically, this acts like the cookie state, except the server can specify
+	 * tours that take precedence via a $wg.
+	 *
+	 * @private
+	 *
+	 * @return {Object} combined state object.  If there is none, or the format was
+	 * invalid, returns a skeleton state object from
+	 * mw.guidedTour.internal#getInitialUserStateObject
+	 */
+	function getUserState() {
+		var
+			cookieState = getCookieState(),
+			serverState = mw.config.get( 'wgGuidedTourLaunchState' ),
+			state = cookieState;
+
+		if ( serverState !== null ) {
+			state = $.extend( true, state, serverState );
+		}
+
+		return state;
+
 	}
 
 	/**
@@ -62,11 +87,76 @@
 	 * @return {void}
 	 */
 	function removeTourFromUserStateByName( tourName ) {
-		var parsedCookie = getUserState();
+		var parsedCookie = getCookieState();
 		delete parsedCookie.tours[tourName];
 		mw.cookie.set( cookieName, JSON.stringify( parsedCookie ), cookieParams );
 	}
 
+	/**
+	 * Launch tour from given user state
+	 *
+	 * @private
+	 *
+	 * @param {Object} state State that specifies the tour progress
+	 *
+	 * @return {boolean} Whether a tour was launched
+	 */
+	function launchTourFromState( state ) {
+		var tourName, tourNames,
+			candidateTours = [];
+
+		for ( tourName in state.tours ) {
+			candidateTours.push( {
+				name: tourName,
+				step: state.tours[tourName].step
+			} );
+		}
+
+		tourNames = $.map( candidateTours, function ( el ) {
+			return el.name;
+		} );
+
+		internal.loadMultipleTours( tourNames )
+			.always( function () {
+				var tourName, max, currentStart;
+
+				// This value is before 1970, but is a simple way
+				// to ensure the comparison below always works.
+				max = {
+					startTime: -1
+				};
+
+				// Not all the tours in the cookie necessarily
+				// loaded successfully, but the defined tours did.
+				// So we make sure it is defined and in the user
+				// state.
+				for ( tourName in internal.definedTours ) {
+					if ( state.tours[tourName] !== undefined &&
+					     gt.shouldShowTour( {
+						tourName: tourName,
+						userState: state,
+						pageName: mw.config.get( 'wgPageName' ),
+						articleId: mw.config.get( 'wgArticleId' ),
+						condition: internal.definedTours[tourName].showConditionally
+					} ) ) {
+						currentStart = state.tours[tourName].startTime || 0;
+						if ( currentStart > max.startTime ) {
+							max = {
+								name: tourName,
+								step: state.tours[tourName].step,
+								startTime: currentStart
+							};
+						}
+					}
+				}
+
+				if ( max.name !== undefined ) {
+					// Launch the most recently started tour
+					// that meets the conditions.
+					gt.launchTour( max.name, gt.makeTourId( max ) );
+				}
+			} );
+	}
 
 	// TODO (mattflaschen, 2013-07-10): Known issue: This runs too early on a direct
 	// visit to a veaction=edit page.  This probably affects other JS-generated
@@ -358,67 +448,14 @@
 		},
 
 		/**
-		 * Attempts to launch a tour from the user state (cookie)
+		 * Attempts to launch a tour from combined user state (cookie + tours launched
+		 * directly by server)
 		 *
 		 * @return {boolean} Whether a tour was launched
 		 */
 		launchTourFromUserState: function () {
-			var tourName, tourNames,
-				userState, candidateTours = [];
-
-
-			userState = getUserState();
-
-			for ( tourName in userState.tours ) {
-				candidateTours.push( {
-					name: tourName,
-					step: userState.tours[tourName].step
-				} );
-			}
-
-			tourNames = $.map( candidateTours, function ( el ) {
-				return el.name;
-			} );
-			internal.loadMultipleTours( tourNames )
-				.always( function () {
-					var tourName, max, currentStart;
-
-					// This value is before 1970, but is a simple way
-					// to ensure the comparison below always works.
-					max = {
-						startTime: -1
-					};
-
-					// Not all the tours in the cookie necessarily
-					// loaded successfully, but the defined tours did.
-					// So we make sure it is defined and in the user
-					// state.
-					for ( tourName in internal.definedTours ) {
-						if ( userState.tours[tourName] !== undefined &&
-						     gt.shouldShowTour( {
-							tourName: tourName,
-							userState: userState,
-							pageName: mw.config.get( 'wgPageName' ),
-							articleId: mw.config.get( 'wgArticleId' ),
-							condition: internal.definedTours[tourName].showConditionally
-						} ) ) {
-							currentStart = userState.tours[tourName].startTime || 0;
-							if ( currentStart > max.startTime ) {
-								max = {
-									name: tourName,
-									step: userState.tours[tourName].step,
-									startTime: currentStart
-								};
-							}
-						}
-					}
-
-					if ( max.name !== undefined ) {
-						// Launch the most recently started tour
-						// that meets the conditions.
-						gt.launchTour( max.name, gt.makeTourId( max ) );
-					}
-				} );
+			var state = getUserState();
+			return launchTourFromState( state );
 		},
 
 		/**
@@ -438,7 +475,6 @@
 			// Tour is either in the query string or cookie (prefer query string)
 
 			if ( this.launchTourFromQueryString() ) {
-
 				return;
 			}
 
@@ -707,7 +743,7 @@
 
 			userState = getUserState();
 			if ( ( step === 0 ) && userState.tours[tourName] !== undefined ) {
-				// start from cookie position
+				// start from user state position
 				showTour( tourName, gt.makeTourId( {
 					name: tourName,
 					step: userState.tours[tourName].step
@@ -741,7 +777,7 @@
 		},
 
 		/**
-		 * Updates a single tour in the user state.  The tour must already be loaded.
+		 * Updates a single tour in the user cookie state.  The tour must already be loaded.
 		 *
 		 * @private
 		 *
@@ -754,34 +790,34 @@
 		 * @return {void}
 		 */
 		updateUserStateForTour: function ( args ) {
-			var userState = getUserState(), tourName, tourSpec, articleId, pageName,
-			cookieValue;
+			var cookieState = getCookieState(), tourName, tourSpec, articleId, pageName,
+				cookieValue;
 
 			tourName = args.tourInfo.name;
 			// It should be defined, except when wasShown is false.
 			tourSpec = internal.definedTours[tourName] || {};
 
 			// Ensure there's a sub-object for this tour
-			if ( userState.tours[tourName] === undefined ) {
-				userState.tours[tourName] = {};
+			if ( cookieState.tours[tourName] === undefined ) {
+				cookieState.tours[tourName] = {};
 
-				userState.tours[tourName].startTime = new Date().getTime();
+				cookieState.tours[tourName].startTime = new Date().getTime();
 			}
 
 			if ( args.wasShown && tourSpec.showConditionally === 'stickToFirstPage' &&
-			     userState.tours[tourName].firstArticleId === undefined &&
-			     userState.tours[tourName].firstSpecialPageName === undefined ) {
+			     cookieState.tours[tourName].firstArticleId === undefined &&
+			     cookieState.tours[tourName].firstSpecialPageName === undefined ) {
 				     articleId = mw.config.get( 'wgArticleId' );
 				     if ( articleId !== 0 ) {
-					     userState.tours[tourName].firstArticleId = articleId;
+					     cookieState.tours[tourName].firstArticleId = articleId;
 				     } else {
 					     pageName = mw.config.get( 'wgPageName' );
-					     userState.tours[tourName].firstSpecialPageName = pageName;
+					     cookieState.tours[tourName].firstSpecialPageName = pageName;
 				     }
 			     }
 
-			userState.tours[tourName].step = String( args.tourInfo.step );
-			cookieValue = JSON.stringify( userState );
+			cookieState.tours[tourName].step = String( args.tourInfo.step );
+			cookieValue = JSON.stringify( cookieState );
 			mw.cookie.set( cookieName, cookieValue, cookieParams );
 		},
 
@@ -821,20 +857,20 @@
 		 * @throws {mw.guidedTour.TourDefinitionError} On invalid conditions
 		 */
 		shouldShowTour: function ( args ) {
-			var subCookie = args.userState.tours[args.tourName];
+			var subState = args.userState.tours[args.tourName];
 			if ( args.condition !== undefined ) {
 				// TODO (mattflaschen, 2013-07-09): Allow having multiple
 				// conditions ANDed together in an array.
 				switch ( args.condition ) {
 					case 'stickToFirstPage':
-						if ( subCookie === undefined ) {
+						if ( subState === undefined ) {
 							// Not yet shown
 							return true;
 						}
-						if ( subCookie.firstArticleId !== undefined ) {
-							return subCookie.firstArticleId === args.articleId;
-						} else if ( subCookie.firstSpecialPageName !== undefined ) {
-							return subCookie.firstSpecialPageName === args.pageName;
+						if ( subState.firstArticleId !== undefined ) {
+							return subState.firstArticleId === args.articleId;
+						} else if ( subState.firstSpecialPageName !== undefined ) {
+							return subState.firstSpecialPageName === args.pageName;
 						}
 						break;
 					case 'wikitext':

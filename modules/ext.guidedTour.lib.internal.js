@@ -68,6 +68,7 @@
 			return dfd.promise();
 		},
 
+		// This should match GuidedTourLauncher::getNewState
 		/**
 		 * Returns object used for an initial user state, optionally populating it with one
 		 *  tour's data.
@@ -216,7 +217,8 @@
 		},
 
 		/**
-		 * Parses user state (as used in the cookie), which is passed in as JSON
+		 * Parses user state (as used in the cookie and wgGuidedTourLaunchState), which
+		 * is passed in as JSON
 		 *
 		 * @param {string} userStateJson User state, as JSON
 		 *
