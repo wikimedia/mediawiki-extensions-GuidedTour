@@ -709,11 +709,18 @@
 	 */
 	Step.prototype.handleLinkClick = function ( jQueryEvent ) {
 		var activationEvent, buttonEvent, isExternal, labelKey, loggingOverDfd,
-			logPromises = [], $link = $( jQueryEvent.currentTarget ),
+			isNewWindow, logPromises = [],
+			$link = $( jQueryEvent.currentTarget ),
 			url = $link.attr( 'href' ), label = $link.text(),
 			LOGGING_TIMEOUT_MS = 500;
 
-		jQueryEvent.preventDefault();
+		// If it's a new window, we don't need to delay the user,
+		// or worry about delaying them too much.
+		isNewWindow = ( $link.attr( 'target' ) === '_blank' );
+
+		if ( !isNewWindow ) {
+			jQueryEvent.preventDefault();
+		}
 
 		activationEvent = {
 			label: label
@@ -728,7 +735,9 @@
 		// https://bugzilla.wikimedia.org/show_bug.cgi?id=52287
 		loggingOverDfd = $.Deferred();
 
-		window.setTimeout( loggingOverDfd.reject, LOGGING_TIMEOUT_MS );
+		if ( !isNewWindow ) {
+			window.setTimeout( loggingOverDfd.reject, LOGGING_TIMEOUT_MS );
+		}
 
 		if ( isExternal ) {
 			activationEvent.href = url;
@@ -761,9 +770,11 @@
 
 		$.when.apply( $, logPromises ).then( loggingOverDfd.resolve, loggingOverDfd.reject );
 
-		loggingOverDfd.always( function () {
-			window.location = url;
-		} );
+		if ( !isNewWindow ) {
+			loggingOverDfd.always( function () {
+				window.location = url;
+			} );
+		}
 	};
 
 	/**
