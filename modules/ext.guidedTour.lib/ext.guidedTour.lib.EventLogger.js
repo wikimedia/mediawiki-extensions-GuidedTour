@@ -31,10 +31,6 @@
 		 * @param {mw.guidedTour.Step} step Step event is about
 		 * @param {Object} [event={}] Event object; will be mutated to add
 		 *  common information
-		 *
-		 * @return {jQuery.Promise} Promise for logging operation,
-		 *   that resolves on successful logging (including noop), or rejects
-		 *   on failure
 		 */
 		log: function ( schemaName, step, event ) {
 			var tour = step.tour;
@@ -55,7 +51,7 @@
 				event.sessionToken = sessionId;
 			}
 
-			return mw.eventLog.logEvent( schemaName, event );
+			mw.eventLog.logEvent( schemaName, event );
 		}
 	};
 

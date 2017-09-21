@@ -708,19 +708,9 @@
 	 * @return {void}
 	 */
 	Step.prototype.handleLinkClick = function ( jQueryEvent ) {
-		var activationEvent, buttonEvent, isExternal, labelKey, loggingOverDfd,
-			isNewWindow, logPromises = [],
+		var activationEvent, buttonEvent, isExternal, labelKey,
 			$link = $( jQueryEvent.currentTarget ),
-			url = $link.attr( 'href' ), label = $link.text(),
-			LOGGING_TIMEOUT_MS = 500;
-
-		// If it's a new window, we don't need to delay the user,
-		// or worry about delaying them too much.
-		isNewWindow = ( $link.attr( 'target' ) === '_blank' );
-
-		if ( !isNewWindow ) {
-			jQueryEvent.preventDefault();
-		}
+			url = $link.attr( 'href' ), label = $link.text();
 
 		activationEvent = {
 			label: label
@@ -728,27 +718,12 @@
 
 		isExternal = $link.hasClass( 'external' );
 
-		// Resolves when all logging events resolve, at least one rejects, or there
-		// is a timeout (which is overall, not per event).
-		//
-		// Workaround to limit delay due to logging; see
-		// https://bugzilla.wikimedia.org/show_bug.cgi?id=52287
-		loggingOverDfd = $.Deferred();
-
-		if ( !isNewWindow ) {
-			window.setTimeout( loggingOverDfd.reject, LOGGING_TIMEOUT_MS );
-		}
-
 		if ( isExternal ) {
 			activationEvent.href = url;
-			logPromises.push(
-				gt.EventLogger.log( 'GuidedTourExternalLinkActivation', this, activationEvent )
-			);
+			gt.EventLogger.log( 'GuidedTourExternalLinkActivation', this, activationEvent );
 		} else {
 			activationEvent.pageName = getPageFromLink( $link );
-			logPromises.push(
-				gt.EventLogger.log( 'GuidedTourInternalLinkActivation', this, activationEvent )
-			);
+			gt.EventLogger.log( 'GuidedTourInternalLinkActivation', this, activationEvent );
 		}
 
 		if ( $link.hasClass( 'guidedtour-link-button' ) ) {
@@ -763,17 +738,7 @@
 
 			buttonEvent.action = isExternal ? 'externalLink' : 'internalLink';
 
-			logPromises.push(
-				gt.EventLogger.log( 'GuidedTourButtonClick', this, buttonEvent )
-			);
-		}
-
-		$.when.apply( $, logPromises ).then( loggingOverDfd.resolve, loggingOverDfd.reject );
-
-		if ( !isNewWindow ) {
-			loggingOverDfd.always( function () {
-				window.location = url;
-			} );
+			gt.EventLogger.log( 'GuidedTourButtonClick', this, buttonEvent );
 		}
 	};
 
