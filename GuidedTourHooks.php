@@ -34,7 +34,7 @@ class GuidedTourHooks {
 	 * No value added here can depend on the page name, user, or other request-specific
 	 * data.
 	 *
-	 * @param array $vars Associative array of config variables
+	 * @param array &$vars Associative array of config variables
 	 * @return bool
 	 */
 	public static function onResourceLoaderGetConfigVars( &$vars ) {
@@ -144,8 +144,8 @@ class GuidedTourHooks {
 	 *
 	 * @see http://www.mediawiki.org/wiki/Manual:Hooks/BeforePageDisplay
 	 *
-	 * @param $out OutputPage object
-	 * @param $skin Skin being used.
+	 * @param OutputPage $out OutputPage object
+	 * @param Skin $skin Skin being used.
 	 *
 	 * @return bool true in all cases
 	 */
@@ -202,7 +202,7 @@ class GuidedTourHooks {
 
 	/**
 	 * @param array &$testModules
-	 * @param ResourceLoader $resourceLoader
+	 * @param ResourceLoader &$resourceLoader
 	 * @return bool
 	 */
 	public static function onResourceLoaderTestModules( &$testModules, &$resourceLoader ) {
@@ -216,7 +216,7 @@ class GuidedTourHooks {
 	}
 
 	/**
-	 * @param $redirectParams array
+	 * @param array &$redirectParams
 	 * @return bool
 	 */
 	public static function onRedirectSpecialArticleRedirectParams( &$redirectParams ) {
@@ -227,6 +227,7 @@ class GuidedTourHooks {
 
 	/**
 	 * EventLoggingRegisterSchemas
+	 * @param array &$schemas
 	 */
 	public static function addEventLogging( array &$schemas ) {
 		$schemas['GuidedTourGuiderImpression'] = 8694395;
