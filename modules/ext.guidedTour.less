@@ -54,7 +54,7 @@
 
 	h1 {
 		float: left;
-		width: 95%;
+		width: 92%;
 		font-size: 1.5em;
 		font-weight: bold;
 		padding: 0;
@@ -72,15 +72,24 @@
 
 .guider_close {
 	float: right;
-	padding: 0;
 
 	.x_button {
-		cursor: pointer;
-		display: block;
-		height: 13px;
-		width: 13px;
+		.background-image-svg( 'images/close.svg', 'images/close.png' );
 		background-repeat: no-repeat;
-		.background-image-svg( 'images/ext.guidedTour.x.svg', 'images/ext.guidedTour.x.png' );
+		display: block;
+		height: 20px;
+		width: 20px;
+		cursor: pointer;
+		opacity: 0.87; // = `#222` on `background-color: #fff`
+		.transition( opacity 100ms );
+
+		&:hover {
+			opacity: 0.73; // = `#454545` on `background-color: #fff`, closest to `#444`
+		}
+
+		&:active {
+			opacity: 1;
+		}
 	}
 }
 
