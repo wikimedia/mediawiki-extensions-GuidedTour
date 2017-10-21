@@ -58,19 +58,19 @@ class GuidedTourHooks {
 	 * number of tours are accepted:
 	 *
 	 * {
-	 *	version: 1,
-	 *	tours: {
-	 *		firsttour: {
-	 *			step: 4
-	 *		},
-	 *		secondtour: {
-	 *			step: 2
-	 *		},
-	 *		thirdtour: {
-	 *			step: 3,
-	 *			firstArticleId: 38333
-	 *		}
-	 *	}
+	 * 	version: 1,
+	 * 	tours: {
+	 * 		firsttour: {
+	 * 			step: 4
+	 * 		},
+	 * 		secondtour: {
+	 * 			step: 2
+	 * 		},
+	 * 		thirdtour: {
+	 * 			step: 3,
+	 * 			firstArticleId: 38333
+	 * 		}
+	 * 	}
 	 * }
 	 *
 	 * This only supports new-style cookies.  Old cookies will be converted on the

@@ -18,10 +18,10 @@ class GuidedTourLauncher {
 	 * Get new state from old state.  The state describes the user's progress
 	 * in the tour, and which step they are expected to see next.
 	 *
-	 * @param {array|null} $oldState Previous state
-	 * @param {string} $tourName Tour name
-	 * @param {string} $step Step to start at
-	 * @return {array} New state
+	 * @param array|null $oldState Previous state
+	 * @param string $tourName Tour name
+	 * @param string $step Step to start at
+	 * @return array New state
 	 */
 	protected static function getNewState( $oldState, $tourName, $step ) {
 		$newState = $oldState;
@@ -45,10 +45,10 @@ class GuidedTourLauncher {
 	/**
 	 * Adds a tour to the cookie
 	 *
-	 * @param {string|null} $oldCookieValue Previous value of cookie
-	 * @param {string} $tourName Tour name
-	 * @param {string} $step Step to start at
-	 * @return {string} Value of new cookie
+	 * @param string|null $oldCookieValue Previous value of cookie
+	 * @param string $tourName Tour name
+	 * @param string $step Step to start at
+	 * @return string Value of new cookie
 	 */
 	public static function getNewCookie( $oldCookieValue, $tourName, $step ) {
 		if ( $oldCookieValue == null ) {
