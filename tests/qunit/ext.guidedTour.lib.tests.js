@@ -64,7 +64,7 @@
 		}
 	} ) );
 
-	QUnit.test( 'makeTourId', 4, function ( assert ) {
+	QUnit.test( 'makeTourId', function ( assert ) {
 		assert.strictEqual(
 			gt.makeTourId( {
 				name: 'test',
@@ -93,7 +93,7 @@
 		);
 	} );
 
-	QUnit.test( 'parseTourId', 1, function ( assert ) {
+	QUnit.test( 'parseTourId', function ( assert ) {
 		var tourId = 'gt-test-2', expectedTourInfo;
 		expectedTourInfo = {
 			name: 'test',
@@ -106,7 +106,7 @@
 		);
 	} );
 
-	QUnit.test( 'isPage', 2, function ( assert ) {
+	QUnit.test( 'isPage', function ( assert ) {
 		var PAGE_NAME_TO_SKIP = 'TestPage',
 			OTHER_PAGE_NAME = 'WrongPage';
 
@@ -125,7 +125,7 @@
 		);
 	} );
 
-	QUnit.test( 'hasQuery', 7, function ( assert ) {
+	QUnit.test( 'hasQuery', function ( assert ) {
 		var paramMap,
 			PAGE_NAME_TO_SKIP = 'RightPage',
 			OTHER_PAGE_NAME = 'OtherPage';
@@ -183,7 +183,7 @@
 		);
 	} );
 
-	QUnit.test( 'getStepFromQuery', 2, function ( assert ) {
+	QUnit.test( 'getStepFromQuery', function ( assert ) {
 		var step;
 		this.sandbox.stub( mw.util, 'getParamValue', function () {
 			return step;
@@ -204,7 +204,7 @@
 		);
 	} );
 
-	QUnit.test( 'setTourCookie', 5, function ( assert ) {
+	QUnit.test( 'setTourCookie', function ( assert ) {
 		var firstTourName = 'foo',
 			secondTourName = 'bar',
 			numberStep = 5,
@@ -244,7 +244,7 @@
 		mw.cookie.set( cookieName, oldCookieValue, cookieParams );
 	} );
 
-	QUnit.test( 'shouldShow', 19, function ( assert ) {
+	QUnit.test( 'shouldShow', function ( assert ) {
 		var visualEditorArgs, wikitextArgs, mockOpenVE;
 
 		visualEditorArgs = {
@@ -543,7 +543,7 @@
 		);
 	} );
 
-	QUnit.test( 'defineTour', 13, function ( assert ) {
+	QUnit.test( 'defineTour', function ( assert ) {
 		var SPEC_MUST_BE_OBJECT = /Check your syntax. There must be exactly one argument, 'tourSpec', which must be an object\./,
 			NAME_MUST_BE_STRING = /'tourSpec.name' must be a string, the tour name\./,
 			STEPS_MUST_BE_ARRAY = /'tourSpec.steps' must be an array, a list of one or more steps/,
@@ -646,7 +646,7 @@
 		this.restoreWarnings();
 	} );
 
-	QUnit.test( 'StepBuilder.constructor', 5, function ( assert ) {
+	QUnit.test( 'StepBuilder.constructor', function ( assert ) {
 		var STEP_NAME_MUST_BE_STRING = /'stepSpec.name\' must be a string, the step name/;
 
 		assert.strictEqual(
@@ -685,7 +685,7 @@
 		);
 	} );
 
-	QUnit.test( 'StepBuilder.listenForMwHooks', 6, function ( assert ) {
+	QUnit.test( 'StepBuilder.listenForMwHooks', function ( assert ) {
 		var listenForMwHookSpy = this.spy( firstStepBuilder.step, 'listenForMwHook' );
 
 		firstStepBuilder.listenForMwHooks();
@@ -723,7 +723,7 @@
 		);
 	} );
 
-	QUnit.test( 'StepBuilder.next', 14, function ( assert ) {
+	QUnit.test( 'StepBuilder.next', function ( assert ) {
 		var editStepBuilder, linkStepBuilder, previewStepBuilder, saveStepBuilder,
 			pointsInvalidNameStepBuilder, pointsOtherTourStepBuilder,
 			returnsInvalidNameCallbackStepBuilder,
@@ -863,7 +863,7 @@
 		);
 	} );
 
-	QUnit.test( 'StepBuilder.transition', 14, function ( assert ) {
+	QUnit.test( 'StepBuilder.transition', function ( assert ) {
 		var linkStepBuilder, editStepBuilder, previewStepBuilder,
 			returnsInvalidNameCallbackStepBuilder,
 			returnsOtherTourCallbackStepBuilder,
@@ -997,7 +997,7 @@
 		);
 	} );
 
-	QUnit.test( 'Step.constructor', 5, function ( assert ) {
+	QUnit.test( 'Step.constructor', function ( assert ) {
 		var step = new gt.Step( validTour, {
 				name: 'first',
 				description: 'first description'
@@ -1032,7 +1032,7 @@
 		);
 	} );
 
-	QUnit.test( 'Step.getButtons', 7, function ( assert ) {
+	QUnit.test( 'Step.getButtons', function ( assert ) {
 		var buttons = [
 				{ type: 'destructive' },
 				{ type: ['progressive', 'quiet'] },
@@ -1083,7 +1083,7 @@
 		);
 	} );
 
-	QUnit.test( 'Step.registerMwHookListener', 4, function ( assert ) {
+	QUnit.test( 'Step.registerMwHookListener', function ( assert ) {
 		var step = firstStepBuilder.step,
 			HOOK_NAME = 'Step.registerMwHookListener.happened',
 			// This lets us verify checkTransition is called (and which
@@ -1130,7 +1130,7 @@
 		);
 	} );
 
-	QUnit.test( 'Step.registerMwHooks', 3, function ( assert ) {
+	QUnit.test( 'Step.registerMwHooks', function ( assert ) {
 		var step = firstStepBuilder.step,
 			registerMwHookListenerSpy;
 		registerMwHookListenerSpy = this.spy( step, 'registerMwHookListener' );
@@ -1156,7 +1156,7 @@
 		);
 	} );
 
-	QUnit.test( 'Step.handleOnShow', 5, function ( assert ) {
+	QUnit.test( 'Step.handleOnShow', function ( assert ) {
 		var showChangesStepBuilder = validTourBuilder.step( {
 			name: 'showChanges',
 			description: 'showChanges description'
@@ -1210,7 +1210,7 @@
 		);
 	} );
 
-	QUnit.test( 'TourBuilder.constructor', 7, function ( assert ) {
+	QUnit.test( 'TourBuilder.constructor', function ( assert ) {
 		var CHECK_YOUR_SYNTAX = /Check your syntax. There must be exactly one argument, 'tourSpec', which must be an object/;
 
 		assertThrowsTypeAndMessage(
@@ -1254,7 +1254,7 @@
 		);
 	} );
 
-	QUnit.test( 'TourBuilder.step', 3, function ( assert ) {
+	QUnit.test( 'TourBuilder.step', function ( assert ) {
 		var save1, save2;
 
 		validTourBuilder.step( {
@@ -1287,7 +1287,7 @@
 		);
 	} );
 
-	QUnit.test( 'TourBuilder.firstStep', 2, function ( assert ) {
+	QUnit.test( 'TourBuilder.firstStep', function ( assert ) {
 		var previewStepSpec = $.extend( {}, VALID_BUILDER_STEP_SPEC, { name: 'preview' } );
 
 		assertThrowsTypeAndMessage(
@@ -1301,7 +1301,7 @@
 		);
 	} );
 
-	QUnit.test( 'Tour.constructor', 1, function ( assert ) {
+	QUnit.test( 'Tour.constructor', function ( assert ) {
 		var tour = new gt.Tour( {
 			name: 'addImage'
 		} );
@@ -1313,7 +1313,7 @@
 		);
 	} );
 
-	QUnit.test( 'Tour.getShouldFlipHorizontally', 8, function ( assert ) {
+	QUnit.test( 'Tour.getShouldFlipHorizontally', function ( assert ) {
 		// Full coverage of all code paths
 
 		var getStateStub, EXTENSION_NAME = 'extension', ONWIKI_NAME = 'onwiki',
@@ -1387,7 +1387,7 @@
 		);
 	} );
 
-	QUnit.test( 'Tour.initialize', 3, function ( assert ) {
+	QUnit.test( 'Tour.initialize', function ( assert ) {
 		var stepInitializeSpy, previewStepBuilder, done;
 
 		stepInitializeSpy = this.spy( gt.Step.prototype, 'initialize' );
@@ -1424,7 +1424,7 @@
 		} );
 	} );
 
-	QUnit.test( 'Tour.getStep', 6, function ( assert ) {
+	QUnit.test( 'Tour.getStep', function ( assert ) {
 		assert.strictEqual(
 			validTour.getStep( 'intro' ),
 			firstStep,
@@ -1458,7 +1458,7 @@
 		);
 	} );
 
-	QUnit.test( 'Tour.showStep', 1, function ( assert ) {
+	QUnit.test( 'Tour.showStep', function ( assert ) {
 		var checkTransitionSpy = this.spy( firstStep, 'checkTransition' ),
 			actualTransitionEvent, expectedTransitionEvent;
 
@@ -1479,7 +1479,7 @@
 		} );
 	} );
 
-	QUnit.test( 'Tour.start', 2, function ( assert ) {
+	QUnit.test( 'Tour.start', function ( assert ) {
 		var tourBuilder = new gt.TourBuilder( {
 			name: 'reference'
 		} );
