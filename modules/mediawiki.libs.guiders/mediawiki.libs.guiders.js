@@ -25,11 +25,11 @@
  * - overlay "error": If not set to true, this defines the class of the overlay. (This is useful for coloring the background of the overlay red on error.
  * - onShow: If this returns a guider object, then it can shunt (skip) the rest of show()
  *
- * See https://www.mediawiki.org/wiki/Extension:GuidedTour and https://git.wikimedia.org/summary/mediawiki%2Fextensions%2FGuidedTour.git
+ * See https://www.mediawiki.org/wiki/Extension:GuidedTour and https://phabricator.wikimedia.org/diffusion/EGTO/
  *
  * Previously, there was a MediaWiki-specific repository for
  * Guiders (based on the upstream one).  For earlier version control history, see
- * https://git.wikimedia.org/log/mediawiki%2Fextensions%2FGuidedTour%2Fguiders.git
+ * https://phabricator.wikimedia.org/diffusion/EGTG/history/
  */
 /**
  * Code for rendering and low-level code of moving between steps.
