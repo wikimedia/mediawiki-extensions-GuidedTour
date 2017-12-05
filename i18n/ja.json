@@ -23,7 +23,6 @@
 	"guidedtour-tour-test-go-description-page": "説明ページに移動",
 	"guidedtour-tour-test-launch-tour": "ツアー起動のテスト",
 	"guidedtour-tour-test-launch-tour-description": "guider は他のガイド付きツアーを起動できます。すごいでしょう?",
-	"guidedtour-tour-test-launch-using-tours": "ツアーの使い方についてのツアーを起動する",
 	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|編集}}をはじめてみましょう",
 	"guidedtour-tour-firstedit-edit-page-description": "「$1」ボタンを{{GENDER:|クリック}}すると編集を開始できます。",
 	"guidedtour-tour-firstedit-edit-section-title": "1つの節だけ{{GENDER:|編集}}してみましょう",
