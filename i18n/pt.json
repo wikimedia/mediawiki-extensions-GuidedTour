@@ -24,7 +24,7 @@
 	"guidedtour-tour-test-callouts": "Textos explicativos de teste",
 	"guidedtour-tour-test-portal-description": "Esta é a página de {{int:portal}}.",
 	"guidedtour-tour-test-mediawiki-parse": "Testar a análise sintáctica do Mediawiki",
-	"guidedtour-tour-test-wikitext-description": "Um guia na sua visita guiada pela wiki pode conter wikitexto usando onShow e parseDescription. Use-os para criar um wikilink para o [[{{MediaWiki:Guidedtour-help-url}}|Documentação das visitas guiadas]]. Ou um link externo [https://github.com/tychay/mwgadget.GuidedTour para o GitHub], por exemplo.",
+	"guidedtour-tour-test-wikitext-description": "Um guia na sua visita guiada pela wiki pode conter texto wiki. Use-o para criar uma hiperligação para a [[{{MediaWiki:Guidedtour-help-url}}|documentação das visitas guiadas]]. Ou uma [https://example.com hiperligação externa], por exemplo.",
 	"guidedtour-tour-test-description-page": "Testar páginas de descrição do MediaWiki",
 	"guidedtour-tour-test-go-description-page": "Ir para a página de descrição",
 	"guidedtour-tour-test-launch-tour": "Teste do lançamento do guia",
