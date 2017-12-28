@@ -33,12 +33,12 @@
 	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|Editar}} a página toda...",
 	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Clique}} o botão \"$1\" para realizar as suas mudanças.",
 	"guidedtour-tour-firstedit-edit-section-title": "Ou {{GENDER:|edita}} uma secção",
-	"guidedtour-tour-firstedit-edit-section-description": "Há ligações \"{{int:editsection}}\" em cada secção da página, para que possa concentrar-se apenas nesta parte.",
+	"guidedtour-tour-firstedit-edit-section-description": "Há hiperligações \"{{int:editsection}}\" em cada secção da página, para que possa concentrar-se apenas nesta parte.",
 	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|Antever}} as suas alterações (opcional)",
 	"guidedtour-tour-firstedit-preview-description": "Clicar \"{{int:showpreview}}\" permite ver como ficará a página após as suas alterações. Não se esqueça de gravá-las!",
 	"guidedtour-tour-firstedit-save-title": "Está quase pronto!",
 	"guidedtour-tour-firstedit-save-description": "Quando estiver pronto, clique \"{{int:savearticle}}\" para as alterações ficarem visíveis para todos.",
 	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|Clique}} no botão \"$1\" para realizar as suas mudanças.",
-	"guidedtour-tour-firsteditve-edit-section-description": "Há ligações \"$1\" em cada secção da página, para que possa concentrar-se apenas nesta parte.",
+	"guidedtour-tour-firsteditve-edit-section-description": "Há hiperligações \"$1\" em cada secção da página, para que possa concentrar-se apenas nesta parte.",
 	"guidedtour-tour-firsteditve-save-description": "Quando terminar, clique em \"{{int:visualeditor-toolbar-savedialog}}\" para as alterações ficarem visíveis para todos."
 }
