@@ -37,6 +37,11 @@
 				"ext.guidedTour.less",
 				"ext.guidedTour.animations.less"
 			],
+			"skinStyles": {
+				"monobook": [
+					"ext.guidedTour.monobook.less"
+				]
+			},
 			"dependencies": [
 				"mediawiki.libs.guiders",
 				"mediawiki.ui.button"
