@@ -3,7 +3,7 @@
 
 ( function ( window, document, $, mw, gt ) {
 	var hasEditSectionAtLoadTime, editSectionSelector = '.mw-editsection-visualeditor',
-		editPageDescription, editSectionDescription, tour, introStep, editSectionStep,
+		editPageDescription, editSectionDescription, tour,
 		pointSavePageStep;
 
 	function shouldShowForPage() {
@@ -27,7 +27,7 @@
 
 		if ( transitionEvent.type === gt.TransitionEvent.MW_HOOK ) {
 			if ( transitionEvent.hookName === 've.toolbarSaveButton.stateChanged' ) {
-				isSaveButtonDisabled = transitionEvent.hookArguments[0];
+				isSaveButtonDisabled = transitionEvent.hookArguments[ 0 ];
 				if ( !isSaveButtonDisabled ) {
 					return pointSavePageStep;
 				}
@@ -40,14 +40,14 @@
 	hasEditSectionAtLoadTime = $( editSectionSelector ).length > 0;
 
 	editPageDescription = mw.message(
-			'guidedtour-tour-firsteditve-edit-page-description',
-			$( '#ca-edit a' ).text()
-		).parse();
+		'guidedtour-tour-firsteditve-edit-page-description',
+		$( '#ca-edit a' ).text()
+	).parse();
 
 	editSectionDescription = mw.message(
-			'guidedtour-tour-firsteditve-edit-section-description',
-			mw.message( 'editsection' ).parse()
-		).parse();
+		'guidedtour-tour-firsteditve-edit-section-description',
+		mw.message( 'editsection' ).parse()
+	).parse();
 
 	tour = new gt.TourBuilder( {
 		name: 'firsteditve',
@@ -55,7 +55,7 @@
 		showConditionally: 'VisualEditor'
 	} );
 
-	introStep = tour.firstStep( {
+	tour.firstStep( {
 		name: 'intro',
 		titlemsg: 'guidedtour-tour-firstedit-edit-page-title',
 		description: editPageDescription,
@@ -78,7 +78,7 @@
 		.transition( handleVeChange )
 		.next( 'editSection' );
 
-	editSectionStep = tour.step( {
+	tour.step( {
 		name: 'editSection',
 		titlemsg: 'guidedtour-tour-firstedit-edit-section-title',
 		description: editSectionDescription,
@@ -87,8 +87,10 @@
 		width: 300
 	} ).listenForMwHooks( 've.activationComplete', 've.toolbarSaveButton.stateChanged' )
 		.transition( function ( transitionEvent ) {
-			if ( transitionEvent.type === gt.TransitionEvent.BUILTIN &&
-			     !hasEditSection() ) {
+			if (
+				transitionEvent.type === gt.TransitionEvent.BUILTIN &&
+				!hasEditSection()
+			) {
 				return gt.TransitionAction.HIDE;
 			} else {
 				return handleVeChange( transitionEvent );
@@ -110,4 +112,4 @@
 			}
 		} );
 
-} (window, document, jQuery, mediaWiki, mediaWiki.guidedTour ) );
+}( window, document, jQuery, mediaWiki, mediaWiki.guidedTour ) );

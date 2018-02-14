@@ -44,12 +44,12 @@
 			}
 		} ]
 	} )
-	.transition( function () {
-		if ( gt.isEditing() ) {
-			return 'preview';
-		}
-	} )
-	.next( 'editSection' );
+		.transition( function () {
+			if ( gt.isEditing() ) {
+				return 'preview';
+			}
+		} )
+		.next( 'editSection' );
 
 	tour.step( {
 		name: 'editSection',
@@ -60,14 +60,14 @@
 		autoFocus: true,
 		width: 300
 	} )
-	.transition( function () {
-		if ( gt.isEditing() ) {
-			return 'preview';
-		} else if ( !hasEditSection ) {
-			return gt.TransitionAction.HIDE;
-		}
-	} )
-	.back( 'intro' );
+		.transition( function () {
+			if ( gt.isEditing() ) {
+				return 'preview';
+			} else if ( !hasEditSection ) {
+				return gt.TransitionAction.HIDE;
+			}
+		} )
+		.back( 'intro' );
 
 	tour.step( {
 		name: 'preview',
@@ -78,14 +78,14 @@
 		position: 'top',
 		closeOnClickOutside: false
 	} )
-	.transition( function () {
-		if ( gt.isReviewing() ) {
-			return 'save';
-		} else if ( !gt.isEditing() ) {
-			return gt.TransitionAction.END;
-		}
-	} )
-	.next( 'save' );
+		.transition( function () {
+			if ( gt.isReviewing() ) {
+				return 'save';
+			} else if ( !gt.isEditing() ) {
+				return gt.TransitionAction.END;
+			}
+		} )
+		.next( 'save' );
 
 	tour.step( {
 		name: 'save',
@@ -96,11 +96,11 @@
 		position: 'top',
 		closeOnClickOutside: false
 	} )
-	.transition( function () {
-		if ( !gt.isReviewing() ) {
-			return gt.TransitionAction.END;
-		}
-	} )
-	.back( 'preview' );
+		.transition( function () {
+			if ( !gt.isReviewing() ) {
+				return gt.TransitionAction.END;
+			}
+		} )
+		.back( 'preview' );
 
-} ( window, document, jQuery, mediaWiki, mediaWiki.guidedTour ) );
+}( window, document, jQuery, mediaWiki, mediaWiki.guidedTour ) );

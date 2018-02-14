@@ -1,4 +1,4 @@
-/*global ve */
+/* global ve */
 /**
  * GuidedTour public API
  *
@@ -15,7 +15,7 @@
  * @class mw.guidedTour
  * @singleton
  */
- /*
+/*
   * Part of GuidedTour, the MediaWiki extension for guided tours.
   *
   * Uses Optimize.ly's Guiders library (with customizations developed at WordPress
@@ -88,7 +88,7 @@
 	 */
 	function removeTourFromUserStateByName( tourName ) {
 		var parsedCookie = getCookieState();
-		delete parsedCookie.tours[tourName];
+		delete parsedCookie.tours[ tourName ];
 		mw.cookie.set( cookieName, JSON.stringify( parsedCookie ), cookieParams );
 	}
 
@@ -99,7 +99,7 @@
 	 *
 	 * @param {Object} state State that specifies the tour progress
 	 *
-	 * @return {boolean} Whether a tour was launched
+	 * // @return {boolean} Whether a tour was launched
 	 */
 	function launchTourFromState( state ) {
 		var tourName, tourNames,
@@ -108,7 +108,7 @@
 		for ( tourName in state.tours ) {
 			candidateTours.push( {
 				name: tourName,
-				step: state.tours[tourName].step
+				step: state.tours[ tourName ].step
 			} );
 		}
 
@@ -131,19 +131,21 @@
 				// So we make sure it is defined and in the user
 				// state.
 				for ( tourName in internal.definedTours ) {
-					if ( state.tours[tourName] !== undefined &&
-					     gt.shouldShowTour( {
-						tourName: tourName,
-						userState: state,
-						pageName: mw.config.get( 'wgPageName' ),
-						articleId: mw.config.get( 'wgArticleId' ),
-						condition: internal.definedTours[tourName].showConditionally
-					} ) ) {
-						currentStart = state.tours[tourName].startTime || 0;
+					if (
+						state.tours[ tourName ] !== undefined &&
+						gt.shouldShowTour( {
+							tourName: tourName,
+							userState: state,
+							pageName: mw.config.get( 'wgPageName' ),
+							articleId: mw.config.get( 'wgArticleId' ),
+							condition: internal.definedTours[ tourName ].showConditionally
+						} )
+					) {
+						currentStart = state.tours[ tourName ].startTime || 0;
 						if ( currentStart > max.startTime ) {
 							max = {
 								name: tourName,
-								step: state.tours[tourName].step,
+								step: state.tours[ tourName ].step,
 								startTime: currentStart
 							};
 						}
@@ -176,7 +178,7 @@
 	 */
 	function showTour( tourName, tourId ) {
 		var tour, tourInfo;
-		tour = internal.definedTours[tourName];
+		tour = internal.definedTours[ tourName ];
 
 		tourInfo = gt.parseTourId( tourId );
 		if ( tourInfo.name !== tourName ) {
@@ -235,7 +237,7 @@
 					return;
 				}
 
-				tour = internal.definedTours[currentStepInfo.name];
+				tour = internal.definedTours[ currentStepInfo.name ];
 				currentStep = tour.getStep( currentStepInfo.step );
 				nextStep = currentStep.checkTransition( transitionEvent );
 				if ( nextStep !== currentStep && nextStep !== null ) {
@@ -273,7 +275,7 @@
 		var clientProfile = $.client.profile(),
 			classes = [];
 
-		if (clientProfile.name !== 'msie') {
+		if ( clientProfile.name !== 'msie' ) {
 			return;
 		}
 
@@ -316,7 +318,7 @@
 	// Add external API (internal API is at gt.internal)
 	// Most, but not all, of this is public (non-public ones use standard
 	// @private marking).
-	$.extend ( gt, {
+	$.extend( gt, {
 		/**
 		 * Parses tour ID into an object with name and step keys.
 		 *
@@ -329,7 +331,7 @@
 		 */
 		parseTourId: function ( tourId ) {
 			// Keep in sync with regex in GuidedTourHooks.php
-			var TOUR_ID_REGEX = /^gt-([^.\-]+)-([^.\-]+)$/,
+			var TOUR_ID_REGEX = /^gt-([^.-]+)-([^.-]+)$/,
 				tourMatch, tourName, tourStep;
 
 			if ( typeof tourId !== 'string' ) {
@@ -337,14 +339,14 @@
 			}
 
 			tourMatch = tourId.match( TOUR_ID_REGEX );
-			if ( ! tourMatch ) {
+			if ( !tourMatch ) {
 				return null;
 			}
 
-			tourName = tourMatch[1];
-			tourStep = tourMatch[2];
+			tourName = tourMatch[ 1 ];
+			tourStep = tourMatch[ 2 ];
 
-			if ( tourName.length === 0) {
+			if ( tourName.length === 0 ) {
 				return null;
 			}
 
@@ -365,7 +367,7 @@
 		 *
 		 * @return {string|null} ID of tour, or null if invalid input
 		 */
-		makeTourId: function( tourInfo ) {
+		makeTourId: function ( tourInfo ) {
 			if ( !$.isPlainObject( tourInfo ) ) {
 				return null;
 			}
@@ -402,7 +404,7 @@
 		 */
 		launchTour: function ( tourName, tourId ) {
 			internal.loadTour( tourName ).done( function () {
-				var tour = internal.definedTours[tourName];
+				var tour = internal.definedTours[ tourName ];
 
 				if ( tour && gt.shouldShowTour( {
 					tourName: tourName,
@@ -528,7 +530,7 @@
 				gt.removeTourFromUserStateByGuider( guider );
 			}
 
-			tour = internal.definedTours[tourName];
+			tour = internal.definedTours[ tourName ];
 			if ( tour.currentStep !== null ) {
 				tour.currentStep.unregisterMwHooks();
 			}
@@ -615,12 +617,14 @@
 		 * @return {boolean} true if and only if there is a match per above
 		 */
 		hasQuery: function ( queryParts, pageName ) {
+			var qname;
+
 			if ( pageName && mw.config.get( 'wgPageName' ) !== pageName ) {
 				return false;
 			}
 
-			for ( var qname in queryParts ) {
-				if ( mw.util.getParamValue( qname ) !== queryParts[qname] ) {
+			for ( qname in queryParts ) {
+				if ( mw.util.getParamValue( qname ) !== queryParts[ qname ] ) {
 					return false;
 				}
 			}
@@ -742,11 +746,11 @@
 			}
 
 			userState = getUserState();
-			if ( ( step === 0 ) && userState.tours[tourName] !== undefined ) {
+			if ( ( step === 0 ) && userState.tours[ tourName ] !== undefined ) {
 				// start from user state position
 				showTour( tourName, gt.makeTourId( {
 					name: tourName,
-					step: userState.tours[tourName].step
+					step: userState.tours[ tourName ].step
 				} ) );
 			}
 
@@ -795,28 +799,30 @@
 
 			tourName = args.tourInfo.name;
 			// It should be defined, except when wasShown is false.
-			tourSpec = internal.definedTours[tourName] || {};
+			tourSpec = internal.definedTours[ tourName ] || {};
 
 			// Ensure there's a sub-object for this tour
-			if ( cookieState.tours[tourName] === undefined ) {
-				cookieState.tours[tourName] = {};
+			if ( cookieState.tours[ tourName ] === undefined ) {
+				cookieState.tours[ tourName ] = {};
 
-				cookieState.tours[tourName].startTime = new Date().getTime();
+				cookieState.tours[ tourName ].startTime = new Date().getTime();
 			}
 
-			if ( args.wasShown && tourSpec.showConditionally === 'stickToFirstPage' &&
-			     cookieState.tours[tourName].firstArticleId === undefined &&
-			     cookieState.tours[tourName].firstSpecialPageName === undefined ) {
-				     articleId = mw.config.get( 'wgArticleId' );
-				     if ( articleId !== 0 ) {
-					     cookieState.tours[tourName].firstArticleId = articleId;
-				     } else {
-					     pageName = mw.config.get( 'wgPageName' );
-					     cookieState.tours[tourName].firstSpecialPageName = pageName;
-				     }
-			     }
+			if (
+				args.wasShown && tourSpec.showConditionally === 'stickToFirstPage' &&
+				cookieState.tours[ tourName ].firstArticleId === undefined &&
+				cookieState.tours[ tourName ].firstSpecialPageName === undefined
+			) {
+				articleId = mw.config.get( 'wgArticleId' );
+				if ( articleId !== 0 ) {
+					cookieState.tours[ tourName ].firstArticleId = articleId;
+				} else {
+					pageName = mw.config.get( 'wgPageName' );
+					cookieState.tours[ tourName ].firstSpecialPageName = pageName;
+				}
+			}
 
-			cookieState.tours[tourName].step = String( args.tourInfo.step );
+			cookieState.tours[ tourName ].step = String( args.tourInfo.step );
 			cookieValue = JSON.stringify( cookieState );
 			mw.cookie.set( cookieName, cookieValue, cookieParams );
 		},
@@ -857,7 +863,7 @@
 		 * @throws {mw.guidedTour.TourDefinitionError} On invalid conditions
 		 */
 		shouldShowTour: function ( args ) {
-			var subState = args.userState.tours[args.tourName];
+			var subState = args.userState.tours[ args.tourName ];
 			if ( args.condition !== undefined ) {
 				// TODO (mattflaschen, 2013-07-09): Allow having multiple
 				// conditions ANDed together in an array.
@@ -952,8 +958,8 @@
 			var skipIndex = skipStartIndex;
 
 			while ( skipIndex < stepCount &&
-				steps[skipIndex].shouldSkip &&
-				steps[skipIndex].shouldSkip() ) {
+				steps[ skipIndex ].shouldSkip &&
+				steps[ skipIndex ].shouldSkip() ) {
 
 				skipIndex++;
 			}
@@ -962,7 +968,7 @@
 				// No change, so don't skip
 				return undefined;
 			} else if ( skipIndex < stepCount ) {
-				return stepBuilders[skipIndex];
+				return stepBuilders[ skipIndex ];
 			} else {
 				// Skipped past the end
 				return gt.TransitionAction.HIDE;
@@ -998,24 +1004,24 @@
 
 		stepCount = steps.length;
 
-		stepBuilders[0] = tourBuilder.firstStep(
-			convertStepSpec( 0, tourSpec.steps[0] )
+		stepBuilders[ 0 ] = tourBuilder.firstStep(
+			convertStepSpec( 0, tourSpec.steps[ 0 ] )
 		);
 
 		for ( i = 1; i < stepCount; i++ ) {
-			stepBuilders[i] = tourBuilder.step(
-				convertStepSpec( i, steps[i] )
+			stepBuilders[ i ] = tourBuilder.step(
+				convertStepSpec( i, steps[ i ] )
 			);
 		}
 
 		for ( j = 0; j < stepCount; j++ ) {
 			if ( j < stepCount - 1 ) {
-				stepBuilders[j].next( stepBuilders[j + 1] );
+				stepBuilders[ j ].next( stepBuilders[ j + 1 ] );
 			}
 
 			// Don't register a custom skip handler if it can never skip.
-			if ( steps[j].shouldSkip ) {
-				stepBuilders[j].transition( getTransitionHandler( j ) );
+			if ( steps[ j ].shouldSkip ) {
+				stepBuilders[ j ].transition( getTransitionHandler( j ) );
 			}
 		}
 
@@ -1068,4 +1074,4 @@
 	gt.IllegalArgumentError.prototype.constructor = gt.IllegalArgumentError;
 
 	initialize();
-} ( window, document, jQuery, mediaWiki, mediaWiki.libs.guiders ) );
+}( window, document, jQuery, mediaWiki, mediaWiki.libs.guiders ) );

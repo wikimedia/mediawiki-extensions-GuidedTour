@@ -28,7 +28,7 @@
 		descriptionmsg: 'guidedtour-tour-test-test-description',
 		overlay: true
 	} )
-	.next( 'callout' );
+		.next( 'callout' );
 
 	tour.step( {
 		/*
@@ -41,8 +41,8 @@
 		attachTo: '#n-portal a',
 		position: '3'
 	} )
-	.next( 'descriptionwikitext' )
-	.back( 'overlay' );
+		.next( 'descriptionwikitext' )
+		.back( 'overlay' );
 
 	tour.step( {
 		name: 'descriptionwikitext',
@@ -58,8 +58,8 @@
 			monobook: 'right'
 		}
 	} )
-	.next( pageName ? 'descriptionpage' : 'launchtour' )
-	.back( 'callout' );
+		.next( pageName ? 'descriptionpage' : 'launchtour' )
+		.back( 'callout' );
 
 	if ( pageName ) {
 		tour.step( {
@@ -79,8 +79,8 @@
 				type: 'progressive'
 			} ]
 		} )
-		.next( 'launchtour' )
-		.back( 'descriptionwikitext' );
+			.next( 'launchtour' )
+			.back( 'descriptionwikitext' );
 	}
 
 	launchTourButtons = [ {
@@ -90,7 +90,7 @@
 	if ( shouldShowFirstEdit() ) {
 		launchTourButtons.unshift( {
 			namemsg: 'guidedtour-tour-test-launch-editing',
-			onclick: function() {
+			onclick: function () {
 				gt.endTour();
 				gt.launchTour( 'firstedit' );
 			}
@@ -100,7 +100,7 @@
 	/*
 	 * Test out tour launching
 	 */
-	tour.step({
+	tour.step( {
 		name: 'launchtour',
 		titlemsg: 'guidedtour-tour-test-launch-tour',
 		descriptionmsg: 'guidedtour-tour-test-launch-tour-description',
@@ -109,6 +109,6 @@
 		overlay: true,
 
 		buttons: launchTourButtons
-	})
-	.back( pageName ? 'descriptionpage' : 'descriptionwikitext' );
-} ( window, document, jQuery, mediaWiki, mediaWiki.guidedTour ) );
+	} )
+		.back( pageName ? 'descriptionpage' : 'descriptionwikitext' );
+}( window, document, jQuery, mediaWiki, mediaWiki.guidedTour ) );

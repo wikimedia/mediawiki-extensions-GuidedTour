@@ -9,9 +9,9 @@
 	 */
 
 	/**
-	 * @method constructor
-	 *
 	 * Constructs a StepBuilder
+	 *
+	 * @method constructor
 	 *
 	 * @param {mw.guidedTour.Tour} tour Tour the corresponding Step belongs to
 	 * @param {Object} stepSpec See {mw.guidedTour.TourBuilder#step} for details.
@@ -27,7 +27,7 @@
 		 */
 		this.tour = tour;
 
-		if ( typeof stepSpec.name !== 'string' || /[.\-]/.test( stepSpec.name ) ) {
+		if ( typeof stepSpec.name !== 'string' || /[.-]/.test( stepSpec.name ) ) {
 			throw new gt.TourDefinitionError( '\'stepSpec.name\' must be a string, the step name, without the characters \'.\' and \'-\'.' );
 		}
 
@@ -51,12 +51,14 @@
 	 *
 	 * @param {string...} hookNames hook names to listen for, with each as a
 	 *   separate parameter
+	 *
+	 * @return {mw.guidedTour.StepBuilder}
 	 * @chainable
 	 */
 	StepBuilder.prototype.listenForMwHooks = function () {
 		var i;
 		for ( i = 0; i < arguments.length; i++ ) {
-			this.step.listenForMwHook( arguments[i] );
+			this.step.listenForMwHook( arguments[ i ] );
 		}
 		return this;
 	};
@@ -89,7 +91,7 @@
 			// Ensures it's a Step (could be a step name)
 			// and checks for validity.
 			step = this.tour.getStep( step );
-		} catch( ex ) {
+		} catch ( ex ) {
 			throw new gt.TourDefinitionError( exceptionPrefix + ': ' + ex.message );
 		}
 
@@ -116,6 +118,7 @@
 	 *    dynamically
 	 *
 	 * @chainable
+	 * @return {mw.guidedTour.StepBuilder}
 	 * @throws {mw.guidedTour.TourDefinitionError} If this direction callback has has already
 	 *  been set
 	 */
@@ -143,6 +146,7 @@
 	 *    dynamically
 	 *
 	 * @chainable
+	 * @return {mw.guidedTour.StepBuilder}
 	 * @throws {mw.guidedTour.TourDefinitionError} If this direction callback has has already
 	 *  been set
 	 */
@@ -159,7 +163,7 @@
 	 * step is requested.
 	 *
 	 * @private
-	 * @param string direction name of direction.  Currently next and back are supported.
+	 * @param {string} direction Name of direction. Currently 'next' and 'back' are supported.
 	 * @param {mw.guidedTour.StepBuilder|string|Function} step Value used to
 	 *  determine the step callback for the specified direction.  Either:
 	 *
@@ -169,6 +173,7 @@
 	 *    dynamically
 	 *
 	 * @chainable
+	 * @return {mw.guidedTour.StepBuilder}
 	 * @throws {mw.guidedTour.TourDefinitionError} If this direction callback has has already
 	 *  been set
 	 */
@@ -234,6 +239,7 @@
 	 *  special action, or falsy for no requested transition (see above).
 	 *
 	 * @chainable
+	 * @return {mw.guidedTour.StepBuilder}
 	 * @throws {mw.guidedTour.TourDefinitionError} If StepBuilder.transition() has already
 	 *  been called, or callback is not a function
 	 */
@@ -254,8 +260,9 @@
 			var transitionReturn = callback( transitionEvent );
 
 			if ( $.type( transitionReturn ) === 'number' ) {
-				if ( transitionReturn !== gt.TransitionAction.HIDE &&
-				     transitionReturn !== gt.TransitionAction.END
+				if (
+					transitionReturn !== gt.TransitionAction.HIDE &&
+					transitionReturn !== gt.TransitionAction.END
 				) {
 					throw new gt.TourDefinitionError( 'Callback passed to .transition() returned a number that is not a valid TransitionAction' );
 				}
@@ -274,7 +281,6 @@
 		} );
 		return this;
 	};
-
 
 	mw.guidedTour.StepBuilder = StepBuilder;
 }( mediaWiki, jQuery ) );

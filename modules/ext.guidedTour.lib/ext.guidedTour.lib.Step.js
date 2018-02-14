@@ -17,9 +17,9 @@
 	 */
 
 	/**
-	 * @method constructor
-	 *
 	 * Create a new step of the given tour
+	 *
+	 * @method constructor
 	 *
 	 * @private
 	 *
@@ -98,7 +98,7 @@
 		  */
 		this.isBackCallbackSet = false;
 
-		 /**
+		/**
 		  * True if and only if .transition() has been called
 		  *
 		  * @property {boolean}
@@ -115,7 +115,7 @@
 		 *
 		 * @private
 		 *
-		 * @return {mw.guidedTour.Step} Step object for next step
+		 * // @return {mw.guidedTour.Step} Step object for next step
 		 * @throws {mw.guidedTour.TourDefinitionError} If the next step is
 		 *   not set, or set to an invalid value or callback
 		 */
@@ -152,10 +152,10 @@
 	 * Checks if the specified callback is set
 	 *
 	 * @param {string} name callback name as string
-	 * @returns {Boolean} returns true if specified callback is set
+	 * @return {Boolean} returns true if specified callback is set
 	 */
 	Step.prototype.hasCallback = function ( name ) {
-		return this[callbackNameToPropertySetMap[name]];
+		return this[ callbackNameToPropertySetMap[ name ] ];
 	};
 
 	/**
@@ -165,9 +165,9 @@
 	 */
 	Step.prototype.setCallback = function ( name, callback ) {
 		// Set callback
-		this[name + 'Callback'] = callback;
+		this[ name + 'Callback' ] = callback;
 		// Flag this callback as set
-		this[callbackNameToPropertySetMap[name]] = true;
+		this[ callbackNameToPropertySetMap[ name ] ] = true;
 	};
 
 	/**
@@ -194,8 +194,9 @@
 		var step = this,
 			messageKey,
 			actionButtonClass = 'guidedtour-' + button.action + '-button',
-		        // button.action will be deleted with the delete operator later in the flow.
+			// button.action will be deleted with the delete operator later in the flow.
 			buttonAction = button.action,
+			// eslint-disable-next-line no-use-before-define
 			buttonTypeClass = getButtonTypeClass( button ),
 			messageKeyMapping,
 			hasIcon;
@@ -217,7 +218,7 @@
 		if ( button.name ) {
 			hasIcon = false;
 		} else {
-			messageKey = messageKeyMapping[button.action];
+			messageKey = messageKeyMapping[ button.action ];
 			button.name = mw.message( messageKey ).parse();
 			hasIcon = true;
 		}
@@ -278,12 +279,12 @@
 		// Build button class string
 		if ( button.type ) {
 			if ( $.isArray( button.type ) ) {
-				$.each( button.type, function( i , key ) {
-					classString += buttonTypes[key] + ' ';
+				$.each( button.type, function ( i, key ) {
+					classString += buttonTypes[ key ] + ' ';
 				} );
 				return classString;
 			}
-			return buttonTypes[button.type] || '';
+			return buttonTypes[ button.type ] || '';
 		} else if ( button.action === 'back' ||
 					button.action === 'wikiLink' ||
 					button.action === 'externalLink'
@@ -332,7 +333,7 @@
 			// (handleLinkClick). That means this button type is logged
 			// somewhat differently from the others.  The message key is saved
 			// in the element for use in logging later.
-			html['data-label-key'] = button.namemsg;
+			html[ 'data-label-key' ] = button.namemsg;
 			delete button.namemsg;
 		}
 
@@ -424,40 +425,40 @@
 		buttons = options.buttons || [];
 		guiderButtons = [];
 		for ( i = 0; i < buttons.length; i++ ) {
-			currentButton = buttons[i];
+			currentButton = buttons[ i ];
 			if ( currentButton.action !== undefined ) {
 				switch ( currentButton.action ) {
-				case 'next':
-					currentButton.callback = next;
-					nextButton = this.getActionButton( currentButton );
-					break;
-				case 'back':
-					currentButton.callback = back;
-					backButton = this.getActionButton( currentButton );
-					break;
-				case 'okay':
-					if ( currentButton.onclick === undefined ) {
-						throw new gt.TourDefinitionError( 'You must pass an \'onclick\' function if you use an \'okay\' action.' );
-					}
-					currentButton.callback = currentButton.onclick;
-					okayButton = this.getActionButton( currentButton );
-					break;
-				case 'end':
+					case 'next':
+						currentButton.callback = next;
+						nextButton = this.getActionButton( currentButton );
+						break;
+					case 'back':
+						currentButton.callback = back;
+						backButton = this.getActionButton( currentButton );
+						break;
+					case 'okay':
+						if ( currentButton.onclick === undefined ) {
+							throw new gt.TourDefinitionError( 'You must pass an \'onclick\' function if you use an \'okay\' action.' );
+						}
+						currentButton.callback = currentButton.onclick;
+						okayButton = this.getActionButton( currentButton );
+						break;
+					case 'end':
 					// Currently only proxying the ones that need to be
-					currentButton.callback = $.proxy( endTour, this );
-					okayButton = this.getActionButton( currentButton );
-					break;
-				case 'wikiLink':
-					url = mw.util.getUrl( currentButton.page );
-					guiderButtons.push( modifyLinkButton( currentButton, false, url, currentButton.page ) );
-					delete currentButton.page;
-					break;
-				case 'externalLink':
-					guiderButtons.push( modifyLinkButton( currentButton, true, currentButton.url ) );
-					delete currentButton.url;
-					break;
-				default:
-					throw new gt.TourDefinitionError( '\'' + currentButton.action + '\'' + ' is not a supported button action.' );
+						currentButton.callback = $.proxy( endTour, this );
+						okayButton = this.getActionButton( currentButton );
+						break;
+					case 'wikiLink':
+						url = mw.util.getUrl( currentButton.page );
+						guiderButtons.push( modifyLinkButton( currentButton, false, url, currentButton.page ) );
+						delete currentButton.page;
+						break;
+					case 'externalLink':
+						guiderButtons.push( modifyLinkButton( currentButton, true, currentButton.url ) );
+						delete currentButton.url;
+						break;
+					default:
+						throw new gt.TourDefinitionError( '\'' + currentButton.action + '\' is not a supported button action.' );
 				}
 				delete currentButton.action;
 
@@ -482,7 +483,7 @@
 			// Ensure there is always an okay and/or next button.  In some cases, there will not be
 			// a next, since the user is prompted to do something else
 			// (e.g. click 'Edit')
-			if ( okayButton === undefined  && nextButton === undefined ) {
+			if ( okayButton === undefined && nextButton === undefined ) {
 				okayButton = this.getActionButton( {
 					action: 'okay',
 					callback: $.proxy( function () { gt.hideAll(); }, this )
@@ -575,7 +576,7 @@
 
 		mw.hook( hookName ).add( listener );
 		isDoneRegistration = true;
-		this.hookListeners[hookName] = listener;
+		this.hookListeners[ hookName ] = listener;
 	};
 
 	/**
@@ -588,7 +589,7 @@
 	 * @return {void}
 	 */
 	Step.prototype.listenForMwHook = function ( hookName ) {
-		this.hookListeners[hookName] = null;
+		this.hookListeners[ hookName ] = null;
 	};
 
 	/**
@@ -616,8 +617,8 @@
 	Step.prototype.unregisterMwHooks = function () {
 		var hookName;
 		for ( hookName in this.hookListeners ) {
-			mw.hook( hookName).remove( this.hookListeners[hookName] );
-			this.hookListeners[hookName] = null;
+			mw.hook( hookName ).remove( this.hookListeners[ hookName ] );
+			this.hookListeners[ hookName ] = null;
 		}
 	};
 
@@ -761,7 +762,7 @@
 	 * @param {string} closeType Guider string identify close method, currently
 	 *  'xButton', 'escapeKey', or 'clickOutside'
 	 *
-	 * @return {boolean} true to end tour, false to dismiss
+	 * // @return {boolean} true to end tour, false to dismiss
 	 */
 	Step.prototype.handleOnClose = function ( guider, isAlternativeClose, closeType ) {
 		if ( closeType === 'xButton' ) {
