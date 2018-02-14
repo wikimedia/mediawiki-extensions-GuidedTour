@@ -469,7 +469,7 @@ mediaWiki.libs.guiders = (function($) {
 
 	guiders._initializeOverlay = function() {
 		if ($('#guider_overlay').length === 0) {
-			$('<div id="guider_overlay"></div>').hide().appendTo('body');
+			$('<div id="guider_overlay" class="guider_overlay"></div>').hide().appendTo('body');
 		}
 	};
 
