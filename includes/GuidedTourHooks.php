@@ -173,14 +173,12 @@ class GuidedTourHooks {
 	 * @return true
 	 */
 	public static function onResourceLoaderRegisterModules( &$resourceLoader ) {
-		$dir = __DIR__ . DIRECTORY_SEPARATOR;
-
 		if ( class_exists( 'VisualEditorHooks' ) ) {
 			$resourceLoader->register(
 				'ext.guidedTour.tour.firsteditve',
 				[
 					'scripts' => 'tours/firsteditve.js',
-					'localBasePath' => $dir . 'modules',
+					'localBasePath' => __DIR__ . '/../modules',
 					'remoteExtPath' => 'GuidedTour/modules',
 					'dependencies' => 'ext.guidedTour',
 					'messages' => [
@@ -209,7 +207,7 @@ class GuidedTourHooks {
 		$testModules['qunit']['ext.guidedTour.lib.tests'] = [
 			'scripts' => [ 'tests/qunit/ext.guidedTour.lib.tests.js' ],
 			'dependencies' => [ 'ext.guidedTour.lib' ],
-			'localBasePath' => __DIR__,
+			'localBasePath' => __DIR__ . '/..',
 			'remoteExtPath' => 'GuidedTour',
 		];
 		return true;

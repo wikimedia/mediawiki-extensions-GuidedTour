@@ -23,8 +23,8 @@
 		]
 	},
 	"AutoloadClasses": {
-		"GuidedTourHooks": "GuidedTourHooks.php",
-		"GuidedTourLauncher": "GuidedTourLauncher.php"
+		"GuidedTourHooks": "includes/GuidedTourHooks.php",
+		"GuidedTourLauncher": "includes/GuidedTourLauncher.php"
 	},
 	"ResourceModules": {
 		"mediawiki.libs.guiders": {
