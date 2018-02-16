@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * @covers GuidedTourHooks
+ */
 class GuidedTourHooksTest extends MediaWikiTestCase {
 	public function testGetTourNames() {
 		$this->assertSame(

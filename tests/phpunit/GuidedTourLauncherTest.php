@@ -2,13 +2,16 @@
 
 use Wikimedia\TestingAccessWrapper;
 
+/**
+ * @covers GuidedTourLauncher
+ */
 class GuidedTourLauncherTest extends MediaWikiTestCase {
 	protected $wrappedLauncher;
 
 	public function setUp() {
 		parent::setUp();
 
-		$this->wrappedLauncher = TestingAccessWrapper::newFromClass( 'GuidedTourLauncher' );
+		$this->wrappedLauncher = TestingAccessWrapper::newFromClass( GuidedTourLauncher::class );
 	}
 
 	/**
