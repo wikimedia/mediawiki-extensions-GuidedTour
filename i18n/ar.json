@@ -24,6 +24,7 @@
 	"guidedtour-tour-test-go-description-page": "اذهب إلى صفحة الشرح",
 	"guidedtour-tour-test-launch-tour": "جرب جولة افتتاحية",
 	"guidedtour-tour-test-launch-tour-description": "من الممكن للمرشدين إطلاق المزيد من الجولات الإرشادية. أليس ذلك رائعا؟",
+	"guidedtour-tour-test-launch-editing": "بدء جولة حول التحرير",
 	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|تعديل}} كامل الصفحة...",
 	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|اضغط}} الزر \"$1\" لإجراء تعديلاتك.",
 	"guidedtour-tour-firstedit-edit-section-title": "أو عدلي{{GENDER:||ي}} قسما",
