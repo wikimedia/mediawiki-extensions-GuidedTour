@@ -30,7 +30,7 @@
 			buttons: [ {
 				action: 'next'
 			} ]
-		},  {
+		}, {
 			title: 'Left',
 			description: '',
 			attachTo: '#n-mainpage-description',
@@ -38,6 +38,4 @@
 		} ]
 	} );
 
-
-
-} (window, document, jQuery, mediaWiki, mediaWiki.guidedTour ) );
+}( window, document, jQuery, mediaWiki, mediaWiki.guidedTour ) );

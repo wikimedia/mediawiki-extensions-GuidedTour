@@ -8,12 +8,12 @@
 	 */
 
 	/**
-	 * @method constructor
-	 *
 	 * Constructs a TourBuilder, backed by a tour, based on an object specifying it.
 	 *
 	 * The newly constructed object can be further configured with fluent methods,
 	 * such as #step
+	 *
+	 * @method constructor
 	 *
 	 * @param {Object} tourSpec Specification of tour
 	 * @param {string} tourSpec.name Name of tour; must match module or wiki page name
@@ -190,12 +190,12 @@
 	TourBuilder.prototype.step = function ( stepSpec ) {
 		var stepBuilder;
 
-		if ( this.tour.steps[stepSpec.name] ) {
+		if ( this.tour.steps[ stepSpec.name ] ) {
 			throw new gt.TourDefinitionError( 'The name "' + stepSpec.name + '" is already taken.  Two steps in a tour can not have the same name.' );
 		}
 
 		stepBuilder = new gt.StepBuilder( this.tour, stepSpec );
-		this.tour.steps[stepSpec.name] = stepBuilder.step;
+		this.tour.steps[ stepSpec.name ] = stepBuilder.step;
 		this.tour.stepCount++;
 		return stepBuilder;
 	};

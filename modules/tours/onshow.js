@@ -63,6 +63,6 @@
 				action: 'end'
 			} ]
 		} )
-		.back( 'descriptionwikitext' );
+			.back( 'descriptionwikitext' );
 	}
-} ( window, document, jQuery, mediaWiki, mediaWiki.guidedTour ) );
+}( window, document, jQuery, mediaWiki, mediaWiki.guidedTour ) );

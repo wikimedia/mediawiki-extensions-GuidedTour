@@ -31,6 +31,7 @@
 		 * @param {mw.guidedTour.Step} step Step event is about
 		 * @param {Object} [event={}] Event object; will be mutated to add
 		 *  common information
+		 * @return {jQuery.Promise}
 		 */
 		log: function ( schemaName, step, event ) {
 			var tour = step.tour;

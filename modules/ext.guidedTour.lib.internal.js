@@ -60,9 +60,9 @@
 			allSucceeded = true;
 			for ( i = 0; i < promises.length; i++ ) {
 				// First, if it fails we mark allSucceeded false.
-				promises[i].fail( fail );
+				promises[ i ].fail( fail );
 				// Then, we run the always handler regardless.
-				promises[i].always( always );
+				promises[ i ].always( always );
 			}
 
 			return dfd.promise();
@@ -84,7 +84,7 @@
 			};
 
 			if ( tourInfo !== undefined ) {
-				userStateObject.tours[tourInfo.name] = {
+				userStateObject.tours[ tourInfo.name ] = {
 					step: tourInfo.step
 				};
 			}
@@ -119,7 +119,7 @@
 			tourModuleName = internal.getTourModuleName( tourName );
 			mw.loader.using( tourModuleName,
 				function () {
-					 dfd.resolve();
+					dfd.resolve();
 				}, function ( err, dependencies ) {
 					mw.log( 'Failed to load tour ', tourModuleName,
 						'as module. err: ', err, ', dependencies: ',
@@ -158,8 +158,7 @@
 					if ( script.length === 0 ) {
 						mw.log( 'Tour page \'' + title + '\' is empty. Does the page exist?' );
 						dfd.reject();
-					}
-					else {
+					} else {
 						dfd.resolve();
 					}
 				} )
@@ -209,7 +208,7 @@
 		 *   until all load attempts are complete.
 		 */
 		loadMultipleTours: function ( tourNames ) {
-			var loadDeferreds = $.map ( tourNames, function ( name) {
+			var loadDeferreds = $.map( tourNames, function ( name ) {
 				return internal.loadTour( name );
 			} );
 

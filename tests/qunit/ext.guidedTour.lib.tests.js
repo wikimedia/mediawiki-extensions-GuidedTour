@@ -158,7 +158,7 @@
 		assert.strictEqual(
 			gt.hasQuery( { action: 'edit' }, PAGE_NAME_TO_SKIP ),
 			false,
-			'Query matches, but page does not');
+			'Query matches, but page does not' );
 
 		paramMap = { debug: 'true', somethingElse: 'medium' };
 
@@ -216,7 +216,7 @@
 				userState = gt.internal.parseUserState( cookieValue );
 
 			assert.strictEqual(
-				userState.tours[expectedName].step,
+				userState.tours[ expectedName ].step,
 				expectedStep,
 				message
 			);
@@ -227,11 +227,11 @@
 		}
 
 		gt.setTourCookie( firstTourName );
-		assertValidCookie ( firstTourName, '1', 'Step defaults to 1' );
+		assertValidCookie( firstTourName, '1', 'Step defaults to 1' );
 		clearCookie();
 
 		gt.setTourCookie( firstTourName, numberStep );
-		assertValidCookie ( firstTourName, String( numberStep ), 'setTourCookie accepts numeric step, which is converted to string' );
+		assertValidCookie( firstTourName, String( numberStep ), 'setTourCookie accepts numeric step, which is converted to string' );
 		clearCookie();
 
 		gt.setTourCookie( firstTourName, stringStep );
@@ -647,7 +647,7 @@
 	} );
 
 	QUnit.test( 'StepBuilder.constructor', function ( assert ) {
-		var STEP_NAME_MUST_BE_STRING = /'stepSpec.name\' must be a string, the step name/;
+		var STEP_NAME_MUST_BE_STRING = /'stepSpec.name' must be a string, the step name/;
 
 		assert.strictEqual(
 			firstStepBuilder.constructor,
@@ -658,7 +658,7 @@
 		assertThrowsTypeAndMessage(
 			assert,
 			function () {
-				/*jshint unused: false*/
+				// eslint-disable-next-line no-unused-vars
 				var missingNameBuilder = new gt.StepBuilder( validTour, {
 					position: 'bottom',
 					attachTo: '#ca-edit'
@@ -672,7 +672,7 @@
 		assertThrowsTypeAndMessage(
 			assert,
 			function () {
-				/*jshint unused: false*/
+				// eslint-disable-next-line no-unused-vars
 				var numericNameBuilder = new gt.StepBuilder( validTour, {
 					name: 1,
 					position: 'bottom',
@@ -803,7 +803,6 @@
 			VALUE_PASSED_NEXT_NOT_VALID_STEP,
 			'nextCallback throws if a StepBuilder from a different Tour was passed to next'
 		);
-
 
 		linkStepBuilder.next( editStepBuilder );
 		assert.strictEqual(
@@ -999,9 +998,9 @@
 
 	QUnit.test( 'Step.constructor', function ( assert ) {
 		var step = new gt.Step( validTour, {
-				name: 'first',
-				description: 'first description'
-			} );
+			name: 'first',
+			description: 'first description'
+		} );
 
 		assert.strictEqual(
 			step.tour,
@@ -1035,11 +1034,11 @@
 	QUnit.test( 'Step.getButtons', function ( assert ) {
 		var buttons = [
 				{ type: 'destructive' },
-				{ type: ['progressive', 'quiet'] },
+				{ type: [ 'progressive', 'quiet' ] },
 				{ action: 'wikiLink', type: 'progressive' },
 				{ action: 'externalLink' },
 				{ action: 'back' },
-				{ action: 'okay', onclick: function() {} },
+				{ action: 'okay', onclick: function () {} },
 				{ action: 'next' }
 			],
 			spy = this.spy( gt.Step.prototype, 'getButtons' ),
@@ -1049,36 +1048,36 @@
 			returnedButtons;
 
 		tourBuilder.tour.showStep( firstStep );
-		returnedButtons = spy.lastCall.args[0].buttons;
+		returnedButtons = spy.lastCall.args[ 0 ].buttons;
 		assert.ok(
-			returnedButtons[0].html['class'].indexOf( 'mw-ui-destructive' ) !== -1 &&
-			returnedButtons[0].html['class'].indexOf( 'mw-ui-button' ) !== -1,
+			returnedButtons[ 0 ].html.class.indexOf( 'mw-ui-destructive' ) !== -1 &&
+			returnedButtons[ 0 ].html.class.indexOf( 'mw-ui-button' ) !== -1,
 			'Destructive custom button'
 		);
 		assert.ok(
-			returnedButtons[1].html['class'].indexOf( 'mw-ui-button' ) !== -1 &&
-			returnedButtons[1].html['class'].indexOf( 'mw-ui-progressive' ) !== -1 &&
-			returnedButtons[1].html['class'].indexOf( 'mw-ui-quiet' ) !== -1,
+			returnedButtons[ 1 ].html.class.indexOf( 'mw-ui-button' ) !== -1 &&
+			returnedButtons[ 1 ].html.class.indexOf( 'mw-ui-progressive' ) !== -1 &&
+			returnedButtons[ 1 ].html.class.indexOf( 'mw-ui-quiet' ) !== -1,
 			'A quietly progressive custom button'
 		);
 		assert.ok(
-			returnedButtons[2].html['class'].indexOf( 'mw-ui-progressive' ) !== -1,
+			returnedButtons[ 2 ].html.class.indexOf( 'mw-ui-progressive' ) !== -1,
 			'Progressive internal link'
 		);
 		assert.ok(
-			returnedButtons[3].html['class'].indexOf( 'mw-ui-progressive' ) === -1,
+			returnedButtons[ 3 ].html.class.indexOf( 'mw-ui-progressive' ) === -1,
 			'External link button is not progressive by default'
 		);
 		assert.ok(
-			returnedButtons[4].html['class'].indexOf( 'mw-ui-progressive' ) === -1,
+			returnedButtons[ 4 ].html.class.indexOf( 'mw-ui-progressive' ) === -1,
 			'Back button is not progressive by default'
 		);
 		assert.ok(
-			returnedButtons[5].html['class'].indexOf( 'mw-ui-progressive' ) !== -1,
+			returnedButtons[ 5 ].html.class.indexOf( 'mw-ui-progressive' ) !== -1,
 			'Okay button is progressive by default'
 		);
 		assert.ok(
-			returnedButtons[6].html['class'].indexOf( 'mw-ui-progressive' ) !== -1,
+			returnedButtons[ 6 ].html.class.indexOf( 'mw-ui-progressive' ) !== -1,
 			'Next button is progressive by default'
 		);
 	} );
@@ -1109,11 +1108,11 @@
 			'checkTransition should be called exactly once when there is a single mw.hook firing'
 		);
 
-		actualTransitionEvent = checkTransitionStub.lastCall.args[0];
+		actualTransitionEvent = checkTransitionStub.lastCall.args[ 0 ];
 		expectedTransitionEvent = new gt.TransitionEvent();
 		expectedTransitionEvent.type = gt.TransitionEvent.MW_HOOK;
 		expectedTransitionEvent.hookName = HOOK_NAME;
-		expectedTransitionEvent.hookArguments = ['second', 2];
+		expectedTransitionEvent.hookArguments = [ 'second', 2 ];
 
 		assert.deepEqual(
 			actualTransitionEvent,
@@ -1158,9 +1157,9 @@
 
 	QUnit.test( 'Step.handleOnShow', function ( assert ) {
 		var showChangesStepBuilder = validTourBuilder.step( {
-			name: 'showChanges',
-			description: 'showChanges description'
-		} ),
+				name: 'showChanges',
+				description: 'showChanges description'
+			} ),
 			showChangesStep = showChangesStepBuilder.step,
 			singlePageTourBuilder = new gt.TourBuilder( {
 				name: 'singlePage',
@@ -1196,7 +1195,7 @@
 		unregisterSpy.reset();
 		showChangesStep.handleOnShow( { id: showChangesStep.specification.id, elem: $() } );
 		assert.strictEqual(
-			unregisterSpy.thisValues[0],
+			unregisterSpy.thisValues[ 0 ],
 			firstStep,
 			'mw.hook listeners for prior current step are unregistered'
 		);
@@ -1216,7 +1215,7 @@
 		assertThrowsTypeAndMessage(
 			assert,
 			function () {
-				/*jshint unused: false*/
+				// eslint-disable-next-line no-unused-vars
 				var tour = new gt.TourBuilder();
 			},
 			gt.TourDefinitionError,
@@ -1227,7 +1226,7 @@
 		assertThrowsTypeAndMessage(
 			assert,
 			function () {
-				/*jshint unused: false*/
+				// eslint-disable-next-line no-unused-vars
 				var tour = new gt.TourBuilder( 'test' );
 			},
 			gt.TourDefinitionError,
@@ -1238,7 +1237,7 @@
 		assertThrowsTypeAndMessage(
 			assert,
 			function () {
-				/*jshint unused: false*/
+				// eslint-disable-next-line no-unused-vars
 				var tour = new gt.TourBuilder( {
 					tourName: 'test'
 				} );
@@ -1255,14 +1254,12 @@
 	} );
 
 	QUnit.test( 'TourBuilder.step', function ( assert ) {
-		var save1, save2;
-
 		validTourBuilder.step( {
 			name: 'preview',
 			description: 'preview description'
 		} );
 
-		save1 = validTourBuilder.step( {
+		validTourBuilder.step( {
 			name: 'save',
 			description: 'save description'
 		} );
@@ -1276,13 +1273,13 @@
 		assertThrowsTypeAndMessage(
 			assert,
 			function () {
-				save2 = validTourBuilder.step( {
+				validTourBuilder.step( {
 					name: 'save',
 					description: 'save description'
 				} );
 			},
 			gt.TourDefinitionError,
-			/The name "save" is already taken\.  Two steps in a tour can not have the same name/,
+			/The name "save" is already taken\. {2}Two steps in a tour can not have the same name/,
 			'Step cname can not repeat'
 		);
 	} );
@@ -1307,7 +1304,7 @@
 		} );
 
 		assert.strictEqual(
-			gt.internal.definedTours[tour.name],
+			gt.internal.definedTours[ tour.name ],
 			tour,
 			'Tour is defined in internal list after constructor'
 		);
@@ -1493,4 +1490,4 @@
 			'Throws if firstStep was not called'
 		);
 	} );
-} ( mediaWiki, jQuery ) );
+}( mediaWiki, jQuery ) );

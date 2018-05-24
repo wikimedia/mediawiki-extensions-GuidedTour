@@ -14,11 +14,11 @@
 	 */
 
 	/**
-	 * @method constructor
-	 *
-	 * @private
-	 *
 	 * See mw.guidedTour.TourBuilder#constructor, which passes through to this.
+	 *
+	 * @method constructor
+	 * @param {Object} tourSpec Specification of tour
+	 * @private
 	 */
 	function Tour( tourSpec ) {
 		var moduleName;
@@ -61,7 +61,7 @@
 		 */
 		this.shouldLog = tourSpec.shouldLog;
 
-		internal.definedTours[this.name] = this;
+		internal.definedTours[ this.name ] = this;
 
 		/**
 		 * Object mapping step names to mw.guidedTour.Step objects
@@ -239,7 +239,7 @@
 
 		if ( $.type( step ) === 'string' ) {
 			stepName = step;
-			step = this.steps[stepName];
+			step = this.steps[ stepName ];
 			if ( !step ) {
 				throw new gt.IllegalArgumentError( 'Step "' + stepName + '" not found in the "' + this.name + '" tour.' );
 			}

@@ -34,4 +34,4 @@
 
 	};
 
-} ( jQuery, mediaWiki ) );
+}( jQuery, mediaWiki ) );
