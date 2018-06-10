@@ -17,6 +17,9 @@
 	"descriptionmsg": "guidedtour-desc",
 	"license-name": "Apache-2.0",
 	"type": "other",
+	"requires": {
+		"MediaWiki": ">= 1.32.0"
+	},
 	"MessagesDirs": {
 		"GuidedTour": [
 			"i18n"
@@ -65,7 +68,7 @@
 			"dependencies": [
 				"jquery.client",
 				"mediawiki.Title",
-				"mediawiki.api.parse",
+				"mediawiki.api",
 				"mediawiki.cookie",
 				"mediawiki.jqueryMsg",
 				"mediawiki.libs.guiders",
