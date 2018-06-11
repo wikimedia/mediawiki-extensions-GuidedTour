@@ -7,7 +7,8 @@
 			"Justincheng12345",
 			"NigelSoft",
 			"LNDDYL",
-			"Cwlin0416"
+			"Cwlin0416",
+			"Kly"
 		]
 	},
 	"guidedtour-desc": "允許頁面提供彈出式導覽來引導新使用者",
@@ -25,6 +26,7 @@
 	"guidedtour-tour-test-go-description-page": "轉到描述頁",
 	"guidedtour-tour-test-launch-tour": "測試啟動導覽",
 	"guidedtour-tour-test-launch-tour-description": "嚮導可以啟動其他導覽。很酷，對吧？",
+	"guidedtour-tour-test-launch-editing": "在編輯時啟動指導",
 	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|編輯}}全部頁面...",
 	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|點選}} \"$1\" 按鈕以確認你的修改。",
 	"guidedtour-tour-firstedit-edit-section-title": "或{{GENDER:|編輯}}一個章節",

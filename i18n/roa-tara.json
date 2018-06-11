@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Joetaras"
+			"Joetaras",
+			"Matěj Suchánek"
 		]
 	},
 	"guidedtour-desc": "Permette a le pàggene de avè 'nu popup cu gire guidate pe aijutà le utinde nuève",
@@ -20,7 +21,7 @@
 	"guidedtour-tour-test-launch-tour": "Test de lange d'u gire",
 	"guidedtour-tour-test-launch-tour-description": "Le guidature ponne langià otre gire guidate. A uerre, no!?",
 	"guidedtour-tour-test-launch-editing": "Lange 'na guide sus a le cangiaminde",
-	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER|Cange}} 'a pàgene 'ndere ...",
+	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|Cange}} 'a pàgene 'ndere ...",
 	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Cazze}} 'u buttone \"$1\" pe fà le cangiaminde tune.",
 	"guidedtour-tour-firstedit-edit-section-title": "O {{GENDER:|cange}} giuste 'na sezione",
 	"guidedtour-tour-firstedit-edit-section-description": "Stonne collegaminde \"{{int:editsection}}\" pe ogne sezione prengepàle jndr'à vôsce, accussì tu puè congendrarte sus a quedda parte.",
