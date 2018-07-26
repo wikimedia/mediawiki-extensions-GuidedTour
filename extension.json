@@ -156,6 +156,14 @@
 		"localBasePath": "modules",
 		"remoteExtPath": "GuidedTour/modules"
 	},
+	"EventLoggingSchemas": {
+		"GuidedTourGuiderImpression": 8694395,
+		"GuidedTourGuiderHidden": 8690549,
+		"GuidedTourButtonClick": 13869649,
+		"GuidedTourInternalLinkActivation": 8690553,
+		"GuidedTourExternalLinkActivation": 8690560,
+		"GuidedTourExited": 8690566
+	},
 	"Hooks": {
 		"BeforePageDisplay": [
 			"GuidedTourHooks::onBeforePageDisplay"
@@ -171,9 +179,6 @@
 		],
 		"RedirectSpecialArticleRedirectParams": [
 			"GuidedTourHooks::onRedirectSpecialArticleRedirectParams"
-		],
-		"EventLoggingRegisterSchemas": [
-			"GuidedTourHooks::addEventLogging"
 		],
 		"MakeGlobalVariablesScript": [
 			"GuidedTourLauncher::addLaunchVariable"
