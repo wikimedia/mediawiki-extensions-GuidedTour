@@ -28,7 +28,7 @@
 	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|Forhåndsvis}} dine endringer (valgfri)",
 	"guidedtour-tour-firstedit-preview-description": "Ved å klikke på «{{int:showpreview}}» kan du sjekke hvordan siden vil se ut med dine endringer. Bare ikke glem å lagre!",
 	"guidedtour-tour-firstedit-save-title": "Du er nesten ferdig!",
-	"guidedtour-tour-firstedit-save-description": "Når du er ferdig, klikk «{{int:savearticle}}» for å gjøre dine endringer synlige for alle.",
+	"guidedtour-tour-firstedit-save-description": "Når du er ferdig, klikk «{{int:publishchanges}}» for å gjøre dine endringer synlige for alle.",
 	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|Klikk}} «$1»-knappen for å utføre dine endringer.",
 	"guidedtour-tour-firsteditve-edit-section-description": "Det er «$1»-lenker for hver større seksjon på siden, så du kan fokusere på akkurat den delen.",
 	"guidedtour-tour-firsteditve-save-description": "Når du er klar, klikke «{{int:visualeditor-toolbar-savedialog}}» vil gjøre dine endringer synlige for alle."

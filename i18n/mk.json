@@ -28,7 +28,7 @@
 	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|Прегледајте}} ги измените (по желба)",
 	"guidedtour-tour-firstedit-preview-description": "Стискајќи на „{{int:showpreview}}“ можете да видите како ќе изгледа изменетата страница. Само не заборавајте да ја зачувате!",
 	"guidedtour-tour-firstedit-save-title": "Речиси сте готови!",
-	"guidedtour-tour-firstedit-save-description": "Кога сте готови, стиснете на „{{int:savearticle}}“ и измените ќе бидат видливи за секого.",
+	"guidedtour-tour-firstedit-save-description": "Кога сте готови, стиснете на „{{int:publishchanges}}“ и измените ќе бидат видливи за секого.",
 	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|Стиснете}} на копчето „$1“ за да ги направите промените.",
 	"guidedtour-tour-firsteditve-edit-section-description": "Секој поважен дел (поднаслов) од страницата има врски „$1“ за да можете да му се посветите само на тој дел.",
 	"guidedtour-tour-firsteditve-save-description": "Кога ќе сте готови, стиснете на „{{int:visualeditor-toolbar-savedialog}}“ и така промените ќе станат видливи за секого."

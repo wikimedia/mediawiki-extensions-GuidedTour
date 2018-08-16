@@ -23,7 +23,7 @@
 	"guidedtour-tour-firstedit-preview-title": "Өзгерістеріңізді {{GENDER:|алдын ала қарап шығу}}(міндетті емес)",
 	"guidedtour-tour-firstedit-preview-description": "«{{int:showpreview}}» батырмасын бассаңыз өзгерістеріңіздің бұл бетке қалай өзгертетінін көре аласыз. Тек сақтауды ұмытпаңыз.",
 	"guidedtour-tour-firstedit-save-title": "Сіз бітіруге таяусыз!",
-	"guidedtour-tour-firstedit-save-description": "Дайын болғаныңызда, «{{int:savearticle}}» дегенді басқанда сіздің өзгерістеріңіз барлығына көрінетін болады.",
+	"guidedtour-tour-firstedit-save-description": "Дайын болғаныңызда, «{{int:publishchanges}}» дегенді басқанда сіздің өзгерістеріңіз барлығына көрінетін болады.",
 	"guidedtour-tour-firsteditve-edit-page-description": "Өзгеріс жасау үшін «$1» батырмасын {{GENDER:|Click}} басу.",
 	"guidedtour-tour-firsteditve-save-description": "Дайын болғаныңызда, «{{int:visualeditor-toolbar-savedialog}}» дегенді басқанда сіздің өзгерістеріңіз барлығына көрінетін болады."
 }

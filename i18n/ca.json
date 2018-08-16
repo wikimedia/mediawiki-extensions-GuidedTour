@@ -26,7 +26,7 @@
 	"guidedtour-tour-firstedit-preview-title": "Previsualització opcional dels canvis",
 	"guidedtour-tour-firstedit-preview-description": "Si cliqueu a '{{int:showpreview}}' podreu comprovar com quedarà la pàgina amb els vostres canvis. En acabat, no us oblideu de desar!",
 	"guidedtour-tour-firstedit-save-title": "Gairebé ja està!",
-	"guidedtour-tour-firstedit-save-description": "Quan ho tingueu a punt, cliqueu a '{{int:savearticle}}' i els vostres canvis ja seran visibles per a tothom.",
+	"guidedtour-tour-firstedit-save-description": "Quan ho tingueu a punt, cliqueu a '{{int:publishchanges}}' i els vostres canvis ja seran visibles per a tothom.",
 	"guidedtour-tour-firsteditve-edit-page-description": "Feu clic a «{{int:vector-view-edit}}» per a fer els vostres canvis.",
 	"guidedtour-tour-firsteditve-edit-section-description": "Disposeu d'enllaços «{{int:editsection}}» a cada secció principal, per a concentrar-vos només en aquesta part.",
 	"guidedtour-tour-firsteditve-save-description": "Quan estigueu a punt, fent clic a \"{{int:visualeditor-toolbar-savedialog}}\" fareu els vostres canvis visibles per a tothom."

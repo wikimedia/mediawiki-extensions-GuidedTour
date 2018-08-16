@@ -27,7 +27,7 @@
 	"guidedtour-tour-firstedit-preview-title": "Pratayangkan suntingan anda (tidak wajib)",
 	"guidedtour-tour-firstedit-preview-description": "Anda boleh menyemak rupa halaman selepas suntingan dengan mengklik \"{{int:showpreview}}\". Tapi jangan lupa untuk menyimpan!",
 	"guidedtour-tour-firstedit-save-title": "Hampir siap!",
-	"guidedtour-tour-firstedit-save-description": "Apabila anda sedia, klik \"{{int:savearticle}}\" dan perlihatkan suntingan anda kepada semua pembaca.",
+	"guidedtour-tour-firstedit-save-description": "Apabila anda sedia, klik \"{{int:publishchanges}}\" dan perlihatkan suntingan anda kepada semua pembaca.",
 	"guidedtour-tour-firsteditve-edit-page-description": "Klik butang \"{{int:vector-view-edit}} {{int:visualeditor-beta-appendix}}\" untuk menyiarkan suntingan.",
 	"guidedtour-tour-firsteditve-edit-section-description": "Terdapat pautan \"{{int:editsection}}{{int:visualeditor-beta-appendix}}\" untuk setiap bahagian utama pada sesebuah rencana supaya anda boleh hanya bertumpu pada bahagian berkenaan.",
 	"guidedtour-tour-firsteditve-save-description": "Apabila anda sedia, klik \"{{int:visualeditor-toolbar-savedialog}}\" dan perlihatkan suntingan anda kepada semua pembaca."

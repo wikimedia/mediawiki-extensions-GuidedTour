@@ -31,7 +31,7 @@
 	"guidedtour-tour-firstedit-preview-title": "আপনার পরিবর্তনের {{GENDER:|প্রাকদর্শন}} করুন (ঐচ্ছিক)",
 	"guidedtour-tour-firstedit-preview-description": "\"{{int:showpreview}}\" বোতামে ক্লিক করে আপনার পরিবর্তনের পর পাতাটি কেমন দেখাবে সেটি জানতে পারবেন। সংরক্ষণ করতে ভুলবেন না!",
 	"guidedtour-tour-firstedit-save-title": "আপনি প্রায় সম্পন্ন করেছেন!",
-	"guidedtour-tour-firstedit-save-description": "আপনার কাজ সম্পন্ন হলে, \"{{int:savearticle}}\" বোতামে ক্লিক করুন এবং আপনার পরিবর্তনগুলো সকলে দেখতে পারবে।",
+	"guidedtour-tour-firstedit-save-description": "আপনার কাজ সম্পন্ন হলে, \"{{int:publishchanges}}\" বোতামে ক্লিক করুন এবং আপনার পরিবর্তনগুলো সকলে দেখতে পারবে।",
 	"guidedtour-tour-firsteditve-edit-page-description": "পরিবর্তনের জন্য \"$1\" বোতামে {{GENDER:|ক্লিক করুন}}।",
 	"guidedtour-tour-firsteditve-edit-section-description": "গুরুত্বপূর্ণ প্রতিটি অনুচ্ছেদের জন্য পাতায় \"$1\" লিংক রয়েছে, এর ফলে আপনি শুধু সেই অংশে মনোনিবেশ করতে পারবেন।",
 	"guidedtour-tour-firsteditve-save-description": "আপনার কাজ সম্পন্ন হলে, \"{{int:visualeditor-toolbar-savedialog}}\" বোতামে ক্লিক করুন এবং আপনার পরিবর্তনগুলো সকলে দেখতে পারবে।"

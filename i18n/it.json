@@ -30,7 +30,7 @@
 	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|Vedi}} un'anteprima delle tue modifiche (facoltativo)",
 	"guidedtour-tour-firstedit-preview-description": "Cliccando su \"{{int:showpreview}}\" ti permette di verificare come sarà l'aspetto della pagina con le modifiche apportate. Non ti dimenticare di salvare!",
 	"guidedtour-tour-firstedit-save-title": "Hai quasi finito!",
-	"guidedtour-tour-firstedit-save-description": "Quando sei pronto, clicca su \"{{int:savearticle}}\" e renderai le tue modifiche visibili a tutti.",
+	"guidedtour-tour-firstedit-save-description": "Quando sei pronto, clicca su \"{{int:publishchanges}}\" e renderai le tue modifiche visibili a tutti.",
 	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|Clicca}} \"$1\" per fare le tue modifiche.",
 	"guidedtour-tour-firsteditve-edit-section-description": "Esistono collegamenti \"$1\" per ogni sezione principale di una pagina, così puoi concentrarti solo quella parte.",
 	"guidedtour-tour-firsteditve-save-description": "Quando sei pronto, clicca su \"{{int:visualeditor-toolbar-savedialog}}\" e renderai le tue modifiche visibili a tutti."

@@ -36,7 +36,7 @@
 	"guidedtour-tour-firstedit-preview-title": "Prévisualisez vos modifications (facultatif)",
 	"guidedtour-tour-firstedit-preview-description": "Cliquer sur « {{int:showpreview}} » vous permet de vérifier à quoi ressemblera la page avec vos modifications. Ensuite, n’oubliez pas de publier pour enregistrer.",
 	"guidedtour-tour-firstedit-save-title": "Vous avez presque terminé !",
-	"guidedtour-tour-firstedit-save-description": "Lorsque vous êtes prêt, cliquez sur « {{int:savearticle}} » pour rendre vos modifications visibles à tous.",
+	"guidedtour-tour-firstedit-save-description": "Lorsque vous êtes prêt, cliquez sur « {{int:publishchanges}} » pour rendre vos modifications visibles à tous.",
 	"guidedtour-tour-firsteditve-edit-page-description": "Cliquez le bouton « $1 » pour effectuer vos modifications.",
 	"guidedtour-tour-firsteditve-edit-section-description": "Il y a des liens « $1 » pour chaque section principale dans une page, de sorte que vous puissiez vous focaliser uniquement sur cette partie.",
 	"guidedtour-tour-firsteditve-save-description": "Quand vous serez prêt, cliquer sur « {{int:visualeditor-toolbar-savedialog}} » rendra vos modifications visibles pour tout le monde."

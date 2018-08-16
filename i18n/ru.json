@@ -29,7 +29,7 @@
 	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|Предварительно просмотрите}} свои изменения (не обязательно)",
 	"guidedtour-tour-firstedit-preview-description": "Нажатие «{{int:showpreview}}» позволяет проверить, как будет выглядеть страница с вашими изменениями. Только не забудьте её потом сохранить!",
 	"guidedtour-tour-firstedit-save-title": "Вы почти закончили!",
-	"guidedtour-tour-firstedit-save-description": "Когда вы будете готовы, нажатие «{{int:savearticle}}» сделает изменения видимыми для всех.",
+	"guidedtour-tour-firstedit-save-description": "Когда вы будете готовы, нажатие «{{int:publishchanges}}» сделает изменения видимыми для всех.",
 	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|Нажмите}} кнопку «$1», чтобы внести свои изменения.",
 	"guidedtour-tour-firsteditve-edit-section-description": "Ссылки «$1» существуют для каждого раздела страницы, так что вы можете сосредоточиться только на этой её части.",
 	"guidedtour-tour-firsteditve-save-description": "Когда вы будете готовы, нажатие «{{int:visualeditor-toolbar-savedialog}}» сделает изменения видимыми для всех."

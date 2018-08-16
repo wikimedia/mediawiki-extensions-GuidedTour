@@ -28,7 +28,7 @@
 	"guidedtour-tour-firstedit-preview-title": "Nézd meg az {{GENDER:|előnézetet}} (opcionális)",
 	"guidedtour-tour-firstedit-preview-description": "Az „{{int:showpreview}}” gombra kattintva ellenőrizheted, hogyan fog kinézni az oldal a módosításaiddal együtt. Ne felejtsd el a végén elmenteni!",
 	"guidedtour-tour-firstedit-save-title": "Majdnem kész vagy!",
-	"guidedtour-tour-firstedit-save-description": "Ha végeztél, a „{{int:savearticle}}” gombra kattintva a változtatásaid bekerülnek a cikkbe.",
+	"guidedtour-tour-firstedit-save-description": "Ha végeztél, a „{{int:publishchanges}}” gombra kattintva a változtatásaid bekerülnek a cikkbe.",
 	"guidedtour-tour-firsteditve-edit-page-description": "A lap módosításához kattints a „$1” gombra.",
 	"guidedtour-tour-firsteditve-edit-section-description": "A lap minden nagyobb szakaszához tartozik egy „$1” link, ha csak azzal a résszel akarsz foglalkozni.",
 	"guidedtour-tour-firsteditve-save-description": "Ha kész vagy, a „{{int:visualeditor-toolbar-savedialog}}” gombra kattintva teheted a változtatásaidat mindenki számára láthatóvá."

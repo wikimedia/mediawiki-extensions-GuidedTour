@@ -29,7 +29,7 @@
 	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|Vista previa}} dos cambios (opcional)",
 	"guidedtour-tour-firstedit-preview-description": "Premer en \"{{int:showpreview}}\" serve para comprobar como se verá a páxina coas modificacións. Non esqueza gardar despois!",
 	"guidedtour-tour-firstedit-save-title": "Xa case rematou!",
-	"guidedtour-tour-firstedit-save-description": "Cando remate, prema en \"{{int:savearticle}}\" para que os cambios sexan visibles para todos.",
+	"guidedtour-tour-firstedit-save-description": "Cando remate, prema en \"{{int:publishchanges}}\" para que os cambios sexan visibles para todos.",
 	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|Prema}} no botón \"$1\" para realizar as súas modificacións.",
 	"guidedtour-tour-firsteditve-edit-section-description": "Hai unha ligazón \"$1\" en cada sección, para que poida centrarse só nesa parte da páxina.",
 	"guidedtour-tour-firsteditve-save-description": "Cando remate, prema en \"{{int:visualeditor-toolbar-savedialog}}\" para que os cambios sexan visibles para todos."

@@ -25,7 +25,7 @@
 	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|Hygg eftir}} tínum broytingum áðrenn tú goymir (valfrítt)",
 	"guidedtour-tour-firstedit-preview-description": "Eitt klikk á \"{{int:showpreview}}\" loyvir tær at eftirkanna, hvussu síðan fer at síggja út við tínum broytingum. Tú mást bara ikki gloyma at goyma.",
 	"guidedtour-tour-firstedit-save-title": "Tú ert næstan liðug/ur!",
-	"guidedtour-tour-firstedit-save-description": "Tá tú ert liguð/ur, so kemur eitt klikk á \"{{int:savearticle}}\" at gera tínar broytingar sjónligar fyri øllum.",
+	"guidedtour-tour-firstedit-save-description": "Tá tú ert liguð/ur, so kemur eitt klikk á \"{{int:publishchanges}}\" at gera tínar broytingar sjónligar fyri øllum.",
 	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|Trýst}} á \"$1\" knøttin fyri at gera tínar broytingar.",
 	"guidedtour-tour-firsteditve-edit-section-description": "Tað eru \"$1\" leinkjur fyri hvønn høvuðspart á einari síðu, so tú kanst fokusera um júst tann partin.",
 	"guidedtour-tour-firsteditve-save-description": "Tá tú ert liguð/ur, so kemur eitt klikk á \"{{int:visualeditor-toolbar-savedialog}}\" at gera tínar broytingar sjónligar fyri øllum."

@@ -19,7 +19,7 @@
 	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|Shfaq}} ndryshimet (jo e domosdoshme)",
 	"guidedtour-tour-firstedit-preview-description": "Duke klikuar \"{{int:showpreview}}\" ju lejon të kontrolloni se si do të duket faqja me ndryshimet tuaja. Vetëm mos harroni t'i ruani këto ndryshime!",
 	"guidedtour-tour-firstedit-save-title": "Pothuajse mbaruat!",
-	"guidedtour-tour-firstedit-save-description": "Kur të jeni gati, klikimi mbi \"{{int:savearticle}}\" do t'i bëjë ndryshimet tuaja të dukshme për të gjithë.",
+	"guidedtour-tour-firstedit-save-description": "Kur të jeni gati, klikimi mbi \"{{int:publishchanges}}\" do t'i bëjë ndryshimet tuaja të dukshme për të gjithë.",
 	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|Klikoni}} butonin \"$1\" për të kryer ndryshimet.",
 	"guidedtour-tour-firsteditve-edit-section-description": "Ka lidhje \"$1\" për çdo seksion në një faqe, kështu që ju mund të fokusoheni vetëm në atë pjesë.",
 	"guidedtour-tour-firsteditve-save-description": "Kur të jeni gati, klikimi mbi \"{{int:visualeditor-toolbar-savedialog}}\" do t'i bëjë ndryshimet tuaja të dukshme për të gjithë."

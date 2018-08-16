@@ -26,7 +26,7 @@
 	"guidedtour-tour-firstedit-preview-title": "Dèan {{GENDER:|ro-sealladh}} air na dh'atharraich thu (roghainneil)",
 	"guidedtour-tour-firstedit-preview-description": "Ma nì thu briogadh air \"{{int:showpreview}}\", chì thu ciamar a bhios an duilleag coltach leis na h-atharraichean a rinn thu. Na dìochuimhnich an sàbhaladh!",
 	"guidedtour-tour-firstedit-save-title": "Tha thu cha mhòr deis!",
-	"guidedtour-tour-firstedit-save-description": "Nuair a bhios tu deiseil, briog air \"{{int:savearticle}}\" ach am faic a h-uile duine na h-atharraichean agad.",
+	"guidedtour-tour-firstedit-save-description": "Nuair a bhios tu deiseil, briog air \"{{int:publishchanges}}\" ach am faic a h-uile duine na h-atharraichean agad.",
 	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|Briog}} air a' phutan \"$1\" gus na h-atharraichean agad a dhèanamh.",
 	"guidedtour-tour-firsteditve-edit-section-description": "Tha ceanglaichean \"$1\" ann airson gach mòr-earrainn air duilleag ach an urrainn dhut d' aire a thoirt air a' phàirt sin.",
 	"guidedtour-tour-firsteditve-save-description": "Nuair a bhios tu deiseil, briog air \"{{int:visualeditor-toolbar-savedialog}}\" ach am fach a h-uile duine na h-atharrraichean agad."

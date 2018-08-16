@@ -31,7 +31,7 @@
 	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|Prohlédněte}} si své změny (nepovinné)",
 	"guidedtour-tour-firstedit-preview-description": "Kliknutím na „{{int:showpreview}}“ si můžete zkontrolovat, jak bude stránka vypadat po provedení změn. Jen ji pak nezapomeňte uložit!",
 	"guidedtour-tour-firstedit-save-title": "Už jste skoro hotovi!",
-	"guidedtour-tour-firstedit-save-description": "Až budete s editací hotovi, kliknutím na tlačítko „{{int:savearticle}}“ své změny zveřejníte.",
+	"guidedtour-tour-firstedit-save-description": "Až budete s editací hotovi, kliknutím na tlačítko „{{int:publishchanges}}“ své změny zveřejníte.",
 	"guidedtour-tour-firsteditve-edit-page-description": "Pro provedení změn {{GENDER:|klikněte}} na tlačítko „$1“.",
 	"guidedtour-tour-firsteditve-edit-section-description": "Pro každou sekci stránky existují odkazy  „$1“, takže se můžete soustředit pouze na danou část.",
 	"guidedtour-tour-firsteditve-save-description": "Až budete s editací hotovi, kliknutím na tlačítko „{{int:visualeditor-toolbar-savedialog}}“ své změny zveřejníte."

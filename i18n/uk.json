@@ -30,7 +30,7 @@
 	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|Попередньо переглянути}} ваші зміни (за бажанням)",
 	"guidedtour-tour-firstedit-preview-description": "Клацання \"{{int:showpreview}}\" дає змогу перевіряти вигляд сторінки із внесеними змінами. Тільки не забудьте зберегти!",
 	"guidedtour-tour-firstedit-save-title": "Майже все готове!",
-	"guidedtour-tour-firstedit-save-description": "Коли ви будете готові, натискання '{{int:savearticle}}' зробить ваші зміни видимими для всіх.",
+	"guidedtour-tour-firstedit-save-description": "Коли ви будете готові, натискання '{{int:publishchanges}}' зробить ваші зміни видимими для всіх.",
 	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|Натисніть}} на кнопку «$1», аби внести свої зміни.",
 	"guidedtour-tour-firsteditve-edit-section-description": "Існують посилання \"$1\" для кожного головного розділу на сторінці, тому ви можете зосередитися тільки на цій частині.",
 	"guidedtour-tour-firsteditve-save-description": "Коли ви будете готові, натискання \"{{int:visualeditor-toolbar-savedialog}}\" зробить ваші зміни видимими для всіх."

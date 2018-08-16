@@ -28,7 +28,7 @@
 	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|Entever}} los cambios (opcional)",
 	"guidedtour-tour-firstedit-preview-description": "Si calca '{{int:showpreview}}' podrá comprobar como se verá la páxina colos cambios. ¡Pero nun escaeza guardala!",
 	"guidedtour-tour-firstedit-save-title": "¡Yá casi ta fecho!",
-	"guidedtour-tour-firstedit-save-description": "Cuando tea preparáu, en calcando '{{int:savearticle}}', los cambios sedrán visibles pa toos.",
+	"guidedtour-tour-firstedit-save-description": "Cuando tea preparáu, en calcando '{{int:publishchanges}}', los cambios sedrán visibles pa toos.",
 	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|Calca}} nel botón «$1» pa facer los cambios.",
 	"guidedtour-tour-firsteditve-edit-section-description": "Hai enllaces «$1» pa cada seición principal d'una páxina, de mou que pue centrase sólo nesa parte.",
 	"guidedtour-tour-firsteditve-save-description": "Cuando tea preparáu, en calcando \"{{int:visualeditor-toolbar-savedialog}}\" los cambios tarán visibles pa toos."
