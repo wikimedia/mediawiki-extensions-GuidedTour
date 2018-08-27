@@ -22,7 +22,7 @@
 	"guidedtour-tour-test-callouts": "호출 텍스트",
 	"guidedtour-tour-test-portal-description": "{{int:portal}} 문서입니다.",
 	"guidedtour-tour-test-mediawiki-parse": "미디어위키 구문 분석 테스트",
-	"guidedtour-tour-test-wikitext-description": "위키 투어의 안내자는 onShow와 parseDescription을 사용하여 포함할 수 있습니다. [[{{MediaWiki:Guidedtour-help-url}}|가이드 투어 설명서]]에 위키링크를 만드는 데 사용하세요. 또는 예를 들어 [https://github.com/tychay/mwgadget.GuidedTour GitHub로] 바깥 링크를 만드는 데 사용하세요.",
+	"guidedtour-tour-test-wikitext-description": "위키 투어의 안내자는 위키텍스트를 포함할 수 있습니다. [[{{MediaWiki:Guidedtour-help-url}}|가이드 투어 설명서]]에 위키링크를 만드는 데 사용하세요. 또는 예를 들어 [https://github.com/tychay/mwgadget.GuidedTour GitHub로] 외부 링크를 만드는 데 사용하세요.",
 	"guidedtour-tour-test-description-page": "미디어위키 설명 문서 테스트",
 	"guidedtour-tour-test-go-description-page": "설명 문서로 가기",
 	"guidedtour-tour-test-launch-tour": "시작 투어 테스트",
