@@ -8,12 +8,7 @@ module.exports = function ( grunt ) {
 
 	grunt.initConfig( {
 		eslint: {
-			all: [
-				'*.js',
-				'**/*.js',
-				'!node_modules/**',
-				'!vendor/**'
-			]
+			all: '.'
 		},
 		banana: {
 			all: 'i18n/'
