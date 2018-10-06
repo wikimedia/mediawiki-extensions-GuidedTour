@@ -3,11 +3,12 @@
 		"authors": [
 			"Milicevic01",
 			"Milicacob",
-			"Сербијана"
+			"Сербијана",
+			"BadDog"
 		]
 	},
 	"guidedtour-desc": "Омогућава страницама да избаце прозор кроз који ће се нови корисници обучавати у виду туторијала",
-	"guidedtour-help-url": "Помоћ:Туторијал",
+	"guidedtour-help-url": "Help:Водичи",
 	"guidedtour-help-guider-url": "Help:Guided tours/guider",
 	"guidedtour-next-button": "Следеће",
 	"guidedtour-okay-button": "У реду",
