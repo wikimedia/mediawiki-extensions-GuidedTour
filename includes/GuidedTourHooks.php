@@ -142,7 +142,7 @@ class GuidedTourHooks {
 	 * If the query parameter is set, it will use that.
 	 * Otherwise, it will use the cookie if that exists.
 	 *
-	 * @see http://www.mediawiki.org/wiki/Manual:Hooks/BeforePageDisplay
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/BeforePageDisplay
 	 *
 	 * @param OutputPage $out OutputPage object
 	 * @param Skin $skin Skin being used.
