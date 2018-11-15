@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Jeblad",
-			"Jon Harald Søby"
+			"Jon Harald Søby",
+			"Jdforrester"
 		]
 	},
 	"guidedtour-desc": "Bruk sider for å lage en boble-drevet guidet tur for å hjelpe nye brukere",
@@ -16,7 +17,7 @@
 	"guidedtour-tour-test-callouts": "Test bobla",
 	"guidedtour-tour-test-portal-description": "Dette er {{int:portal}} siden.",
 	"guidedtour-tour-test-mediawiki-parse": "Test MediaWiki parse",
-	"guidedtour-tour-test-description-page": "Test mediaWiki beskrivelsessider",
+	"guidedtour-tour-test-description-page": "Test MediaWiki beskrivelsessider",
 	"guidedtour-tour-test-go-description-page": "Gå til beskrivelsens side",
 	"guidedtour-tour-test-launch-tour": "Test startturen",
 	"guidedtour-tour-test-launch-tour-description": "Gauider kan starte andre guidete turer. Ganske flott, hva?",
