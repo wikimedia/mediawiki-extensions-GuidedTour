@@ -1,6 +1,6 @@
 /*!
   * Part of GuidedTour, the MediaWiki extension for guided tours.
   */
-( function ( mw ) {
+( function () {
 	mw.guidedTour.launchTourFromEnvironment();
-}( mediaWiki ) );
+}() );

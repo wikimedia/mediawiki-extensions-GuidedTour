@@ -2,7 +2,7 @@
 //
 // Note well that you should run this tour on an editable page with at least
 // one section.
-( function ( window, document, $, mw, gt ) {
+( function ( gt ) {
 
 	gt.defineTour( {
 		name: 'uprightdownleft',
@@ -38,4 +38,4 @@
 		} ]
 	} );
 
-}( window, document, jQuery, mediaWiki, mediaWiki.guidedTour ) );
+}( mw.guidedTour ) );

@@ -21,7 +21,7 @@
   * Uses Optimize.ly's Guiders library (with customizations developed at WordPress
   * and MediaWiki).
   */
-( function ( window, document, $, mw, guiders ) {
+( function ( guiders ) {
 	'use strict';
 
 	var gt = mw.guidedTour,
@@ -1074,4 +1074,4 @@
 	gt.IllegalArgumentError.prototype.constructor = gt.IllegalArgumentError;
 
 	initialize();
-}( window, document, jQuery, mediaWiki, mediaWiki.libs.guiders ) );
+}( mw.libs.guiders ) );

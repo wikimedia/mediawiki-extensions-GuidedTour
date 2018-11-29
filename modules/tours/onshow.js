@@ -2,7 +2,7 @@
  * This exercises the deprecated onShow wikitext-parsing features.  It will be removed
  * when they are.
  */
-( function ( window, document, $, mw, gt ) {
+( function ( gt ) {
 	// XXX (mattflaschen, 2012-01-02): See GuidedTourHooks.php
 	var pageName = mw.config.get( 'wgGuidedTourHelpGuiderUrl' ),
 		tour, firstStepButtons, firstStep;
@@ -65,4 +65,4 @@
 		} )
 			.back( 'descriptionwikitext' );
 	}
-}( window, document, jQuery, mediaWiki, mediaWiki.guidedTour ) );
+}( mw.guidedTour ) );

@@ -44,7 +44,7 @@
  * @class mw.libs.guiders
  * @singleton
  */
-mediaWiki.libs.guiders = ( function ( $ ) {
+mw.libs.guiders = ( function () {
 	var guiders = {},
 		_resizing;
 
@@ -841,4 +841,4 @@ mediaWiki.libs.guiders = ( function ( $ ) {
 	} );
 
 	return guiders;
-} ).call( this, jQuery );
+} ).call( this );

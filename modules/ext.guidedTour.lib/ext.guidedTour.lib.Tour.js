@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	var gt = mw.guidedTour,
 		internal = gt.internal,
 		guiders = mw.libs.guiders;
@@ -318,4 +318,4 @@
 	};
 
 	mw.guidedTour.Tour = Tour;
-}( mediaWiki, jQuery ) );
+}() );

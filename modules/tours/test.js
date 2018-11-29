@@ -1,7 +1,7 @@
 /*
  * Guided Tour to test guided tour features.
  */
-( function ( window, document, $, mw, gt ) {
+( function ( gt ) {
 	// XXX (mattflaschen, 2012-01-02): See GuidedTourHooks.php
 	var tour, launchTourButtons,
 		pageName = mw.config.get( 'wgGuidedTourHelpGuiderUrl' );
@@ -111,4 +111,4 @@
 		buttons: launchTourButtons
 	} )
 		.back( pageName ? 'descriptionpage' : 'descriptionwikitext' );
-}( window, document, jQuery, mediaWiki, mediaWiki.guidedTour ) );
+}( mw.guidedTour ) );
