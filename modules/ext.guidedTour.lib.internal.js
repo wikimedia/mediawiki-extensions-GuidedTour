@@ -208,7 +208,7 @@
 		 *   until all load attempts are complete.
 		 */
 		loadMultipleTours: function ( tourNames ) {
-			var loadDeferreds = $.map( tourNames, function ( name ) {
+			var loadDeferreds = tourNames.map( function ( name ) {
 				return internal.loadTour( name );
 			} );
 

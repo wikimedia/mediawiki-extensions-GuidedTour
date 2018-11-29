@@ -186,7 +186,7 @@
 			throw new gt.TourDefinitionError( '.' + direction + '() can not be called more than once per StepBuilder' );
 		}
 
-		if ( $.isFunction( step ) ) {
+		if ( typeof step === 'function' ) {
 			callback = function () {
 				var directionReturn = step();
 				return stepBuilder.canonicalizeStep(
@@ -252,7 +252,7 @@
 		}
 
 		// next and transition have different signatures, so try to catch some issues up front
-		if ( !$.isFunction( callback ) ) {
+		if ( typeof callback !== 'function' ) {
 			throw new gt.TourDefinitionError( '.transition() takes one argument, a function' );
 		}
 

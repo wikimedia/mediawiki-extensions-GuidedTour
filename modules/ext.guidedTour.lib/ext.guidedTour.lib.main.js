@@ -112,7 +112,7 @@
 			} );
 		}
 
-		tourNames = $.map( candidateTours, function ( el ) {
+		tourNames = candidateTours.map( function ( el ) {
 			return el.name;
 		} );
 

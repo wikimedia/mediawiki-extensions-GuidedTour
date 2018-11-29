@@ -1,14 +1,14 @@
 {
-	"extends": "wikimedia",
-	"env": {
-		"browser": true
-	},
+	"extends": [
+		"wikimedia/client",
+		"wikimedia/jquery"
+	],
 	"globals": {
-		"mw": false,
-		"$": false
+		"mw": false
 	},
 	"rules": {
 		"no-underscore-dangle": 0,
-		"valid-jsdoc": 0
+		"valid-jsdoc": 0,
+		"max-len": 0
 	}
 }
