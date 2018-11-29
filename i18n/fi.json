@@ -5,7 +5,8 @@
 			"Pxos",
 			"Samoasambia",
 			"Silvonen",
-			"Stryn"
+			"Stryn",
+			"Valtlait"
 		]
 	},
 	"guidedtour-help-url": "Help:Opastetut kiertueet",
@@ -25,6 +26,6 @@
 	"guidedtour-tour-firstedit-edit-section-title": "Tai {{GENDER:|muokkaa}} osiota",
 	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|Esikatsella}} muutoksiasi (valinnainen)",
 	"guidedtour-tour-firstedit-save-title": "Olet melkein valmis!",
-	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|Napsauta}} \"$1\" tehdäksesi haluamasi muutokset.",
-	"guidedtour-tour-firsteditve-save-description": "Kun olet valmis, klikkaamalla \"{{int:visualeditor-toolbar-savedialog}}\" -painiketta tekemäsi muutokset tulevat näkyviin kaikille."
+	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|Napsauta}} ”$1” tehdäksesi haluamasi muutokset.",
+	"guidedtour-tour-firsteditve-save-description": "Kun olet valmis, klikkaamalla ”{{int:visualeditor-toolbar-savedialog}}” -painiketta tekemäsi muutokset tulevat näkyviin kaikille."
 }
