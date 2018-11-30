@@ -278,8 +278,8 @@
 
 		// Build button class string
 		if ( button.type ) {
-			if ( $.isArray( button.type ) ) {
-				$.each( button.type, function ( i, key ) {
+			if ( Array.isArray( button.type ) ) {
+				button.type.forEach( function ( key ) {
 					classString += buttonTypes[ key ] + ' ';
 				} );
 				return classString;
@@ -445,7 +445,7 @@
 						break;
 					case 'end':
 					// Currently only proxying the ones that need to be
-						currentButton.callback = $.proxy( endTour, this );
+						currentButton.callback = endTour.bind( this );
 						okayButton = this.getActionButton( currentButton );
 						break;
 					case 'wikiLink':
@@ -486,7 +486,7 @@
 			if ( okayButton === undefined && nextButton === undefined ) {
 				okayButton = this.getActionButton( {
 					action: 'okay',
-					callback: $.proxy( function () { gt.hideAll(); }, this )
+					callback: function () { gt.hideAll(); }
 				} );
 			}
 		}
@@ -558,7 +558,7 @@
 		// relevant.
 		var isDoneRegistration = false, listener;
 
-		listener = $.proxy( function () {
+		listener = function () {
 			var transitionEvent, stepAfterTransition;
 
 			// If it fires while we're registering it, disregard as a memory firing.
@@ -572,7 +572,7 @@
 					this.tour.showStep( stepAfterTransition );
 				}
 			}
-		}, this );
+		}.bind( this );
 
 		mw.hook( hookName ).add( listener );
 		isDoneRegistration = true;
@@ -637,7 +637,7 @@
 	 */
 	Step.prototype.handleOnShow = function ( guider ) {
 		var tourInfo = gt.parseTourId( guider.id ), priorCurrentStep,
-			handleLinkClickProxy = $.proxy( this.handleLinkClick, this );
+			handleLinkClickProxy = this.handleLinkClick.bind( this );
 
 		// We delete the cookie to allow the server to launch single-page
 		// tours by cookie.

@@ -100,7 +100,7 @@
 			step: '2'
 		};
 		assert.deepEqual(
-			gt.parseTourId(	tourId ),
+			gt.parseTourId( tourId ),
 			expectedTourInfo,
 			'Simple tourId'
 		);
@@ -293,7 +293,7 @@
 			},
 			gt.TourDefinitionError,
 			/'bogus' is not a supported condition/,
-			'gt.TourDefinitionError	with correct error message for invalid condition'
+			'gt.TourDefinitionError with correct error message for invalid condition'
 		);
 
 		assert.strictEqual(
