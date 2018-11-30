@@ -6,7 +6,7 @@
  *
  * @private
  */
-( function ( mw, $ ) {
+( function () {
 	var userId = mw.config.get( 'wgUserId' ) || 0,
 		EventLogger, sessionIdPreCheck, sessionId, isSessionIdPersistent;
 
@@ -57,4 +57,4 @@
 	};
 
 	mw.guidedTour.EventLogger = EventLogger;
-}( mediaWiki, jQuery ) );
+}() );

@@ -1,7 +1,7 @@
 // Guided Tour to help users make their first edit.
 // Designed to work on any Wikipedia article, and can work for other sites with minor message changes.
 
-( function ( window, document, $, mw, gt ) {
+( function ( gt ) {
 	var hasEditSectionAtLoadTime, editSectionSelector = '.mw-editsection-visualeditor',
 		editPageDescription, editSectionDescription, tour,
 		pointSavePageStep;
@@ -112,4 +112,4 @@
 			}
 		} );
 
-}( window, document, jQuery, mediaWiki, mediaWiki.guidedTour ) );
+}( mw.guidedTour ) );

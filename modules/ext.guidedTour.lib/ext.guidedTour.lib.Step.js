@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	var gt = mw.guidedTour,
 		guiders = mw.libs.guiders,
 		skin = mw.config.get( 'skin' ),
@@ -951,4 +951,4 @@
 	};
 
 	mw.guidedTour.Step = Step;
-}( mediaWiki, jQuery ) );
+}() );

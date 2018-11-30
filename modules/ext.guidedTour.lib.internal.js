@@ -12,7 +12,7 @@
  * @singleton
  * @private
  */
-( function ( mw, $ ) {
+( function () {
 	var internal;
 
 	mw.guidedTour = mw.guidedTour || {};
@@ -239,4 +239,4 @@
 			return null;
 		}
 	};
-}( mediaWiki, jQuery ) );
+}() );

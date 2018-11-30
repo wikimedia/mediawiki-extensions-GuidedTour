@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function () {
 	/**
 	 * @class mw.guidedTour.WikitextDescription
 	 *
@@ -24,4 +24,4 @@
 	};
 
 	mw.guidedTour.WikitextDescription = WikitextDescription;
-}( mediaWiki ) );
+}() );

@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function () {
 	/**
 	 * @class mw.guidedTour.TransitionEvent
 	 * @alternateClassName gt.TransitionEvent
@@ -79,4 +79,4 @@
 
 	mw.guidedTour = mw.guidedTour || {};
 	mw.guidedTour.TransitionEvent = TransitionEvent;
-}( mediaWiki ) );
+}() );

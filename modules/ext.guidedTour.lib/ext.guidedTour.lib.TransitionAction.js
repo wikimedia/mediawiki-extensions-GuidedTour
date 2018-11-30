@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function () {
 	/**
 	 * @enum
 	 * @alternateClassName gt.TransitionAction
@@ -18,4 +18,4 @@
 		 */
 		END: 2
 	};
-}( mediaWiki ) );
+}() );

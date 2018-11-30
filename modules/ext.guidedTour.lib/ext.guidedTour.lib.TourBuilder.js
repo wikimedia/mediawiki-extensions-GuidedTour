@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	var gt = mw.guidedTour;
 
 	/**
@@ -223,4 +223,4 @@
 	};
 
 	mw.guidedTour.TourBuilder = TourBuilder;
-}( mediaWiki, jQuery ) );
+}() );

@@ -1,5 +1,5 @@
 // Validation and canonicalization should be put here or in TourBuilder whenever possible.
-( function ( mw, $ ) {
+( function () {
 	var gt = mw.guidedTour;
 
 	/**
@@ -283,4 +283,4 @@
 	};
 
 	mw.guidedTour.StepBuilder = StepBuilder;
-}( mediaWiki, jQuery ) );
+}() );

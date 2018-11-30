@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	'use strict';
 
 	var gt, originalVE, cookieConfig, cookieName, cookieParams,
@@ -1490,4 +1490,4 @@
 			'Throws if firstStep was not called'
 		);
 	} );
-}( mediaWiki, jQuery ) );
+}() );
