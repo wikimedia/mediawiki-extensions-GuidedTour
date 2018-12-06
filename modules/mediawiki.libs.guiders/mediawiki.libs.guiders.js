@@ -719,9 +719,9 @@ mw.libs.guiders = ( function () {
 	 *   singleton.
 	 */
 	guiders.show = function ( id ) {
-		var myGuider, showReturn, windowHeight, scrollHeight, guiderOffset,
+		var myGuider, showReturn, windowHeight, scrollHeight, guiderOffsetTop,
 			guiderElemHeight, isGuiderBelow, isGuiderAbove, nextGuiderId,
-			nextGuiderData, testInDom;
+			nextGuiderData, testInDom, stylePosition;
 
 		if ( !id && guiders._lastCreatedGuiderID ) {
 			id = guiders._lastCreatedGuiderID;
@@ -763,12 +763,15 @@ mw.libs.guiders = ( function () {
 
 		windowHeight = guiders._windowHeight = $( window ).height();
 		scrollHeight = $( window ).scrollTop();
-		guiderOffset = myGuider.elem.offset();
+
+		// .offset().top returns invalid value (0) when position: absolute
+		stylePosition = myGuider.elem.css( 'position' ) ? myGuider.elem.css( 'position' ).toLowerCase() : '';
+		guiderOffsetTop = stylePosition === 'absolute' ?
+			parseFloat( myGuider.elem.css( 'top' ) || 0 ) : myGuider.elem.offset().top;
+
 		guiderElemHeight = myGuider.elem.height();
-
-		isGuiderBelow = ( scrollHeight + windowHeight < guiderOffset.top + guiderElemHeight ); /* we will need to scroll down */
-		isGuiderAbove = ( guiderOffset.top < scrollHeight ); /* we will need to scroll up */
-
+		isGuiderBelow = ( scrollHeight + windowHeight < guiderOffsetTop + guiderElemHeight ); /* we will need to scroll down */
+		isGuiderAbove = ( guiderOffsetTop < scrollHeight ); /* we will need to scroll up */
 		if ( myGuider.autoFocus && ( isGuiderBelow || isGuiderAbove ) ) {
 			// Sometimes the browser won't scroll if the person just clicked,
 			// so let's do this in a setTimeout.
@@ -808,7 +811,6 @@ mw.libs.guiders = ( function () {
 		if ( typeof currentGuider === 'undefined' ) {
 			return;
 		}
-
 		windowHeight = guiders._windowHeight;
 		// scrollHeight = $( window ).scrollTop();
 		guiderOffset = currentGuider.elem.offset();
