@@ -1060,24 +1060,29 @@
 			returnedButtons[ 1 ].html.class.indexOf( 'mw-ui-quiet' ) !== -1,
 			'A quietly progressive custom button'
 		);
-		assert.ok(
+		assert.strictEqual(
 			returnedButtons[ 2 ].html.class.indexOf( 'mw-ui-progressive' ) !== -1,
+			true,
 			'Progressive internal link'
 		);
-		assert.ok(
-			returnedButtons[ 3 ].html.class.indexOf( 'mw-ui-progressive' ) === -1,
+		assert.strictEqual(
+			returnedButtons[ 3 ].html.class.indexOf( 'mw-ui-progressive' ) !== -1,
+			false,
 			'External link button is not progressive by default'
 		);
-		assert.ok(
-			returnedButtons[ 4 ].html.class.indexOf( 'mw-ui-progressive' ) === -1,
+		assert.strictEqual(
+			returnedButtons[ 4 ].html.class.indexOf( 'mw-ui-progressive' ) !== -1,
+			false,
 			'Back button is not progressive by default'
 		);
-		assert.ok(
+		assert.strictEqual(
 			returnedButtons[ 5 ].html.class.indexOf( 'mw-ui-progressive' ) !== -1,
+			true,
 			'Okay button is progressive by default'
 		);
-		assert.ok(
+		assert.strictEqual(
 			returnedButtons[ 6 ].html.class.indexOf( 'mw-ui-progressive' ) !== -1,
+			true,
 			'Next button is progressive by default'
 		);
 	} );
