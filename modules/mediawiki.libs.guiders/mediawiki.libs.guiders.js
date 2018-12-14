@@ -581,19 +581,19 @@ mw.libs.guiders = ( function () {
 	 * Shows the 'next' step
 	 */
 	guiders.next = function () {
-		return guiders.doStep( 'next' );
+		guiders.doStep( 'next' );
 	};
 
 	/**
 	 * Shows the 'back' step
 	 */
 	guiders.back = function () {
-		return guiders.doStep( 'back' );
+		guiders.doStep( 'back' );
 	};
 
 	/**
 	 * Move the guider directionally to the corresponding step. eg. next, back
-	 * @param string direction next or back
+	 * @param {string} direction next or back
 	 */
 	guiders.doStep = function ( direction ) {
 		var currentGuider, moveToGuiderId, myGuider, omitHidingOverlay;
@@ -620,6 +620,8 @@ mw.libs.guiders = ( function () {
 	/**
 	 * This stores the guider but does no work on it.
 	 * It is an alternative to createGuider() that defers the actual setup work.
+	 *
+	 * @param {Object} passedSettings Settings
 	 */
 	guiders.initGuider = function ( passedSettings ) {
 		if ( passedSettings === null || passedSettings === undefined ) {
@@ -800,8 +802,6 @@ mw.libs.guiders = ( function () {
 
 	/**
 	 * Scroll to the current guider
-	 *
-	 * @return {Object} guiders singleton
 	 */
 	guiders.scrollToCurrent = function () {
 		var currentGuider, windowHeight, guiderOffset,

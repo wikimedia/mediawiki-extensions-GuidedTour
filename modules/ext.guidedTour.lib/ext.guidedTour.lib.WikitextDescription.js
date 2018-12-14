@@ -6,7 +6,7 @@
 	 */
 
 	/**
-	 * @method constructor
+	 * @constructor
 	 *
 	 * @param {string} wikitext Wikitext to use as a description
 	 */

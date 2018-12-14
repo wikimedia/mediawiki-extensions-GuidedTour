@@ -13,7 +13,7 @@
 	 * The newly constructed object can be further configured with fluent methods,
 	 * such as #step
 	 *
-	 * @method constructor
+	 * @constructor
 	 *
 	 * @param {Object} tourSpec Specification of tour
 	 * @param {string} tourSpec.name Name of tour; must match module or wiki page name
@@ -99,7 +99,7 @@
 	 *  format as position.  The values within the structure can also be selectors or
 	 *  jQuery-wrapped nodes.
 	 *
-	 * @param {Number} [stepSpec.width=400] Width, in pixels.
+	 * @param {number} [stepSpec.width=400] Width, in pixels.
 	 *
 	 * @param {Function} [stepSpec.onShow] Function to execute immediately
 	 *  before the guider is shown.  Using this for gt.parseDescription or

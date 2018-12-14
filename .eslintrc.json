@@ -8,7 +8,6 @@
 	},
 	"rules": {
 		"no-underscore-dangle": 0,
-		"valid-jsdoc": 0,
 		"max-len": 0
 	}
 }

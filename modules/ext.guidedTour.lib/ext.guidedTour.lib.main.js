@@ -1039,7 +1039,7 @@
 	 */
 
 	/**
-	 * @method constructor
+	 * @constructor
 	 *
 	 * @param {string} message Error message text
 	 */
@@ -1060,7 +1060,7 @@
 	 */
 
 	/**
-	 * @method constructor
+	 * @constructor
 	 *
 	 * @param {string} message Error message text
 	 */

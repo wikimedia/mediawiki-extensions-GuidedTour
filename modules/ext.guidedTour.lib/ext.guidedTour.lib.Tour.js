@@ -16,7 +16,7 @@
 	/**
 	 * See mw.guidedTour.TourBuilder#constructor, which passes through to this.
 	 *
-	 * @method constructor
+	 * @constructor
 	 * @param {Object} tourSpec Specification of tour
 	 * @private
 	 */

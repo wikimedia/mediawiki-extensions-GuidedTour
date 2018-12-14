@@ -11,7 +11,7 @@
 	/**
 	 * Constructs a StepBuilder
 	 *
-	 * @method constructor
+	 * @constructor
 	 *
 	 * @param {mw.guidedTour.Tour} tour Tour the corresponding Step belongs to
 	 * @param {Object} stepSpec See {mw.guidedTour.TourBuilder#step} for details.
@@ -49,7 +49,7 @@
 	/**
 	 * Tell the step to listen for one or more mw.hook types
 	 *
-	 * @param {string...} hookNames hook names to listen for, with each as a
+	 * @param {...string} hookNames hook names to listen for, with each as a
 	 *   separate parameter
 	 *
 	 * @return {mw.guidedTour.StepBuilder}

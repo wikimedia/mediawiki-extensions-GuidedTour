@@ -19,7 +19,7 @@
 	/**
 	 * Create a new step of the given tour
 	 *
-	 * @method constructor
+	 * @constructor
 	 *
 	 * @private
 	 *
@@ -152,7 +152,7 @@
 	 * Checks if the specified callback is set
 	 *
 	 * @param {string} name callback name as string
-	 * @return {Boolean} returns true if specified callback is set
+	 * @return {boolean} the specified callback is set
 	 */
 	Step.prototype.hasCallback = function ( name ) {
 		return this[ callbackNameToPropertySetMap[ name ] ];

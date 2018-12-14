@@ -7,10 +7,10 @@
 	 */
 
 	/**
-	 * @method constructor
-	 *
 	 * Constructs a TransitionEvent
 	 *
+	 * @class
+	 * @constructor
 	 * @private
 	 */
 	function TransitionEvent() {}
