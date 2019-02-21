@@ -29,7 +29,7 @@
 	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|تعديل}} كامل الصفحة...",
 	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|اضغط}} الزر \"$1\" لإجراء تعديلاتك.",
 	"guidedtour-tour-firstedit-edit-section-title": "أو عدلي{{GENDER:||ي}} قسما",
-	"guidedtour-tour-firstedit-edit-section-description": "هناك روابط \"{{int:editsection}}\" لكل قسم رئيس في الصفحة لكي تتمكن من التركيز عليه.",
+	"guidedtour-tour-firstedit-edit-section-description": "هناك وصلات \"{{int:editsection}}\" لكل قسم رئيسي في الصفحة لكي تتمكن من التركيز عليه.",
 	"guidedtour-tour-firstedit-preview-title": "عاين{{GENDER:||ي}} تغييراتك (اختياري)",
 	"guidedtour-tour-firstedit-preview-description": "يمكنك معاينة شكل الصفحة عند الضغط على \"{{int:showpreview}}\". لا تنسى النقر على زر الحفظ عند غنتهائك من المعاينة!",
 	"guidedtour-tour-firstedit-save-title": "أنت على وشك الانتهاء!",
