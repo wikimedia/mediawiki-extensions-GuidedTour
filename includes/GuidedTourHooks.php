@@ -173,7 +173,7 @@ class GuidedTourHooks {
 	 * @return true
 	 */
 	public static function onResourceLoaderRegisterModules( &$resourceLoader ) {
-		if ( class_exists( 'VisualEditorHooks' ) ) {
+		if ( class_exists( VisualEditorHooks::class ) ) {
 			$resourceLoader->register(
 				'ext.guidedTour.tour.firsteditve',
 				[
