@@ -43,6 +43,9 @@
 			"skinStyles": {
 				"monobook": [
 					"ext.guidedTour.monobook.less"
+				],
+				"vector": [
+					"ext.guidedTour.vector.less"
 				]
 			},
 			"dependencies": [
