@@ -59,8 +59,8 @@
 			//
 			// Consider whether to keep support for user values for them.  Either
 			// document or remove support.
-			onClose: $.noop,
-			onShow: $.noop,
+			onClose: function () {},
+			onShow: function () {},
 			allowAutomaticNext: true,
 			allowAutomaticOkay: true
 		}, stepSpec );
@@ -241,7 +241,7 @@
 				gt.EventLogger.log( 'GuidedTourButtonClick', step, event );
 			},
 			html: {
-				'class': guiders._buttonClass + ' ' + actionButtonClass + ' ' + buttonTypeClass
+				class: guiders._buttonClass + ' ' + actionButtonClass + ' ' + buttonTypeClass
 			},
 			hasIcon: hasIcon
 		};
@@ -321,7 +321,7 @@
 		html = {
 			href: url,
 			title: title,
-			'class': classString
+			class: classString
 		};
 
 		if ( button.namemsg ) {
@@ -375,7 +375,7 @@
 			originalOnClick.call( this, jQueryEvent );
 			gt.EventLogger.log( 'GuidedTourButtonClick', step, event );
 		};
-		button.html = { 'class': guiders._buttonClass + ' ' + getButtonTypeClass( button ) };
+		button.html = { class: guiders._buttonClass + ' ' + getButtonTypeClass( button ) };
 	};
 
 	/**
@@ -521,7 +521,7 @@
 	 *  value for key has an invalid type
 	 */
 	function getValueForSkin( options, key ) {
-		var value = options[ key ], type = $.type( value );
+		var value = options[ key ], type = typeof value;
 		if ( type === 'string' || value instanceof $ ) {
 			return value;
 		} else if ( $.isPlainObject( value ) ) {
@@ -875,7 +875,7 @@
 				options.description = new mw.Title( options.description );
 			}
 
-			passedInOnShow = $.noop;
+			passedInOnShow = function () {};
 		}
 
 		options.onShow = function () {
@@ -937,7 +937,7 @@
 	Step.prototype.checkTransition = function ( transitionEvent ) {
 		var transitionReturn = this.transitionCallback( transitionEvent );
 
-		if ( $.type( transitionReturn ) === 'number' ) {
+		if ( typeof transitionReturn === 'number' ) {
 			// TransitionAction enum
 			if ( transitionReturn === gt.TransitionAction.HIDE ) {
 				guiders.hideAll();

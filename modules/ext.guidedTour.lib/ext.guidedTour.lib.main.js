@@ -998,7 +998,7 @@
 		tourBuilder = new gt.TourBuilder( tourSpec );
 
 		steps = tourSpec.steps;
-		if ( !$.isArray( steps ) || steps.length < 1 ) {
+		if ( !Array.isArray( steps ) || steps.length < 1 ) {
 			throw new gt.TourDefinitionError( '\'tourSpec.steps\' must be an array, a list of one or more steps.' );
 		}
 

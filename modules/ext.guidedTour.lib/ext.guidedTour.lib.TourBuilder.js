@@ -42,7 +42,7 @@
 			throw new gt.TourDefinitionError( 'Check your syntax. There must be exactly one argument, \'tourSpec\', which must be an object.' );
 		}
 
-		if ( $.type( tourSpec.name ) !== 'string' ) {
+		if ( typeof tourSpec.name !== 'string' ) {
 			throw new gt.TourDefinitionError( '\'tourSpec.name\' must be a string, the tour name.' );
 		}
 

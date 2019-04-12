@@ -911,7 +911,7 @@
 			name: 'preview',
 			description: 'preview description'
 		} );
-		previewStepBuilder.transition( $.noop );
+		previewStepBuilder.transition( function () {} );
 		assert.strictEqual(
 			previewStepBuilder.step.transitionCallback(),
 			previewStepBuilder.step,

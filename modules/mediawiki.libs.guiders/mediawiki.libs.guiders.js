@@ -167,7 +167,7 @@ mw.libs.guiders = ( function () {
 				guiders._buttonElement,
 				$.extend(
 					{
-						'class': guiders._buttonClass,
+						class: guiders._buttonClass,
 						html: thisButtonHtml
 					},
 					guiders._buttonAttributes,
@@ -201,7 +201,7 @@ mw.libs.guiders = ( function () {
 
 		xButtonContainer = myGuider.elem.find( '.guider_close' );
 		xButton = $( '<a>',
-			$.extend( { 'class': 'x_button' }, guiders._buttonAttributes )
+			$.extend( { class: 'x_button' }, guiders._buttonAttributes )
 		);
 		xButtonContainer.append( xButton );
 		xButton.on( {
@@ -212,7 +212,7 @@ mw.libs.guiders = ( function () {
 	};
 
 	guiders._wireEscape = function ( myGuider ) {
-		$( document ).keydown( function ( event ) {
+		$( document ).on( 'keydown', function ( event ) {
 			if ( event.keyCode === 27 || event.which === 27 ) {
 				guiders.handleOnClose( myGuider, true, 'escapeKey' /* close by escape key */ );
 				return false;
@@ -456,6 +456,8 @@ mw.libs.guiders = ( function () {
 	};
 
 	guiders._showOverlay = function ( overlayClass ) {
+		// FIXME: Use CSS transition
+		// eslint-disable-next-line no-jquery/no-fade
 		$( '#guider_overlay' ).fadeIn( 'fast', function () {
 			if ( this.style.removeAttribute ) {
 				this.style.removeAttribute( 'filter' );
@@ -471,12 +473,16 @@ mw.libs.guiders = ( function () {
 	};
 
 	guiders._hideOverlay = function () {
+		// FIXME: Use CSS transition
+		// eslint-disable-next-line no-jquery/no-fade
 		$( '#guider_overlay' ).fadeOut( 'fast' ).removeClass();
 	};
 
 	guiders._initializeOverlay = function () {
 		if ( $( '#guider_overlay' ).length === 0 ) {
-			$( '<div id="guider_overlay" class="guider_overlay"></div>' ).hide().appendTo( 'body' );
+			// FIXME: Stop needing this to have an ID alongside the class.
+			// eslint-disable-next-line no-jquery/no-parse-html-literal
+			$( '<div id="guider_overlay">' ).addClass( 'guider_overlay' ).hide().appendTo( 'body' );
 		}
 	};
 
@@ -705,6 +711,8 @@ mw.libs.guiders = ( function () {
 			}
 		} );
 		guiders._unWireClickOutside();
+		// FIXME: Use CSS transition
+		// eslint-disable-next-line no-jquery/no-fade
 		$( '.guider' ).fadeOut( 'fast' );
 		if ( omitHidingOverlay !== true ) {
 			guiders._hideOverlay();
@@ -782,7 +790,7 @@ mw.libs.guiders = ( function () {
 		}
 
 		$( myGuider.elem ).trigger( 'guiders.show' );
-		$( myGuider.elem ).find( '.mw-ui-progressive:first-child' ).focus();
+		$( myGuider.elem ).find( '.mw-ui-progressive:first-child' ).trigger( 'focus' );
 
 		// Create (preload) next guider if it hasn't been created
 		nextGuiderId = myGuider.next || null;
@@ -826,7 +834,7 @@ mw.libs.guiders = ( function () {
 
 	// Change the bubble position after browser gets resized
 	_resizing = undefined;
-	$( window ).resize( function () {
+	$( window ).on( 'resize', function () {
 		if ( typeof ( _resizing ) !== 'undefined' ) {
 			clearTimeout( _resizing ); // Prevents seizures
 		}

@@ -79,7 +79,7 @@
 	StepBuilder.prototype.canonicalizeStep = function ( rawStep, exceptionPrefix ) {
 		var step;
 
-		if ( $.type( rawStep ) === 'string' ) {
+		if ( typeof rawStep === 'string' ) {
 			// Step name
 			step = rawStep;
 		} else {
@@ -259,7 +259,7 @@
 		currentStep.setCallback( 'transition', function ( transitionEvent ) {
 			var transitionReturn = callback( transitionEvent );
 
-			if ( $.type( transitionReturn ) === 'number' ) {
+			if ( typeof transitionReturn === 'number' ) {
 				if (
 					transitionReturn !== gt.TransitionAction.HIDE &&
 					transitionReturn !== gt.TransitionAction.END
