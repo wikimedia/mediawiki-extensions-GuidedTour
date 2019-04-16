@@ -84,12 +84,12 @@ class GuidedTourLauncher {
 	}
 
 	/**
-	 * Adds a client-side $wg variable to control tour launch
+	 * Export data to client-side via mw.config (for use by ext.guidedTour.lib).
 	 *
 	 * @param array &$vars Array of request-specific JavaScript config variables
 	 * @param OutputPage $out
 	 */
-	public static function addLaunchVariable( array &$vars, OutputPage $out ) {
+	public static function onMakeGlobalVariablesScript( array &$vars, OutputPage $out ) {
 		if ( self::$directLaunchState !== null ) {
 			$vars['wgGuidedTourLaunchState'] = self::$directLaunchState;
 		}

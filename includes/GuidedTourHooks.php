@@ -8,7 +8,6 @@
  * @author Terry Chay tchay@wikimedia.org
  * @author Matthew Flaschen mflaschen@wikimedia.org
  * @author Luke Welling lwelling@wikimedia.org
- *
  */
 
 class GuidedTourHooks {

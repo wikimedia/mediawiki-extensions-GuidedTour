@@ -181,7 +181,7 @@
 			"GuidedTourHooks::onRedirectSpecialArticleRedirectParams"
 		],
 		"MakeGlobalVariablesScript": [
-			"GuidedTourLauncher::addLaunchVariable"
+			"GuidedTourLauncher::onMakeGlobalVariablesScript"
 		]
 	},
 	"manifest_version": 1
