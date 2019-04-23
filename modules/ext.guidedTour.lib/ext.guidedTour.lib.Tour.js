@@ -237,7 +237,7 @@
 	Tour.prototype.getStep = function ( step ) {
 		var stepName;
 
-		if ( $.type( step ) === 'string' ) {
+		if ( typeof step === 'string' ) {
 			stepName = step;
 			step = this.steps[ stepName ];
 			if ( !step ) {
