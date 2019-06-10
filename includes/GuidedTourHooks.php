@@ -182,7 +182,6 @@ class GuidedTourHooks {
 					'dependencies' => 'ext.guidedTour',
 					'messages' => [
 						'editsection',
-						'visualeditor-toolbar-savedialog',
 						'guidedtour-tour-firstedit-edit-page-title',
 						'guidedtour-tour-firsteditve-edit-page-description',
 						'guidedtour-tour-firstedit-edit-section-title',
