@@ -23,5 +23,5 @@
 	"guidedtour-tour-firstedit-save-title": "Tost echu eo ganeoc'h !",
 	"guidedtour-tour-firstedit-save-description": "Pa viot prest, klkit war \"{{int:publishchanges}}\" hag e c'hallo an holl gwelet ho kemmoù.",
 	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|Klikit}} war ar bouton \"$1\" evit ober ho kemmoù.",
-	"guidedtour-tour-firsteditve-save-description": "Pa viot prest, klkit war \"{{int:visualeditor-toolbar-savedialog}}\" hag e c'hallo an holl gwelet ho kemmoù."
+	"guidedtour-tour-firsteditve-save-description": "Pa viot prest, klkit war \"{{int:publishchanges}}\" hag e c'hallo an holl gwelet ho kemmoù."
 }

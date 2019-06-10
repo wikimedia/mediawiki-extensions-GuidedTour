@@ -23,5 +23,5 @@
 	"guidedtour-tour-firstedit-save-description": "Þegar þú ert tilbúin/n, mun smellur á „{{int:publishchanges}}” gera breytingarnar þínar sýnilegar öllum.",
 	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|Smelltu}} á „$1” takkann til að gera breytingarnar þínar.",
 	"guidedtour-tour-firsteditve-edit-section-description": "Það eru „$1” tenglar fyrir hvern kafla á síðu, svo þú getir einblínt á þann hluta.",
-	"guidedtour-tour-firsteditve-save-description": "Þegar þú ert tilbúin/n, mun smellur á „{{int:visualeditor-toolbar-savedialog}}” gera breytingarnar þínar sýnilegar öllum."
+	"guidedtour-tour-firsteditve-save-description": "Þegar þú ert tilbúin/n, mun smellur á „{{int:publishchanges}}” gera breytingarnar þínar sýnilegar öllum."
 }

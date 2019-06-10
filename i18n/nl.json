@@ -36,5 +36,5 @@
 	"guidedtour-tour-firstedit-save-description": "Als u klaar bent, klik op \"{{int:publishchanges}}\" om uw wijzigingen voor iedereen zichtbaar te maken.",
 	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|Klik}} op de knop \"$1\" om wijzigingen te maken.",
 	"guidedtour-tour-firsteditve-edit-section-description": "Er zijn koppelingen \"$1\" voor iedere onderdeel van een pagina, zodat u zich kunt concentreren op dat onderdeel.",
-	"guidedtour-tour-firsteditve-save-description": "Als u klaar bent, kunt u op \"{{int:visualeditor-toolbar-savedialog}}\" klikken om uw wijzigingen voor iedereen zichtbaar te maken."
+	"guidedtour-tour-firsteditve-save-description": "Als u klaar bent, kunt u op \"{{int:publishchanges}}\" klikken om uw wijzigingen voor iedereen zichtbaar te maken."
 }

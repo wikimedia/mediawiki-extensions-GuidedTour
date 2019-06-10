@@ -32,5 +32,5 @@
 	"guidedtour-tour-firstedit-save-description": "Когда вы будете готовы, нажатие «{{int:publishchanges}}» сделает изменения видимыми для всех.",
 	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|Нажмите}} кнопку «$1», чтобы внести свои изменения.",
 	"guidedtour-tour-firsteditve-edit-section-description": "Ссылки «$1» существуют для каждого раздела страницы, так что вы можете сосредоточиться только на этой её части.",
-	"guidedtour-tour-firsteditve-save-description": "Когда вы будете готовы, нажатие «{{int:visualeditor-toolbar-savedialog}}» сделает изменения видимыми для всех."
+	"guidedtour-tour-firsteditve-save-description": "Когда вы будете готовы, нажатие «{{int:publishchanges}}» сделает изменения видимыми для всех."
 }

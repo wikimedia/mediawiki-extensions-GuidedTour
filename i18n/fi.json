@@ -27,5 +27,5 @@
 	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|Esikatsella}} muutoksiasi (valinnainen)",
 	"guidedtour-tour-firstedit-save-title": "Olet melkein valmis!",
 	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|Napsauta}} ”$1” tehdäksesi haluamasi muutokset.",
-	"guidedtour-tour-firsteditve-save-description": "Kun olet valmis, klikkaamalla ”{{int:visualeditor-toolbar-savedialog}}” -painiketta tekemäsi muutokset tulevat näkyviin kaikille."
+	"guidedtour-tour-firsteditve-save-description": "Kun olet valmis, klikkaamalla ”{{int:publishchanges}}” -painiketta tekemäsi muutokset tulevat näkyviin kaikille."
 }

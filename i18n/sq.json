@@ -22,5 +22,5 @@
 	"guidedtour-tour-firstedit-save-description": "Kur të jeni gati, klikimi mbi \"{{int:publishchanges}}\" do t'i bëjë ndryshimet tuaja të dukshme për të gjithë.",
 	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|Klikoni}} butonin \"$1\" për të kryer ndryshimet.",
 	"guidedtour-tour-firsteditve-edit-section-description": "Ka lidhje \"$1\" për çdo seksion në një faqe, kështu që ju mund të fokusoheni vetëm në atë pjesë.",
-	"guidedtour-tour-firsteditve-save-description": "Kur të jeni gati, klikimi mbi \"{{int:visualeditor-toolbar-savedialog}}\" do t'i bëjë ndryshimet tuaja të dukshme për të gjithë."
+	"guidedtour-tour-firsteditve-save-description": "Kur të jeni gati, klikimi mbi \"{{int:publishchanges}}\" do t'i bëjë ndryshimet tuaja të dukshme për të gjithë."
 }

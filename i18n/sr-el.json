@@ -4,5 +4,5 @@
 			"Milicevic01"
 		]
 	},
-	"guidedtour-tour-firsteditve-save-description": "Kada završite, kliknite na „{{int:visualeditor-toolbar-savedialog}}“ da vaše izmene postanu vidljive svima."
+	"guidedtour-tour-firsteditve-save-description": "Kada završite, kliknite na „{{int:publishchanges}}“ da vaše izmene postanu vidljive svima."
 }

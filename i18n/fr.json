@@ -39,5 +39,5 @@
 	"guidedtour-tour-firstedit-save-description": "Lorsque vous êtes prêt, cliquez sur « {{int:publishchanges}} » pour rendre vos modifications visibles à tous.",
 	"guidedtour-tour-firsteditve-edit-page-description": "Cliquez le bouton « $1 » pour effectuer vos modifications.",
 	"guidedtour-tour-firsteditve-edit-section-description": "Il y a des liens « $1 » pour chaque section principale dans une page, de sorte que vous puissiez vous focaliser uniquement sur cette partie.",
-	"guidedtour-tour-firsteditve-save-description": "Quand vous serez prêt, cliquer sur « {{int:visualeditor-toolbar-savedialog}} » rendra vos modifications visibles pour tout le monde."
+	"guidedtour-tour-firsteditve-save-description": "Quand vous serez prêt, cliquer sur « {{int:publishchanges}} » rendra vos modifications visibles pour tout le monde."
 }

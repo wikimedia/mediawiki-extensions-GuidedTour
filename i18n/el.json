@@ -32,5 +32,5 @@
 	"guidedtour-tour-firstedit-save-description": "Όταν είστε έτοιμοι, κάνοντας κλικ στο κουμπί \"{{int:publishchanges}}\" θα κάνει τις αλλαγές σας ορατές σε όλους.",
 	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|Πατήστε}} το κουμπί \"$1\" για να κάνετε τις αλλαγές σας.",
 	"guidedtour-tour-firsteditve-edit-section-description": "Υπάρχουν \"$1\" σύνδεσμοι για κάθε σημαντική ενότητα σε μια σελίδα, ώστε να μπορείτε να εστιάσετε μόνο σε εκείνο το κομμάτι.",
-	"guidedtour-tour-firsteditve-save-description": "Όταν είστε έτοιμοι, κάνοντας κλικ στο κουμπί  \"{{int:visualeditor-toolbar-savedialog}}\" θα κάνει τις αλλαγές σας ορατές σε όλους."
+	"guidedtour-tour-firsteditve-save-description": "Όταν είστε έτοιμοι, κάνοντας κλικ στο κουμπί  \"{{int:publishchanges}}\" θα κάνει τις αλλαγές σας ορατές σε όλους."
 }

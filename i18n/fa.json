@@ -34,5 +34,5 @@
 	"guidedtour-tour-firstedit-save-description": "هنگامی که انجام دادید، کلیک بر «{{int:publishchanges}}» تغییراتتان را برای همه قابل مشاهده خواهد کرد.",
 	"guidedtour-tour-firsteditve-edit-page-description": "برای ایجاد تغییرات خود، دکمهٔ «$1» را {{GENDER:|کلیک کنید}}.",
 	"guidedtour-tour-firsteditve-edit-section-description": "برای هر بخش اصلی در صفحه، پیوندهای «$1» وجود دارند، بنابراین می‌توانید فقط بر روی‌ آن قسمت تمرکز کنید.",
-	"guidedtour-tour-firsteditve-save-description": "هنگامی که کارتان را انجام دادید، کلیک بر «{{int:visualeditor-toolbar-savedialog}}» تغییراتتان را برای همه قابل مشاهده خواهد کرد."
+	"guidedtour-tour-firsteditve-save-description": "هنگامی که کارتان را انجام دادید، کلیک بر «{{int:publishchanges}}» تغییراتتان را برای همه قابل مشاهده خواهد کرد."
 }

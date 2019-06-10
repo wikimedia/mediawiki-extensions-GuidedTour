@@ -32,5 +32,5 @@
 	"guidedtour-tour-firstedit-save-description": "Cando remate, prema en \"{{int:publishchanges}}\" para que os cambios sexan visibles para todos.",
 	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|Prema}} no botón \"$1\" para realizar as súas modificacións.",
 	"guidedtour-tour-firsteditve-edit-section-description": "Hai unha ligazón \"$1\" en cada sección, para que poida centrarse só nesa parte da páxina.",
-	"guidedtour-tour-firsteditve-save-description": "Cando remate, prema en \"{{int:visualeditor-toolbar-savedialog}}\" para que os cambios sexan visibles para todos."
+	"guidedtour-tour-firsteditve-save-description": "Cando remate, prema en \"{{int:publishchanges}}\" para que os cambios sexan visibles para todos."
 }

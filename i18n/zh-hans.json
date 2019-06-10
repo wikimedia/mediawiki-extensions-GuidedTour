@@ -39,5 +39,5 @@
 	"guidedtour-tour-firstedit-save-description": "当你准备好时，点击“{{int:publishchanges}}”，这样您所做的修改所有人都会看到。",
 	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|单击}}“$1”按钮以作出您的更改。",
 	"guidedtour-tour-firsteditve-edit-section-description": "页面中每个主要章节都有“$1”链接使你可以集中精神在此部分。",
-	"guidedtour-tour-firsteditve-save-description": "当您准备好时，点击“{{int:visualeditor-toolbar-savedialog}}”，便会让所有人都能看到您所做的修改。"
+	"guidedtour-tour-firsteditve-save-description": "当您准备好时，点击“{{int:publishchanges}}”，便会让所有人都能看到您所做的修改。"
 }

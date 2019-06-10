@@ -33,5 +33,5 @@
 	"guidedtour-tour-firstedit-save-description": "Wenn du fertig bist, macht das Klicken auf „{{int:publishchanges}}“ deine Änderungen für jeden sichtbar.",
 	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|Klicke}} auf „$1“, um deine Änderungen durchzuführen.",
 	"guidedtour-tour-firsteditve-edit-section-description": "Für jeden Seitenabschnitt gibt es die Links „$1“, so dass du dich nur auf diesen Teil konzentrieren kannst.",
-	"guidedtour-tour-firsteditve-save-description": "Wenn du fertig bist, klicke auf „{{int:visualeditor-toolbar-savedialog}}“, um deine Änderungen für jeden sichtbar zu machen."
+	"guidedtour-tour-firsteditve-save-description": "Wenn du fertig bist, klicke auf „{{int:publishchanges}}“, um deine Änderungen für jeden sichtbar zu machen."
 }

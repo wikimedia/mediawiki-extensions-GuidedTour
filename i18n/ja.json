@@ -33,5 +33,5 @@
 	"guidedtour-tour-firstedit-save-description": "大丈夫だと思ったら「{{int:publishchanges}}」をクリックして、この変更を誰にでも見られるようにしましょう。",
 	"guidedtour-tour-firsteditve-edit-page-description": "「$1」ボタンを{{GENDER:|クリック}}すると編集を始められます。",
 	"guidedtour-tour-firsteditve-edit-section-description": "ページには主要な節ひとつひとつに「$1」リンクがあります。これを使用するとその部分だけに集中できます。",
-	"guidedtour-tour-firsteditve-save-description": "大丈夫だと思ったら「{{int:visualeditor-toolbar-savedialog}}」をクリックして、この変更を誰にでも見られるようにしましょう。"
+	"guidedtour-tour-firsteditve-save-description": "大丈夫だと思ったら「{{int:publishchanges}}」をクリックして、この変更を誰にでも見られるようにしましょう。"
 }

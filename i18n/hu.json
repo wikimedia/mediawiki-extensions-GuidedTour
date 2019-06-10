@@ -31,5 +31,5 @@
 	"guidedtour-tour-firstedit-save-description": "Ha végeztél, a „{{int:publishchanges}}” gombra kattintva a változtatásaid bekerülnek a cikkbe.",
 	"guidedtour-tour-firsteditve-edit-page-description": "A lap módosításához kattints a „$1” gombra.",
 	"guidedtour-tour-firsteditve-edit-section-description": "A lap minden nagyobb szakaszához tartozik egy „$1” link, ha csak azzal a résszel akarsz foglalkozni.",
-	"guidedtour-tour-firsteditve-save-description": "Ha kész vagy, a „{{int:visualeditor-toolbar-savedialog}}” gombra kattintva teheted a változtatásaidat mindenki számára láthatóvá."
+	"guidedtour-tour-firsteditve-save-description": "Ha kész vagy, a „{{int:publishchanges}}” gombra kattintva teheted a változtatásaidat mindenki számára láthatóvá."
 }

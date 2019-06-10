@@ -31,5 +31,5 @@
 	"guidedtour-tour-firstedit-save-description": "Sau khi sửa đổi xong, bấm “{{int:publishchanges}}” để xuất bản các thay đổi của bạn để cho mọi người xem.",
 	"guidedtour-tour-firsteditve-edit-page-description": "Bấm nút “$1” để thực hiện các thay đổi.",
 	"guidedtour-tour-firsteditve-edit-section-description": "Mỗi tiêu đề lớn trên trang có liên kết “$1” để nhảy tới tiêu đề khi bắt đầu sửa đổi.",
-	"guidedtour-tour-firsteditve-save-description": "Sau khi sửa đổi xong, bấm “{{int:visualeditor-toolbar-savedialog}}” để xuất bản các thay đổi của bạn để cho mọi người xem."
+	"guidedtour-tour-firsteditve-save-description": "Sau khi sửa đổi xong, bấm “{{int:publishchanges}}” để xuất bản các thay đổi của bạn để cho mọi người xem."
 }

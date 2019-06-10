@@ -36,5 +36,5 @@
 	"guidedtour-tour-firstedit-save-description": "عند انتهائك قم بالضغط على \"{{int:publishchanges}}\" كي تظهر تغييراتك للجميع.",
 	"guidedtour-tour-firsteditve-edit-page-description": "اضغط{{GENDER:||ي}} \"$1\" لإجراء تعديلاتك.",
 	"guidedtour-tour-firsteditve-edit-section-description": "هناك وصلات \"$1\" لكل قسم رئيسي في الصفحة، لكي تتمكن من التركيز على هذا الجزء فقط.",
-	"guidedtour-tour-firsteditve-save-description": "عند انتهائك قم بالضغط على \"{{int:visualeditor-toolbar-savedialog}}\" كي تظهر تغييراتك للجميع."
+	"guidedtour-tour-firsteditve-save-description": "عند انتهائك قم بالضغط على \"{{int:publishchanges}}\" كي تظهر تغييراتك للجميع."
 }

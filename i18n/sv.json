@@ -34,5 +34,5 @@
 	"guidedtour-tour-firstedit-save-description": "När du är redo, kommer ett klick på \"{{int:publishchanges}}\" att synliggöra dina ändringar för alla.",
 	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|Klicka}} på \"$1\"-knappen för att göra dina ändringar.",
 	"guidedtour-tour-firsteditve-edit-section-description": "Det finns \"$1\"-länkar för varje större avsnitt på en sida, så att du kan fokusera på endast den delen.",
-	"guidedtour-tour-firsteditve-save-description": "När du är redo, kommer ett klick på \"{{int:visualeditor-toolbar-savedialog}}\" att synliggöra dina ändringar för alla."
+	"guidedtour-tour-firsteditve-save-description": "När du är redo, kommer ett klick på \"{{int:publishchanges}}\" att synliggöra dina ändringar för alla."
 }

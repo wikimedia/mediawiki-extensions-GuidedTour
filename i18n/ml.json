@@ -31,5 +31,5 @@
 	"guidedtour-tour-firstedit-save-description": "താങ്കൾ തയ്യാറായി കഴിഞ്ഞാൽ, \"{{int:publishchanges}}\" അമർത്തി താങ്കൾ വരുത്തിയ മാറ്റങ്ങൾ എല്ലാവർക്കും കാണാനാവുന്ന വിധത്തിൽ പങ്ക് വെയ്ക്കാം.",
 	"guidedtour-tour-firsteditve-edit-page-description": "മാറ്റങ്ങൾ വരുത്താനായി \"$1\" ബട്ടൺ {{GENDER:|അമർത്തുക}}.",
 	"guidedtour-tour-firsteditve-edit-section-description": "താളിലെ ഒരോ ഭാഗത്തും \"$1\" കണ്ണികളുണ്ട്, അവിടെ മാത്രം അങ്ങനെ താങ്കൾക്ക് ശ്രദ്ധ കേന്ദ്രീകരിക്കാം.",
-	"guidedtour-tour-firsteditve-save-description": "താങ്കൾ തയ്യാറായി കഴിഞ്ഞാൽ, \"{{int:visualeditor-toolbar-savedialog}}\" അമർത്തി താങ്കൾ വരുത്തിയ മാറ്റങ്ങൾ എല്ലാവർക്കും കാണാനാവുന്ന വിധത്തിൽ പങ്ക് വെയ്ക്കാം."
+	"guidedtour-tour-firsteditve-save-description": "താങ്കൾ തയ്യാറായി കഴിഞ്ഞാൽ, \"{{int:publishchanges}}\" അമർത്തി താങ്കൾ വരുത്തിയ മാറ്റങ്ങൾ എല്ലാവർക്കും കാണാനാവുന്ന വിധത്തിൽ പങ്ക് വെയ്ക്കാം."
 }

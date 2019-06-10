@@ -33,5 +33,5 @@
 	"guidedtour-tour-firstedit-save-description": "Kada završite, kliknite na \"{{int:publishchanges}}\" da Vaše izmjene budu vidljive svima.",
 	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|Kliknite}} na dugme \"$1\" da biste napravili izmjene.",
 	"guidedtour-tour-firsteditve-edit-section-description": "Postoje linkovi \"$1\" kraj svakog odlomka (podnaslova) stranice, tako da se možete fokusirati samo na taj dio.",
-	"guidedtour-tour-firsteditve-save-description": "Kada završite, kliknite na \"{{int:visualeditor-toolbar-savedialog}}\" da Vaše izmjene budu vidljive svima."
+	"guidedtour-tour-firsteditve-save-description": "Kada završite, kliknite na \"{{int:publishchanges}}\" da Vaše izmjene budu vidljive svima."
 }

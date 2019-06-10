@@ -25,5 +25,5 @@
 	"guidedtour-tour-firstedit-save-title": "Сіз бітіруге таяусыз!",
 	"guidedtour-tour-firstedit-save-description": "Дайын болғаныңызда, «{{int:publishchanges}}» дегенді басқанда сіздің өзгерістеріңіз барлығына көрінетін болады.",
 	"guidedtour-tour-firsteditve-edit-page-description": "Өзгеріс жасау үшін «$1» батырмасын {{GENDER:|Click}} басу.",
-	"guidedtour-tour-firsteditve-save-description": "Дайын болғаныңызда, «{{int:visualeditor-toolbar-savedialog}}» дегенді басқанда сіздің өзгерістеріңіз барлығына көрінетін болады."
+	"guidedtour-tour-firsteditve-save-description": "Дайын болғаныңызда, «{{int:publishchanges}}» дегенді басқанда сіздің өзгерістеріңіз барлығына көрінетін болады."
 }
