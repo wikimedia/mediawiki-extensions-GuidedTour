@@ -74,12 +74,7 @@
 				"mediawiki.libs.guiders",
 				"mediawiki.user",
 				"mediawiki.util",
-				"schema.GuidedTourGuiderImpression",
-				"schema.GuidedTourGuiderHidden",
-				"schema.GuidedTourButtonClick",
-				"schema.GuidedTourInternalLinkActivation",
-				"schema.GuidedTourExternalLinkActivation",
-				"schema.GuidedTourExited",
+				"ext.eventLogging",
 				"ext.guidedTour.lib.internal",
 				"ext.guidedTour.styles"
 			],
