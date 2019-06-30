@@ -3,7 +3,8 @@
 		"authors": [
 			"Kghbln",
 			"Metalhead64",
-			"Rillke"
+			"Rillke",
+			"Lucas Werkmeister"
 		]
 	},
 	"guidedtour-desc": "Ermöglicht Pop-up-gestützte Rundgänge zur Unterstützung neuer Benutzer",
@@ -30,8 +31,8 @@
 	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|Vorschau}} deiner Änderungen (optional)",
 	"guidedtour-tour-firstedit-preview-description": "Mit Klick auf „{{int:showpreview}}“ kannst du überprüfen, wie die Seite mit deinen Änderungen aussehen wird. Vergiss nicht zu speichern!",
 	"guidedtour-tour-firstedit-save-title": "Du bist fast fertig!",
-	"guidedtour-tour-firstedit-save-description": "Wenn du fertig bist, macht das Klicken auf „{{int:publishchanges}}“ deine Änderungen für jeden sichtbar.",
+	"guidedtour-tour-firstedit-save-description": "Wenn du fertig bist, macht das Klicken auf „{{int:publishchanges}}“ deine Änderungen für alle sichtbar.",
 	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|Klicke}} auf „$1“, um deine Änderungen durchzuführen.",
 	"guidedtour-tour-firsteditve-edit-section-description": "Für jeden Seitenabschnitt gibt es die Links „$1“, so dass du dich nur auf diesen Teil konzentrieren kannst.",
-	"guidedtour-tour-firsteditve-save-description": "Wenn du fertig bist, klicke auf „{{int:publishchanges}}“, um deine Änderungen für jeden sichtbar zu machen."
+	"guidedtour-tour-firsteditve-save-description": "Wenn du fertig bist, klicke auf „{{int:publishchanges}}“, um deine Änderungen für alle sichtbar zu machen."
 }
