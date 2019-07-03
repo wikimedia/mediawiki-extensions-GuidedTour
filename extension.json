@@ -51,7 +51,10 @@
 			]
 		},
 		"ext.guidedTour.lib.internal": {
-			"scripts": "ext.guidedTour.lib.internal.js"
+			"scripts": "ext.guidedTour.lib.internal.js",
+			"dependencies": [
+				"mediawiki.util"
+			]
 		},
 		"ext.guidedTour.lib": {
 			"scripts": [

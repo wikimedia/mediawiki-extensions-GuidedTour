@@ -145,8 +145,7 @@
 			dfd = $.Deferred();
 			title = MW_NS_TOUR_PREFIX + tourName + '.js';
 
-			onWikiTourUrl = mw.config.get( 'wgScript' ) + '?' + $.param( {
-				title: title,
+			onWikiTourUrl = mw.util.getUrl( title, {
 				action: 'raw',
 				ctype: 'text/javascript'
 			} );
