@@ -14,6 +14,7 @@ class GuidedTourLauncher {
 	// This matches the format used on the client-side (e.g.
 	// mw.guidedTour.internal.getInitialUserStateObject,
 	// mw.guidedTour.launchTourFromUserState, etc.
+
 	/**
 	 * Get new state from old state.  The state describes the user's progress
 	 * in the tour, and which step they are expected to see next.

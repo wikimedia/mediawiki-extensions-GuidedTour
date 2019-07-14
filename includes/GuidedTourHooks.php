@@ -22,6 +22,7 @@ class GuidedTourHooks {
 	 * wgGuidedTourHelpGuiderUrl is a hack pending forcontent messages:
 	 * https://phabricator.wikimedia.org/T27349
 	*/
+
 	/**
 	 * Adds the page name of a GuidedTour local documentation page,
 	 * to demonstrate showing tour content from pages.

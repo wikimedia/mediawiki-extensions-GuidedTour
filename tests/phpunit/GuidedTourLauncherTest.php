@@ -103,6 +103,7 @@ class GuidedTourLauncherTest extends MediaWikiTestCase {
 
 	// This should mostly be covered by testGetNewState; these are a couple tests to
 	// handle edge cases.
+
 	/**
 	 * @dataProvider getNewCookieProvider
 	 */
