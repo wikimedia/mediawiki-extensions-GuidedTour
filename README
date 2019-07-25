@@ -8,7 +8,7 @@ To use:
 * Install the EventLogging extension, which is a dependency.
 * Put the extension files in your extension directory
 * Add the following line to your LocalSettings.php
-require_once "$IP/extensions/GuidedTour/GuidedTour.php";
+wfLoadExtension( 'GuidedTour' );
 * Test that it worked by calling a page with tour=test appended to the URL. For
 example http://MyServer/w/index.php?tour=test
 
