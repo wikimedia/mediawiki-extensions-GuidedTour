@@ -433,6 +433,22 @@ mw.libs.guiders = ( function () {
 	};
 
 	/**
+	 * Gets action button element, wrapped by jQuery.  Filters out elements that are not
+	 * :visible, such as (such as those with display: none).
+	 *
+	 * @private
+	 *
+	 * @param {Object} guider guider being attached
+	 *
+	 * @return {jQuery|null} jQuery node for element, or null for no match
+	 */
+	guiders._getActionBtnTarget = function ( guider ) {
+		var $node = $( guider.actionBtn ).filter( ':visible:first' );
+
+		return $node.length > 0 ? $node : null;
+	};
+
+	/**
 	 * Returns the guider by ID.
 	 *
 	 * Add check to create and grab guider from inits if it exists there.
@@ -602,7 +618,7 @@ mw.libs.guiders = ( function () {
 	 * @param {string} direction next or back
 	 */
 	guiders.doStep = function ( direction ) {
-		var currentGuider, moveToGuiderId, myGuider, omitHidingOverlay;
+		var currentGuider, moveToGuiderId, myGuider, omitHidingOverlay, actionBtn;
 		try {
 			currentGuider = guiders._guiderById( guiders._currentGuiderID ); // has check to make sure guider is initialized
 		} catch ( err ) {
@@ -619,6 +635,10 @@ mw.libs.guiders = ( function () {
 			myGuider = guiders._guiderById( moveToGuiderId );
 			omitHidingOverlay = !!myGuider.overlay;
 			guiders.hideAll( omitHidingOverlay, true );
+			actionBtn = guiders._getActionBtnTarget( currentGuider );
+			if ( actionBtn !== null && actionBtn !== '' ) {
+				actionBtn.click();
+			}
 			guiders.show( moveToGuiderId );
 		}
 	};
