@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sudo77(new)"
+			"Sudo77(new)",
+			"Vlad5250"
 		]
 	},
 	"guidedtour-next-button": "Ďalší",
 	"guidedtour-okay-button": "V poriadku",
+	"guidedtour-back-button": "Späť",
 	"guidedtour-tour-test-testing": "Testovanie",
 	"guidedtour-tour-test-test-description": "Toto je test popisu. Lorem ipsum dolor sit!",
 	"guidedtour-tour-test-portal-description": "Toto je stránka „{{int:portal}}“.",
