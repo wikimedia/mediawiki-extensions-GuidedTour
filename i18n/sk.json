@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Sudo77(new)",
-			"Vlad5250"
+			"Vlad5250",
+			"Luky001"
 		]
 	},
+	"guidedtour-desc": "Umožňuje stránkam poskytovať vyskakovacieho sprievodcu na pomoc novým používateľom",
 	"guidedtour-next-button": "Ďalší",
 	"guidedtour-okay-button": "V poriadku",
 	"guidedtour-back-button": "Späť",
