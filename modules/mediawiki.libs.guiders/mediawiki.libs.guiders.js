@@ -143,8 +143,8 @@ mw.libs.guiders = ( function () {
 	};
 
 	guiders._addButtons = function ( myGuider ) {
-		var guiderButtonsContainer, i, thisButton, thisButtonElem,
-			thisButtonHtml, myCustomHTML;
+		var guiderButtonsContainer, i, thisButton, $thisButtonElem,
+			thisButtonHtml, $myCustomHTML;
 
 		// Add buttons
 		guiderButtonsContainer = myGuider.elem.find( '.guider_buttons' );
@@ -157,13 +157,14 @@ mw.libs.guiders = ( function () {
 		for ( i = myGuider.buttons.length - 1; i >= 0; i-- ) {
 			thisButton = myGuider.buttons[ i ];
 			if ( thisButton.hasIcon ) {
+				// eslint-disable-next-line no-jquery/variable-pattern
 				thisButtonHtml = $( '<span>' )
 					.addClass( 'guider_button_icon' )
 					.attr( 'aria-label', thisButton.name );
 			} else {
 				thisButtonHtml = thisButton.name;
 			}
-			thisButtonElem = $(
+			$thisButtonElem = $(
 				guiders._buttonElement,
 				$.extend(
 					{
@@ -176,19 +177,19 @@ mw.libs.guiders = ( function () {
 			);
 
 			if ( typeof thisButton.classString !== 'undefined' && thisButton.classString !== null ) {
-				thisButtonElem.addClass( thisButton.classString );
+				$thisButtonElem.addClass( thisButton.classString );
 			}
 
-			guiderButtonsContainer.append( thisButtonElem );
+			guiderButtonsContainer.append( $thisButtonElem );
 
 			if ( thisButton.onclick ) {
-				thisButtonElem.on( 'click', guiders._makeButtonListener( thisButton.onclick ) );
+				$thisButtonElem.on( 'click', guiders._makeButtonListener( thisButton.onclick ) );
 			}
 		}
 
 		if ( myGuider.buttonCustomHTML !== '' ) {
-			myCustomHTML = $( myGuider.buttonCustomHTML );
-			myGuider.elem.find( '.guider_buttons' ).append( myCustomHTML );
+			$myCustomHTML = $( myGuider.buttonCustomHTML );
+			myGuider.elem.find( '.guider_buttons' ).append( $myCustomHTML );
 		}
 
 		if ( myGuider.buttons.length === 0 ) {
@@ -197,14 +198,14 @@ mw.libs.guiders = ( function () {
 	};
 
 	guiders._addXButton = function ( myGuider ) {
-		var xButtonContainer, xButton;
+		var xButtonContainer, $xButton;
 
 		xButtonContainer = myGuider.elem.find( '.guider_close' );
-		xButton = $( '<a>',
+		$xButton = $( '<a>',
 			$.extend( { class: 'x_button' }, guiders._buttonAttributes )
 		);
-		xButtonContainer.append( xButton );
-		xButton.on( {
+		xButtonContainer.append( $xButton );
+		$xButton.on( {
 			click: function () {
 				guiders.handleOnClose( myGuider, true, 'xButton' );
 			}
@@ -503,10 +504,10 @@ mw.libs.guiders = ( function () {
 	};
 
 	guiders._styleArrow = function ( myGuider, position ) {
-		var myGuiderArrow, newClass, myHeight, myWidth, arrowOffset, positionMap,
+		var $myGuiderArrow, newClass, myHeight, myWidth, arrowOffset, positionMap,
 			arrowPosition;
 
-		myGuiderArrow = $( myGuider.elem.find( '.guider_arrow' ) );
+		$myGuiderArrow = $( myGuider.elem.find( '.guider_arrow' ) );
 
 		position = position || 0;
 
@@ -515,7 +516,7 @@ mw.libs.guiders = ( function () {
 		// Also, if an element is added to or removed from the DOM, the arrow may need to change on reposition.
 		//
 		// If there should be an arrow, the new one will be added below.
-		myGuiderArrow.removeClass( 'guider_arrow_down guider_arrow_left guider_arrow_up guider_arrow_right' );
+		$myGuiderArrow.removeClass( 'guider_arrow_down guider_arrow_left guider_arrow_up guider_arrow_right' );
 
 		// No arrow for center position
 		if ( position === 0 ) {
@@ -536,7 +537,7 @@ mw.libs.guiders = ( function () {
 			12: 'guider_arrow_down'
 		};
 
-		myGuiderArrow.addClass( newClass[ position ] );
+		$myGuiderArrow.addClass( newClass[ position ] );
 
 		myHeight = myGuider.elem.innerHeight();
 		myWidth = myGuider.elem.innerWidth();
@@ -556,7 +557,7 @@ mw.libs.guiders = ( function () {
 			12: [ 'left', myWidth / 2 - arrowOffset ]
 		};
 		arrowPosition = positionMap[ position ];
-		myGuiderArrow.css( arrowPosition[ 0 ], arrowPosition[ 1 ] + 'px' );
+		$myGuiderArrow.css( arrowPosition[ 0 ], arrowPosition[ 1 ] + 'px' );
 	};
 
 	/**
@@ -666,7 +667,7 @@ mw.libs.guiders = ( function () {
 	 * @return {Object} guiders singleton
 	 */
 	guiders.createGuider = function ( passedSettings ) {
-		var guiderElement, myGuider, guiderTitleContainer;
+		var $guiderElement, myGuider, $guiderTitleContainer;
 
 		if ( passedSettings === null || passedSettings === undefined ) {
 			passedSettings = {};
@@ -676,17 +677,18 @@ mw.libs.guiders = ( function () {
 		myGuider = $.extend( {}, guiders._defaultSettings, passedSettings );
 		myGuider.id = myGuider.id || String( Math.floor( Math.random() * 1000 ) );
 
-		guiderElement = $( guiders._htmlSkeleton );
-		myGuider.elem = guiderElement;
+		$guiderElement = $( guiders._htmlSkeleton );
+		// eslint-disable-next-line no-jquery/variable-pattern
+		myGuider.elem = $guiderElement;
 		if ( typeof myGuider.classString !== 'undefined' && myGuider.classString !== null ) {
 			myGuider.elem.addClass( myGuider.classString );
 		}
 		myGuider.elem.css( 'width', myGuider.width + 'px' );
 
-		guiderTitleContainer = guiderElement.find( '.guider_title' );
-		guiderTitleContainer.html( myGuider.title );
+		$guiderTitleContainer = $guiderElement.find( '.guider_title' );
+		$guiderTitleContainer.html( myGuider.title );
 
-		guiderElement.find( '.guider_description' ).html( myGuider.description );
+		$guiderElement.find( '.guider_description' ).html( myGuider.description );
 
 		guiders._addButtons( myGuider );
 
@@ -694,9 +696,9 @@ mw.libs.guiders = ( function () {
 			guiders._addXButton( myGuider );
 		}
 
-		guiderElement.hide();
-		guiderElement.appendTo( 'body' );
-		guiderElement.attr( 'id', myGuider.id );
+		$guiderElement.hide();
+		$guiderElement.appendTo( 'body' );
+		$guiderElement.attr( 'id', myGuider.id );
 
 		// If a string form (e.g. 'top') was passed, convert it to numeric (e.g. 12)
 		// As an alternative to the clock model, you can also use keywords to position the myGuider.
