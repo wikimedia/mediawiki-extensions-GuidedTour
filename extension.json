@@ -166,24 +166,12 @@
 		"GuidedTourExited": 8690566
 	},
 	"Hooks": {
-		"BeforePageDisplay": [
-			"GuidedTourHooks::onBeforePageDisplay"
-		],
-		"ResourceLoaderGetConfigVars": [
-			"GuidedTourHooks::onResourceLoaderGetConfigVars"
-		],
-		"ResourceLoaderRegisterModules": [
-			"GuidedTourHooks::onResourceLoaderRegisterModules"
-		],
-		"ResourceLoaderTestModules": [
-			"GuidedTourHooks::onResourceLoaderTestModules"
-		],
-		"RedirectSpecialArticleRedirectParams": [
-			"GuidedTourHooks::onRedirectSpecialArticleRedirectParams"
-		],
-		"MakeGlobalVariablesScript": [
-			"GuidedTourLauncher::onMakeGlobalVariablesScript"
-		]
+		"BeforePageDisplay": "GuidedTourHooks::onBeforePageDisplay",
+		"ResourceLoaderGetConfigVars": "GuidedTourHooks::onResourceLoaderGetConfigVars",
+		"ResourceLoaderRegisterModules": "GuidedTourHooks::onResourceLoaderRegisterModules",
+		"ResourceLoaderTestModules": "GuidedTourHooks::onResourceLoaderTestModules",
+		"RedirectSpecialArticleRedirectParams": "GuidedTourHooks::onRedirectSpecialArticleRedirectParams",
+		"MakeGlobalVariablesScript": "GuidedTourLauncher::onMakeGlobalVariablesScript"
 	},
 	"manifest_version": 1
 }
