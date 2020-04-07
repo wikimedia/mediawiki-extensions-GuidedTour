@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			"Jdforrester",
 			"Jeblad",
-			"Jon Harald Søby",
-			"Jdforrester"
+			"Jon Harald Søby"
 		]
 	},
 	"guidedtour-desc": "Bruk sider for å lage en boble-drevet guidet tur for å hjelpe nye brukere",

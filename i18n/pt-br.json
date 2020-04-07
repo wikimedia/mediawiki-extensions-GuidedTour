@@ -1,12 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"HenriqueCrang",
-			"Raylton P. Sousa",
-			"Dianakc",
-			"Araceletorres",
 			"!Silent",
-			"Felipe L. Ewald"
+			"Araceletorres",
+			"Dianakc",
+			"Felipe L. Ewald",
+			"HenriqueCrang",
+			"Raylton P. Sousa"
 		]
 	},
 	"guidedtour-desc": "Permite que páginas proporcionem uma visita guiada por pop-ups, para ajudar os novos usuários",

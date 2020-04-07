@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Dvorapa",
 			"Matěj Suchánek",
 			"Mormegil",
 			"Utar",
-			"YjM",
-			"Dvorapa"
+			"YjM"
 		]
 	},
 	"guidedtour-desc": "Umožňuje stránkám poskytovat vyskakovacího průvodce pro pomoc novým uživatelům",

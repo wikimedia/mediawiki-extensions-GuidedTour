@@ -2,14 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Benfutbol10",
-			"Ciencia Al Poder",
-			"Fitoschido",
-			"QuimGil",
 			"Chocolate con galleta",
-			"VegaDark",
-			"Macofe",
+			"Ciencia Al Poder",
 			"Dgstranz",
-			"Luzcaru"
+			"Fitoschido",
+			"Luzcaru",
+			"Macofe",
+			"QuimGil",
+			"VegaDark"
 		]
 	},
 	"guidedtour-desc": "Permite a las páginas ofrecer una visita guiada para ayudar a los usuarios nuevos",

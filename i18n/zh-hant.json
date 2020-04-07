@@ -2,13 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Byfserag",
-			"Simon Shek",
-			"Spring Roll Conan",
-			"Justincheng12345",
-			"NigelSoft",
-			"LNDDYL",
 			"Cwlin0416",
-			"Kly"
+			"Justincheng12345",
+			"Kly",
+			"LNDDYL",
+			"NigelSoft",
+			"Simon Shek",
+			"Spring Roll Conan"
 		]
 	},
 	"guidedtour-desc": "允許頁面提供彈出式導覽來引導新使用者",

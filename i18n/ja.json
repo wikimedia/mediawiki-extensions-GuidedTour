@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Shirayuki",
-			"Whym",
-			"Sujiniku",
 			"2nd-player",
-			"Otokoume"
+			"Otokoume",
+			"Shirayuki",
+			"Sujiniku",
+			"Whym"
 		]
 	},
 	"guidedtour-desc": "新しい利用者を支援するポップアップのガイド付きツアーをページで提供できるようにする",
