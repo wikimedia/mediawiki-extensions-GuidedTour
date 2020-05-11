@@ -157,7 +157,7 @@
 		"localBasePath": "modules",
 		"remoteExtPath": "GuidedTour/modules"
 	},
-	"QunitTestMobile": {
+	"QUnitTestModule": {
 		"localBasePath": "tests/qunit",
 		"remoteExtPath": "GuidedTour/tests/qunit",
 		"scripts": [
