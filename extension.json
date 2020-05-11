@@ -18,7 +18,7 @@
 	"license-name": "Apache-2.0",
 	"type": "other",
 	"requires": {
-		"MediaWiki": ">= 1.32.0"
+		"MediaWiki": ">= 1.33.0"
 	},
 	"MessagesDirs": {
 		"GuidedTour": [
@@ -157,6 +157,16 @@
 		"localBasePath": "modules",
 		"remoteExtPath": "GuidedTour/modules"
 	},
+	"QunitTestMobile": {
+		"localBasePath": "tests/qunit",
+		"remoteExtPath": "GuidedTour/tests/qunit",
+		"scripts": [
+			"ext.guidedTour.lib.tests.js"
+		],
+		"dependencies": [
+			"ext.guidedTour.lib"
+		]
+	},
 	"EventLoggingSchemas": {
 		"GuidedTourGuiderImpression": 8694395,
 		"GuidedTourGuiderHidden": 8690549,
@@ -169,7 +179,6 @@
 		"BeforePageDisplay": "GuidedTourHooks::onBeforePageDisplay",
 		"ResourceLoaderGetConfigVars": "GuidedTourHooks::onResourceLoaderGetConfigVars",
 		"ResourceLoaderRegisterModules": "GuidedTourHooks::onResourceLoaderRegisterModules",
-		"ResourceLoaderTestModules": "GuidedTourHooks::onResourceLoaderTestModules",
 		"RedirectSpecialArticleRedirectParams": "GuidedTourHooks::onRedirectSpecialArticleRedirectParams",
 		"MakeGlobalVariablesScript": "GuidedTourLauncher::onMakeGlobalVariablesScript"
 	},

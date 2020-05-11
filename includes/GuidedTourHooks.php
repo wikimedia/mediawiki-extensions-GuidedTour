@@ -199,21 +199,6 @@ class GuidedTourHooks {
 	}
 
 	/**
-	 * @param array &$testModules
-	 * @param ResourceLoader &$resourceLoader
-	 * @return bool
-	 */
-	public static function onResourceLoaderTestModules( &$testModules, &$resourceLoader ) {
-		$testModules['qunit']['ext.guidedTour.lib.tests'] = [
-			'scripts' => [ 'tests/qunit/ext.guidedTour.lib.tests.js' ],
-			'dependencies' => [ 'ext.guidedTour.lib' ],
-			'localBasePath' => __DIR__ . '/..',
-			'remoteExtPath' => 'GuidedTour',
-		];
-		return true;
-	}
-
-	/**
 	 * @param array &$redirectParams
 	 * @return bool
 	 */
