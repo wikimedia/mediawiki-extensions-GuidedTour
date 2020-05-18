@@ -167,13 +167,17 @@
 			"ext.guidedTour.lib"
 		]
 	},
-	"EventLoggingSchemas": {
-		"GuidedTourGuiderImpression": 8694395,
-		"GuidedTourGuiderHidden": 8690549,
-		"GuidedTourButtonClick": 13869649,
-		"GuidedTourInternalLinkActivation": 8690553,
-		"GuidedTourExternalLinkActivation": 8690560,
-		"GuidedTourExited": 8690566
+	"attributes": {
+		"EventLogging": {
+			"Schemas": {
+				"GuidedTourGuiderImpression": 8694395,
+				"GuidedTourGuiderHidden": 8690549,
+				"GuidedTourButtonClick": 13869649,
+				"GuidedTourInternalLinkActivation": 8690553,
+				"GuidedTourExternalLinkActivation": 8690560,
+				"GuidedTourExited": 8690566
+			}
+		}
 	},
 	"Hooks": {
 		"BeforePageDisplay": "GuidedTourHooks::onBeforePageDisplay",
@@ -182,5 +186,5 @@
 		"RedirectSpecialArticleRedirectParams": "GuidedTourHooks::onRedirectSpecialArticleRedirectParams",
 		"MakeGlobalVariablesScript": "GuidedTourLauncher::onMakeGlobalVariablesScript"
 	},
-	"manifest_version": 1
+	"manifest_version": 2
 }
