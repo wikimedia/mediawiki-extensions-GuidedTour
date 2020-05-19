@@ -12,9 +12,9 @@
 
 class GuidedTourHooks {
 	// Tour cookie name.  It will be prefixed automatically.
-	const COOKIE_NAME = '-mw-tour';
+	public const COOKIE_NAME = '-mw-tour';
 
-	const TOUR_PARAM = 'tour';
+	private const TOUR_PARAM = 'tour';
 
 	/*
 	 * XXX (mattflaschen, 2013-01-02):
