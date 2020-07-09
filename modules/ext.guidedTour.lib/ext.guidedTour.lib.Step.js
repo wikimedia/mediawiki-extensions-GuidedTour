@@ -83,27 +83,27 @@
 		this.hookListeners = {};
 
 		/**
-		  * True if and only if .next() has been called
-		  *
-		  * @property {boolean}
-		  * @private
-		  */
+		 * True if and only if .next() has been called
+		 *
+		 * @property {boolean}
+		 * @private
+		 */
 		this.isNextCallbackSet = false;
 
 		/**
-		  * True if and only if .back() has been called
-		  *
-		  * @property {boolean}
-		  * @private
-		  */
+		 * True if and only if .back() has been called
+		 *
+		 * @property {boolean}
+		 * @private
+		 */
 		this.isBackCallbackSet = false;
 
 		/**
-		  * True if and only if .transition() has been called
-		  *
-		  * @property {boolean}
-		  * @private
-		  */
+		 * True if and only if .transition() has been called
+		 *
+		 * @property {boolean}
+		 * @private
+		 */
 		this.isTransitionCallbackSet = false;
 
 		/**
@@ -160,6 +160,7 @@
 
 	/**
 	 * Sets a callback by name
+	 *
 	 * @param {string} name callback name as string
 	 * @param {Function} callback Function to call if they click the button
 	 */
@@ -211,6 +212,7 @@
 		// TODO: Refactor how namemsg is handled, for code reuse.
 		if ( button.namemsg ) {
 			messageKey = button.namemsg;
+			// eslint-disable-next-line mediawiki/msg-doc
 			button.name = mw.message( button.namemsg ).parse();
 			delete button.namemsg;
 		}
@@ -219,6 +221,7 @@
 			hasIcon = false;
 		} else {
 			messageKey = messageKeyMapping[ button.action ];
+			// eslint-disable-next-line mediawiki/msg-doc
 			button.name = mw.message( messageKey ).parse();
 			hasIcon = true;
 		}
@@ -325,6 +328,7 @@
 		};
 
 		if ( button.namemsg ) {
+			// eslint-disable-next-line mediawiki/msg-doc
 			button.name = mw.message( button.namemsg ).parse();
 			// Logging for both this ButtonClick and LinkActivation needs to be
 			// coordinated with the actual page navigation,
@@ -358,6 +362,7 @@
 
 		if ( button.namemsg ) {
 			messageKey = button.namemsg;
+			// eslint-disable-next-line mediawiki/msg-doc
 			button.name = mw.message( button.namemsg ).parse();
 			delete button.namemsg;
 		}
@@ -851,11 +856,13 @@
 		};
 
 		if ( options.titlemsg ) {
+			// eslint-disable-next-line mediawiki/msg-doc
 			options.title = mw.message( options.titlemsg ).parse();
 		}
 		delete options.titlemsg;
 
 		if ( options.descriptionmsg ) {
+			// eslint-disable-next-line mediawiki/msg-doc
 			options.description = mw.message( options.descriptionmsg ).parse();
 		}
 		delete options.descriptionmsg;

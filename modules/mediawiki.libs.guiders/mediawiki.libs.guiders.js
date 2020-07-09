@@ -177,6 +177,7 @@ mw.libs.guiders = ( function () {
 			);
 
 			if ( typeof thisButton.classString !== 'undefined' && thisButton.classString !== null ) {
+				// eslint-disable-next-line mediawiki/class-doc
 				$thisButtonElem.addClass( thisButton.classString );
 			}
 
@@ -481,6 +482,7 @@ mw.libs.guiders = ( function () {
 			}
 		} ).each( function () {
 			if ( overlayClass ) {
+				// eslint-disable-next-line mediawiki/class-doc
 				$( this ).addClass( overlayClass );
 			}
 		} );
@@ -537,6 +539,8 @@ mw.libs.guiders = ( function () {
 			12: 'guider_arrow_down'
 		};
 
+		// Classes documented above
+		// eslint-disable-next-line mediawiki/class-doc
 		$myGuiderArrow.addClass( newClass[ position ] );
 
 		myHeight = myGuider.elem.innerHeight();
@@ -562,6 +566,7 @@ mw.libs.guiders = ( function () {
 
 	/**
 	 * Remove all animation classes
+	 *
 	 * @param {Object} myGuider guider to remove animations from
 	 */
 	guiders._removeAnimations = function ( myGuider ) {
@@ -570,6 +575,7 @@ mw.libs.guiders = ( function () {
 
 	/**
 	 * Add appropriate animation class relative to guider position
+	 *
 	 * @param {Object} myGuider guider to add animation class to
 	 * @param {number} position guider attachment position
 	 */
@@ -591,6 +597,8 @@ mw.libs.guiders = ( function () {
 		guiders._removeAnimations( myGuider );
 		// Assign animation class for myGuider
 		if ( position !== 0 ) {
+			// Classes documented above
+			// eslint-disable-next-line mediawiki/class-doc
 			myGuider.elem.addClass( classMap[ position ] );
 		}
 	};
@@ -616,6 +624,7 @@ mw.libs.guiders = ( function () {
 
 	/**
 	 * Move the guider directionally to the corresponding step. eg. next, back
+	 *
 	 * @param {string} direction next or back
 	 */
 	guiders.doStep = function ( direction ) {
@@ -681,6 +690,7 @@ mw.libs.guiders = ( function () {
 		// eslint-disable-next-line no-jquery/variable-pattern
 		myGuider.elem = $guiderElement;
 		if ( typeof myGuider.classString !== 'undefined' && myGuider.classString !== null ) {
+			// eslint-disable-next-line mediawiki/class-doc
 			myGuider.elem.addClass( myGuider.classString );
 		}
 		myGuider.elem.css( 'width', myGuider.width + 'px' );

@@ -52,6 +52,7 @@
 	 *
 	 *  - gt.TransitionEvent.BUILTIN - builtin event
 	 *  - gt.TransitionEvent.MW_HOOK - mw.hook event
+	 *
 	 * @property {string} type
 	 */
 
@@ -61,6 +62,7 @@
 	 * Current possible subtypes are:
 	 *
 	 * - gt.TransitionEvent.TRANSITION_BEFORE_SHOW - before guider was shown
+	 *
 	 * @property {'TRANSITION_BEFORE_SHOW'|undefined} subtype
 	 */
 

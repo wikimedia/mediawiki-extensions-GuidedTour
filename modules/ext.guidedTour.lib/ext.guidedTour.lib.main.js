@@ -264,13 +264,13 @@
 	// TODO (phuedx, 2014-05-27): Use conditional comments to add these classes
 	// to the html element /in the HTML/.
 	/**
-	* If the browser is IE, then CSS classes are added to the html element
-	* conveying which version of IE it is.
-	*
-	* @private
-	*
-	* @return {void}
-	*/
+	 * If the browser is IE, then CSS classes are added to the html element
+	 * conveying which version of IE it is.
+	 *
+	 * @private
+	 *
+	 * @return {void}
+	 */
 	function setupIECssClasses() {
 		var clientProfile = $.client.profile(),
 			classes = [];
@@ -282,6 +282,7 @@
 		classes.push( 'ie' );
 		classes.push( 'ie' + clientProfile.versionNumber );
 
+		// eslint-disable-next-line mediawiki/class-doc
 		$( 'html' ).addClass( classes.join( ' ' ) );
 	}
 

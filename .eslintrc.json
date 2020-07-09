@@ -2,15 +2,14 @@
 	"root": true,
 	"extends": [
 		"wikimedia/client",
-		"wikimedia/jquery"
+		"wikimedia/jquery",
+		"wikimedia/mediawiki",
+		"wikimedia/jsduck"
 	],
-	"globals": {
-		"mw": false
-	},
 	"rules": {
-		"no-jquery/no-global-selector": 0,
-		"no-underscore-dangle": 0,
-		"max-len": 0,
+		"no-jquery/no-global-selector": "off",
+		"no-underscore-dangle": "off",
+		"max-len": "off",
 		"no-jquery/no-class-state": "warn",
 		"no-jquery/no-sizzle": "warn"
 	}

@@ -185,7 +185,7 @@
 	 *
 	 * @return {mw.guidedTour.StepBuilder} Created StepBuilder object
 	 * @throws {mw.guidedTour.TourDefinitionError} When the step specification is
-         *  invalid
+	 *  invalid
 	 */
 	TourBuilder.prototype.step = function ( stepSpec ) {
 		var stepBuilder;
