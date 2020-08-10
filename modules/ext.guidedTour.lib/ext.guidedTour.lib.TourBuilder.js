@@ -126,6 +126,9 @@
 	 *
 	 * To avoid this, set autoFocus to false for the step.
 	 *
+	 * @param {boolean} [stepSpec.closeOnEscape=true] Close the guider
+	 *   when the user presses the Escape key
+	 *
 	 * @param {boolean} [stepSpec.closeOnClickOutside=true] Close the
 	 *  guider when the user clicks elsewhere on screen
 	 *
