@@ -18,7 +18,7 @@
 	"guidedtour-tour-test-callouts": "Title of second step in test tour, introducing callouts",
 	"guidedtour-tour-test-portal-description": "Description of second step in test tour.\n\nIt will be pointing to the page link given at {{msg-mw|Portal-url}}, in the toolbox.\n\nRefers to {{msg-mw|Portal}}.",
 	"guidedtour-tour-test-mediawiki-parse": "Description of third step in test tour",
-	"guidedtour-tour-test-wikitext-description": "{{doc-important|Do not translate \"<code>onShow</code>\" or \"<code>parseDescription</code>\", because they are JavaScript method names.}}\nTitle of third step in test tour.\n\nDon't be concerned if [[{{MediaWiki:Guidedtour-help-url}}]] does not yet exist.\n\nRefers to {{msg-mw|Guidedtour-help-url}}.",
+	"guidedtour-tour-test-wikitext-description": "{{optional}}\n{{doc-important|Do not translate \"<code>onShow</code>\" or \"<code>parseDescription</code>\", because they are JavaScript method names.}}\nTitle of third step in test tour.\n\nDon't be concerned if [[{{MediaWiki:Guidedtour-help-url}}]] does not yet exist.\n\nRefers to {{msg-mw|Guidedtour-help-url}}.",
 	"guidedtour-tour-test-description-page": "Title of fourth step in test tour",
 	"guidedtour-tour-test-go-description-page": "Text of the button pointing to [[{{MediaWiki:Guidedtour-help-url}}]]",
 	"guidedtour-tour-test-launch-tour": "Title of fifth step in test tour",
