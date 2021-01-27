@@ -6,6 +6,7 @@
 			"Janezdrilc"
 		]
 	},
+	"guidedtour-next-button": "Naprej",
 	"guidedtour-back-button": "Nazaj",
 	"guidedtour-tour-test-go-description-page": "Pojdi na opisno stran",
 	"guidedtour-tour-firsteditve-edit-page-description": "Za prikaz sprememb, ki ste jih vnesli, {{GENDER:|kliknite}} gumb »$1«.",
