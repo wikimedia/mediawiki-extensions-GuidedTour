@@ -3,8 +3,8 @@
  * Recommended options from:
  * https://www.mediawiki.org/wiki/Manual:Coding_conventions/SVG#Exemplified_safe_configuration
  */
- const { extendDefaultPlugins } = require( 'svgo' );
- module.exports = {
+const { extendDefaultPlugins } = require( 'svgo' );
+module.exports = {
 	multipass: true,
 	plugins: extendDefaultPlugins( [
 		{
