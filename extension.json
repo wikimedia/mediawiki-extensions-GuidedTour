@@ -18,7 +18,10 @@
 	"license-name": "Apache-2.0",
 	"type": "other",
 	"requires": {
-		"MediaWiki": ">= 1.33.0"
+		"MediaWiki": ">= 1.33.0",
+		"extensions": {
+			"EventLogging": "*"
+		}
 	},
 	"MessagesDirs": {
 		"GuidedTour": [
