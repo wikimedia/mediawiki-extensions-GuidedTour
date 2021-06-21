@@ -476,19 +476,12 @@ mw.libs.guiders = ( function () {
 	guiders._showOverlay = function ( overlayClass ) {
 		// FIXME: Use CSS transition
 		// eslint-disable-next-line no-jquery/no-fade
-		$( '#guider_overlay' ).fadeIn( 'fast', function () {
-			if ( this.style.removeAttribute ) {
-				this.style.removeAttribute( 'filter' );
-			}
-		} ).each( function () {
+		$( '#guider_overlay' ).fadeIn( 'fast' ).each( function () {
 			if ( overlayClass ) {
 				// eslint-disable-next-line mediawiki/class-doc
 				$( this ).addClass( overlayClass );
 			}
 		} );
-		// This callback is needed to fix an IE opacity bug.
-		// See also:
-		// http://www.kevinleary.net/jquery-fadein-fadeout-problems-in-internet-explorer/
 	};
 
 	guiders._hideOverlay = function () {
