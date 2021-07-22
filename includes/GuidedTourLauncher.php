@@ -7,7 +7,7 @@ class GuidedTourLauncher {
 	/**
 	 * State used to tell the client to directly launch tours using a client-side $wg
 	 *
-	 * @var array|null $directLaunchState
+	 * @var array|null
 	 */
 	protected static $directLaunchState = null;
 
