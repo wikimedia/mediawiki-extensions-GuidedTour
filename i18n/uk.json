@@ -19,6 +19,7 @@
 	"guidedtour-tour-test-callouts": "Тест виноски",
 	"guidedtour-tour-test-portal-description": "Це сторінка {{int:portal}}.",
 	"guidedtour-tour-test-mediawiki-parse": "Перевірте аналіз MediaWiki",
+	"guidedtour-tour-test-wikitext-description": "Посібник у вашому вікі-турі може містити вікітекст. Використовуйте його для створення вікіпосилання на [[{{MediaWiki:Guidedtour-help-url}}|документацію з екскурсій]]. Або [https://example.com зовнішнє посилання], наприклад.",
 	"guidedtour-tour-test-description-page": "Тест сторінки опису MediaWiki",
 	"guidedtour-tour-test-go-description-page": "Перейти на сторінку опису",
 	"guidedtour-tour-test-launch-tour": "Тестовий запуск туру",
