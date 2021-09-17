@@ -20,7 +20,8 @@
 
 	tour = new gt.TourBuilder( {
 		name: 'firstedit',
-		shouldLog: true
+		// Disable all logging from this extension per T288416
+		shouldLog: false
 	} );
 
 	tour.firstStep( {

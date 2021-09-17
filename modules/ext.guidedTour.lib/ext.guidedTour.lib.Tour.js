@@ -23,6 +23,9 @@
 	function Tour( tourSpec ) {
 		var moduleName;
 
+		// Disable all logging from this extension per T288416
+		tourSpec.shouldLog = false;
+
 		/**
 		 * Name of tour
 		 *

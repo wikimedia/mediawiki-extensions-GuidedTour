@@ -51,7 +51,8 @@
 
 	tour = new gt.TourBuilder( {
 		name: 'firsteditve',
-		shouldLog: true,
+		// Disable all logging from this extension per T288416
+		shouldLog: false,
 		showConditionally: 'VisualEditor'
 	} );
 
