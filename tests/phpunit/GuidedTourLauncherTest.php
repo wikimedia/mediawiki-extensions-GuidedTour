@@ -5,7 +5,7 @@ use Wikimedia\TestingAccessWrapper;
 /**
  * @covers GuidedTourLauncher
  */
-class GuidedTourLauncherTest extends MediaWikiTestCase {
+class GuidedTourLauncherTest extends MediaWikiIntegrationTestCase {
 	protected $wrappedLauncher;
 
 	public function setUp(): void {

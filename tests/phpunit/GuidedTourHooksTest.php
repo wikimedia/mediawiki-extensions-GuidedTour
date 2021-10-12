@@ -3,7 +3,7 @@
 /**
  * @covers GuidedTourHooks
  */
-class GuidedTourHooksTest extends MediaWikiTestCase {
+class GuidedTourHooksTest extends MediaWikiIntegrationTestCase {
 	public function testGetTourNames() {
 		$this->assertSame(
 			[],
