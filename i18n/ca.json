@@ -3,7 +3,8 @@
 		"authors": [
 			"Mguix",
 			"QuimGil",
-			"Vriullop"
+			"Vriullop",
+			"Jmarchn"
 		]
 	},
 	"guidedtour-desc": "Permet incorporar una visita guiada a les pàgines per a ajudar nous usuaris.",
@@ -29,6 +30,6 @@
 	"guidedtour-tour-firstedit-save-title": "Gairebé ja està!",
 	"guidedtour-tour-firstedit-save-description": "Quan ho tingueu a punt, cliqueu a '{{int:publishchanges}}' i els vostres canvis ja seran visibles per a tothom.",
 	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|Feu clic}} sobre el botó \"$1\" per fer els canvis.",
-	"guidedtour-tour-firsteditve-edit-section-description": "Disposeu d'enllaços «{{int:editsection}}» a cada secció principal, per a concentrar-vos només en aquesta part.",
+	"guidedtour-tour-firsteditve-edit-section-description": "Disposeu d'enllaços \"$1\" a cada secció principal en una pàgina, per a concentrar-vos només en aquesta part.",
 	"guidedtour-tour-firsteditve-save-description": "Quan estigueu a punt, fent clic a \"{{int:publishchanges}}\" fareu els vostres canvis visibles per a tothom."
 }
