@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"BaRaN6161 TURK"
+			"BaRaN6161 TURK",
+			"MuratTheTurkish"
 		]
 	},
 	"guidedtour-desc": "Sayfaların yeni kullanıcılara yardımcı olmak için pop-up rehberli tur sunmasına izin verir",
@@ -13,14 +14,14 @@
 	"guidedtour-tour-test-testing": "Deneme",
 	"guidedtour-tour-test-test-description": "Bu açıklamanın bir testidir. Lorem ipsum dolor sit!",
 	"guidedtour-tour-test-callouts": "Ek bilgileri test et",
-	"guidedtour-tour-test-portal-description": "Bu {{int:portal}} sayfası.",
+	"guidedtour-tour-test-portal-description": "Bu {{int:portal}} sayfasıdır.",
 	"guidedtour-tour-test-mediawiki-parse": "MediaWiki ayrıştırmasını test edin",
 	"guidedtour-tour-test-description-page": "MediaWiki açıklama sayfalarını test edin",
 	"guidedtour-tour-test-go-description-page": "Açıklama sayfasına git",
 	"guidedtour-tour-test-launch-tour": "Test başlatma turu",
 	"guidedtour-tour-test-launch-tour-description": "Rehberler diğer rehberli turlar başlatabilir. Çok havalı ha?",
 	"guidedtour-tour-test-launch-editing": "Düzenleme hakkında bir tur başlatın",
-	"guidedtour-tour-firstedit-edit-page-title": "Tüm sayfayı {{GENDER:|düzenle}}",
+	"guidedtour-tour-firstedit-edit-page-title": "Tüm sayfayı düzenle…",
 	"guidedtour-tour-firstedit-edit-page-description": "Değişikliklerinizi yapmak için \"$1\" düğmesini {{GENDER:|tıklayın}}.",
 	"guidedtour-tour-firstedit-edit-section-title": "Veya bir bölümü {{GENDER:|düzenle}}",
 	"guidedtour-tour-firstedit-edit-section-description": "Bir sayfadaki her ana bölüm için \"{{int:editsection}}\" bağlantıları vardır, böylece yalnızca o bölüme odaklanabilirsiniz.",
@@ -28,7 +29,7 @@
 	"guidedtour-tour-firstedit-preview-description": "\"{{int:showpreview}}\" tıklandığında, sayfanızın değişikliklerinizle nasıl görüneceğini kontrol edebilirsiniz. Sadece kurtarmayı unutma!",
 	"guidedtour-tour-firstedit-save-title": "Neredeyse bitti!",
 	"guidedtour-tour-firstedit-save-description": "Hazır olduğunuzda, \"{{int:publishchanges}}\" düğmesini tıkladığınızda değişiklikleriniz herkes tarafından görülebilir.",
-	"guidedtour-tour-firsteditve-edit-page-description": "Değişikliklerinizi yapmak için \"$1\" düğmesini {{GENDER:|Tıklayın}}.",
+	"guidedtour-tour-firsteditve-edit-page-description": "Değişikliklerinizi yapmak için \"$1\" düğmesini {{GENDER:|tıklayın}}.",
 	"guidedtour-tour-firsteditve-edit-section-description": "Bir sayfadaki her ana bölüm için \"$1\" bağlantısı vardır, böylece yalnızca o bölüme odaklanabilirsiniz.",
 	"guidedtour-tour-firsteditve-save-description": "Hazır olduğunuzda, \"{{int:publishchanges}}\" düğmesini tıkladığınızda değişiklikleriniz herkes tarafından görülebilir."
 }
