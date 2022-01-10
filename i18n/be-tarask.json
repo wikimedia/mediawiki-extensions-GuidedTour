@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Renessaince",
 			"Wizardist"
 		]
 	},
@@ -9,6 +10,7 @@
 	"guidedtour-help-guider-url": "Help:Экскурсіі па сайце/даведка",
 	"guidedtour-next-button": "Далей",
 	"guidedtour-okay-button": "Далей",
+	"guidedtour-back-button": "Назад",
 	"guidedtour-tour-test-testing": "Тэставаньне",
 	"guidedtour-tour-test-test-description": "Гэта тэст апісаньня. Lorem ipsum dolor sit!",
 	"guidedtour-tour-test-callouts": "Тэст вынятак",
@@ -18,5 +20,17 @@
 	"guidedtour-tour-test-description-page": "Тэст старонак апісаньня MediaWiki",
 	"guidedtour-tour-test-go-description-page": "Перайсьці на старонку апісаньня",
 	"guidedtour-tour-test-launch-tour": "Тэставы запуск экскурсіі",
-	"guidedtour-tour-test-launch-tour-description": "У часе адной экскурсіі можна пачаць і іншыя. Крута, га?"
+	"guidedtour-tour-test-launch-tour-description": "У часе адной экскурсіі можна пачаць і іншыя. Крута, га?",
+	"guidedtour-tour-test-launch-editing": "Запусьціць тур па рэдагаваньні",
+	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|Рэдагаваць}} усю старонку…",
+	"guidedtour-tour-firstedit-edit-page-description": "Каб унесьці зьмены, {{GENDER:|націсьніце}} кнопку „$1“.",
+	"guidedtour-tour-firstedit-edit-section-title": "Альбо {{GENDER:|рэдагуйце}} разьдзел",
+	"guidedtour-tour-firstedit-edit-section-description": "Для кожнага з асноўных разьдзелаў старонкі існуюць спасылкі „{{int:editsection}}“, таму вы можаце засяродзіцца толькі на пэўнай частцы.",
+	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|Праглядзець}} свае зьмены (па жаданьні)",
+	"guidedtour-tour-firstedit-preview-description": "Націсьніце «{{int:showpreview}}», каб пабачыць, як будзе выглядаць старонка з унесенымі вамі зьменамі. Толькі не забудзьце захаваць!",
+	"guidedtour-tour-firstedit-save-title": "Усё амаль гатова!",
+	"guidedtour-tour-firstedit-save-description": "Як будзеце гатовыя, націсьніце „{{int:publishchanges}}“, каб вашыя зьмены сталі бачнымі для ўсіх.",
+	"guidedtour-tour-firsteditve-edit-page-description": "Каб унесьці зьмены, {{GENDER:|націсьніце}} кнопку „$1“.",
+	"guidedtour-tour-firsteditve-edit-section-description": "Для кожнага з асноўных разьдзелаў старонкі існуюць спасылкі „$1“, таму вы можаце засяродзіцца толькі на пэўнай частцы.",
+	"guidedtour-tour-firsteditve-save-description": "Як будзеце гатовыя, націсьніце „{{int:publishchanges}}“, каб вашыя зьмены сталі бачнымі для ўсіх."
 }
