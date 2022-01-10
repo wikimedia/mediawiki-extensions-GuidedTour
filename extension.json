@@ -49,6 +49,9 @@
 				],
 				"vector": [
 					"ext.guidedTour.vector.less"
+				],
+				"vector-2022": [
+					"ext.guidedTour.vector.less"
 				]
 			},
 			"dependencies": [
