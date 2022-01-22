@@ -143,7 +143,13 @@
 			]
 		},
 		"ext.guidedTour.tour.onshow": {
-			"scripts": "tours/onshow.js",
+			"packageFiles": [
+				"tours/onshow.js",
+				{
+					"name": "tours/helpGuiderUrl.json",
+					"callback": [ "GuidedTourHooks", "getHelpGuiderUrl" ]
+				}
+			],
 			"dependencies": "ext.guidedTour",
 			"messages": [
 				"portal",
@@ -187,7 +193,6 @@
 	},
 	"Hooks": {
 		"BeforePageDisplay": "GuidedTourHooks::onBeforePageDisplay",
-		"ResourceLoaderGetConfigVars": "GuidedTourHooks::onResourceLoaderGetConfigVars",
 		"ResourceLoaderRegisterModules": "GuidedTourHooks::onResourceLoaderRegisterModules",
 		"RedirectSpecialArticleRedirectParams": "GuidedTourHooks::onRedirectSpecialArticleRedirectParams",
 		"MakeGlobalVariablesScript": "GuidedTourLauncher::onMakeGlobalVariablesScript"

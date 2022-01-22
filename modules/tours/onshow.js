@@ -4,7 +4,7 @@
  */
 ( function ( gt ) {
 	// XXX (mattflaschen, 2012-01-02): See GuidedTourHooks.php
-	var pageName = mw.config.get( 'wgGuidedTourHelpGuiderUrl' ),
+	var pageName = require( './helpGuiderUrl.json' ).pageName,
 		tour, firstStepButtons, firstStep;
 
 	tour = new gt.TourBuilder( {
@@ -21,7 +21,7 @@
 	} );
 
 	// If there is no page, this is also the last step.
-	firstStepButtons = ( pageName === null ) ?
+	firstStepButtons = ( !pageName ) ?
 		[ { action: 'end' } ] :
 		[];
 
@@ -42,7 +42,7 @@
 		buttons: firstStepButtons
 	} );
 
-	if ( pageName !== null ) {
+	if ( pageName ) {
 		firstStep.next( 'descriptionpage' );
 
 		tour.step( {

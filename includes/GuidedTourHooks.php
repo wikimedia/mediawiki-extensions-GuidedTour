@@ -16,38 +16,27 @@ class GuidedTourHooks {
 
 	private const TOUR_PARAM = 'tour';
 
-	/*
-	 * XXX (mattflaschen, 2013-01-02):
-	 *
-	 * wgGuidedTourHelpGuiderUrl is a hack pending forcontent messages:
-	 * https://phabricator.wikimedia.org/T27349
-	*/
-
 	/**
-	 * Adds the page name of a GuidedTour local documentation page,
-	 * to demonstrate showing tour content from pages.
+	 * ResourceLoader callback that adds the page name of a GuidedTour local
+	 * documentation page, to demonstrate showing tour content from pages. This is
+	 * a hack pending forcontent messages: https://phabricator.wikimedia.org/T27349
 	 *
 	 * If the page does not exist, it will not be set.
 	 *
-	 * Add static config vars to startup module that will be exposed via mw.config.
-	 *
-	 * No value added here can depend on the page name, user, or other request-specific
-	 * data.
-	 *
-	 * @param array &$vars Associative array of config variables
-	 * @return bool
+	 * @param ResourceLoaderContext $context
+	 * @return array
 	 */
-	public static function onResourceLoaderGetConfigVars( &$vars ) {
-		$pageName = wfMessage( 'guidedtour-help-guider-url' )
+	public static function getHelpGuiderUrl( ResourceLoaderContext $context ) {
+		$data = [];
+
+		$pageName = $context->msg( 'guidedtour-help-guider-url' )
 			->inContentLanguage()->plain();
-
 		$pageTitle = Title::newFromText( $pageName );
-
 		if ( $pageTitle !== null && $pageTitle->exists() ) {
-			$vars['wgGuidedTourHelpGuiderUrl'] = $pageName;
+			$data['pageName'] = $pageName;
 		}
 
-		return true;
+		return $data;
 	}
 
 	/**
