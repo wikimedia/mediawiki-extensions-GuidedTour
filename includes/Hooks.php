@@ -1,5 +1,16 @@
 <?php
 
+namespace MediaWiki\Extension\GuidedTour;
+
+use ExtensionRegistry;
+use FormatJson;
+use OutputPage;
+use ResourceLoader;
+use ResourceLoaderContext;
+use ResourceLoaderModule;
+use Skin;
+use Title;
+
 /**
  * Use a hook to include this extension's functionality in pages
  * (if the page is called with a tour)
@@ -10,7 +21,7 @@
  * @author Luke Welling lwelling@wikimedia.org
  */
 
-class GuidedTourHooks {
+class Hooks {
 	// Tour cookie name.  It will be prefixed automatically.
 	public const COOKIE_NAME = '-mw-tour';
 

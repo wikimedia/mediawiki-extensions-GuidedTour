@@ -29,8 +29,11 @@
 		]
 	},
 	"AutoloadClasses": {
-		"GuidedTourHooks": "includes/GuidedTourHooks.php",
-		"GuidedTourLauncher": "includes/GuidedTourLauncher.php"
+		"GuidedTourLauncher": "includes/GuidedTourLauncher.php",
+		"MediaWiki\\Extension\\GuidedTour\\GuidedTourLauncher": "includes/GuidedTourLauncher.php"
+	},
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extension\\GuidedTour\\": "includes/"
 	},
 	"ResourceModules": {
 		"mediawiki.libs.guiders": {
@@ -147,7 +150,7 @@
 				"tours/onshow.js",
 				{
 					"name": "tours/helpGuiderUrl.json",
-					"callback": [ "GuidedTourHooks", "getHelpGuiderUrl" ]
+					"callback": [ "MediaWiki\\Extension\\GuidedTour\\Hooks", "getHelpGuiderUrl" ]
 				}
 			],
 			"dependencies": "ext.guidedTour",
@@ -192,10 +195,10 @@
 		}
 	},
 	"Hooks": {
-		"BeforePageDisplay": "GuidedTourHooks::onBeforePageDisplay",
-		"ResourceLoaderRegisterModules": "GuidedTourHooks::onResourceLoaderRegisterModules",
-		"RedirectSpecialArticleRedirectParams": "GuidedTourHooks::onRedirectSpecialArticleRedirectParams",
-		"MakeGlobalVariablesScript": "GuidedTourLauncher::onMakeGlobalVariablesScript"
+		"BeforePageDisplay": "MediaWiki\\Extension\\GuidedTour\\Hooks::onBeforePageDisplay",
+		"ResourceLoaderRegisterModules": "MediaWiki\\Extension\\GuidedTour\\Hooks::onResourceLoaderRegisterModules",
+		"RedirectSpecialArticleRedirectParams": "MediaWiki\\Extension\\GuidedTour\\Hooks::onRedirectSpecialArticleRedirectParams",
+		"MakeGlobalVariablesScript": "MediaWiki\\Extension\\GuidedTour\\GuidedTourLauncher::onMakeGlobalVariablesScript"
 	},
 	"manifest_version": 2
 }

@@ -1,7 +1,9 @@
 <?php
 
+use MediaWiki\Extension\GuidedTour\Hooks as GuidedTourHooks;
+
 /**
- * @covers GuidedTourHooks
+ * @covers \MediaWiki\Extension\GuidedTour\Hooks
  */
 class GuidedTourHooksTest extends MediaWikiIntegrationTestCase {
 	public function testGetTourNames() {

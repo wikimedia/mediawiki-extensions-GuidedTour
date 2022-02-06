@@ -1,9 +1,10 @@
 <?php
 
+use MediaWiki\Extension\GuidedTour\GuidedTourLauncher;
 use Wikimedia\TestingAccessWrapper;
 
 /**
- * @covers GuidedTourLauncher
+ * @covers \MediaWiki\Extension\GuidedTour\GuidedTourLauncher
  */
 class GuidedTourLauncherTest extends MediaWikiIntegrationTestCase {
 	protected $wrappedLauncher;
