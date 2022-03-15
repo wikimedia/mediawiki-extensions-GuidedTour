@@ -19,9 +19,7 @@
 	hasEditSection = $( '.mw-editsection' ).length > 0;
 
 	tour = new gt.TourBuilder( {
-		name: 'firstedit',
-		// Disable all logging from this extension per T288416
-		shouldLog: false
+		name: 'firstedit'
 	} );
 
 	tour.firstStep( {

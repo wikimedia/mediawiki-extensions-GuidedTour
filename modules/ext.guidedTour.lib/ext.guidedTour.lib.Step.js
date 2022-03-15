@@ -192,11 +192,8 @@
 	 * @return {Object} Guiders button specification
 	 */
 	Step.prototype.getActionButton = function ( button ) {
-		var step = this,
-			messageKey,
+		var messageKey,
 			actionButtonClass = 'guidedtour-' + button.action + '-button',
-			// button.action will be deleted with the delete operator later in the flow.
-			buttonAction = button.action,
 			// eslint-disable-next-line no-use-before-define
 			buttonTypeClass = getButtonTypeClass( button ),
 			messageKeyMapping,
@@ -229,19 +226,9 @@
 		return {
 			name: button.name,
 			onclick: function () {
-				var event = {
-					label: button.name,
-					action: buttonAction
-				};
-
-				if ( messageKey ) {
-					event.labelKey = messageKey;
-				}
-
 				// 'this' is the DOM element of the button; not the same as
 				// 'step'
 				button.callback( this );
-				gt.EventLogger.log( 'GuidedTourButtonClick', step, event );
 			},
 			html: {
 				class: guiders._buttonClass + ' ' + actionButtonClass + ' ' + buttonTypeClass
@@ -330,14 +317,6 @@
 		if ( button.namemsg ) {
 			// eslint-disable-next-line mediawiki/msg-doc
 			button.name = mw.message( button.namemsg ).parse();
-			// Logging for both this ButtonClick and LinkActivation needs to be
-			// coordinated with the actual page navigation,
-			//
-			// They are done together in the general-purpose link handler
-			// (handleLinkClick). That means this button type is logged
-			// somewhat differently from the others.  The message key is saved
-			// in the element for use in logging later.
-			html[ 'data-label-key' ] = button.namemsg;
 			delete button.namemsg;
 		}
 
@@ -349,37 +328,19 @@
 	}
 
 	/**
-	 * Changes a custom (no action) button to pass to guiders
-	 *
-	 * Handles wrapping onclick to add logging, and i18n
+	 * Changes a custom (no action) button to pass to guiders, handling i18n.
 	 *
 	 * @private
 	 *
 	 * @param {Object} button Button spec
 	 */
 	Step.prototype.modifyCustomButton = function ( button ) {
-		var messageKey, originalOnClick = button.onclick, step = this;
-
 		if ( button.namemsg ) {
-			messageKey = button.namemsg;
 			// eslint-disable-next-line mediawiki/msg-doc
 			button.name = mw.message( button.namemsg ).parse();
 			delete button.namemsg;
 		}
 
-		button.onclick = function ( jQueryEvent ) {
-			var event = {
-				action: 'custom',
-				label: button.name
-			};
-
-			if ( messageKey ) {
-				event.labelKey = messageKey;
-			}
-
-			originalOnClick.call( this, jQueryEvent );
-			gt.EventLogger.log( 'GuidedTourButtonClick', step, event );
-		};
 		button.html = { class: guiders._buttonClass + ' ' + getButtonTypeClass( button ) };
 	};
 
@@ -424,7 +385,6 @@
 
 		function endTour() {
 			gt.endTour();
-			gt.EventLogger.log( 'GuidedTourExited', this );
 		}
 
 		buttons = options.buttons || [];
@@ -641,8 +601,7 @@
 	 * @return {void}
 	 */
 	Step.prototype.handleOnShow = function ( guider ) {
-		var tourInfo = gt.parseTourId( guider.id ), priorCurrentStep,
-			handleLinkClickProxy = this.handleLinkClick.bind( this );
+		var tourInfo = gt.parseTourId( guider.id ), priorCurrentStep;
 
 		// We delete the cookie to allow the server to launch single-page
 		// tours by cookie.
@@ -662,90 +621,6 @@
 
 		this.registerMwHooks();
 		this.tour.currentStep = this;
-
-		// All links in title and description
-		guider.elem.find( '.guider_title, .guider_description' )
-			.on( 'click', 'a[href]', handleLinkClickProxy );
-
-		// Only real links in the buttons (not javascript:void(0))
-		guider.elem.find( '.guider_buttons' )
-			.on( 'click', 'a.guidedtour-link-button', handleLinkClickProxy );
-
-		gt.EventLogger.log( 'GuidedTourGuiderImpression', this );
-	};
-
-	// From old version of GettingStarted.  Put this in core?
-	/**
-	 * Gets a page name from a jQuery-wrapped link, in prefixed text format.
-	 *
-	 * @private
-	 *
-	 * @param {jQuery} $link wrapped link
-	 *
-	 * @return {string} page name
-	 */
-	function getPageFromLink( $link ) {
-		var titleText, href, titleFromQuery, titleObj;
-
-		titleText = $link.attr( 'title' );
-		href = $link.attr( 'href' );
-
-		titleFromQuery = mw.util.getParamValue( 'title', href );
-		// Red links will use first branch.
-		if ( titleFromQuery !== null ) {
-			titleObj = new mw.Title( titleFromQuery );
-			return titleObj.getPrefixedText();
-		} else {
-			return titleText;
-		}
-	}
-
-	/**
-	 * Handles a click on a link in the body or title of a guider, or a button link
-	 * (wikiLink or externalLink) in the buttons.
-	 *
-	 * Note, internal vs. external link detection uses the 'external' class.
-	 * If HTML is being used (rather than wikitext), this must be set manually.
-	 *
-	 * @private
-	 *
-	 * @param {jQuery.Event} jQueryEvent jQuery event for click
-	 *
-	 * @return {void}
-	 */
-	Step.prototype.handleLinkClick = function ( jQueryEvent ) {
-		var activationEvent, buttonEvent, isExternal, labelKey,
-			$link = $( jQueryEvent.currentTarget ),
-			url = $link.attr( 'href' ), label = $link.text();
-
-		activationEvent = {
-			label: label
-		};
-
-		isExternal = $link.hasClass( 'external' );
-
-		if ( isExternal ) {
-			activationEvent.href = url;
-			gt.EventLogger.log( 'GuidedTourExternalLinkActivation', this, activationEvent );
-		} else {
-			activationEvent.pageName = getPageFromLink( $link );
-			gt.EventLogger.log( 'GuidedTourInternalLinkActivation', this, activationEvent );
-		}
-
-		if ( $link.hasClass( 'guidedtour-link-button' ) ) {
-			buttonEvent = {
-				label: label
-			};
-
-			labelKey = $link.data( 'labelKey' );
-			if ( labelKey ) {
-				buttonEvent.labelKey = labelKey;
-			}
-
-			buttonEvent.action = isExternal ? 'externalLink' : 'internalLink';
-
-			gt.EventLogger.log( 'GuidedTourButtonClick', this, buttonEvent );
-		}
 	};
 
 	/**
@@ -773,10 +648,6 @@
 		if ( closeType === 'xButton' ) {
 			// User-initiated exit
 			gt.removeTourFromUserStateByGuider( guider );
-			gt.EventLogger.log( 'GuidedTourExited', this );
-		} else {
-			// User-initiated hide
-			gt.EventLogger.log( 'GuidedTourGuiderHidden', this );
 		}
 	};
 

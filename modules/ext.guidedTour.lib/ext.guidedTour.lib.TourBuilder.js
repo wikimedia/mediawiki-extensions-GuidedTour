@@ -31,8 +31,6 @@
 	 *  - 'VisualEditor' - Show on pages that are part of the VisualEditor flow.
 	 *    This means all pages, except for the wikitext editor, wikitext preview,
 	 *    and wikitext show changes.
-	 * @param {boolean} [tourSpec.shouldLog=false] Whether to log events to
-	 *  EventLogging
 	 *
 	 * @throws {mw.guidedTour.TourDefinitionError} If tourSpec is missing or the tour
 	 *  is unnamed
