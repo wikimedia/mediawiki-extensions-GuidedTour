@@ -119,5 +119,3 @@ class GuidedTourLauncher {
 		Hooks::addTour( $wgOut, $tourName );
 	}
 }
-
-class_alias( GuidedTourLauncher::class, 'GuidedTourLauncher' );

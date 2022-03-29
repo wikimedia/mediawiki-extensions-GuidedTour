@@ -28,10 +28,6 @@
 			"i18n"
 		]
 	},
-	"AutoloadClasses": {
-		"GuidedTourLauncher": "includes/GuidedTourLauncher.php",
-		"MediaWiki\\Extension\\GuidedTour\\GuidedTourLauncher": "includes/GuidedTourLauncher.php"
-	},
 	"AutoloadNamespaces": {
 		"MediaWiki\\Extension\\GuidedTour\\": "includes/"
 	},
