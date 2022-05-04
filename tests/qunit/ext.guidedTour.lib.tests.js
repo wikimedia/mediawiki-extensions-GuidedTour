@@ -41,7 +41,7 @@
 	}
 
 	QUnit.module( 'ext.guidedTour.lib', QUnit.newMwEnvironment( {
-		setup: function () {
+		beforeEach: function () {
 			originalVE = window.ve;
 
 			validTourBuilder = new gt.TourBuilder( { name: 'placeholder' } );
@@ -59,7 +59,7 @@
 
 			this.stub( mw.libs.guiders, 'show' );
 		},
-		teardown: function () {
+		afterEach: function () {
 			window.ve = originalVE;
 		}
 	} ) );
