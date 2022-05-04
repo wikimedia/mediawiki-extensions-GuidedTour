@@ -27,17 +27,11 @@
 	var cookieName = cookieConfig.name;
 	var cookieParams = cookieConfig.parameters;
 
-	// QUnit's "throws" only lets you check one at a time
-	function assertThrowsTypeAndMessage( assert, block, errorConstructor, regexErrorMessage, message ) {
-		var actualException;
-		try {
-			block();
-		} catch ( exc ) {
-			actualException = exc;
-		}
-
-		assert.assertTrue( actualException instanceof errorConstructor, message + ': Actual exception is instanceof expected constructor' );
-		assert.assertTrue( regexErrorMessage.test( actualException ), message + ': Text of actual exception matches expected message' );
+	function compareTypeAndMessage( errorConstructor, regexErrorMessage ) {
+		return function ( actualException ) {
+			return actualException instanceof errorConstructor &&
+				regexErrorMessage.test( actualException );
+		};
 	}
 
 	QUnit.module( 'ext.guidedTour.lib', QUnit.newMwEnvironment( {
@@ -271,8 +265,7 @@
 			instances: [ {} ]
 		};
 
-		assertThrowsTypeAndMessage(
-			assert,
+		assert.throws(
 			function () {
 				return gt.shouldShowTour( {
 					tourName: 'test',
@@ -289,8 +282,7 @@
 					condition: 'bogus'
 				} );
 			},
-			gt.TourDefinitionError,
-			/'bogus' is not a supported condition/,
+			compareTypeAndMessage( gt.TourDefinitionError, /'bogus' is not a supported condition/ ),
 			'gt.TourDefinitionError with correct error message for invalid condition'
 		);
 
@@ -568,70 +560,58 @@
 		// Suppress warnings that defineTour is deprecated
 		this.suppressWarnings();
 
-		assertThrowsTypeAndMessage(
-			assert,
+		assert.throws(
 			function () {
 				return gt.defineTour();
 			},
-			gt.TourDefinitionError,
-			SPEC_MUST_BE_OBJECT,
+			compareTypeAndMessage( gt.TourDefinitionError, SPEC_MUST_BE_OBJECT ),
 			'gt.TourDefinitionError with correct error message for empty call'
 		);
 
-		assertThrowsTypeAndMessage(
-			assert,
+		assert.throws(
 			function () {
 				return gt.defineTour( VALID_TOUR_SPEC, VALID_DEFINE_TOUR_STEP_SPEC );
 			},
-			gt.TourDefinitionError,
-			SPEC_MUST_BE_OBJECT,
+			compareTypeAndMessage( gt.TourDefinitionError, SPEC_MUST_BE_OBJECT ),
 			'gt.TourDefinitionError with correct error message for multiple parameters'
 		);
 
-		assertThrowsTypeAndMessage(
-			assert,
+		assert.throws(
 			function () {
 				return gt.defineTour( null );
 			},
-			gt.TourDefinitionError,
-			SPEC_MUST_BE_OBJECT,
+			compareTypeAndMessage( gt.TourDefinitionError, SPEC_MUST_BE_OBJECT ),
 			'gt.TourDefinitionError with correct error message for null call'
 		);
 
-		assertThrowsTypeAndMessage(
-			assert,
+		assert.throws(
 			function () {
 				return gt.defineTour( {
 					steps: [ VALID_DEFINE_TOUR_STEP_SPEC ]
 				} );
 			},
-			gt.TourDefinitionError,
-			NAME_MUST_BE_STRING,
+			compareTypeAndMessage( gt.TourDefinitionError, NAME_MUST_BE_STRING ),
 			'gt.TourDefinitionError with correct error message for missing name'
 		);
 
-		assertThrowsTypeAndMessage(
-			assert,
+		assert.throws(
 			function () {
 				return gt.defineTour( {
 					name: 'test',
 					steps: VALID_DEFINE_TOUR_STEP_SPEC
 				} );
 			},
-			gt.TourDefinitionError,
-			STEPS_MUST_BE_ARRAY,
+			compareTypeAndMessage( gt.TourDefinitionError, STEPS_MUST_BE_ARRAY ),
 			'gt.TourDefinitionError with correct error message for object passed for steps'
 		);
 
-		assertThrowsTypeAndMessage(
-			assert,
+		assert.throws(
 			function () {
 				return gt.defineTour( {
 					name: 'test'
 				} );
 			},
-			gt.TourDefinitionError,
-			STEPS_MUST_BE_ARRAY,
+			compareTypeAndMessage( gt.TourDefinitionError, STEPS_MUST_BE_ARRAY ),
 			'gt.TourDefinitionError with correct error message for missing steps'
 		);
 
@@ -653,8 +633,7 @@
 			'Valid StepBuilder constructed in setup is constructed normally'
 		);
 
-		assertThrowsTypeAndMessage(
-			assert,
+		assert.throws(
 			function () {
 				// eslint-disable-next-line no-unused-vars
 				var missingNameBuilder = new gt.StepBuilder( validTour, {
@@ -662,13 +641,11 @@
 					attachTo: '#ca-edit'
 				} );
 			},
-			gt.TourDefinitionError,
-			STEP_NAME_MUST_BE_STRING,
+			compareTypeAndMessage( gt.TourDefinitionError, STEP_NAME_MUST_BE_STRING ),
 			'gt.TourDefinitionError when name is missing'
 		);
 
-		assertThrowsTypeAndMessage(
-			assert,
+		assert.throws(
 			function () {
 				// eslint-disable-next-line no-unused-vars
 				var numericNameBuilder = new gt.StepBuilder( validTour, {
@@ -677,8 +654,7 @@
 					attachTo: '#ca-edit'
 				} );
 			},
-			gt.TourDefinitionError,
-			STEP_NAME_MUST_BE_STRING,
+			compareTypeAndMessage( gt.TourDefinitionError, STEP_NAME_MUST_BE_STRING ),
 			'gt.TourDefinitionError when name is a Number'
 		);
 	} );
@@ -755,13 +731,11 @@
 			description: 'returnsToInvalidName description'
 		} );
 		pointsInvalidNameStepBuilder.next( 'bogus' );
-		assertThrowsTypeAndMessage(
-			assert,
+		assert.throws(
 			function () {
 				pointsInvalidNameStepBuilder.step.nextCallback();
 			},
-			gt.TourDefinitionError,
-			VALUE_PASSED_NEXT_NOT_VALID_STEP,
+			compareTypeAndMessage( gt.TourDefinitionError, VALUE_PASSED_NEXT_NOT_VALID_STEP ),
 			'nextCallback throws if an invalid (not present in current tour) step name was passed to next'
 		);
 
@@ -772,13 +746,11 @@
 			'Registers a callback that returns the correct Step, given a step name'
 		);
 
-		assertThrowsTypeAndMessage(
-			assert,
+		assert.throws(
 			function () {
 				firstStepBuilder.next( stepBuilderCallback );
 			},
-			gt.TourDefinitionError,
-			/\.next\(\) can not be called more than once per StepBuilder/,
+			compareTypeAndMessage( gt.TourDefinitionError, /\.next\(\) can not be called more than once per StepBuilder/ ),
 			'Multiple calls should trigger an error'
 		);
 
@@ -787,13 +759,11 @@
 			description: 'returnsToOtherTour description'
 		} );
 		pointsOtherTourStepBuilder.next( otherTourStepBuilder );
-		assertThrowsTypeAndMessage(
-			assert,
+		assert.throws(
 			function () {
 				pointsOtherTourStepBuilder.step.nextCallback();
 			},
-			gt.TourDefinitionError,
-			VALUE_PASSED_NEXT_NOT_VALID_STEP,
+			compareTypeAndMessage( gt.TourDefinitionError, VALUE_PASSED_NEXT_NOT_VALID_STEP ),
 			'nextCallback throws if a StepBuilder from a different Tour was passed to next'
 		);
 
@@ -811,13 +781,11 @@
 		returnsInvalidNameCallbackStepBuilder.next( function () {
 			return 'bogus';
 		} );
-		assertThrowsTypeAndMessage(
-			assert,
+		assert.throws(
 			function () {
 				returnsInvalidNameCallbackStepBuilder.step.nextCallback();
 			},
-			gt.TourDefinitionError,
-			CALLBACK_PASSED_NEXT_RETURNED_INVALID,
+			compareTypeAndMessage( gt.TourDefinitionError, CALLBACK_PASSED_NEXT_RETURNED_INVALID ),
 			'nextCallback throws if a callback that returns an invalid step name was passed to next'
 		);
 
@@ -837,13 +805,11 @@
 		returnsOtherTourCallbackStepBuilder.next( function () {
 			return otherTourStepBuilder;
 		} );
-		assertThrowsTypeAndMessage(
-			assert,
+		assert.throws(
 			function () {
 				returnsOtherTourCallbackStepBuilder.step.nextCallback();
 			},
-			gt.TourDefinitionError,
-			CALLBACK_PASSED_NEXT_RETURNED_INVALID,
+			compareTypeAndMessage( gt.TourDefinitionError, CALLBACK_PASSED_NEXT_RETURNED_INVALID ),
 			'nextCallback throws if a callback that returns a StepBuilder from a different Tour was passed to next'
 		);
 
@@ -911,13 +877,11 @@
 		returnsInvalidNameCallbackStepBuilder.transition( function () {
 			return 'bogus';
 		} );
-		assertThrowsTypeAndMessage(
-			assert,
+		assert.throws(
 			function () {
 				returnsInvalidNameCallbackStepBuilder.step.transitionCallback();
 			},
-			gt.TourDefinitionError,
-			CALLBACK_PASSED_TRANSITION_RETURNED_INVALID,
+			compareTypeAndMessage( gt.TourDefinitionError, CALLBACK_PASSED_TRANSITION_RETURNED_INVALID ),
 			'transitionCallback throws if a callback that returns an invalid step name was passed to transition'
 		);
 
@@ -928,13 +892,11 @@
 		returnsOtherTourCallbackStepBuilder.transition( function () {
 			return otherTourStepBuilder;
 		} );
-		assertThrowsTypeAndMessage(
-			assert,
+		assert.throws(
 			function () {
 				returnsOtherTourCallbackStepBuilder.step.transitionCallback();
 			},
-			gt.TourDefinitionError,
-			CALLBACK_PASSED_TRANSITION_RETURNED_INVALID,
+			compareTypeAndMessage( gt.TourDefinitionError, CALLBACK_PASSED_TRANSITION_RETURNED_INVALID ),
 			'transitionCallback throws if a callback that returns a StepBuilder from a different Tour was passed to transition'
 		);
 
@@ -945,25 +907,21 @@
 		returnsInvalidTransitionActionStepBuilder.transition( function () {
 			return 3;
 		} );
-		assertThrowsTypeAndMessage(
-			assert,
+		assert.throws(
 			function () {
 				returnsInvalidTransitionActionStepBuilder.step.transitionCallback();
 			},
-			gt.TourDefinitionError,
-			/Callback passed to \.transition\(\) returned a number that is not a valid TransitionAction/,
+			compareTypeAndMessage( gt.TourDefinitionError, /Callback passed to \.transition\(\) returned a number that is not a valid TransitionAction/ ),
 			'transitionCallback throws if a callback returns a number that is not a valid TransitionAction'
 		);
 
-		assertThrowsTypeAndMessage(
-			assert,
+		assert.throws(
 			function () {
 				firstStepBuilder.transition( function () {
 					return editStepBuilder;
 				} );
 			},
-			gt.TourDefinitionError,
-			/\.transition\(\) can not be called more than once per StepBuilder/,
+			compareTypeAndMessage( gt.TourDefinitionError, /\.transition\(\) can not be called more than once per StepBuilder/ ),
 			'Multiple calls should trigger an error'
 		);
 
@@ -971,14 +929,12 @@
 			name: 'parameterNotFunctionStepBuilder',
 			description: 'parameterNotFunctionStepBuilder description'
 		} );
-		assertThrowsTypeAndMessage(
-			assert,
+		assert.throws(
 			function () {
 				parameterNotFunctionStepBuilder.transition( linkStepBuilder );
 			},
-			gt.TourDefinitionError,
-			/\.transition\(\) takes one argument, a function/,
-			'Throws if callback is not a function'
+			compareTypeAndMessage( gt.TourDefinitionError, /\.transition\(\) takes one argument, a function/ ),
+			'callback is not a function'
 		);
 	} );
 
@@ -1000,13 +956,11 @@
 			'Step ID is correct'
 		);
 
-		assertThrowsTypeAndMessage(
-			assert,
+		assert.throws(
 			function () {
 				step.nextCallback();
 			},
-			gt.TourDefinitionError,
-			/action: "next" used without calling \.next\(\) when building step/,
+			compareTypeAndMessage( gt.TourDefinitionError, /action: "next" used without calling \.next\(\) when building step/ ),
 			'Error is flagged if Step is constructed, the nextCallback is used without calling .next() on builder'
 		);
 
@@ -1202,38 +1156,32 @@
 	QUnit.test( 'TourBuilder.constructor', function ( assert ) {
 		var CHECK_YOUR_SYNTAX = /Check your syntax. There must be exactly one argument, 'tourSpec', which must be an object/;
 
-		assertThrowsTypeAndMessage(
-			assert,
+		assert.throws(
 			function () {
 				// eslint-disable-next-line no-unused-vars
 				var tour = new gt.TourBuilder();
 			},
-			gt.TourDefinitionError,
-			CHECK_YOUR_SYNTAX,
+			compareTypeAndMessage( gt.TourDefinitionError, CHECK_YOUR_SYNTAX ),
 			'Throws if no tour specification is passed'
 		);
 
-		assertThrowsTypeAndMessage(
-			assert,
+		assert.throws(
 			function () {
 				// eslint-disable-next-line no-unused-vars
 				var tour = new gt.TourBuilder( 'test' );
 			},
-			gt.TourDefinitionError,
-			CHECK_YOUR_SYNTAX,
+			compareTypeAndMessage( gt.TourDefinitionError, CHECK_YOUR_SYNTAX ),
 			'Throws if the tour specification is not an object'
 		);
 
-		assertThrowsTypeAndMessage(
-			assert,
+		assert.throws(
 			function () {
 				// eslint-disable-next-line no-unused-vars
 				var tour = new gt.TourBuilder( {
 					tourName: 'test'
 				} );
 			},
-			gt.TourDefinitionError,
-			/'tourSpec.name' must be a string, the tour name/
+			compareTypeAndMessage( gt.TourDefinitionError, /'tourSpec.name' must be a string, the tour name/ )
 		);
 
 		assert.strictEqual(
@@ -1260,16 +1208,14 @@
 			'stepCount is correct after multiple calls'
 		);
 
-		assertThrowsTypeAndMessage(
-			assert,
+		assert.throws(
 			function () {
 				validTourBuilder.step( {
 					name: 'save',
 					description: 'save description'
 				} );
 			},
-			gt.TourDefinitionError,
-			/The name "save" is already taken\. {2}Two steps in a tour can not have the same name/,
+			compareTypeAndMessage( gt.TourDefinitionError, /The name "save" is already taken\. {2}Two steps in a tour can not have the same name/ ),
 			'Step cname can not repeat'
 		);
 	} );
@@ -1277,13 +1223,11 @@
 	QUnit.test( 'TourBuilder.firstStep', function ( assert ) {
 		var previewStepSpec = $.extend( {}, VALID_BUILDER_STEP_SPEC, { name: 'preview' } );
 
-		assertThrowsTypeAndMessage(
-			assert,
+		assert.throws(
 			function () {
 				validTourBuilder.firstStep( previewStepSpec );
 			},
-			gt.TourDefinitionError,
-			/You can only specify one first step/,
+			compareTypeAndMessage( gt.TourDefinitionError, /You can only specify one first step/ ),
 			'Verify that TourBuilder.first can call once per candidate'
 		);
 	} );
@@ -1421,23 +1365,19 @@
 			'getStep can validate that a Step belongs to the tour and return it'
 		);
 
-		assertThrowsTypeAndMessage(
-			assert,
+		assert.throws(
 			function () {
 				validTour.getStep( 'bogus' );
 			},
-			gt.IllegalArgumentError,
-			/Step "bogus" not found in the "placeholder" tour/,
+			compareTypeAndMessage( gt.IllegalArgumentError, /Step "bogus" not found in the "placeholder" tour/ ),
 			'Throws if a step name is not found in the tour'
 		);
 
-		assertThrowsTypeAndMessage(
-			assert,
+		assert.throws(
 			function () {
 				validTour.getStep( otherTourStepBuilder.step );
 			},
-			gt.IllegalArgumentError,
-			/Step object must belong to this tour \("placeholder"\)/,
+			compareTypeAndMessage( gt.IllegalArgumentError, /Step object must belong to this tour \("placeholder"\)/ ),
 			'Throws if a step object does not belong to the tour'
 		);
 	} );
@@ -1466,13 +1406,11 @@
 		var tourBuilder = new gt.TourBuilder( {
 			name: 'reference'
 		} );
-		assertThrowsTypeAndMessage(
-			assert,
+		assert.throws(
 			function () {
 				tourBuilder.tour.start();
 			},
-			gt.TourDefinitionError,
-			/The \.firstStep\(\) method must be called for all tours/,
+			compareTypeAndMessage( gt.TourDefinitionError, /The \.firstStep\(\) method must be called for all tours/ ),
 			'Throws if firstStep was not called'
 		);
 	} );
