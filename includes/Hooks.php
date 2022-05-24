@@ -4,10 +4,9 @@ namespace MediaWiki\Extension\GuidedTour;
 
 use ExtensionRegistry;
 use FormatJson;
+use MediaWiki\ResourceLoader as RL;
+use MediaWiki\ResourceLoader\ResourceLoader;
 use OutputPage;
-use ResourceLoader;
-use ResourceLoaderContext;
-use ResourceLoaderModule;
 use Skin;
 use Title;
 
@@ -34,10 +33,10 @@ class Hooks {
 	 *
 	 * If the page does not exist, it will not be set.
 	 *
-	 * @param ResourceLoaderContext $context
+	 * @param RL\Context $context
 	 * @return array
 	 */
-	public static function getHelpGuiderUrl( ResourceLoaderContext $context ) {
+	public static function getHelpGuiderUrl( RL\Context $context ) {
 		$data = [];
 
 		$pageName = $context->msg( 'guidedtour-help-guider-url' )
@@ -109,8 +108,8 @@ class Hooks {
 	 * @return bool true if a module was added, false otherwise
 	 */
 	public static function addTour( $out, $tourName ) {
-		$isUserJsAllowed = $out->getAllowedModules( ResourceLoaderModule::TYPE_SCRIPTS )
-			>= ResourceLoaderModule::ORIGIN_USER_INDIVIDUAL;
+		$isUserJsAllowed = $out->getAllowedModules( RL\Module::TYPE_SCRIPTS )
+			>= RL\Module::ORIGIN_USER_INDIVIDUAL;
 
 		// Exclude '-' because MediaWiki message keys use it as a separator after the tourname.
 		// Exclude '.' because module names use it as a separator.
