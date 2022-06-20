@@ -23,7 +23,7 @@
 	"guidedtour-tour-test-test-description": "Este é um teste da descrição. Lorem ipsum dolor sit!",
 	"guidedtour-tour-test-callouts": "Textos explicativos de teste",
 	"guidedtour-tour-test-portal-description": "Esta é a página de {{int:portal}}.",
-	"guidedtour-tour-test-mediawiki-parse": "Testar a análise sintáctica do Mediawiki",
+	"guidedtour-tour-test-mediawiki-parse": "Testar a análise sintáctica do MediaWiki",
 	"guidedtour-tour-test-wikitext-description": "Um guia na sua visita guiada pela wiki pode conter texto wiki. Use-o para criar uma hiperligação para a [[{{MediaWiki:Guidedtour-help-url}}|documentação das visitas guiadas]]. Ou uma [https://example.com hiperligação externa], por exemplo.",
 	"guidedtour-tour-test-description-page": "Testar páginas de descrição do MediaWiki",
 	"guidedtour-tour-test-go-description-page": "Ir para a página de descrição",
