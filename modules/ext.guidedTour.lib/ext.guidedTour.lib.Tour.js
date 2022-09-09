@@ -23,9 +23,6 @@
 	function Tour( tourSpec ) {
 		var moduleName;
 
-		// Disable all logging from this extension per T288416
-		tourSpec.shouldLog = false;
-
 		/**
 		 * Name of tour
 		 *
@@ -54,15 +51,6 @@
 		 * @readonly
 		 */
 		this.showConditionally = tourSpec.showConditionally;
-
-		/**
-		 * Whether to log events for the tour
-		 *
-		 * @property {boolean}
-		 * @private
-		 * @readonly
-		 */
-		this.shouldLog = tourSpec.shouldLog;
 
 		internal.definedTours[ this.name ] = this;
 

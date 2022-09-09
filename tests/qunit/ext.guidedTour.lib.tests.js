@@ -1117,8 +1117,6 @@
 		var updateUserStateSpy = this.spy( gt, 'updateUserStateForTour' );
 		var unregisterSpy = this.spy( gt.Step.prototype, 'unregisterMwHooks' );
 
-		// Use an empty jQuery context for elem since we're not testing the logging
-		// event registration currently.
 		firstStep.handleOnShow( { id: firstStep.specification.id, elem: $() } );
 		assert.strictEqual(
 			unregisterSpy.callCount,

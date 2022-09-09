@@ -876,8 +876,7 @@
 	 * it immediately
 	 *
 	 * mw.guidedTour.Tour#constructor has details on tourSpec.name,
-	 *   tourSpec.isSinglePage, tourSpec.showConditionally, and
-	 *   tourSpec.shouldLog
+	 * tourSpec.isSinglePage, and tourSpec.showConditionally.
 	 *
 	 * @method defineTour
 	 * @deprecated

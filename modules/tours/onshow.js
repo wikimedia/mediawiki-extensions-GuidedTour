@@ -15,9 +15,7 @@
 		 * If this is an on-wiki tour, it should match the MediaWiki page.  For instance,
 		 * if this were on-wiki, it would be MediaWiki:Guidedtour-tour-test.js
 		 */
-		name: 'onshow',
-		// Disable all logging from this extension per T288416
-		shouldLog: false
+		name: 'onshow'
 	} );
 
 	// If there is no page, this is also the last step.
