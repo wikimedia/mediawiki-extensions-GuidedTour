@@ -8,14 +8,15 @@
 			"LNDDYL",
 			"NigelSoft",
 			"Simon Shek",
-			"Spring Roll Conan"
+			"Spring Roll Conan",
+			"捍粵者"
 		]
 	},
 	"guidedtour-desc": "允許頁面提供彈出式導覽來引導新使用者",
 	"guidedtour-help-url": "Help:導覽",
 	"guidedtour-help-guider-url": "Help:導覽/嚮導",
 	"guidedtour-next-button": "下一步",
-	"guidedtour-okay-button": "好的",
+	"guidedtour-okay-button": "了解",
 	"guidedtour-back-button": "返回",
 	"guidedtour-tour-test-testing": "測試",
 	"guidedtour-tour-test-test-description": "這是一個描述的測試。 Lorem ipsum dolor sit!",
