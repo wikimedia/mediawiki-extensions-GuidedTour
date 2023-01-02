@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Kimberli Mäkäräinen (WMNO)",
 			"Yupik"
 		]
 	},
-	"guidedtour-next-button": "Čuovvovaš"
+	"guidedtour-next-button": "Čuovvovaš",
+	"guidedtour-back-button": "Ruovttoluotta"
 }
