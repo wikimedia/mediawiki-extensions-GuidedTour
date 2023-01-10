@@ -11,6 +11,7 @@
 	"guidedtour-okay-button": "V redu",
 	"guidedtour-back-button": "Nazaj",
 	"guidedtour-tour-test-go-description-page": "Pojdi na opisno stran",
+	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|Predogled}} vaših sprememb (izbirno)",
 	"guidedtour-tour-firsteditve-edit-page-description": "Za prikaz sprememb, ki ste jih vnesli, {{GENDER:|kliknite}} gumb »$1«.",
 	"guidedtour-tour-firsteditve-edit-section-description": "V vsakem večjem razdelku strani so na voljo povezave »$1«, s katerimi se lahko osredotočite samo na ta del.",
 	"guidedtour-tour-firsteditve-save-description": "Ko boste pripravljeni, lahko s klikom gumba »{{int:publishchanges}}« svoje spremembe napravite vidne vsakomur."
