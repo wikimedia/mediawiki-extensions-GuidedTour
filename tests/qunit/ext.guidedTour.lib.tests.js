@@ -988,12 +988,12 @@
 
 		tourBuilder.tour.showStep( firstStep );
 		var returnedButtons = spy.lastCall.args[ 0 ].buttons;
-		assert.ok(
+		assert.assertTrue(
 			returnedButtons[ 0 ].html.class.indexOf( 'mw-ui-destructive' ) !== -1 &&
 			returnedButtons[ 0 ].html.class.indexOf( 'mw-ui-button' ) !== -1,
 			'Destructive custom button'
 		);
-		assert.ok(
+		assert.assertTrue(
 			returnedButtons[ 1 ].html.class.indexOf( 'mw-ui-button' ) !== -1 &&
 			returnedButtons[ 1 ].html.class.indexOf( 'mw-ui-progressive' ) !== -1 &&
 			returnedButtons[ 1 ].html.class.indexOf( 'mw-ui-quiet' ) !== -1,
