@@ -675,7 +675,7 @@
 			1,
 			'step.listenMwHook should be called once if a single hook name is passed'
 		);
-		assert.assertTrue(
+		assert.true(
 			listenForMwHookSpy.calledWithExactly( 'StepBuilder.listenForMwHooks.happened' ),
 			'step.listenMwHook should be called once with the correct hook name if a single hook name is passed'
 		);
@@ -687,11 +687,11 @@
 			2,
 			'step.listenMwHook should be called twice if two hook names are passed'
 		);
-		assert.assertTrue(
+		assert.true(
 			listenForMwHookSpy.calledWithExactly( 'StepBuilder.listenForMwHooks.one' ),
 			'step.listenMwHook should be called with the first hook name if multiple are passed'
 		);
-		assert.assertTrue(
+		assert.true(
 			listenForMwHookSpy.calledWithExactly( 'StepBuilder.listenForMwHooks.another' ),
 			'step.listenMwHook should be called with the second hook name if multiple are passed'
 		);
@@ -988,12 +988,12 @@
 
 		tourBuilder.tour.showStep( firstStep );
 		var returnedButtons = spy.lastCall.args[ 0 ].buttons;
-		assert.assertTrue(
+		assert.true(
 			returnedButtons[ 0 ].html.class.indexOf( 'mw-ui-destructive' ) !== -1 &&
 			returnedButtons[ 0 ].html.class.indexOf( 'mw-ui-button' ) !== -1,
 			'Destructive custom button'
 		);
-		assert.assertTrue(
+		assert.true(
 			returnedButtons[ 1 ].html.class.indexOf( 'mw-ui-button' ) !== -1 &&
 			returnedButtons[ 1 ].html.class.indexOf( 'mw-ui-progressive' ) !== -1 &&
 			returnedButtons[ 1 ].html.class.indexOf( 'mw-ui-quiet' ) !== -1,
@@ -1088,12 +1088,12 @@
 			'registerMwHookListener called once for each hook the step is listening for'
 		);
 
-		assert.assertTrue(
+		assert.true(
 			registerMwHookListenerSpy.calledWithExactly( 'Step.registerMwHooks.something' ),
 			'registerMwHookListener called with the first hook that is being listened for'
 		);
 
-		assert.assertTrue(
+		assert.true(
 			registerMwHookListenerSpy.calledWithExactly( 'Step.registerMwHooks.another' ),
 			'registerMwHookListener called with the second hook that is being listened for'
 		);
@@ -1326,12 +1326,12 @@
 		var done = assert.async();
 
 		validTour.initialize().done( function () {
-			assert.assertTrue(
+			assert.true(
 				stepInitializeSpy.calledOn( firstStep ),
 				'Initializing tour first time initializes first step'
 			);
 
-			assert.assertTrue(
+			assert.true(
 				stepInitializeSpy.calledOn( previewStepBuilder.step ),
 				'Initializing tour first time initializes other steps'
 			);
