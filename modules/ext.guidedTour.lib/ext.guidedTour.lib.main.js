@@ -779,7 +779,7 @@
 			if ( cookieState.tours[ tourName ] === undefined ) {
 				cookieState.tours[ tourName ] = {};
 
-				cookieState.tours[ tourName ].startTime = new Date().getTime();
+				cookieState.tours[ tourName ].startTime = Date.now();
 			}
 
 			if (

@@ -194,7 +194,6 @@
 	Step.prototype.getActionButton = function ( button ) {
 		var messageKey,
 			actionButtonClass = 'guidedtour-' + button.action + '-button',
-			// eslint-disable-next-line no-use-before-define
 			buttonTypeClass = getButtonTypeClass( button ),
 			messageKeyMapping,
 			hasIcon;
