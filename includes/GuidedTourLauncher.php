@@ -4,6 +4,7 @@ namespace MediaWiki\Extension\GuidedTour;
 
 use FormatJson;
 use OutputPage;
+use RequestContext;
 
 /**
  * Allows server-side launching of tours (without the URL parameter).
@@ -78,7 +79,7 @@ class GuidedTourLauncher {
 	 * @param string $step Step to navigate to
 	 */
 	public static function launchTour( $tourName, $step ) {
-		global $wgOut;
+		$context = RequestContext::getMain();
 
 		self::$directLaunchState = self::getNewState(
 			self::$directLaunchState,
@@ -86,7 +87,7 @@ class GuidedTourLauncher {
 			$step
 		);
 
-		Hooks::addTour( $wgOut, $tourName );
+		Hooks::addTour( $context->getOutput(), $tourName );
 	}
 
 	/**
@@ -108,14 +109,15 @@ class GuidedTourLauncher {
 	 * @param string $step Step to navigate to
 	 */
 	public static function launchTourByCookie( $tourName, $step ) {
-		global $wgOut, $wgRequest;
+		$context = RequestContext::getMain();
 
-		$oldCookie = $wgRequest->getCookie( Hooks::COOKIE_NAME );
+		$request = $context->getRequest();
+		$oldCookie = $request->getCookie( Hooks::COOKIE_NAME );
 		$newCookie = self::getNewCookie( $oldCookie, $tourName, $step );
-		$wgRequest->response()->setCookie( Hooks::COOKIE_NAME, $newCookie, 0, [
+		$request->response()->setCookie( Hooks::COOKIE_NAME, $newCookie, 0, [
 			'httpOnly' => false,
 		] );
 
-		Hooks::addTour( $wgOut, $tourName );
+		Hooks::addTour( $context->getOutput(), $tourName );
 	}
 }
