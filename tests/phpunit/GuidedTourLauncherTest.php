@@ -26,7 +26,7 @@ class GuidedTourLauncherTest extends MediaWikiIntegrationTestCase {
 		);
 	}
 
-	public function getNewStateProvider() {
+	public static function getNewStateProvider() {
 		$simpleExpectedState = [
 			'version' => 1,
 			'tours' => [
@@ -116,7 +116,7 @@ class GuidedTourLauncherTest extends MediaWikiIntegrationTestCase {
 		);
 	}
 
-	public function getNewCookieProvider() {
+	public static function getNewCookieProvider() {
 		$simpleExpectedCookieString = FormatJson::encode( [
 			'version' => 1,
 			'tours' => [
