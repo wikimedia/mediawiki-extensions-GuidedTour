@@ -1,9 +1,30 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mantak111"
+			"Mantak111",
+			"Nokeoo"
 		]
 	},
+	"guidedtour-desc": "Leidžia puslapiams pateikti iššokančią apžvalgą, kuri padeda naujiems naudotojams",
 	"guidedtour-next-button": "Kitas",
-	"guidedtour-okay-button": "Gerai"
+	"guidedtour-okay-button": "Gerai",
+	"guidedtour-back-button": "Atgal",
+	"guidedtour-tour-test-testing": "Testuojama",
+	"guidedtour-tour-test-test-description": "Tai aprašymo testas. Lorem ipsum dolor sit!",
+	"guidedtour-tour-test-portal-description": "Tai {{int:portal}} puslapis.",
+	"guidedtour-tour-test-description-page": "Išbandykite MediaWiki aprašymo puslapius",
+	"guidedtour-tour-test-go-description-page": "Eiti į aprašymo puslapį",
+	"guidedtour-tour-test-launch-tour": "Bandyti paleisti turą",
+	"guidedtour-tour-test-launch-editing": "Paleisti turą apie redagavimą",
+	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|Redaguokite}} visą puslapį…",
+	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Spustelėkite}} mygtuką „$1“, kad atliktumėte pakeitimus.",
+	"guidedtour-tour-firstedit-edit-section-title": "Arba {{GENDER:|redaguokite}} skyrių",
+	"guidedtour-tour-firstedit-edit-section-description": "Kiekvienoje pagrindinėje puslapio skiltyje yra nuorodos „{{int:editsection}}“, todėl galite sutelkti dėmesį tik į tą dalį.",
+	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|Peržiūrėkite}} savo pakeitimus (neprivaloma)",
+	"guidedtour-tour-firstedit-preview-description": "Spustelėję „{{int:showpreview}}“ galite pamatyti kaip puslapis atrodys su jūsų pakeitimais. Tik nepamirškite išsaugoti!",
+	"guidedtour-tour-firstedit-save-title": "Beveik baigėte!",
+	"guidedtour-tour-firstedit-save-description": "Kai būsite pasiruošę, spustelėjus „{{int:publishchanges}}“ jūsų pakeitimai bus matomi visiems.",
+	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|Spustelėkite}} mygtuką „$1“, kad atliktumėte pakeitimus.",
+	"guidedtour-tour-firsteditve-edit-section-description": "Kiekvienoje pagrindinėje puslapio skiltyje yra nuorodos „$1“, todėl galite sutelkti dėmesį tik į tą dalį.",
+	"guidedtour-tour-firsteditve-save-description": "Kai būsite pasiruošę, spustelėjus „{{int:publishchanges}}“ jūsų pakeitimai bus matomi visiems."
 }
