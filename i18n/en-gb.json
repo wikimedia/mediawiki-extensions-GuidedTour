@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Piano1forte2"
+		]
+	},
+	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Click}} the '$1' button to make your changes.",
+	"guidedtour-tour-firstedit-edit-section-description": "There are '{{int:editsection}}' links for each major section in a page, so you can focus on just that part.",
+	"guidedtour-tour-firstedit-preview-description": "Clicking '{{int:showpreview}}' allows you to check what the page will look like with your changes. Just don't forget to save!",
+	"guidedtour-tour-firstedit-save-description": "When you're ready, clicking '{{int:publishchanges}}' will make your changes visible for everyone.",
+	"guidedtour-tour-firsteditve-edit-section-description": "There are '$1' links for each major section in a page, so you can focus on just that part.",
+	"guidedtour-tour-firsteditve-save-description": "When you're ready, clicking '{{int:publishchanges}}' will make your changes visible for everyone."
+}
