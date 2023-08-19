@@ -6,9 +6,9 @@ use ExtensionRegistry;
 use FormatJson;
 use MediaWiki\ResourceLoader as RL;
 use MediaWiki\ResourceLoader\ResourceLoader;
+use MediaWiki\Title\Title;
 use OutputPage;
 use Skin;
-use Title;
 
 /**
  * Use a hook to include this extension's functionality in pages
