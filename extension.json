@@ -177,10 +177,15 @@
 		]
 	},
 	"Hooks": {
-		"BeforePageDisplay": "MediaWiki\\Extension\\GuidedTour\\Hooks::onBeforePageDisplay",
-		"ResourceLoaderRegisterModules": "MediaWiki\\Extension\\GuidedTour\\Hooks::onResourceLoaderRegisterModules",
-		"RedirectSpecialArticleRedirectParams": "MediaWiki\\Extension\\GuidedTour\\Hooks::onRedirectSpecialArticleRedirectParams",
-		"MakeGlobalVariablesScript": "MediaWiki\\Extension\\GuidedTour\\GuidedTourLauncher::onMakeGlobalVariablesScript"
+		"BeforePageDisplay": "main",
+		"ResourceLoaderRegisterModules": "main",
+		"RedirectSpecialArticleRedirectParams": "main",
+		"MakeGlobalVariablesScript": "main"
+	},
+	"HookHandlers": {
+		"main": {
+			"class": "MediaWiki\\Extension\\GuidedTour\\Hooks"
+		}
 	},
 	"manifest_version": 2
 }

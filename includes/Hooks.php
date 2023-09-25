@@ -4,8 +4,12 @@ namespace MediaWiki\Extension\GuidedTour;
 
 use ExtensionRegistry;
 use FormatJson;
+use MediaWiki\Hook\BeforePageDisplayHook;
+use MediaWiki\Hook\MakeGlobalVariablesScriptHook;
 use MediaWiki\ResourceLoader as RL;
+use MediaWiki\ResourceLoader\Hook\ResourceLoaderRegisterModulesHook;
 use MediaWiki\ResourceLoader\ResourceLoader;
+use MediaWiki\SpecialPage\Hook\RedirectSpecialArticleRedirectParamsHook;
 use MediaWiki\Title\Title;
 use OutputPage;
 use Skin;
@@ -20,7 +24,12 @@ use Skin;
  * @author Luke Welling lwelling@wikimedia.org
  */
 
-class Hooks {
+class Hooks implements
+	BeforePageDisplayHook,
+	ResourceLoaderRegisterModulesHook,
+	RedirectSpecialArticleRedirectParamsHook,
+	MakeGlobalVariablesScriptHook
+{
 	// Tour cookie name.  It will be prefixed automatically.
 	public const COOKIE_NAME = '-mw-tour';
 
@@ -145,10 +154,8 @@ class Hooks {
 	 *
 	 * @param OutputPage $out OutputPage object
 	 * @param Skin $skin Skin being used.
-	 *
-	 * @return bool true in all cases
 	 */
-	public static function onBeforePageDisplay( $out, $skin ) {
+	public function onBeforePageDisplay( $out, $skin ): void {
 		// test for tour enabled in url first
 		$request = $out->getRequest();
 		$queryTourName = $request->getVal( self::TOUR_PARAM );
@@ -161,17 +168,14 @@ class Hooks {
 				self::addTour( $out, $tourName );
 			}
 		}
-
-		return true;
 	}
 
 	/**
 	 * Registers VisualEditor tour if VE is installed
 	 *
-	 * @param ResourceLoader &$resourceLoader
-	 * @return true
+	 * @param ResourceLoader $resourceLoader
 	 */
-	public static function onResourceLoaderRegisterModules( &$resourceLoader ) {
+	public function onResourceLoaderRegisterModules( ResourceLoader $resourceLoader ): void {
 		if ( ExtensionRegistry::getInstance()->isLoaded( 'VisualEditor' ) ) {
 			$resourceLoader->register(
 				'ext.guidedTour.tour.firsteditve',
@@ -193,17 +197,20 @@ class Hooks {
 				]
 			);
 		}
-
-		return true;
 	}
 
 	/**
 	 * @param array &$redirectParams
-	 * @return bool
 	 */
-	public static function onRedirectSpecialArticleRedirectParams( &$redirectParams ) {
+	public function onRedirectSpecialArticleRedirectParams( &$redirectParams ) {
 		array_push( $redirectParams, self::TOUR_PARAM, 'step' );
+	}
 
-		return true;
+	/**
+	 * @param array &$vars
+	 * @param OutputPage $out
+	 */
+	public function onMakeGlobalVariablesScript( &$vars, $out ): void {
+		GuidedTourLauncher::onMakeGlobalVariablesScript( $vars, $out );
 	}
 }
