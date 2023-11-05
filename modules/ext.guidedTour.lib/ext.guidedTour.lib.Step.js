@@ -739,7 +739,7 @@
 
 		// DEPRECATED: Will be removed
 		if ( options.onShow === gt.parseDescription || options.onShow === gt.getPageAsDescription ) {
-			mw.log.warn( 'gt.parseDescription and gt.getPageAsDescription are deprecated and will be removed.  Pass a mw.guidedTour.WikitextDescription or mw.Title object instead.  See https://doc.wikimedia.org/GuidedTour/master/js/#!/api/mw.guidedTour.TourBuilder-method-step for details on how to update your code.' );
+			mw.log.warn( 'gt.parseDescription and gt.getPageAsDescription are deprecated and will be removed.  Pass a mw.guidedTour.WikitextDescription or mw.Title object instead.  See https://doc.wikimedia.org/GuidedTour/master/js/#!/api/TourBuilder-method-step for details on how to update your code.' );
 
 			if ( typeof options.description !== 'string' ) {
 				throw new gt.TourDefinitionError( 'If special values (gt.parseDescription or gt.getPageAsDescription) are used, \'description\' must be a string.' );
