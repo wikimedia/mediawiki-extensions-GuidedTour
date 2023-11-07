@@ -27,6 +27,7 @@
 	"guidedtour-tour-test-go-description-page": "Ga naar beschrijvingspagina",
 	"guidedtour-tour-test-launch-tour": "Test start rondleiding",
 	"guidedtour-tour-test-launch-tour-description": "Via raadgevers kunnen andere rondleidingen gestart worden. Leuk, toch?",
+	"guidedtour-tour-test-launch-editing": "Een rondleiding over het bewerken starten",
 	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|Bewerk}} de hele pagina...",
 	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Klik}} op de knop \"$1\" om uw wijzigingen te maken.",
 	"guidedtour-tour-firstedit-edit-section-title": "Of {{PLURAL:|bewerk}} een paragraaf",
