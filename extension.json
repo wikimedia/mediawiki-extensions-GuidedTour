@@ -52,7 +52,7 @@
 			},
 			"dependencies": [
 				"mediawiki.libs.guiders",
-				"mediawiki.ui.button"
+				"codex-search-styles"
 			]
 		},
 		"ext.guidedTour.lib.internal": {

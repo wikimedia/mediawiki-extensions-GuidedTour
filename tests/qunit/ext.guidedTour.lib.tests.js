@@ -989,38 +989,38 @@
 		tourBuilder.tour.showStep( firstStep );
 		var returnedButtons = spy.lastCall.args[ 0 ].buttons;
 		assert.true(
-			returnedButtons[ 0 ].html.class.indexOf( 'mw-ui-destructive' ) !== -1 &&
-			returnedButtons[ 0 ].html.class.indexOf( 'mw-ui-button' ) !== -1,
+			returnedButtons[ 0 ].html.class.indexOf( 'cdx-button--action-destructive' ) !== -1 &&
+			returnedButtons[ 0 ].html.class.indexOf( 'cdx-button' ) !== -1,
 			'Destructive custom button'
 		);
 		assert.true(
-			returnedButtons[ 1 ].html.class.indexOf( 'mw-ui-button' ) !== -1 &&
-			returnedButtons[ 1 ].html.class.indexOf( 'mw-ui-progressive' ) !== -1 &&
-			returnedButtons[ 1 ].html.class.indexOf( 'mw-ui-quiet' ) !== -1,
+			returnedButtons[ 1 ].html.class.indexOf( 'cdx-button' ) !== -1 &&
+			returnedButtons[ 1 ].html.class.indexOf( 'cdx-button--action-progressive' ) !== -1 &&
+			returnedButtons[ 1 ].html.class.indexOf( 'cdx-button--weight-quiet' ) !== -1,
 			'A quietly progressive custom button'
 		);
 		assert.notStrictEqual(
-			returnedButtons[ 2 ].html.class.indexOf( 'mw-ui-progressive' ),
+			returnedButtons[ 2 ].html.class.indexOf( 'cdx-button--action-progressive' ),
 			-1,
 			'Progressive internal link'
 		);
 		assert.strictEqual(
-			returnedButtons[ 3 ].html.class.indexOf( 'mw-ui-progressive' ),
+			returnedButtons[ 3 ].html.class.indexOf( 'cdx-button--action-progressive' ),
 			-1,
 			'External link button is not progressive by default'
 		);
 		assert.strictEqual(
-			returnedButtons[ 4 ].html.class.indexOf( 'mw-ui-progressive' ),
+			returnedButtons[ 4 ].html.class.indexOf( 'cdx-button--action-progressive' ),
 			-1,
 			'Back button is not progressive by default'
 		);
 		assert.notStrictEqual(
-			returnedButtons[ 5 ].html.class.indexOf( 'mw-ui-progressive' ),
+			returnedButtons[ 5 ].html.class.indexOf( 'cdx-button--action-progressive' ),
 			-1,
 			'Okay button is progressive by default'
 		);
 		assert.notStrictEqual(
-			returnedButtons[ 6 ].html.class.indexOf( 'mw-ui-progressive' ),
+			returnedButtons[ 6 ].html.class.indexOf( 'cdx-button--action-progressive' ),
 			-1,
 			'Next button is progressive by default'
 		);

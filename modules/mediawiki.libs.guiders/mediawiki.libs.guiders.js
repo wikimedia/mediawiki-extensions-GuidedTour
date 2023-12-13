@@ -98,10 +98,10 @@ mw.libs.guiders = ( function () {
 	].join( '' );
 
 	guiders._arrowSize = 42; // This is the arrow's width and height.
-	guiders._buttonElement = '<a></a>';
+	guiders._buttonElement = '<button></button>';
 	// eslint-disable-next-line no-script-url
 	guiders._buttonAttributes = { href: 'javascript:void(0);' };
-	guiders._buttonClass = 'mw-ui-button';
+	guiders._buttonClass = 'cdx-button';
 	guiders._currentGuiderID = null;
 	guiders._guiderInits = {}; // stores uncreated guiders indexed by id
 	guiders._guiders = {}; // stores created guiders indexed by id
@@ -815,7 +815,7 @@ mw.libs.guiders = ( function () {
 		}
 
 		$( myGuider.elem ).trigger( 'guiders.show' );
-		$( myGuider.elem ).find( '.mw-ui-progressive:first-child' ).trigger( 'focus' );
+		$( myGuider.elem ).find( '.cdx-button--action-progressive:first-child' ).trigger( 'focus' );
 
 		// Create (preload) next guider if it hasn't been created
 		nextGuiderId = myGuider.next || null;

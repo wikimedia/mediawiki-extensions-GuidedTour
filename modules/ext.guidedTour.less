@@ -1,5 +1,6 @@
-@import 'mediawiki.mixins';
-@import 'mediawiki.mixins.animation';
+@import 'mediawiki.skin.variables.less';
+@import 'mediawiki.mixins.less';
+@import 'mediawiki.mixins.animation.less';
 
 // Variables
 
@@ -26,12 +27,12 @@
 	width: 100%;
 	margin-top: 8px;
 
-	.mw-ui-button {
+	.cdx-button {
 		margin-left: 6px;
 		float: right;
 	}
 
-	.mw-ui-quiet {
+	.cdx-button--weight-quiet {
 		float: left;
 		margin-left: 0;
 		padding-left: 0;
@@ -72,6 +73,7 @@
 	.x_button {
 		background-image: url( images/close.svg );
 		background-repeat: no-repeat;
+		.cdx-mixin-css-icon-size( @size-icon-medium );
 		display: block;
 		height: 20px;
 		width: 20px;
@@ -96,6 +98,7 @@
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: 1.4em;
+	.cdx-mixin-css-icon-size( @size-icon-medium );
 }
 
 // Arrow icon buttons

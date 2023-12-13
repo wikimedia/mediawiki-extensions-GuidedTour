@@ -222,6 +222,10 @@
 			hasIcon = true;
 		}
 
+		var btnClass = guiders._buttonClass + ' ' + actionButtonClass + ' ' + buttonTypeClass;
+		if ( hasIcon ) {
+			btnClass += ' cdx-button--icon-only';
+		}
 		return {
 			name: button.name,
 			onclick: function () {
@@ -230,7 +234,7 @@
 				button.callback( this );
 			},
 			html: {
-				class: guiders._buttonClass + ' ' + actionButtonClass + ' ' + buttonTypeClass
+				class: btnClass
 			},
 			hasIcon: hasIcon
 		};
@@ -259,9 +263,9 @@
 	function getButtonTypeClass( button ) {
 		var buttonTypes = {
 				neutral: '',
-				progressive: 'mw-ui-progressive',
-				destructive: 'mw-ui-destructive',
-				quiet: 'mw-ui-quiet'
+				progressive: 'cdx-button--weight-primary cdx-button--action-progressive',
+				destructive: 'cdx-button--action-destructive',
+				quiet: 'cdx-button--weight-quiet'
 			},
 			classString = '';
 
