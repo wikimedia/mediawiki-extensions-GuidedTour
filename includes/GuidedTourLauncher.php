@@ -3,7 +3,7 @@
 namespace MediaWiki\Extension\GuidedTour;
 
 use FormatJson;
-use OutputPage;
+use MediaWiki\Output\OutputPage;
 use RequestContext;
 
 /**
