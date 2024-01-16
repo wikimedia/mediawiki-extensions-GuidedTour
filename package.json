@@ -4,7 +4,7 @@
 	"scripts": {
 		"doc": "jsduck",
 		"test": "grunt test",
-		"minify-svg": "svgo --config=.svgo.config.js --quiet --recursive --folder modules/images/"
+		"minify:svg": "svgo --config=.svgo.config.js --quiet --recursive --folder modules/images/"
 	},
 	"devDependencies": {
 		"eslint-config-wikimedia": "0.25.0",
@@ -13,7 +13,7 @@
 		"grunt-eslint": "24.0.1",
 		"grunt-stylelint": "0.18.0",
 		"stylelint-config-wikimedia": "0.15.0",
-		"svgo": "3.0.2"
+		"svgo": "3.2.0"
 	},
 	"eslintIgnore": [
 		"vendor/**"
