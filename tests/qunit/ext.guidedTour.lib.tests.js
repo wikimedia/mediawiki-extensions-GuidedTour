@@ -983,8 +983,8 @@
 		];
 		var spy = this.spy( gt.Step.prototype, 'getButtons' );
 		var tourBuilder = new gt.TourBuilder( { name: 'buttonsTest' } );
-		var firstStepBuilder = tourBuilder.firstStep( $.extend( true, {}, { buttons: buttons }, VALID_BUILDER_STEP_SPEC ) );
-		var firstStep = firstStepBuilder.step;
+		firstStepBuilder = tourBuilder.firstStep( $.extend( true, {}, { buttons: buttons }, VALID_BUILDER_STEP_SPEC ) );
+		firstStep = firstStepBuilder.step;
 
 		tourBuilder.tour.showStep( firstStep );
 		var returnedButtons = spy.lastCall.args[ 0 ].buttons;
