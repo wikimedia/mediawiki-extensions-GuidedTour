@@ -450,7 +450,9 @@
 			if ( okayButton === undefined && nextButton === undefined ) {
 				okayButton = this.getActionButton( {
 					action: 'okay',
-					callback: function () { gt.hideAll(); }
+					callback: function () {
+						gt.hideAll();
+					}
 				} );
 			}
 		}
