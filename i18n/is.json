@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Snævar"
+			"Snævar",
+			"Stefán Örvar Sigmundsson"
 		]
 	},
 	"guidedtour-next-button": "Áfram",
@@ -14,14 +15,14 @@
 	"guidedtour-tour-test-description-page": "Prófa lýsingarsíður MediaWiki",
 	"guidedtour-tour-test-go-description-page": "Fara á lýsingarsíðu",
 	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|Breyta}} allri síðunni...",
-	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Smelltu}} á „$1” takkann til að gera breytingarnar þínar.",
+	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Smelltu}} á „$1”-hnappinn til að gera breytingarnar þínar.",
 	"guidedtour-tour-firstedit-edit-section-title": "Eða {{GENDER:|breyttu}} eingöngu kafla",
 	"guidedtour-tour-firstedit-edit-section-description": "Það eru „{{int:editsection}}” tenglar fyrir hvern kafla á síðu, svo þú getir einblínt á þann hluta.",
 	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|Forskoða}} breytingarnar þínar (valfrjálst)",
 	"guidedtour-tour-firstedit-preview-description": "Með því að smella á „{{int:showpreview}}” getur þú séð hvernig síðan mun líta út með breytingunum þínum. Bara ekki gleyma að vista!",
 	"guidedtour-tour-firstedit-save-title": "Þú ert næstum búin/n!",
 	"guidedtour-tour-firstedit-save-description": "Þegar þú ert tilbúin/n, mun smellur á „{{int:publishchanges}}” gera breytingarnar þínar sýnilegar öllum.",
-	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|Smelltu}} á „$1” takkann til að gera breytingarnar þínar.",
+	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|Smelltu}} á „$1”-hnappinn til að gera breytingarnar þínar.",
 	"guidedtour-tour-firsteditve-edit-section-description": "Það eru „$1” tenglar fyrir hvern kafla á síðu, svo þú getir einblínt á þann hluta.",
 	"guidedtour-tour-firsteditve-save-description": "Þegar þú ert tilbúin/n, mun smellur á „{{int:publishchanges}}” gera breytingarnar þínar sýnilegar öllum."
 }

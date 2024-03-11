@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Cedric31"
+			"Cedric31",
+			"Lhanars"
 		]
 	},
 	"guidedtour-help-url": "Help:Visitas guidadas",
@@ -15,7 +16,7 @@
 	"guidedtour-tour-test-description-page": "Testar las paginas de descripcion MediaWiki",
 	"guidedtour-tour-test-go-description-page": "Anar a la pagina de descripcion",
 	"guidedtour-tour-test-launch-tour": "Testar la visita d'aviada",
-	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|Editar|Editar}} la pagina completa ?",
+	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|Editar|Editar}} la pagina completa?",
 	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Clicatz}} lo boton « $1 » per far vòstras modificacions.",
 	"guidedtour-tour-firstedit-edit-section-title": "O modificar una seccion",
 	"guidedtour-tour-firstedit-preview-title": "Previsualizatz vòstras modificacions (facultatiu)",
