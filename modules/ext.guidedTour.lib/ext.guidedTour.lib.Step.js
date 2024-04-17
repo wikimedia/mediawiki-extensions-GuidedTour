@@ -665,7 +665,6 @@
 	/**
 	 * Gets a description, calling the API if necessary
 	 *
-	 *
 	 * @param {mw.guidedTour.WikitextDescription|mw.Title|string} descriptionSource Source
 	 *   of description content, as wikitext, a page title, or HTML
 	 *
