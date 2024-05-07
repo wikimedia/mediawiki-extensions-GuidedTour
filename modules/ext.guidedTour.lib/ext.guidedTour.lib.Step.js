@@ -304,11 +304,18 @@
 	function modifyLinkButton( button, isExternal, url, title ) {
 		var classString = guiders._buttonClass +
 			' ' + getButtonTypeClass( button ) +
-			// Distinguish between fake javascript void(0) links and these
+			// Distinguish between standard buttons and these
 			// (semantically links).
 			' guidedtour-link-button' +
-			// Use 'external' class for external links, as parser does.
-			( isExternal ? ' external' : '' ),
+			// Use 'external' class for external links, as parser does
+			( isExternal ? ' external' : '' ) +
+			// Because this is a link not a button add Codex fake button classes
+			// so the button is styled correctly
+			// FIXME: For situations where href is not defined, this should be converted to a button
+			// and href should not be passed as a key per guidance on
+			// https://doc.wikimedia.org/codex/latest/components/demos/button.html#link-buttons-and-other-elements
+			// This currently works around T364062
+			' cdx-button--fake-button cdx-button--fake-button--enabled',
 			html;
 
 		html = {
@@ -324,6 +331,7 @@
 		}
 
 		$.extend( true, button, {
+			buttonElement: '<a></a>',
 			html: html
 		} );
 
