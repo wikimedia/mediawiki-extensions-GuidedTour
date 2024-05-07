@@ -879,11 +879,10 @@
 	 * tourSpec.isSinglePage, and tourSpec.showConditionally.
 	 *
 	 * @method defineTour
-	 * @deprecated
 	 *
 	 * @param {Object} tourSpec object specifying tour
 	 * @param {Array} tourSpec.steps Array of steps; see
-	 * mw.guidedTour.TourBuilder#step.  In addition, the following deprecated
+	 * mw.guidedTour.TourBuilder#step.  In addition, the following
 	 * option is supported only through defineTour.
 	 * @param {Function} [tourSpec.steps.shouldSkip] Function returning a
 	 *  boolean, which specifies whether to skip the current step based on the
@@ -894,7 +893,7 @@
 	 * @return {boolean} true, on success; throws otherwise
 	 * @throws {mw.guidedTour.TourDefinitionError} On invalid input
 	 */
-	mw.log.deprecate( gt, 'defineTour', function ( tourSpec ) {
+	gt.defineTour = function ( tourSpec ) {
 		var tourBuilder, stepBuilders = [], steps, i, j, stepCount;
 
 		/**
@@ -999,7 +998,7 @@
 		}
 
 		return true;
-	} );
+	};
 
 	// Keep after main mw.guidedTour methods.
 	// jsduck assumes methods belong to the classes they follow in source
