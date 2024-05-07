@@ -165,7 +165,7 @@ mw.libs.guiders = ( function () {
 				thisButtonHtml = thisButton.name;
 			}
 			$thisButtonElem = $(
-				guiders._buttonElement,
+				thisButton.buttonElement || guiders._buttonElement,
 				$.extend(
 					{
 						class: guiders._buttonClass,
