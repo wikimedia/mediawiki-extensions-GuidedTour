@@ -1,0 +1,18 @@
+{
+	"root": true,
+	"extends": [
+		"wikimedia/client-es6",
+		"wikimedia/jquery",
+		"wikimedia/mediawiki",
+		"wikimedia/jsduck"
+	],
+	"rules": {
+		"no-jquery/no-global-selector": "off",
+		"no-underscore-dangle": "off",
+		"max-len": "off",
+		"no-jquery/no-class-state": "warn",
+		"no-jquery/no-sizzle": "warn",
+		"no-shadow": "warn",
+		"no-var": "off"
+	}
+}
