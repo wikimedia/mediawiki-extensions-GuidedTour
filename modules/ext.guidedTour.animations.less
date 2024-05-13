@@ -1,16 +1,6 @@
 /* @noflip */
 /* fade-in */
 /* fade-in-translate-frames */
-@-webkit-keyframes mwe-gt-fade-in {
-	0% {
-		opacity: 0;
-	}
-
-	100% {
-		opacity: 1;
-	}
-}
-
 @keyframes mwe-gt-fade-in {
 	0% {
 		opacity: 0;
@@ -22,21 +12,8 @@
 }
 
 .mwe-gt-fade-in {
-	-webkit-animation: mwe-gt-fade-in 0.3s ease forwards;
 	/* @noflip */
 	animation: mwe-gt-fade-in 0.3s ease forwards;
-}
-
-@-webkit-keyframes mwe-gt-fade-in-up {
-	0% {
-		opacity: 0;
-		-webkit-transform: translate( 0, 20px );
-	}
-
-	100% {
-		opacity: 1;
-		-webkit-transform: translate( 0, 0 );
-	}
 }
 
 @keyframes mwe-gt-fade-in-up {
@@ -56,21 +33,8 @@
 	 * TODO (phuedx, 2014-05-29): 0.3s and ease should be either generated
 	 * by another mixin or should be constants.
 	 */
-	-webkit-animation: mwe-gt-fade-in-up 0.3s ease forwards;
 	/* @noflip */
 	animation: mwe-gt-fade-in-up 0.3s ease forwards;
-}
-
-@-webkit-keyframes mwe-gt-fade-in-left {
-	0% {
-		opacity: 0;
-		-webkit-transform: translate( 20px, 0 );
-	}
-
-	100% {
-		opacity: 1;
-		-webkit-transform: translate( 0, 0 );
-	}
 }
 
 @keyframes mwe-gt-fade-in-left {
@@ -90,21 +54,8 @@
 	 * TODO (phuedx, 2014-05-29): 0.3s and ease should be either generated
 	 * by another mixin or should be constants.
 	 */
-	-webkit-animation: mwe-gt-fade-in-left 0.3s ease forwards;
 	/* @noflip */
 	animation: mwe-gt-fade-in-left 0.3s ease forwards;
-}
-
-@-webkit-keyframes mwe-gt-fade-in-down {
-	0% {
-		opacity: 0;
-		-webkit-transform: translate( 0, -20px );
-	}
-
-	100% {
-		opacity: 1;
-		-webkit-transform: translate( 0, 0 );
-	}
 }
 
 @keyframes mwe-gt-fade-in-down {
@@ -124,21 +75,8 @@
 	 * TODO (phuedx, 2014-05-29): 0.3s and ease should be either generated
 	 * by another mixin or should be constants.
 	 */
-	-webkit-animation: mwe-gt-fade-in-down 0.3s ease forwards;
 	/* @noflip */
 	animation: mwe-gt-fade-in-down 0.3s ease forwards;
-}
-
-@-webkit-keyframes mwe-gt-fade-in-right {
-	0% {
-		opacity: 0;
-		-webkit-transform: translate( -20px, 0 );
-	}
-
-	100% {
-		opacity: 1;
-		-webkit-transform: translate( 0, 0 );
-	}
 }
 
 @keyframes mwe-gt-fade-in-right {
@@ -158,7 +96,6 @@
 	 * TODO (phuedx, 2014-05-29): 0.3s and ease should be either generated
 	 * by another mixin or should be constants.
 	 */
-	-webkit-animation: mwe-gt-fade-in-right 0.3s ease forwards;
 	/* @noflip */
 	animation: mwe-gt-fade-in-right 0.3s ease forwards;
 }
