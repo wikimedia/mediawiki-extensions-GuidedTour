@@ -1,9 +1,10 @@
 {
+	"root": true,
 	"extends": [
-		"../../.eslintrc.json",
+		"../../modules/.eslintrc.json",
 		"wikimedia/qunit"
 	],
 	"rules": {
-		"max-len": 0
+		"max-len": "off"
 	}
 }
