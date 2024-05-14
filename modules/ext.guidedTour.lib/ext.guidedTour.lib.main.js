@@ -890,7 +890,7 @@
 	 * @param {boolean} tourSpec.steps.shouldSkip.return true to skip, false
 	 *  otherwise
 	 *
-	 * @return {boolean} true, on success; throws otherwise
+	 * @return {mw.guidedTour.TourBuilder} the builder used to create the tour
 	 * @throws {mw.guidedTour.TourDefinitionError} On invalid input
 	 */
 	gt.defineTour = function ( tourSpec ) {
@@ -990,6 +990,9 @@
 			if ( j < stepCount - 1 ) {
 				stepBuilders[ j ].next( stepBuilders[ j + 1 ] );
 			}
+			if ( j > 0 ) {
+				stepBuilders[ j ].back( stepBuilders[ j - 1 ] );
+			}
 
 			// Don't register a custom skip handler if it can never skip.
 			if ( steps[ j ].shouldSkip ) {
@@ -997,7 +1000,7 @@
 			}
 		}
 
-		return true;
+		return tourBuilder;
 	};
 
 	// Keep after main mw.guidedTour methods.
