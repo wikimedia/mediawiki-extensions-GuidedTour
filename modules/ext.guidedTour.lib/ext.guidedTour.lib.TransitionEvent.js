@@ -46,6 +46,26 @@
 	TransitionEvent.TRANSITION_BEFORE_SHOW = 'TRANSITION_BEFORE_SHOW';
 
 	/**
+	 * Subtype string indicating a builtin event was fired because the user clicked
+	 * the next button
+	 *
+	 * @property {string}
+	 * @static
+	 * @readonly
+	 */
+	TransitionEvent.TRANSITION_NEXT = 'TRANSITION_NEXT';
+
+	/**
+	 * Subtype string indicating a builtin event was fired because the user clicked
+	 * the back button
+	 *
+	 * @property {string}
+	 * @static
+	 * @readonly
+	 */
+	TransitionEvent.TRANSITION_BACK = 'TRANSITION_BACK';
+
+	/**
 	 * Type of event that triggered the transition check
 	 *
 	 * Current possible values are:
@@ -59,11 +79,7 @@
 	/**
 	 * Subtype of event; currently only used for 'builtin' type.
 	 *
-	 * Current possible subtypes are:
-	 *
-	 * - gt.TransitionEvent.TRANSITION_BEFORE_SHOW - before guider was shown
-	 *
-	 * @property {'TRANSITION_BEFORE_SHOW'|undefined} subtype
+	 * @property {string|undefined} subtype
 	 */
 
 	/**
