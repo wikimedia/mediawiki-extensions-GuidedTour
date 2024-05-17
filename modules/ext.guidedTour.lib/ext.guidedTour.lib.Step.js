@@ -62,6 +62,7 @@
 			onClose: function () {},
 			onShow: function () {},
 			allowAutomaticNext: true,
+			allowAutomaticBack: true,
 			allowAutomaticOkay: true
 		}, stepSpec );
 
@@ -376,8 +377,9 @@
 	 * * @param {Array} options.buttons Button specifications as used in tour.  Elements
 	 *   will be mutated.  It must be passed, but if the value is falsy it will be
 	 *   treated as an empty array.
-	 * * @param {boolean} options.allowAutomaticNext True if and only if an next can be generated.
-	 * * @param {boolean} options.allowAutomaticOkay True if and only if an okay can be generated.
+	 * * @param {boolean} options.allowAutomaticNext True if and only if a next button can be generated.
+	 * * @param {boolean} options.allowAutomaticBack True if and only if a back button can be generated.
+	 * * @param {boolean} options.allowAutomaticOkay True if and only if an okay button can be generated.
 	 *
 	 * @return {Array} Array of button specifications that Guiders expects
 	 * @throws {mw.guidedTour.TourDefinitionError} On invalid actions
@@ -445,16 +447,15 @@
 		}
 
 		// Auto add a back button if the back callback is defined.
-		if ( this.hasCallback( 'back' ) && backButton === undefined ) {
+		if ( options.allowAutomaticBack && this.hasCallback( 'back' ) && backButton === undefined ) {
 			backButton = this.getActionButton( { action: 'back', callback: back } );
 		}
 
-		if ( options.allowAutomaticNext ) {
-			// Auto add a next button if the next callback is defined.
-			if ( this.hasCallback( 'next' ) && nextButton === undefined && okayButton === undefined ) {
-				nextButton = this.getActionButton( { action: 'next', callback: next } );
-			}
+		// Auto add a next button if the next callback is defined.
+		if ( options.allowAutomaticNext && this.hasCallback( 'next' ) && nextButton === undefined && okayButton === undefined ) {
+			nextButton = this.getActionButton( { action: 'next', callback: next } );
 		}
+
 		if ( options.allowAutomaticOkay ) {
 			// Ensure there is always an okay and/or next button.  In some cases, there will not be
 			// a next, since the user is prompted to do something else
