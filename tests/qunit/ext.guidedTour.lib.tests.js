@@ -616,9 +616,9 @@
 		);
 
 		assert.strictEqual(
-			gt.defineTour( VALID_TOUR_SPEC ),
-			true,
-			'Valid tour is defined successfully'
+			gt.defineTour( VALID_TOUR_SPEC ).constructor,
+			gt.TourBuilder,
+			'Valid tour is defined successfully and returns a TourBuilder'
 		);
 
 		this.restoreWarnings();
