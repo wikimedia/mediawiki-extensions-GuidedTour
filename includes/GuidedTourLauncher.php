@@ -3,8 +3,8 @@
 namespace MediaWiki\Extension\GuidedTour;
 
 use FormatJson;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Output\OutputPage;
-use RequestContext;
 
 /**
  * Allows server-side launching of tours (without the URL parameter).

@@ -4,8 +4,8 @@ namespace MediaWiki\Extension\GuidedTour;
 
 use ExtensionRegistry;
 use FormatJson;
-use MediaWiki\Hook\BeforePageDisplayHook;
-use MediaWiki\Hook\MakeGlobalVariablesScriptHook;
+use MediaWiki\Output\Hook\BeforePageDisplayHook;
+use MediaWiki\Output\Hook\MakeGlobalVariablesScriptHook;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\ResourceLoader as RL;
 use MediaWiki\ResourceLoader\Hook\ResourceLoaderRegisterModulesHook;
