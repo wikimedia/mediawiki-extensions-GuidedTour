@@ -1,6 +1,6 @@
 /* global ve */
 /**
- * GuidedTour public API
+ * @classdesc GuidedTour public API
  *
  * Set as mw.guidedTour and often aliased to gt locally
  *
@@ -83,8 +83,6 @@
 	 * @private
 	 *
 	 * @param {string} tourName name of tour to remove
-	 *
-	 * @return {void}
 	 */
 	function removeTourFromUserStateByName( tourName ) {
 		var parsedCookie = getCookieState();
@@ -171,8 +169,6 @@
 	 *
 	 * @param {string} tourName name of tour
 	 * @param {string} tourId id to start at
-	 *
-	 * @return {void}
 	 * @throws {mw.guidedTour.IllegalArgumentError} If the tour ID is not consistent
 	 *   with the tour name, or does not refer to a valid step
 	 */
@@ -196,8 +192,6 @@
 	 * async loop finishes. If WikiEditor is not running this event just won't fire.
 	 *
 	 * @private
-	 *
-	 * @return {void}
 	 */
 	function setupRepositionListeners() {
 		$( '#wpTextbox1' ).on( 'wikiEditor-toolbar-doneInitialSections', guiders.reposition );
@@ -209,6 +203,7 @@
 	 * Currently this listens for some custom events from VisualEditor.
 	 *
 	 * @private
+	 * @memberof mw.guidedTour
 	 */
 	function setupStepTransitionListeners() {
 		// TODO (mattflaschen, 2014-03-17): Temporary hack, until
@@ -219,6 +214,7 @@
 		 *
 		 * @param {mw.guidedTour.TransitionEvent} transitionEvent event that triggered
 		 *  the check
+		 * @memberof mw.guidedTour
 		 */
 		function transition( transitionEvent ) {
 			// I found this timeout necessary when testing, probably to give the
@@ -266,8 +262,6 @@
 	 * is built.
 	 *
 	 * @private
-	 *
-	 * @return {void}
 	 */
 	function initialize() {
 		// GuidedTour uses cookies to keep the user's progress when they are in the
@@ -295,6 +289,8 @@
 	$.extend( gt, {
 		/**
 		 * Parses tour ID into an object with name and step keys.
+		 *
+		 * @memberof mw.guidedTour#
 		 *
 		 * @param {string} tourId ID of tour/step combination
 		 *
@@ -332,6 +328,8 @@
 
 		/**
 		 * Serializes tour information into a string
+		 *
+		 * @memberof mw.guidedTour#
 		 *
 		 * @param {Object} tourInfo
 		 * @param {string} tourInfo.name Tour name
@@ -373,8 +371,6 @@
 		 * @param {string} tourName Name of tour
 		 * @param {string|null} [tourId='gt-' + tourName + '-' + step] ID of tour
 		 *   and step.  Omitted or null means to start the tour from the beginning.
-		 *
-		 * @return {void}
 		 */
 		launchTour: function ( tourName, tourId ) {
 			internal.loadTour( tourName ).done( function () {
@@ -398,6 +394,8 @@
 
 		/**
 		 * Attempts to launch a tour from the query string (tour parameter)
+		 *
+		 * @memberof mw.guidedTour#
 		 *
 		 * @return {boolean} Whether a tour was launched
 		 */
@@ -427,6 +425,8 @@
 		 * Attempts to launch a tour from combined user state (cookie + tours launched
 		 * directly by server)
 		 *
+		 * @memberof mw.guidedTour#
+		 *
 		 * @return {boolean} Whether a tour was launched
 		 */
 		launchTourFromUserState: function () {
@@ -445,7 +445,7 @@
 		 *
 		 * If both fail, it does nothing.
 		 *
-		 * @return {void}
+		 * @memberof mw.guidedTour#
 		 */
 		launchTourFromEnvironment: function () {
 			// Tour is either in the query string or cookie (prefer query string)
@@ -466,10 +466,10 @@
 		 *
 		 * This does not take into account isSinglePage.
 		 *
+		 * @memberof mw.guidedTour#
+		 *
 		 * @param {string} name Tour name
 		 * @param {number|string} [step=1] Tour step
-		 *
-		 * @return {void}
 		 */
 		setTourCookie: function ( name, step ) {
 			step = step || 1;
@@ -487,10 +487,10 @@
 		/**
 		 * Ends the tour, removing user's state
 		 *
+		 * @memberof mw.guidedTour#
+		 *
 		 * @param {string} [tourName] tour to end, defaulting to most recent one
 		 *  that showed a guider
-		 *
-		 * @return {void}
 		 */
 		endTour: function ( tourName ) {
 			var guider, tourId, tourInfo, tour;
@@ -515,7 +515,7 @@
 		/**
 		 * Hides the guider(s)
 		 *
-		 * @return {void}
+		 * @memberof mw.guidedTour#
 		 */
 		hideAll: function () {
 			guiders.hideAll();
@@ -532,11 +532,11 @@
 		 *
 		 * Add this to onShow.
 		 *
+		 * @memberof mw.guidedTour#
+		 * @method
 		 * @deprecated
 		 *
 		 * @param {Object} guider Guider object to set description on
-		 *
-		 * @return {void}
 		 */
 		parseDescription: 'parseDescription is not a real function',
 
@@ -548,11 +548,11 @@
 		 * To use this, put the page name as the description, and use this as the
 		 * value of onShow.
 		 *
+		 * @memberof mw.guidedTour#
+		 * @method
 		 * @deprecated
 		 *
 		 * @param {Object} guider Guider object to set description on
-		 *
-		 * @return {void}
 		 */
 		getPageAsDescription: 'getPageAsDescription is not a real function',
 
@@ -566,6 +566,8 @@
 		// to do.
 		/**
 		 * Checks whether user is on a particular wiki page.
+		 *
+		 * @memberof mw.guidedTour#
 		 *
 		 * @param {string} pageName Expected page name
 		 *
@@ -583,6 +585,8 @@
 		 * expected), and pageName (optional) is exactly equal to wgPageName.
 		 *
 		 * If pageName is falsy, the page name will not be considered in any way.
+		 *
+		 * @memberof mw.guidedTour#
 		 *
 		 * @param {Object} queryParts Object mapping expected query
 		 *  parameter names (string) to expected values (string)
@@ -609,6 +613,8 @@
 		 * Checks if the user is editing, with either wikitext or the
 		 * VisualEditor.  Does not include previewing.
 		 *
+		 * @memberof mw.guidedTour#
+		 *
 		 * @return {boolean} true if and only if they are actively editing
 		 */
 		isEditing: function () {
@@ -617,6 +623,8 @@
 
 		/**
 		 * Checks if the user is editing with wikitext.  Does not include previewing.
+		 *
+		 * @memberof mw.guidedTour#
 		 *
 		 * @return {boolean} true if and only if they are on the edit action
 		 */
@@ -631,6 +639,7 @@
 		 * Use isVisualEditorOpen instead if you want to check if there is a
 		 * VisualEditor instance on the page.
 		 *
+		 * @memberof mw.guidedTour#
 		 * @see mw.guidedTour#isVisualEditorOpen
 		 *
 		 * @return {boolean} true if and only if they are actively editing with VisualEditor
@@ -641,6 +650,8 @@
 
 		/**
 		 * Checks whether VisualEditor is open
+		 *
+		 * @memberof mw.guidedTour#
 		 *
 		 * @return {boolean} true if and only if there is a VisualEditor instance
 		 * on the page
@@ -654,6 +665,8 @@
 		 * Checks whether the user is previewing or reviewing changes
 		 * (after clicking "Show changes")
 		 *
+		 * @memberof mw.guidedTour#
+		 *
 		 * @return {boolean} true if and only if they are reviewing
 		 */
 		isReviewing: function () {
@@ -663,6 +676,8 @@
 		/**
 		 * Checks whether the user is previewing or reviewing wikitext changes
 		 * (the latter meaning the screen after clicking "Show changes")
+		 *
+		 * @memberof mw.guidedTour#
 		 *
 		 * @return {boolean} true if and only if they are reviewing wikitext
 		 */
@@ -678,6 +693,8 @@
 		 *
 		 * This method is not necessary if post-edit is the only
 		 * criterion for the transition.
+		 *
+		 * @memberof mw.guidedTour#
 		 *
 		 * @return {boolean} true if they just saved an edit, false otherwise
 		 */
@@ -707,10 +724,10 @@
 		 *
 		 * Finally, it will default to step 1.
 		 *
+		 * @memberof mw.guidedTour#
+		 *
 		 * @param {string} tourName Tour name
 		 * @param {number|string} [step] Step, defaulting to the cookie or first step of tour.
-		 *
-		 * @return {void}
 		 */
 		resumeTour: function ( tourName, step ) {
 			var userState;
@@ -744,8 +761,6 @@
 		 * @private
 		 *
 		 * @param {Object} guider any guider from the tour
-		 *
-		 * @return {void}
 		 */
 		removeTourFromUserStateByGuider: function ( guider ) {
 			var tourInfo = gt.parseTourId( guider.id );
@@ -764,8 +779,6 @@
 		 * @param {boolean} args.wasShown true if the guider was actually just shown on the
 		 *   current page, false otherwise.  Certain fields can only be initialized on a
 		 *   page where it was shown.
-		 *
-		 * @return {void}
 		 */
 		updateUserStateForTour: function ( args ) {
 			var cookieState = getCookieState(), tourName, tourSpec, articleId, pageName,
@@ -879,6 +892,7 @@
 	 * tourSpec.isSinglePage, and tourSpec.showConditionally.
 	 *
 	 * @method defineTour
+	 * @memberof mw.guidedTour#
 	 *
 	 * @param {Object} tourSpec object specifying tour
 	 * @param {Array} tourSpec.steps Array of steps; see
@@ -1009,19 +1023,12 @@
 		return tourBuilder;
 	};
 
-	// Keep after main mw.guidedTour methods.
-	// jsduck assumes methods belong to the classes they follow in source
-	// code order.
 	/**
-	 * Error subclass for errors that occur during tour definition
-	 *
 	 * @class mw.guidedTour.TourDefinitionError
+	 * @classdesc Error subclass for errors that occur during tour definition
 	 * @extends Error
-	 */
-
-	/**
-	 * @constructor
 	 *
+	 * @constructor
 	 * @param {string} message Error message text
 	 */
 	gt.TourDefinitionError = function ( message ) {
@@ -1034,15 +1041,11 @@
 	gt.TourDefinitionError.prototype.constructor = gt.TourDefinitionError;
 
 	/**
-	 * Error subclass for invalid arguments (that are not part of tour definition)
-	 *
 	 * @class mw.guidedTour.IllegalArgumentError
+	 * @classdesc Error subclass for invalid arguments (that are not part of tour definition)
 	 * @extends Error
-	 */
-
-	/**
-	 * @constructor
 	 *
+	 * @constructor
 	 * @param {string} message Error message text
 	 */
 	gt.IllegalArgumentError = function ( message ) {

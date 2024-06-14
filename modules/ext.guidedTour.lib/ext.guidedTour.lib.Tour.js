@@ -6,11 +6,11 @@
 	// Any public member used to define the tour belongs in TourBuilder or
 	// StepBuilder.
 	/**
+	 * A guided tour
+	 *
 	 * @class mw.guidedTour.Tour
 	 *
-	 * @private
-	 *
-	 * A guided tour
+	 * @package
 	 */
 
 	/**
@@ -262,8 +262,6 @@
 	 * @param {mw.guidedTour.Step|string} step Step name or object
 	 *
 	 * @throws {Error} If initialize fails
-	 *
-	 * @return {void}
 	 */
 	Tour.prototype.showStep = function ( step ) {
 		var guider, transitionEvent, tour = this;
@@ -301,7 +299,6 @@
 	 *
 	 * @private
 	 *
-	 * @return {void}
 	 * @throws {mw.guidedTour.TourDefinitionError} If firstStep was never called on the
 	 *  TourBuilder
 	 */

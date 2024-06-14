@@ -32,7 +32,7 @@
  */
 
 /**
- * Code for rendering and low-level code of moving between steps.
+ * @classdesc Code for rendering and low-level code of moving between steps.
  *
  * You should use the public mw.guidedTour API when possible, rather then calling methods
  * from this file directly.  The API of this file will change.
@@ -251,6 +251,8 @@ mw.libs.guiders = ( function () {
 	 *
 	 * It accepts both string (e.g. "top") and numeric (e.g. 12) positions.
 	 *
+	 * @memberof mw.libs.guiders#
+	 * @method getFlippedPosition
 	 * @param {string|number} position position as in guider settings object
 	 * @param {Object} options how to flip
 	 * @param {boolean} options.vertical true to flip vertical (optional, defaults false)
@@ -297,6 +299,8 @@ mw.libs.guiders = ( function () {
 	/**
 	 * Returns CSS for attaching a guider to its associated element
 	 *
+	 * @memberof mw.libs.guiders#
+	 * @method _getAttachCss
 	 * @param {jQuery} attachTo element to attach to
 	 * @param {Object} guider guider object
 	 * @param {number} position position for guider, using clock
@@ -395,6 +399,8 @@ mw.libs.guiders = ( function () {
 	/**
 	 * Attaches a guider
 	 *
+	 * @memberof mw.libs.guiders#
+	 * @method _attach
 	 * @param {Object} myGuider guider to attach
 	 * @return {jQuery|undefined} jQuery node for guider's element if successful,
 	 *   or undefined for invalid input.
@@ -457,6 +463,8 @@ mw.libs.guiders = ( function () {
 	 *
 	 * Add check to create and grab guider from inits if it exists there.
 	 *
+	 * @memberof mw.libs.guiders#
+	 * @method _guiderById
 	 * @param {string} id id of guider
 	 * @return {Object} guider object
 	 */
@@ -562,6 +570,8 @@ mw.libs.guiders = ( function () {
 	/**
 	 * Remove all animation classes
 	 *
+	 * @memberof mw.libs.guiders#
+	 * @method _removeAnimations
 	 * @param {Object} myGuider guider to remove animations from
 	 */
 	guiders._removeAnimations = function ( myGuider ) {
@@ -571,6 +581,8 @@ mw.libs.guiders = ( function () {
 	/**
 	 * Add appropriate animation class relative to guider position
 	 *
+	 * @memberof mw.libs.guiders#
+	 * @method _setupAnimations
 	 * @param {Object} myGuider guider to add animation class to
 	 * @param {number} position guider attachment position
 	 */
@@ -605,6 +617,9 @@ mw.libs.guiders = ( function () {
 
 	/**
 	 * Shows the 'next' step
+	 *
+	 * @memberof mw.libs.guiders#
+	 * @method next
 	 */
 	guiders.next = function () {
 		guiders.doStep( 'next' );
@@ -612,6 +627,9 @@ mw.libs.guiders = ( function () {
 
 	/**
 	 * Shows the 'back' step
+	 *
+	 * @memberof mw.libs.guiders#
+	 * @method back
 	 */
 	guiders.back = function () {
 		guiders.doStep( 'back' );
@@ -620,6 +638,8 @@ mw.libs.guiders = ( function () {
 	/**
 	 * Move the guider directionally to the corresponding step. eg. next, back
 	 *
+	 * @memberof mw.libs.guiders#
+	 * @method doStep
 	 * @param {string} direction next or back
 	 */
 	guiders.doStep = function ( direction ) {
@@ -652,6 +672,8 @@ mw.libs.guiders = ( function () {
 	 * This stores the guider but does no work on it.
 	 * It is an alternative to createGuider() that defers the actual setup work.
 	 *
+	 * @memberof mw.libs.guiders#
+	 * @method initGuider
 	 * @param {Object} passedSettings Settings
 	 */
 	guiders.initGuider = function ( passedSettings ) {
@@ -667,6 +689,8 @@ mw.libs.guiders = ( function () {
 	/**
 	 * Creates a guider
 	 *
+	 * @memberof mw.libs.guiders#
+	 * @method createGuider
 	 * @param {Object} passedSettings settings for the guider
 	 * @return {Object} guiders singleton
 	 */
@@ -722,6 +746,8 @@ mw.libs.guiders = ( function () {
 	/**
 	 * Hides all guiders
 	 *
+	 * @memberof mw.libs.guiders#
+	 * @method hideAll
 	 * @param {boolean|undefined} omitHidingOverlay falsy to hide overlay,
 	 *   true not to change it
 	 * @param {boolean} next true if caller will immediately show another guider
@@ -750,6 +776,8 @@ mw.libs.guiders = ( function () {
 	/**
 	 * Show a guider
 	 *
+	 * @memberof mw.libs.guiders#
+	 * @method show
 	 * @param {string} id id of guider to show.  The default is the last guider created.
 	 * @return {undefined|boolean|Object} Undefined in case of error, return value
 	 *   from the guider's onShow, if that is truthy, otherwise the guiders
@@ -839,6 +867,9 @@ mw.libs.guiders = ( function () {
 
 	/**
 	 * Scroll to the current guider
+	 *
+	 * @memberof mw.libs.guiders#
+	 * @method scrollToCurrent
 	 */
 	guiders.scrollToCurrent = function () {
 		var currentGuider, windowHeight, guiderOffset,

@@ -116,7 +116,6 @@
 		 *
 		 * @private
 		 *
-		 * // @return {mw.guidedTour.Step} Step object for next step
 		 * @throws {mw.guidedTour.TourDefinitionError} If the next step is
 		 *   not set, or set to an invalid value or callback
 		 */
@@ -524,8 +523,6 @@
 	 * @private
 	 *
 	 * @param {string} hookName Name of mw.hook
-	 *
-	 * @return {void}
 	 */
 	Step.prototype.registerMwHookListener = function ( hookName ) {
 		// mw.hook has a feature called memory, which means that hooks that have
@@ -564,8 +561,6 @@
 	 * @private
 	 *
 	 * @param {string} hookName name of hook to listen for
-	 *
-	 * @return {void}
 	 */
 	Step.prototype.listenForMwHook = function ( hookName ) {
 		this.hookListeners[ hookName ] = null;
@@ -575,8 +570,6 @@
 	 * Registers mw.hook listeners
 	 *
 	 * @private
-	 *
-	 * @return {void}
 	 */
 	Step.prototype.registerMwHooks = function () {
 		var hookName;
@@ -590,8 +583,6 @@
 	 * Unregisters mw.hook listeners
 	 *
 	 * @private
-	 *
-	 * @return {void}
 	 */
 	Step.prototype.unregisterMwHooks = function () {
 		var hookName;
@@ -611,8 +602,6 @@
 	 * @private
 	 *
 	 * @param {Object} guider Guider object provided by Guiders.js
-	 *
-	 * @return {void}
 	 */
 	Step.prototype.handleOnShow = function ( guider ) {
 		var tourInfo = gt.parseTourId( guider.id ), priorCurrentStep;

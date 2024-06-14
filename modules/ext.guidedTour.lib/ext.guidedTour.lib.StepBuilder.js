@@ -4,18 +4,12 @@
 
 	/**
 	 * @class mw.guidedTour.StepBuilder
-	 *
-	 * A builder for defining a step of a guided tour
-	 */
-
-	/**
-	 * Constructs a StepBuilder
+	 * @classdesc A builder for defining a step of a guided tour
 	 *
 	 * @constructor
-	 *
+	 * @desc Constructs a StepBuilder
 	 * @param {mw.guidedTour.Tour} tour Tour the corresponding Step belongs to
 	 * @param {Object} stepSpec See {mw.guidedTour.TourBuilder#step} for details.
-	 *
 	 * @throws {mw.guidedTour.TourDefinitionError} On invalid step name
 	 */
 	function StepBuilder( tour, stepSpec ) {
@@ -135,6 +129,8 @@
 	 * @return {mw.guidedTour.StepBuilder}
 	 * @throws {mw.guidedTour.TourDefinitionError} If this direction callback has has already
 	 *  been set
+	 * @memberof mw.guidedTour.StepBuilder
+	 * @method next
 	 */
 	StepBuilder.prototype.next = function ( nextValue ) {
 		return this.setDirectionCallback( 'next', nextValue );
@@ -163,6 +159,8 @@
 	 * @return {mw.guidedTour.StepBuilder}
 	 * @throws {mw.guidedTour.TourDefinitionError} If this direction callback has has already
 	 *  been set
+	 * @memberof mw.guidedTour.StepBuilder
+	 * @method back
 	 */
 	StepBuilder.prototype.back = function ( backValue ) {
 		return this.setDirectionCallback( 'back', backValue );
@@ -258,6 +256,8 @@
 	 * @return {mw.guidedTour.StepBuilder}
 	 * @throws {mw.guidedTour.TourDefinitionError} If StepBuilder.transition() has already
 	 *  been called, or callback is not a function
+	 * @memberof mw.guidedTour.StepBuilder
+	 * @method transition
 	 */
 	StepBuilder.prototype.transition = function ( callback ) {
 		var stepBuilder = this,

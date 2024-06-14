@@ -3,21 +3,15 @@
 
 	/**
 	 * @class mw.guidedTour.TourBuilder
+	 * @classdesc A builder for defining a guided tour
 	 *
-	 * A builder for defining a guided tour
-	 */
-
-	/**
-	 * Constructs a TourBuilder, backed by a tour, based on an object specifying it.
+	 * @constructor
+	 * @desc Constructs a TourBuilder, backed by a tour, based on an object specifying it.
 	 *
 	 * The newly constructed object can be further configured with fluent methods,
 	 * such as #step
-	 *
-	 * @constructor
-	 *
 	 * @param {Object} tourSpec Specification of tour
 	 * @param {string} tourSpec.name Name of tour; must match module or wiki page name
-	 *
 	 * @param {boolean} [tourSpec.isSinglePage=false] Tour is used on a single
 	 *  page tour. This disables tour cookies.
 	 * @param {string} [tourSpec.showConditionally] condition for showing
@@ -31,7 +25,6 @@
 	 *  - 'VisualEditor' - Show on pages that are part of the VisualEditor flow.
 	 *    This means all pages, except for the wikitext editor, wikitext preview,
 	 *    and wikitext show changes.
-	 *
 	 * @param {boolean} [tourSpec.emitTransitionOnStep=false] Whether to emit a
 	 *  transition even (meaning transition callbacks are run) when the user clicks
 	 *  next or back.
@@ -190,6 +183,8 @@
 	 * @return {mw.guidedTour.StepBuilder} Created StepBuilder object
 	 * @throws {mw.guidedTour.TourDefinitionError} When the step specification is
 	 *  invalid
+	 * @memberof mw.guidedTour.TourBuilder
+	 * @method step
 	 */
 	TourBuilder.prototype.step = function ( stepSpec ) {
 		var stepBuilder;
@@ -213,6 +208,8 @@
 	 * @return {mw.guidedTour.StepBuilder} Created StepBuilder
 	 * @throws {mw.guidedTour.TourDefinitionError} When the step specification is
 	 *   invalid, or the first step has already been specified
+	 * @memberof mw.guidedTour.TourBuilder
+	 * @method firstStep
 	 */
 	TourBuilder.prototype.firstStep = function ( stepSpec ) {
 		var stepBuilder;

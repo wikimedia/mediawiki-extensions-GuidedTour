@@ -1,10 +1,9 @@
 ( function () {
 	/**
-	 * @enum
-	 * @alternateClassName gt.TransitionAction
-	 *
 	 * Special actions to take when there's a transition (other than simply returning
 	 * another step)
+	 *
+	 * @namespace mw.guidedTour.TransitionAction
 	 */
 	mw.guidedTour.TransitionAction = {
 		/**
