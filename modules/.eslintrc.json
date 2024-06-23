@@ -13,6 +13,8 @@
 		"no-jquery/no-class-state": "warn",
 		"no-jquery/no-sizzle": "warn",
 		"no-shadow": "warn",
-		"no-var": "off"
+		"no-var": "off",
+		"prefer-arrow-callback": "off",
+		"no-jquery/no-extend": "off"
 	}
 }
