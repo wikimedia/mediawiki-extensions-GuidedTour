@@ -5,7 +5,9 @@
 			"Calak",
 			"Ebraminio",
 			"Omidh",
-			"Reza1615"
+			"Reza1615",
+			"Darafsh",
+			"Ebrahim"
 		]
 	},
 	"guidedtour-desc": "اجازه می‌دهند صفحه‌ها یک پاپ‌آپ راهنمای تور برای راهنمایی کاربران تازه فراهم کنند",
@@ -28,7 +30,7 @@
 	"guidedtour-tour-firstedit-edit-page-description": "برای ذخیرهٔ تغییراتتان بر روی دکمهٔ «$1» {{GENDER:|کلیک کنید}}.",
 	"guidedtour-tour-firstedit-edit-section-title": "یا {{GENDER:|ویرایش}} یک بخش",
 	"guidedtour-tour-firstedit-edit-section-description": "پیوندها «{{int:editsection}}» برای هر بحش اصلی در صفحه وجود دارد، پس شما می‌تواند فقط به آن بحش تمرکز کنید.",
-	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|پیش‌نمایش}} تغییرات شما (اختیاری)",
+	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|پیش‌نمایش}} تغییرات (اختیاری)",
 	"guidedtour-tour-firstedit-preview-description": "کلیک‌کردن بر «{{int:showpreview}}» اجازه می‌دهد که شما بررسی کنید چه صفحه‌هایی شبیه تغییراتتان خواهند بود. فقط دکمهٔ ذخیره را فراموش نکنید!",
 	"guidedtour-tour-firstedit-save-title": "تقریباً تمام است!",
 	"guidedtour-tour-firstedit-save-description": "هنگامی که انجام دادید، کلیک بر «{{int:publishchanges}}» تغییراتتان را برای همه قابل مشاهده خواهد کرد.",
