@@ -807,15 +807,17 @@ mw.libs.guiders = ( function () {
 		guiderElemHeight = myGuider.elem.height();
 		isGuiderBelow = ( scrollHeight + windowHeight < guiderOffsetTop + guiderElemHeight ); /* we will need to scroll down */
 		isGuiderAbove = ( guiderOffsetTop < scrollHeight ); /* we will need to scroll up */
-		if ( myGuider.autoFocus && ( isGuiderBelow || isGuiderAbove ) ) {
-			// Sometimes the browser won't scroll if the person just clicked,
-			// so let's do this in a setTimeout.
-			guiders._removeAnimations( myGuider );
-			setTimeout( guiders.scrollToCurrent, 10 );
+		if ( myGuider.autoFocus ) {
+			if ( isGuiderBelow || isGuiderAbove ) {
+				// Sometimes the browser won't scroll if the person just clicked,
+				// so let's do this in a setTimeout.
+				guiders._removeAnimations( myGuider );
+				setTimeout( guiders.scrollToCurrent, 10 );
+			}
+			$( myGuider.elem ).find( '.cdx-button--action-progressive:first-child' ).trigger( 'focus' );
 		}
 
 		$( myGuider.elem ).trigger( 'guiders.show' );
-		$( myGuider.elem ).find( '.cdx-button--action-progressive:first-child' ).trigger( 'focus' );
 
 		// Create (preload) next guider if it hasn't been created
 		nextGuiderId = myGuider.next || null;
