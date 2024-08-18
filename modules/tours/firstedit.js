@@ -96,7 +96,8 @@
 		closeOnClickOutside: false
 	} )
 		.transition( function () {
-			if ( !gt.isReviewing() ) {
+			// If you skip preview then gt will think you're editing not reviewing
+			if ( !gt.isEditing() && !gt.isReviewing() ) {
 				return gt.TransitionAction.END;
 			}
 		} )
