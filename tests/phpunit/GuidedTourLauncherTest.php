@@ -7,19 +7,12 @@ use Wikimedia\TestingAccessWrapper;
  * @covers \MediaWiki\Extension\GuidedTour\GuidedTourLauncher
  */
 class GuidedTourLauncherTest extends MediaWikiIntegrationTestCase {
-	protected $wrappedLauncher;
-
-	public function setUp(): void {
-		parent::setUp();
-
-		$this->wrappedLauncher = TestingAccessWrapper::newFromClass( GuidedTourLauncher::class );
-	}
-
 	/**
 	 * @dataProvider getNewStateProvider
 	 */
 	public function testGetNewState( $oldStateValue, $tourName, $step, $expectedNewStateValue ) {
-		$newStateValue = $this->wrappedLauncher->getNewState( $oldStateValue, $tourName, $step );
+		$wrappedLauncher = TestingAccessWrapper::newFromClass( GuidedTourLauncher::class );
+		$newStateValue = $wrappedLauncher->getNewState( $oldStateValue, $tourName, $step );
 		$this->assertSame(
 			$expectedNewStateValue,
 			$newStateValue
