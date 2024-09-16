@@ -1,5 +1,5 @@
 ( function () {
-	var gt = mw.guidedTour;
+	const gt = mw.guidedTour;
 
 	/**
 	 * @class mw.guidedTour.TourBuilder
@@ -192,7 +192,7 @@
 	 *  invalid
 	 */
 	TourBuilder.prototype.step = function ( stepSpec ) {
-		var stepBuilder;
+		let stepBuilder;
 
 		if ( this.tour.steps[ stepSpec.name ] ) {
 			throw new gt.TourDefinitionError( 'The name "' + stepSpec.name + '" is already taken.  Two steps in a tour can not have the same name.' );
@@ -215,7 +215,7 @@
 	 *   invalid, or the first step has already been specified
 	 */
 	TourBuilder.prototype.firstStep = function ( stepSpec ) {
-		var stepBuilder;
+		let stepBuilder;
 
 		if ( this.tour.firstStep !== null ) {
 			throw new gt.TourDefinitionError( 'You can only specify one first step.' );

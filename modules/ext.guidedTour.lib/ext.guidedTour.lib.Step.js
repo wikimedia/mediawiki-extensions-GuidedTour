@@ -1,5 +1,5 @@
 ( function () {
-	var gt = mw.guidedTour,
+	const gt = mw.guidedTour,
 		guiders = mw.libs.guiders,
 		skin = mw.config.get( 'skin' ),
 		callbackNameToPropertySetMap = {
@@ -144,7 +144,7 @@
 			// With just 'return this;', jsduck auto-detects it as chainable
 			// However, it's not chainable if this method is set to a custom
 			// value, which it is if StepBuilder.step is called.
-			var self = this;
+			const self = this;
 			return self;
 		};
 	}
@@ -193,7 +193,7 @@
 	 * @return {Object} Guiders button specification
 	 */
 	Step.prototype.getActionButton = function ( button ) {
-		var messageKey,
+		let messageKey,
 			actionButtonClass = 'guidedtour-' + button.action + '-button',
 			buttonTypeClass = getButtonTypeClass( button ),
 			messageKeyMapping,
@@ -223,7 +223,7 @@
 			hasIcon = true;
 		}
 
-		var btnClass = guiders._buttonClass + ' ' + actionButtonClass + ' ' + buttonTypeClass;
+		let btnClass = guiders._buttonClass + ' ' + actionButtonClass + ' ' + buttonTypeClass;
 		if ( hasIcon ) {
 			btnClass += ' cdx-button--icon-only';
 		}
@@ -262,7 +262,7 @@
 	 * @return {string} returns mw style button class
 	 */
 	function getButtonTypeClass( button ) {
-		var buttonTypes = {
+		let buttonTypes = {
 				neutral: '',
 				progressive: 'cdx-button--weight-primary cdx-button--action-progressive',
 				destructive: 'cdx-button--action-destructive',
@@ -303,7 +303,7 @@
 	 * @return {Object} Modified button
 	 */
 	function modifyLinkButton( button, isExternal, url, title ) {
-		var classString = guiders._buttonClass +
+		let classString = guiders._buttonClass +
 			' ' + getButtonTypeClass( button ) +
 			// Distinguish between standard buttons and these
 			// (semantically links).
@@ -386,7 +386,7 @@
 	 */
 
 	Step.prototype.getButtons = function ( options ) {
-		var i, buttons, okayButton, nextButton, backButton, guiderButtons, currentButton, url;
+		let i, buttons, okayButton, nextButton, backButton, guiderButtons, currentButton, url;
 
 		function next() {
 			guiders.doStep( 'next' );
@@ -500,7 +500,7 @@
 	 *  value for key has an invalid type
 	 */
 	function getValueForSkin( options, key ) {
-		var value = options[ key ], type = typeof value;
+		const value = options[ key ], type = typeof value;
 		if ( type === 'string' || value instanceof $ ) {
 			return value;
 		} else if ( $.isPlainObject( value ) ) {
@@ -535,10 +535,10 @@
 		// many times without a page reload.  However, if we want to change steps
 		// when they exit the current VisualEditor session, past firings are not
 		// relevant.
-		var isDoneRegistration = false, listener;
+		let isDoneRegistration = false, listener;
 
 		listener = function () {
-			var transitionEvent, stepAfterTransition;
+			let transitionEvent, stepAfterTransition;
 
 			// If it fires while we're registering it, disregard as a memory firing.
 			if ( isDoneRegistration ) {
@@ -579,7 +579,7 @@
 	 * @return {void}
 	 */
 	Step.prototype.registerMwHooks = function () {
-		var hookName;
+		let hookName;
 
 		for ( hookName in this.hookListeners ) {
 			this.registerMwHookListener( hookName );
@@ -594,7 +594,7 @@
 	 * @return {void}
 	 */
 	Step.prototype.unregisterMwHooks = function () {
-		var hookName;
+		let hookName;
 		for ( hookName in this.hookListeners ) {
 			mw.hook( hookName ).remove( this.hookListeners[ hookName ] );
 			this.hookListeners[ hookName ] = null;
@@ -615,7 +615,7 @@
 	 * @return {void}
 	 */
 	Step.prototype.handleOnShow = function ( guider ) {
-		var tourInfo = gt.parseTourId( guider.id ), priorCurrentStep;
+		let tourInfo = gt.parseTourId( guider.id ), priorCurrentStep;
 
 		// We delete the cookie to allow the server to launch single-page
 		// tours by cookie.
@@ -683,7 +683,7 @@
 	 * @throws {mw.guidedTour.TourDefinitionError} On invalid input
 	 */
 	Step.prototype.getDescription = function ( descriptionSource ) {
-		var contentToParse, api, ajaxData = {
+		let contentToParse, api, ajaxData = {
 			uselang: mw.config.get( 'wgUserLanguage' )
 		};
 
@@ -726,7 +726,7 @@
 	 * @private
 	 */
 	Step.prototype.initialize = function () {
-		var self = this, options = this.specification,
+		let self = this, options = this.specification,
 			passedInOnClose = options.onClose, passedInOnShow = options.onShow;
 
 		// For passedInOnClose and passedInOnShow, 'this' is the
@@ -826,7 +826,7 @@
 	 *  should be displayed now
 	 */
 	Step.prototype.checkTransition = function ( transitionEvent ) {
-		var transitionReturn = this.transitionCallback( transitionEvent );
+		const transitionReturn = this.transitionCallback( transitionEvent );
 
 		if ( typeof transitionReturn === 'number' ) {
 			// TransitionAction enum
