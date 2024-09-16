@@ -1,9 +1,9 @@
 ( function () {
 	'use strict';
 
-	var originalVE;
+	let originalVE;
 	// Step specification as passed to the legacy defineTour method
-	var VALID_DEFINE_TOUR_STEP_SPEC = {
+	const VALID_DEFINE_TOUR_STEP_SPEC = {
 		titlemsg: 'guidedtour-tour-test-callouts',
 		descriptionmsg: 'guidedtour-tour-test-portal-description',
 		attachTo: '#n-portal a',
@@ -13,19 +13,19 @@
 		} ]
 	};
 	// Step specification as used with the current builder API
-	var VALID_BUILDER_STEP_SPEC = {
+	const VALID_BUILDER_STEP_SPEC = {
 		name: 'intro',
 		titlemsg: 'guidedtour-tour-test-intro-title',
 		descriptionmsg: 'guidedtour-tour-test-intro-description',
 		position: 'bottom',
 		attachTo: '#ca-edit'
 	};
-	var validTourBuilder, validTour, firstStepBuilder, firstStep, otherTourBuilder, otherTourStepBuilder;
+	let validTourBuilder, validTour, firstStepBuilder, firstStep, otherTourBuilder, otherTourStepBuilder;
 
-	var gt = mw.guidedTour;
-	var cookieConfig = gt.getCookieConfiguration();
-	var cookieName = cookieConfig.name;
-	var cookieParams = cookieConfig.parameters;
+	const gt = mw.guidedTour;
+	const cookieConfig = gt.getCookieConfiguration();
+	const cookieName = cookieConfig.name;
+	const cookieParams = cookieConfig.parameters;
 
 	function compareTypeAndMessage( errorConstructor, regexErrorMessage ) {
 		return function ( actualException ) {
@@ -88,7 +88,7 @@
 	} );
 
 	QUnit.test( 'parseTourId', function ( assert ) {
-		var tourId = 'gt-test-2', expectedTourInfo;
+		let tourId = 'gt-test-2', expectedTourInfo;
 		expectedTourInfo = {
 			name: 'test',
 			step: '2'
@@ -101,7 +101,7 @@
 	} );
 
 	QUnit.test( 'isPage', function ( assert ) {
-		var PAGE_NAME_TO_SKIP = 'TestPage',
+		const PAGE_NAME_TO_SKIP = 'TestPage',
 			OTHER_PAGE_NAME = 'WrongPage';
 
 		mw.config.set( 'wgPageName', PAGE_NAME_TO_SKIP );
@@ -120,7 +120,7 @@
 	} );
 
 	QUnit.test( 'hasQuery', function ( assert ) {
-		var paramMap,
+		let paramMap,
 			PAGE_NAME_TO_SKIP = 'RightPage',
 			OTHER_PAGE_NAME = 'OtherPage';
 
@@ -178,7 +178,7 @@
 	} );
 
 	QUnit.test( 'getStepFromQuery', function ( assert ) {
-		var step;
+		let step;
 		this.sandbox.stub( mw.util, 'getParamValue', function () {
 			return step;
 		} );
@@ -199,15 +199,15 @@
 	} );
 
 	QUnit.test( 'setTourCookie', function ( assert ) {
-		var firstTourName = 'foo';
-		var secondTourName = 'bar';
-		var numberStep = 5;
-		var stringStep = '3';
-		var oldCookieValue = mw.cookie.get( cookieName );
+		const firstTourName = 'foo';
+		const secondTourName = 'bar';
+		const numberStep = 5;
+		const stringStep = '3';
+		const oldCookieValue = mw.cookie.get( cookieName );
 
 		function assertValidCookie( expectedName, expectedStep, message ) {
-			var cookieValue = mw.cookie.get( cookieName );
-			var userState = gt.internal.parseUserState( cookieValue );
+			const cookieValue = mw.cookie.get( cookieName );
+			const userState = gt.internal.parseUserState( cookieValue );
 
 			assert.strictEqual(
 				userState.tours[ expectedName ].step,
@@ -239,7 +239,7 @@
 	} );
 
 	QUnit.test( 'shouldShow', function ( assert ) {
-		var visualEditorArgs = {
+		const visualEditorArgs = {
 			tourName: 'visualeditorintro',
 			userState: {
 				version: 1,
@@ -250,7 +250,7 @@
 			condition: 'VisualEditor'
 		};
 
-		var wikitextArgs = {
+		const wikitextArgs = {
 			tourName: 'wikitextintro',
 			userState: {
 				version: 1,
@@ -261,7 +261,7 @@
 			condition: 'wikitext'
 		};
 
-		var mockOpenVE = {
+		const mockOpenVE = {
 			instances: [ {} ]
 		};
 
@@ -534,10 +534,10 @@
 	} );
 
 	QUnit.test( 'defineTour', function ( assert ) {
-		var SPEC_MUST_BE_OBJECT = /Check your syntax. There must be exactly one argument, 'tourSpec', which must be an object\./;
-		var NAME_MUST_BE_STRING = /'tourSpec.name' must be a string, the tour name\./;
-		var STEPS_MUST_BE_ARRAY = /'tourSpec.steps' must be an array, a list of one or more steps/;
-		var VALID_TOUR_SPEC = {
+		const SPEC_MUST_BE_OBJECT = /Check your syntax. There must be exactly one argument, 'tourSpec', which must be an object\./;
+		const NAME_MUST_BE_STRING = /'tourSpec.name' must be a string, the tour name\./;
+		const STEPS_MUST_BE_ARRAY = /'tourSpec.steps' must be an array, a list of one or more steps/;
+		const VALID_TOUR_SPEC = {
 			name: 'valid',
 
 			steps: [ {
@@ -625,7 +625,7 @@
 	} );
 
 	QUnit.test( 'StepBuilder.constructor', function ( assert ) {
-		var STEP_NAME_MUST_BE_STRING = /'stepSpec.name' must be a string, the step name/;
+		const STEP_NAME_MUST_BE_STRING = /'stepSpec.name' must be a string, the step name/;
 
 		assert.strictEqual(
 			firstStepBuilder.constructor,
@@ -636,7 +636,7 @@
 		assert.throws(
 			function () {
 				// eslint-disable-next-line no-unused-vars
-				var missingNameBuilder = new gt.StepBuilder( validTour, {
+				const missingNameBuilder = new gt.StepBuilder( validTour, {
 					position: 'bottom',
 					attachTo: '#ca-edit'
 				} );
@@ -648,7 +648,7 @@
 		assert.throws(
 			function () {
 				// eslint-disable-next-line no-unused-vars
-				var numericNameBuilder = new gt.StepBuilder( validTour, {
+				const numericNameBuilder = new gt.StepBuilder( validTour, {
 					name: 1,
 					position: 'bottom',
 					attachTo: '#ca-edit'
@@ -660,7 +660,7 @@
 	} );
 
 	QUnit.test( 'StepBuilder.listenForMwHooks', function ( assert ) {
-		var listenForMwHookSpy = this.spy( firstStepBuilder.step, 'listenForMwHook' );
+		const listenForMwHookSpy = this.spy( firstStepBuilder.step, 'listenForMwHook' );
 
 		firstStepBuilder.listenForMwHooks();
 		assert.strictEqual(
@@ -698,25 +698,25 @@
 	} );
 
 	QUnit.test( 'StepBuilder.next', function ( assert ) {
-		var VALUE_PASSED_NEXT_NOT_VALID_STEP = /Value passed to \.next\(\) does not refer to a valid step/;
-		var CALLBACK_PASSED_NEXT_RETURNED_INVALID = /Callback passed to \.next\(\) returned invalid value/;
+		const VALUE_PASSED_NEXT_NOT_VALID_STEP = /Value passed to \.next\(\) does not refer to a valid step/;
+		const CALLBACK_PASSED_NEXT_RETURNED_INVALID = /Callback passed to \.next\(\) returned invalid value/;
 
-		var saveStepBuilder;
+		let saveStepBuilder;
 		function stepBuilderCallback() {
 			return saveStepBuilder;
 		}
 
-		var linkStepBuilder = validTourBuilder.step( {
+		const linkStepBuilder = validTourBuilder.step( {
 			name: 'link',
 			description: 'link description'
 		} );
 
-		var editStepBuilder = validTourBuilder.step( {
+		const editStepBuilder = validTourBuilder.step( {
 			name: 'edit',
 			description: 'edit description'
 		} );
 
-		var previewStepBuilder = validTourBuilder.step( {
+		const previewStepBuilder = validTourBuilder.step( {
 			name: 'preview',
 			description: 'preview description'
 		} );
@@ -726,7 +726,7 @@
 			description: 'save description'
 		} );
 
-		var pointsInvalidNameStepBuilder = validTourBuilder.step( {
+		const pointsInvalidNameStepBuilder = validTourBuilder.step( {
 			name: 'returnsToInvalidName',
 			description: 'returnsToInvalidName description'
 		} );
@@ -754,7 +754,7 @@
 			'Multiple calls should trigger an error'
 		);
 
-		var pointsOtherTourStepBuilder = validTourBuilder.step( {
+		const pointsOtherTourStepBuilder = validTourBuilder.step( {
 			name: 'returnsToOtherTour',
 			description: 'returnsToOtherTour description'
 		} );
@@ -774,7 +774,7 @@
 			'Registers a callback that returns the correct Step, given a StepBuilder'
 		);
 
-		var returnsInvalidNameCallbackStepBuilder = validTourBuilder.step( {
+		const returnsInvalidNameCallbackStepBuilder = validTourBuilder.step( {
 			name: 'returnsInvalidNameCallback',
 			description: 'returnsInvalidNameCallback description'
 		} );
@@ -798,7 +798,7 @@
 			'Registers a callback that returns the correct Step, given a callback returning a step name'
 		);
 
-		var returnsOtherTourCallbackStepBuilder = validTourBuilder.step( {
+		const returnsOtherTourCallbackStepBuilder = validTourBuilder.step( {
 			name: 'returnsToOtherTourCallback',
 			description: 'returnsToOtherTourCallback description'
 		} );
@@ -822,9 +822,9 @@
 	} );
 
 	QUnit.test( 'StepBuilder.transition', function ( assert ) {
-		var CALLBACK_PASSED_TRANSITION_RETURNED_INVALID = /Callback passed to \.transition\(\) returned invalid value/;
+		const CALLBACK_PASSED_TRANSITION_RETURNED_INVALID = /Callback passed to \.transition\(\) returned invalid value/;
 
-		var linkStepBuilder = validTourBuilder.step( {
+		const linkStepBuilder = validTourBuilder.step( {
 			name: 'link',
 			description: 'link description'
 		} );
@@ -837,7 +837,7 @@
 			'Registers a callback that returns the correct Step, given a callback returning a StepBuilder'
 		);
 
-		var editStepBuilder = validTourBuilder.step( {
+		const editStepBuilder = validTourBuilder.step( {
 			name: 'edit',
 			description: 'edit description'
 		} );
@@ -859,7 +859,7 @@
 			'Valid TransitionAction (HIDE) is preserved'
 		);
 
-		var previewStepBuilder = validTourBuilder.step( {
+		const previewStepBuilder = validTourBuilder.step( {
 			name: 'preview',
 			description: 'preview description'
 		} );
@@ -870,7 +870,7 @@
 			'Callback without an explicit return value is treated as returning the current step'
 		);
 
-		var returnsInvalidNameCallbackStepBuilder = validTourBuilder.step( {
+		const returnsInvalidNameCallbackStepBuilder = validTourBuilder.step( {
 			name: 'returnsInvalidNameCallback',
 			description: 'returnsInvalidNameCallback description'
 		} );
@@ -885,7 +885,7 @@
 			'transitionCallback throws if a callback that returns an invalid step name was passed to transition'
 		);
 
-		var returnsOtherTourCallbackStepBuilder = validTourBuilder.step( {
+		const returnsOtherTourCallbackStepBuilder = validTourBuilder.step( {
 			name: 'returnsToOtherTourCallback',
 			description: 'returnsToOtherTourCallback description'
 		} );
@@ -900,7 +900,7 @@
 			'transitionCallback throws if a callback that returns a StepBuilder from a different Tour was passed to transition'
 		);
 
-		var returnsInvalidTransitionActionStepBuilder = validTourBuilder.step( {
+		const returnsInvalidTransitionActionStepBuilder = validTourBuilder.step( {
 			name: 'returnsInvalidTransitionAction',
 			description: 'returnsInvalidTransitionAction description'
 		} );
@@ -925,7 +925,7 @@
 			'Multiple calls should trigger an error'
 		);
 
-		var parameterNotFunctionStepBuilder = validTourBuilder.step( {
+		const parameterNotFunctionStepBuilder = validTourBuilder.step( {
 			name: 'parameterNotFunctionStepBuilder',
 			description: 'parameterNotFunctionStepBuilder description'
 		} );
@@ -939,7 +939,7 @@
 	} );
 
 	QUnit.test( 'Step.constructor', function ( assert ) {
-		var step = new gt.Step( validTour, {
+		const step = new gt.Step( validTour, {
 			name: 'first',
 			description: 'first description'
 		} );
@@ -972,7 +972,7 @@
 	} );
 
 	QUnit.test( 'Step.getButtons', function ( assert ) {
-		var buttons = [
+		const buttons = [
 			{ type: 'destructive' },
 			{ type: [ 'progressive', 'quiet' ] },
 			{ action: 'wikiLink', type: 'progressive' },
@@ -981,13 +981,13 @@
 			{ action: 'okay', onclick: function () {} },
 			{ action: 'next' }
 		];
-		var spy = this.spy( gt.Step.prototype, 'getButtons' );
-		var tourBuilder = new gt.TourBuilder( { name: 'buttonsTest' } );
+		const spy = this.spy( gt.Step.prototype, 'getButtons' );
+		const tourBuilder = new gt.TourBuilder( { name: 'buttonsTest' } );
 		firstStepBuilder = tourBuilder.firstStep( $.extend( true, {}, { buttons: buttons }, VALID_BUILDER_STEP_SPEC ) );
 		firstStep = firstStepBuilder.step;
 
 		tourBuilder.tour.showStep( firstStep );
-		var returnedButtons = spy.lastCall.args[ 0 ].buttons;
+		const returnedButtons = spy.lastCall.args[ 0 ].buttons;
 		assert.true(
 			returnedButtons[ 0 ].html.class.indexOf( 'cdx-button--action-destructive' ) !== -1 &&
 			returnedButtons[ 0 ].html.class.indexOf( 'cdx-button' ) !== -1,
@@ -1027,7 +1027,7 @@
 	} );
 
 	QUnit.test( 'Step.registerMwHookListener', function ( assert ) {
-		var step = firstStepBuilder.step,
+		let step = firstStepBuilder.step,
 			HOOK_NAME = 'Step.registerMwHookListener.happened',
 			// This lets us verify checkTransition is called (and which
 			// arguments), but ignore any further behavior (e.g. showing
@@ -1074,7 +1074,7 @@
 	} );
 
 	QUnit.test( 'Step.registerMwHooks', function ( assert ) {
-		var step = firstStepBuilder.step,
+		let step = firstStepBuilder.step,
 			registerMwHookListenerSpy;
 		registerMwHookListenerSpy = this.spy( step, 'registerMwHookListener' );
 
@@ -1100,22 +1100,22 @@
 	} );
 
 	QUnit.test( 'Step.handleOnShow', function ( assert ) {
-		var showChangesStepBuilder = validTourBuilder.step( {
+		const showChangesStepBuilder = validTourBuilder.step( {
 			name: 'showChanges',
 			description: 'showChanges description'
 		} );
-		var showChangesStep = showChangesStepBuilder.step;
-		var singlePageTourBuilder = new gt.TourBuilder( {
+		const showChangesStep = showChangesStepBuilder.step;
+		const singlePageTourBuilder = new gt.TourBuilder( {
 			name: 'singlePage',
 			isSinglePage: true
 		} );
-		var singlePageStepBuilder = singlePageTourBuilder.step( {
+		const singlePageStepBuilder = singlePageTourBuilder.step( {
 			name: 'beginning',
 			description: 'beginning description'
 		} );
-		var singlePageStep = singlePageStepBuilder.step;
-		var updateUserStateSpy = this.spy( gt, 'updateUserStateForTour' );
-		var unregisterSpy = this.spy( gt.Step.prototype, 'unregisterMwHooks' );
+		const singlePageStep = singlePageStepBuilder.step;
+		const updateUserStateSpy = this.spy( gt, 'updateUserStateForTour' );
+		const unregisterSpy = this.spy( gt.Step.prototype, 'unregisterMwHooks' );
 
 		firstStep.handleOnShow( { id: firstStep.specification.id, elem: $() } );
 		assert.strictEqual(
@@ -1152,12 +1152,12 @@
 	} );
 
 	QUnit.test( 'TourBuilder.constructor', function ( assert ) {
-		var CHECK_YOUR_SYNTAX = /Check your syntax. There must be exactly one argument, 'tourSpec', which must be an object/;
+		const CHECK_YOUR_SYNTAX = /Check your syntax. There must be exactly one argument, 'tourSpec', which must be an object/;
 
 		assert.throws(
 			function () {
 				// eslint-disable-next-line no-unused-vars
-				var tour = new gt.TourBuilder();
+				const tour = new gt.TourBuilder();
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, CHECK_YOUR_SYNTAX ),
 			'Throws if no tour specification is passed'
@@ -1166,7 +1166,7 @@
 		assert.throws(
 			function () {
 				// eslint-disable-next-line no-unused-vars
-				var tour = new gt.TourBuilder( 'test' );
+				const tour = new gt.TourBuilder( 'test' );
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, CHECK_YOUR_SYNTAX ),
 			'Throws if the tour specification is not an object'
@@ -1175,7 +1175,7 @@
 		assert.throws(
 			function () {
 				// eslint-disable-next-line no-unused-vars
-				var tour = new gt.TourBuilder( {
+				const tour = new gt.TourBuilder( {
 					tourName: 'test'
 				} );
 			},
@@ -1219,7 +1219,7 @@
 	} );
 
 	QUnit.test( 'TourBuilder.firstStep', function ( assert ) {
-		var previewStepSpec = $.extend( {}, VALID_BUILDER_STEP_SPEC, { name: 'preview' } );
+		const previewStepSpec = $.extend( {}, VALID_BUILDER_STEP_SPEC, { name: 'preview' } );
 
 		assert.throws(
 			function () {
@@ -1231,7 +1231,7 @@
 	} );
 
 	QUnit.test( 'Tour.constructor', function ( assert ) {
-		var tour = new gt.Tour( {
+		const tour = new gt.Tour( {
 			name: 'addImage'
 		} );
 
@@ -1244,21 +1244,21 @@
 
 	QUnit.test( 'Tour.getShouldFlipHorizontally', function ( assert ) {
 		// Full coverage of all code paths
-		var EXTENSION_NAME = 'extension';
-		var ONWIKI_NAME = 'onwiki';
+		const EXTENSION_NAME = 'extension';
+		const ONWIKI_NAME = 'onwiki';
 
-		var getStateStub = this.stub( mw.loader, 'getState' );
+		const getStateStub = this.stub( mw.loader, 'getState' );
 		getStateStub.withArgs( gt.internal.getTourModuleName( ONWIKI_NAME ) )
 			.returns( null );
 
 		getStateStub.withArgs( gt.internal.getTourModuleName( EXTENSION_NAME ) )
 			.returns( 'loaded' );
 
-		var extensionTour = new gt.Tour( {
+		const extensionTour = new gt.Tour( {
 			name: EXTENSION_NAME
 		} );
 
-		var onwikiTour = new gt.Tour( {
+		const onwikiTour = new gt.Tour( {
 			name: ONWIKI_NAME
 		} );
 
@@ -1316,14 +1316,14 @@
 	} );
 
 	QUnit.test( 'Tour.initialize', function ( assert ) {
-		var stepInitializeSpy = this.spy( gt.Step.prototype, 'initialize' );
+		const stepInitializeSpy = this.spy( gt.Step.prototype, 'initialize' );
 
-		var previewStepBuilder = validTourBuilder.step( {
+		const previewStepBuilder = validTourBuilder.step( {
 			name: 'preview',
 			description: 'preview description'
 		} );
 
-		var done = assert.async();
+		const done = assert.async();
 
 		validTour.initialize().done( function () {
 			assert.true(
@@ -1381,16 +1381,16 @@
 	} );
 
 	QUnit.test( 'Tour.showStep', function ( assert ) {
-		var checkTransitionSpy = this.spy( firstStep, 'checkTransition' );
+		const checkTransitionSpy = this.spy( firstStep, 'checkTransition' );
 
 		validTour.showStep( firstStep );
 
-		var expectedTransitionEvent = new gt.TransitionEvent();
+		const expectedTransitionEvent = new gt.TransitionEvent();
 		expectedTransitionEvent.type = gt.TransitionEvent.BUILTIN;
 		expectedTransitionEvent.subtype = gt.TransitionEvent.TRANSITION_BEFORE_SHOW;
 
 		return validTour.initialize().then( function () {
-			var actualTransitionEvent = checkTransitionSpy.lastCall.args[ 0 ];
+			const actualTransitionEvent = checkTransitionSpy.lastCall.args[ 0 ];
 
 			assert.deepEqual(
 				actualTransitionEvent,
@@ -1401,7 +1401,7 @@
 	} );
 
 	QUnit.test( 'Tour.start', function ( assert ) {
-		var tourBuilder = new gt.TourBuilder( {
+		const tourBuilder = new gt.TourBuilder( {
 			name: 'reference'
 		} );
 		assert.throws(

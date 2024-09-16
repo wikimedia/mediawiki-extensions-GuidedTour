@@ -2,7 +2,7 @@
 // Designed to work on any Wikipedia article, and can work for other sites with minor message changes.
 
 ( function ( gt ) {
-	var hasEditSection, tour;
+	let hasEditSection, tour;
 
 	function shouldShowForPage() {
 		// Excludes pages outside the main namespace and pages with editing restrictions

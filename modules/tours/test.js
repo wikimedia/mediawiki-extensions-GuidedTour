@@ -3,7 +3,7 @@
  */
 ( function ( gt ) {
 	// XXX (mattflaschen, 2012-01-02): See GuidedTourHooks.php
-	var tour, launchTourButtons,
+	let tour, launchTourButtons,
 		pageName = mw.config.get( 'wgGuidedTourHelpGuiderUrl' );
 
 	// Should match shouldShowForPage from firstedit.js

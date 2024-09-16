@@ -4,7 +4,7 @@
  */
 ( function ( gt ) {
 	// XXX (mattflaschen, 2012-01-02): See GuidedTourHooks.php
-	var pageName = require( './helpGuiderUrl.json' ).pageName,
+	let pageName = require( './helpGuiderUrl.json' ).pageName,
 		tour, firstStepButtons, firstStep;
 
 	tour = new gt.TourBuilder( {

@@ -45,7 +45,7 @@
  * @singleton
  */
 mw.libs.guiders = ( function () {
-	var guiders = {},
+	let guiders = {},
 		_resizing;
 
 	guiders._defaultSettings = {
@@ -143,7 +143,7 @@ mw.libs.guiders = ( function () {
 	};
 
 	guiders._addButtons = function ( myGuider ) {
-		var guiderButtonsContainer, i, thisButton, $thisButtonElem,
+		let guiderButtonsContainer, i, thisButton, $thisButtonElem,
 			thisButtonHtml, $myCustomHTML;
 
 		// Add buttons
@@ -199,7 +199,7 @@ mw.libs.guiders = ( function () {
 	};
 
 	guiders._addXButton = function ( myGuider ) {
-		var xButtonContainer, $xButton;
+		let xButtonContainer, $xButton;
 
 		xButtonContainer = myGuider.elem.find( '.guider_close' );
 		$xButton = $( '<button>' ).attr( {
@@ -260,7 +260,7 @@ mw.libs.guiders = ( function () {
 	 * @return {number} position with requested flippings in numeric form
 	 */
 	guiders.getFlippedPosition = function ( position, options ) {
-		var TOP_CLOCK = 12, HALF_CLOCK = 6;
+		const TOP_CLOCK = 12, HALF_CLOCK = 6;
 
 		if ( !options.horizontal && !options.vertical ) {
 			return position;
@@ -308,7 +308,7 @@ mw.libs.guiders = ( function () {
 	 * @return {Object} CSS properties for the attachment
 	 */
 	guiders._getAttachCss = function ( attachTo, guider, position ) {
-		var myHeight, myWidth, base, top, left, topMarginOfBody, attachToHeight,
+		let myHeight, myWidth, base, top, left, topMarginOfBody, attachToHeight,
 			attachToWidth, bufferOffset, offsetMap, offset, positionType;
 
 		myHeight = guider.elem.innerHeight();
@@ -391,7 +391,7 @@ mw.libs.guiders = ( function () {
 	 * @return {jQuery|null} jQuery node for element, or null for no match
 	 */
 	guiders._getAttachTarget = function ( guider ) {
-		var $node = $( guider.attachTo ).filter( ':visible:first' );
+		const $node = $( guider.attachTo ).filter( ':visible:first' );
 
 		return $node.length > 0 ? $node : null;
 	};
@@ -406,7 +406,7 @@ mw.libs.guiders = ( function () {
 	 *   or undefined for invalid input.
 	 */
 	guiders._attach = function ( myGuider ) {
-		var position, $attachTarget, css, rightOfGuider, flipVertically,
+		let position, $attachTarget, css, rightOfGuider, flipVertically,
 			flipHorizontally;
 
 		if ( typeof myGuider !== 'object' ) {
@@ -453,7 +453,7 @@ mw.libs.guiders = ( function () {
 	 * @return {jQuery|null} jQuery node for element, or null for no match
 	 */
 	guiders._getActionBtnTarget = function ( guider ) {
-		var $node = $( guider.actionBtn ).filter( ':visible:first' );
+		const $node = $( guider.actionBtn ).filter( ':visible:first' );
 
 		return $node.length > 0 ? $node : null;
 	};
@@ -469,7 +469,7 @@ mw.libs.guiders = ( function () {
 	 * @return {Object} guider object
 	 */
 	guiders._guiderById = function ( id ) {
-		var myGuider;
+		let myGuider;
 
 		if ( typeof guiders._guiders[ id ] === 'undefined' ) {
 			if ( typeof guiders._guiderInits[ id ] === 'undefined' ) {
@@ -509,7 +509,7 @@ mw.libs.guiders = ( function () {
 	};
 
 	guiders._styleArrow = function ( myGuider, position ) {
-		var $myGuiderArrow, newClass, myHeight, myWidth, arrowOffset, positionMap,
+		let $myGuiderArrow, newClass, myHeight, myWidth, arrowOffset, positionMap,
 			arrowPosition;
 
 		$myGuiderArrow = $( myGuider.elem.find( '.guider_arrow' ) );
@@ -587,7 +587,7 @@ mw.libs.guiders = ( function () {
 	 * @param {number} position guider attachment position
 	 */
 	guiders._setupAnimations = function ( myGuider, position ) {
-		var classMap = {
+		const classMap = {
 			1: 'mwe-gt-fade-in-down',
 			2: 'mwe-gt-fade-in-left',
 			3: 'mwe-gt-fade-in-left',
@@ -611,7 +611,7 @@ mw.libs.guiders = ( function () {
 	};
 
 	guiders.reposition = function () {
-		var currentGuider = guiders._guiders[ guiders._currentGuiderID ];
+		const currentGuider = guiders._guiders[ guiders._currentGuiderID ];
 		guiders._attach( currentGuider );
 	};
 
@@ -643,7 +643,7 @@ mw.libs.guiders = ( function () {
 	 * @param {string} direction next or back
 	 */
 	guiders.doStep = function ( direction ) {
-		var currentGuider, moveToGuiderId, myGuider, omitHidingOverlay, actionBtn;
+		let currentGuider, moveToGuiderId, myGuider, omitHidingOverlay, actionBtn;
 		try {
 			currentGuider = guiders._guiderById( guiders._currentGuiderID ); // has check to make sure guider is initialized
 		} catch ( err ) {
@@ -695,7 +695,7 @@ mw.libs.guiders = ( function () {
 	 * @return {Object} guiders singleton
 	 */
 	guiders.createGuider = function ( passedSettings ) {
-		var $guiderElement, myGuider, $guiderTitleContainer;
+		let $guiderElement, myGuider, $guiderTitleContainer;
 
 		if ( passedSettings === null || passedSettings === undefined ) {
 			passedSettings = {};
@@ -758,7 +758,7 @@ mw.libs.guiders = ( function () {
 		next = next || false;
 
 		$( '.guider:visible' ).each( function ( index, elem ) {
-			var myGuider = guiders._guiderById( $( elem ).attr( 'id' ) );
+			const myGuider = guiders._guiderById( $( elem ).attr( 'id' ) );
 			if ( myGuider.onHide ) {
 				myGuider.onHide( myGuider, next );
 			}
@@ -784,7 +784,7 @@ mw.libs.guiders = ( function () {
 	 *   singleton.
 	 */
 	guiders.show = function ( id ) {
-		var myGuider, showReturn, windowHeight, scrollHeight, guiderOffsetTop,
+		let myGuider, showReturn, windowHeight, scrollHeight, guiderOffsetTop,
 			guiderElemHeight, isGuiderBelow, isGuiderAbove, nextGuiderId,
 			nextGuiderData, testInDom, stylePosition;
 
@@ -872,7 +872,7 @@ mw.libs.guiders = ( function () {
 	 * @method scrollToCurrent
 	 */
 	guiders.scrollToCurrent = function () {
-		var currentGuider, windowHeight, guiderOffset,
+		let currentGuider, windowHeight, guiderOffset,
 			guiderElemHeight, scrollToHeight;
 
 		currentGuider = guiders._guiders[ guiders._currentGuiderID ];

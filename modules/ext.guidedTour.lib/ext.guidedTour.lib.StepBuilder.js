@@ -1,6 +1,6 @@
 // Validation and canonicalization should be put here or in TourBuilder whenever possible.
 ( function () {
-	var gt = mw.guidedTour;
+	const gt = mw.guidedTour;
 
 	/**
 	 * @class mw.guidedTour.StepBuilder
@@ -50,7 +50,7 @@
 	 * @chainable
 	 */
 	StepBuilder.prototype.listenForMwHooks = function () {
-		var i;
+		let i;
 		for ( i = 0; i < arguments.length; i++ ) {
 			this.step.listenForMwHook( arguments[ i ] );
 		}
@@ -75,7 +75,7 @@
 	 *  or the StepBuilder is not part of the current tour
 	 */
 	StepBuilder.prototype.canonicalizeStep = function ( rawStep, exceptionPrefix, direction ) {
-		var step;
+		let step;
 
 		if ( typeof rawStep === 'string' ) {
 			// Step name
@@ -93,7 +93,7 @@
 			throw new gt.TourDefinitionError( exceptionPrefix + ': ' + ex.message );
 		}
 		if ( this.tour.emitTransitionOnStep && direction ) {
-			var transitionEvent = new gt.TransitionEvent();
+			const transitionEvent = new gt.TransitionEvent();
 			transitionEvent.type = gt.TransitionEvent.BUILTIN;
 			if ( direction === 'next' ) {
 				transitionEvent.subtype = gt.TransitionEvent.TRANSITION_NEXT;
@@ -190,7 +190,7 @@
 	 *  been set
 	 */
 	StepBuilder.prototype.setDirectionCallback = function ( direction, step ) {
-		var stepBuilder = this,
+		let stepBuilder = this,
 			currentStep = this.step,
 			callback;
 
@@ -200,7 +200,7 @@
 
 		if ( typeof step === 'function' ) {
 			callback = function () {
-				var directionReturn = step();
+				const directionReturn = step();
 				return stepBuilder.canonicalizeStep(
 					directionReturn,
 					'Callback passed to .' + direction + '() returned invalid value',
@@ -260,7 +260,7 @@
 	 * @method transition
 	 */
 	StepBuilder.prototype.transition = function ( callback ) {
-		var stepBuilder = this,
+		const stepBuilder = this,
 			currentStep = this.step;
 
 		if ( currentStep.hasCallback( 'transition' ) ) {
@@ -273,7 +273,7 @@
 		}
 
 		currentStep.setCallback( 'transition', function ( transitionEvent ) {
-			var transitionReturn = callback( transitionEvent );
+			const transitionReturn = callback( transitionEvent );
 
 			if ( typeof transitionReturn === 'number' ) {
 				if (

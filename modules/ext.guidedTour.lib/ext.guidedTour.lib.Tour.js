@@ -1,5 +1,5 @@
 ( function () {
-	var gt = mw.guidedTour,
+	const gt = mw.guidedTour,
 		internal = gt.internal,
 		guiders = mw.libs.guiders;
 
@@ -21,7 +21,7 @@
 	 * @private
 	 */
 	function Tour( tourSpec ) {
-		var moduleName;
+		let moduleName;
 
 		/**
 		 * Name of tour
@@ -171,7 +171,7 @@
 	 * @return {boolean} true if steps should be flipped, false otherwise
 	 */
 	Tour.prototype.getShouldFlipHorizontally = function ( interfaceDirection, siteDirection ) {
-		var tourDirection;
+		let tourDirection;
 
 		// Direction the tour is assumed to be written for
 		tourDirection = this.isExtensionDefined ? 'ltr' : siteDirection;
@@ -189,7 +189,7 @@
 	 * @return {jQuery.Promise} Promise that waits on all steps to initialize (or one to fail)
 	 */
 	Tour.prototype.initialize = function () {
-		var stepName, promises = [],
+		let stepName, promises = [],
 			$body = $( document.body ),
 			interfaceDirection = $( 'html' ).attr( 'dir' ),
 			siteDirection = $body.hasClass( 'sitedir-ltr' ) ? 'ltr' : 'rtl';
@@ -213,7 +213,7 @@
 	 * @return {boolean} Whether part of this tour is visible
 	 */
 	Tour.prototype.isVisible = function () {
-		var tourVisibleSelector = '.' + this.cssClass + ':visible';
+		const tourVisibleSelector = '.' + this.cssClass + ':visible';
 
 		return $( tourVisibleSelector ).length > 0;
 	};
@@ -233,7 +233,7 @@
 	 *   part of this tour
 	 */
 	Tour.prototype.getStep = function ( step ) {
-		var stepName;
+		let stepName;
 
 		if ( typeof step === 'string' ) {
 			stepName = step;
@@ -264,7 +264,7 @@
 	 * @throws {Error} If initialize fails
 	 */
 	Tour.prototype.showStep = function ( step ) {
-		var guider, transitionEvent, tour = this;
+		let guider, transitionEvent, tour = this;
 
 		step = tour.getStep( step );
 

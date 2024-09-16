@@ -24,7 +24,7 @@
 ( function ( guiders ) {
 	'use strict';
 
-	var gt = mw.guidedTour,
+	let gt = mw.guidedTour,
 		internal = gt.internal,
 		cookieName, cookieParams,
 		// Initialized to false at page load
@@ -42,7 +42,7 @@
 	 *  mw.guidedTour.internal#getInitialUserStateObject
 	 */
 	function getCookieState() {
-		var cookieValue, parsed;
+		let cookieValue, parsed;
 		cookieValue = mw.cookie.get( cookieName );
 		parsed = internal.parseUserState( cookieValue );
 		if ( parsed !== null ) {
@@ -64,7 +64,7 @@
 	 * mw.guidedTour.internal#getInitialUserStateObject
 	 */
 	function getUserState() {
-		var
+		let
 			cookieState = getCookieState(),
 			serverState = mw.config.get( 'wgGuidedTourLaunchState' ),
 			state = cookieState;
@@ -85,7 +85,7 @@
 	 * @param {string} tourName name of tour to remove
 	 */
 	function removeTourFromUserStateByName( tourName ) {
-		var parsedCookie = getCookieState();
+		const parsedCookie = getCookieState();
 		delete parsedCookie.tours[ tourName ];
 		mw.cookie.set( cookieName, JSON.stringify( parsedCookie ), cookieParams );
 	}
@@ -100,7 +100,7 @@
 	 * // @return {boolean} Whether a tour was launched
 	 */
 	function launchTourFromState( state ) {
-		var tourName, tourNames,
+		let tourName, tourNames,
 			candidateTours = [];
 
 		for ( tourName in state.tours ) {
@@ -116,7 +116,7 @@
 
 		internal.loadMultipleTours( tourNames )
 			.always( function () {
-				var tourName, max, currentStart;
+				let tourName, max, currentStart;
 
 				// This value is before 1970, but is a simple way
 				// to ensure the comparison below always works.
@@ -173,7 +173,7 @@
 	 *   with the tour name, or does not refer to a valid step
 	 */
 	function showTour( tourName, tourId ) {
-		var tour, tourInfo;
+		let tour, tourInfo;
 		tour = internal.definedTours[ tourName ];
 
 		tourInfo = gt.parseTourId( tourId );
@@ -220,7 +220,7 @@
 			// I found this timeout necessary when testing, probably to give the
 			// browser queue a chance to do pending DOM rendering.
 			setTimeout( function () {
-				var currentStepInfo, currentStep, nextStep, tour;
+				let currentStepInfo, currentStep, nextStep, tour;
 
 				if ( guiders._currentGuiderID === null ) {
 					// Ignore transitions if there is no active tour.
@@ -247,7 +247,7 @@
 		// settings an internal boolean.
 		// TODO (mattflaschen, 2014-04-01): Hack pending tour-level listeners.
 		mw.hook( 'postEdit' ).add( function () {
-			var transitionEvent = new gt.TransitionEvent();
+			const transitionEvent = new gt.TransitionEvent();
 			transitionEvent.type = gt.TransitionEvent.MW_HOOK;
 			transitionEvent.hookName = 'postEdit';
 			transitionEvent.hookArguments = [];
@@ -301,7 +301,7 @@
 		 */
 		parseTourId: function ( tourId ) {
 			// Keep in sync with regex in GuidedTourHooks.php
-			var TOUR_ID_REGEX = /^gt-([^.-]+)-([^.-]+)$/,
+			let TOUR_ID_REGEX = /^gt-([^.-]+)-([^.-]+)$/,
 				tourMatch, tourName, tourStep;
 
 			if ( typeof tourId !== 'string' ) {
@@ -374,7 +374,7 @@
 		 */
 		launchTour: function ( tourName, tourId ) {
 			internal.loadTour( tourName ).done( function () {
-				var tour = internal.definedTours[ tourName ];
+				const tour = internal.definedTours[ tourName ];
 
 				if ( tour && gt.shouldShowTour( {
 					tourName: tourName,
@@ -400,7 +400,7 @@
 		 * @return {boolean} Whether a tour was launched
 		 */
 		launchTourFromQueryString: function () {
-			var step, tourId, tourName = mw.util.getParamValue( 'tour' );
+			let step, tourId, tourName = mw.util.getParamValue( 'tour' );
 
 			if ( tourName !== null && tourName.length !== 0 ) {
 				step = gt.getStepFromQuery();
@@ -430,7 +430,7 @@
 		 * @return {boolean} Whether a tour was launched
 		 */
 		launchTourFromUserState: function () {
-			var state = getUserState();
+			const state = getUserState();
 			return launchTourFromState( state );
 		},
 
@@ -493,7 +493,7 @@
 		 *  that showed a guider
 		 */
 		endTour: function ( tourName ) {
-			var guider, tourId, tourInfo, tour;
+			let guider, tourId, tourInfo, tour;
 			if ( tourName !== undefined ) {
 				removeTourFromUserStateByName( tourName );
 			} else {
@@ -595,7 +595,7 @@
 		 * @return {boolean} true if and only if there is a match per above
 		 */
 		hasQuery: function ( queryParts, pageName ) {
-			var qname;
+			let qname;
 
 			if ( pageName && mw.config.get( 'wgPageName' ) !== pageName ) {
 				return false;
@@ -730,7 +730,7 @@
 		 * @param {number|string} [step] Step, defaulting to the cookie or first step of tour.
 		 */
 		resumeTour: function ( tourName, step ) {
-			var userState;
+			let userState;
 
 			if ( step === undefined ) {
 				step = gt.getStepFromQuery() || 0;
@@ -763,7 +763,7 @@
 		 * @param {Object} guider any guider from the tour
 		 */
 		removeTourFromUserStateByGuider: function ( guider ) {
-			var tourInfo = gt.parseTourId( guider.id );
+			const tourInfo = gt.parseTourId( guider.id );
 			if ( tourInfo !== null ) {
 				removeTourFromUserStateByName( tourInfo.name );
 			}
@@ -781,7 +781,7 @@
 		 *   page where it was shown.
 		 */
 		updateUserStateForTour: function ( args ) {
-			var cookieState = getCookieState(), tourName, tourSpec, articleId, pageName,
+			let cookieState = getCookieState(), tourName, tourSpec, articleId, pageName,
 				cookieValue;
 
 			tourName = args.tourInfo.name;
@@ -850,7 +850,7 @@
 		 * @throws {mw.guidedTour.TourDefinitionError} On invalid conditions
 		 */
 		shouldShowTour: function ( args ) {
-			var subState = args.userState.tours[ args.tourName ];
+			const subState = args.userState.tours[ args.tourName ];
 			if ( args.condition !== undefined ) {
 				// TODO (mattflaschen, 2013-07-09): Allow having multiple
 				// conditions ANDed together in an array.
@@ -908,7 +908,7 @@
 	 * @throws {mw.guidedTour.TourDefinitionError} On invalid input
 	 */
 	gt.defineTour = function ( tourSpec ) {
-		var tourBuilder, stepBuilders = [], steps, i, j, stepCount;
+		let tourBuilder, stepBuilders = [], steps, i, j, stepCount;
 
 		/**
 		 * Prepares a stepSpec for being passed to firstStep or step
@@ -942,7 +942,7 @@
 		 *  for no change
 		 */
 		function followShouldSkip( skipStartIndex, delta ) {
-			var skipIndex = skipStartIndex;
+			let skipIndex = skipStartIndex;
 
 			while ( skipIndex >= 0 &&
 				skipIndex < stepCount &&
@@ -974,7 +974,7 @@
 		 */
 		function getTransitionHandler( startIndex ) {
 			return function ( event ) {
-				var delta = 1;
+				let delta = 1;
 				if ( event.type === gt.TransitionEvent.BUILTIN && event.subtype === gt.TransitionEvent.TRANSITION_BACK ) {
 					delta = -1;
 				}

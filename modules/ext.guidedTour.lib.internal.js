@@ -13,7 +13,7 @@
  * @private
  */
 ( function () {
-	var internal;
+	let internal;
 
 	mw.guidedTour = mw.guidedTour || {};
 	mw.guidedTour.internal = internal = {
@@ -38,7 +38,7 @@
 		 * @return {jQuery.Promise} promise behaving as above
 		 */
 		alwaysWaitForAll: function ( promises ) {
-			var dfd, unresolved, allSucceeded, i;
+			let dfd, unresolved, allSucceeded, i;
 
 			function always() {
 				unresolved--;
@@ -78,7 +78,7 @@
 		 * @return {Object} initial user state object
 		 */
 		getInitialUserStateObject: function ( tourInfo ) {
-			var userStateObject = {
+			const userStateObject = {
 				version: 1,
 				tours: {}
 			};
@@ -113,7 +113,7 @@
 		 *   rejects on failure.
 		 */
 		loadExtensionTour: function ( tourName ) {
-			var dfd, tourModuleName;
+			let dfd, tourModuleName;
 
 			dfd = $.Deferred();
 			tourModuleName = internal.getTourModuleName( tourName );
@@ -139,7 +139,7 @@
 		 *   rejects on failure.
 		 */
 		loadOnWikiTour: function ( tourName ) {
-			var MW_NS_TOUR_PREFIX = 'MediaWiki:Guidedtour-tour-',
+			let MW_NS_TOUR_PREFIX = 'MediaWiki:Guidedtour-tour-',
 				onWikiTourUrl, dfd, title;
 
 			dfd = $.Deferred();
@@ -162,7 +162,7 @@
 					}
 				} )
 				.fail( function ( jqXHR, settings, exception ) {
-					var message = 'Failed to load tour ' + tourName + ' from \'' + title + '\'';
+					const message = 'Failed to load tour ' + tourName + ' from \'' + title + '\'';
 					if ( exception ) {
 						mw.log( message, exception );
 					} else {
@@ -185,7 +185,7 @@
 		 *   rejects on failure.
 		 */
 		loadTour: function ( tourName ) {
-			var tourModuleName;
+			let tourModuleName;
 
 			tourModuleName = internal.getTourModuleName( tourName );
 			if ( mw.loader.getState( tourModuleName ) !== null ) {
@@ -207,7 +207,7 @@
 		 *   until all load attempts are complete.
 		 */
 		loadMultipleTours: function ( tourNames ) {
-			var loadDeferreds = tourNames.map( function ( name ) {
+			const loadDeferreds = tourNames.map( function ( name ) {
 				return internal.loadTour( name );
 			} );
 
@@ -224,7 +224,7 @@
 		 *  invalid, returns null.
 		 */
 		parseUserState: function ( userStateJson ) {
-			var parsed;
+			let parsed;
 
 			if ( userStateJson !== null ) {
 				try {

@@ -2,7 +2,7 @@
 // Designed to work on any Wikipedia article, and can work for other sites with minor message changes.
 
 ( function ( gt ) {
-	var hasEditSectionAtLoadTime, editSectionSelector = '.mw-editsection-visualeditor',
+	let hasEditSectionAtLoadTime, editSectionSelector = '.mw-editsection-visualeditor',
 		editPageDescription, editSectionDescription, tour,
 		pointSavePageStep;
 
@@ -23,7 +23,7 @@
 	}
 
 	function handleVeChange( transitionEvent ) {
-		var isSaveButtonDisabled;
+		let isSaveButtonDisabled;
 
 		if ( transitionEvent.type === gt.TransitionEvent.MW_HOOK ) {
 			if ( transitionEvent.hookName === 've.toolbarSaveButton.stateChanged' ) {
