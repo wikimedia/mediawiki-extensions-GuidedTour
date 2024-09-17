@@ -88,8 +88,8 @@
 	} );
 
 	QUnit.test( 'parseTourId', function ( assert ) {
-		let tourId = 'gt-test-2', expectedTourInfo;
-		expectedTourInfo = {
+		const tourId = 'gt-test-2';
+		const expectedTourInfo = {
 			name: 'test',
 			step: '2'
 		};
@@ -120,9 +120,9 @@
 	} );
 
 	QUnit.test( 'hasQuery', function ( assert ) {
-		let paramMap,
-			PAGE_NAME_TO_SKIP = 'RightPage',
-			OTHER_PAGE_NAME = 'OtherPage';
+		const PAGE_NAME_TO_SKIP = 'RightPage';
+		const OTHER_PAGE_NAME = 'OtherPage';
+		let paramMap;
 
 		this.sandbox.stub( mw.util, 'getParamValue', function ( param ) {
 			return paramMap[ param ];
@@ -701,7 +701,7 @@
 		const VALUE_PASSED_NEXT_NOT_VALID_STEP = /Value passed to \.next\(\) does not refer to a valid step/;
 		const CALLBACK_PASSED_NEXT_RETURNED_INVALID = /Callback passed to \.next\(\) returned invalid value/;
 
-		let saveStepBuilder;
+		let saveStepBuilder = null;
 		function stepBuilderCallback() {
 			return saveStepBuilder;
 		}
@@ -1027,14 +1027,12 @@
 	} );
 
 	QUnit.test( 'Step.registerMwHookListener', function ( assert ) {
-		let step = firstStepBuilder.step,
-			HOOK_NAME = 'Step.registerMwHookListener.happened',
-			// This lets us verify checkTransition is called (and which
-			// arguments), but ignore any further behavior (e.g. showing
-			// a step and TRANSITION_BEFORE_SHOW)
-			checkTransitionStub, actualTransitionEvent, expectedTransitionEvent;
-
-		checkTransitionStub = this.stub( step, 'checkTransition' ).returns( null );
+		const step = firstStepBuilder.step,
+			HOOK_NAME = 'Step.registerMwHookListener.happened';
+		// This lets us verify checkTransition is called (and which
+		// arguments), but ignore any further behavior (e.g. showing
+		// a step and TRANSITION_BEFORE_SHOW)
+		const checkTransitionStub = this.stub( step, 'checkTransition' ).returns( null );
 
 		mw.hook( HOOK_NAME ).fire( 'first', 1 );
 		step.registerMwHookListener( HOOK_NAME );
@@ -1052,8 +1050,8 @@
 			'checkTransition should be called exactly once when there is a single mw.hook firing'
 		);
 
-		actualTransitionEvent = checkTransitionStub.lastCall.args[ 0 ];
-		expectedTransitionEvent = new gt.TransitionEvent();
+		const actualTransitionEvent = checkTransitionStub.lastCall.args[ 0 ];
+		const expectedTransitionEvent = new gt.TransitionEvent();
 		expectedTransitionEvent.type = gt.TransitionEvent.MW_HOOK;
 		expectedTransitionEvent.hookName = HOOK_NAME;
 		expectedTransitionEvent.hookArguments = [ 'second', 2 ];
@@ -1074,9 +1072,9 @@
 	} );
 
 	QUnit.test( 'Step.registerMwHooks', function ( assert ) {
-		let step = firstStepBuilder.step,
-			registerMwHookListenerSpy;
-		registerMwHookListenerSpy = this.spy( step, 'registerMwHookListener' );
+		const step = firstStepBuilder.step;
+
+		const registerMwHookListenerSpy = this.spy( step, 'registerMwHookListener' );
 
 		step.listenForMwHook( 'Step.registerMwHooks.something' );
 		step.listenForMwHook( 'Step.registerMwHooks.another' );

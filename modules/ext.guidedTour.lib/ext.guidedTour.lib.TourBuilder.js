@@ -192,13 +192,11 @@
 	 *  invalid
 	 */
 	TourBuilder.prototype.step = function ( stepSpec ) {
-		let stepBuilder;
-
 		if ( this.tour.steps[ stepSpec.name ] ) {
 			throw new gt.TourDefinitionError( 'The name "' + stepSpec.name + '" is already taken.  Two steps in a tour can not have the same name.' );
 		}
 
-		stepBuilder = new gt.StepBuilder( this.tour, stepSpec );
+		const stepBuilder = new gt.StepBuilder( this.tour, stepSpec );
 		this.tour.steps[ stepSpec.name ] = stepBuilder.step;
 		this.tour.stepCount++;
 		return stepBuilder;
@@ -215,13 +213,11 @@
 	 *   invalid, or the first step has already been specified
 	 */
 	TourBuilder.prototype.firstStep = function ( stepSpec ) {
-		let stepBuilder;
-
 		if ( this.tour.firstStep !== null ) {
 			throw new gt.TourDefinitionError( 'You can only specify one first step.' );
 		}
 
-		stepBuilder = this.step( stepSpec );
+		const stepBuilder = this.step( stepSpec );
 		this.tour.firstStep = stepBuilder.step;
 		return stepBuilder;
 	};

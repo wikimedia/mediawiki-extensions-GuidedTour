@@ -2,8 +2,6 @@
 // Designed to work on any Wikipedia article, and can work for other sites with minor message changes.
 
 ( function ( gt ) {
-	let hasEditSection, tour;
-
 	function shouldShowForPage() {
 		// Excludes pages outside the main namespace and pages with editing restrictions
 		// Should be 'pages that are not in content namespaces'.
@@ -16,9 +14,9 @@
 		return;
 	}
 
-	hasEditSection = $( '.mw-editsection' ).length > 0;
+	const hasEditSection = $( '.mw-editsection' ).length > 0;
 
-	tour = new gt.TourBuilder( {
+	const tour = new gt.TourBuilder( {
 		name: 'firstedit'
 	} );
 
