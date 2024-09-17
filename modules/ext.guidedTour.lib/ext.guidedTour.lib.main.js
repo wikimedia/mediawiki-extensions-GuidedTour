@@ -24,13 +24,13 @@
 ( function ( guiders ) {
 	'use strict';
 
-	let gt = mw.guidedTour,
-		internal = gt.internal,
-		cookieName, cookieParams,
-		// Initialized to false at page load
-		// Will be set true any time postEdit fires, including right after
-		// legacy wgPostEdit variable is set to true.
-		isPostEdit = false;
+	const gt = mw.guidedTour,
+		internal = gt.internal;
+	let cookieName, cookieParams;
+	// Initialized to false at page load
+	// Will be set true any time postEdit fires, including right after
+	// legacy wgPostEdit variable is set to true.
+	let isPostEdit = false;
 
 	/**
 	 * Returns the current user state, initalizing it if needed
@@ -42,9 +42,8 @@
 	 *  mw.guidedTour.internal#getInitialUserStateObject
 	 */
 	function getCookieState() {
-		let cookieValue, parsed;
-		cookieValue = mw.cookie.get( cookieName );
-		parsed = internal.parseUserState( cookieValue );
+		const cookieValue = mw.cookie.get( cookieName );
+		const parsed = internal.parseUserState( cookieValue );
 		if ( parsed !== null ) {
 			return parsed;
 		} else {
@@ -64,10 +63,9 @@
 	 * mw.guidedTour.internal#getInitialUserStateObject
 	 */
 	function getUserState() {
-		let
-			cookieState = getCookieState(),
-			serverState = mw.config.get( 'wgGuidedTourLaunchState' ),
-			state = cookieState;
+		const cookieState = getCookieState(),
+			serverState = mw.config.get( 'wgGuidedTourLaunchState' );
+		let state = cookieState;
 
 		if ( serverState !== null ) {
 			state = $.extend( true, state, serverState );
@@ -100,17 +98,16 @@
 	 * // @return {boolean} Whether a tour was launched
 	 */
 	function launchTourFromState( state ) {
-		let tourName, tourNames,
-			candidateTours = [];
+		const candidateTours = [];
 
-		for ( tourName in state.tours ) {
+		for ( const tourName in state.tours ) {
 			candidateTours.push( {
 				name: tourName,
 				step: state.tours[ tourName ].step
 			} );
 		}
 
-		tourNames = candidateTours.map( function ( el ) {
+		const tourNames = candidateTours.map( function ( el ) {
 			return el.name;
 		} );
 
@@ -173,10 +170,9 @@
 	 *   with the tour name, or does not refer to a valid step
 	 */
 	function showTour( tourName, tourId ) {
-		let tour, tourInfo;
-		tour = internal.definedTours[ tourName ];
+		const tour = internal.definedTours[ tourName ];
 
-		tourInfo = gt.parseTourId( tourId );
+		const tourInfo = gt.parseTourId( tourId );
 		if ( tourInfo.name !== tourName ) {
 			throw new gt.IllegalArgumentError( 'The tour ID "' + tourId + '" is not part of the tour "' + tourName + '".' );
 		}
@@ -220,22 +216,20 @@
 			// I found this timeout necessary when testing, probably to give the
 			// browser queue a chance to do pending DOM rendering.
 			setTimeout( function () {
-				let currentStepInfo, currentStep, nextStep, tour;
-
 				if ( guiders._currentGuiderID === null ) {
 					// Ignore transitions if there is no active tour.
 					return;
 				}
 
-				currentStepInfo = gt.parseTourId( guiders._currentGuiderID );
+				const currentStepInfo = gt.parseTourId( guiders._currentGuiderID );
 				if ( currentStepInfo === null ) {
 					mw.log.warn( 'Invalid _currentGuiderID.  Returning early' );
 					return;
 				}
 
-				tour = internal.definedTours[ currentStepInfo.name ];
-				currentStep = tour.getStep( currentStepInfo.step );
-				nextStep = currentStep.checkTransition( transitionEvent );
+				const tour = internal.definedTours[ currentStepInfo.name ];
+				const currentStep = tour.getStep( currentStepInfo.step );
+				const nextStep = currentStep.checkTransition( transitionEvent );
 				if ( nextStep !== currentStep && nextStep !== null ) {
 					tour.showStep( nextStep );
 				}
@@ -301,20 +295,19 @@
 		 */
 		parseTourId: function ( tourId ) {
 			// Keep in sync with regex in GuidedTourHooks.php
-			let TOUR_ID_REGEX = /^gt-([^.-]+)-([^.-]+)$/,
-				tourMatch, tourName, tourStep;
+			const TOUR_ID_REGEX = /^gt-([^.-]+)-([^.-]+)$/;
 
 			if ( typeof tourId !== 'string' ) {
 				return null;
 			}
 
-			tourMatch = tourId.match( TOUR_ID_REGEX );
+			const tourMatch = tourId.match( TOUR_ID_REGEX );
 			if ( !tourMatch ) {
 				return null;
 			}
 
-			tourName = tourMatch[ 1 ];
-			tourStep = tourMatch[ 2 ];
+			const tourName = tourMatch[ 1 ];
+			const tourStep = tourMatch[ 2 ];
 
 			if ( tourName.length === 0 ) {
 				return null;
@@ -400,10 +393,11 @@
 		 * @return {boolean} Whether a tour was launched
 		 */
 		launchTourFromQueryString: function () {
-			let step, tourId, tourName = mw.util.getParamValue( 'tour' );
+			const tourName = mw.util.getParamValue( 'tour' );
 
 			if ( tourName !== null && tourName.length !== 0 ) {
-				step = gt.getStepFromQuery();
+				const step = gt.getStepFromQuery();
+				let tourId;
 				if ( step !== null && step !== '' ) {
 					tourId = gt.makeTourId( {
 						name: tourName,
@@ -493,18 +487,17 @@
 		 *  that showed a guider
 		 */
 		endTour: function ( tourName ) {
-			let guider, tourId, tourInfo, tour;
 			if ( tourName !== undefined ) {
 				removeTourFromUserStateByName( tourName );
 			} else {
-				tourId = guiders._currentGuiderID;
-				tourInfo = gt.parseTourId( tourId );
+				const tourId = guiders._currentGuiderID;
+				const tourInfo = gt.parseTourId( tourId );
 				tourName = tourInfo.name;
-				guider = guiders._guiderById( tourId );
+				const guider = guiders._guiderById( tourId );
 				gt.removeTourFromUserStateByGuider( guider );
 			}
 
-			tour = internal.definedTours[ tourName ];
+			const tour = internal.definedTours[ tourName ];
 			if ( tour.currentStep !== null ) {
 				tour.currentStep.unregisterMwHooks();
 			}
@@ -730,13 +723,11 @@
 		 * @param {number|string} [step] Step, defaulting to the cookie or first step of tour.
 		 */
 		resumeTour: function ( tourName, step ) {
-			let userState;
-
 			if ( step === undefined ) {
 				step = gt.getStepFromQuery() || 0;
 			}
 
-			userState = getUserState();
+			const userState = getUserState();
 			if ( ( step === 0 ) && userState.tours[ tourName ] !== undefined ) {
 				// start from user state position
 				showTour( tourName, gt.makeTourId( {
@@ -781,12 +772,11 @@
 		 *   page where it was shown.
 		 */
 		updateUserStateForTour: function ( args ) {
-			let cookieState = getCookieState(), tourName, tourSpec, articleId, pageName,
-				cookieValue;
+			const cookieState = getCookieState();
 
-			tourName = args.tourInfo.name;
+			const tourName = args.tourInfo.name;
 			// It should be defined, except when wasShown is false.
-			tourSpec = internal.definedTours[ tourName ] || {};
+			const tourSpec = internal.definedTours[ tourName ] || {};
 
 			// Ensure there's a sub-object for this tour
 			if ( cookieState.tours[ tourName ] === undefined ) {
@@ -800,17 +790,17 @@
 				cookieState.tours[ tourName ].firstArticleId === undefined &&
 				cookieState.tours[ tourName ].firstSpecialPageName === undefined
 			) {
-				articleId = mw.config.get( 'wgArticleId' );
+				const articleId = mw.config.get( 'wgArticleId' );
 				if ( articleId !== 0 ) {
 					cookieState.tours[ tourName ].firstArticleId = articleId;
 				} else {
-					pageName = mw.config.get( 'wgPageName' );
+					const pageName = mw.config.get( 'wgPageName' );
 					cookieState.tours[ tourName ].firstSpecialPageName = pageName;
 				}
 			}
 
 			cookieState.tours[ tourName ].step = String( args.tourInfo.step );
-			cookieValue = JSON.stringify( cookieState );
+			const cookieValue = JSON.stringify( cookieState );
 			mw.cookie.set( cookieName, cookieValue, cookieParams );
 		},
 
@@ -908,7 +898,8 @@
 	 * @throws {mw.guidedTour.TourDefinitionError} On invalid input
 	 */
 	gt.defineTour = function ( tourSpec ) {
-		let tourBuilder, stepBuilders = [], steps, i, j, stepCount;
+		const stepBuilders = [];
+		let stepCount = null, steps = null;
 
 		/**
 		 * Prepares a stepSpec for being passed to firstStep or step
@@ -987,7 +978,7 @@
 			throw new gt.TourDefinitionError( 'Check your syntax. There must be exactly one argument, \'tourSpec\', which must be an object.' );
 		}
 
-		tourBuilder = new gt.TourBuilder( tourSpec );
+		const tourBuilder = new gt.TourBuilder( tourSpec );
 
 		steps = tourSpec.steps;
 		if ( !Array.isArray( steps ) || steps.length < 1 ) {
@@ -1000,13 +991,13 @@
 			convertStepSpec( 0, tourSpec.steps[ 0 ] )
 		);
 
-		for ( i = 1; i < stepCount; i++ ) {
+		for ( let i = 1; i < stepCount; i++ ) {
 			stepBuilders[ i ] = tourBuilder.step(
 				convertStepSpec( i, steps[ i ] )
 			);
 		}
 
-		for ( j = 0; j < stepCount; j++ ) {
+		for ( let j = 0; j < stepCount; j++ ) {
 			if ( j < stepCount - 1 ) {
 				stepBuilders[ j ].next( stepBuilders[ j + 1 ] );
 			}

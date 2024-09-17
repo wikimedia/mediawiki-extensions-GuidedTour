@@ -3,15 +3,14 @@
  */
 ( function ( gt ) {
 	// XXX (mattflaschen, 2012-01-02): See GuidedTourHooks.php
-	let tour, launchTourButtons,
-		pageName = mw.config.get( 'wgGuidedTourHelpGuiderUrl' );
+	const pageName = mw.config.get( 'wgGuidedTourHelpGuiderUrl' );
 
 	// Should match shouldShowForPage from firstedit.js
 	function shouldShowFirstEdit() {
 		return ( mw.config.get( 'wgCanonicalNamespace' ) === '' && mw.config.get( 'wgIsProbablyEditable' ) );
 	}
 
-	tour = new gt.TourBuilder( {
+	const tour = new gt.TourBuilder( {
 		/*
 		 * This is the name of the tour.  It must be lowercase, without any hyphen (-) or
 		 * period (.) characters.
@@ -83,7 +82,7 @@
 			.back( 'descriptionwikitext' );
 	}
 
-	launchTourButtons = [ {
+	const launchTourButtons = [ {
 		action: 'end'
 	} ];
 

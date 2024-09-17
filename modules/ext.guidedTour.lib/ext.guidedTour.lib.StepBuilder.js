@@ -190,14 +190,14 @@
 	 *  been set
 	 */
 	StepBuilder.prototype.setDirectionCallback = function ( direction, step ) {
-		let stepBuilder = this,
-			currentStep = this.step,
-			callback;
+		const stepBuilder = this,
+			currentStep = this.step;
 
 		if ( currentStep.hasCallback( direction ) ) {
 			throw new gt.TourDefinitionError( '.' + direction + '() can not be called more than once per StepBuilder' );
 		}
 
+		let callback;
 		if ( typeof step === 'function' ) {
 			callback = function () {
 				const directionReturn = step();

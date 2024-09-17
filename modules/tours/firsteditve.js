@@ -2,9 +2,8 @@
 // Designed to work on any Wikipedia article, and can work for other sites with minor message changes.
 
 ( function ( gt ) {
-	let hasEditSectionAtLoadTime, editSectionSelector = '.mw-editsection-visualeditor',
-		editPageDescription, editSectionDescription, tour,
-		pointSavePageStep;
+	const editSectionSelector = '.mw-editsection-visualeditor';
+	let pointSavePageStep = null;
 
 	function shouldShowForPage() {
 		// Excludes pages outside the main namespace and pages with editing restrictions
@@ -37,19 +36,19 @@
 		}
 	}
 
-	hasEditSectionAtLoadTime = $( editSectionSelector ).length > 0;
+	const hasEditSectionAtLoadTime = $( editSectionSelector ).length > 0;
 
-	editPageDescription = mw.message(
+	const editPageDescription = mw.message(
 		'guidedtour-tour-firsteditve-edit-page-description',
 		$( '#ca-edit a' ).text()
 	).parse();
 
-	editSectionDescription = mw.message(
+	const editSectionDescription = mw.message(
 		'guidedtour-tour-firsteditve-edit-section-description',
 		mw.message( 'editsection' ).parse()
 	).parse();
 
-	tour = new gt.TourBuilder( {
+	const tour = new gt.TourBuilder( {
 		name: 'firsteditve',
 		showConditionally: 'VisualEditor'
 	} );

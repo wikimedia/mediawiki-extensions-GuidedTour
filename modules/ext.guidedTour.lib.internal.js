@@ -38,7 +38,9 @@
 		 * @return {jQuery.Promise} promise behaving as above
 		 */
 		alwaysWaitForAll: function ( promises ) {
-			let dfd, unresolved, allSucceeded, i;
+			let unresolved = promises.length;
+			let allSucceeded = true;
+			const dfd = $.Deferred();
 
 			function always() {
 				unresolved--;
@@ -55,10 +57,7 @@
 				allSucceeded = false;
 			}
 
-			dfd = $.Deferred();
-			unresolved = promises.length;
-			allSucceeded = true;
-			for ( i = 0; i < promises.length; i++ ) {
+			for ( let i = 0; i < promises.length; i++ ) {
 				// First, if it fails we mark allSucceeded false.
 				promises[ i ].fail( fail );
 				// Then, we run the always handler regardless.
@@ -113,10 +112,8 @@
 		 *   rejects on failure.
 		 */
 		loadExtensionTour: function ( tourName ) {
-			let dfd, tourModuleName;
-
-			dfd = $.Deferred();
-			tourModuleName = internal.getTourModuleName( tourName );
+			const dfd = $.Deferred();
+			const tourModuleName = internal.getTourModuleName( tourName );
 			mw.loader.using( tourModuleName,
 				function () {
 					dfd.resolve();
@@ -139,13 +136,12 @@
 		 *   rejects on failure.
 		 */
 		loadOnWikiTour: function ( tourName ) {
-			let MW_NS_TOUR_PREFIX = 'MediaWiki:Guidedtour-tour-',
-				onWikiTourUrl, dfd, title;
+			const MW_NS_TOUR_PREFIX = 'MediaWiki:Guidedtour-tour-';
 
-			dfd = $.Deferred();
-			title = MW_NS_TOUR_PREFIX + tourName + '.js';
+			const dfd = $.Deferred();
+			const title = MW_NS_TOUR_PREFIX + tourName + '.js';
 
-			onWikiTourUrl = mw.util.getUrl( title, {
+			const onWikiTourUrl = mw.util.getUrl( title, {
 				action: 'raw',
 				ctype: 'text/javascript'
 			} );
@@ -185,9 +181,7 @@
 		 *   rejects on failure.
 		 */
 		loadTour: function ( tourName ) {
-			let tourModuleName;
-
-			tourModuleName = internal.getTourModuleName( tourName );
+			const tourModuleName = internal.getTourModuleName( tourName );
 			if ( mw.loader.getState( tourModuleName ) !== null ) {
 				return internal.loadExtensionTour( tourName );
 			} else {

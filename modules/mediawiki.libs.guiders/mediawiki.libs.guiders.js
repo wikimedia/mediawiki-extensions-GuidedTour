@@ -45,8 +45,7 @@
  * @singleton
  */
 mw.libs.guiders = ( function () {
-	let guiders = {},
-		_resizing;
+	const guiders = {};
 
 	guiders._defaultSettings = {
 		attachTo: null, // Selector of the element to attach to.
@@ -143,19 +142,17 @@ mw.libs.guiders = ( function () {
 	};
 
 	guiders._addButtons = function ( myGuider ) {
-		let guiderButtonsContainer, i, thisButton, $thisButtonElem,
-			thisButtonHtml, $myCustomHTML;
-
 		// Add buttons
-		guiderButtonsContainer = myGuider.elem.find( '.guider_buttons' );
+		const guiderButtonsContainer = myGuider.elem.find( '.guider_buttons' );
 
 		if ( myGuider.buttons === null || myGuider.buttons.length === 0 ) {
 			guiderButtonsContainer.remove();
 			return;
 		}
 
-		for ( i = myGuider.buttons.length - 1; i >= 0; i-- ) {
-			thisButton = myGuider.buttons[ i ];
+		for ( let i = myGuider.buttons.length - 1; i >= 0; i-- ) {
+			const thisButton = myGuider.buttons[ i ];
+			let thisButtonHtml;
 			if ( thisButton.hasIcon ) {
 				// eslint-disable-next-line no-jquery/variable-pattern
 				thisButtonHtml = $( '<span>' )
@@ -164,7 +161,7 @@ mw.libs.guiders = ( function () {
 			} else {
 				thisButtonHtml = thisButton.name;
 			}
-			$thisButtonElem = $(
+			const $thisButtonElem = $(
 				thisButton.buttonElement || guiders._buttonElement,
 				$.extend(
 					{
@@ -189,7 +186,7 @@ mw.libs.guiders = ( function () {
 		}
 
 		if ( myGuider.buttonCustomHTML !== '' ) {
-			$myCustomHTML = $( myGuider.buttonCustomHTML );
+			const $myCustomHTML = $( myGuider.buttonCustomHTML );
 			myGuider.elem.find( '.guider_buttons' ).append( $myCustomHTML );
 		}
 
@@ -199,10 +196,8 @@ mw.libs.guiders = ( function () {
 	};
 
 	guiders._addXButton = function ( myGuider ) {
-		let xButtonContainer, $xButton;
-
-		xButtonContainer = myGuider.elem.find( '.guider_close' );
-		$xButton = $( '<button>' ).attr( {
+		const xButtonContainer = myGuider.elem.find( '.guider_close' );
+		let $xButton = $( '<button>' ).attr( {
 			class: 'cdx-button cdx-button--icon-only cdx-button--weight-quiet',
 			'aria-label': mw.msg( 'guidedtour-close-button' )
 		} );
@@ -308,11 +303,8 @@ mw.libs.guiders = ( function () {
 	 * @return {Object} CSS properties for the attachment
 	 */
 	guiders._getAttachCss = function ( attachTo, guider, position ) {
-		let myHeight, myWidth, base, top, left, topMarginOfBody, attachToHeight,
-			attachToWidth, bufferOffset, offsetMap, offset, positionType;
-
-		myHeight = guider.elem.innerHeight();
-		myWidth = guider.elem.innerWidth();
+		const myHeight = guider.elem.innerHeight();
+		const myWidth = guider.elem.innerWidth();
 
 		if ( position === 0 ) {
 			// The guider is positioned in the center of the screen.
@@ -324,21 +316,21 @@ mw.libs.guiders = ( function () {
 		}
 
 		// Otherwise, the guider is positioned relative to the attachTo element.
-		base = attachTo.offset();
-		top = base.top;
-		left = base.left;
+		const base = attachTo.offset();
+		let top = base.top;
+		let left = base.left;
 
 		// topMarginOfBody corrects positioning if body has a top margin set on it.
-		topMarginOfBody = $( 'body' ).outerHeight( true ) - $( 'body' ).outerHeight( false );
+		const topMarginOfBody = $( 'body' ).outerHeight( true ) - $( 'body' ).outerHeight( false );
 		top -= topMarginOfBody;
 
-		attachToHeight = attachTo.innerHeight();
-		attachToWidth = attachTo.innerWidth();
+		const attachToHeight = attachTo.innerHeight();
+		const attachToWidth = attachTo.innerWidth();
 
-		bufferOffset = 0.9 * guiders._arrowSize - 10;
+		const bufferOffset = 0.9 * guiders._arrowSize - 10;
 
 		// offsetMap follows the form: [height, width]
-		offsetMap = {
+		const offsetMap = {
 			1: [ -bufferOffset - myHeight, attachToWidth - myWidth ],
 			2: [ 0, bufferOffset + attachToWidth ],
 			3: [ attachToHeight / 2 - myHeight / 2, bufferOffset + attachToWidth ],
@@ -352,11 +344,11 @@ mw.libs.guiders = ( function () {
 			11: [ -bufferOffset - myHeight, 0 ],
 			12: [ -bufferOffset - myHeight, attachToWidth / 2 - myWidth / 2 ]
 		};
-		offset = offsetMap[ position ];
+		const offset = offsetMap[ position ];
 		top += offset[ 0 ];
 		left += offset[ 1 ];
 
-		positionType = 'absolute';
+		let positionType = 'absolute';
 		// If the element you are attaching to is position: fixed, then we will make the guider
 		// position: fixed as well.
 		if ( attachTo.css( 'position' ) === 'fixed' ) {
@@ -406,28 +398,25 @@ mw.libs.guiders = ( function () {
 	 *   or undefined for invalid input.
 	 */
 	guiders._attach = function ( myGuider ) {
-		let position, $attachTarget, css, rightOfGuider, flipVertically,
-			flipHorizontally;
-
 		if ( typeof myGuider !== 'object' ) {
 			return;
 		}
 
-		$attachTarget = guiders._getAttachTarget( myGuider );
+		const $attachTarget = guiders._getAttachTarget( myGuider );
 
 		// We keep a local position, separate from the originally requested one.
 		// We alter this locally for auto-flip and missing elements.
 		//
 		// However, the DOM or window size may change later, and on each attach we want to start
 		// with the originally requested position as the baseline.
-		position = $attachTarget !== null ? myGuider.position : 0;
+		let position = $attachTarget !== null ? myGuider.position : 0;
 
-		css = guiders._getAttachCss( $attachTarget, myGuider, position );
+		let css = guiders._getAttachCss( $attachTarget, myGuider, position );
 
 		if ( myGuider.flipToKeepOnScreen ) {
-			rightOfGuider = css.left + myGuider.width;
-			flipVertically = css.top < 0;
-			flipHorizontally = css.left < 0 || rightOfGuider > $( 'body' ).innerWidth();
+			const rightOfGuider = css.left + myGuider.width;
+			const flipVertically = css.top < 0;
+			const flipHorizontally = css.left < 0 || rightOfGuider > $( 'body' ).innerWidth();
 			if ( flipVertically || flipHorizontally ) {
 				position = guiders.getFlippedPosition( position, {
 					vertical: flipVertically,
@@ -509,10 +498,7 @@ mw.libs.guiders = ( function () {
 	};
 
 	guiders._styleArrow = function ( myGuider, position ) {
-		let $myGuiderArrow, newClass, myHeight, myWidth, arrowOffset, positionMap,
-			arrowPosition;
-
-		$myGuiderArrow = $( myGuider.elem.find( '.guider_arrow' ) );
+		const $myGuiderArrow = $( myGuider.elem.find( '.guider_arrow' ) );
 
 		position = position || 0;
 
@@ -527,7 +513,7 @@ mw.libs.guiders = ( function () {
 		if ( position === 0 ) {
 			return;
 		}
-		newClass = {
+		const newClass = {
 			1: 'guider_arrow_down',
 			2: 'guider_arrow_left',
 			3: 'guider_arrow_left',
@@ -546,10 +532,10 @@ mw.libs.guiders = ( function () {
 		// eslint-disable-next-line mediawiki/class-doc
 		$myGuiderArrow.addClass( newClass[ position ] );
 
-		myHeight = myGuider.elem.innerHeight();
-		myWidth = myGuider.elem.innerWidth();
-		arrowOffset = guiders._arrowSize / 2;
-		positionMap = {
+		const myHeight = myGuider.elem.innerHeight();
+		const myWidth = myGuider.elem.innerWidth();
+		const arrowOffset = guiders._arrowSize / 2;
+		const positionMap = {
 			1: [ 'right', arrowOffset ],
 			2: [ 'top', arrowOffset ],
 			3: [ 'top', myHeight / 2 - arrowOffset ],
@@ -563,7 +549,7 @@ mw.libs.guiders = ( function () {
 			11: [ 'left', arrowOffset ],
 			12: [ 'left', myWidth / 2 - arrowOffset ]
 		};
-		arrowPosition = positionMap[ position ];
+		const arrowPosition = positionMap[ position ];
 		$myGuiderArrow.css( arrowPosition[ 0 ], arrowPosition[ 1 ] + 'px' );
 	};
 
@@ -695,17 +681,15 @@ mw.libs.guiders = ( function () {
 	 * @return {Object} guiders singleton
 	 */
 	guiders.createGuider = function ( passedSettings ) {
-		let $guiderElement, myGuider, $guiderTitleContainer;
-
 		if ( passedSettings === null || passedSettings === undefined ) {
 			passedSettings = {};
 		}
 
 		// Extend those settings with passedSettings
-		myGuider = $.extend( {}, guiders._defaultSettings, passedSettings );
+		const myGuider = $.extend( {}, guiders._defaultSettings, passedSettings );
 		myGuider.id = myGuider.id || String( Math.floor( Math.random() * 1000 ) );
 
-		$guiderElement = $( guiders._htmlSkeleton );
+		const $guiderElement = $( guiders._htmlSkeleton );
 		// eslint-disable-next-line no-jquery/variable-pattern
 		myGuider.elem = $guiderElement;
 		if ( typeof myGuider.classString !== 'undefined' && myGuider.classString !== null ) {
@@ -714,7 +698,7 @@ mw.libs.guiders = ( function () {
 		}
 		myGuider.elem.css( 'width', myGuider.width + 'px' );
 
-		$guiderTitleContainer = $guiderElement.find( '.guider_title' );
+		const $guiderTitleContainer = $guiderElement.find( '.guider_title' );
 		$guiderTitleContainer.html( myGuider.title );
 
 		$guiderElement.find( '.guider_description' ).html( myGuider.description );
@@ -784,14 +768,11 @@ mw.libs.guiders = ( function () {
 	 *   singleton.
 	 */
 	guiders.show = function ( id ) {
-		let myGuider, showReturn, windowHeight, scrollHeight, guiderOffsetTop,
-			guiderElemHeight, isGuiderBelow, isGuiderAbove, nextGuiderId,
-			nextGuiderData, testInDom, stylePosition;
-
 		if ( !id && guiders._lastCreatedGuiderID ) {
 			id = guiders._lastCreatedGuiderID;
 		}
 
+		let myGuider;
 		try {
 			myGuider = guiders._guiderById( id );
 		} catch ( err ) {
@@ -802,7 +783,7 @@ mw.libs.guiders = ( function () {
 		if ( myGuider.onShow ) {
 			// if onShow returns something, assume this means you want to bypass the
 			//  rest of onShow.
-			showReturn = myGuider.onShow( myGuider );
+			const showReturn = myGuider.onShow( myGuider );
 			if ( showReturn ) {
 				return showReturn;
 			}
@@ -826,17 +807,17 @@ mw.libs.guiders = ( function () {
 		myGuider.elem.fadeIn( 'fast' ).data( 'locked', false );
 		guiders._currentGuiderID = id;
 
-		windowHeight = guiders._windowHeight = $( window ).height();
-		scrollHeight = $( window ).scrollTop();
+		const windowHeight = guiders._windowHeight = $( window ).height();
+		const scrollHeight = $( window ).scrollTop();
 
 		// .offset().top returns invalid value (0) when position: absolute
-		stylePosition = myGuider.elem.css( 'position' ) ? myGuider.elem.css( 'position' ).toLowerCase() : '';
-		guiderOffsetTop = stylePosition === 'absolute' ?
+		const stylePosition = myGuider.elem.css( 'position' ) ? myGuider.elem.css( 'position' ).toLowerCase() : '';
+		const guiderOffsetTop = stylePosition === 'absolute' ?
 			parseFloat( myGuider.elem.css( 'top' ) || 0 ) : myGuider.elem.offset().top;
 
-		guiderElemHeight = myGuider.elem.height();
-		isGuiderBelow = ( scrollHeight + windowHeight < guiderOffsetTop + guiderElemHeight ); /* we will need to scroll down */
-		isGuiderAbove = ( guiderOffsetTop < scrollHeight ); /* we will need to scroll up */
+		const guiderElemHeight = myGuider.elem.height();
+		const isGuiderBelow = ( scrollHeight + windowHeight < guiderOffsetTop + guiderElemHeight ); /* we will need to scroll down */
+		const isGuiderAbove = ( guiderOffsetTop < scrollHeight ); /* we will need to scroll up */
 		if ( myGuider.autoFocus ) {
 			if ( isGuiderBelow || isGuiderAbove ) {
 				// Sometimes the browser won't scroll if the person just clicked,
@@ -850,14 +831,14 @@ mw.libs.guiders = ( function () {
 		$( myGuider.elem ).trigger( 'guiders.show' );
 
 		// Create (preload) next guider if it hasn't been created
-		nextGuiderId = myGuider.next || null;
+		const nextGuiderId = myGuider.next || null;
 		if ( nextGuiderId !== null && nextGuiderId !== '' ) {
-			if ( ( nextGuiderData = guiders._guiderInits[ nextGuiderId ] ) ) {
+			const nextGuiderData = guiders._guiderInits[ nextGuiderId ];
+			if ( nextGuiderData ) {
 				// Only attach if it exists and is :visible
-				testInDom = guiders._getAttachTarget( nextGuiderData );
+				const testInDom = guiders._getAttachTarget( nextGuiderData );
 				if ( testInDom !== null ) {
 					guiders.createGuider( nextGuiderData );
-					nextGuiderData = undefined;
 				}
 			}
 		}
@@ -872,20 +853,17 @@ mw.libs.guiders = ( function () {
 	 * @method scrollToCurrent
 	 */
 	guiders.scrollToCurrent = function () {
-		let currentGuider, windowHeight, guiderOffset,
-			guiderElemHeight, scrollToHeight;
-
-		currentGuider = guiders._guiders[ guiders._currentGuiderID ];
+		const currentGuider = guiders._guiders[ guiders._currentGuiderID ];
 		if ( typeof currentGuider === 'undefined' ) {
 			return;
 		}
-		windowHeight = guiders._windowHeight;
+		const windowHeight = guiders._windowHeight;
 		// scrollHeight = $( window ).scrollTop();
-		guiderOffset = currentGuider.elem.offset();
-		guiderElemHeight = currentGuider.elem.height();
+		const guiderOffset = currentGuider.elem.offset();
+		const guiderElemHeight = currentGuider.elem.height();
 
 		// Scroll to the guider's position.
-		scrollToHeight = Math.round( Math.max( guiderOffset.top + ( guiderElemHeight / 2 ) - ( windowHeight / 2 ), 0 ) );
+		const scrollToHeight = Math.round( Math.max( guiderOffset.top + ( guiderElemHeight / 2 ) - ( windowHeight / 2 ), 0 ) );
 		// Basic concept from https://github.com/yckart/jquery.scrollto.js/blob/master/jquery.scrollto.js
 		$( 'html, body' ).animate( {
 			scrollTop: scrollToHeight
@@ -893,7 +871,7 @@ mw.libs.guiders = ( function () {
 	};
 
 	// Change the bubble position after browser gets resized
-	_resizing = undefined;
+	let _resizing;
 	$( window ).on( 'resize', function () {
 		if ( typeof ( _resizing ) !== 'undefined' ) {
 			clearTimeout( _resizing ); // Prevents seizures

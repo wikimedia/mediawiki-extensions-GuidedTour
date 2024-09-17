@@ -192,19 +192,17 @@
 	 * @return {Object} Guiders button specification
 	 */
 	Step.prototype.getActionButton = function ( button ) {
-		let messageKey,
-			actionButtonClass = 'guidedtour-' + button.action + '-button',
-			buttonTypeClass = getButtonTypeClass( button ),
-			messageKeyMapping,
-			hasIcon;
+		const actionButtonClass = 'guidedtour-' + button.action + '-button',
+			buttonTypeClass = getButtonTypeClass( button );
 
-		messageKeyMapping = {
+		const messageKeyMapping = {
 			next: 'guidedtour-next-button',
 			back: 'guidedtour-back-button',
 			okay: 'guidedtour-okay-button',
 			end: 'guidedtour-okay-button'
 		};
 
+		let messageKey;
 		// TODO: Refactor how namemsg is handled, for code reuse.
 		if ( button.namemsg ) {
 			messageKey = button.namemsg;
@@ -213,6 +211,7 @@
 			delete button.namemsg;
 		}
 
+		let hasIcon;
 		if ( button.name ) {
 			hasIcon = false;
 		} else {
@@ -261,13 +260,13 @@
 	 * @return {string} returns mw style button class
 	 */
 	function getButtonTypeClass( button ) {
-		let buttonTypes = {
-				neutral: '',
-				progressive: 'cdx-button--weight-primary cdx-button--action-progressive',
-				destructive: 'cdx-button--action-destructive',
-				quiet: 'cdx-button--weight-quiet'
-			},
-			classString = '';
+		const buttonTypes = {
+			neutral: '',
+			progressive: 'cdx-button--weight-primary cdx-button--action-progressive',
+			destructive: 'cdx-button--action-destructive',
+			quiet: 'cdx-button--weight-quiet'
+		};
+		let classString = '';
 
 		// Build button class string
 		if ( button.type ) {
@@ -302,7 +301,7 @@
 	 * @return {Object} Modified button
 	 */
 	function modifyLinkButton( button, isExternal, url, title ) {
-		let classString = guiders._buttonClass +
+		const classString = guiders._buttonClass +
 			' ' + getButtonTypeClass( button ) +
 			// Distinguish between standard buttons and these
 			// (semantically links).
@@ -315,10 +314,9 @@
 			// and href should not be passed as a key per guidance on
 			// https://doc.wikimedia.org/codex/latest/components/demos/button.html#link-buttons-and-other-elements
 			// This currently works around T364062
-			' cdx-button--fake-button cdx-button--fake-button--enabled',
-			html;
+			' cdx-button--fake-button cdx-button--fake-button--enabled';
 
-		html = {
+		const html = {
 			href: url,
 			title: title,
 			class: classString
@@ -385,8 +383,6 @@
 	 */
 
 	Step.prototype.getButtons = function ( options ) {
-		let i, buttons, okayButton, nextButton, backButton, guiderButtons, currentButton, url;
-
 		function next() {
 			guiders.doStep( 'next' );
 		}
@@ -399,10 +395,11 @@
 			gt.endTour();
 		}
 
-		buttons = options.buttons || [];
-		guiderButtons = [];
-		for ( i = 0; i < buttons.length; i++ ) {
-			currentButton = buttons[ i ];
+		const buttons = options.buttons || [];
+		const guiderButtons = [];
+		let nextButton, backButton, okayButton;
+		for ( let i = 0; i < buttons.length; i++ ) {
+			const currentButton = buttons[ i ];
 			if ( currentButton.action !== undefined ) {
 				switch ( currentButton.action ) {
 					case 'next':
@@ -425,11 +422,12 @@
 						currentButton.callback = endTour.bind( this );
 						okayButton = this.getActionButton( currentButton );
 						break;
-					case 'wikiLink':
-						url = mw.util.getUrl( currentButton.page );
+					case 'wikiLink': {
+						const url = mw.util.getUrl( currentButton.page );
 						guiderButtons.push( modifyLinkButton( currentButton, false, url, currentButton.page ) );
 						delete currentButton.page;
 						break;
+					}
 					case 'externalLink':
 						guiderButtons.push( modifyLinkButton( currentButton, true, currentButton.url ) );
 						delete currentButton.url;
@@ -532,9 +530,9 @@
 		// many times without a page reload.  However, if we want to change steps
 		// when they exit the current VisualEditor session, past firings are not
 		// relevant.
-		let isDoneRegistration = false, listener;
+		let isDoneRegistration = false;
 
-		listener = function () {
+		const listener = function () {
 			let transitionEvent, stepAfterTransition;
 
 			// If it fires while we're registering it, disregard as a memory firing.
@@ -604,7 +602,7 @@
 	 * @param {Object} guider Guider object provided by Guiders.js
 	 */
 	Step.prototype.handleOnShow = function ( guider ) {
-		let tourInfo = gt.parseTourId( guider.id ), priorCurrentStep;
+		const tourInfo = gt.parseTourId( guider.id );
 
 		// We delete the cookie to allow the server to launch single-page
 		// tours by cookie.
@@ -617,7 +615,7 @@
 			} );
 		}
 
-		priorCurrentStep = this.tour.currentStep;
+		const priorCurrentStep = this.tour.currentStep;
 		if ( priorCurrentStep !== null ) {
 			priorCurrentStep.unregisterMwHooks();
 		}
@@ -672,10 +670,11 @@
 	 * @throws {mw.guidedTour.TourDefinitionError} On invalid input
 	 */
 	Step.prototype.getDescription = function ( descriptionSource ) {
-		let contentToParse, api, ajaxData = {
+		const ajaxData = {
 			uselang: mw.config.get( 'wgUserLanguage' )
 		};
 
+		let contentToParse;
 		if ( descriptionSource instanceof mw.guidedTour.WikitextDescription ) {
 			contentToParse = descriptionSource.getWikitext();
 
@@ -694,7 +693,7 @@
 			return $.Deferred().reject( new gt.TourDefinitionError( 'description must be mw.guidedTour.WikitextDescription (wikitext), mw.Title (a page title), or a string (HTML)' ) );
 		}
 
-		api = new mw.Api();
+		const api = new mw.Api();
 		return api.parse( contentToParse, ajaxData );
 	};
 
@@ -715,8 +714,9 @@
 	 * @private
 	 */
 	Step.prototype.initialize = function () {
-		let self = this, options = this.specification,
-			passedInOnClose = options.onClose, passedInOnShow = options.onShow;
+		const self = this, options = this.specification,
+			passedInOnClose = options.onClose;
+		let passedInOnShow = options.onShow;
 
 		// For passedInOnClose and passedInOnShow, 'this' is the
 		// individual guider object.

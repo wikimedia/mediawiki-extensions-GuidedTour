@@ -4,10 +4,9 @@
  */
 ( function ( gt ) {
 	// XXX (mattflaschen, 2012-01-02): See GuidedTourHooks.php
-	let pageName = require( './helpGuiderUrl.json' ).pageName,
-		tour, firstStepButtons, firstStep;
+	const pageName = require( './helpGuiderUrl.json' ).pageName;
 
-	tour = new gt.TourBuilder( {
+	const tour = new gt.TourBuilder( {
 		/*
 		 * This is the name of the tour.  It must be lowercase, without any hyphen (-) or
 		 * period (.) characters.
@@ -19,11 +18,11 @@
 	} );
 
 	// If there is no page, this is also the last step.
-	firstStepButtons = ( !pageName ) ?
+	const firstStepButtons = ( !pageName ) ?
 		[ { action: 'end' } ] :
 		[];
 
-	firstStep = tour.firstStep( {
+	const firstStep = tour.firstStep( {
 		name: 'descriptionwikitext',
 		titlemsg: 'guidedtour-tour-test-mediawiki-parse',
 		// This deliberately does not use descriptionmsg in order to demonstrate

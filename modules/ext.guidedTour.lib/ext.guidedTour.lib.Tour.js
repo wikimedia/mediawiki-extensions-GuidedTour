@@ -21,8 +21,6 @@
 	 * @private
 	 */
 	function Tour( tourSpec ) {
-		let moduleName;
-
 		/**
 		 * Name of tour
 		 *
@@ -113,7 +111,7 @@
 		 */
 		this.flipRTL = null;
 
-		moduleName = internal.getTourModuleName( this.name );
+		const moduleName = internal.getTourModuleName( this.name );
 
 		/**
 		 * Whether this is defined through a ResourceLoader module in an extension
@@ -171,10 +169,8 @@
 	 * @return {boolean} true if steps should be flipped, false otherwise
 	 */
 	Tour.prototype.getShouldFlipHorizontally = function ( interfaceDirection, siteDirection ) {
-		let tourDirection;
-
 		// Direction the tour is assumed to be written for
-		tourDirection = this.isExtensionDefined ? 'ltr' : siteDirection;
+		const tourDirection = this.isExtensionDefined ? 'ltr' : siteDirection;
 
 		// We flip if needed to match the interface direction
 		return tourDirection !== interfaceDirection;
@@ -189,14 +185,14 @@
 	 * @return {jQuery.Promise} Promise that waits on all steps to initialize (or one to fail)
 	 */
 	Tour.prototype.initialize = function () {
-		let stepName, promises = [],
+		const promises = [],
 			$body = $( document.body ),
 			interfaceDirection = $( 'html' ).attr( 'dir' ),
 			siteDirection = $body.hasClass( 'sitedir-ltr' ) ? 'ltr' : 'rtl';
 
 		if ( !this.initialized ) {
 			this.flipRTL = this.getShouldFlipHorizontally( interfaceDirection, siteDirection );
-			for ( stepName in this.steps ) {
+			for ( const stepName in this.steps ) {
 				promises.push( this.steps[ stepName ].initialize() );
 			}
 			this.initialized = $.when.apply( $, promises );
@@ -264,19 +260,19 @@
 	 * @throws {Error} If initialize fails
 	 */
 	Tour.prototype.showStep = function ( step ) {
-		let guider, transitionEvent, tour = this;
+		const tour = this;
 
 		step = tour.getStep( step );
 
 		this.initialize().done( function () {
-			transitionEvent = new gt.TransitionEvent();
+			const transitionEvent = new gt.TransitionEvent();
 			transitionEvent.type = gt.TransitionEvent.BUILTIN;
 			transitionEvent.subtype = gt.TransitionEvent.TRANSITION_BEFORE_SHOW;
 			step = step.checkTransition( transitionEvent );
 
 			// null means a TransitionAction (hide/end)
 			if ( step !== null ) {
-				guider = guiders._guiderById( step.specification.id );
+				const guider = guiders._guiderById( step.specification.id );
 				if ( guider !== undefined && guider.elem.is( ':visible' ) ) {
 					// Already showing the same one
 					return;

@@ -13,7 +13,6 @@
 		"no-jquery/no-sizzle": "warn",
 		"no-shadow": "warn",
 		"prefer-arrow-callback": "off",
-		"no-jquery/no-extend": "off",
-		"prefer-const": "warn"
+		"no-jquery/no-extend": "off"
 	}
 }
