@@ -13,6 +13,7 @@
 	"guidedtour-next-button": "Text for moving to next step of guided tour.\n\nSee also:\n* {{msg-mw|Guidedtour-back-button}}\n{{Identical|Next}}",
 	"guidedtour-okay-button": "Main action button text.  Will dismiss single tour step (ending the tour if this is the last step) or do another tour-defined action.\n{{Identical|OK}}",
 	"guidedtour-back-button": "Used as label for the Back button.\n\nSee also:\n* {{msg-mw|Guidedtour-next-button}}\n{{Identical|Back}}",
+	"guidedtour-close-button": "Used as screenreader-label for the Close button to close/cancel a guided tour.",
 	"guidedtour-tour-test-testing": "Title of first step in test tour",
 	"guidedtour-tour-test-test-description": "Sample description to show how it is used.\n{{doc-important|Do not translate the Latin \"Lorem ipsum dolor sit!\".}}",
 	"guidedtour-tour-test-callouts": "Title of second step in test tour, introducing callouts",
