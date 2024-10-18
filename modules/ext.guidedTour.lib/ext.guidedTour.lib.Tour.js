@@ -131,6 +131,13 @@
 		 * @private
 		 */
 		this.initialized = null;
+
+		/**
+		 * Whether to omit transition events when clicking next or back
+		 *
+		 * @property {boolean}
+		 */
+		this.emitTransitionOnStep = tourSpec.emitTransitionOnStep;
 	}
 
 	// TODO: Change this to use before/after (T142267)

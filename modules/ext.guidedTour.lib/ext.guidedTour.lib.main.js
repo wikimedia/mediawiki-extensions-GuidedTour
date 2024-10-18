@@ -921,25 +921,27 @@
 		 * @private
 		 *
 		 * @param {number} skipStartIndex 0-based index of the step to start at
+		 * @param {number} delta +1 for moving forwards, -1 for moving backwards
 		 *
 		 * @return {mw.guidedTour.StepBuilder|mw.guidedTour.TransitionAction|undefined}
 		 *  next step, hide (if the tour should be hidden for now), or undefined
 		 *  for no change
 		 */
-		function followShouldSkip( skipStartIndex ) {
+		function followShouldSkip( skipStartIndex, delta ) {
 			var skipIndex = skipStartIndex;
 
-			while ( skipIndex < stepCount &&
+			while ( skipIndex >= 0 &&
+				skipIndex < stepCount &&
 				steps[ skipIndex ].shouldSkip &&
 				steps[ skipIndex ].shouldSkip() ) {
 
-				skipIndex++;
+				skipIndex += delta;
 			}
 
 			if ( skipIndex === skipStartIndex ) {
 				// No change, so don't skip
 				return undefined;
-			} else if ( skipIndex < stepCount ) {
+			} else if ( skipIndex >= 0 && skipIndex < stepCount ) {
 				return stepBuilders[ skipIndex ];
 			} else {
 				// Skipped past the end
@@ -957,8 +959,12 @@
 		 * @return {Function} Handler that returns the target after skipping
 		 */
 		function getTransitionHandler( startIndex ) {
-			return function () {
-				return followShouldSkip( startIndex );
+			return function ( event ) {
+				var delta = 1;
+				if ( event.type === gt.TransitionEvent.BUILTIN && event.subtype === gt.TransitionEvent.TRANSITION_BACK ) {
+					delta = -1;
+				}
+				return followShouldSkip( startIndex, delta );
 			};
 		}
 

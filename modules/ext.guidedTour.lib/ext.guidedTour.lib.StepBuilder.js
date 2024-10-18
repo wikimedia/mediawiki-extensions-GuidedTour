@@ -64,19 +64,23 @@
 	};
 
 	/**
-	 * Canonicalizes and checks a step reference passed to the builder
+	 * Canonicalizes and checks a step reference passed to the builder before
+	 * it is transitioned to
 	 *
 	 * @private
 	 *
 	 * @param {string|mw.guidedTour.StepBuilder} rawStep Step to canoncialize
 	 * @param {string} exceptionPrefix Prefix, used if an exception is thrown
+	 * @param {string} direction The direction being transitioned in ("next"
+	 * or "back"). Null when processing the result of another transition
 	 *
-	 * @return {mw.guidedTour.Step} Canonicalized step
+	 * @return {mw.guidedTour.Step|null} Canonicalized step, or null if
+	 * the step transitioned to nothing.
 	 *
 	 * @throws {mw.guidedTour.TourDefinitionError} If there is no step with this name,
 	 *  or the StepBuilder is not part of the current tour
 	 */
-	StepBuilder.prototype.canonicalizeStep = function ( rawStep, exceptionPrefix ) {
+	StepBuilder.prototype.canonicalizeStep = function ( rawStep, exceptionPrefix, direction ) {
 		var step;
 
 		if ( typeof rawStep === 'string' ) {
@@ -93,6 +97,16 @@
 			step = this.tour.getStep( step );
 		} catch ( ex ) {
 			throw new gt.TourDefinitionError( exceptionPrefix + ': ' + ex.message );
+		}
+		if ( this.tour.emitTransitionOnStep && direction ) {
+			var transitionEvent = new gt.TransitionEvent();
+			transitionEvent.type = gt.TransitionEvent.BUILTIN;
+			if ( direction === 'next' ) {
+				transitionEvent.subtype = gt.TransitionEvent.TRANSITION_NEXT;
+			} else {
+				transitionEvent.subtype = gt.TransitionEvent.TRANSITION_BACK;
+			}
+			step = step.checkTransition( transitionEvent );
 		}
 
 		return step;
@@ -191,7 +205,8 @@
 				var directionReturn = step();
 				return stepBuilder.canonicalizeStep(
 					directionReturn,
-					'Callback passed to .' + direction + '() returned invalid value'
+					'Callback passed to .' + direction + '() returned invalid value',
+					direction
 				);
 			};
 		} else {
@@ -201,7 +216,8 @@
 			callback = function () {
 				return stepBuilder.canonicalizeStep(
 					step,
-					'Value passed to .' + direction + '() does not refer to a valid step'
+					'Value passed to .' + direction + '() does not refer to a valid step',
+					direction
 				);
 			};
 		}
@@ -275,7 +291,8 @@
 			} else {
 				return stepBuilder.canonicalizeStep(
 					transitionReturn,
-					'Callback passed to .transition() returned invalid value'
+					'Callback passed to .transition() returned invalid value',
+					null
 				);
 			}
 		} );
