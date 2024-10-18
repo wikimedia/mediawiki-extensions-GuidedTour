@@ -202,9 +202,11 @@ mw.libs.guiders = ( function () {
 		var xButtonContainer, $xButton;
 
 		xButtonContainer = myGuider.elem.find( '.guider_close' );
-		$xButton = $( '<a>',
-			$.extend( { class: 'x_button' }, guiders._buttonAttributes )
-		);
+		$xButton = $( '<button>' ).attr( {
+			class: 'cdx-button cdx-button--icon-only cdx-button--weight-quiet',
+			'aria-label': mw.msg( 'guidedtour-close-button' )
+		} );
+		$xButton = $xButton.append( $( '<span>' ).attr( { class: 'cdx-button__icon x_button__icon' } ) );
 		xButtonContainer.append( $xButton );
 		$xButton.on( {
 			click: function () {

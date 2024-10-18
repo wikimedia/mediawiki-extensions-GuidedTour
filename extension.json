@@ -87,7 +87,8 @@
 			"messages": [
 				"guidedtour-next-button",
 				"guidedtour-okay-button",
-				"guidedtour-back-button"
+				"guidedtour-back-button",
+				"guidedtour-close-button"
 			]
 		},
 		"ext.guidedTour.launcher": {
