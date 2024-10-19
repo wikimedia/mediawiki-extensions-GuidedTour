@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Extension\GuidedTour\Hooks as GuidedTourHooks;
+use MediaWiki\Json\FormatJson;
 
 /**
  * @covers \MediaWiki\Extension\GuidedTour\Hooks

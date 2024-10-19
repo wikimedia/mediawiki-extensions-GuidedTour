@@ -2,8 +2,8 @@
 
 namespace MediaWiki\Extension\GuidedTour;
 
-use FormatJson;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\Json\FormatJson;
 use MediaWiki\Output\OutputPage;
 
 /**

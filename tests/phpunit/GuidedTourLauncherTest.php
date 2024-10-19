@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Extension\GuidedTour\GuidedTourLauncher;
+use MediaWiki\Json\FormatJson;
 use Wikimedia\TestingAccessWrapper;
 
 /**
