@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Robby",
-			"Soued031"
+			"Soued031",
+			"Volvox"
 		]
 	},
 	"guidedtour-desc": "Erméiglecht Pop-up-ënnerstëtzt Toure fir nei Benotzer z'assistéieren",
@@ -11,6 +12,7 @@
 	"guidedtour-next-button": "Nächst",
 	"guidedtour-okay-button": "OK",
 	"guidedtour-back-button": "Zréck",
+	"guidedtour-close-button": "Zoumaachen",
 	"guidedtour-tour-test-testing": "Testen",
 	"guidedtour-tour-test-test-description": "Dëst ass en Test vun der Beschreiwung. Lorem ipsum dolor sit!",
 	"guidedtour-tour-test-callouts": "Callouts testen",

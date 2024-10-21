@@ -3,6 +3,7 @@
 		"authors": [
 			"DCamer",
 			"KPu3uC B Poccuu",
+			"Kareyac",
 			"Okras"
 		]
 	},
@@ -12,6 +13,7 @@
 	"guidedtour-next-button": "Далее",
 	"guidedtour-okay-button": "Ок",
 	"guidedtour-back-button": "Назад",
+	"guidedtour-close-button": "Закрыть",
 	"guidedtour-tour-test-testing": "Тестирование",
 	"guidedtour-tour-test-test-description": "Это проверка описания. Lorem ipsum dolor sit!",
 	"guidedtour-tour-test-callouts": "Тест выноски",
