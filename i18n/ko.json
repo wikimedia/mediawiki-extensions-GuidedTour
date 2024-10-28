@@ -17,6 +17,7 @@
 	"guidedtour-next-button": "다음",
 	"guidedtour-okay-button": "확인",
 	"guidedtour-back-button": "뒤로",
+	"guidedtour-close-button": "닫기",
 	"guidedtour-tour-test-testing": "테스트",
 	"guidedtour-tour-test-test-description": "설명의 테스트입니다. Lorem ipsum dolor sit!",
 	"guidedtour-tour-test-callouts": "호출 텍스트",

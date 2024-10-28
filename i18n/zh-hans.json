@@ -10,6 +10,7 @@
 			"Xiaomingyan",
 			"Yfdyh000",
 			"乌拉跨氪",
+			"沈澄心",
 			"范"
 		]
 	},
@@ -19,6 +20,7 @@
 	"guidedtour-next-button": "下一步",
 	"guidedtour-okay-button": "好的",
 	"guidedtour-back-button": "返回",
+	"guidedtour-close-button": "关闭",
 	"guidedtour-tour-test-testing": "测试",
 	"guidedtour-tour-test-test-description": "这是一个说明的测试。Lorem ipsum dolor sit!",
 	"guidedtour-tour-test-callouts": "测试标注",
