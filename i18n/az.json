@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nemoralis"
+		]
+	},
+	"guidedtour-desc": "Səhifələrə yeni istifadəçilərə kömək etmək üçün pop-up bələdçili tur təqdim etməyə imkan verir",
+	"guidedtour-help-url": "Help:Bələdçili turlar",
+	"guidedtour-help-guider-url": "Help:Bələdçili turlar/bələdçi",
+	"guidedtour-next-button": "Növbəti",
+	"guidedtour-okay-button": "Oldu",
+	"guidedtour-back-button": "Geri",
+	"guidedtour-close-button": "Bağla",
+	"guidedtour-tour-test-testing": "Test",
+	"guidedtour-tour-test-test-description": "Bu təsvirin sınağıdır. Lorem ipsum dolor sit!",
+	"guidedtour-tour-test-callouts": "Test işarələri",
+	"guidedtour-tour-test-portal-description": "Bu {{int:portal}} səhifəsidir.",
+	"guidedtour-tour-test-mediawiki-parse": "MediaWiki təhlilini test et",
+	"guidedtour-tour-test-description-page": "MediaWiki təsvir səhifələrini test et",
+	"guidedtour-tour-test-go-description-page": "Təsvir səhifəsinə get"
+}
