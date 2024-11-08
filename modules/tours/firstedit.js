@@ -41,7 +41,7 @@
 			}
 		} ]
 	} )
-		.transition( function () {
+		.transition( () => {
 			if ( gt.isEditing() ) {
 				return 'preview';
 			}
@@ -57,7 +57,7 @@
 		autoFocus: true,
 		width: 300
 	} )
-		.transition( function () {
+		.transition( () => {
 			if ( gt.isEditing() ) {
 				return 'preview';
 			} else if ( !hasEditSection ) {
@@ -75,7 +75,7 @@
 		position: 'top',
 		closeOnClickOutside: false
 	} )
-		.transition( function () {
+		.transition( () => {
 			if ( gt.isReviewing() ) {
 				return 'save';
 			} else if ( !gt.isEditing() ) {
@@ -93,7 +93,7 @@
 		position: 'top',
 		closeOnClickOutside: false
 	} )
-		.transition( function () {
+		.transition( () => {
 			// If you skip preview then gt will think you're editing not reviewing
 			if ( !gt.isEditing() && !gt.isReviewing() ) {
 				return gt.TransitionAction.END;

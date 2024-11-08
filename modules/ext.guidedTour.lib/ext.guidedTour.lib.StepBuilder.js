@@ -272,7 +272,7 @@
 			throw new gt.TourDefinitionError( '.transition() takes one argument, a function' );
 		}
 
-		currentStep.setCallback( 'transition', function ( transitionEvent ) {
+		currentStep.setCallback( 'transition', ( transitionEvent ) => {
 			const transitionReturn = callback( transitionEvent );
 
 			if ( typeof transitionReturn === 'number' ) {

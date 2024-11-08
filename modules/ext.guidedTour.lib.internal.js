@@ -115,9 +115,9 @@
 			const dfd = $.Deferred();
 			const tourModuleName = internal.getTourModuleName( tourName );
 			mw.loader.using( tourModuleName,
-				function () {
+				() => {
 					dfd.resolve();
-				}, function ( err, dependencies ) {
+				}, ( err, dependencies ) => {
 					mw.log( 'Failed to load tour ', tourModuleName,
 						'as module. err: ', err, ', dependencies: ',
 						dependencies );
@@ -148,7 +148,7 @@
 			mw.log( 'Attempting to load on-wiki tour from ', onWikiTourUrl );
 
 			$.getScript( onWikiTourUrl )
-				.done( function ( script ) {
+				.done( ( script ) => {
 					// missing raw requests give 0 length document and 200 status not 404
 					if ( script.length === 0 ) {
 						mw.log( 'Tour page \'' + title + '\' is empty. Does the page exist?' );
@@ -157,7 +157,7 @@
 						dfd.resolve();
 					}
 				} )
-				.fail( function ( jqXHR, settings, exception ) {
+				.fail( ( jqXHR, settings, exception ) => {
 					const message = 'Failed to load tour ' + tourName + ' from \'' + title + '\'';
 					if ( exception ) {
 						mw.log( message, exception );
@@ -201,9 +201,7 @@
 		 *   until all load attempts are complete.
 		 */
 		loadMultipleTours: function ( tourNames ) {
-			const loadDeferreds = tourNames.map( function ( name ) {
-				return internal.loadTour( name );
-			} );
+			const loadDeferreds = tourNames.map( ( name ) => internal.loadTour( name ) );
 
 			return internal.alwaysWaitForAll( loadDeferreds );
 		},

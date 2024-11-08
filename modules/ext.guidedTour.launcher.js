@@ -27,7 +27,7 @@
 		 *   `mw.guidedTour.launchTour`
 		 */
 		launchTour: function ( tourName, tourId ) {
-			mw.loader.using( 'ext.guidedTour.lib', function () {
+			mw.loader.using( 'ext.guidedTour.lib', () => {
 				mw.guidedTour.launchTour( tourName, tourId );
 			} );
 		}

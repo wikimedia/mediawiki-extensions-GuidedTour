@@ -272,7 +272,7 @@
 		// Build button class string
 		if ( button.type ) {
 			if ( Array.isArray( button.type ) ) {
-				button.type.forEach( function ( key ) {
+				button.type.forEach( ( key ) => {
 					classString += buttonTypes[ key ] + ' ';
 				} );
 				return classString;
@@ -806,7 +806,7 @@
 		};
 
 		return this.getDescription( options.description ).then(
-			function ( description ) {
+			( description ) => {
 				options.description = description;
 
 				guiders.initGuider( options );

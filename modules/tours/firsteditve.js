@@ -84,7 +84,7 @@
 		attachTo: editSectionSelector,
 		width: 300
 	} ).listenForMwHooks( 've.activationComplete', 've.toolbarSaveButton.stateChanged' )
-		.transition( function ( transitionEvent ) {
+		.transition( ( transitionEvent ) => {
 			if (
 				transitionEvent.type === gt.TransitionEvent.BUILTIN &&
 				!hasEditSection()
@@ -104,7 +104,7 @@
 		position: 'bottomRight',
 		closeOnClickOutside: false
 	} ).listenForMwHooks( 've.deactivationComplete' )
-		.transition( function () {
+		.transition( () => {
 			if ( !gt.isEditing() ) {
 				return gt.TransitionAction.END;
 			}
