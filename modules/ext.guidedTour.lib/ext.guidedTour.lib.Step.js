@@ -140,11 +140,7 @@
 		 *  or TransitionAction
 		 */
 		this.transitionCallback = function () {
-			// With just 'return this;', jsduck auto-detects it as chainable
-			// However, it's not chainable if this method is set to a custom
-			// value, which it is if StepBuilder.step is called.
-			const self = this;
-			return self;
+			return this;
 		};
 	}
 
