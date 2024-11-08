@@ -23,8 +23,6 @@
 		 * @param {string} tourName Name of tour
 		 * @param {string} [tourId='gt-' + tourName + '-' + step] ID of
 		 *   tour and step
-		 * @return {void} Always, regardless of the return value of
-		 *   `mw.guidedTour.launchTour`
 		 */
 		launchTour: function ( tourName, tourId ) {
 			mw.loader.using( 'ext.guidedTour.lib', function () {

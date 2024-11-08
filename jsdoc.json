@@ -1,0 +1,38 @@
+{
+	"opts": {
+		"destination": "docs/js",
+		"pedantic": true,
+		"readme": "README",
+		"recurse": true,
+		"template": "node_modules/jsdoc-wmf-theme"
+	},
+	"plugins": [
+		"plugins/markdown",
+		"node_modules/jsdoc-wmf-theme/plugins/allow-dots-in-modules",
+		"node_modules/jsdoc-wmf-theme/plugins/betterlinks",
+		"node_modules/jsdoc-wmf-theme/plugins/summarize"
+	],
+	"source": {
+		"include": [ "modules" ],
+		"exclude": [ ]
+	},
+	"templates": {
+		"cleverLinks": true,
+		"default": {
+			"useLongnameInNav": true
+		},
+		"wmf": {
+			"maintitle": "GuidedTour",
+			"repository": "https://gerrit.wikimedia.org/g/mediawiki/extensions/GuidedTour",
+			"siteMap": {
+				"sections": true
+			},
+			"linkMap": {
+				"Array": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+				"jQuery.Promise": "https://api.jquery.com/Types/#Promise",
+				"jQuery": "https://api.jquery.com/Types/#jQuery",
+				"mw.Title": "https://doc.wikimedia.org/mediawiki-core/master/js/mw.Title.html"
+			}
+		}
+	}
+}

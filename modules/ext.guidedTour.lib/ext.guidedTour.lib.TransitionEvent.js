@@ -93,6 +93,7 @@
 	 * passed when the hook fired to an array.
 	 *
 	 * @property {Array|undefined} hookArguments
+	 * @ignore
 	 */
 
 	mw.guidedTour = mw.guidedTour || {};
