@@ -6,7 +6,7 @@
 	 * @classdesc A builder for defining a guided tour
 	 *
 	 * @constructor
-	 * @desc Constructs a TourBuilder, backed by a tour, based on an object specifying it.
+	 * @description Constructs a TourBuilder, backed by a tour, based on an object specifying it.
 	 *
 	 * The newly constructed object can be further configured with fluent methods,
 	 * such as #step

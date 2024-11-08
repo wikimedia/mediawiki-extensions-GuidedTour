@@ -7,7 +7,7 @@
 	 * @classdesc A builder for defining a step of a guided tour
 	 *
 	 * @constructor
-	 * @desc Constructs a StepBuilder
+	 * @description Constructs a StepBuilder
 	 * @param {mw.guidedTour.Tour} tour Tour the corresponding Step belongs to
 	 * @param {Object} stepSpec See {mw.guidedTour.TourBuilder#step} for details.
 	 * @throws {mw.guidedTour.TourDefinitionError} On invalid step name
