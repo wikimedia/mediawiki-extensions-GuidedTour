@@ -12,7 +12,6 @@
 		"no-jquery/no-class-state": "warn",
 		"no-jquery/no-sizzle": "warn",
 		"no-shadow": "warn",
-		"prefer-arrow-callback": "off",
 		"no-jquery/no-extend": "off"
 	}
 }

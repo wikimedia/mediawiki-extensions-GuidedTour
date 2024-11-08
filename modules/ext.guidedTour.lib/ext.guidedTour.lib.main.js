@@ -107,12 +107,10 @@
 			} );
 		}
 
-		const tourNames = candidateTours.map( function ( el ) {
-			return el.name;
-		} );
+		const tourNames = candidateTours.map( ( el ) => el.name );
 
 		internal.loadMultipleTours( tourNames )
-			.always( function () {
+			.always( () => {
 				let tourName, max, currentStart;
 
 				// This value is before 1970, but is a simple way
@@ -215,7 +213,7 @@
 		function transition( transitionEvent ) {
 			// I found this timeout necessary when testing, probably to give the
 			// browser queue a chance to do pending DOM rendering.
-			setTimeout( function () {
+			setTimeout( () => {
 				if ( guiders._currentGuiderID === null ) {
 					// Ignore transitions if there is no active tour.
 					return;
@@ -240,7 +238,7 @@
 		// The next two are handled differently since they also require
 		// settings an internal boolean.
 		// TODO (mattflaschen, 2014-04-01): Hack pending tour-level listeners.
-		mw.hook( 'postEdit' ).add( function () {
+		mw.hook( 'postEdit' ).add( () => {
 			const transitionEvent = new gt.TransitionEvent();
 			transitionEvent.type = gt.TransitionEvent.MW_HOOK;
 			transitionEvent.hookName = 'postEdit';
@@ -271,7 +269,7 @@
 		guiders._defaultSettings.closeOnClickOutside = true;
 		guiders._defaultSettings.flipToKeepOnScreen = true;
 
-		$( function () {
+		$( () => {
 			setupRepositionListeners();
 			setupStepTransitionListeners();
 		} );
@@ -366,7 +364,7 @@
 		 *   and step.  Omitted or null means to start the tour from the beginning.
 		 */
 		launchTour: function ( tourName, tourId ) {
-			internal.loadTour( tourName ).done( function () {
+			internal.loadTour( tourName ).done( () => {
 				const tour = internal.definedTours[ tourName ];
 
 				if ( tour && gt.shouldShowTour( {

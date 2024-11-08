@@ -211,7 +211,7 @@ mw.libs.guiders = ( function () {
 	};
 
 	guiders._wireEscape = function ( myGuider ) {
-		$( document ).on( 'keydown', function ( event ) {
+		$( document ).on( 'keydown', ( event ) => {
 			if ( event.keyCode === 27 || event.which === 27 ) {
 				guiders.handleOnClose( myGuider, true, 'escapeKey' /* close by escape key */ );
 				return false;
@@ -225,7 +225,7 @@ mw.libs.guiders = ( function () {
 	};
 
 	guiders._wireClickOutside = function ( myGuider ) {
-		$( document ).on( 'click.guiders', function ( event ) {
+		$( document ).on( 'click.guiders', ( event ) => {
 			if ( $( event.target ).closest( '.guider' ).length === 0 ) {
 				guiders.handleOnClose( myGuider, true, 'clickOutside' /* close by clicking outside */ );
 				if ( event.target.id === 'guider_overlay' ) {
@@ -741,7 +741,7 @@ mw.libs.guiders = ( function () {
 	guiders.hideAll = function ( omitHidingOverlay, next ) {
 		next = next || false;
 
-		$( '.guider:visible' ).each( function ( index, elem ) {
+		$( '.guider:visible' ).each( ( index, elem ) => {
 			const myGuider = guiders._guiderById( $( elem ).attr( 'id' ) );
 			if ( myGuider.onHide ) {
 				myGuider.onHide( myGuider, next );
@@ -872,11 +872,11 @@ mw.libs.guiders = ( function () {
 
 	// Change the bubble position after browser gets resized
 	let _resizing;
-	$( window ).on( 'resize', function () {
+	$( window ).on( 'resize', () => {
 		if ( typeof ( _resizing ) !== 'undefined' ) {
 			clearTimeout( _resizing ); // Prevents seizures
 		}
-		_resizing = setTimeout( function () {
+		_resizing = setTimeout( () => {
 			_resizing = undefined;
 			if ( typeof ( guiders ) !== 'undefined' ) {
 				guiders.reposition();
@@ -884,7 +884,7 @@ mw.libs.guiders = ( function () {
 		}, 20 );
 	} );
 
-	$( function () {
+	$( () => {
 		guiders.reposition();
 	} );
 
