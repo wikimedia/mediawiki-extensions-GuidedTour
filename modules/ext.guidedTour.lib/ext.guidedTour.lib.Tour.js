@@ -260,9 +260,7 @@
 	 * @throws {Error} If initialize fails
 	 */
 	Tour.prototype.showStep = function ( step ) {
-		const tour = this;
-
-		step = tour.getStep( step );
+		step = this.getStep( step );
 
 		this.initialize().done( () => {
 			const transitionEvent = new gt.TransitionEvent();
@@ -279,7 +277,7 @@
 				}
 
 				// A guider from the same tour is visible
-				if ( tour.isVisible() ) {
+				if ( this.isVisible() ) {
 					guiders.hideAll();
 				}
 

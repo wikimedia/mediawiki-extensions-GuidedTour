@@ -190,8 +190,7 @@
 	 *  been set
 	 */
 	StepBuilder.prototype.setDirectionCallback = function ( direction, step ) {
-		const stepBuilder = this,
-			currentStep = this.step;
+		const currentStep = this.step;
 
 		if ( currentStep.hasCallback( direction ) ) {
 			throw new gt.TourDefinitionError( '.' + direction + '() can not be called more than once per StepBuilder' );
@@ -199,9 +198,9 @@
 
 		let callback;
 		if ( typeof step === 'function' ) {
-			callback = function () {
+			callback = () => {
 				const directionReturn = step();
-				return stepBuilder.canonicalizeStep(
+				return this.canonicalizeStep(
 					directionReturn,
 					'Callback passed to .' + direction + '() returned invalid value',
 					direction
@@ -211,13 +210,11 @@
 			// This allows for forward references (passing the name of a step
 			// that isn't built yet) in the tour script.  Validation is done
 			// when the step change is requested.
-			callback = function () {
-				return stepBuilder.canonicalizeStep(
-					step,
-					'Value passed to .' + direction + '() does not refer to a valid step',
-					direction
-				);
-			};
+			callback = () => this.canonicalizeStep(
+				step,
+				'Value passed to .' + direction + '() does not refer to a valid step',
+				direction
+			);
 		}
 		currentStep.setCallback( direction, callback );
 		return this;
@@ -260,8 +257,7 @@
 	 * @method transition
 	 */
 	StepBuilder.prototype.transition = function ( callback ) {
-		const stepBuilder = this,
-			currentStep = this.step;
+		const currentStep = this.step;
 
 		if ( currentStep.hasCallback( 'transition' ) ) {
 			throw new gt.TourDefinitionError( '.transition() can not be called more than once per StepBuilder' );
@@ -289,7 +285,7 @@
 				// Same behavior for any falsy value.
 				return currentStep;
 			} else {
-				return stepBuilder.canonicalizeStep(
+				return this.canonicalizeStep(
 					transitionReturn,
 					'Callback passed to .transition() returned invalid value',
 					null

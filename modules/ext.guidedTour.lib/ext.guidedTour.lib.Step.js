@@ -710,18 +710,19 @@
 	 * @private
 	 */
 	Step.prototype.initialize = function () {
-		const self = this, options = this.specification,
+		const step = this,
+			options = this.specification,
 			passedInOnClose = options.onClose;
 		let passedInOnShow = options.onShow;
 
 		// For passedInOnClose and passedInOnShow, 'this' is the
 		// individual guider object.
 		//
-		// For Step.prototype.{handleOnClose,handleOnShow,unregisterMwHooks}, self
+		// For Step.prototype.{handleOnClose,handleOnShow,unregisterMwHooks}, step
 		// (the Step) is used for 'this'.
 		options.onClose = function () {
 			passedInOnClose.apply( this, arguments );
-			return Step.prototype.handleOnClose.apply( self, arguments );
+			return Step.prototype.handleOnClose.apply( step, arguments );
 		};
 
 		if ( options.titlemsg ) {
