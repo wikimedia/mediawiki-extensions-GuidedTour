@@ -10,7 +10,8 @@
 			"Simon Shek",
 			"Spring Roll Conan",
 			"Winston Sung",
-			"捍粵者"
+			"捍粵者",
+			"Cookai1205"
 		]
 	},
 	"guidedtour-desc": "允許頁面提供彈出式導覽來引導新使用者",
@@ -19,6 +20,7 @@
 	"guidedtour-next-button": "下一步",
 	"guidedtour-okay-button": "了解",
 	"guidedtour-back-button": "返回",
+	"guidedtour-close-button": "關閉",
 	"guidedtour-tour-test-testing": "測試",
 	"guidedtour-tour-test-test-description": "這是一個描述的測試。 Lorem ipsum dolor sit!",
 	"guidedtour-tour-test-callouts": "測試標注",
@@ -39,5 +41,5 @@
 	"guidedtour-tour-firstedit-save-description": "當你準備好時，點選 \"{{int:publishchanges}}\" ，這樣您所做的修改所有人都會看到。",
 	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|點選}} \"$1\" 按鈕以作出您的變更。",
 	"guidedtour-tour-firsteditve-edit-section-description": "頁面中每個主要章節都有 \"$1\" 連結，讓你可以只集中精神在這一部分上。",
-	"guidedtour-tour-firsteditve-save-description": "當你準備好時，點選 \"{{int:publishchanges}}\" ，便會讓所有人都能看到你所做的修改。"
+	"guidedtour-tour-firsteditve-save-description": "當你準備好時，點選「{{int:publishchanges}}」，便會讓所有人都能看到你所做的修改。"
 }
