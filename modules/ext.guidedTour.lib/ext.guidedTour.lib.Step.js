@@ -454,12 +454,20 @@
 			// a next, since the user is prompted to do something else
 			// (e.g. click 'Edit')
 			if ( okayButton === undefined && nextButton === undefined ) {
-				okayButton = this.getActionButton( {
-					action: 'okay',
-					callback: function () {
-						gt.hideAll();
-					}
-				} );
+				if ( !this.hasCallback( 'next' ) && !this.hasCallback( 'transition' ) ) {
+					// If there is no way to go to a next step, end the tour
+					okayButton = this.getActionButton( {
+						action: 'end',
+						callback: endTour
+					} );
+				} else {
+					okayButton = this.getActionButton( {
+						action: 'okay',
+						callback: function () {
+							gt.hideAll();
+						}
+					} );
+				}
 			}
 		}
 

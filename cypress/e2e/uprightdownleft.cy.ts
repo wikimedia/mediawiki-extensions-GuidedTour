@@ -23,7 +23,11 @@ describe( 'template spec', () => {
 		cy.get( '#gt-uprightdownleft-3' ).should( 'not.be.visible' );
 		cy.get( '#gt-uprightdownleft-4' ).should( 'be.visible' );
 		cy.get( '#gt-uprightdownleft-4 .guider_title' ).should( 'have.text', 'Left' );
-		cy.get( '#gt-uprightdownleft-4 .guidedtour-okay-button' ).click();
+		cy.get( '#gt-uprightdownleft-4 .guidedtour-end-button' ).click();
 		cy.get( '#gt-uprightdownleft-4' ).should( 'not.be.visible' );
+
+		cy.visit( '/' );
+		cy.wait( 500 );
+		cy.get( '.mw-guidedtour-tour-uprightdownleft' ).should( 'not.exist' );
 	} );
 } );
