@@ -759,7 +759,7 @@
 			// Unlike the above the order is different.  This ensures
 			// handleOnShow (which does not return a value) always runs, and
 			// the user-provided function (if any) can return a value.
-			Step.prototype.handleOnShow.apply( self, arguments );
+			Step.prototype.handleOnShow.apply( step, arguments );
 			return passedInOnShow.apply( this, arguments );
 		};
 
@@ -784,11 +784,11 @@
 		}
 
 		options.next = function () {
-			return self.nextCallback().specification.id;
+			return step.nextCallback().specification.id;
 		};
 
 		options.back = function () {
-			return self.backCallback().specification.id;
+			return step.backCallback().specification.id;
 		};
 
 		return this.getDescription( options.description ).then(
