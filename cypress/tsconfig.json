@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"target": "esnext",
+		"lib": [ "es6", "dom" ],
+		"types": [ "cypress", "node" ],
+		"moduleResolution": "node",
+		"allowSyntheticDefaultImports": true
+	},
+	"include": [
+		"**/*.ts",
+		"../cypress.config.ts"
+	]
+}

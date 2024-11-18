@@ -3,11 +3,19 @@
 	"private": true,
 	"scripts": {
 		"doc": "jsdoc -c jsdoc.json",
-		"test": "grunt test && npm run doc",
+		"test": "npm run test:types && grunt test && npm run doc",
+		"cy:open": "cypress open",
+		"cy:run": "cypress run",
+		"selenium-test": "npm run cy:run",
+		"test:types": "tsc --noEmit -p cypress/tsconfig.json",
 		"minify:svg": "svgo --config=.svgo.config.js --quiet --recursive --folder modules/images/"
 	},
 	"devDependencies": {
+		"@wmde/eslint-config-wikimedia-typescript": "^0.2.12",
+		"cypress": "^13.15.2",
+		"cypress-terminal-report": "^7.0.4",
 		"eslint-config-wikimedia": "0.28.2",
+		"eslint-plugin-cypress": "^3.6.0",
 		"grunt": "1.6.1",
 		"grunt-banana-checker": "0.13.0",
 		"grunt-eslint": "24.3.0",
@@ -15,7 +23,8 @@
 		"jsdoc": "^4.0.4",
 		"jsdoc-wmf-theme": "^1.1.0",
 		"stylelint-config-wikimedia": "0.17.2",
-		"svgo": "3.2.0"
+		"svgo": "3.2.0",
+		"typescript": "^5.6.3"
 	},
 	"eslintIgnore": [
 		"vendor/**"

@@ -7,3 +7,7 @@
 /vendor/
 /composer.lock
 /.eslintcache
+/cypress/videos
+/cypress/screenshots
+/cypress/.cache
+.env
