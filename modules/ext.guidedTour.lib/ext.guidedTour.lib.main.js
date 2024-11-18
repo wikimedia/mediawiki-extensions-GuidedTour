@@ -259,7 +259,10 @@
 		// GuidedTour uses cookies to keep the user's progress when they are in the
 		// tour, unless it's single-page.
 		cookieName = '-mw-tour';
-		cookieParams = { expires: null }; // null means to use a session cookie.
+		cookieParams = {
+			expires: null, // null means to use a session cookie.
+			sameSite: 'Lax'
+		};
 
 		// Show X button
 		guiders._defaultSettings.xButton = true;
