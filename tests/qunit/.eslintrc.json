@@ -5,8 +5,6 @@
 		"wikimedia/qunit"
 	],
 	"rules": {
-		"max-len": "off",
-		"prefer-arrow-callback": "off",
-		"no-jquery/no-extend": "off"
+		"max-len": "off"
 	}
 }

@@ -58,7 +58,7 @@
 		}
 	} ) );
 
-	QUnit.test( 'makeTourId', function ( assert ) {
+	QUnit.test( 'makeTourId', ( assert ) => {
 		assert.strictEqual(
 			gt.makeTourId( {
 				name: 'test',
@@ -87,7 +87,7 @@
 		);
 	} );
 
-	QUnit.test( 'parseTourId', function ( assert ) {
+	QUnit.test( 'parseTourId', ( assert ) => {
 		const tourId = 'gt-test-2';
 		const expectedTourInfo = {
 			name: 'test',
@@ -100,7 +100,7 @@
 		);
 	} );
 
-	QUnit.test( 'isPage', function ( assert ) {
+	QUnit.test( 'isPage', ( assert ) => {
 		const PAGE_NAME_TO_SKIP = 'TestPage',
 			OTHER_PAGE_NAME = 'WrongPage';
 
@@ -124,9 +124,7 @@
 		const OTHER_PAGE_NAME = 'OtherPage';
 		let paramMap;
 
-		this.sandbox.stub( mw.util, 'getParamValue', function ( param ) {
-			return paramMap[ param ];
-		} );
+		this.sandbox.stub( mw.util, 'getParamValue', ( param ) => paramMap[ param ] );
 
 		paramMap = { action: 'edit', debug: 'true' };
 
@@ -179,9 +177,7 @@
 
 	QUnit.test( 'getStepFromQuery', function ( assert ) {
 		let step;
-		this.sandbox.stub( mw.util, 'getParamValue', function () {
-			return step;
-		} );
+		this.sandbox.stub( mw.util, 'getParamValue', () => step );
 
 		step = 6;
 		assert.strictEqual(
@@ -198,7 +194,7 @@
 		);
 	} );
 
-	QUnit.test( 'setTourCookie', function ( assert ) {
+	QUnit.test( 'setTourCookie', ( assert ) => {
 		const firstTourName = 'foo';
 		const secondTourName = 'bar';
 		const numberStep = 5;
@@ -238,7 +234,7 @@
 		mw.cookie.set( cookieName, oldCookieValue, cookieParams );
 	} );
 
-	QUnit.test( 'shouldShow', function ( assert ) {
+	QUnit.test( 'shouldShow', ( assert ) => {
 		const visualEditorArgs = {
 			tourName: 'visualeditorintro',
 			userState: {
@@ -266,22 +262,20 @@
 		};
 
 		assert.throws(
-			function () {
-				return gt.shouldShowTour( {
-					tourName: 'test',
-					userState: {
-						version: 1,
-						tours: {
-							test: {
-								step: 1
-							}
+			() => gt.shouldShowTour( {
+				tourName: 'test',
+				userState: {
+					version: 1,
+					tours: {
+						test: {
+							step: 1
 						}
-					},
-					pageName: 'Foo',
-					articleId: 123,
-					condition: 'bogus'
-				} );
-			},
+					}
+				},
+				pageName: 'Foo',
+				articleId: 123,
+				condition: 'bogus'
+			} ),
 			compareTypeAndMessage( gt.TourDefinitionError, /'bogus' is not a supported condition/ ),
 			'gt.TourDefinitionError with correct error message for invalid condition'
 		);
@@ -561,56 +555,44 @@
 		this.suppressWarnings();
 
 		assert.throws(
-			function () {
-				return gt.defineTour();
-			},
+			() => gt.defineTour(),
 			compareTypeAndMessage( gt.TourDefinitionError, SPEC_MUST_BE_OBJECT ),
 			'gt.TourDefinitionError with correct error message for empty call'
 		);
 
 		assert.throws(
-			function () {
-				return gt.defineTour( VALID_TOUR_SPEC, VALID_DEFINE_TOUR_STEP_SPEC );
-			},
+			() => gt.defineTour( VALID_TOUR_SPEC, VALID_DEFINE_TOUR_STEP_SPEC ),
 			compareTypeAndMessage( gt.TourDefinitionError, SPEC_MUST_BE_OBJECT ),
 			'gt.TourDefinitionError with correct error message for multiple parameters'
 		);
 
 		assert.throws(
-			function () {
-				return gt.defineTour( null );
-			},
+			() => gt.defineTour( null ),
 			compareTypeAndMessage( gt.TourDefinitionError, SPEC_MUST_BE_OBJECT ),
 			'gt.TourDefinitionError with correct error message for null call'
 		);
 
 		assert.throws(
-			function () {
-				return gt.defineTour( {
-					steps: [ VALID_DEFINE_TOUR_STEP_SPEC ]
-				} );
-			},
+			() => gt.defineTour( {
+				steps: [ VALID_DEFINE_TOUR_STEP_SPEC ]
+			} ),
 			compareTypeAndMessage( gt.TourDefinitionError, NAME_MUST_BE_STRING ),
 			'gt.TourDefinitionError with correct error message for missing name'
 		);
 
 		assert.throws(
-			function () {
-				return gt.defineTour( {
-					name: 'test',
-					steps: VALID_DEFINE_TOUR_STEP_SPEC
-				} );
-			},
+			() => gt.defineTour( {
+				name: 'test',
+				steps: VALID_DEFINE_TOUR_STEP_SPEC
+			} ),
 			compareTypeAndMessage( gt.TourDefinitionError, STEPS_MUST_BE_ARRAY ),
 			'gt.TourDefinitionError with correct error message for object passed for steps'
 		);
 
 		assert.throws(
-			function () {
-				return gt.defineTour( {
-					name: 'test'
-				} );
-			},
+			() => gt.defineTour( {
+				name: 'test'
+			} ),
 			compareTypeAndMessage( gt.TourDefinitionError, STEPS_MUST_BE_ARRAY ),
 			'gt.TourDefinitionError with correct error message for missing steps'
 		);
@@ -624,7 +606,7 @@
 		this.restoreWarnings();
 	} );
 
-	QUnit.test( 'StepBuilder.constructor', function ( assert ) {
+	QUnit.test( 'StepBuilder.constructor', ( assert ) => {
 		const STEP_NAME_MUST_BE_STRING = /'stepSpec.name' must be a string, the step name/;
 
 		assert.strictEqual(
@@ -634,7 +616,7 @@
 		);
 
 		assert.throws(
-			function () {
+			() => {
 				// eslint-disable-next-line no-unused-vars
 				const missingNameBuilder = new gt.StepBuilder( validTour, {
 					position: 'bottom',
@@ -646,7 +628,7 @@
 		);
 
 		assert.throws(
-			function () {
+			() => {
 				// eslint-disable-next-line no-unused-vars
 				const numericNameBuilder = new gt.StepBuilder( validTour, {
 					name: 1,
@@ -697,7 +679,7 @@
 		);
 	} );
 
-	QUnit.test( 'StepBuilder.next', function ( assert ) {
+	QUnit.test( 'StepBuilder.next', ( assert ) => {
 		const VALUE_PASSED_NEXT_NOT_VALID_STEP = /Value passed to \.next\(\) does not refer to a valid step/;
 		const CALLBACK_PASSED_NEXT_RETURNED_INVALID = /Callback passed to \.next\(\) returned invalid value/;
 
@@ -732,7 +714,7 @@
 		} );
 		pointsInvalidNameStepBuilder.next( 'bogus' );
 		assert.throws(
-			function () {
+			() => {
 				pointsInvalidNameStepBuilder.step.nextCallback();
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, VALUE_PASSED_NEXT_NOT_VALID_STEP ),
@@ -747,7 +729,7 @@
 		);
 
 		assert.throws(
-			function () {
+			() => {
 				firstStepBuilder.next( stepBuilderCallback );
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, /\.next\(\) can not be called more than once per StepBuilder/ ),
@@ -760,7 +742,7 @@
 		} );
 		pointsOtherTourStepBuilder.next( otherTourStepBuilder );
 		assert.throws(
-			function () {
+			() => {
 				pointsOtherTourStepBuilder.step.nextCallback();
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, VALUE_PASSED_NEXT_NOT_VALID_STEP ),
@@ -778,20 +760,16 @@
 			name: 'returnsInvalidNameCallback',
 			description: 'returnsInvalidNameCallback description'
 		} );
-		returnsInvalidNameCallbackStepBuilder.next( function () {
-			return 'bogus';
-		} );
+		returnsInvalidNameCallbackStepBuilder.next( () => 'bogus' );
 		assert.throws(
-			function () {
+			() => {
 				returnsInvalidNameCallbackStepBuilder.step.nextCallback();
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, CALLBACK_PASSED_NEXT_RETURNED_INVALID ),
 			'nextCallback throws if a callback that returns an invalid step name was passed to next'
 		);
 
-		editStepBuilder.next( function () {
-			return 'preview';
-		} );
+		editStepBuilder.next( () => 'preview' );
 		assert.strictEqual(
 			editStepBuilder.step.nextCallback(),
 			previewStepBuilder.step,
@@ -802,11 +780,9 @@
 			name: 'returnsToOtherTourCallback',
 			description: 'returnsToOtherTourCallback description'
 		} );
-		returnsOtherTourCallbackStepBuilder.next( function () {
-			return otherTourStepBuilder;
-		} );
+		returnsOtherTourCallbackStepBuilder.next( () => otherTourStepBuilder );
 		assert.throws(
-			function () {
+			() => {
 				returnsOtherTourCallbackStepBuilder.step.nextCallback();
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, CALLBACK_PASSED_NEXT_RETURNED_INVALID ),
@@ -821,16 +797,14 @@
 		);
 	} );
 
-	QUnit.test( 'StepBuilder.transition', function ( assert ) {
+	QUnit.test( 'StepBuilder.transition', ( assert ) => {
 		const CALLBACK_PASSED_TRANSITION_RETURNED_INVALID = /Callback passed to \.transition\(\) returned invalid value/;
 
 		const linkStepBuilder = validTourBuilder.step( {
 			name: 'link',
 			description: 'link description'
 		} );
-		firstStepBuilder.transition( function () {
-			return linkStepBuilder;
-		} );
+		firstStepBuilder.transition( () => linkStepBuilder );
 		assert.strictEqual(
 			firstStepBuilder.step.transitionCallback(),
 			linkStepBuilder.step,
@@ -841,18 +815,14 @@
 			name: 'edit',
 			description: 'edit description'
 		} );
-		linkStepBuilder.transition( function () {
-			return 'edit';
-		} );
+		linkStepBuilder.transition( () => 'edit' );
 		assert.strictEqual(
 			linkStepBuilder.step.transitionCallback(),
 			editStepBuilder.step,
 			'Registers a callback that returns the correct Step, given a callback returning a step name'
 		);
 
-		editStepBuilder.transition( function () {
-			return gt.TransitionAction.HIDE;
-		} );
+		editStepBuilder.transition( () => gt.TransitionAction.HIDE );
 		assert.strictEqual(
 			editStepBuilder.step.transitionCallback(),
 			gt.TransitionAction.HIDE,
@@ -863,7 +833,7 @@
 			name: 'preview',
 			description: 'preview description'
 		} );
-		previewStepBuilder.transition( function () {} );
+		previewStepBuilder.transition( () => {} );
 		assert.strictEqual(
 			previewStepBuilder.step.transitionCallback(),
 			previewStepBuilder.step,
@@ -874,11 +844,9 @@
 			name: 'returnsInvalidNameCallback',
 			description: 'returnsInvalidNameCallback description'
 		} );
-		returnsInvalidNameCallbackStepBuilder.transition( function () {
-			return 'bogus';
-		} );
+		returnsInvalidNameCallbackStepBuilder.transition( () => 'bogus' );
 		assert.throws(
-			function () {
+			() => {
 				returnsInvalidNameCallbackStepBuilder.step.transitionCallback();
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, CALLBACK_PASSED_TRANSITION_RETURNED_INVALID ),
@@ -889,11 +857,9 @@
 			name: 'returnsToOtherTourCallback',
 			description: 'returnsToOtherTourCallback description'
 		} );
-		returnsOtherTourCallbackStepBuilder.transition( function () {
-			return otherTourStepBuilder;
-		} );
+		returnsOtherTourCallbackStepBuilder.transition( () => otherTourStepBuilder );
 		assert.throws(
-			function () {
+			() => {
 				returnsOtherTourCallbackStepBuilder.step.transitionCallback();
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, CALLBACK_PASSED_TRANSITION_RETURNED_INVALID ),
@@ -904,11 +870,9 @@
 			name: 'returnsInvalidTransitionAction',
 			description: 'returnsInvalidTransitionAction description'
 		} );
-		returnsInvalidTransitionActionStepBuilder.transition( function () {
-			return 3;
-		} );
+		returnsInvalidTransitionActionStepBuilder.transition( () => 3 );
 		assert.throws(
-			function () {
+			() => {
 				returnsInvalidTransitionActionStepBuilder.step.transitionCallback();
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, /Callback passed to \.transition\(\) returned a number that is not a valid TransitionAction/ ),
@@ -916,10 +880,8 @@
 		);
 
 		assert.throws(
-			function () {
-				firstStepBuilder.transition( function () {
-					return editStepBuilder;
-				} );
+			() => {
+				firstStepBuilder.transition( () => editStepBuilder );
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, /\.transition\(\) can not be called more than once per StepBuilder/ ),
 			'Multiple calls should trigger an error'
@@ -930,7 +892,7 @@
 			description: 'parameterNotFunctionStepBuilder description'
 		} );
 		assert.throws(
-			function () {
+			() => {
 				parameterNotFunctionStepBuilder.transition( linkStepBuilder );
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, /\.transition\(\) takes one argument, a function/ ),
@@ -938,7 +900,7 @@
 		);
 	} );
 
-	QUnit.test( 'Step.constructor', function ( assert ) {
+	QUnit.test( 'Step.constructor', ( assert ) => {
 		const step = new gt.Step( validTour, {
 			name: 'first',
 			description: 'first description'
@@ -957,7 +919,7 @@
 		);
 
 		assert.throws(
-			function () {
+			() => {
 				step.nextCallback();
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, /action: "next" used without calling \.next\(\) when building step/ ),
@@ -1149,11 +1111,11 @@
 		);
 	} );
 
-	QUnit.test( 'TourBuilder.constructor', function ( assert ) {
+	QUnit.test( 'TourBuilder.constructor', ( assert ) => {
 		const CHECK_YOUR_SYNTAX = /Check your syntax. There must be exactly one argument, 'tourSpec', which must be an object/;
 
 		assert.throws(
-			function () {
+			() => {
 				// eslint-disable-next-line no-unused-vars
 				const tour = new gt.TourBuilder();
 			},
@@ -1162,7 +1124,7 @@
 		);
 
 		assert.throws(
-			function () {
+			() => {
 				// eslint-disable-next-line no-unused-vars
 				const tour = new gt.TourBuilder( 'test' );
 			},
@@ -1171,7 +1133,7 @@
 		);
 
 		assert.throws(
-			function () {
+			() => {
 				// eslint-disable-next-line no-unused-vars
 				const tour = new gt.TourBuilder( {
 					tourName: 'test'
@@ -1187,7 +1149,7 @@
 		);
 	} );
 
-	QUnit.test( 'TourBuilder.step', function ( assert ) {
+	QUnit.test( 'TourBuilder.step', ( assert ) => {
 		validTourBuilder.step( {
 			name: 'preview',
 			description: 'preview description'
@@ -1205,7 +1167,7 @@
 		);
 
 		assert.throws(
-			function () {
+			() => {
 				validTourBuilder.step( {
 					name: 'save',
 					description: 'save description'
@@ -1216,11 +1178,11 @@
 		);
 	} );
 
-	QUnit.test( 'TourBuilder.firstStep', function ( assert ) {
-		const previewStepSpec = $.extend( {}, VALID_BUILDER_STEP_SPEC, { name: 'preview' } );
+	QUnit.test( 'TourBuilder.firstStep', ( assert ) => {
+		const previewStepSpec = Object.assign( {}, VALID_BUILDER_STEP_SPEC, { name: 'preview' } );
 
 		assert.throws(
-			function () {
+			() => {
 				validTourBuilder.firstStep( previewStepSpec );
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, /You can only specify one first step/ ),
@@ -1228,7 +1190,7 @@
 		);
 	} );
 
-	QUnit.test( 'Tour.constructor', function ( assert ) {
+	QUnit.test( 'Tour.constructor', ( assert ) => {
 		const tour = new gt.Tour( {
 			name: 'addImage'
 		} );
@@ -1323,7 +1285,7 @@
 
 		const done = assert.async();
 
-		validTour.initialize().done( function () {
+		validTour.initialize().done( () => {
 			assert.true(
 				stepInitializeSpy.calledOn( firstStep ),
 				'Initializing tour first time initializes first step'
@@ -1336,7 +1298,7 @@
 
 			stepInitializeSpy.reset();
 
-			validTour.initialize().done( function () {
+			validTour.initialize().done( () => {
 				assert.strictEqual(
 					stepInitializeSpy.callCount,
 					0,
@@ -1348,7 +1310,7 @@
 		} );
 	} );
 
-	QUnit.test( 'Tour.getStep', function ( assert ) {
+	QUnit.test( 'Tour.getStep', ( assert ) => {
 		assert.strictEqual(
 			validTour.getStep( 'intro' ),
 			firstStep,
@@ -1362,7 +1324,7 @@
 		);
 
 		assert.throws(
-			function () {
+			() => {
 				validTour.getStep( 'bogus' );
 			},
 			compareTypeAndMessage( gt.IllegalArgumentError, /Step "bogus" not found in the "placeholder" tour/ ),
@@ -1370,7 +1332,7 @@
 		);
 
 		assert.throws(
-			function () {
+			() => {
 				validTour.getStep( otherTourStepBuilder.step );
 			},
 			compareTypeAndMessage( gt.IllegalArgumentError, /Step object must belong to this tour \("placeholder"\)/ ),
@@ -1387,7 +1349,7 @@
 		expectedTransitionEvent.type = gt.TransitionEvent.BUILTIN;
 		expectedTransitionEvent.subtype = gt.TransitionEvent.TRANSITION_BEFORE_SHOW;
 
-		return validTour.initialize().then( function () {
+		return validTour.initialize().then( () => {
 			const actualTransitionEvent = checkTransitionSpy.lastCall.args[ 0 ];
 
 			assert.deepEqual(
@@ -1398,12 +1360,12 @@
 		} );
 	} );
 
-	QUnit.test( 'Tour.start', function ( assert ) {
+	QUnit.test( 'Tour.start', ( assert ) => {
 		const tourBuilder = new gt.TourBuilder( {
 			name: 'reference'
 		} );
 		assert.throws(
-			function () {
+			() => {
 				tourBuilder.tour.start();
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, /The \.firstStep\(\) method must be called for all tours/ ),
