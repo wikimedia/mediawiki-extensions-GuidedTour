@@ -281,7 +281,7 @@
 	// Add external API (internal API is at gt.internal)
 	// Most, but not all, of this is public (non-public ones use standard
 	// @private marking).
-	$.extend( gt, {
+	Object.assign( gt, {
 		/**
 		 * Parses tour ID into an object with name and step keys.
 		 *

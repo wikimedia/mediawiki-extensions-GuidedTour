@@ -163,7 +163,7 @@ mw.libs.guiders = ( function () {
 			}
 			const $thisButtonElem = $(
 				thisButton.buttonElement || guiders._buttonElement,
-				$.extend(
+				Object.assign(
 					{
 						class: guiders._buttonClass,
 						html: thisButtonHtml
@@ -686,7 +686,7 @@ mw.libs.guiders = ( function () {
 		}
 
 		// Extend those settings with passedSettings
-		const myGuider = $.extend( {}, guiders._defaultSettings, passedSettings );
+		const myGuider = Object.assign( {}, guiders._defaultSettings, passedSettings );
 		myGuider.id = myGuider.id || String( Math.floor( Math.random() * 1000 ) );
 
 		const $guiderElement = $( guiders._htmlSkeleton );
