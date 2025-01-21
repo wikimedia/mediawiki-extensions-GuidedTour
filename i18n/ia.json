@@ -10,6 +10,7 @@
 	"guidedtour-next-button": "Sequente",
 	"guidedtour-okay-button": "OK",
 	"guidedtour-back-button": "Retornar",
+	"guidedtour-close-button": "Clauder",
 	"guidedtour-tour-test-testing": "Test",
 	"guidedtour-tour-test-test-description": "Isto es un test del description. Lorem ipsum dolor sit!",
 	"guidedtour-tour-test-callouts": "Textos explicative de test",
