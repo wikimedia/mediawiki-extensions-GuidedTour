@@ -4,8 +4,8 @@
 	"scripts": {
 		"doc": "jsdoc -c jsdoc.json",
 		"test": "npm run test:types && grunt test && npm run doc",
-		"cy:open": "cypress open",
-		"cy:run": "cypress run",
+		"cy:open": "CYPRESS_CACHE_FOLDER=./cypress/.cache cypress open",
+		"cy:run": "CYPRESS_CACHE_FOLDER=./cypress/.cache cypress run",
 		"selenium-test": "npm run cy:run",
 		"test:types": "tsc --noEmit -p cypress/tsconfig.json",
 		"minify:svg": "svgo --config=.svgo.config.js --quiet --recursive --folder modules/images/"
