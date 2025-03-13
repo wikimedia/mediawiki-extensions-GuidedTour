@@ -20,6 +20,9 @@ module.exports = function ( grunt ) {
 			all: 'i18n/'
 		},
 		stylelint: {
+			options: {
+				cache: true
+			},
 			all: [
 				'**/*.less',
 				'!node_modules/**',
