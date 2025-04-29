@@ -368,7 +368,7 @@
 		 * @return {void}
 		 */
 		launchTour: function ( tourName, tourId ) {
-			internal.loadTour( tourName ).done( () => {
+			internal.loadTour( tourName ).then( () => {
 				const tour = internal.definedTours[ tourName ];
 
 				if ( tour && gt.shouldShowTour( {

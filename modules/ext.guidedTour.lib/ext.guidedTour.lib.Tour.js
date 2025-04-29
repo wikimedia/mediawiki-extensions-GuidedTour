@@ -266,7 +266,7 @@
 
 		step = tour.getStep( step );
 
-		this.initialize().done( () => {
+		this.initialize().then( () => {
 			const transitionEvent = new gt.TransitionEvent();
 			transitionEvent.type = gt.TransitionEvent.BUILTIN;
 			transitionEvent.subtype = gt.TransitionEvent.TRANSITION_BEFORE_SHOW;
@@ -287,7 +287,7 @@
 
 				guiders.show( step.specification.id );
 			}
-		} ).fail( ( e ) => {
+		} ).catch( ( e ) => {
 			throw new Error( 'Could not show step \'' + step.name + '\' because this.initialize() failed.  Underlying error: ' + e );
 		} );
 	};
