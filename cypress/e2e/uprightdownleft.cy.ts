@@ -27,7 +27,6 @@ describe( 'template spec', () => {
 		cy.get( '#gt-uprightdownleft-4' ).should( 'not.be.visible' );
 
 		cy.visit( '/' );
-		cy.wait( 500 );
 		cy.get( '.mw-guidedtour-tour-uprightdownleft' ).should( 'not.exist' );
 	} );
 } );
