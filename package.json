@@ -11,10 +11,12 @@
 		"minify:svg": "svgo --config=.svgo.config.js --quiet --recursive --folder modules/images/"
 	},
 	"devDependencies": {
-		"@wmde/eslint-config-wikimedia-typescript": "^0.2.12",
+		"@typescript-eslint/eslint-plugin": "^7.18.0",
+		"@typescript-eslint/parser": "^7.18.0",
+		"@wmde/eslint-config-wikimedia-typescript": "^0.2.13",
 		"cypress": "^13.15.2",
 		"cypress-terminal-report": "^7.0.4",
-		"eslint-config-wikimedia": "0.28.2",
+		"eslint-config-wikimedia": "^0.29.1",
 		"eslint-plugin-cypress": "^3.6.0",
 		"grunt": "1.6.1",
 		"grunt-banana-checker": "0.13.0",
