@@ -951,39 +951,34 @@
 		tourBuilder.tour.showStep( firstStep );
 		const returnedButtons = spy.lastCall.args[ 0 ].buttons;
 		assert.true(
-			returnedButtons[ 0 ].html.class.indexOf( 'cdx-button--action-destructive' ) !== -1 &&
-			returnedButtons[ 0 ].html.class.indexOf( 'cdx-button' ) !== -1,
+			returnedButtons[ 0 ].html.class.includes( 'cdx-button--action-destructive' ) &&
+			returnedButtons[ 0 ].html.class.includes( 'cdx-button' ),
 			'Destructive custom button'
 		);
 		assert.true(
-			returnedButtons[ 1 ].html.class.indexOf( 'cdx-button' ) !== -1 &&
-			returnedButtons[ 1 ].html.class.indexOf( 'cdx-button--action-progressive' ) !== -1 &&
-			returnedButtons[ 1 ].html.class.indexOf( 'cdx-button--weight-quiet' ) !== -1,
+			returnedButtons[ 1 ].html.class.includes( 'cdx-button' ) &&
+			returnedButtons[ 1 ].html.class.includes( 'cdx-button--action-progressive' ) &&
+			returnedButtons[ 1 ].html.class.includes( 'cdx-button--weight-quiet' ),
 			'A quietly progressive custom button'
 		);
-		assert.notStrictEqual(
-			returnedButtons[ 2 ].html.class.indexOf( 'cdx-button--action-progressive' ),
-			-1,
+		assert.true(
+			returnedButtons[ 2 ].html.class.includes( 'cdx-button--action-progressive' ),
 			'Progressive internal link'
 		);
-		assert.strictEqual(
-			returnedButtons[ 3 ].html.class.indexOf( 'cdx-button--action-progressive' ),
-			-1,
+		assert.false(
+			returnedButtons[ 3 ].html.class.includes( 'cdx-button--action-progressive' ),
 			'External link button is not progressive by default'
 		);
-		assert.strictEqual(
-			returnedButtons[ 4 ].html.class.indexOf( 'cdx-button--action-progressive' ),
-			-1,
+		assert.false(
+			returnedButtons[ 4 ].html.class.includes( 'cdx-button--action-progressive' ),
 			'Back button is not progressive by default'
 		);
-		assert.notStrictEqual(
-			returnedButtons[ 5 ].html.class.indexOf( 'cdx-button--action-progressive' ),
-			-1,
+		assert.true(
+			returnedButtons[ 5 ].html.class.includes( 'cdx-button--action-progressive' ),
 			'Okay button is progressive by default'
 		);
-		assert.notStrictEqual(
-			returnedButtons[ 6 ].html.class.indexOf( 'cdx-button--action-progressive' ),
-			-1,
+		assert.true(
+			returnedButtons[ 6 ].html.class.includes( 'cdx-button--action-progressive' ),
 			'Next button is progressive by default'
 		);
 	} );

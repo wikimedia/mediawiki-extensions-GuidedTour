@@ -5,6 +5,7 @@
 		"wikimedia/qunit"
 	],
 	"rules": {
-		"max-len": "off"
+		"max-len": "off",
+		"es-x/no-array-prototype-includes": "off"
 	}
 }
