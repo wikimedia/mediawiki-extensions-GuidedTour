@@ -367,7 +367,7 @@
 		 *   and step.  Omitted or null means to start the tour from the beginning.
 		 */
 		launchTour: function ( tourName, tourId ) {
-			internal.loadTour( tourName ).done( () => {
+			internal.loadTour( tourName ).then( () => {
 				const tour = internal.definedTours[ tourName ];
 
 				if ( tour && gt.shouldShowTour( {

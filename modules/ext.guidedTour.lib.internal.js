@@ -59,7 +59,7 @@
 
 			for ( let i = 0; i < promises.length; i++ ) {
 				// First, if it fails we mark allSucceeded false.
-				promises[ i ].fail( fail );
+				promises[ i ].catch( fail );
 				// Then, we run the always handler regardless.
 				promises[ i ].always( always );
 			}
@@ -148,7 +148,7 @@
 			mw.log( 'Attempting to load on-wiki tour from ', onWikiTourUrl );
 
 			$.getScript( onWikiTourUrl )
-				.done( ( script ) => {
+				.then( ( script ) => {
 					// missing raw requests give 0 length document and 200 status not 404
 					if ( script.length === 0 ) {
 						mw.log( 'Tour page \'' + title + '\' is empty. Does the page exist?' );
@@ -156,8 +156,7 @@
 					} else {
 						dfd.resolve();
 					}
-				} )
-				.fail( ( jqXHR, settings, exception ) => {
+				}, ( jqXHR, settings, exception ) => {
 					const message = 'Failed to load tour ' + tourName + ' from \'' + title + '\'';
 					if ( exception ) {
 						mw.log( message, exception );

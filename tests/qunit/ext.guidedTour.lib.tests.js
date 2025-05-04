@@ -1285,7 +1285,7 @@
 
 		const done = assert.async();
 
-		validTour.initialize().done( () => {
+		validTour.initialize().then( () => {
 			assert.true(
 				stepInitializeSpy.calledOn( firstStep ),
 				'Initializing tour first time initializes first step'
@@ -1298,7 +1298,7 @@
 
 			stepInitializeSpy.reset();
 
-			validTour.initialize().done( () => {
+			validTour.initialize().then( () => {
 				assert.strictEqual(
 					stepInitializeSpy.callCount,
 					0,
