@@ -10,7 +10,9 @@
 	"guidedtour-next-button": "Sledeće",
 	"guidedtour-okay-button": "U redu",
 	"guidedtour-back-button": "Nazad",
+	"guidedtour-close-button": "Zatvori",
 	"guidedtour-tour-test-testing": "Testiranje",
 	"guidedtour-tour-test-test-description": "Ovo je test opisa. Lorem ipsum dolor sit!",
+	"guidedtour-tour-firstedit-save-title": "Još malo i gotovo!",
 	"guidedtour-tour-firsteditve-save-description": "Kada završite, kliknite na „{{int:publishchanges}}“ da vaše izmene postanu vidljive svima."
 }
