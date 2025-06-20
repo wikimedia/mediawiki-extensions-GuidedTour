@@ -14,7 +14,7 @@
 		 * If this is an on-wiki tour, it should match the MediaWiki page.  For instance,
 		 * if this were on-wiki, it would be MediaWiki:Guidedtour-tour-test.js
 		 */
-		name: 'onshow'
+		name: 'onshow',
 	} );
 
 	// If there is no page, this is also the last step.
@@ -34,9 +34,9 @@
 		// try descriptive position (5'oclock) and use skin-specific value
 		position: {
 			fallback: 'bottomRight',
-			monobook: 'right'
+			monobook: 'right',
 		},
-		buttons: firstStepButtons
+		buttons: firstStepButtons,
 	} );
 
 	if ( pageName ) {
@@ -57,10 +57,10 @@
 				action: 'wikiLink',
 				page: pageName,
 				namemsg: 'guidedtour-tour-test-go-description-page',
-				type: 'progressive'
+				type: 'progressive',
 			}, {
-				action: 'end'
-			} ]
+				action: 'end',
+			} ],
 		} )
 			.back( 'descriptionwikitext' );
 	}

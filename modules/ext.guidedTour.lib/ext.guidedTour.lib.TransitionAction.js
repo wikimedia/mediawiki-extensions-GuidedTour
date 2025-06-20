@@ -15,6 +15,6 @@
 		 * End the tour, removing the user's saved state (including their saved
 		 * position).
 		 */
-		END: 2
+		END: 2,
 	};
 }() );

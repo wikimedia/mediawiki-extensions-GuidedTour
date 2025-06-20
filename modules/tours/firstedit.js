@@ -17,7 +17,7 @@
 	const hasEditSection = $( '.mw-editsection' ).length > 0;
 
 	const tour = new gt.TourBuilder( {
-		name: 'firstedit'
+		name: 'firstedit',
 	} );
 
 	tour.firstStep( {
@@ -38,8 +38,8 @@
 				} else {
 					mw.libs.guiders.hideAll();
 				}
-			}
-		} ]
+			},
+		} ],
 	} )
 		.transition( () => {
 			if ( gt.isEditing() ) {
@@ -55,7 +55,7 @@
 		position: 'right',
 		attachTo: '.mw-editsection',
 		autoFocus: true,
-		width: 300
+		width: 300,
 	} )
 		.transition( () => {
 			if ( gt.isEditing() ) {
@@ -73,7 +73,7 @@
 		attachTo: '#wpPreview',
 		autoFocus: true,
 		position: 'top',
-		closeOnClickOutside: false
+		closeOnClickOutside: false,
 	} )
 		.transition( () => {
 			if ( gt.isReviewing() ) {
@@ -91,7 +91,7 @@
 		attachTo: '#wpSave',
 		autoFocus: true,
 		position: 'top',
-		closeOnClickOutside: false
+		closeOnClickOutside: false,
 	} )
 		.transition( () => {
 			// If you skip preview then gt will think you're editing not reviewing

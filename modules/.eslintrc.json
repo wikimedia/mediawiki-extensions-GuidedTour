@@ -12,5 +12,18 @@
 		"no-jquery/no-class-state": "warn",
 		"no-jquery/no-sizzle": "warn",
 		"no-shadow": "warn"
-	}
+	},
+	"overrides": [
+		{
+			"files": [
+				"**/*.js"
+			],
+			"rules": {
+				"comma-dangle": [
+					"error",
+					"always-multiline"
+				]
+			}
+		}
+	]
 }

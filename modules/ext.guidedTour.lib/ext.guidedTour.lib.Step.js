@@ -5,7 +5,7 @@
 		callbackNameToPropertySetMap = {
 			next: 'isNextCallbackSet',
 			back: 'isBackCallbackSet',
-			transition: 'isTransitionCallbackSet'
+			transition: 'isTransitionCallbackSet',
 		};
 
 	/**
@@ -63,13 +63,13 @@
 			onShow: function () {},
 			allowAutomaticNext: true,
 			allowAutomaticBack: true,
-			allowAutomaticOkay: true
+			allowAutomaticOkay: true,
 		}, stepSpec );
 
 		// Required by guiders.initGuider
 		this.specification.id = gt.makeTourId( {
 			name: tour.name,
-			step: this.name
+			step: this.name,
 		} );
 
 		/**
@@ -195,7 +195,7 @@
 			next: 'guidedtour-next-button',
 			back: 'guidedtour-back-button',
 			okay: 'guidedtour-okay-button',
-			end: 'guidedtour-okay-button'
+			end: 'guidedtour-okay-button',
 		};
 
 		let messageKey;
@@ -229,9 +229,9 @@
 				button.callback( this );
 			},
 			html: {
-				class: btnClass
+				class: btnClass,
 			},
-			hasIcon: hasIcon
+			hasIcon: hasIcon,
 		};
 	};
 
@@ -260,7 +260,7 @@
 			neutral: '',
 			progressive: 'cdx-button--weight-primary cdx-button--action-progressive',
 			destructive: 'cdx-button--action-destructive',
-			quiet: 'cdx-button--weight-quiet'
+			quiet: 'cdx-button--weight-quiet',
 		};
 		let classString = '';
 
@@ -315,7 +315,7 @@
 		const html = {
 			href: url,
 			title: title,
-			class: classString
+			class: classString,
 		};
 
 		if ( button.namemsg ) {
@@ -326,7 +326,7 @@
 
 		$.extend( true, button, {
 			buttonElement: '<a></a>',
-			html: html
+			html: html,
 		} );
 
 		return button;
@@ -458,14 +458,14 @@
 					// If there is no way to go to a next step, end the tour
 					okayButton = this.getActionButton( {
 						action: 'end',
-						callback: endTour
+						callback: endTour,
 					} );
 				} else {
 					okayButton = this.getActionButton( {
 						action: 'okay',
 						callback: function () {
 							gt.hideAll();
-						}
+						},
 					} );
 				}
 			}
@@ -615,7 +615,7 @@
 		} else {
 			gt.updateUserStateForTour( {
 				tourInfo: tourInfo,
-				wasShown: true
+				wasShown: true,
 			} );
 		}
 
@@ -675,7 +675,7 @@
 	 */
 	Step.prototype.getDescription = function ( descriptionSource ) {
 		const ajaxData = {
-			uselang: mw.config.get( 'wgUserLanguage' )
+			uselang: mw.config.get( 'wgUserLanguage' ),
 		};
 
 		let contentToParse;
@@ -786,7 +786,7 @@
 			options.position = getValueForSkin( options, 'position' );
 			if ( this.tour.flipRTL ) {
 				options.position = guiders.getFlippedPosition( options.position, {
-					horizontal: true
+					horizontal: true,
 				} );
 			}
 		}

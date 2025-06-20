@@ -6,6 +6,17 @@
 	"overrides": [
 		{
 			"files": [
+				"**/*.js"
+			],
+			"rules": {
+				"comma-dangle": [
+					"error",
+					"always-multiline"
+				]
+			}
+		},
+		{
+			"files": [
 				"**/*.ts"
 			],
 			"extends": [

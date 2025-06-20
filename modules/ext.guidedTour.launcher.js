@@ -28,7 +28,7 @@
 			mw.loader.using( 'ext.guidedTour.lib', () => {
 				mw.guidedTour.launchTour( tourName, tourId );
 			} );
-		}
+		},
 
 	};
 

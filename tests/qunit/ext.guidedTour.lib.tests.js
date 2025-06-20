@@ -9,8 +9,8 @@
 		attachTo: '#n-portal a',
 		position: '3',
 		buttons: [ {
-			action: 'next'
-		} ]
+			action: 'next',
+		} ],
 	};
 	// Step specification as used with the current builder API
 	const VALID_BUILDER_STEP_SPEC = {
@@ -18,7 +18,7 @@
 		titlemsg: 'guidedtour-tour-test-intro-title',
 		descriptionmsg: 'guidedtour-tour-test-intro-description',
 		position: 'bottom',
-		attachTo: '#ca-edit'
+		attachTo: '#ca-edit',
 	};
 	let validTourBuilder, validTour, firstStepBuilder, firstStep, otherTourBuilder, otherTourStepBuilder;
 
@@ -44,25 +44,25 @@
 			firstStep = firstStepBuilder.step;
 
 			otherTourBuilder = new gt.TourBuilder( {
-				name: 'upload'
+				name: 'upload',
 			} );
 			otherTourStepBuilder = otherTourBuilder.step( {
 				name: 'filename',
-				description: 'filename description'
+				description: 'filename description',
 			} );
 
 			this.stub( mw.libs.guiders, 'show' );
 		},
 		afterEach: function () {
 			window.ve = originalVE;
-		}
+		},
 	} ) );
 
 	QUnit.test( 'makeTourId', ( assert ) => {
 		assert.strictEqual(
 			gt.makeTourId( {
 				name: 'test',
-				step: 3
+				step: 3,
 			} ),
 			'gt-test-3',
 			'Successful makeTourId call'
@@ -91,7 +91,7 @@
 		const tourId = 'gt-test-2';
 		const expectedTourInfo = {
 			name: 'test',
-			step: '2'
+			step: '2',
 		};
 		assert.deepEqual(
 			gt.parseTourId( tourId ),
@@ -239,26 +239,26 @@
 			tourName: 'visualeditorintro',
 			userState: {
 				version: 1,
-				tours: {}
+				tours: {},
 			},
 			pageName: 'Page',
 			articleId: 123,
-			condition: 'VisualEditor'
+			condition: 'VisualEditor',
 		};
 
 		const wikitextArgs = {
 			tourName: 'wikitextintro',
 			userState: {
 				version: 1,
-				tours: {}
+				tours: {},
 			},
 			pageName: 'Page',
 			articleId: 123,
-			condition: 'wikitext'
+			condition: 'wikitext',
 		};
 
 		const mockOpenVE = {
-			instances: [ {} ]
+			instances: [ {} ],
 		};
 
 		assert.throws(
@@ -268,13 +268,13 @@
 					version: 1,
 					tours: {
 						test: {
-							step: 1
-						}
-					}
+							step: 1,
+						},
+					},
 				},
 				pageName: 'Foo',
 				articleId: 123,
-				condition: 'bogus'
+				condition: 'bogus',
 			} ),
 			compareTypeAndMessage( gt.TourDefinitionError, /'bogus' is not a supported condition/ ),
 			'gt.TourDefinitionError with correct error message for invalid condition'
@@ -288,13 +288,13 @@
 					tours: {
 						test: {
 							firstArticleId: 123,
-							step: 1
-						}
-					}
+							step: 1,
+						},
+					},
 				},
 				pageName: 'Foo',
 				articleId: 123,
-				condition: 'stickToFirstPage'
+				condition: 'stickToFirstPage',
 			} ),
 			true,
 			'Returns true for stickToFirstPage when on the original article'
@@ -308,13 +308,13 @@
 					tours: {
 						test: {
 							firstArticleId: 123,
-							step: 1
-						}
-					}
+							step: 1,
+						},
+					},
 				},
 				pageName: 'Foo',
 				articleId: 987,
-				condition: 'stickToFirstPage'
+				condition: 'stickToFirstPage',
 			} ),
 			false,
 			'Returns false for stickToFirstPage when on a different article'
@@ -327,12 +327,12 @@
 					version: 1,
 					tours: {
 						test: {
-							step: 1
-						}
-					}
+							step: 1,
+						},
+					},
 				},
 				pageName: 'Bar',
-				articleId: 123
+				articleId: 123,
 			} ),
 			true,
 			'Returns true when there is no condition'
@@ -346,12 +346,12 @@
 					tours: {
 						test: {
 							firstArticleId: 234,
-							step: 1
-						}
-					}
+							step: 1,
+						},
+					},
 				},
 				pageName: 'Bar',
-				articleId: 123
+				articleId: 123,
 			} ),
 			true,
 			'Returns true when there is no condition even when there is a non-matching article ID in the cookie'
@@ -366,12 +366,12 @@
 						test: {},
 						othertour: {
 							firstArticleId: 234,
-							step: 1
-						}
-					}
+							step: 1,
+						},
+					},
 				},
 				pageName: 'Bar',
-				articleId: 123
+				articleId: 123,
 			} ),
 			true,
 			'Returns true when there is no condition even when there is a non-matching article ID in the cookie, for another tour'
@@ -385,13 +385,13 @@
 					tours: {
 						test: {
 							firstSpecialPageName: 'Special:ImportantTask',
-							step: 1
-						}
-					}
+							step: 1,
+						},
+					},
 				},
 				pageName: 'Special:ImportantTask',
 				articleId: 0,
-				condition: 'stickToFirstPage'
+				condition: 'stickToFirstPage',
 			} ),
 			true,
 			'Returns true for stickToFirstPage and matching special page'
@@ -405,13 +405,13 @@
 					tours: {
 						test: {
 							firstSpecialPageName: 'Special:ImportantTask',
-							step: 1
-						}
-					}
+							step: 1,
+						},
+					},
 				},
 				pageName: 'Special:OtherTask',
 				articleId: 0,
-				condition: 'stickToFirstPage'
+				condition: 'stickToFirstPage',
 			} ),
 			false,
 			'Returns false for stickToFirstPage and different special page'
@@ -425,17 +425,17 @@
 					tours: {
 						firsttour: {
 							firstArticleId: 123,
-							step: 1
+							step: 1,
 						},
 						secondtour: {
 							firstArticleId: 234,
-							step: 2
-						}
-					}
+							step: 2,
+						},
+					},
 				},
 				pageName: 'Foo',
 				articleId: 123,
-				condition: 'stickToFirstPage'
+				condition: 'stickToFirstPage',
 			} ),
 			false,
 			'Returns false for stickToFirstPage for non-matching article ID when another tour\'s article ID matches'
@@ -510,17 +510,17 @@
 					tours: {
 						firsttour: {
 							firstSpecialPageName: 'Special:ImportantTask',
-							step: 1
+							step: 1,
 						},
 						secondtour: {
 							firstSpecialPageName: 'Special:OtherTask',
-							step: 2
-						}
-					}
+							step: 2,
+						},
+					},
 				},
 				pageName: 'Special:OtherTask',
 				articleId: 0,
-				condition: 'stickToFirstPage'
+				condition: 'stickToFirstPage',
 			} ),
 			false,
 			'Returns false for non-matching article ID when another tour\'s special page matches'
@@ -539,16 +539,16 @@
 				description: 'Second step title',
 				overlay: true,
 				buttons: [ {
-					action: 'next'
-				} ]
+					action: 'next',
+				} ],
 			}, {
 				title: 'Second step title',
 				description: 'Second step description',
 				overlay: true,
 				buttons: [ {
-					action: 'end'
-				} ]
-			} ]
+					action: 'end',
+				} ],
+			} ],
 		};
 
 		// Suppress warnings that defineTour is deprecated
@@ -574,7 +574,7 @@
 
 		assert.throws(
 			() => gt.defineTour( {
-				steps: [ VALID_DEFINE_TOUR_STEP_SPEC ]
+				steps: [ VALID_DEFINE_TOUR_STEP_SPEC ],
 			} ),
 			compareTypeAndMessage( gt.TourDefinitionError, NAME_MUST_BE_STRING ),
 			'gt.TourDefinitionError with correct error message for missing name'
@@ -583,7 +583,7 @@
 		assert.throws(
 			() => gt.defineTour( {
 				name: 'test',
-				steps: VALID_DEFINE_TOUR_STEP_SPEC
+				steps: VALID_DEFINE_TOUR_STEP_SPEC,
 			} ),
 			compareTypeAndMessage( gt.TourDefinitionError, STEPS_MUST_BE_ARRAY ),
 			'gt.TourDefinitionError with correct error message for object passed for steps'
@@ -591,7 +591,7 @@
 
 		assert.throws(
 			() => gt.defineTour( {
-				name: 'test'
+				name: 'test',
 			} ),
 			compareTypeAndMessage( gt.TourDefinitionError, STEPS_MUST_BE_ARRAY ),
 			'gt.TourDefinitionError with correct error message for missing steps'
@@ -620,7 +620,7 @@
 				// eslint-disable-next-line no-unused-vars
 				const missingNameBuilder = new gt.StepBuilder( validTour, {
 					position: 'bottom',
-					attachTo: '#ca-edit'
+					attachTo: '#ca-edit',
 				} );
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, STEP_NAME_MUST_BE_STRING ),
@@ -633,7 +633,7 @@
 				const numericNameBuilder = new gt.StepBuilder( validTour, {
 					name: 1,
 					position: 'bottom',
-					attachTo: '#ca-edit'
+					attachTo: '#ca-edit',
 				} );
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, STEP_NAME_MUST_BE_STRING ),
@@ -690,27 +690,27 @@
 
 		const linkStepBuilder = validTourBuilder.step( {
 			name: 'link',
-			description: 'link description'
+			description: 'link description',
 		} );
 
 		const editStepBuilder = validTourBuilder.step( {
 			name: 'edit',
-			description: 'edit description'
+			description: 'edit description',
 		} );
 
 		const previewStepBuilder = validTourBuilder.step( {
 			name: 'preview',
-			description: 'preview description'
+			description: 'preview description',
 		} );
 
 		saveStepBuilder = validTourBuilder.step( {
 			name: 'save',
-			description: 'save description'
+			description: 'save description',
 		} );
 
 		const pointsInvalidNameStepBuilder = validTourBuilder.step( {
 			name: 'returnsToInvalidName',
-			description: 'returnsToInvalidName description'
+			description: 'returnsToInvalidName description',
 		} );
 		pointsInvalidNameStepBuilder.next( 'bogus' );
 		assert.throws(
@@ -738,7 +738,7 @@
 
 		const pointsOtherTourStepBuilder = validTourBuilder.step( {
 			name: 'returnsToOtherTour',
-			description: 'returnsToOtherTour description'
+			description: 'returnsToOtherTour description',
 		} );
 		pointsOtherTourStepBuilder.next( otherTourStepBuilder );
 		assert.throws(
@@ -758,7 +758,7 @@
 
 		const returnsInvalidNameCallbackStepBuilder = validTourBuilder.step( {
 			name: 'returnsInvalidNameCallback',
-			description: 'returnsInvalidNameCallback description'
+			description: 'returnsInvalidNameCallback description',
 		} );
 		returnsInvalidNameCallbackStepBuilder.next( () => 'bogus' );
 		assert.throws(
@@ -778,7 +778,7 @@
 
 		const returnsOtherTourCallbackStepBuilder = validTourBuilder.step( {
 			name: 'returnsToOtherTourCallback',
-			description: 'returnsToOtherTourCallback description'
+			description: 'returnsToOtherTourCallback description',
 		} );
 		returnsOtherTourCallbackStepBuilder.next( () => otherTourStepBuilder );
 		assert.throws(
@@ -802,7 +802,7 @@
 
 		const linkStepBuilder = validTourBuilder.step( {
 			name: 'link',
-			description: 'link description'
+			description: 'link description',
 		} );
 		firstStepBuilder.transition( () => linkStepBuilder );
 		assert.strictEqual(
@@ -813,7 +813,7 @@
 
 		const editStepBuilder = validTourBuilder.step( {
 			name: 'edit',
-			description: 'edit description'
+			description: 'edit description',
 		} );
 		linkStepBuilder.transition( () => 'edit' );
 		assert.strictEqual(
@@ -831,7 +831,7 @@
 
 		const previewStepBuilder = validTourBuilder.step( {
 			name: 'preview',
-			description: 'preview description'
+			description: 'preview description',
 		} );
 		previewStepBuilder.transition( () => {} );
 		assert.strictEqual(
@@ -842,7 +842,7 @@
 
 		const returnsInvalidNameCallbackStepBuilder = validTourBuilder.step( {
 			name: 'returnsInvalidNameCallback',
-			description: 'returnsInvalidNameCallback description'
+			description: 'returnsInvalidNameCallback description',
 		} );
 		returnsInvalidNameCallbackStepBuilder.transition( () => 'bogus' );
 		assert.throws(
@@ -855,7 +855,7 @@
 
 		const returnsOtherTourCallbackStepBuilder = validTourBuilder.step( {
 			name: 'returnsToOtherTourCallback',
-			description: 'returnsToOtherTourCallback description'
+			description: 'returnsToOtherTourCallback description',
 		} );
 		returnsOtherTourCallbackStepBuilder.transition( () => otherTourStepBuilder );
 		assert.throws(
@@ -868,7 +868,7 @@
 
 		const returnsInvalidTransitionActionStepBuilder = validTourBuilder.step( {
 			name: 'returnsInvalidTransitionAction',
-			description: 'returnsInvalidTransitionAction description'
+			description: 'returnsInvalidTransitionAction description',
 		} );
 		returnsInvalidTransitionActionStepBuilder.transition( () => 3 );
 		assert.throws(
@@ -889,7 +889,7 @@
 
 		const parameterNotFunctionStepBuilder = validTourBuilder.step( {
 			name: 'parameterNotFunctionStepBuilder',
-			description: 'parameterNotFunctionStepBuilder description'
+			description: 'parameterNotFunctionStepBuilder description',
 		} );
 		assert.throws(
 			() => {
@@ -903,7 +903,7 @@
 	QUnit.test( 'Step.constructor', ( assert ) => {
 		const step = new gt.Step( validTour, {
 			name: 'first',
-			description: 'first description'
+			description: 'first description',
 		} );
 
 		assert.strictEqual(
@@ -941,7 +941,7 @@
 			{ action: 'externalLink' },
 			{ action: 'back' },
 			{ action: 'okay', onclick: function () {} },
-			{ action: 'next' }
+			{ action: 'next' },
 		];
 		const spy = this.spy( gt.Step.prototype, 'getButtons' );
 		const tourBuilder = new gt.TourBuilder( { name: 'buttonsTest' } );
@@ -1057,16 +1057,16 @@
 	QUnit.test( 'Step.handleOnShow', function ( assert ) {
 		const showChangesStepBuilder = validTourBuilder.step( {
 			name: 'showChanges',
-			description: 'showChanges description'
+			description: 'showChanges description',
 		} );
 		const showChangesStep = showChangesStepBuilder.step;
 		const singlePageTourBuilder = new gt.TourBuilder( {
 			name: 'singlePage',
-			isSinglePage: true
+			isSinglePage: true,
 		} );
 		const singlePageStepBuilder = singlePageTourBuilder.step( {
 			name: 'beginning',
-			description: 'beginning description'
+			description: 'beginning description',
 		} );
 		const singlePageStep = singlePageStepBuilder.step;
 		const updateUserStateSpy = this.spy( gt, 'updateUserStateForTour' );
@@ -1131,7 +1131,7 @@
 			() => {
 				// eslint-disable-next-line no-unused-vars
 				const tour = new gt.TourBuilder( {
-					tourName: 'test'
+					tourName: 'test',
 				} );
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, /'tourSpec.name' must be a string, the tour name/ )
@@ -1147,12 +1147,12 @@
 	QUnit.test( 'TourBuilder.step', ( assert ) => {
 		validTourBuilder.step( {
 			name: 'preview',
-			description: 'preview description'
+			description: 'preview description',
 		} );
 
 		validTourBuilder.step( {
 			name: 'save',
-			description: 'save description'
+			description: 'save description',
 		} );
 
 		assert.strictEqual(
@@ -1165,7 +1165,7 @@
 			() => {
 				validTourBuilder.step( {
 					name: 'save',
-					description: 'save description'
+					description: 'save description',
 				} );
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, /The name "save" is already taken\. {2}Two steps in a tour can not have the same name/ ),
@@ -1187,7 +1187,7 @@
 
 	QUnit.test( 'Tour.constructor', ( assert ) => {
 		const tour = new gt.Tour( {
-			name: 'addImage'
+			name: 'addImage',
 		} );
 
 		assert.strictEqual(
@@ -1210,11 +1210,11 @@
 			.returns( 'loaded' );
 
 		const extensionTour = new gt.Tour( {
-			name: EXTENSION_NAME
+			name: EXTENSION_NAME,
 		} );
 
 		const onwikiTour = new gt.Tour( {
-			name: ONWIKI_NAME
+			name: ONWIKI_NAME,
 		} );
 
 		// There are two different directionalities
@@ -1275,7 +1275,7 @@
 
 		const previewStepBuilder = validTourBuilder.step( {
 			name: 'preview',
-			description: 'preview description'
+			description: 'preview description',
 		} );
 
 		const done = assert.async();
@@ -1357,7 +1357,7 @@
 
 	QUnit.test( 'Tour.start', ( assert ) => {
 		const tourBuilder = new gt.TourBuilder( {
-			name: 'reference'
+			name: 'reference',
 		} );
 		assert.throws(
 			() => {

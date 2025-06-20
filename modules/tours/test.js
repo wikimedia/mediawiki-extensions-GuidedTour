@@ -18,14 +18,14 @@
 		 * If this is an on-wiki tour, it should match the MediaWiki page.  For instance,
 		 * if this were on-wiki, it would be MediaWiki:Guidedtour-tour-test.js
 		 */
-		name: 'test'
+		name: 'test',
 	} );
 
 	tour.firstStep( {
 		name: 'overlay',
 		titlemsg: 'guidedtour-tour-test-testing',
 		descriptionmsg: 'guidedtour-tour-test-test-description',
-		overlay: true
+		overlay: true,
 	} )
 		.next( 'callout' );
 
@@ -38,7 +38,7 @@
 		descriptionmsg: 'guidedtour-tour-test-portal-description',
 		// attachment
 		attachTo: '#n-portal a',
-		position: '3'
+		position: '3',
 	} )
 		.next( 'descriptionwikitext' )
 		.back( 'overlay' );
@@ -54,8 +54,8 @@
 		// try descriptive position (5'oclock) and use skin-specific value
 		position: {
 			fallback: 'bottomRight',
-			monobook: 'right'
-		}
+			monobook: 'right',
+		},
 	} )
 		.next( pageName ? 'descriptionpage' : 'launchtour' )
 		.back( 'callout' );
@@ -75,15 +75,15 @@
 				action: 'wikiLink',
 				page: pageName,
 				namemsg: 'guidedtour-tour-test-go-description-page',
-				type: 'progressive'
-			} ]
+				type: 'progressive',
+			} ],
 		} )
 			.next( 'launchtour' )
 			.back( 'descriptionwikitext' );
 	}
 
 	const launchTourButtons = [ {
-		action: 'end'
+		action: 'end',
 	} ];
 
 	if ( shouldShowFirstEdit() ) {
@@ -92,7 +92,7 @@
 			onclick: function () {
 				gt.endTour();
 				gt.launchTour( 'firstedit' );
-			}
+			},
 		} );
 	}
 
@@ -107,7 +107,7 @@
 		// attachment
 		overlay: true,
 
-		buttons: launchTourButtons
+		buttons: launchTourButtons,
 	} )
 		.back( pageName ? 'descriptionpage' : 'descriptionwikitext' );
 }( mw.guidedTour ) );

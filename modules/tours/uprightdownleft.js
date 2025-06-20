@@ -12,30 +12,30 @@
 			attachTo: '#ca-edit',
 			position: 'bottom',
 			buttons: [ {
-				action: 'next'
-			} ]
+				action: 'next',
+			} ],
 		}, {
 			title: 'Right',
 			description: '',
 			attachTo: '#ca-edit',
 			position: 'left',
 			buttons: [ {
-				action: 'next'
-			} ]
+				action: 'next',
+			} ],
 		}, {
 			title: 'Down',
 			description: '',
 			attachTo: '.mw-editsection',
 			position: 'top',
 			buttons: [ {
-				action: 'next'
-			} ]
+				action: 'next',
+			} ],
 		}, {
 			title: 'Left',
 			description: '',
 			attachTo: '#n-mainpage-description',
-			position: 'right'
-		} ]
+			position: 'right',
+		} ],
 	} );
 
 }( mw.guidedTour ) );

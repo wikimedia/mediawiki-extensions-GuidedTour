@@ -50,7 +50,7 @@
 
 	const tour = new gt.TourBuilder( {
 		name: 'firsteditve',
-		showConditionally: 'VisualEditor'
+		showConditionally: 'VisualEditor',
 	} );
 
 	tour.firstStep( {
@@ -67,10 +67,10 @@
 				} else {
 					mw.libs.guiders.hideAll();
 				}
-			}
+			},
 		} ],
 		allowAutomaticNext: false,
-		allowAutomaticOkay: false
+		allowAutomaticOkay: false,
 	// Tour-level listeners would avoid repeating this for two steps
 	} ).listenForMwHooks( 've.activationComplete', 've.toolbarSaveButton.stateChanged' )
 		.transition( handleVeChange )
@@ -82,7 +82,7 @@
 		description: editSectionDescription,
 		position: 'right',
 		attachTo: editSectionSelector,
-		width: 300
+		width: 300,
 	} ).listenForMwHooks( 've.activationComplete', 've.toolbarSaveButton.stateChanged' )
 		.transition( ( transitionEvent ) => {
 			if (
@@ -102,7 +102,7 @@
 		descriptionmsg: 'guidedtour-tour-firsteditve-save-description',
 		attachTo: '.ve-ui-toolbar-saveButton',
 		position: 'bottomRight',
-		closeOnClickOutside: false
+		closeOnClickOutside: false,
 	} ).listenForMwHooks( 've.deactivationComplete' )
 		.transition( () => {
 			if ( !gt.isEditing() ) {

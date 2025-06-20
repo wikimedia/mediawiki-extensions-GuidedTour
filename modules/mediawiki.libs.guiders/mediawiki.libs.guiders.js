@@ -62,7 +62,7 @@ mw.libs.guiders = ( function () {
 		flipToKeepOnScreen: false,
 		offset: {
 			top: null,
-			left: null
+			left: null,
 		},
 		// Function taking three arguments, the guider, a legacy boolean for close
 		// type (false for text close button, true for everything else), and a text
@@ -77,7 +77,7 @@ mw.libs.guiders = ( function () {
 		position: 0,
 		title: '',
 		width: 400,
-		xButton: false // this places a closer "x" button in the top right of the guider
+		xButton: false, // this places a closer "x" button in the top right of the guider
 	};
 
 	guiders._htmlSkeleton = [
@@ -93,7 +93,7 @@ mw.libs.guiders = ( function () {
 		'      <div class="guider_arrow_inner"></div>',
 		'    </div>',
 		'  </div>',
-		'</div>'
+		'</div>',
 	].join( '' );
 
 	guiders._arrowSize = 42; // This is the arrow's width and height.
@@ -120,7 +120,7 @@ mw.libs.guiders = ( function () {
 		bottomLeft: 7,
 		leftBottom: 8,
 		left: 9,
-		leftTop: 10
+		leftTop: 10,
 	};
 	guiders._windowHeight = 0;
 
@@ -166,7 +166,7 @@ mw.libs.guiders = ( function () {
 				Object.assign(
 					{
 						class: guiders._buttonClass,
-						html: thisButtonHtml
+						html: thisButtonHtml,
 					},
 					guiders._buttonAttributes,
 					thisButton.html || {}
@@ -199,14 +199,14 @@ mw.libs.guiders = ( function () {
 		const xButtonContainer = myGuider.elem.find( '.guider_close' );
 		let $xButton = $( '<button>' ).attr( {
 			class: 'cdx-button cdx-button--icon-only cdx-button--weight-quiet',
-			'aria-label': mw.msg( 'guidedtour-close-button' )
+			'aria-label': mw.msg( 'guidedtour-close-button' ),
 		} );
 		$xButton = $xButton.append( $( '<span>' ).attr( { class: 'cdx-button__icon x_button__icon' } ) );
 		xButtonContainer.append( $xButton );
 		$xButton.on( {
 			click: function () {
 				guiders.handleOnClose( myGuider, true, 'xButton' );
-			}
+			},
 		} );
 	};
 
@@ -311,7 +311,7 @@ mw.libs.guiders = ( function () {
 			return {
 				position: 'fixed',
 				top: ( $( window ).height() - myHeight ) / 3 + 'px',
-				left: ( $( window ).width() - myWidth ) / 2 + 'px'
+				left: ( $( window ).width() - myWidth ) / 2 + 'px',
 			};
 		}
 
@@ -342,7 +342,7 @@ mw.libs.guiders = ( function () {
 			9: [ attachToHeight / 2 - myHeight / 2, -myWidth - bufferOffset ],
 			10: [ 0, -myWidth - bufferOffset ],
 			11: [ -bufferOffset - myHeight, 0 ],
-			12: [ -bufferOffset - myHeight, attachToWidth / 2 - myWidth / 2 ]
+			12: [ -bufferOffset - myHeight, attachToWidth / 2 - myWidth / 2 ],
 		};
 		const offset = offsetMap[ position ];
 		top += offset[ 0 ];
@@ -368,7 +368,7 @@ mw.libs.guiders = ( function () {
 		return {
 			position: positionType,
 			top: parseInt( top, 10 ),
-			left: parseInt( left, 10 )
+			left: parseInt( left, 10 ),
 		};
 	};
 
@@ -420,7 +420,7 @@ mw.libs.guiders = ( function () {
 			if ( flipVertically || flipHorizontally ) {
 				position = guiders.getFlippedPosition( position, {
 					vertical: flipVertically,
-					horizontal: flipHorizontally
+					horizontal: flipHorizontally,
 				} );
 				css = guiders._getAttachCss( $attachTarget, myGuider, position );
 			}
@@ -525,7 +525,7 @@ mw.libs.guiders = ( function () {
 			9: 'guider_arrow_right',
 			10: 'guider_arrow_right',
 			11: 'guider_arrow_down',
-			12: 'guider_arrow_down'
+			12: 'guider_arrow_down',
 		};
 
 		// Classes documented above
@@ -547,7 +547,7 @@ mw.libs.guiders = ( function () {
 			9: [ 'top', myHeight / 2 - arrowOffset ],
 			10: [ 'top', arrowOffset ],
 			11: [ 'left', arrowOffset ],
-			12: [ 'left', myWidth / 2 - arrowOffset ]
+			12: [ 'left', myWidth / 2 - arrowOffset ],
 		};
 		const arrowPosition = positionMap[ position ];
 		$myGuiderArrow.css( arrowPosition[ 0 ], arrowPosition[ 1 ] + 'px' );
@@ -585,7 +585,7 @@ mw.libs.guiders = ( function () {
 			9: 'mwe-gt-fade-in-right',
 			10: 'mwe-gt-fade-in-right',
 			11: 'mwe-gt-fade-in-down',
-			12: 'mwe-gt-fade-in-down'
+			12: 'mwe-gt-fade-in-down',
 		};
 		guiders._removeAnimations( myGuider );
 		// Assign animation class for myGuider
@@ -866,7 +866,7 @@ mw.libs.guiders = ( function () {
 		const scrollToHeight = Math.round( Math.max( guiderOffset.top + ( guiderElemHeight / 2 ) - ( windowHeight / 2 ), 0 ) );
 		// Basic concept from https://github.com/yckart/jquery.scrollto.js/blob/master/jquery.scrollto.js
 		$( 'html, body' ).animate( {
-			scrollTop: scrollToHeight
+			scrollTop: scrollToHeight,
 		}, guiders._scrollDuration );
 	};
 

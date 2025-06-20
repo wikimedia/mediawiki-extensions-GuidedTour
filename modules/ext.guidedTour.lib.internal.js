@@ -79,12 +79,12 @@
 		getInitialUserStateObject: function ( tourInfo ) {
 			const userStateObject = {
 				version: 1,
-				tours: {}
+				tours: {},
 			};
 
 			if ( tourInfo !== undefined ) {
 				userStateObject.tours[ tourInfo.name ] = {
-					step: tourInfo.step
+					step: tourInfo.step,
 				};
 			}
 			return userStateObject;
@@ -143,7 +143,7 @@
 
 			const onWikiTourUrl = mw.util.getUrl( title, {
 				action: 'raw',
-				ctype: 'text/javascript'
+				ctype: 'text/javascript',
 			} );
 			mw.log( 'Attempting to load on-wiki tour from ', onWikiTourUrl );
 
@@ -227,6 +227,6 @@
 			}
 
 			return null;
-		}
+		},
 	};
 }() );

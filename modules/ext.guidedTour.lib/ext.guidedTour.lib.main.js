@@ -103,7 +103,7 @@
 		for ( const tourName in state.tours ) {
 			candidateTours.push( {
 				name: tourName,
-				step: state.tours[ tourName ].step
+				step: state.tours[ tourName ].step,
 			} );
 		}
 
@@ -116,7 +116,7 @@
 				// This value is before 1970, but is a simple way
 				// to ensure the comparison below always works.
 				max = {
-					startTime: -1
+					startTime: -1,
 				};
 
 				// Not all the tours in the cookie necessarily
@@ -131,7 +131,7 @@
 							userState: state,
 							pageName: mw.config.get( 'wgPageName' ),
 							articleId: mw.config.get( 'wgArticleId' ),
-							condition: internal.definedTours[ tourName ].showConditionally
+							condition: internal.definedTours[ tourName ].showConditionally,
 						} )
 					) {
 						currentStart = state.tours[ tourName ].startTime || 0;
@@ -139,7 +139,7 @@
 							max = {
 								name: tourName,
 								step: state.tours[ tourName ].step,
-								startTime: currentStart
+								startTime: currentStart,
 							};
 						}
 					}
@@ -261,7 +261,7 @@
 		cookieName = '-mw-tour';
 		cookieParams = {
 			expires: null, // null means to use a session cookie.
-			sameSite: 'Lax'
+			sameSite: 'Lax',
 		};
 
 		// Show X button
@@ -316,7 +316,7 @@
 
 			return {
 				name: tourName,
-				step: tourStep
+				step: tourStep,
 			};
 		},
 
@@ -375,7 +375,7 @@
 					userState: getUserState(),
 					pageName: mw.config.get( 'wgPageName' ),
 					articleId: mw.config.get( 'wgArticleId' ),
-					condition: tour.showConditionally
+					condition: tour.showConditionally,
 				} ) ) {
 					if ( tourId ) {
 						showTour( tourName, tourId );
@@ -402,7 +402,7 @@
 				if ( step !== null && step !== '' ) {
 					tourId = gt.makeTourId( {
 						name: tourName,
-						step: step
+						step: step,
 					} );
 				} else {
 					tourId = null;
@@ -472,9 +472,9 @@
 			gt.updateUserStateForTour( {
 				tourInfo: {
 					name: name,
-					step: step
+					step: step,
 				},
-				wasShown: false
+				wasShown: false,
 			} );
 		},
 
@@ -733,7 +733,7 @@
 				// start from user state position
 				showTour( tourName, gt.makeTourId( {
 					name: tourName,
-					step: userState.tours[ tourName ].step
+					step: userState.tours[ tourName ].step,
 				} ) );
 			}
 
@@ -743,7 +743,7 @@
 			// start from step specified
 			showTour( tourName, gt.makeTourId( {
 				name: tourName,
-				step: step
+				step: step,
 			} ) );
 		},
 
@@ -817,7 +817,7 @@
 		getCookieConfiguration: function () {
 			return {
 				name: cookieName,
-				parameters: cookieParams
+				parameters: cookieParams,
 			};
 		},
 
@@ -872,7 +872,7 @@
 
 			// No conditions or inconsistent cookie data
 			return true;
-		}
+		},
 	} );
 
 	/**
@@ -915,7 +915,7 @@
 		function convertStepSpec( index, stepSpec ) {
 			return $.extend( true, {
 				name: ( index + 1 ).toString(),
-				allowAutomaticNext: false
+				allowAutomaticNext: false,
 			}, stepSpec );
 		}
 
