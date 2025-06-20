@@ -192,8 +192,8 @@ class Hooks implements
 						'guidedtour-tour-firstedit-edit-section-title',
 						'guidedtour-tour-firsteditve-edit-section-description',
 						'guidedtour-tour-firstedit-save-title',
-						'guidedtour-tour-firsteditve-save-description'
-					]
+						'guidedtour-tour-firsteditve-save-description',
+					],
 				]
 			);
 		}

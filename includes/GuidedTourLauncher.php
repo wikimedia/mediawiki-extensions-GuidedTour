@@ -43,7 +43,7 @@ class GuidedTourLauncher {
 				$tourName => [
 					'step' => $step,
 				],
-			]
+			],
 		] );
 
 		return $newState;

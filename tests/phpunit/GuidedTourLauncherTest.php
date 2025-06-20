@@ -50,8 +50,8 @@ class GuidedTourLauncherTest extends MediaWikiIntegrationTestCase {
 							'step' => 'bar',
 							'firstArticleId' => 123,
 						],
-					]
-				]
+					],
+				],
 			],
 
 			[
@@ -65,7 +65,7 @@ class GuidedTourLauncherTest extends MediaWikiIntegrationTestCase {
 				[],
 				'example',
 				'bar',
-				$simpleExpectedState
+				$simpleExpectedState,
 			],
 
 			[
@@ -76,7 +76,7 @@ class GuidedTourLauncherTest extends MediaWikiIntegrationTestCase {
 							'step' => 'baz',
 							'firstSpecialPageName' => 'Special:Watchlist',
 						],
-					]
+					],
 				],
 				'example',
 				'bar',
@@ -90,7 +90,7 @@ class GuidedTourLauncherTest extends MediaWikiIntegrationTestCase {
 						'example' => [
 							'step' => 'bar',
 						],
-					]
+					],
 				],
 			],
 		];
@@ -140,15 +140,15 @@ class GuidedTourLauncherTest extends MediaWikiIntegrationTestCase {
 							'step' => 'bar',
 							'firstArticleId' => 123,
 						],
-					]
-				] )
+					],
+				] ),
 			],
 
 			[
 				'',
 				'example',
 				'bar',
-				$simpleExpectedCookieString
+				$simpleExpectedCookieString,
 			],
 		];
 	}

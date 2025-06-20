@@ -40,7 +40,7 @@ class GuidedTourHooksTest extends MediaWikiIntegrationTestCase {
 					],
 					'thirdtour' => [
 						'step' => 3,
-						'firstArticleId' => 38333
+						'firstArticleId' => 38333,
 					],
 				],
 			] ) ),
