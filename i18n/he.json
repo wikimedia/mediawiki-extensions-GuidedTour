@@ -18,7 +18,7 @@
 	"guidedtour-tour-test-testing": "בדיקות",
 	"guidedtour-tour-test-test-description": "זוהי בדיקה של תיאור. צנח לו זלזל!",
 	"guidedtour-tour-test-callouts": "בדיקת חלונות הסבר",
-	"guidedtour-tour-test-portal-description": "זהו דף ה{{int:portal}}.",
+	"guidedtour-tour-test-portal-description": "זהו דף {{int:portal}}.",
 	"guidedtour-tour-test-mediawiki-parse": "בדיקות פענוח מדיה־ויקי",
 	"guidedtour-tour-test-description-page": "בדקו את דפי התיאור של מדיה־ויקי",
 	"guidedtour-tour-test-go-description-page": "עברו לדף התיאור",
