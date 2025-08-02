@@ -203,7 +203,7 @@
 				return this.canonicalizeStep(
 					directionReturn,
 					'Callback passed to .' + direction + '() returned invalid value',
-					direction
+					direction,
 				);
 			};
 		} else {
@@ -213,7 +213,7 @@
 			callback = () => this.canonicalizeStep(
 				step,
 				'Value passed to .' + direction + '() does not refer to a valid step',
-				direction
+				direction,
 			);
 		}
 		currentStep.setCallback( direction, callback );
@@ -288,7 +288,7 @@
 				return this.canonicalizeStep(
 					transitionReturn,
 					'Callback passed to .transition() returned invalid value',
-					null
+					null,
 				);
 			}
 		} );

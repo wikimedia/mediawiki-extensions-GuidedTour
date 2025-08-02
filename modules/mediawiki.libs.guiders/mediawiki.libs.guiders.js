@@ -169,8 +169,8 @@ mw.libs.guiders = ( function () {
 						html: thisButtonHtml,
 					},
 					guiders._buttonAttributes,
-					thisButton.html || {}
-				)
+					thisButton.html || {},
+				),
 			);
 
 			if ( typeof thisButton.classString !== 'undefined' && thisButton.classString !== null ) {

@@ -40,12 +40,12 @@
 
 	const editPageDescription = mw.message(
 		'guidedtour-tour-firsteditve-edit-page-description',
-		$( '#ca-edit a' ).text()
+		$( '#ca-edit a' ).text(),
 	).parse();
 
 	const editSectionDescription = mw.message(
 		'guidedtour-tour-firsteditve-edit-section-description',
-		mw.message( 'editsection' ).parse()
+		mw.message( 'editsection' ).parse(),
 	).parse();
 
 	const tour = new gt.TourBuilder( {

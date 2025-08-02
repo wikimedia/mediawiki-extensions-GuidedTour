@@ -989,12 +989,12 @@
 		stepCount = steps.length;
 
 		stepBuilders[ 0 ] = tourBuilder.firstStep(
-			convertStepSpec( 0, tourSpec.steps[ 0 ] )
+			convertStepSpec( 0, tourSpec.steps[ 0 ] ),
 		);
 
 		for ( let i = 1; i < stepCount; i++ ) {
 			stepBuilders[ i ] = tourBuilder.step(
-				convertStepSpec( i, steps[ i ] )
+				convertStepSpec( i, steps[ i ] ),
 			);
 		}
 

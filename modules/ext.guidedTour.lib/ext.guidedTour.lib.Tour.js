@@ -299,7 +299,7 @@
 	Tour.prototype.start = function () {
 		if ( this.firstStep === null ) {
 			throw new gt.TourDefinitionError(
-				'The .firstStep() method must be called for all tours.'
+				'The .firstStep() method must be called for all tours.',
 			);
 		}
 

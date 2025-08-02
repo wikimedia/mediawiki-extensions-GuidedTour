@@ -14,20 +14,6 @@
 					"always-multiline"
 				]
 			}
-		},
-		{
-			"files": [
-				"**/*.ts"
-			],
-			"extends": [
-				"@wmde/wikimedia-typescript"
-			],
-			"rules": {
-				"comma-dangle": [
-					"error",
-					"always-multiline"
-				]
-			}
 		}
 	]
 }

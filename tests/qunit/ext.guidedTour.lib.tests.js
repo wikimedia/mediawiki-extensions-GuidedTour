@@ -65,25 +65,25 @@
 				step: 3,
 			} ),
 			'gt-test-3',
-			'Successful makeTourId call'
+			'Successful makeTourId call',
 		);
 
 		assert.strictEqual(
 			gt.makeTourId( 'test' ),
 			null,
-			'String input returns null'
+			'String input returns null',
 		);
 
 		assert.strictEqual(
 			gt.makeTourId( null ),
 			null,
-			'null input returns null'
+			'null input returns null',
 		);
 
 		assert.strictEqual(
 			gt.makeTourId(),
 			null,
-			'Missing parameter returns null'
+			'Missing parameter returns null',
 		);
 	} );
 
@@ -96,7 +96,7 @@
 		assert.deepEqual(
 			gt.parseTourId( tourId ),
 			expectedTourInfo,
-			'Simple tourId'
+			'Simple tourId',
 		);
 	} );
 
@@ -108,14 +108,14 @@
 		assert.strictEqual(
 			gt.isPage( PAGE_NAME_TO_SKIP ),
 			true,
-			'Page matches'
+			'Page matches',
 		);
 
 		mw.config.set( 'wgPageName', OTHER_PAGE_NAME );
 		assert.strictEqual(
 			gt.isPage( PAGE_NAME_TO_SKIP ),
 			false,
-			'Page does match'
+			'Page does match',
 		);
 	} );
 
@@ -131,19 +131,19 @@
 		assert.strictEqual(
 			gt.hasQuery( { action: 'edit' } ),
 			true,
-			'Query matches, page name is undefined'
+			'Query matches, page name is undefined',
 		);
 		assert.strictEqual(
 			gt.hasQuery( { action: 'edit' }, null ),
 			true,
-			'Query matches, page name is null'
+			'Query matches, page name is null',
 		);
 
 		mw.config.set( 'wgPageName', PAGE_NAME_TO_SKIP );
 		assert.strictEqual(
 			gt.hasQuery( { action: 'edit' }, PAGE_NAME_TO_SKIP ),
 			true,
-			'Query and page both match'
+			'Query and page both match',
 		);
 
 		mw.config.set( 'wgPageName', OTHER_PAGE_NAME );
@@ -157,21 +157,21 @@
 		assert.strictEqual(
 			gt.hasQuery( { action: 'edit' } ),
 			false,
-			'Query does not match, page is undefined'
+			'Query does not match, page is undefined',
 		);
 
 		mw.config.set( 'wgPageName', PAGE_NAME_TO_SKIP );
 		assert.strictEqual(
 			gt.hasQuery( { action: 'edit' }, PAGE_NAME_TO_SKIP ),
 			false,
-			'Query does not match, although page does'
+			'Query does not match, although page does',
 		);
 
 		mw.config.set( 'wgPageName', OTHER_PAGE_NAME );
 		assert.strictEqual(
 			gt.hasQuery( { action: 'edit' }, PAGE_NAME_TO_SKIP ),
 			false,
-			'Neither query nor page match'
+			'Neither query nor page match',
 		);
 	} );
 
@@ -183,14 +183,14 @@
 		assert.strictEqual(
 			gt.getStepFromQuery(),
 			step,
-			'Step is returned correctly when present'
+			'Step is returned correctly when present',
 		);
 
 		step = null;
 		assert.strictEqual(
 			gt.getStepFromQuery(),
 			step,
-			'Step is returned as null when not present'
+			'Step is returned as null when not present',
 		);
 	} );
 
@@ -208,7 +208,7 @@
 			assert.strictEqual(
 				userState.tours[ expectedName ].step,
 				expectedStep,
-				message
+				message,
 			);
 		}
 
@@ -277,7 +277,7 @@
 				condition: 'bogus',
 			} ),
 			compareTypeAndMessage( gt.TourDefinitionError, /'bogus' is not a supported condition/ ),
-			'gt.TourDefinitionError with correct error message for invalid condition'
+			'gt.TourDefinitionError with correct error message for invalid condition',
 		);
 
 		assert.strictEqual(
@@ -297,7 +297,7 @@
 				condition: 'stickToFirstPage',
 			} ),
 			true,
-			'Returns true for stickToFirstPage when on the original article'
+			'Returns true for stickToFirstPage when on the original article',
 		);
 
 		assert.strictEqual(
@@ -317,7 +317,7 @@
 				condition: 'stickToFirstPage',
 			} ),
 			false,
-			'Returns false for stickToFirstPage when on a different article'
+			'Returns false for stickToFirstPage when on a different article',
 		);
 
 		assert.strictEqual(
@@ -335,7 +335,7 @@
 				articleId: 123,
 			} ),
 			true,
-			'Returns true when there is no condition'
+			'Returns true when there is no condition',
 		);
 
 		assert.strictEqual(
@@ -354,7 +354,7 @@
 				articleId: 123,
 			} ),
 			true,
-			'Returns true when there is no condition even when there is a non-matching article ID in the cookie'
+			'Returns true when there is no condition even when there is a non-matching article ID in the cookie',
 		);
 
 		assert.strictEqual(
@@ -374,7 +374,7 @@
 				articleId: 123,
 			} ),
 			true,
-			'Returns true when there is no condition even when there is a non-matching article ID in the cookie, for another tour'
+			'Returns true when there is no condition even when there is a non-matching article ID in the cookie, for another tour',
 		);
 
 		assert.strictEqual(
@@ -394,7 +394,7 @@
 				condition: 'stickToFirstPage',
 			} ),
 			true,
-			'Returns true for stickToFirstPage and matching special page'
+			'Returns true for stickToFirstPage and matching special page',
 		);
 
 		assert.strictEqual(
@@ -414,7 +414,7 @@
 				condition: 'stickToFirstPage',
 			} ),
 			false,
-			'Returns false for stickToFirstPage and different special page'
+			'Returns false for stickToFirstPage and different special page',
 		);
 
 		assert.strictEqual(
@@ -438,7 +438,7 @@
 				condition: 'stickToFirstPage',
 			} ),
 			false,
-			'Returns false for stickToFirstPage for non-matching article ID when another tour\'s article ID matches'
+			'Returns false for stickToFirstPage for non-matching article ID when another tour\'s article ID matches',
 		);
 
 		// Mock the ve global, and its array of instances.
@@ -446,7 +446,7 @@
 		assert.strictEqual(
 			gt.shouldShowTour( visualEditorArgs ),
 			true,
-			'Returns true for VisualEditor condition when VisualEditor open'
+			'Returns true for VisualEditor condition when VisualEditor open',
 		);
 
 		// ve = undefined deliberately applies to all of the below until it is
@@ -456,42 +456,42 @@
 		assert.strictEqual(
 			gt.shouldShowTour( visualEditorArgs ),
 			true,
-			'Returns true for VisualEditor condition when viewing page with VE closed'
+			'Returns true for VisualEditor condition when viewing page with VE closed',
 		);
 
 		mw.config.set( 'wgAction', 'edit' );
 		assert.strictEqual(
 			gt.shouldShowTour( visualEditorArgs ),
 			false,
-			'Returns false for VisualEditor condition when in wikitext editor'
+			'Returns false for VisualEditor condition when in wikitext editor',
 		);
 
 		mw.config.set( 'wgAction', 'submit' );
 		assert.strictEqual(
 			gt.shouldShowTour( visualEditorArgs ),
 			false,
-			'Returns false for VisualEditor condition when reviewing wikitext changes'
+			'Returns false for VisualEditor condition when reviewing wikitext changes',
 		);
 
 		mw.config.set( 'wgAction', 'edit' );
 		assert.strictEqual(
 			gt.shouldShowTour( wikitextArgs ),
 			true,
-			'Returns true for wikitext condition when editing wikitext'
+			'Returns true for wikitext condition when editing wikitext',
 		);
 
 		mw.config.set( 'wgAction', 'submit' );
 		assert.strictEqual(
 			gt.shouldShowTour( wikitextArgs ),
 			true,
-			'Returns true for wikitext condition when reviewing wikitext'
+			'Returns true for wikitext condition when reviewing wikitext',
 		);
 
 		mw.config.set( 'wgAction', 'view' );
 		assert.strictEqual(
 			gt.shouldShowTour( wikitextArgs ),
 			true,
-			'Returns true for wikitext condition when viewing page with VE closed'
+			'Returns true for wikitext condition when viewing page with VE closed',
 		);
 
 		window.ve = mockOpenVE;
@@ -499,7 +499,7 @@
 		assert.strictEqual(
 			gt.shouldShowTour( wikitextArgs ),
 			false,
-			'Returns false for wikitext condition when VisualEditor is open'
+			'Returns false for wikitext condition when VisualEditor is open',
 		);
 
 		assert.strictEqual(
@@ -523,7 +523,7 @@
 				condition: 'stickToFirstPage',
 			} ),
 			false,
-			'Returns false for non-matching article ID when another tour\'s special page matches'
+			'Returns false for non-matching article ID when another tour\'s special page matches',
 		);
 	} );
 
@@ -557,19 +557,19 @@
 		assert.throws(
 			() => gt.defineTour(),
 			compareTypeAndMessage( gt.TourDefinitionError, SPEC_MUST_BE_OBJECT ),
-			'gt.TourDefinitionError with correct error message for empty call'
+			'gt.TourDefinitionError with correct error message for empty call',
 		);
 
 		assert.throws(
 			() => gt.defineTour( VALID_TOUR_SPEC, VALID_DEFINE_TOUR_STEP_SPEC ),
 			compareTypeAndMessage( gt.TourDefinitionError, SPEC_MUST_BE_OBJECT ),
-			'gt.TourDefinitionError with correct error message for multiple parameters'
+			'gt.TourDefinitionError with correct error message for multiple parameters',
 		);
 
 		assert.throws(
 			() => gt.defineTour( null ),
 			compareTypeAndMessage( gt.TourDefinitionError, SPEC_MUST_BE_OBJECT ),
-			'gt.TourDefinitionError with correct error message for null call'
+			'gt.TourDefinitionError with correct error message for null call',
 		);
 
 		assert.throws(
@@ -577,7 +577,7 @@
 				steps: [ VALID_DEFINE_TOUR_STEP_SPEC ],
 			} ),
 			compareTypeAndMessage( gt.TourDefinitionError, NAME_MUST_BE_STRING ),
-			'gt.TourDefinitionError with correct error message for missing name'
+			'gt.TourDefinitionError with correct error message for missing name',
 		);
 
 		assert.throws(
@@ -586,7 +586,7 @@
 				steps: VALID_DEFINE_TOUR_STEP_SPEC,
 			} ),
 			compareTypeAndMessage( gt.TourDefinitionError, STEPS_MUST_BE_ARRAY ),
-			'gt.TourDefinitionError with correct error message for object passed for steps'
+			'gt.TourDefinitionError with correct error message for object passed for steps',
 		);
 
 		assert.throws(
@@ -594,13 +594,13 @@
 				name: 'test',
 			} ),
 			compareTypeAndMessage( gt.TourDefinitionError, STEPS_MUST_BE_ARRAY ),
-			'gt.TourDefinitionError with correct error message for missing steps'
+			'gt.TourDefinitionError with correct error message for missing steps',
 		);
 
 		assert.strictEqual(
 			gt.defineTour( VALID_TOUR_SPEC ).constructor,
 			gt.TourBuilder,
-			'Valid tour is defined successfully and returns a TourBuilder'
+			'Valid tour is defined successfully and returns a TourBuilder',
 		);
 
 		this.restoreWarnings();
@@ -612,7 +612,7 @@
 		assert.strictEqual(
 			firstStepBuilder.constructor,
 			gt.StepBuilder,
-			'Valid StepBuilder constructed in setup is constructed normally'
+			'Valid StepBuilder constructed in setup is constructed normally',
 		);
 
 		assert.throws(
@@ -624,7 +624,7 @@
 				} );
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, STEP_NAME_MUST_BE_STRING ),
-			'gt.TourDefinitionError when name is missing'
+			'gt.TourDefinitionError when name is missing',
 		);
 
 		assert.throws(
@@ -637,7 +637,7 @@
 				} );
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, STEP_NAME_MUST_BE_STRING ),
-			'gt.TourDefinitionError when name is a Number'
+			'gt.TourDefinitionError when name is a Number',
 		);
 	} );
 
@@ -648,18 +648,18 @@
 		assert.strictEqual(
 			listenForMwHookSpy.callCount,
 			0,
-			'If no hook names are passed, step.listenForMwHook should not be called'
+			'If no hook names are passed, step.listenForMwHook should not be called',
 		);
 
 		firstStepBuilder.listenForMwHooks( 'StepBuilder.listenForMwHooks.happened' );
 		assert.strictEqual(
 			listenForMwHookSpy.callCount,
 			1,
-			'step.listenMwHook should be called once if a single hook name is passed'
+			'step.listenMwHook should be called once if a single hook name is passed',
 		);
 		assert.true(
 			listenForMwHookSpy.calledWithExactly( 'StepBuilder.listenForMwHooks.happened' ),
-			'step.listenMwHook should be called once with the correct hook name if a single hook name is passed'
+			'step.listenMwHook should be called once with the correct hook name if a single hook name is passed',
 		);
 
 		listenForMwHookSpy.reset();
@@ -667,15 +667,15 @@
 		assert.strictEqual(
 			listenForMwHookSpy.callCount,
 			2,
-			'step.listenMwHook should be called twice if two hook names are passed'
+			'step.listenMwHook should be called twice if two hook names are passed',
 		);
 		assert.true(
 			listenForMwHookSpy.calledWithExactly( 'StepBuilder.listenForMwHooks.one' ),
-			'step.listenMwHook should be called with the first hook name if multiple are passed'
+			'step.listenMwHook should be called with the first hook name if multiple are passed',
 		);
 		assert.true(
 			listenForMwHookSpy.calledWithExactly( 'StepBuilder.listenForMwHooks.another' ),
-			'step.listenMwHook should be called with the second hook name if multiple are passed'
+			'step.listenMwHook should be called with the second hook name if multiple are passed',
 		);
 	} );
 
@@ -718,14 +718,14 @@
 				pointsInvalidNameStepBuilder.step.nextCallback();
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, VALUE_PASSED_NEXT_NOT_VALID_STEP ),
-			'nextCallback throws if an invalid (not present in current tour) step name was passed to next'
+			'nextCallback throws if an invalid (not present in current tour) step name was passed to next',
 		);
 
 		firstStepBuilder.next( 'link' );
 		assert.strictEqual(
 			firstStepBuilder.step.nextCallback(),
 			linkStepBuilder.step,
-			'Registers a callback that returns the correct Step, given a step name'
+			'Registers a callback that returns the correct Step, given a step name',
 		);
 
 		assert.throws(
@@ -733,7 +733,7 @@
 				firstStepBuilder.next( stepBuilderCallback );
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, /\.next\(\) can not be called more than once per StepBuilder/ ),
-			'Multiple calls should trigger an error'
+			'Multiple calls should trigger an error',
 		);
 
 		const pointsOtherTourStepBuilder = validTourBuilder.step( {
@@ -746,14 +746,14 @@
 				pointsOtherTourStepBuilder.step.nextCallback();
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, VALUE_PASSED_NEXT_NOT_VALID_STEP ),
-			'nextCallback throws if a StepBuilder from a different Tour was passed to next'
+			'nextCallback throws if a StepBuilder from a different Tour was passed to next',
 		);
 
 		linkStepBuilder.next( editStepBuilder );
 		assert.strictEqual(
 			linkStepBuilder.step.nextCallback(),
 			editStepBuilder.step,
-			'Registers a callback that returns the correct Step, given a StepBuilder'
+			'Registers a callback that returns the correct Step, given a StepBuilder',
 		);
 
 		const returnsInvalidNameCallbackStepBuilder = validTourBuilder.step( {
@@ -766,14 +766,14 @@
 				returnsInvalidNameCallbackStepBuilder.step.nextCallback();
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, CALLBACK_PASSED_NEXT_RETURNED_INVALID ),
-			'nextCallback throws if a callback that returns an invalid step name was passed to next'
+			'nextCallback throws if a callback that returns an invalid step name was passed to next',
 		);
 
 		editStepBuilder.next( () => 'preview' );
 		assert.strictEqual(
 			editStepBuilder.step.nextCallback(),
 			previewStepBuilder.step,
-			'Registers a callback that returns the correct Step, given a callback returning a step name'
+			'Registers a callback that returns the correct Step, given a callback returning a step name',
 		);
 
 		const returnsOtherTourCallbackStepBuilder = validTourBuilder.step( {
@@ -786,14 +786,14 @@
 				returnsOtherTourCallbackStepBuilder.step.nextCallback();
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, CALLBACK_PASSED_NEXT_RETURNED_INVALID ),
-			'nextCallback throws if a callback that returns a StepBuilder from a different Tour was passed to next'
+			'nextCallback throws if a callback that returns a StepBuilder from a different Tour was passed to next',
 		);
 
 		previewStepBuilder.next( stepBuilderCallback );
 		assert.strictEqual(
 			previewStepBuilder.step.nextCallback(),
 			saveStepBuilder.step,
-			'Registers a callback that returns the correct Step, given a callback returning a StepBuilder'
+			'Registers a callback that returns the correct Step, given a callback returning a StepBuilder',
 		);
 	} );
 
@@ -808,7 +808,7 @@
 		assert.strictEqual(
 			firstStepBuilder.step.transitionCallback(),
 			linkStepBuilder.step,
-			'Registers a callback that returns the correct Step, given a callback returning a StepBuilder'
+			'Registers a callback that returns the correct Step, given a callback returning a StepBuilder',
 		);
 
 		const editStepBuilder = validTourBuilder.step( {
@@ -819,14 +819,14 @@
 		assert.strictEqual(
 			linkStepBuilder.step.transitionCallback(),
 			editStepBuilder.step,
-			'Registers a callback that returns the correct Step, given a callback returning a step name'
+			'Registers a callback that returns the correct Step, given a callback returning a step name',
 		);
 
 		editStepBuilder.transition( () => gt.TransitionAction.HIDE );
 		assert.strictEqual(
 			editStepBuilder.step.transitionCallback(),
 			gt.TransitionAction.HIDE,
-			'Valid TransitionAction (HIDE) is preserved'
+			'Valid TransitionAction (HIDE) is preserved',
 		);
 
 		const previewStepBuilder = validTourBuilder.step( {
@@ -837,7 +837,7 @@
 		assert.strictEqual(
 			previewStepBuilder.step.transitionCallback(),
 			previewStepBuilder.step,
-			'Callback without an explicit return value is treated as returning the current step'
+			'Callback without an explicit return value is treated as returning the current step',
 		);
 
 		const returnsInvalidNameCallbackStepBuilder = validTourBuilder.step( {
@@ -850,7 +850,7 @@
 				returnsInvalidNameCallbackStepBuilder.step.transitionCallback();
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, CALLBACK_PASSED_TRANSITION_RETURNED_INVALID ),
-			'transitionCallback throws if a callback that returns an invalid step name was passed to transition'
+			'transitionCallback throws if a callback that returns an invalid step name was passed to transition',
 		);
 
 		const returnsOtherTourCallbackStepBuilder = validTourBuilder.step( {
@@ -863,7 +863,7 @@
 				returnsOtherTourCallbackStepBuilder.step.transitionCallback();
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, CALLBACK_PASSED_TRANSITION_RETURNED_INVALID ),
-			'transitionCallback throws if a callback that returns a StepBuilder from a different Tour was passed to transition'
+			'transitionCallback throws if a callback that returns a StepBuilder from a different Tour was passed to transition',
 		);
 
 		const returnsInvalidTransitionActionStepBuilder = validTourBuilder.step( {
@@ -876,7 +876,7 @@
 				returnsInvalidTransitionActionStepBuilder.step.transitionCallback();
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, /Callback passed to \.transition\(\) returned a number that is not a valid TransitionAction/ ),
-			'transitionCallback throws if a callback returns a number that is not a valid TransitionAction'
+			'transitionCallback throws if a callback returns a number that is not a valid TransitionAction',
 		);
 
 		assert.throws(
@@ -884,7 +884,7 @@
 				firstStepBuilder.transition( () => editStepBuilder );
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, /\.transition\(\) can not be called more than once per StepBuilder/ ),
-			'Multiple calls should trigger an error'
+			'Multiple calls should trigger an error',
 		);
 
 		const parameterNotFunctionStepBuilder = validTourBuilder.step( {
@@ -896,7 +896,7 @@
 				parameterNotFunctionStepBuilder.transition( linkStepBuilder );
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, /\.transition\(\) takes one argument, a function/ ),
-			'callback is not a function'
+			'callback is not a function',
 		);
 	} );
 
@@ -909,13 +909,13 @@
 		assert.strictEqual(
 			step.tour,
 			validTour,
-			'Step is associated with its tour'
+			'Step is associated with its tour',
 		);
 
 		assert.strictEqual(
 			step.specification.id,
 			'gt-placeholder-first',
-			'Step ID is correct'
+			'Step ID is correct',
 		);
 
 		assert.throws(
@@ -923,13 +923,13 @@
 				step.nextCallback();
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, /action: "next" used without calling \.next\(\) when building step/ ),
-			'Error is flagged if Step is constructed, the nextCallback is used without calling .next() on builder'
+			'Error is flagged if Step is constructed, the nextCallback is used without calling .next() on builder',
 		);
 
 		assert.strictEqual(
 			step.transitionCallback(),
 			step,
-			'By default, the transition callback returns the step it was called on'
+			'By default, the transition callback returns the step it was called on',
 		);
 	} );
 
@@ -953,33 +953,33 @@
 		assert.true(
 			returnedButtons[ 0 ].html.class.includes( 'cdx-button--action-destructive' ) &&
 			returnedButtons[ 0 ].html.class.includes( 'cdx-button' ),
-			'Destructive custom button'
+			'Destructive custom button',
 		);
 		assert.true(
 			returnedButtons[ 1 ].html.class.includes( 'cdx-button' ) &&
 			returnedButtons[ 1 ].html.class.includes( 'cdx-button--action-progressive' ) &&
 			returnedButtons[ 1 ].html.class.includes( 'cdx-button--weight-quiet' ),
-			'A quietly progressive custom button'
+			'A quietly progressive custom button',
 		);
 		assert.true(
 			returnedButtons[ 2 ].html.class.includes( 'cdx-button--action-progressive' ),
-			'Progressive internal link'
+			'Progressive internal link',
 		);
 		assert.false(
 			returnedButtons[ 3 ].html.class.includes( 'cdx-button--action-progressive' ),
-			'External link button is not progressive by default'
+			'External link button is not progressive by default',
 		);
 		assert.false(
 			returnedButtons[ 4 ].html.class.includes( 'cdx-button--action-progressive' ),
-			'Back button is not progressive by default'
+			'Back button is not progressive by default',
 		);
 		assert.true(
 			returnedButtons[ 5 ].html.class.includes( 'cdx-button--action-progressive' ),
-			'Okay button is progressive by default'
+			'Okay button is progressive by default',
 		);
 		assert.true(
 			returnedButtons[ 6 ].html.class.includes( 'cdx-button--action-progressive' ),
-			'Next button is progressive by default'
+			'Next button is progressive by default',
 		);
 	} );
 
@@ -997,14 +997,14 @@
 		assert.strictEqual(
 			checkTransitionStub.callCount,
 			0,
-			'Memory firing should be ignored'
+			'Memory firing should be ignored',
 		);
 
 		mw.hook( HOOK_NAME ).fire( 'second', 2 );
 		assert.strictEqual(
 			checkTransitionStub.callCount,
 			1,
-			'checkTransition should be called exactly once when there is a single mw.hook firing'
+			'checkTransition should be called exactly once when there is a single mw.hook firing',
 		);
 
 		const actualTransitionEvent = checkTransitionStub.lastCall.args[ 0 ];
@@ -1016,7 +1016,7 @@
 		assert.deepEqual(
 			actualTransitionEvent,
 			expectedTransitionEvent,
-			'checkTransition should be called with the right TransitionEvent'
+			'checkTransition should be called with the right TransitionEvent',
 		);
 
 		checkTransitionStub.reset();
@@ -1024,7 +1024,7 @@
 		assert.strictEqual(
 			checkTransitionStub.callCount,
 			0,
-			'checkTransition should not be called for hooks that were not registered'
+			'checkTransition should not be called for hooks that were not registered',
 		);
 	} );
 
@@ -1040,17 +1040,17 @@
 		assert.strictEqual(
 			registerMwHookListenerSpy.callCount,
 			2,
-			'registerMwHookListener called once for each hook the step is listening for'
+			'registerMwHookListener called once for each hook the step is listening for',
 		);
 
 		assert.true(
 			registerMwHookListenerSpy.calledWithExactly( 'Step.registerMwHooks.something' ),
-			'registerMwHookListener called with the first hook that is being listened for'
+			'registerMwHookListener called with the first hook that is being listened for',
 		);
 
 		assert.true(
 			registerMwHookListenerSpy.calledWithExactly( 'Step.registerMwHooks.another' ),
-			'registerMwHookListener called with the second hook that is being listened for'
+			'registerMwHookListener called with the second hook that is being listened for',
 		);
 	} );
 
@@ -1076,17 +1076,17 @@
 		assert.strictEqual(
 			unregisterSpy.callCount,
 			0,
-			'unregisterMwHooks is not called when the first step is shown'
+			'unregisterMwHooks is not called when the first step is shown',
 		);
 		assert.deepEqual(
 			updateUserStateSpy.callCount,
 			1,
-			'For a regular (isSinglePage false) tour, updateUserStateForTour is called'
+			'For a regular (isSinglePage false) tour, updateUserStateForTour is called',
 		);
 		assert.strictEqual(
 			validTour.currentStep,
 			firstStep,
-			'currentStep is set after handleShow'
+			'currentStep is set after handleShow',
 		);
 
 		unregisterSpy.reset();
@@ -1094,7 +1094,7 @@
 		assert.strictEqual(
 			unregisterSpy.thisValues[ 0 ],
 			firstStep,
-			'mw.hook listeners for prior current step are unregistered'
+			'mw.hook listeners for prior current step are unregistered',
 		);
 
 		updateUserStateSpy.reset();
@@ -1102,7 +1102,7 @@
 		assert.strictEqual(
 			updateUserStateSpy.callCount,
 			0,
-			'For an isSinglePage true tour, updateUserStateForTour is never called'
+			'For an isSinglePage true tour, updateUserStateForTour is never called',
 		);
 	} );
 
@@ -1115,7 +1115,7 @@
 				const tour = new gt.TourBuilder();
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, CHECK_YOUR_SYNTAX ),
-			'Throws if no tour specification is passed'
+			'Throws if no tour specification is passed',
 		);
 
 		assert.throws(
@@ -1124,7 +1124,7 @@
 				const tour = new gt.TourBuilder( 'test' );
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, CHECK_YOUR_SYNTAX ),
-			'Throws if the tour specification is not an object'
+			'Throws if the tour specification is not an object',
 		);
 
 		assert.throws(
@@ -1134,13 +1134,13 @@
 					tourName: 'test',
 				} );
 			},
-			compareTypeAndMessage( gt.TourDefinitionError, /'tourSpec.name' must be a string, the tour name/ )
+			compareTypeAndMessage( gt.TourDefinitionError, /'tourSpec.name' must be a string, the tour name/ ),
 		);
 
 		assert.strictEqual(
 			validTourBuilder.constructor,
 			gt.TourBuilder,
-			'Valid TourBuilder constructed in setup is constructed normally'
+			'Valid TourBuilder constructed in setup is constructed normally',
 		);
 	} );
 
@@ -1158,7 +1158,7 @@
 		assert.strictEqual(
 			validTour.stepCount,
 			3,
-			'stepCount is correct after multiple calls'
+			'stepCount is correct after multiple calls',
 		);
 
 		assert.throws(
@@ -1169,7 +1169,7 @@
 				} );
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, /The name "save" is already taken\. {2}Two steps in a tour can not have the same name/ ),
-			'Step cname can not repeat'
+			'Step cname can not repeat',
 		);
 	} );
 
@@ -1181,7 +1181,7 @@
 				validTourBuilder.firstStep( previewStepSpec );
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, /You can only specify one first step/ ),
-			'Verify that TourBuilder.first can call once per candidate'
+			'Verify that TourBuilder.first can call once per candidate',
 		);
 	} );
 
@@ -1193,7 +1193,7 @@
 		assert.strictEqual(
 			gt.internal.definedTours[ tour.name ],
 			tour,
-			'Tour is defined in internal list after constructor'
+			'Tour is defined in internal list after constructor',
 		);
 	} );
 
@@ -1228,45 +1228,45 @@
 		assert.strictEqual(
 			extensionTour.getShouldFlipHorizontally( 'ltr', 'ltr' ),
 			false,
-			'No flip for extension tour when interface language and site language are both ltr'
+			'No flip for extension tour when interface language and site language are both ltr',
 		);
 		assert.strictEqual(
 			onwikiTour.getShouldFlipHorizontally( 'ltr', 'ltr' ),
 			false,
-			'No flip for onwiki tour when interface language and site language are both ltr'
+			'No flip for onwiki tour when interface language and site language are both ltr',
 		);
 
 		assert.strictEqual(
 			extensionTour.getShouldFlipHorizontally( 'rtl', 'ltr' ),
 			true,
-			'Flip for extension tour when interface language is rtl and site language is ltr'
+			'Flip for extension tour when interface language is rtl and site language is ltr',
 		);
 		assert.strictEqual(
 			onwikiTour.getShouldFlipHorizontally( 'rtl', 'ltr' ),
 			true,
-			'Flip for onwiki tour when interface language is rtl and site language is ltr'
+			'Flip for onwiki tour when interface language is rtl and site language is ltr',
 		);
 
 		assert.strictEqual(
 			extensionTour.getShouldFlipHorizontally( 'ltr', 'rtl' ),
 			false,
-			'No flip for extension tour when interface language is ltr and site language is rtl'
+			'No flip for extension tour when interface language is ltr and site language is rtl',
 		);
 		assert.strictEqual(
 			onwikiTour.getShouldFlipHorizontally( 'ltr', 'rtl' ),
 			true,
-			'Flip for onwiki tour when interface language is ltr and site language is rtl'
+			'Flip for onwiki tour when interface language is ltr and site language is rtl',
 		);
 
 		assert.strictEqual(
 			extensionTour.getShouldFlipHorizontally( 'rtl', 'rtl' ),
 			true,
-			'Flip for extension tour when interface language is rtl and site language is rtl'
+			'Flip for extension tour when interface language is rtl and site language is rtl',
 		);
 		assert.strictEqual(
 			onwikiTour.getShouldFlipHorizontally( 'rtl', 'rtl' ),
 			false,
-			'No flip for onwiki tour when interface language and site language are both rtl'
+			'No flip for onwiki tour when interface language and site language are both rtl',
 		);
 	} );
 
@@ -1283,12 +1283,12 @@
 		validTour.initialize().then( () => {
 			assert.true(
 				stepInitializeSpy.calledOn( firstStep ),
-				'Initializing tour first time initializes first step'
+				'Initializing tour first time initializes first step',
 			);
 
 			assert.true(
 				stepInitializeSpy.calledOn( previewStepBuilder.step ),
-				'Initializing tour first time initializes other steps'
+				'Initializing tour first time initializes other steps',
 			);
 
 			stepInitializeSpy.reset();
@@ -1297,7 +1297,7 @@
 				assert.strictEqual(
 					stepInitializeSpy.callCount,
 					0,
-					'Steps are not reinitialized if Tour.initialize is called again'
+					'Steps are not reinitialized if Tour.initialize is called again',
 				);
 
 				done();
@@ -1309,13 +1309,13 @@
 		assert.strictEqual(
 			validTour.getStep( 'intro' ),
 			firstStep,
-			'getStep can find step by name'
+			'getStep can find step by name',
 		);
 
 		assert.strictEqual(
 			validTour.getStep( firstStep ),
 			firstStep,
-			'getStep can validate that a Step belongs to the tour and return it'
+			'getStep can validate that a Step belongs to the tour and return it',
 		);
 
 		assert.throws(
@@ -1323,7 +1323,7 @@
 				validTour.getStep( 'bogus' );
 			},
 			compareTypeAndMessage( gt.IllegalArgumentError, /Step "bogus" not found in the "placeholder" tour/ ),
-			'Throws if a step name is not found in the tour'
+			'Throws if a step name is not found in the tour',
 		);
 
 		assert.throws(
@@ -1331,7 +1331,7 @@
 				validTour.getStep( otherTourStepBuilder.step );
 			},
 			compareTypeAndMessage( gt.IllegalArgumentError, /Step object must belong to this tour \("placeholder"\)/ ),
-			'Throws if a step object does not belong to the tour'
+			'Throws if a step object does not belong to the tour',
 		);
 	} );
 
@@ -1350,7 +1350,7 @@
 			assert.deepEqual(
 				actualTransitionEvent,
 				expectedTransitionEvent,
-				'Calls checkTransition with expected event'
+				'Calls checkTransition with expected event',
 			);
 		} );
 	} );
@@ -1364,7 +1364,7 @@
 				tourBuilder.tour.start();
 			},
 			compareTypeAndMessage( gt.TourDefinitionError, /The \.firstStep\(\) method must be called for all tours/ ),
-			'Throws if firstStep was not called'
+			'Throws if firstStep was not called',
 		);
 	} );
 }() );

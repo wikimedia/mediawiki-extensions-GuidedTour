@@ -25,7 +25,7 @@
 		titlemsg: 'guidedtour-tour-firstedit-edit-page-title',
 		description: mw.message(
 			'guidedtour-tour-firstedit-edit-page-description',
-			$( '#ca-edit a' ).text()
+			$( '#ca-edit a' ).text(),
 		).parse(),
 		attachTo: '#ca-edit',
 		position: 'bottom',

@@ -804,7 +804,7 @@
 				options.description = description;
 
 				guiders.initGuider( options );
-			}
+			},
 		);
 	};
 
