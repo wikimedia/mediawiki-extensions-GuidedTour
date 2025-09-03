@@ -15,13 +15,13 @@
 	"guidedtour-tour-test-launch-tour": "Testo turin e nisjes",
 	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|Redakto}} të gjithë faqen...",
 	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Kliko}} butonin \"$1\" për të kryer ndryshimet.",
-	"guidedtour-tour-firstedit-edit-section-title": "Ose {{GENDER:|redakto}} një seksion",
-	"guidedtour-tour-firstedit-edit-section-description": "Ka lidhje \"{{int:editsection}}\" për çdo seksion në një faqe, kështu që ju mund të fokusoheni vetëm në atë pjesë.",
+	"guidedtour-tour-firstedit-edit-section-title": "Ose {{GENDER:|redakto}} një pjesë",
+	"guidedtour-tour-firstedit-edit-section-description": "Ekzistojnë lidhje \"{{int:editsection}}\" për secilën pjesë kryesore në një faqe, kështu që mund të përqendrohesh vetëm tek ajo pjesë.",
 	"guidedtour-tour-firstedit-preview-title": "{{GEND:|Shih paraprakisht}} ndryshimet e tua (me dëshirë)",
 	"guidedtour-tour-firstedit-preview-description": "Duke klikuar \"{{int:showpreview}}\" ju lejon të kontrolloni se si do të duket faqja me ndryshimet tuaja. Vetëm mos harroni t'i ruani këto ndryshime!",
 	"guidedtour-tour-firstedit-save-title": "Pothuajse mbaruat!",
 	"guidedtour-tour-firstedit-save-description": "Kur të jeni gati, klikimi mbi \"{{int:publishchanges}}\" do t'i bëjë ndryshimet tuaja të dukshme për të gjithë.",
 	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|Klikoni}} butonin \"$1\" për të kryer ndryshimet.",
-	"guidedtour-tour-firsteditve-edit-section-description": "Ka lidhje \"$1\" për çdo seksion në një faqe, kështu që ju mund të fokusoheni vetëm në atë pjesë.",
+	"guidedtour-tour-firsteditve-edit-section-description": "Ekzistojnë lidhje \"$1\" për secilën pjesë kryesore në një faqe, kështu që mund të përqendrohesh vetëm tek ajo pjesë.",
 	"guidedtour-tour-firsteditve-save-description": "Kur të jeni gati, klikimi mbi \"{{int:publishchanges}}\" do t'i bëjë ndryshimet tuaja të dukshme për të gjithë."
 }
