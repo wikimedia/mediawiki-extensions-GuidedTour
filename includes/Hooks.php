@@ -18,12 +18,10 @@ use MediaWiki\Title\Title;
  * Use a hook to include this extension's functionality in pages
  * (if the page is called with a tour)
  *
- * @file
  * @author Terry Chay tchay@wikimedia.org
  * @author Matthew Flaschen mflaschen@wikimedia.org
  * @author Luke Welling lwelling@wikimedia.org
  */
-
 class Hooks implements
 	BeforePageDisplayHook,
 	ResourceLoaderRegisterModulesHook,
