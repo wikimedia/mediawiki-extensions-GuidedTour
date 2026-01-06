@@ -5,7 +5,8 @@
 			"Jopparn",
 			"Lokal Profil",
 			"Tobulos1",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Stefan2255"
 		]
 	},
 	"guidedtour-desc": "Tillåter sidor att ge en popup-guidad tur för att hjälpa nya användare",
@@ -14,6 +15,7 @@
 	"guidedtour-next-button": "Nästa",
 	"guidedtour-okay-button": "Okej",
 	"guidedtour-back-button": "Tillbaka",
+	"guidedtour-close-button": "Stäng",
 	"guidedtour-tour-test-testing": "Testar",
 	"guidedtour-tour-test-test-description": "Detta är ett test av beskrivningen. Lorem ipsum dolor sit!",
 	"guidedtour-tour-test-callouts": "Testa utpekning",
