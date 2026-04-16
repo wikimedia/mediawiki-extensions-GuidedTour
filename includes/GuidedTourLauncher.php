@@ -2,7 +2,6 @@
 
 namespace MediaWiki\Extension\GuidedTour;
 
-use MediaWiki\Context\RequestContext;
 use MediaWiki\Json\FormatJson;
 use MediaWiki\Output\OutputPage;
 
@@ -75,19 +74,18 @@ class GuidedTourLauncher {
 	/**
 	 * Sets a tour to auto-launch on this view
 	 *
+	 * @param OutputPage $out Page to render the tour on
 	 * @param string $tourName Name of tour to launch
 	 * @param string $step Step to navigate to
 	 */
-	public static function launchTour( $tourName, $step ) {
-		$context = RequestContext::getMain();
-
+	public static function launchTour( OutputPage $out, $tourName, $step ) {
 		self::$directLaunchState = self::getNewState(
 			self::$directLaunchState,
 			$tourName,
 			$step
 		);
 
-		Hooks::addTour( $context->getOutput(), $tourName );
+		Hooks::addTour( $out, $tourName );
 	}
 
 	/**
@@ -105,19 +103,18 @@ class GuidedTourLauncher {
 	/**
 	 * Sets a tour to auto-launch on this view using a cookie.
 	 *
+	 * @param OutputPage $out Page to render the tour on
 	 * @param string $tourName Name of tour to launch
 	 * @param string $step Step to navigate to
 	 */
-	public static function launchTourByCookie( $tourName, $step ) {
-		$context = RequestContext::getMain();
-
-		$request = $context->getRequest();
+	public static function launchTourByCookie( OutputPage $out, $tourName, $step ) {
+		$request = $out->getRequest();
 		$oldCookie = $request->getCookie( Hooks::COOKIE_NAME );
 		$newCookie = self::getNewCookie( $oldCookie, $tourName, $step );
 		$request->response()->setCookie( Hooks::COOKIE_NAME, $newCookie, 0, [
 			'httpOnly' => false,
 		] );
 
-		Hooks::addTour( $context->getOutput(), $tourName );
+		Hooks::addTour( $out, $tourName );
 	}
 }
