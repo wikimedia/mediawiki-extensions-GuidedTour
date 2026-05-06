@@ -202,7 +202,7 @@
 		// TODO: Refactor how namemsg is handled, for code reuse.
 		if ( button.namemsg ) {
 			messageKey = button.namemsg;
-			// eslint-disable-next-line mediawiki/msg-doc
+
 			button.name = mw.message( button.namemsg ).parse();
 			delete button.namemsg;
 		}
@@ -212,7 +212,7 @@
 			hasIcon = false;
 		} else {
 			messageKey = messageKeyMapping[ button.action ];
-			// eslint-disable-next-line mediawiki/msg-doc
+
 			button.name = mw.message( messageKey ).parse();
 			hasIcon = true;
 		}
@@ -319,7 +319,7 @@
 		};
 
 		if ( button.namemsg ) {
-			// eslint-disable-next-line mediawiki/msg-doc
+
 			button.name = mw.message( button.namemsg ).parse();
 			delete button.namemsg;
 		}
@@ -341,7 +341,7 @@
 	 */
 	Step.prototype.modifyCustomButton = function ( button ) {
 		if ( button.namemsg ) {
-			// eslint-disable-next-line mediawiki/msg-doc
+
 			button.name = mw.message( button.namemsg ).parse();
 			delete button.namemsg;
 		}
@@ -734,13 +734,13 @@
 		};
 
 		if ( options.titlemsg ) {
-			// eslint-disable-next-line mediawiki/msg-doc
+
 			options.title = mw.message( options.titlemsg ).parse();
 		}
 		delete options.titlemsg;
 
 		if ( options.descriptionmsg ) {
-			// eslint-disable-next-line mediawiki/msg-doc
+
 			options.description = mw.message( options.descriptionmsg ).parse();
 		}
 		delete options.descriptionmsg;
