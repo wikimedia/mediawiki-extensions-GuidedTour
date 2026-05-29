@@ -6,7 +6,8 @@
 			"DDPAT",
 			"Ice bulldog",
 			"Piramidion",
-			"Ата"
+			"Ата",
+			"Movses"
 		]
 	},
 	"guidedtour-desc": "Дозволяє сторінкам виводити вспливаюче навчання для допомоги новачкам",
@@ -15,6 +16,7 @@
 	"guidedtour-next-button": "Далі",
 	"guidedtour-okay-button": "Гаразд",
 	"guidedtour-back-button": "Назад",
+	"guidedtour-close-button": "Закрити",
 	"guidedtour-tour-test-testing": "Тестування",
 	"guidedtour-tour-test-test-description": "Це випробування опису. Lorem ipsum dolor sit!",
 	"guidedtour-tour-test-callouts": "Тест виноски",
