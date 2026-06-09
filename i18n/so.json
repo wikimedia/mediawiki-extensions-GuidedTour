@@ -1,0 +1,35 @@
+{
+	"@metadata": {
+		"authors": [
+			"AhmedG612"
+		]
+	},
+	"guidedtour-desc": "Waxay u oggolaanaysaa bogagga inay bixiyaan safar hagitaan ah oo soo booda si ay uga caawiyaan isticmaaleyaasha cusub",
+	"guidedtour-help-url": "Help:Safarro hagitaan ah",
+	"guidedtour-help-guider-url": "Help:Safarro hagitaan ah/hagaha",
+	"guidedtour-next-button": "Xiga",
+	"guidedtour-okay-button": "Waa hagaag",
+	"guidedtour-back-button": "Dib u noqo",
+	"guidedtour-close-button": "Xir",
+	"guidedtour-tour-test-testing": "Tijaabinta",
+	"guidedtour-tour-test-test-description": "Tani waa tijaabo sharaxaadda. Lorem ipsum dolor fadhiiso!",
+	"guidedtour-tour-test-callouts": "Tijaabo muujin",
+	"guidedtour-tour-test-portal-description": "Tani waa bogga {{int:portal}}.",
+	"guidedtour-tour-test-mediawiki-parse": "Tijaabo falanqaynta MediaWiki",
+	"guidedtour-tour-test-description-page": "Tijaabo bogagga sharaxaadda MediaWiki",
+	"guidedtour-tour-test-go-description-page": "U gudub bogga sharaxaadda",
+	"guidedtour-tour-test-launch-tour": "Tijaabo bilowga safarka hagitaanka",
+	"guidedtour-tour-test-launch-tour-description": "Hagayaashu waxay bilaabi karaan safarro hagitaan kale. Aad u fiican, sax?",
+	"guidedtour-tour-test-launch-editing": "Bilow safar hagitaan oo ku saabsan wax ka beddelka",
+	"guidedtour-tour-firstedit-edit-page-title": "{{GENDER:|Wax ka beddel}} bogga oo dhan…",
+	"guidedtour-tour-firstedit-edit-page-description": "{{GENDER:|Guji}} badhanka \"$1\" si aad u sameyso isbeddelladaada.",
+	"guidedtour-tour-firstedit-edit-section-title": "Ama {{GENDER:|wax ka beddel}} qayb",
+	"guidedtour-tour-firstedit-edit-section-description": "Waxaa jira xiriirro \"{{int:editsection}}\" ah oo ku yaal qayb kasta oo weyn oo bogga ah, si aad diiradda u saarto kaliya qaybtaas.",
+	"guidedtour-tour-firstedit-preview-title": "{{GENDER:|Eeg horudhac}} isbeddelladaada (ikhtiyaari)",
+	"guidedtour-tour-firstedit-preview-description": "Gujinta \"{{int:showpreview}}\" waxay kuu oggolaanaysaa inaad hubiso sida boggu u ekaan doono marka isbeddelladaada lagu daro. Kaliya ha ilaawin inaad kaydiso!",
+	"guidedtour-tour-firstedit-save-title": "Waxaad ku dhowdahay inaad dhammayso!",
+	"guidedtour-tour-firstedit-save-description": "Marka aad diyaar tahay, gujinta \"{{int:publishchanges}}\" waxay ka dhigi doontaa isbeddelladaada kuwo u muuqda qof walba.",
+	"guidedtour-tour-firsteditve-edit-page-description": "{{GENDER:|Guji}} badhanka \"$1\" si aad u sameyso isbeddelladaada.",
+	"guidedtour-tour-firsteditve-edit-section-description": "Waxaa jira xiriirro \"$1\" ah oo ku yaal qayb kasta oo weyn oo bogga ah, si aad diiradda u saarto kaliya qaybtaas.",
+	"guidedtour-tour-firsteditve-save-description": "Marka aad diyaar tahay, gujinta \"{{int:publishchanges}}\" waxay ka dhigi doontaa isbeddelladaada kuwo u muuqda qof walba."
+}
