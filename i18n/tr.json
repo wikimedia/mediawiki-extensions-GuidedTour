@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"BaRaN6161 TURK",
-			"MuratTheTurkish"
+			"MuratTheTurkish",
+			"HakanIST"
 		]
 	},
 	"guidedtour-desc": "Sayfaların yeni kullanıcılara yardımcı olmak için pop-up rehberli tur sunmasına izin verir",
@@ -11,6 +12,7 @@
 	"guidedtour-next-button": "Sonraki",
 	"guidedtour-okay-button": "Tamam",
 	"guidedtour-back-button": "Geri",
+	"guidedtour-close-button": "Kapat",
 	"guidedtour-tour-test-testing": "Deneme",
 	"guidedtour-tour-test-test-description": "Bu açıklamanın bir testidir. Lorem ipsum dolor sit!",
 	"guidedtour-tour-test-callouts": "Ek bilgileri test et",
