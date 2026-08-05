@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ahmed-Najib-Biabani-Ibrahimkhel"
+			"Ahmed-Najib-Biabani-Ibrahimkhel",
+			"شاه زمان پټان"
 		]
 	},
-	"guidedtour-tour-firstedit-preview-description": "د \"{{int:showpreview}}\" تڼۍ په کېښکاږلو به تاسې وگورۍ چې د بدلونونو وروسته به همدا مخ څنگه ښکاري. مخ خوندي کول مو مه هېروئ!"
+	"guidedtour-tour-firstedit-preview-description": "د \"{{int:showpreview}}\" تڼۍ په کېښکاږلو به تاسې وگورئ چې د بدلونونو وروسته به همدا مخ څنگه ښکاري. مخ خوندي کول مو مه هېروئ!"
 }
