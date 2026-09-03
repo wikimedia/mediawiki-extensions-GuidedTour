@@ -174,7 +174,6 @@ mw.libs.guiders = ( function () {
 			);
 
 			if ( typeof thisButton.classString !== 'undefined' && thisButton.classString !== null ) {
-				// eslint-disable-next-line mediawiki/class-doc
 				$thisButtonElem.addClass( thisButton.classString );
 			}
 
@@ -477,7 +476,6 @@ mw.libs.guiders = ( function () {
 		// eslint-disable-next-line no-jquery/no-fade
 		$( '#guider_overlay' ).fadeIn( 'fast' ).each( function () {
 			if ( overlayClass ) {
-				// eslint-disable-next-line mediawiki/class-doc
 				$( this ).addClass( overlayClass );
 			}
 		} );
@@ -529,7 +527,6 @@ mw.libs.guiders = ( function () {
 		};
 
 		// Classes documented above
-		// eslint-disable-next-line mediawiki/class-doc
 		$myGuiderArrow.addClass( newClass[ position ] );
 
 		const myHeight = myGuider.elem.innerHeight();
@@ -591,7 +588,6 @@ mw.libs.guiders = ( function () {
 		// Assign animation class for myGuider
 		if ( position !== 0 ) {
 			// Classes documented above
-			// eslint-disable-next-line mediawiki/class-doc
 			myGuider.elem.addClass( classMap[ position ] );
 		}
 	};
@@ -693,7 +689,6 @@ mw.libs.guiders = ( function () {
 		// eslint-disable-next-line no-jquery/variable-pattern
 		myGuider.elem = $guiderElement;
 		if ( typeof myGuider.classString !== 'undefined' && myGuider.classString !== null ) {
-			// eslint-disable-next-line mediawiki/class-doc
 			myGuider.elem.addClass( myGuider.classString );
 		}
 		myGuider.elem.css( 'width', myGuider.width + 'px' );
