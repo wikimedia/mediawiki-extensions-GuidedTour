@@ -3,6 +3,7 @@
 		"authors": [
 			"Geraki",
 			"Glavkos",
+			"Jimkats",
 			"Nikosguard"
 		]
 	},
@@ -12,6 +13,7 @@
 	"guidedtour-next-button": "Επόμενο",
 	"guidedtour-okay-button": "Εντάξει",
 	"guidedtour-back-button": "Πίσω",
+	"guidedtour-close-button": "Κλείσιμο",
 	"guidedtour-tour-test-testing": "Δοκιμή",
 	"guidedtour-tour-test-test-description": "Αυτή είναι μια δοκιμή της περιγραφής. Lorem ipsum dolor sit!",
 	"guidedtour-tour-test-callouts": "Δοκιμή επεξήγησης",
