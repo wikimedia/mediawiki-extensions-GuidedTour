@@ -1367,4 +1367,19 @@
 			'Throws if firstStep was not called',
 		);
 	} );
+
+	QUnit.test( 'loadOnWikiTour', function ( assert ) {
+		const getScriptStub = this.stub( $, 'getScript' ).returns( $.Deferred().promise() );
+
+		gt.internal.loadOnWikiTour( 'example' );
+		assert.true(
+			getScriptStub.firstCall.args[ 0 ].includes( 'title=MediaWiki:Guidedtour-tour-example.js&' ),
+			'Loads the .js page for a valid tour name',
+		);
+
+		getScriptStub.resetHistory();
+		const promise = gt.internal.loadOnWikiTour( 'example#' );
+		assert.false( getScriptStub.called, 'Does not load a page when the tour name contains a #' );
+		assert.strictEqual( promise.state(), 'rejected', 'Rejects when the tour name contains a #' );
+	} );
 }() );
