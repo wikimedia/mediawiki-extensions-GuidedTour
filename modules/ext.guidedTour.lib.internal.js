@@ -139,6 +139,13 @@
 			const MW_NS_TOUR_PREFIX = 'MediaWiki:Guidedtour-tour-';
 
 			const dfd = $.Deferred();
+
+			// A '#' makes '.js' a fragment, so the page fetched is not a site JS page
+			if ( tourName.includes( '#' ) ) {
+				mw.log( 'Invalid tour name \'' + tourName + '\'' );
+				return dfd.reject().promise();
+			}
+
 			const title = MW_NS_TOUR_PREFIX + tourName + '.js';
 
 			const onWikiTourUrl = mw.util.getUrl( title, {
