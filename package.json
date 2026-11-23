@@ -8,8 +8,8 @@
 		"test:eslint": "eslint --cache .",
 		"test:stylelint": "stylelint --cache \"**/*.{vue,less}\"",
 		"test:i18n": "grunt test",
-		"cy:open": "CYPRESS_CACHE_FOLDER=./cypress/.cache cypress open",
-		"cy:run": "CYPRESS_CACHE_FOLDER=./cypress/.cache cypress run",
+		"cy:open": "cypress open",
+		"cy:run": "cypress run",
 		"selenium-test": "npm run cy:run",
 		"minify:svg": "svgo --config=.svgo.config.js --quiet --recursive --folder modules/images/"
 	},
